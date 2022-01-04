@@ -159,6 +159,14 @@ is that you have to wait for it to compile.
                                            | java
                                            v
                                          Answer
+
+
+A variable that holds reference of an object is called a reference variable. 
+Variable is a name that is used to hold a value of any type during program execution. 
+If the type is an object, then the variable is called reference variable, 
+and if the variable holds primitive types(int, float, etc.), then it is called 
+non-reference variables.
+
 
 Postscript:  Anatomy of a Small Java Program (for discussion section)
 --------------------------------------------
