@@ -37,10 +37,20 @@ from procedural languages (C, Fortran, Basic, Pascal) is polymorphism.
 * Inheritance
 * Polymorphism
 
+#### Inheritance
 Inheritance, the concept that we can reuse features or behaviors of a class by inheriting from it. 
 
+#### Encapsulation
 Encapsulation, we can hide and protect the data in a class. 
 
+Encapsulation is accomplished when each object maintains a private state, inside a class. Other objects can not access this state directly, instead, they can only invoke a list of public functions. The object manages its own state via these functions and no other class can alter it unless explicitly allowed. In order to communicate with the object, you will need to utilize the methods provided. 
+
+#### Polymorphism
 Polymorphism, the idea that we can write code that works for types, and their subtypes.
 
+Polymorphism gives us a way to use a class exactly like its parent so there is no confusion with mixing types. This being said, each child sub-class keeps its own functions/methods as they are.
+
+#### Abstraction
 Abstraction, where we can hide away implementation details only relying on a class type or an interface.
+
+Abstraction is an extension of encapsulation. It is the process of selecting data from a larger pool to show only the relevant details to the object. 
