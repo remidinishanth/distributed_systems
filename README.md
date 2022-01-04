@@ -28,7 +28,8 @@ THE LANGUAGE OF OBJECT-ORIENTED PROGRAMMING
 In this list, the one thing that truly distinguishes object-oriented languages
 from procedural languages (C, Fortran, Basic, Pascal) is polymorphism.
 
-The four pillars of object-oriented programming are:
+
+### The four pillars of object-oriented programming are:
 
 * Abstraction
 * Encapsulation
