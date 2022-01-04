@@ -11,25 +11,6 @@ Also, read the CS 61B Web page as soon as possible!
 YOU are responsible for keeping up with readings & assignments.  Few reminders.
 The Piazza board is required reading:  piazza.com/berkeley/spring2014/cs61b
 
-Labs
-----
-Labs (in 271, 273, 275, 330 Soda) start Thursday.  Discussion sections start
-Monday.  You must attend your scheduled lab (as assigned by Telebears) to
-  1)  get an account (needed for Lab 1 and Homework 1), and
-  2)  login to turn on your ability to turn in homework (takes up to 24 hours).
-You may only attend the lab in which you are officially enrolled.  If you are
-not enrolled in a lab (on the waiting list or in concurrent enrollment), you
-must attend a lab that has space.  (Show up and ask the TA if there's room for
-you.)
-
-You will not be enrolled in the course until you are enrolled in a lab.  If
-you're on the waiting list and the lab you want is full, you can change to one
-that isn't, or you can stay on the waitlist and hope somebody drops.
-
-If you're not yet enrolled in a lab, just keep going to them until you find one
-that has room for you (that week).  Once you get enrolled in a lab, though,
-please always attend the one you're enrolled in.
-
 Prerequisites
 -------------
 Ideally, you have taken CS 61A or E 7, or at least you're taking one of them
