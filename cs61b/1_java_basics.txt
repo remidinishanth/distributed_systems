@@ -167,6 +167,9 @@ If the type is an object, then the variable is called reference variable,
 and if the variable holds primitive types(int, float, etc.), then it is called 
 non-reference variables.
 
+In short, the main difference between the two types is that primitive types 
+store actual values but reference type stores handle objects in the heap.
+
 
 Postscript:  Anatomy of a Small Java Program (for discussion section)
 --------------------------------------------
