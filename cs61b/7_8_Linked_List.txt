@@ -1,0 +1,411 @@
+                              CS 61B: Lecture 7
+                         Wednesday, February 5, 2014
+
+Today's reading:  Goodrich & Tamassia, Section 3.2.
+
+LISTS
+=====
+Let's consider two different data structures for storing a list of things:
+an array and a linked list.
+
+An array is a pretty obvious way to store a list, with a big advantage:  it
+enables very fast access of each item.  However, it has two disadvantages.
+
+First, if we want to insert an item at the beginning or middle of an array, we
+have to slide a lot of items over one place to make room.  This takes time
+proportional to the length of the array.
+
+Second, an array has a fixed length that can't be changed.  If we want to add
+items to the list, but the array is full, we have to allocate a whole new array
+and move all the ints from the old array to the new one.
+
+public class AList {
+  int a[];
+  int lastItem;
+
+  public AList() {
+    a = new int[10];                           // The number "10" is arbitrary.
+    lastItem = -1;
+  }
+
+  public void insertItem(int newItem, int location) {
+    int i;
+
+    if (lastItem + 1 == a.length) {               // No room left in the array?
+      int b[] = new int[2 * a.length];  // Allocate a new array, twice as long.
+      for (i = 0; i <= lastItem; i++) {      // Copy items to the bigger array.
+        b[i] = a[i];
+      }
+      a = b;                   // Replace the too-small array with the new one.
+    }
+    for (i = lastItem; i >= location; i--) {       // Shift items to the right.
+      a[i + 1] = a[i];
+    }
+    a[location] = newItem;
+    lastItem++;
+  }
+}
+
+LINKED LISTS (a recursive data type)
+============
+We can avoid these problems by choosing a Scheme-like representation of lists.
+A linked list is made up of _nodes_.  Each node has two components:  an item,
+and a reference to the next node in the list.  These components are analogous
+to "car" and "cdr".  However, our node is an explicitly defined object.
+
+  public class ListNode {          // ListNode is a recursive type
+    public int item;
+    public ListNode next;          // Here we're using ListNode before
+  }                                //   we've finished declaring it.
+
+Let's make some ListNodes.
+
+  ListNode l1 = new ListNode(), l2 = new ListNode(), l3 = new ListNode();
+  l1.item = 7;
+  l2.item = 0;
+  l3.item = 6;
+
+       -------------         -------------         -------------
+       |     ----- |         |     ----- |         |     ----- |
+       | item| 7 | |         | item| 0 | |         | item| 6 | |
+  l1-->|     ----- |    l2-->|     ----- |    l3-->|     ----- |
+       |     ----- |         |     ----- |         |     ----- |
+       | next| ? | |         | next| ? | |         | next| ? | |
+       |     ----- |         |     ----- |         |     ----- |
+       -------------         -------------         -------------
+
+Now let's link them together.
+
+  l1.next = l2;
+  l2.next = l3;
+
+What about the last node?  We need a reference that doesn't reference anything.
+In Java, this is called "null".
+
+  l3.next = null;
+
+       -------------         -------------         -------------
+       |     ----- |         |     ----- |         |     ----- |
+       | item| 7 | |         | item| 0 | |         | item| 6 | |
+  l1-->|     ----- |    l2-->|     ----- |    l3-->|     ----- |
+       |     ----- |         |     ----- |         |     ----- |
+       | next| .-+-+-------->| next| .-+-+-------->| next| X | |
+       |     ----- |         |     ----- |         |     ----- |
+       -------------         -------------         -------------
+
+To simplify programming, let's add some constructors to the ListNode class.
+
+public ListNode(int i, ListNode n) {
+  item = i;
+  next = n;
+}
+
+public ListNode(int i) {
+  this(i, null);
+}
+
+These constructors allow us to emulate Scheme's "cons" operation.
+
+  ListNode l1 = new ListNode(7, new ListNode(0, new ListNode(6)));
+
+Linked lists vs. array lists
+----------------------------
+Linked lists have several advantages over array-based lists.  Inserting an item
+into the middle of a linked list takes just a small constant amount of time, if
+you already have a reference to the previous node (and don't have to walk
+through the whole list searching for it).  The list can keep growing until
+memory runs out.
+
+The following method inserts a new item into the list immediately after "this".
+
+  public void insertAfter(int item) {
+    next = new ListNode(item, next);
+  }
+
+  l2.insertAfter(3);
+
+         -------------       -------------   -------------       -------------
+         |     ----- |       |     ----- |   |     ----- |       |     ----- |
+         | item| 7 | |       | item| 0 | |   | item| 3 | |       | item| 6 | |
+    l1-->|     ----- |  l2-->|     ----- |   |     ----- |  l3-->|     ----- |
+         |     ----- |       |     ----- |   |     ----- |       |     ----- |
+         | next| .-+-+------>| next| .-+-+-->| next| .-+-+------>| next| X | |
+         |     ----- |       |     ----- |   |     ----- |       |     ----- |
+         -------------       -------------   -------------       -------------
+
+However, linked lists have a big disadvantage compared to arrays.  Finding the
+nth item of an array takes a tiny, constant amount of time.  Finding the nth
+item of a linked list takes time proportional to n.  You have to start at the
+head of the list and walk forward n - 1 nodes, one "next" at a time.
+
+Many of the data structures we will study in this class will be attempts to
+find a compromise between arrays and linked lists.  We'll learn data structures
+that are fast for both arbitrary lookups (like arrays) _and_ arbitrary
+insertions (like linked lists).
+
+Lists of Objects
+----------------
+For greater generality, let's change ListNodes so that each node contains not
+an int, but a reference to any Java object.  In Java, we can accomplish this by
+declaring a reference of type Object.
+
+  public class SListNode {
+    public Object item;
+    public SListNode next;
+  }
+
+The "S" in "SListNode" stands for singly-linked.  This will make sense when we
+contrast these lists with doubly-linked lists later.  You'll see the SListNode
+class in next week's lab and homework.
+
+A List Class
+------------
+There are two problems with SListNodes.
+
+(1)  Suppose x and y are pointers to the same shopping list.  Suppose we insert
+     a new item at the beginning of the list thusly:
+
+       x = new SListNode("soap", x);
+
+     y doesn't point to the new item; y still points to the second item in x's
+     list.  If y goes shopping for x, he'll forget to buy soap.
+
+(2)  How do you represent an empty list?  The obvious way is "x = null".
+     However, Java won't let you call a SListNode method--or any method--on
+     a null object.  If you write "x.insertAfter(item)" when x is null, you'll
+     get a run-time error, even though x is declared to be a SListNode.
+     (There are good reasons for this, which you'll learn later in the course.)
+
+The solution is a separate SList class, whose job is to maintain the head
+(first node) of the list.  We will put many of the methods that operate on
+lists in the SList class, rather than the SListNode class.
+
+public class SList {
+  private SListNode head;             // First node in list.
+  private int size;                   // Number of items in list.
+
+  public SList() {                    // Here's how to represent an empty list.
+    head = null;
+    size = 0;
+  }
+
+  public void insertFront(Object item) {
+    head = new SListNode(item, head);
+    size++;
+  }
+}
+                 SList object                    SListNode object
+                 -------------                     -------------  String object
+      -----      |     ----- |                     |     ----- |     ----------
+    x | .-+----->| size| 1 | |                     | item| .-+-+---->|  milk  |
+      -----      |     ----- |                     |     ----- |     ----------
+      -----      |     ----- |                     |     ----- |
+    y | .-+----->| head| .-+-+-------------------->| next| X | |
+      -----      |     ----- |                     |     ----- |
+                 -------------                     -------------
+
+Now, when you call x.insertFront("fish"), every reference to that SList can see
+the change.
+
+              SList           SListNode                SListNode
+              -------------   -------------            -------------
+      -----   |     ----- |   |     ----- |  --------  |     ----- |  --------
+    x | .-+-->| size| 2 | |   | item| .-+-+->| fish |  | item| .-+-+->| milk |
+      -----   |     ----- |   |     ----- |  --------  |     ----- |  --------
+      -----   |     ----- |   |     ----- |            |     ----- |
+    y | .-+-->| head| .-+-+-->| next| .-+-+----------->| next| X | |
+      -----   |     ----- |   |     ----- |            |     ----- |
+              -------------   -------------            -------------
+
+Another advantage of the SList class is that it can keep a record of the
+SList's size (number of SListNodes).  Hence, the size can be determined more
+quickly than if the SListNodes had to be counted.
+
+
+                              CS 61B: Lecture 8
+                         Wednesday, February 5, 2014
+
+Today's reading:  Goodrich & Tamassia, Section 3.3.
+
+THE "public" AND "private" KEYWORDS
+===================================
+Thus far, we've usually declared fields and methods using the "public" keyword.
+However, we can also declare a field or method "private".  A private method
+or field is invisible and inaccessible to other classes, and can be used only
+within the class in which the field or method is declared.
+
+Why would we want to make a field or method private?
+(1)   To prevent data within an object from being corrupted by other classes.
+(2)   To ensure that you can improve the implementation of a class without
+      causing other classes that depend on it to fail.
+
+In the following example, EvilTamperer tries to get around the error checking
+code of the Date class by fiddling with the internals of a Date object.
+
+  public class Date {                  |  public class EvilTamperer {
+    private int day;                   |    public void tamper() {
+    private int month;                 |      Date d = new Date(1, 1, 2006);
+                                       |
+    private void setMonth(int m) {     |      d.day = 100;    // Foiled!!
+      month = m;                       |      d.setMonth(0);  // Foiled again!!
+    }                                  |    }
+                                       |  }
+    public Date(int month, int day) {  |
+      [Implementation with             |
+       error-checking code here.]      |
+    }
+  }
+
+However, javac won't compile EvilTamperer, because the Date class has declared
+its vulnerable parts "private".  setMonth is an internal helper method used
+within the Date class, whereas the Date constructor is a public part of the
+interface of the Date class.  Error-checking code in the constructor ensures
+that invalid Dates are not constructed.
+
+Here are some important definitions.
+
+The _interface_ of a class is a set of prototypes for public methods (and
+sometimes public fields), plus descriptions of the methods' behaviors.
+
+An _Abstract_Data_Type_ (ADT) is a class that has a well-defined interface, but
+its implementation details are firmly hidden from other classes.  That way, you
+can change the implementation of a class without jeopardizing the programs that
+depend on it.  The Date class is an ADT.  We'll implement lots of ADTs this
+semester.
+
+An _invariant_ is a fact about a data structure that is always true (assuming
+the code is bug-free), no matter what methods are called by external classes.
+For example, the Date ADT enforces the invariant that a Date object always
+represents a valid date.  An invariant is enforced by allowing access to
+certain fields only through method calls.
+
+An ADT is often a good thing to aspire to.  In most of your classes, you should
+declare all fields private, as well as helper functions meant only for internal
+use, so that you can maintain sensible invariants on your data structures.
+
+However, not all classes are ADTs!  Some classes are nothing more than data
+storage units, and do not need to enforce any invariants.  In such classes, all
+fields may be declared public.
+
+The SList ADT
+-------------
+Last lecture, I created an SList class to solve the problems of representing
+empty lists and inserting items at the beginning of a list.  Today, I want to
+introduce another advantage of the SList class.
+
+We want the SList ADT to enforce two invariants:
+(1)  An SList's "size" variable is always correct.
+(2)  A list is never circularly linked; there is always a tail node whose
+     "next" reference is null.
+
+Both these goals are accomplished by making sure that _only_ the methods of the
+SList class can change the lists' internal data structures.  SList ensures this
+by two means:
+(1)  The fields of the SList class (head and size) are declared "private".
+(2)  No method of SList returns an SListNode.
+
+The first rule is necessary so that the evil tamperer can't change the fields
+and corrupt the SList or violate invariant (1).  The second rule prevents the
+evil tamperer from changing list items, truncating a list, or creating a cycle
+in a list, thereby violating invariant (2).
+
+DOUBLY-LINKED LISTS
+===================
+As we saw last class, inserting an item at the front of a linked list is easy.
+Deleting from the front of a list is also easy.  However, inserting or deleting
+an item at the end of a list entails a search through the entire list, which
+might take a long time.  (Inserting at the end is easy if you have a `tail'
+pointer, as you will learn in Lab 3, but deleting is still hard.)
+
+A doubly-linked list is a list in which each node has a reference to the
+previous node, as well as the next node.
+
+  class DListNode {                    |  class DList {
+    Object item;                       |    private DListNode head;
+    DListNode next;                    |    private DListNode tail;
+    DListNode prev;                    |  }
+  }                                    |
+
+           -------------      -------------      -------------
+           |       item|      |       item|      |       item|
+    head   |      -----|      |      -----|      |      -----|   tail
+    -----  |----- | 4 ||      |----- | 1 ||      |----- | 8 ||  -----
+    | . +->|| X | -----|<-----++-. | -----|<-----++-. | -----|<-+-. |
+    -----  |----- -----|      |----- -----|      |----- -----|  -----
+           |prev  | .-++----->|prev  | .-++----->|prev  | X ||
+           |      -----|      |      -----|      |      -----|
+           |       next|      |       next|      |       next|
+           -------------      -------------      -------------
+
+DLists make it possible to insert and delete items at both ends of the list,
+taking constant running time per insertion and deletion.  The following code
+removes the tail node (in constant time) if there are at least two items in the
+DList.
+
+  tail.prev.next = null;
+  tail = tail.prev;
+
+You'll need a special case for a DList with no items.  You'll also need a
+special case for a DList with one item, because tail.prev.next does not exist.
+(Instead, head needs to be changed.)
+
+Let's look at a clever trick for reducing the number of special cases, thereby
+simplifying our DList code.  We designate one DListNode as a _sentinel_, a
+special node that does not represent an item.  Our list representation will be
+circularly linked, and the sentinel will represent both the head and the tail
+of the list.  Our DList class no longer needs a tail pointer, and the head
+pointer points to the sentinel.
+
+  class DList {
+    private DListNode head;
+    private int size;
+  }
+
+                          sentinel
+                          -------------    -----
+                          |       item|<---+-. |
+          --------------->|      -----|    -----
+          |               |prev  | X ||     head
+          |               |----- -----|
+          |               || .-+------+-----------------
+          |               |----- -----|                |
+          |      ---------+------+-. ||                |
+          |      |        |  next-----|<---------------+-----
+          |      |        -------------                |    |
+          |      v                                     v    |
+       ---+---------      -------------      -------------  |
+       |  |    item|      |       item|      |       item|  |
+       |  |   -----|      |      -----|      |      -----|  |
+       |--+-- | 4 ||      |----- | 1 ||      |----- | 8 ||  |
+       || . | -----|<-----++-. | -----|<-----++-. | -----|  |
+       |----- -----|      |----- -----|      |----- -----|  |
+       |prev  | .-++----->|prev  | .-++----->|prev  | .-++---
+       |      -----|      |      -----|      |      -----|
+       |       next|      |       next|      |       next|
+       -------------      -------------      -------------
+
+The invariants of the DList ADT are more complicated than the SList invariants.
+The following invariants apply to the DList with a sentinel.
+(1)  For any DList d, d.head != null.  (There's always a sentinel.)
+(2)  For any DListNode x, x.next != null.
+(3)  For any DListNode x, x.prev != null.
+(4)  For any DListNode x, if x.next == y, then y.prev == x.
+(5)  For any DListNode x, if x.prev == y, then y.next == x.
+(6)  A DList's "size" variable is the number of DListNodes, NOT COUNTING the
+     sentinel (denoted by "head"), that can be accessed from the sentinel by
+     a sequence of "next" references.
+
+An empty DList is represented by having the sentinel's prev and next fields
+point to itself.
+
+Here's an example of a method that removes the last item from a DList.
+
+  public void removeBack() {
+    if (head.prev != head) {        // Do nothing if the DList is empty.
+      head.prev = head.prev.prev;   // Sentinel now points to second-last item.
+      head.prev.next = head;        // Second-last item now points to sentinel.
+      size--;
+    }
+  }
+
+In Lab 4 and Homework 4, you'll implement more methods for this DList class.
