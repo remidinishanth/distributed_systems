@@ -6,9 +6,9 @@ THE LANGUAGE OF OBJECT-ORIENTED PROGRAMMING
 ===========================================
 * Object: An object is a repository of data. For example, if MyList is a
  ShoppingList object, MyList might record your shopping list.
-* Class: A class is a type of object. A class is a template for creating objects. 
-  Many objects of the same class might exist; 
-  for instance, MyList and YourList may both be ShoppingList objects.
+* Class: A class is a type of object. Many objects of the same class might exist; 
+  for instance, MyList and YourList may both be ShoppingList objects. 
+  A class is a template for creating objects. 
 * Method: A procedure or function that operates on an object or a class.
  A method is associated with a particular class. For instance, addItem might
  be a method that adds an item to any ShoppingList object. Sometimes a method
