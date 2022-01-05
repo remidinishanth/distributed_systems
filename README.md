@@ -40,6 +40,10 @@ from procedural languages (C, Fortran, Basic, Pascal) is polymorphism.
 #### Inheritance
 Inheritance, the concept that we can reuse features or behaviors of a class by inheriting from it. 
 
+You get a lot of OO mileage by designing with inheritance. You can get rid of duplicate
+code by abstracting out the behavior common to a group of classes, and sticking that code
+in a superclass. That way, when you need to modify it, you have only one place to update
+
 #### Encapsulation
 Encapsulation, we can hide and protect the data in a class. 
 
