@@ -2,6 +2,8 @@
 
 REF: http://people.eecs.berkeley.edu/~jrs/61b/
 
+Object-Oriented programming lets you extend a program without having to touch previously-tested, working code.
+
 THE LANGUAGE OF OBJECT-ORIENTED PROGRAMMING
 ===========================================
 * Object: An object is a repository of data. For example, if MyList is a
