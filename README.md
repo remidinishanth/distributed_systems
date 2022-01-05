@@ -64,10 +64,12 @@ Abstraction, where we can hide away implementation details only relying on a cla
 
 Abstraction is an extension of encapsulation. It is the process of selecting data from a larger pool to show only the relevant details to the object. 
 
+### UML diagrams notation
+![](images/uml_diagrams_notation.png)
+![](images/Uml_classes.png)
+
 ### Fundamental Priniciples
 
 ![](images/fundamental_priniciples.png)
 
-### UML diagrams notation
-![](images/uml_diagrams_notation.png)
-![](images/Uml_classes.png)
+Encapsulate what varies: Identify the aspects of your application that vary and separate them from what stays the same. Letting one part of the system vary independently.
