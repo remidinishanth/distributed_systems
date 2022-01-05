@@ -143,6 +143,8 @@ SList is a TailList.  It merits repeating:
 
 >>>!!!*** Every TailList *IS* an SList. ***!!!<<<    For example:
 
+Since every TailList is a SList, we can store TailList in SList variable.
+
   SList s = new TailList();         // Groovy.
   TailList t = new SList();         // COMPILE-TIME ERROR.
 
