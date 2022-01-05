@@ -173,6 +173,9 @@ store actual values but reference type stores handle objects in the heap.
 
 Postscript:  Anatomy of a Small Java Program (for discussion section)
 --------------------------------------------
+
+All java code is defined in a class.
+
 Assume the following code is in a file called HelloWorld.java:
 
 class HelloWorld {
