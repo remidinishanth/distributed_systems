@@ -30,3 +30,39 @@ inheritance tree is well-designed, the IS-A test should make
 sense when you ask any subclass if it IS-A any of its supertypes.
 
 Remember, if X extends Y, X IS-A Y must make sense.
+
+DO NOT use inheritance just so that you can reuse
+code from another class, if the relationship between the
+superclass and subclass violate either of the above two
+rules. For example, imagine you wrote special printing
+code in the Alarm class and now you need printing code
+in the Piano class, so you have Piano extend Alarm so that
+Piano inherits the printing code. That makes no sense! A
+Piano is not a more specific type of Alarm. (So the printing
+code should be in a Printer class, that all printable objects
+can take advantage of via a HAS-A relationship.)
+
+Inheritance IS-A summary:
+* A subclass extends a superclass.
+* A subclass inherits all public instance
+variables and methods of the superclass, but
+does not inherit the private instance variables
+and methods of the superclass.
+* Inherited methods can be overridden; instance
+variables cannot be overridden (although they
+can be redefined in the subclass, but that’s
+not the same thing, and there’s almost never a
+need to do it.)
+* Use the IS-A test to verify that your
+inheritance hierarchy is valid. If X extends Y,
+then X IS-A Y must make sense.
+* The IS-A relationship works in only one
+direction. A Hippo is an Animal, but not all
+Animals are Hippos.
+* When a method is overridden in a subclass,
+and that method is invoked on an instance of
+the subclass, the overridden version of the
+method is called. (The lowest one wins.)
+* If class B extends A, and C extends B, class
+B IS-A class A, and class C IS-A class B, and
+class C also IS-A class A.
