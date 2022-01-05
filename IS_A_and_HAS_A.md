@@ -28,3 +28,5 @@ But nobody inherits from (extends) anybody else.
 The IS-A test works anywhere in the inheritance tree. If your
 inheritance tree is well-designed, the IS-A test should make
 sense when you ask any subclass if it IS-A any of its supertypes.
+
+Remember, if X extends Y, X IS-A Y must make sense.
