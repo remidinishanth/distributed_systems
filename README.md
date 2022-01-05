@@ -62,3 +62,6 @@ Polymorphism is derived from 2 Greek words: poly(many) and morphs(forms), so pol
 Abstraction, where we can hide away implementation details only relying on a class type or an interface.
 
 Abstraction is an extension of encapsulation. It is the process of selecting data from a larger pool to show only the relevant details to the object. 
+
+
+![](images/uml_diagrams_notation.png)
