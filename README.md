@@ -56,3 +56,11 @@ Polymorphism is derived from 2 Greek words: poly(many) and morphs(forms), so pol
 Abstraction, where we can hide away implementation details only relying on a class type or an interface.
 
 Abstraction is an extension of encapsulation. It is the process of selecting data from a larger pool to show only the relevant details to the object. 
+
+
+### IS-A and HAS-A
+
+Using IS-A and HAS-A:
+Remember that when one class inherits from another, we say that the
+subclass extends the superclass. When you want to know if one thing should
+extend another, apply the IS-A test. 
