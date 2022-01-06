@@ -145,6 +145,11 @@ Observe that the method prototypes in a Java interface may be declared without
 the "abstract" keyword, because it would be redundant; a Java interface cannot
 contain a method implementation.
 
+All abstract, default, and static methods in an interface are implicitly public, 
+so you can omit the public modifier. In an interface, all methods must be public.
+Since an interface can't contain any concrete implementation, there is no way 
+to call any member methods from within.
+
 The distinction between abstract classes and Java interfaces exists because of
 technical reasons that you might begin to understand if you take CS 164
 (Compilers).  Some languages, like C++, allow "multiple inheritance," so that a
