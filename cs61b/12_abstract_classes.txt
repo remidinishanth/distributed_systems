@@ -28,7 +28,7 @@ and the subclasses are usually not abstract.  (They can be, but usually they're
 normal subclasses with complete implementations.)
 
 The abstract List class above includes an abstract method, insertFront.  An
-abstract method lacks an implementation.  One purpose of an abstract method is
+abstract method lacks an implementation(A method without body (no implementation) is known as abstract method).  One purpose of an abstract method is
 to guarantee that every non-abstract subclass will implement the method.
 Specifically, every non-abstract subclass of List must have an implementation
 for the insertFront method.
