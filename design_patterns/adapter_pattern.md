@@ -14,6 +14,8 @@ Step2: Implement the target interface with the adapter class
 
 Step3: Send the request from the client to the adapter using the target interface.
 
+![](images/adapter_pattern_1.png)
+REF: https://www.d.umn.edu/~gshute/softeng/new/design_patterns/design_patterns.xhtml
 
 ## Example
 
