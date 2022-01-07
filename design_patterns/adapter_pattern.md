@@ -29,6 +29,7 @@ public interface CoffeeMachineInterface {
     public void chooseSecondSelection();
 }
 
+
 OldCoffeeMachine.java
 
 public class OldCoffeeMachine {
@@ -41,6 +42,7 @@ public class OldCoffeeMachine {
         System.out.println(“B - Selected”);
     }
 }
+
 
 CoffeeTouchscreenAdapter.java
 
