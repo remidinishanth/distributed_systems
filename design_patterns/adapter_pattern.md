@@ -2,7 +2,7 @@ When to use?
 * The client and the adaptee classes have incompatible interfaces
 * The adapter translates the request sent by the client into a request that the adaptee class is expecting
 
-![](images/adapter_pattern3.png)
+![](images/adapter_pattern_3.png)
 
 
 ![](images/adapter_pattern.png)
@@ -18,7 +18,7 @@ Step3: Send the request from the client to the adapter using the target interfac
 
 You are working in an office with an old coffee machine that dispenses two different coffee flavours. However, the new boss wants to add a new coffee machine with a touchscreen that can also connect to the old coffee machine. Complete the provided code to add an adapter so that the new touchscreen will  to work with the old coffee machine. Use the following UML class diagram for a guide:
 
-![](images/adapter_pattern2.png)
+![](images/adapter_pattern_2.png)
 
 ```java
 CoffeeMachineInterface.java
