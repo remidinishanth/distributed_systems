@@ -2,6 +2,8 @@
 
 Java REF: http://people.eecs.berkeley.edu/~jrs/61b/ and https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-092-introduction-to-programming-in-java-january-iap-2010/lecture-notes/
 
+Design Patterns REF: https://www.d.umn.edu/~gshute/softeng/new/design_patterns/design_patterns.xhtml
+
 Object-Oriented programming lets you extend a program without having to touch previously-tested, working code.
 
 THE LANGUAGE OF OBJECT-ORIENTED PROGRAMMING
