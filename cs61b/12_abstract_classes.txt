@@ -117,6 +117,11 @@ A Java interface is just like an abstract class, except for two differences.
 (2)  A Java interface cannot implement any methods, nor can it include any
      fields except "final static" constants.  It only contains method
      prototypes and constants.
+         
+Interfaces are a key feature of object-oriented programming: They
+let you specify what should be done, without having to provide an
+implementation.
+
 
   public interface Nukeable {               // In Nukeable.java
     public void nuke();
