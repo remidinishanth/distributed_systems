@@ -48,3 +48,8 @@ A Kubernetes Service is an abstraction layer which defines a **logical set of Po
 
 REF: https://www.mirantis.com/blog/kubernetes-cheat-sheet/
 REF: https://kubernetesbootcamp.github.io/kubernetes-bootcamp/index.html
+
+
+**Desired state** is one of the core concepts of Kubernetes.
+
+A desired state is defined by configuration files made up of manifests, which are JSON or YAML files that declare the type of application to run and how many replicas are required to run a healthy system. The cluster's desired state is defined with the Kubernetes API.
