@@ -12,4 +12,6 @@ Terms with which you should be familiar:
 
 ![](images/k8s_i3.png)
 
+Masters manage the cluster and the nodes are used to host the running applications.
+
 REF: https://www.mirantis.com/blog/kubernetes-cheat-sheet/
