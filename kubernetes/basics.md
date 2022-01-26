@@ -32,6 +32,7 @@ Containers should only be scheduled together in a single Pod if they are tightly
 A node is a worker machine in Kubernetes and may be a VM or physical machine, depending on the cluster. Multiple Pods can run on one Node.
 
 ![](images/k8s_i7.png)
+
 A Kubernetes Service is an abstraction layer which defines a logical set of Pods and enables external traffic exposure, load balancing and service discovery for those Pods.
 
 REF: https://www.mirantis.com/blog/kubernetes-cheat-sheet/
