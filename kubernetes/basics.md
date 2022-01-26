@@ -10,6 +10,6 @@ Terms with which you should be familiar:
 
 ![](images/k8s_i1.png)
 
-![](images/k8s_i2.png)
+![](images/k8s_i3.png)
 
 REF: https://www.mirantis.com/blog/kubernetes-cheat-sheet/
