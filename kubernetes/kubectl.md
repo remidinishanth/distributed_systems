@@ -8,3 +8,5 @@ Example:
 * Getting specific pod `kubectl get pod my-pod`
 * Creation, you can also use apply command `kubectl < create | apply >  -f ./my-pod-config.yml`
 * Port-forwarding `kubectl port-forward my-pod 8080:80`
+
+REF: https://github.com/ChrisKlug/K8S4DEVS
