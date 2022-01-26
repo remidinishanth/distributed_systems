@@ -22,6 +22,8 @@ A Deployment is responsible for creating and updating instances of your applicat
 After creating application instances, a Deployment Controller continuously watches them, and replaces an instance if the 
 Node hosting it goes down or it is deleted. This provides a self-healing mechanism to address machine failure and machine maintenance.
 
+Deployments -> Replicasets -> Pods
+
 ### Pod
 ![](images/k8s_i5.png)
 
