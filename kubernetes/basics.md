@@ -9,3 +9,5 @@ Terms with which you should be familiar:
 * Service – An abstraction which serves as a proxy for a group  of Pods performing a “service”
 
 ![](images/k8s_i1.png)
+
+REF: https://www.mirantis.com/blog/kubernetes-cheat-sheet/
