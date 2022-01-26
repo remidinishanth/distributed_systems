@@ -10,3 +10,5 @@ Example:
 * Port-forwarding `kubectl port-forward my-pod 8080:80`
 
 REF: https://github.com/ChrisKlug/K8S4DEVS
+
+![](images/k8s_i8.png)
