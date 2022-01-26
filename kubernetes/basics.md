@@ -10,16 +10,19 @@ Terms with which you should be familiar:
 
 ![](images/k8s_i1.png)
 
+### Cluster
 ![](images/k8s_i3.png)
 
 Masters manage the cluster and the nodes are used to host the running applications.
 
+### Deployment
 ![](images/k8s_i4.png)
 
 A Deployment is responsible for creating and updating instances of your application. 
 After creating application instances, a Deployment Controller continuously watches them, and replaces an instance if the 
 Node hosting it goes down or it is deleted. This provides a self-healing mechanism to address machine failure and machine maintenance.
 
+### Pod
 ![](images/k8s_i5.png)
 
 A Pod is a group of one or more application containers (such as Docker or rkt) and includes shared storage (volumes), 
@@ -27,11 +30,15 @@ IP address and information about how to run them. Pods always run on Nodes.
 
 Containers should only be scheduled together in a single Pod if they are tightly coupled and need to share resources such as disk.
 
+### Node
 ![](images/k8s_i6.png)
 
 A node is a worker machine in Kubernetes and may be a VM or physical machine, depending on the cluster. Multiple Pods can run on one Node.
 
+### Service
 ![](images/k8s_i7.png)
+
+While Pods do have their own unique IP across the cluster, those IP’s are not exposed outside Kubernetes. Taking into account that over time Pods may be terminated, deleted or replaced by other Pods, we need a way to let other Pods and applications automatically discover each other. Kubernetes addresses this by grouping Pods in Services. A Kubernetes Service is an abstraction layer which defines a logical set of Pods and enables external traffic exposure, load balancing and service discovery for those Pods.
 
 A Kubernetes Service is an abstraction layer which defines a **logical set of Pods** and enables external traffic exposure, load balancing and service discovery for those Pods.
 
