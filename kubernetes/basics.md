@@ -30,6 +30,8 @@ IP address and information about how to run them. Pods always run on Nodes.
 
 Containers should only be scheduled together in a single Pod if they are tightly coupled and need to share resources such as disk.
 
+Kubernetes gives every pod its own cluster-private IP address, so you do not need to explicitly create links between pods or map container ports to host ports. This means that **containers within a Pod can all reach each other's ports on localhost**, and all pods in a cluster can see each other without NAT.
+
 ### Node
 ![](images/k8s_i6.png)
 
