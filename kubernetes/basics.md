@@ -64,8 +64,9 @@ Services allow your applications to receive traffic. Services can be exposed in 
 
 ![](images/k8s_i10.png)  
 
-REF: https://www.mirantis.com/blog/kubernetes-cheat-sheet/
-REF: https://kubernetesbootcamp.github.io/kubernetes-bootcamp/index.html
+### Ref
+* https://www.mirantis.com/blog/kubernetes-cheat-sheet/
+* https://kubernetesbootcamp.github.io/kubernetes-bootcamp/index.html
 
 
 **Desired state** is one of the core concepts of Kubernetes.
