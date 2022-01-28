@@ -34,6 +34,8 @@ Containers should only be scheduled together in a single Pod if they are tightly
 
 Kubernetes gives every pod its own cluster-private IP address, so you do not need to explicitly create links between pods or map container ports to host ports. This means that **containers within a Pod can all reach each other's ports on localhost**, and all pods in a cluster can see each other without NAT.
 
+Pods are scaled up and down as a unit, **all containers in a pod must scale together**, regardless of their individual needs.
+
 ### Node
 ![](images/k8s_i6.png)
 
