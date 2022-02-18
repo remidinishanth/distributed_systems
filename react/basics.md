@@ -1,3 +1,74 @@
+### Function syntax
+1.
+
+```ts
+const myFunction = (param1, param2) => {
+  ...
+}
+```
+
+is equivalent to 
+
+```ts
+function myFunction(param1, param2) {
+  ...
+}
+```
+
+2.
+Another common function pattern in the code is like this
+
+```ts
+const myFunc = (x:number) => (x + 1);
+```
+
+is equivalent to 
+
+```ts
+const myFunc = (x:number) => {
+  return x + 1;
+}
+```
+
+3. 
+Optional parameter:
+
+```ts
+const myFunc = (x: number, y:number, z?:number) => {
+  //...
+}
+```
+
+### Destructuring
+
+```ts
+const object:TMyType = {
+  key1: 10,
+  key2: 100,
+  key3: 'something else'
+};
+
+const myFunc1 = ({key1, key2}:TMyType) => {
+  // do something with key1, key2
+};
+
+const myFunc2 = (key1:number, key2:number) => {
+  // do something with key1, key2
+};
+
+myFunc1(object);
+myFunc2(object.key1, object.key2);
+```
+
+notice the curly bracket in line 7 wrapping `key1, key2`. This is directly extracting the properties `key1, key2` from the parameter. both patterns for `myFunc1` (with destructuring) and `myFunc2` (without destructring) can be used. And it can be a mix of it. e.g.
+
+```ts
+const myFunc3(param1:number, param2: string, {key1, key2}:TMyType) {
+  // something...
+}
+myFunc3(10, 'hello', object);
+```
+
 ### Children are props
 
 Chances are if you've written React before, you've dealt with props and children in some way. Let's say we have a super simple button component:
