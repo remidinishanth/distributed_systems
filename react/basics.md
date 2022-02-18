@@ -1,3 +1,63 @@
+### Basics
+
+* `interface` is for when you want to enforce `structural contracts` (i.e what you want passed in or what you want returned back):
+
+### Props
+
+```ts
+interface FullName {
+    firstName: string;
+    lastName: string;
+}
+
+function FunctionalComponent(props:FullName){
+    // props.firstName
+    // props.lastName
+}
+```
+
+For those cases, you can leverage a JavaScript syntax feature known as destructuring. This allows more flexibility in how you can define your props.
+
+```ts
+// Using the same FullName interface from the last example
+function FunctionalComponent({firstName, lastName}:FullName){
+    // firstName
+   // lastName
+}
+```
+
+What if you wanted to add a middle name? Not everyone has a middle name, so you want to make it optional. Destructuring can provide a clean solution to that problem.
+
+```ts
+interface OptionalMiddleName {
+    firstName: string;
+    middleName?: string;
+    lastName: string;
+}
+function Component({firstName, middleName = "N/A", lastName}:OptionalMiddleName){
+    // If middleName wasn't passed in, value will be "N/A"
+}
+```
+
+### Using React.FC
+
+Another way to define props is to import and use React's `Functional Component` type, FC for short.
+
+Using `React.FC` is more verbose, but does have some added benefits:.
+
+* Explicit with its return type
+* Provides type checking and autocomplete for static properties (i.e displayName, defaultProps)
+* Provides an implicit definition of children:
+
+```ts
+const ReactFCComponent: React.FC<{title:string}> = ({children, title}) => {
+    return <div title={title}>{children}</div>
+}
+```
+
+Ref: https://www.pluralsight.com/guides/defining-props-in-react-function-component-with-typescript
+
+
 ### Function syntax
 1.
 
