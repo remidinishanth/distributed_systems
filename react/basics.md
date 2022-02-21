@@ -1,4 +1,4 @@
-Ref: https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/function_components/
+Ref: https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/function_components/ and https://fettblog.eu/typescript-react/components/
 
 ### Basics
 
