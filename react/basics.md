@@ -186,3 +186,50 @@ By passing children in this way, you are passing it to the component by position
 These two syntaxes produce the exact same result on the page! Children is a prop, and can be passed in to components in different ways.
 
 Ref: https://www.netlify.com/blog/2020/12/17/react-children-the-misunderstood-prop/
+
+
+### Internationalize React apps
+
+Simple message
+```
+Hello, {name}
+```
+
+Complex message
+```
+Hello, {name}, you have {itemCount, plural,
+    =0 {no items}
+    one {# item}
+    other {# items}
+}
+```
+
+From a typical JSON file containing translation messages:
+
+```json
+// en.json
+{
+  "helloWorld": "Hello world!",
+  "goodbye: "Goodbye"
+}
+```
+
+```ts
+import enMessages from "en.json";
+
+type IntlMessageKeys = keyof typeof enMessages;
+```
+
+With react-intl, you can translate messages with the FormattedMessage component or with the formatMessage function. Either way, you have to provide an `id` for the message, which is ordinarily of type `string | number`
+
+```html
+<h2>
+    <FormattedMessage id="helloWorld"/>
+</h2>
+<h2>
+    {formatMessage({id: "helloWorld"}}
+</h2>
+```
+```
+
+Ref: https://formatjs.io/docs/react-intl/components#formattedmessage and https://medium.com/weekly-webtips/react-intl-translations-done-properly-with-typescript-3d901ca1b77f
