@@ -55,7 +55,7 @@ const ReactFCComponent: React.FC<{title:string}> = ({children, title}) => {
 }
 ```
 
-Ref: https://www.pluralsight.com/guides/defining-props-in-react-function-component-with-typescript
+Ref: https://www.pluralsight.com/guides/defining-props-in-react-function-component-with-typescript and https://stackoverflow.com/questions/59988667/typescript-react-fcprops-confusion
 
 
 ### Function syntax
