@@ -204,13 +204,12 @@ Hello, {name}, you have {itemCount, plural,
 }
 ```
 
-From a typical JSON file containing translation messages:
+From a typical JSON file `en.json` containing translation messages:
 
 ```json
-// en.json
 {
   "helloWorld": "Hello world!",
-  "goodbye: "Goodbye"
+  "goodbye": "Goodbye"
 }
 ```
 
