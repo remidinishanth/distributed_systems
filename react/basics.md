@@ -229,6 +229,5 @@ With react-intl, you can translate messages with the FormattedMessage component 
     {formatMessage({id: "helloWorld"}}
 </h2>
 ```
-```
 
 Ref: https://formatjs.io/docs/react-intl/components#formattedmessage and https://medium.com/weekly-webtips/react-intl-translations-done-properly-with-typescript-3d901ca1b77f
