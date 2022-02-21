@@ -1,3 +1,5 @@
+Ref: https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/function_components/
+
 ### Basics
 
 * `interface` is for when you want to enforce `structural contracts` (i.e what you want passed in or what you want returned back):
