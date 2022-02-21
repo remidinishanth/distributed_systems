@@ -190,6 +190,7 @@ Ref: https://www.netlify.com/blog/2020/12/17/react-children-the-misunderstood-pr
 
 ### Internationalize React apps
 
+#### ICU Message syntax
 Simple message
 ```
 Hello, {name}
