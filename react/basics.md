@@ -1,5 +1,19 @@
 Ref: https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/function_components/ and https://fettblog.eu/typescript-react/components/
 
+### Typescript
+
+#### Mental model:
+* Domain of a type = A set of all the values assignable to a variable of that type.
+e.g. for boolean type, domain = {true, false}
+* Thinking in terms of domains of types helps in reasoning about type operations when we get to the advanced types.
+
+#### TypeScript compiler (`tsc`) performs two independent tasks:
+1. Type checking - checks if Domain(type of RHS of the expression) <: Domain(type of LHS of the expression)
+2. Compile the TS code to JS code.
+
+Since these tasks are independent, the TS code gets compiled to JS code even if there are type errors. This is a deviation
+from other statically typed languages.
+
 ### Basics
 
 * `interface` is for when you want to enforce `structural contracts` (i.e what you want passed in or what you want returned back):
