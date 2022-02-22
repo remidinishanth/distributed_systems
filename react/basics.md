@@ -8,7 +8,7 @@ e.g. for boolean type, domain = {true, false}
 * Thinking in terms of domains of types helps in reasoning about type operations when we get to the advanced types.
 
 #### TypeScript compiler (`tsc`) performs two independent tasks:
-1. Type checking - checks if Domain(type of RHS of the expression) <: Domain(type of LHS of the expression)
+1. Type checking - checks if Domain(type of RHS of the expression) <= Domain(type of LHS of the expression)
 2. Compile the TS code to JS code.
 
 Since these tasks are independent, the TS code gets compiled to JS code even if there are type errors. This is a deviation
