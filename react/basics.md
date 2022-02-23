@@ -270,3 +270,5 @@ const Counter:FunctionComponent<{ initial?: number }> = ({ initial = 0 }) => {
 ```
 
 Ref: https://fettblog.eu/typescript-react/hooks/
+
+Todo: https://javascript.plainenglish.io/how-to-avoid-prop-drilling-in-react-using-component-composition-c42adfcdde1b
