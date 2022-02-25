@@ -272,3 +272,15 @@ const Counter:FunctionComponent<{ initial?: number }> = ({ initial = 0 }) => {
 Ref: https://fettblog.eu/typescript-react/hooks/
 
 Todo: https://javascript.plainenglish.io/how-to-avoid-prop-drilling-in-react-using-component-composition-c42adfcdde1b
+
+
+### Redux State management
+
+#### Hooks
+React Redux provides a pair of custom React hooks that allow your React components to interact with the Redux store.
+
+`useSelector` reads a value from the store state and subscribes to updates, while `useDispatch` returns the store's dispatch method to let you dispatch actions.
+
+
+
+Ref: https://react-redux.js.org/introduction/getting-started
