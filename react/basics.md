@@ -2,6 +2,8 @@ Ref: https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/
 
 ### Typescript
 
+https://fettblog.eu/boolean-in-javascript-and-typescript/
+
 #### Mental model:
 * Domain of a type = A set of all the values assignable to a variable of that type.
 e.g. for boolean type, domain = {true, false}
