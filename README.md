@@ -9,3 +9,5 @@ Jinja2 - used for creating templated outputs. Ref: https://ttl255.com/jinja2-tut
 Read about Shared Nothing Architecture. Differences with Microservices architecture.
 
 Read about bazel build and make files.
+
+Software Engineering at Google: Lessons Learned from Programming Over Time
