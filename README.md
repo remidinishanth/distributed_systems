@@ -75,3 +75,6 @@ Abstraction is an extension of encapsulation. It is the process of selecting dat
 ![](images/fundamental_priniciples.png)
 
 Encapsulate what varies: Identify the aspects of your application that vary and separate them from what stays the same. Letting one part of the system vary independently.
+
+### Inheritance versus composition
+![](images/inhertitance_vs_composition.png)
