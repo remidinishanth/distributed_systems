@@ -1,5 +1,7 @@
 # developing_as_developer
 
+* https://thesmartcoder.dev/fantastic-books-by-developers-for-developers/
+
 TODO: gRPC - Why do we use it? Why is it becoming popular?
 
 TODO: GraphQL - Why do we neeed it? Usecases, examples, sangria
