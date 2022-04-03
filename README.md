@@ -6,6 +6,11 @@ TODO: gRPC - Why do we use it? Why is it becoming popular?
 
 TODO: GraphQL - Why do we neeed it? Usecases, examples, sangria. Checkout https://medium.com/@leeshapton/mental-maps-for-teaching-graphql-to-beginners-9db9b85ac957
 
+ * An increasingly popular approach to tailor APIs to individual use cases is to use graph-based
+  APIs. A graph-based API exposes a schema composed of types,
+  fields, and relationships across types. The API allows a client to
+  declare what data it needs and make a request.
+
 Jinja2 - used for creating templated outputs. Ref: https://ttl255.com/jinja2-tutorial-part-1-introduction-and-variable-substitution/ You can also use macros.
 
 Read about Shared Nothing Architecture. Differences with Microservices architecture.
