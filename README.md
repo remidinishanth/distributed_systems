@@ -34,3 +34,10 @@ Sharding Strategies of key-value store
 * The mapping between keys and partitions, and other metadata, is
 typically maintained in a strongly-consistent configuration store,
 like etcd or Zookeeper.
+* Ideally, if a partition is added, only 𝐾/𝑁 keys should be shuffled
+around, where 𝐾 is the number of keys and 𝑁 the number of
+partitions. A hashing strategy that guarantees this property is
+called stable hashing. Ring hashing is an example of stable hashing. With ring hashing,
+a function maps a key to a point on a circle. The circle is then split
+into partitions that can be evenly or pseudo-randomly spaced, depending on the specific algorithm. When a new partition is added,
+it can be shown that most keys don’t need to be shuffled around. E.g Consistent Hashing.
