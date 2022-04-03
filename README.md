@@ -25,5 +25,7 @@ Clean code tips: (Book Clean Code : Robert C Martin) https://medium.com/storyblo
 
 Read: The Good Parts of AWS
 
-CQRS stands for Command Query Responsibility Segregation.  At its heart is the notion that you can use a different model to update information than the model you use to read information. Many systems do fit a CRUD mental model, and so should be done in that style. Ref: https://martinfowler.com/bliki/CQRS.html
+CQRS stands for Command Query Responsibility Segregation.  At its heart is the notion that you can use a different model to update information than the model you use to read information. Many systems do fit a CRUD mental model, and so should be done in that style. There is an inherent
+replication lag between the time a change has been applied on the write path and the read path has received and applied it, which
+makes the system sequentially consistent. Ref: https://martinfowler.com/bliki/CQRS.html
 * This is used in URL shortener, once we shorten the URL, we don't update the same shortened-url.
