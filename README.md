@@ -24,3 +24,5 @@ Software Engineering at Google: Lessons Learned from Programming Over Time.
 Clean code tips: (Book Clean Code : Robert C Martin) https://medium.com/storyblocks-engineering/these-four-clean-code-tips-will-dramatically-improve-your-engineering-teams-productivity-b5bd121dd150
 
 Read: The Good Parts of AWS
+
+CQRS stands for Command Query Responsibility Segregation.  At its heart is the notion that you can use a different model to update information than the model you use to read information. Ref: https://martinfowler.com/bliki/CQRS.html
