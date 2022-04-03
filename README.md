@@ -41,3 +41,5 @@ called stable hashing. Ring hashing is an example of stable hashing. With ring h
 a function maps a key to a point on a circle. The circle is then split
 into partitions that can be evenly or pseudo-randomly spaced, depending on the specific algorithm. When a new partition is added,
 it can be shown that most keys don’t need to be shuffled around. E.g Consistent Hashing.
+
+* TODO: https://www.freecodecamp.org/news/a-thorough-introduction-to-distributed-systems-3b91562c9b3c/
