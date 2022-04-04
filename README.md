@@ -45,3 +45,5 @@ it can be shown that most keys don’t need to be shuffled around. E.g Consisten
 * TODO: https://www.freecodecamp.org/news/a-thorough-introduction-to-distributed-systems-3b91562c9b3c/
 
 ![image](https://user-images.githubusercontent.com/19663316/161559354-8bb255d2-7222-4164-9db1-2c2ac7ca6115.png)
+
+![image](https://user-images.githubusercontent.com/19663316/161559627-b0fa0f35-6e56-46a4-af2c-482c77538cb5.png)
