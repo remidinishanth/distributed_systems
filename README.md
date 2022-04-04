@@ -55,3 +55,10 @@ A Range of Interesting Problems for Distributed System Designers
 * Cloud Programming [MapReduce, Storm, Pregel]
 * Coordination [Paxos, Leader Election, Snapshots]
 * Managing many clients and Servers Concurrently [Concurrency Control, Replication Control]
+
+Core Concepts of Distributed Systems
+* Gossip
+* Membership
+* Distributed Hash Tables(DHTs)
+
+Peer-to-peer systems use DHTs, Key-Value/NoSQL stores uses DHTs, gossip, membership.
