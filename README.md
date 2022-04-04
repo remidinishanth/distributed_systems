@@ -43,3 +43,5 @@ into partitions that can be evenly or pseudo-randomly spaced, depending on the s
 it can be shown that most keys don’t need to be shuffled around. E.g Consistent Hashing.
 
 * TODO: https://www.freecodecamp.org/news/a-thorough-introduction-to-distributed-systems-3b91562c9b3c/
+
+![image](https://user-images.githubusercontent.com/19663316/161559354-8bb255d2-7222-4164-9db1-2c2ac7ca6115.png)
