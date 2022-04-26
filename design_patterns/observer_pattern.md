@@ -1,5 +1,7 @@
 Observer is a behavioral design pattern that allows some objects to notify other objects about changes in their state.
 
+This pattern allows an instance (called **subject**) to publish events to other multiple instances (called **observers**).  These observers subscribe to the subject and hence get notified by events in case of any change happening in the subject.
+
 The Observer Pattern defines a one-to-many dependency between objects so that when one
 object changes state, all its dependents are notified and updated automatically.
 
