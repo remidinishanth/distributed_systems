@@ -17,6 +17,11 @@ More explanation:
 * vCenter Client – a management interface that enables users to remotely connect to vCenter Server.
 * Virtual Machine File System (VMFS) – a cluster file system for ESXi virtual machines.
 
+![image](https://user-images.githubusercontent.com/19663316/165449300-d443a921-8b34-4c38-8f65-80d2d0a5b6a3.png)
+
+![image](https://user-images.githubusercontent.com/19663316/165449755-00e43334-d468-4273-a37f-0b9110885e00.png)
+
+![image](https://user-images.githubusercontent.com/19663316/165449774-5fa784e7-cdf1-4516-9a53-58870ffa4a6c.png)
 
 ![image](https://user-images.githubusercontent.com/19663316/165446915-82524330-f3f7-4ecc-af14-a2b191a24e6e.png)
 
