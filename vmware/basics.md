@@ -16,3 +16,8 @@ More explanation:
 * vCenter Server – an advanced server management software that provides a centralized platform for controlling vSphere environments. vCenter Server allows you to automate and deliver a virtual infrastructure.
 * vCenter Client – a management interface that enables users to remotely connect to vCenter Server.
 * Virtual Machine File System (VMFS) – a cluster file system for ESXi virtual machines.
+
+
+![image](https://user-images.githubusercontent.com/19663316/165446915-82524330-f3f7-4ecc-af14-a2b191a24e6e.png)
+
+VMware vCloud Director (VMware vCD) is a platform with multi-tenant support for managing software-defined data centers (SDDC) and providing infrastructure as a service (IaaS) to customers. 
