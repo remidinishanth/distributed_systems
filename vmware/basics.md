@@ -7,3 +7,6 @@ Ref: https://xopero.com/blog/en/2021/09/03/vmware-vsphere-vcenter-and-esxi-defin
 * vCenter Server – an advanced server management software that provides a centralized platform for controlling vSphere environments. vCenter Server allows you to automate and deliver a virtual infrastructure.
 * vCenter Client – a management interface that enables users to remotely connect to vCenter Server.
 * Virtual Machine File System (VMFS) – a cluster file system for ESXi virtual machines.
+
+![image](https://user-images.githubusercontent.com/19663316/165442472-6896206e-d47f-4f21-9577-0d1011fe7a99.png)
+
