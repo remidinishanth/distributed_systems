@@ -2,3 +2,8 @@ Most physical machines are underused, working on 15% of their capacity at best, 
 
 Ref: https://xopero.com/blog/en/2021/09/03/vmware-vsphere-vcenter-and-esxi-definitions-and-differences/#:~:text=To%20recap%2C%20vSphere%20is%20a,on%20a%20few%20ESXi%20servers.
 
+
+* ESXi – a Type-1 hypervisor(A bare-metal hypervisor/Type 1 is a layer of software we install directly on top of a physical server and its underlying hardware). ESXi runs on hosts to manage the execution of the virtual machines (VMs) and allocates resources to them as needed.
+* vCenter Server – an advanced server management software that provides a centralized platform for controlling vSphere environments. vCenter Server allows you to automate and deliver a virtual infrastructure.
+* vCenter Client – a management interface that enables users to remotely connect to vCenter Server.
+* Virtual Machine File System (VMFS) – a cluster file system for ESXi virtual machines.
