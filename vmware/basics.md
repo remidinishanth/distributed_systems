@@ -3,11 +3,16 @@ Most physical machines are underused, working on 15% of their capacity at best, 
 Ref: https://xopero.com/blog/en/2021/09/03/vmware-vsphere-vcenter-and-esxi-definitions-and-differences/#:~:text=To%20recap%2C%20vSphere%20is%20a,on%20a%20few%20ESXi%20servers.
 
 
+VMware vSphere is VMware's virtualization platform, which transforms data centers into aggregated computing infrastructures that include CPU, storage, and networking resources. 
+
+![image](https://user-images.githubusercontent.com/19663316/165442472-6896206e-d47f-4f21-9577-0d1011fe7a99.png)
+
+The two core components of vSphere are **ESXi** and **vCenter Server**. 
+* ESXi is the virtualization platform where you create and run virtual machines and virtual appliances. 
+* vCenter Server is the service through which you manage multiple hosts connected in a network and pool host resources.
+
+More explanation:
 * ESXi – a type 1 hypervisor, or in other words a bare-metal hypervisor. It is a virtualization software allowing you to create multiple instances of virtual machines on one physical host. It is installed directly on your physical machine and does not require an underlying operating system to function. ESXi runs on hosts to manage the execution of the virtual machines (VMs) and allocates resources to them as needed.
 * vCenter Server – an advanced server management software that provides a centralized platform for controlling vSphere environments. vCenter Server allows you to automate and deliver a virtual infrastructure.
 * vCenter Client – a management interface that enables users to remotely connect to vCenter Server.
 * Virtual Machine File System (VMFS) – a cluster file system for ESXi virtual machines.
-
-![image](https://user-images.githubusercontent.com/19663316/165442472-6896206e-d47f-4f21-9577-0d1011fe7a99.png)
-
-VMware vSphere is VMware's virtualization platform, which transforms data centers into aggregated computing infrastructures that include CPU, storage, and networking resources. 
