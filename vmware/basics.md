@@ -10,3 +10,4 @@ Ref: https://xopero.com/blog/en/2021/09/03/vmware-vsphere-vcenter-and-esxi-defin
 
 ![image](https://user-images.githubusercontent.com/19663316/165442472-6896206e-d47f-4f21-9577-0d1011fe7a99.png)
 
+VMware vSphere is VMware's virtualization platform, which transforms data centers into aggregated computing infrastructures that include CPU, storage, and networking resources. 
