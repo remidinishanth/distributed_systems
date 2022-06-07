@@ -29,4 +29,6 @@
 ![image](https://user-images.githubusercontent.com/19663316/172451633-410c2335-065b-4cfd-bd67-7a6004bf2ceb.png)
 
 
-Ref: https://www.oreilly.com/library/view/head-first-design/0596007124/ch01.html
+### Ref: 
+* https://www.oreilly.com/library/view/head-first-design/0596007124/ch01.html
+* https://www.freecodecamp.org/news/the-strategy-pattern-explained-using-java-bc30542204e0/
