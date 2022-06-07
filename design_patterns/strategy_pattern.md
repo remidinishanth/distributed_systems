@@ -19,6 +19,16 @@
 
 ![image](https://user-images.githubusercontent.com/19663316/172451061-a2b167ff-900f-4d61-865f-61f085f102ec.png)
 
+![image](https://user-images.githubusercontent.com/19663316/172453211-4fc09800-05db-4e9a-a1d0-0d71683532ac.png)
+
+![image](https://user-images.githubusercontent.com/19663316/172453303-7a1f4009-c5e8-4021-80f1-5c2e92399593.png)
+
+![image](https://user-images.githubusercontent.com/19663316/172453241-6f55e5e6-8bbb-4222-a407-3ebda5e17752.png)
+
+* We know that not all of the subclasses should have flying or quacking behavior, so inheritance isn’t the right answer. 
+* But while having the subclasses implement Flyable and/or Quackable solves part of the problem (no inappropriately flying rubber ducks), it completely destroys code reuse for those behaviors, so it just creates a different maintenance nightmare.
+* And of course there might be more than one kind of flying behavior even among the ducks that do fly...
+
 
 ### Solution
 
