@@ -59,7 +59,7 @@ How about an interface?
                                which means Encapsulate the parts that vary!
 2. Design Principles: **Program to an interface, not an implementation!** (interface here means supertype! including interface
                                and abstract class!.. making use of the polymorphism functionality).
-3. Design Principles:  **Favor composition over interface! **
+3. Design Principles:  **Favor composition over interface!**
 
 
 * We know that not all of the subclasses should have flying or quacking behavior, so inheritance isn’t the right answer. 
