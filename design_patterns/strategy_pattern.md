@@ -48,9 +48,12 @@ How about an interface?
 
 ![image](https://user-images.githubusercontent.com/19663316/172453303-7a1f4009-c5e8-4021-80f1-5c2e92399593.png)
 
+**Drawbacks:** It completely destroy code reuse for those behaviors.
+
 ![image](https://user-images.githubusercontent.com/19663316/172453241-6f55e5e6-8bbb-4222-a407-3ebda5e17752.png)
 
-**Drawbacks:** It completely destroy code reuse for those behaviors.
+
+### Solution
 
 1. Design Principles: **Identify the aspects of your application that vary and separate them form what stays the same!**
                                which means Encapsulate the parts that vary!
@@ -64,7 +67,7 @@ How about an interface?
 * And of course there might be more than one kind of flying behavior even among the ducks that do fly...
 
 
-### Solution
+### Strategy Pattern
 
 ![image](https://user-images.githubusercontent.com/19663316/172451086-d55c9b63-8bd5-4eee-9ab5-dd31d777f608.png)
 
