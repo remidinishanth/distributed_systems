@@ -79,3 +79,7 @@ How about an interface?
 ### Ref: 
 * https://www.oreilly.com/library/view/head-first-design/0596007124/ch01.html
 * https://www.freecodecamp.org/news/the-strategy-pattern-explained-using-java-bc30542204e0/
+
+
+### TODO:
+* https://faun.pub/head-first-design-patterns-using-go-1-welcome-to-design-patterns-the-strategy-pattern-6cbd940e113a
