@@ -17,3 +17,5 @@
 * Multiple nodes cooperate with each other through the raft consensus algorithm. 
 * The algorithm elects a master node as the leader, which is responsible for data synchronization and distribution. 
 * Quorum is a key concept in etcd. It is defined as (n+1)/2, indicating that more than half of the nodes in the cluster constitute a quorum. 
+
+Also read https://learnk8s.io/etcd-kubernetes
