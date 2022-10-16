@@ -75,8 +75,12 @@ Services allow your applications to receive traffic. Services can be exposed in 
 
 A desired state is defined by configuration files made up of manifests, which are JSON or YAML files that declare the type of application to run and how many replicas are required to run a healthy system. The cluster's desired state is defined with the Kubernetes API.
 
+
+## Overview
+![](images/k8s_overview_basics.png)
+
+
 ![](images/k8s_concepts.png)
 
-![](images/k8s_overview_basics.png)
 
 ![](images/k8s_labels_svc.png)
