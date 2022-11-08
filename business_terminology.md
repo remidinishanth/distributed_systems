@@ -7,3 +7,6 @@
 * Total Contract Value
 * Annual Recurring Revenue, Annual Run Rate
 * [TODO] Read about how they are calculated, how they impact business etc
+
+### Default Alive, Default Dead
+* If a startup is 'Default Alive' – it means, the business can achieve profitability with its current resources before running out of money.
