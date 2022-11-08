@@ -6,3 +6,4 @@
 * Annual Contract Value
 * Total Contract Value
 * Annual Recurring Revenue, Annual Run Rate
+* [TODO] Read about how they are calculated, how they impact business etc
