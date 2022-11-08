@@ -10,3 +10,6 @@
 
 ### Default Alive, Default Dead
 * If a startup is 'Default Alive' – it means, the business can achieve profitability with its current resources before running out of money.
+
+### Rule of 40%
+* The Rule of 40 is a principle that states a software company's combined revenue growth rate and profit margin should equal or exceed 40%. SaaS companies above 40% are generating profit at a rate that's sustainable, whereas companies below 40% may face cash flow or liquidity issues.
