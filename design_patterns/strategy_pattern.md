@@ -53,6 +53,9 @@ How about an interface?
 
 ![image](https://user-images.githubusercontent.com/19663316/172453241-6f55e5e6-8bbb-4222-a407-3ebda5e17752.png)
 
+Why this will not work?
+* Only the ducks that are supposed to fly will implement that interface and have a `fly()` method.
+* When you need to make a little change to the flying behavior, we will need to change in all the subclasses.
 
 ### Solution
 
