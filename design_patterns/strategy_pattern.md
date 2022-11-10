@@ -87,6 +87,11 @@ that whenever you need to modify a behavior, you’re forced to track down and c
 ![image](https://user-images.githubusercontent.com/19663316/172451633-410c2335-065b-4cfd-bd67-7a6004bf2ceb.png)
 
 
+### Final UML Diagram
+
+<img width="1309" alt="image" src="https://user-images.githubusercontent.com/19663316/201170572-1ad8fa85-909c-4c36-801f-3d9e073ec5df.png">
+
+
 ### Ref: 
 * https://www.oreilly.com/library/view/head-first-design/0596007124/ch01.html
 * https://www.freecodecamp.org/news/the-strategy-pattern-explained-using-java-bc30542204e0/
