@@ -99,3 +99,4 @@ that whenever you need to modify a behavior, you’re forced to track down and c
 
 ### TODO:
 * https://faun.pub/head-first-design-patterns-using-go-1-welcome-to-design-patterns-the-strategy-pattern-6cbd940e113a
+* Check the code mentioned in https://github.com/bethrobson/Head-First-Design-Patterns/tree/master/src/headfirst/designpatterns/strategy
