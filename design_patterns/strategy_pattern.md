@@ -32,7 +32,7 @@ What we got, Rubber ducks are also able to fly
 
 ### Second Design:
 Using inheritance and polymorphism
-* Always override the `fly()` mehtod in the subclass where needed.
+* Always override the `fly()` method in the subclass where needed.
 
 ![image](https://user-images.githubusercontent.com/19663316/172451061-a2b167ff-900f-4d61-865f-61f085f102ec.png)
 
