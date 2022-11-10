@@ -57,6 +57,12 @@ Why this will not work?
 * Only the ducks that are supposed to fly will implement that interface and have a `fly()` method.
 * When you need to make a little change to the flying behavior, we will need to change in all the subclasses.
 
+
+Conclusions:
+* We know that not all of the subclasses should have flying or quacking behavior, so inheritance isn’t the right answer.
+* While having the subclasses implement Flyable and/or Quackable solves part of the problem (no inappropriately flying rubber ducks), it completely
+destroys code reuse for those behaviors, so it just creates a different maintenance nightmare. 
+
 ### Solution
 
 1. Design Principles: **Identify the aspects of your application that vary and separate them form what stays the same!**
