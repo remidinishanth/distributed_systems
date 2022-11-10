@@ -37,6 +37,7 @@ Using inheritance and polymorphism
 ![image](https://user-images.githubusercontent.com/19663316/172451061-a2b167ff-900f-4d61-865f-61f085f102ec.png)
 
 **Drawbacks:** 
+* Joe realized that inheritance probably wasn’t the answer, because he just got a memo that says that the executives now want to update the product every six months (in ways they haven’t yet decided on). Joe knows the spec will keep changing and he’ll be forced to look at and possibly override `fly()` and `quack()` for every new Duck subclass that’s ever added to the program... forever
 * Everytime a new duck is added, you will be forced to look at and possibly override `fly()` and `quack()`. 
 * So is there a cleaner way of having only some of the duck types fly or quack?
 
