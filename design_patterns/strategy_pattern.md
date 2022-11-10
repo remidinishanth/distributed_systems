@@ -59,9 +59,10 @@ Why this will not work?
 
 
 Conclusions:
-* We know that not all of the subclasses should have flying or quacking behavior, so inheritance isn’t the right answer.
+* We know that not all of the subclasses should have flying or quacking behavior, so inheritance isn’t the right answer. So we know using inheritance hasn’t worked out very well, since the duck behavior keeps changing across the subclasses, and it’s not appropriate for all subclasses to have those behaviors.
 * While having the subclasses implement Flyable and/or Quackable solves part of the problem (no inappropriately flying rubber ducks), it completely
-destroys code reuse for those behaviors, so it just creates a different maintenance nightmare. 
+destroys code reuse for those behaviors, so it just creates a different maintenance nightmare. The Flyable and Quackable interface sounded promising at first—only ducks that really do fly will be Flyable, etc. — except Java interfaces have no implementation code, so no code reuse. And that means
+that whenever you need to modify a behavior, you’re forced to track down and change it in all the different subclasses where that behavior is defined, probably introducing new bugs along the way!
 
 ### Solution
 
