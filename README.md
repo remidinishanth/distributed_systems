@@ -10,6 +10,7 @@ TODO: GraphQL - Why do we neeed it? Usecases, examples, sangria. Checkout https:
   APIs. A graph-based API exposes a schema composed of types,
   fields, and relationships across types. The API allows a client to
   declare what data it needs and make a request.
+ * It provides a schema of the data in the API and gives clients the power to ask for exactly what they need.
 
 Jinja2 - used for creating templated outputs. Ref: https://ttl255.com/jinja2-tutorial-part-1-introduction-and-variable-substitution/ You can also use macros.
 
