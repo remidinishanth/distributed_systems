@@ -1,5 +1,4 @@
-Google Chubby
-Distributed lock manager
+### Google Chubby - Distributed lock manager
 
 Ref: https://people.cs.rutgers.edu/~pxk/417/notes/chubby.html
 
