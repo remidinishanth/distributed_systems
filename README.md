@@ -55,7 +55,7 @@ it can be shown that most keys don’t need to be shuffled around. E.g Consisten
 ![image](https://user-images.githubusercontent.com/19663316/161559627-b0fa0f35-6e56-46a4-af2c-482c77538cb5.png)
 
 A Range of Interesting Problems for Distributed System Designers
-* P2P Systems [Gnutella, Kazaa, BitTorrent]
+* Peer-to-Peer(P2P) Systems [Gnutella, Kazaa, BitTorrent]
 * Cloud Infrastructures [AWS, Azure, Google Cloud]
 * Cloud Storage [Key-Value stores, NoSQL, Cassandra]
 * Cloud Programming [MapReduce, Storm, Pregel]
