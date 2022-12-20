@@ -2,9 +2,9 @@
 
 * https://thesmartcoder.dev/fantastic-books-by-developers-for-developers/
 
-TODO: gRPC - Why do we use it? Why is it becoming popular? https://people.cs.rutgers.edu/~pxk/417/notes/rpc.html
+TODO: **gRPC** - Why do we use it? Why is it becoming popular? https://people.cs.rutgers.edu/~pxk/417/notes/rpc.html
 
-TODO: GraphQL - Why do we neeed it? Usecases, examples, sangria. Checkout https://medium.com/@leeshapton/mental-maps-for-teaching-graphql-to-beginners-9db9b85ac957
+TODO: **GraphQL** - Why do we neeed it? Usecases, examples, sangria. Checkout https://medium.com/@leeshapton/mental-maps-for-teaching-graphql-to-beginners-9db9b85ac957
 
  * An increasingly popular approach to tailor APIs to individual use cases is to use graph-based
   APIs. A graph-based API exposes a schema composed of types,
@@ -12,13 +12,14 @@ TODO: GraphQL - Why do we neeed it? Usecases, examples, sangria. Checkout https:
   declare what data it needs and make a request.
  * It provides a schema of the data in the API and gives clients the power to ask for exactly what they need.
 
-Jinja2 - used for creating templated outputs. Ref: https://ttl255.com/jinja2-tutorial-part-1-introduction-and-variable-substitution/ You can also use macros.
+**Jinja2** - used for creating templated outputs. Ref: https://ttl255.com/jinja2-tutorial-part-1-introduction-and-variable-substitution/ You can also use macros.
 
 Read about Shared Nothing Architecture. Differences with Microservices architecture.
 
-Read about bazel build and make files.
+Read about **bazel** build and make files.
 
-Read about Service discovery mechanism.
+#### Read about Service discovery mechanism.
+* Consul
 
 Software Engineering at Google: Lessons Learned from Programming Over Time.
 
