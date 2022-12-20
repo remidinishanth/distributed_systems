@@ -31,7 +31,7 @@ replication lag between the time a change has been applied on the write path and
 makes the system sequentially consistent. Ref: https://martinfowler.com/bliki/CQRS.html
 * This is used in URL shortener, once we shorten the URL, we don't update the same shortened-url.
 
-Sharding Strategies of key-value store
+#### Sharding Strategies of key-value store
 * The mapping between keys and partitions, and other metadata, is
 typically maintained in a strongly-consistent configuration store,
 like etcd or Zookeeper.
