@@ -44,6 +44,10 @@ a function maps a key to a point on a circle. The circle is then split
 into partitions that can be evenly or pseudo-randomly spaced, depending on the specific algorithm. When a new partition is added,
 it can be shown that most keys don’t need to be shuffled around. E.g Consistent Hashing.
 
+#### Introduction to Distributed Systems
+
+<img width="1468" alt="image" src="https://user-images.githubusercontent.com/19663316/208266696-6a229b84-7349-4d26-b35e-ebff3e90c4c7.png">
+
 * TODO: https://www.freecodecamp.org/news/a-thorough-introduction-to-distributed-systems-3b91562c9b3c/
 
 ![image](https://user-images.githubusercontent.com/19663316/161559354-8bb255d2-7222-4164-9db1-2c2ac7ca6115.png)
@@ -66,8 +70,3 @@ Core Concepts of Distributed Systems
 Peer-to-peer systems use DHTs, Key-Value/NoSQL stores uses DHTs, gossip, membership.
 
 ![image](https://user-images.githubusercontent.com/19663316/161790715-9d11faed-c5a0-45bf-b51d-8fb759f06f76.png)
-
-
-### Distributed Systems
-
-<img width="1468" alt="image" src="https://user-images.githubusercontent.com/19663316/208266696-6a229b84-7349-4d26-b35e-ebff3e90c4c7.png">
