@@ -2,7 +2,7 @@
 
 * https://thesmartcoder.dev/fantastic-books-by-developers-for-developers/
 
-TODO: gRPC - Why do we use it? Why is it becoming popular?
+TODO: gRPC - Why do we use it? Why is it becoming popular? https://people.cs.rutgers.edu/~pxk/417/notes/rpc.html
 
 TODO: GraphQL - Why do we neeed it? Usecases, examples, sangria. Checkout https://medium.com/@leeshapton/mental-maps-for-teaching-graphql-to-beginners-9db9b85ac957
 
