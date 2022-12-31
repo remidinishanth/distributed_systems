@@ -57,3 +57,14 @@ In GFS, we will see that consistency is traded off for simpler design, greater p
   * better consistency usually requires communication to
     - ensure the replicas stay in sync -- can be slow!
   * lots of tradeoffs possible between performance and consistency
+
+## GFS Key Ideas
+
+### What were the problems GFS was trying to solve?
+Google needed a large-scale and high-performant unified storage system for many of its internal services such as MapReduce, web crawler services. In particular, this storage system must:
+* Be global. Any client can access (read/write) any file. This allows for sharing of data among different applications.
+* Support automatic sharding of large files over multiple machines. This improves performance by allowing parallel processes on each file chunk and also deals with large files that cannot fit into a single disk.
+* Support automatic recovery from failures.
+* Be optimized for sequential access to huge files and for read and append operations which are the most common.
+
+In particular, GFS is optimized for high sustained bandwidth (target applications place a premium on processing data in bulk at a high rate), but not necessarily for low latency (GFS is typically used for internal services and is not client-facing).
