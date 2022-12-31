@@ -198,12 +198,30 @@ Neither the clients nor the chunkservers cache file data
   - Access control information
   - Chunk version numbers
 
+```
+Coordinator(Master) state
+
+  tables in RAM (for speed, must be smallish):
+  
+    file name -> array of chunk handles (nv)
+    
+    chunk handle -> version # (nv)
+    
+                    list of chunkservers (v)
+                    
+                    primary (v)
+                    
+                    lease time (v)
+                    
+  non-volatile "nv" state also written to disk, in case crash+reboot
+```
+
 The Master Node
 * Responsible for all system-wide activities
   - managing chunk leases, reclaiming storage space, load-balancing
 * Maintains all file system metadata
   - Namespaces, ACLs, mappings from files to chunks, and current locations of chunks
-  - all kept in memory, namespaces and file-to-chunk mappings are also stored persistently in operation log
-* Periodically communicates with each chunkserver in HeartBeat messages
+  - all kept in memory, namespaces and file-to-chunk mappings are also stored persistently in **operation log**
+* Periodically communicates with each chunkserver in **HeartBeat** messages
   - This let’s master determines chunk locations and assesses state of the overall system
-  - Important: The chunkserver has the final word over what chunks it does or does not have on its own disks – not the master
+  - Important: **The chunkserver has the final word over what chunks** it does or does not have on its own disks – not the master
