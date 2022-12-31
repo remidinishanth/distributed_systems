@@ -96,6 +96,15 @@ Steps in query answering:
 
 "On average, a single query in Google reads hundreds of megabytes of data and consumes tens of billions of CPU cycles. Supporting a peak request stream of thousands of queries per second requires an infrastructure comparable in size to that of the largest supercomputer installations. Combining more than 15,000 commodity-class PC's with fault-tolerant software creates a solution that is more cost-effective than a comparable system build out of a smaller number of high-end servers."
 
+### Google Platform Characteristics
+* 100s to 1000s of PCs in cluster
+* Cheap, commodity parts in PCs
+* Many modes of failure for each PC:
+  - App bugs, OS bugs
+  - Human error
+  - Disk failure, memory failure, net failure, power supply failure
+  - Connector failure
+* **Monitoring**, **fault tolerance**, **auto-recovery** essential
 
 ### Design Motivations
 1. GFS runs on a large number of machines. Failures occur regularly, so **fault-tolerance** and auto-recovery need to be built in.
