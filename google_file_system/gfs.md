@@ -2,7 +2,7 @@
 
 Sanjay Ghemawat, Howard Gobioff, and Shun-Tak Leung (SOSP 2003)
 
-Scalable distributed file system large distributed data-intensive applications.
+_Scalable distributed file system for large distributed data-intensive applications._
 
 ### Why are we reading this paper?
 * distributed storage is a key abstraction
