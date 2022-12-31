@@ -225,3 +225,9 @@ The Master Node
 * Periodically communicates with each chunkserver in **HeartBeat** messages
   - This let’s master determines chunk locations and assesses state of the overall system
   - Important: **The chunkserver has the final word over what chunks** it does or does not have on its own disks – not the master
+
+* For the namespace metadata, master does not use any per-directory data structures – no inodes! (No symlinks or hard links, either.)
+  - Every file and directory is represented as a node in a lookup table, mapping pathnames to metadata. Stored efficiently using prefix compression (< 64 bytes per namespace entry)
+* Each node in the namespace tree has a corresponding read-write lock to manage concurrency
+  - Because all metadata is stored in memory, the master can efficiently scan the entire state of the system periodically in the background
+  - Master’s memory capacity does not limit the size of the system
