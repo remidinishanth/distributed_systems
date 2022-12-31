@@ -249,12 +249,28 @@ The Master Node
   * A snapshot is an efficient way of creating a copy of the current instance of a file or directory tree. 
   * An append operation allows a client to append data to a file as an atomic operation without having to lock a file. Multiple processes can append to the same file concurrently without fear of overwriting one another’s data.
 
-### Images
-GFS data chunking and distribution
+### Configuration
+
+#### GFS data chunking and distribution
+* A file in GFS is broken up into multiple fixed-size chunks. Each chunk is 64 MB. 
+* The set of machines that implements an instance of GFS is called a GFS cluster. 
+* A GFS cluster consists of one master and many chunkservers. 
+  * The master is responsible for storing all the metadata for the files in GFS. This includes their names, directories, and the mapping of files to the list of chunks that contain each file’s data. 
+  * The chunks themselves are stored on the chunkservers. For fault tolerance, chunks are replicated onto multiple systems. 
+
+The following figure shows how a file is broken into chunks and distributed among multiple chunkservers.
 
 ![image](https://user-images.githubusercontent.com/19663316/210151034-05fbadf8-0681-4e0a-88fb-a7de7c87e189.png)
 
-Google Cluster Environment
+
+#### Google Cluster Environment
+* The Google File System is a core part of the Google Cluster Environment. 
+* This environment has GFS and a cluster scheduling system for dispatching processes as its core services. 
+* Typically, hundreds to thousands of active jobs are run. Over 200 clusters are deployed, many with thousands of machines. P
+* ools of thousands of clients access the files in this cluster. 
+* The file systems exceed four petabytes and provide reaa/write loads of 40 GB/s. Jobs are often on the same machines that implement GFS, which are commodity PCs running Linux. 
+
+The environment is shown in following figure.
 
 ![image](https://user-images.githubusercontent.com/19663316/210151048-9811f7e8-5f87-4bd0-979c-4bd9d7899c0c.png)
 
