@@ -62,12 +62,22 @@ In GFS, we will see that consistency is traded off for simpler design, greater p
 
 ### Motivating Example
 
-Motivating Application: Google
+#### Google
 * Crawl the whole web
 * Store it all on “one big disk”
 * Process users’ searches on “one big CPU”
 * More storage, CPU required than one PC can offer
 * Custom parallel supercomputer: expensive (so much so, not really available today)
+
+#### Cluster of PCs as Supercomputer
+* More than 15,000 commodity-class PC's.
+* Multiple clusters distributed worldwide.
+* Thousands of queries served per second.
+* One query reads 100's of MB of data.
+* One query consumes 10's of billions of CPU cycles.
+* Google stores dozens of copies of the entire Web!
+
+Conclusion: Need **large**, **distributed**, highly **fault-tolerant** file system. 
 
 ### Serving a Google Search query
 
@@ -86,31 +96,24 @@ Steps in query answering:
 
 "On average, a single query in Google reads hundreds of megabytes of data and consumes tens of billions of CPU cycles. Supporting a peak request stream of thousands of queries per second requires an infrastructure comparable in size to that of the largest supercomputer installations. Combining more than 15,000 commodity-class PC's with fault-tolerant software creates a solution that is more cost-effective than a comparable system build out of a smaller number of high-end servers."
 
-### Motivational Facts
 
-* More than 15,000 commodity-class PC's.
-* Multiple clusters distributed worldwide.
-* Thousands of queries served per second.
-* One query reads 100's of MB of data.
-* One query consumes 10's of billions of CPU cycles.
-* Google stores dozens of copies of the entire Web!
+### Design Motivations
+1. GFS runs on a large number of machines. Failures occur regularly, so **fault-tolerance** and auto-recovery need to be built in.
+2. File sizes are much **larger**. Standard I/O assumptions (e.g. block size) have to be reexamined.
+3. Record appends are the prevalent form of writing. Need good semantics for concurrent appends to the same file by multiple clients.
+4. Google applications and GFS are both designed in-house - so they can and should be co-designed. 
 
-Conclusion: Need **large**, **distributed**, highly **fault-tolerant** file system. 
 
 ### What were the problems GFS was trying to solve?
-Google needed a large-scale and high-performant unified storage system for many of its internal services such as MapReduce, web crawler services. In particular, this storage system must:
+Google needed a large-scale and high-performant unified storage system for many of its internal services such as MapReduce, web crawler services. 
+
+In particular, this storage system must:
 * Be global. Any client can access (read/write) any file. This allows for sharing of data among different applications.
 * Support automatic sharding of large files over multiple machines. This improves performance by allowing parallel processes on each file chunk and also deals with large files that cannot fit into a single disk.
 * Support automatic recovery from failures.
 * Be optimized for sequential access to huge files and for read and append operations which are the most common.
 
 In particular, GFS is optimized for high sustained bandwidth (target applications place a premium on processing data in bulk at a high rate), but not necessarily for low latency (GFS is typically used for internal services and is not client-facing).
-
-### Design Motivations
-1. GFS runs on a large number of machines. Failures occur regularly, so fault-tolerance and auto-recovery need to be built in.
-2. File sizes are much **larger**. Standard I/O assumptions (e.g. block size) have to be reexamined.
-3. Record appends are the prevalent form of writing. Need good semantics for concurrent appends to the same file by multiple clients.
-4. Google applications and GFS are both designed in-house - so they can and should be co-designed. 
 
 
 ### Architecture
