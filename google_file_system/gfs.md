@@ -23,3 +23,17 @@ SOSP 2003
 * better consistency ⇒ low performance
 
 In GFS, we will see that consistency is traded off for simpler design, greater performance, and high availability.
+
+
+### What would we like for consistency?
+* Ideal model: same behavior as a single server
+* Ideal server executes client operations one at a time; even if multiple clients issued operations concurrently
+  * reads reflect previous writes even if server crashes and restarts all clients see the same data
+  * thus: suppose `C1` and `C2` write **concurrently**, and after the writes have completed, `C3` and `C4` read. what can they see?
+    * `C1`: `Wx(1)`
+    * `C2`: `Wx(2)`
+    * `C3`:         `Rx?`
+    * `C4`:             `Rx?`
+  * answer: either `1` or `2`, but both have to see the same value.
+  * This is a "strong" consistency model.
+  * Suppose the consistency is not there, for example: if the requests `C1` and `C3` go to server 1 and `C2` and `C3` go to server 2, then we might see different responses if servers doesn't have sync the write data consistently.
