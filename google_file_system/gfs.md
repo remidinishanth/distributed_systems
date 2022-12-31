@@ -179,3 +179,12 @@ based on the network topology
 
 Neither the clients nor the chunkservers cache file data
 * Working sets are usually too large to be cached, chunkservers can use Linux’s buffer cache
+
+
+### What is a chunk?
+* Analogous to block, except larger.
+* Size: 64 MB!
+* Stored on chunkserver as file
+* Chunk handle (~ chunk file name) used to reference chunk.
+* Chunk replicated across multiple chunkservers
+* Note: There are hundreds of chunkservers in a GFS cluster distributed over multiple racks. 
