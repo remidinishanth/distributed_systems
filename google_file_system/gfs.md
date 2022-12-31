@@ -36,4 +36,21 @@ In GFS, we will see that consistency is traded off for simpler design, greater p
     * `C4`:             `Rx?`
   * answer: either `1` or `2`, but both have to see the same value.
   * This is a "strong" consistency model.
-  * Suppose the consistency is not there, for example: if the requests `C1` and `C3` go to server 1 and `C2` and `C3` go to server 2, then we might see different responses if servers doesn't have sync the write data consistently.
+
+
+### Replication for fault-tolerance makes strong consistency tricky.
+  * a simple but broken replication scheme:
+    - two replica servers, S1 and S2
+    - clients send writes to both, in parallel
+    - clients send reads to either
+  * in our example, C1's and C2's write messages could arrive in
+    - different orders at the two replicas
+    - if C3 reads S1, it might see x=1
+    - if C4 reads S2, it might see x=2
+  * or what if S1 receives a write, but 
+    - the client crashes before sending the write to S2?
+  * that's not strong consistency!
+  * better consistency usually requires communication to
+    - ensure the replicas stay in sync -- can be slow!
+  * lots of tradeoffs possible between performance and consistency
+    - we'll see one today
