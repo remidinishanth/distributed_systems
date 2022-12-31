@@ -231,3 +231,12 @@ The Master Node
 * Each node in the namespace tree has a corresponding read-write lock to manage concurrency
   - Because all metadata is stored in memory, the master can efficiently scan the entire state of the system periodically in the background
   - Master’s memory capacity does not limit the size of the system
+
+
+### The Operation Log
+* **Only persistent record of metadata**
+* Also serves as a logical timeline that defines the serialized order of concurrent operations
+* Master recovers its state by replaying the operation log
+  - To minimize startup time, the **master checkpoints the log periodically**
+    - The checkpoint is represented in a B-tree like form, can be directly mapped into memory, but stored on disk
+    - Checkpoints are created without delaying incoming requests to master, can be created in ~1 minute for a cluster with a few million files 
