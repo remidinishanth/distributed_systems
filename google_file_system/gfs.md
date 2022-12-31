@@ -43,7 +43,7 @@ In GFS, we will see that consistency is traded off for simpler design, greater p
     - two replica servers, S1 and S2
     - clients send writes to both, in parallel
     - clients send reads to either
-  * in our example, C1's and C2's write messages could arrive in
+  * In our example, C1's and C2's write messages could arrive in
     - different orders at the two replicas
     - if C3 reads S1, it might see x=1
     - if C4 reads S2, it might see x=2
@@ -53,4 +53,3 @@ In GFS, we will see that consistency is traded off for simpler design, greater p
   * better consistency usually requires communication to
     - ensure the replicas stay in sync -- can be slow!
   * lots of tradeoffs possible between performance and consistency
-    - we'll see one today
