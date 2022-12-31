@@ -276,3 +276,11 @@ The environment is shown in following figure.
 
 
 Ref: https://pk.org/417/notes/16-dfs.html
+
+### Client interaction model
+* Since the GFS client is not implemented in the operating system at the VFS layer, GFS client code is linked into each application that uses GFS. 
+* This library interacts with the GFS master for all metadata-related operations (looking up files, creating them, deleting them, etc.). 
+* For accessing data, it interacts directly with the chunkservers that hold that data. 
+* This way, the master is not a point of congestion. Except for caching within the buffer cache on the chunkservers, neither clients nor chunkservers cache a file’s data. 
+* However, client programs do cache the metadata for an open file (for example, the location of a file’s chunks). 
+* This avoids additional traffic to the master.
