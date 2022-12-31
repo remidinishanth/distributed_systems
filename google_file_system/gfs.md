@@ -119,6 +119,9 @@ In particular, GFS is optimized for high sustained bandwidth (target application
   each chunk replicated on 3 chunkservers
 ```
 
+![image](https://user-images.githubusercontent.com/19663316/210136483-f4048736-f908-48e9-8743-c155b244eb6d.png)
+
+
 * GFS consists of a single master and multiple chunkservers and is accessed by multiple clients. 
 * Files are divided into fixed-sized chunks of 64MB. 
 * Each chunk has an immutable and globally unique chunk handler, which is assigned by the master at the time of chunk creation. 
