@@ -60,6 +60,15 @@ In GFS, we will see that consistency is traded off for simpler design, greater p
 
 ## GFS Key Ideas
 
+### Motivating Example
+
+Motivating Application: Google
+* Crawl the whole web
+* Store it all on “one big disk”
+* Process users’ searches on “one big CPU”
+* More storage, CPU required than one PC can offer
+* Custom parallel supercomputer: expensive (so much so, not really available today)
+
 ### Serving a Google Search query
 
 Steps in query answering:
