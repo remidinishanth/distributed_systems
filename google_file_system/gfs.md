@@ -284,3 +284,37 @@ Ref: https://pk.org/417/notes/16-dfs.html
 * This way, the master is not a point of congestion. Except for caching within the buffer cache on the chunkservers, neither clients nor chunkservers cache a file’s data. 
 * However, client programs do cache the metadata for an open file (for example, the location of a file’s chunks). 
 * This avoids additional traffic to the master.
+
+### Implementation
+Each chunkserver stores chunks. A chunk is identified by a chunk handle, which is a globally unique 64-bit number that is assigned by the master when the chunk is first created. On the chunkserver, every chunk is stored on the local disk as a regular Linux file. For integrity, the chunkserver stores a 32-bit checksum for each chunk (and logged to disk) for each chunk on that chunkserver.
+
+Every chunk is replicated onto multiple chunkservers. By default, there are three replicas of a chunk althrough different levels can be specified on a per-file basis. Files that are accessed by lots of processes may need more replicas to avoid congestion at any server.
+
+### Master
+The primary role of the master is to maintain all of the file system metadata. This include the names and directories of each file, access control information, the mapping from each file to a set of chunks, and the current location of chunks on chunkservers. Metadata is stored only on the master. This simplifies the design of GFS as there is no need to handle synchronizing information for a changing file system among multiple masters.
+
+For fast performance, all metadata is stored in the master’s main memory. This includes the entire filesystem namespace as well as all the name-to-chunk maps. For fault tolerance, any changes are written to the disk onto an operation log. This operation log is also replicated onto remote machines. The operation log is similar to a journal. Every operation to the file system is logged into this file. Periodic checkpoints of the file system state, stored in a B-tree structure, are performed to avoid having to recreate all metadata by playing back the entire log.
+
+Having a single master for a huge file system sounds like a bottleneck but the role of the master is only to tell clients which chunkservers to use. The data access itself is handled between the clients and chunkservers.
+
+The file system namespace of directories and file names is maintained by the master. Unlike most file systems, there is no separate directory structure that contains the names of all the files within that directory. The namespace is simply a single lookup table that contains pathnames (which can look like a directory hierarchy if desired) and maps them to metadata. GFS does not support hard links or symbolic links.
+
+The master manages chunk leases (locks on chunks with expiration), garbage collection (the freeing of unused chunks), and chunk migration (the movement and copying of chunks to different chunkservers). It periodically communicates with all chunkservers via heartbeat messages to get the state of chunkservers and sends commands to chunkservers. The master does not store chunk locations persistently on its disk. This information is obtained from queries to chunkservers and is done to keep consistency problems from arising.
+
+The master is a single point of failure in GFS and replicates its data onto backup masters for fault tolerance.
+
+### Chunk size
+The default chunk size in GFS is 64MB, which is a lot bigger than block sizes in normal file systems (which are often around 4KB). Small chunk sizes would not make a lot of sense for a file system designed to handle huge files since each file would then have a map of a huge number of chunks. This would greatly increase the amount of data a master would need to manage and increase the amount of data that would need to mbe communicated to a client, resulting in extra network traffic. A master stores less than 64 bytes of metadata for each 64MB chunk. By using a large chunk size, we reduce the need for frequent communication with the master to get chunk location information. It becomes feasible for a client to cache all the information related to where the data of large files is located. To reduce the risk of caching stale data, client metadata caches have timeouts. A large chunk size also makes it feasible to keep a TCP connection open to a chunkserver for an extended time, amortizing the time of setting up a TCP connection.
+
+### File access
+To read a file, the client contacts the master to read a file’s metadata; specifically, to get the list of chunk handles. It then gets the location of each of the chunk handles. Since chunks are replicated, each chunk handle is associated with a list of chunkservers. The client can contact any available chunkserver to read chunk data.
+
+File writes are expected to be far less frequent than file reads. To write to a file, the master grants a chunk lease to one of the replicas. This replica will be the primary replica chunkserver and will be the first one to get updates from clients. The primary can request lease extensions if needed. When the master grants the lease, it increments the chunk version number and informs all of the replicas containing that chunk of the new version number.
+
+The actual writing of data is split into two phases: sending and writing.
+
+First, the client is given a list of replicas that identifies the primary chunkserver and secondaries. The client sends the data to the closest replica chunkserver. That replica forwards the data to another replica chunkserver, which then forwards it to yet another replica, and so on. Eventually all the replicas get the data, which is not yet written to a file but sits in a cache.
+
+When the client gets an acknowledgement from all replicas that the data has been received it then sends a write request to the primary, identifying the data that was sent in the previous phase. The primary is responsible for serialization of writes. It assigns consecutive serial numbers to all write requests that it has received, applies the writes to the file in serial-number order, and forwards the write requests in that order to the secondaries. Once the primary gets acknowledgements from all the secondaries, the primary responds back to the client and the write operation is complete.
+
+The key point to note is that data flow is different from control flow. The data flows from the client to a chunkserver and then from that chunkserver to another chunkserver, and from that other chunkserver to yet another one until all chunkservers that store replicas for that chunk have received the data. The control (the write request) flow goes from the client to the primary chunkserver for that chunk. The primary then forwards the request to all the secondaries. This ensures that the primary is in control of the order of writes even if it receives multiple write requests concurrently. All replicas will have data written in the same sequence. Chunk version numbers are used to detect if any replica has stale data that was not updated because that chunkserver was down during some update.
