@@ -126,3 +126,26 @@ In particular, GFS is optimized for high sustained bandwidth (target application
 * Files are divided into fixed-sized chunks of 64MB. 
 * Each chunk has an immutable and globally unique chunk handler, which is assigned by the master at the time of chunk creation. 
 * By default, each file chunk is replicated on 3 different chunkservers.
+
+
+### Analogy with File system
+
+On a single-machine FS:
+* An upper layer maintains the metadata.
+* A lower layer (i.e. disk) stores the data in units called “blocks”.
+* Upper layer store
+
+In the GFS:
+* A master process maintains the metadata.
+* A lower layer (i.e. a set of chunkservers) stores the data in units called “chunks”. 
+
+<img width="943" alt="image" src="https://user-images.githubusercontent.com/19663316/210136593-cc479533-3ce6-4162-b088-7951ed3ff6c2.png">
+
+Very important: **data flow is decoupled from control flow**
+* Clients interact with the master for metadata operations
+* Clients interact directly with chunkservers for all files operations
+* This means performance can be improved by scheduling expensive data flow
+based on the network topology
+
+Neither the clients nor the chunkservers cache file data
+* Working sets are usually too large to be cached, chunkservers can use Linux’s buffer cache
