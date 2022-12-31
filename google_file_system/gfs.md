@@ -240,3 +240,23 @@ The Master Node
   - To minimize startup time, the **master checkpoints the log periodically**
     - The checkpoint is represented in a B-tree like form, can be directly mapped into memory, but stored on disk
     - Checkpoints are created without delaying incoming requests to master, can be created in ~1 minute for a cluster with a few million files 
+
+### Interface
+* GFS does not provide a file system interface at the operating-system level (e.g., under the VFS layer). As such, file system calls are not used to access it. Instead, a user-level API is provided. GFS is implemented as a set of user-level services that store data onto native Linux file systems. 
+* Moreover, since GFS was designed with special considerations in mind, it does not support all the features of POSIX (Linux, UNIX, OS X, BSD) file system access. 
+* It provides a familiar interface of files organized in directories with basic create, delete, open, close, read, and write operations. 
+* In addition, two special operations are supported. 
+  * A snapshot is an efficient way of creating a copy of the current instance of a file or directory tree. 
+  * An append operation allows a client to append data to a file as an atomic operation without having to lock a file. Multiple processes can append to the same file concurrently without fear of overwriting one another’s data.
+
+### Images
+GFS data chunking and distribution
+
+![image](https://user-images.githubusercontent.com/19663316/210151034-05fbadf8-0681-4e0a-88fb-a7de7c87e189.png)
+
+Google Cluster Environment
+
+![image](https://user-images.githubusercontent.com/19663316/210151048-9811f7e8-5f87-4bd0-979c-4bd9d7899c0c.png)
+
+
+Ref: https://pk.org/417/notes/16-dfs.html
