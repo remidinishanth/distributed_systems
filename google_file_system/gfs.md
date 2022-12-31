@@ -7,7 +7,7 @@ Google needs a distributed file system that matches its applications needs. Solu
 GFS: _Scalable distributed file system for large distributed data-intensive applications._
 
 ### Why are we reading this paper?
-* distributed storage is a key abstraction
+* Distributed storage is a key abstraction
 * Incorporates many of the recurring themes in Distributed Systems: 
   * parallel performance 
   * fault tolerance 
@@ -15,6 +15,7 @@ GFS: _Scalable distributed file system for large distributed data-intensive appl
   * consistency.
 * Successful real-world design(Academics didn't use single master). BigTable, MapReduce built on top of GFS.
 * Well-written systems paper - details from the application to the network.
+* Successfully applied the single master and weak consistency.
 
 
 ### Why is distributed storage hard?
