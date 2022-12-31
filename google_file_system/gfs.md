@@ -102,3 +102,24 @@ In particular, GFS is optimized for high sustained bandwidth (target application
 2. File sizes are much **larger**. Standard I/O assumptions (e.g. block size) have to be reexamined.
 3. Record appends are the prevalent form of writing. Need good semantics for concurrent appends to the same file by multiple clients.
 4. Google applications and GFS are both designed in-house - so they can and should be co-designed. 
+
+
+### Architecture
+
+```
+  clients (library, RPC -- but not visible as a UNIX FS)
+  
+  coordinator tracks file names
+  
+  chunkservers store 64 MB chunks
+  
+  big files split into 64 MB chunks, on lots of chunkservers
+    big chunks -> low book-keeping overhead
+  
+  each chunk replicated on 3 chunkservers
+```
+
+* GFS consists of a single master and multiple chunkservers and is accessed by multiple clients. 
+* Files are divided into fixed-sized chunks of 64MB. 
+* Each chunk has an immutable and globally unique chunk handler, which is assigned by the master at the time of chunk creation. 
+* By default, each file chunk is replicated on 3 different chunkservers.
