@@ -188,3 +188,22 @@ Neither the clients nor the chunkservers cache file data
 * Chunk handle (~ chunk file name) used to reference chunk.
 * Chunk replicated across multiple chunkservers
 * Note: There are hundreds of chunkservers in a GFS cluster distributed over multiple racks. 
+
+### What is a master?
+* A single process running on a separate machine.
+* Stores all metadata: 
+  - File namespace
+  - File to chunk mappings
+  - Chunk location information
+  - Access control information
+  - Chunk version numbers
+
+The Master Node
+* Responsible for all system-wide activities
+  - managing chunk leases, reclaiming storage space, load-balancing
+* Maintains all file system metadata
+  - Namespaces, ACLs, mappings from files to chunks, and current locations of chunks
+  - all kept in memory, namespaces and file-to-chunk mappings are also stored persistently in operation log
+* Periodically communicates with each chunkserver in HeartBeat messages
+  - This let’s master determines chunk locations and assesses state of the overall system
+  - Important: The chunkserver has the final word over what chunks it does or does not have on its own disks – not the master
