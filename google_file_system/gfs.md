@@ -68,3 +68,9 @@ Google needed a large-scale and high-performant unified storage system for many 
 * Be optimized for sequential access to huge files and for read and append operations which are the most common.
 
 In particular, GFS is optimized for high sustained bandwidth (target applications place a premium on processing data in bulk at a high rate), but not necessarily for low latency (GFS is typically used for internal services and is not client-facing).
+
+### Design Motivations
+1. GFS runs on a large number of machines. Failures occur regularly, so fault-tolerance and auto-recovery need to be built in.
+2. File sizes are much **larger**. Standard I/O assumptions (e.g. block size) have to be reexamined.
+3. Record appends are the prevalent form of writing. Need good semantics for concurrent appends to the same file by multiple clients.
+4. Google applications and GFS are both designed in-house - so they can and should be co-designed. 
