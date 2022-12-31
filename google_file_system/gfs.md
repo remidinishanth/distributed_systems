@@ -1,7 +1,8 @@
 ## The Google File System
-Sanjay Ghemawat, Howard Gobioff, and Shun-Tak Leung
 
-SOSP 2003
+Sanjay Ghemawat, Howard Gobioff, and Shun-Tak Leung (SOSP 2003)
+
+Scalable distributed file system large distributed data-intensive applications.
 
 ### Why are we reading this paper?
 * distributed storage is a key abstraction
