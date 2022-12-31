@@ -113,11 +113,11 @@ Steps in query answering:
 4. Google applications and GFS are both designed in-house - so they can and should be co-designed. 
 
 ### Google File System: Design Criteria
-* Detect, tolerate, recover from failures automatically
+* Detect, tolerate, recover from failures **automatically**
 * Large files, >= 100 MB in size
 * Large, streaming reads (>= 1 MB in size)
   - Read once
-* Large, sequential writes that append
+* Large, sequential writes that **append**
   - Write once
 * Concurrent appends by multiple clients (e.g., producer-consumer queues)
   - Want **atomicity for appends** without synchronization overhead among clients
