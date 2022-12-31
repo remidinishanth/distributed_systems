@@ -15,8 +15,11 @@ SOSP 2003
 
 
 ### Why is distributed storage hard?
-* high performance -> shard data over many servers
-* many servers -> constant faults
-* fault tolerance -> replication
-* replication -> potential inconsistencies
-* better consistency -> low performance
+
+* high performance ⇒ shard data over many servers (To achieve high performance, a common strategy is to shard data over many servers)
+* many servers ⇒ constant faults (Having many servers lead to constant faults)
+* fault tolerance ⇒ replication (To implement fault tolerance, one strategy is to make use of replication)
+* replication ⇒ potential inconsistencies (With different replica of the same data, however, potential inconsistencies between each replica will occur)
+* better consistency ⇒ low performance
+
+In GFS, we will see that consistency is traded off for simpler design, greater performance, and high availability.
