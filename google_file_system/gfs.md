@@ -60,6 +60,34 @@ In GFS, we will see that consistency is traded off for simpler design, greater p
 
 ## GFS Key Ideas
 
+### Serving a Google Search query
+
+Steps in query answering:
+
+* DNS picks out a cluster geographically close to user.
+* A Google Web server machine (GWS) at the cluster is chosen based on load-balancing.
+* Query is sent to index servers. Each index holds inverted index for a random subset of documents.
+* Index server returns list of docid's, with relevance scores, sorted in decreasing order.
+* GWS merges lists, gets overall list sorted by query.
+* Full text of actual documents are divided among file servers. GWS sends each file server the query plus the list of docid's on that server.
+* File server returns document summary for that query (excerpt containing query word with query words highlighted)
+* GWS assembles summaries, advertisements from ad server, spelling correction suggestions, returns to user.
+
+![image](https://user-images.githubusercontent.com/19663316/210136235-b3c4ecbf-b7a9-4d35-808f-3aced4b620e3.png)
+
+"On average, a single query in Google reads hundreds of megabytes of data and consumes tens of billions of CPU cycles. Supporting a peak request stream of thousands of queries per second requires an infrastructure comparable in size to that of the largest supercomputer installations. Combining more than 15,000 commodity-class PC's with fault-tolerant software creates a solution that is more cost-effective than a comparable system build out of a smaller number of high-end servers."
+
+### Motivational Facts
+
+* More than 15,000 commodity-class PC's.
+* Multiple clusters distributed worldwide.
+* Thousands of queries served per second.
+* One query reads 100's of MB of data.
+* One query consumes 10's of billions of CPU cycles.
+* Google stores dozens of copies of the entire Web!
+
+Conclusion: Need **large**, **distributed**, highly **fault-tolerant** file system. 
+
 ### What were the problems GFS was trying to solve?
 Google needed a large-scale and high-performant unified storage system for many of its internal services such as MapReduce, web crawler services. In particular, this storage system must:
 * Be global. Any client can access (read/write) any file. This allows for sharing of data among different applications.
