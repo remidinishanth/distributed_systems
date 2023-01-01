@@ -353,3 +353,7 @@ The NameNode waits for a configured percentage of DataNodes to check in and then
 * The system is designed to be rack-aware and data center-aware in order to improve availability and performance. What this means is that the NameNode knows which DataNodes occupy the same rack and which racks are in one data center. 
 * For performance, it is desirable to have a replica of a data block in the same rack. For availability, it is desirable to have a replica on a different rack (in case the entire rack goes down) or even in a different data center (in case the entire data center fails). 
 * HDFS supports a pluggable interface to support custom algorithms that decide on replica placement. In the default case of three replicas, the first replica goes to the local rack and both the second and third replicas go to the same remote rack.
+
+![image](https://user-images.githubusercontent.com/19663316/210164699-f603bab5-6255-4c4d-b947-5c708225dd06.png)
+
+The NameNode chooses a list of DataNodes that will host replicas of each block of a file. A client writes directly to the first replica. As the first replica gets the data from the client, it sends it to the second replica even before the entire block is written (e.g., it may get 4 KB out of a 64 MB block). As the second replica gets the data, it sends it to the third replica
