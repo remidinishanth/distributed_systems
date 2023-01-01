@@ -369,3 +369,14 @@ The entire active file system image is kept in memory. On startup, the NameNode 
 On DataNodes, each block is stored as a separate file in the local file system. The DataNode does not have any knowledge of file names, attributes, and associated blocks; all that is handled by the NameNode. It simply processes requests to create, delete, write, read blocks, or replicate blocks. Any use of directories is done strictly for local efficiency - to ensure that a directory does not end up with a huge number of files that will impact performance.
 
 To ensure data integrity, each HDFS file has a separate checksum file associated with it. This file is created by the client when the client creates the data file/. Upon retrieval, if there is a mismatch between the block checksum and the computed block checksum, the client can request a read from another DataNode.
+
+
+## Ref
+
+* Sanjay Ghemawat, Howard Gobioff, and Shun-Tak Leung, The Google File System. Google, SOSP’03, October 19–22, 2003.
+
+* Google File System, Wikipedia article.
+
+* Robin Harris, Google File System Eval: Part 1, StorageMojo blog.
+
+* HDFS Architecture Guide, Apache Hadoop project, December 4, 2011.
