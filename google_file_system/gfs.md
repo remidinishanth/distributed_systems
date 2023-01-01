@@ -334,3 +334,10 @@ The Hadoop Distributed File System is inspired by GFS. The overall architecture 
 * The file system provides a familiar file system interface. Files and directories can be created, deleted, renamed, and moved and symbolic links can be created. 
 * However, there is no goal of providing the rich set of features available through, say, a POSIX (Linux/BSD/OS X/Unix) or Windows interface. That is, synchronous I/O, byte-range locking, seek-and-modify, and a host of other features may not be supported. 
 * Moreover, the file system is provided through a set of user-level libraries and not as a kernel module under VFS. Applications have to be compiled to incorporate these libraries.
+
+![image](https://user-images.githubusercontent.com/19663316/210164499-eea2207b-1f6b-4579-8bc1-0a9788e85b3e.png)
+
+* A file is made up of equal-size data blocks, except for the last block of the file, which may be smaller. These data blocks are stored on a collection of servers called **DataNodes**. 
+* Each block of a file may be replicated on multiple DataNodes for high availability. The block size and replication factor is configurable per file. DataNodes are responsible for storing blocks, handling read/write requests, allocating and deleting blocks, and accepting commands to replicate blocks on another DataNode. 
+* A single **NameNode** is responsible for managing the name space of the file system and coordinating file access. It stores keeps track of which block numbers belong to which file and implements open, close, rename, and move operations on files and directories. 
+* All knowledge of files and directories resides in the NameNode.
