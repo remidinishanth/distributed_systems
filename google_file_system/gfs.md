@@ -304,7 +304,12 @@ The master manages chunk leases (locks on chunks with expiration), garbage colle
 The master is a single point of failure in GFS and replicates its data onto backup masters for fault tolerance.
 
 ### Chunk size
-The default chunk size in GFS is 64MB, which is a lot bigger than block sizes in normal file systems (which are often around 4KB). Small chunk sizes would not make a lot of sense for a file system designed to handle huge files since each file would then have a map of a huge number of chunks. This would greatly increase the amount of data a master would need to manage and increase the amount of data that would need to mbe communicated to a client, resulting in extra network traffic. A master stores less than 64 bytes of metadata for each 64MB chunk. By using a large chunk size, we reduce the need for frequent communication with the master to get chunk location information. It becomes feasible for a client to cache all the information related to where the data of large files is located. To reduce the risk of caching stale data, client metadata caches have timeouts. A large chunk size also makes it feasible to keep a TCP connection open to a chunkserver for an extended time, amortizing the time of setting up a TCP connection.
+* The default chunk size in GFS is 64MB, which is a lot bigger than block sizes in normal file systems (which are often around 4KB). 
+* Small chunk sizes would not make a lot of sense for a file system designed to handle huge files since each file would then have a map of a huge number of chunks. This would greatly increase the amount of data a master would need to manage and increase the amount of data that would need to be communicated to a client, resulting in extra network traffic. 
+* A master stores less than 64 bytes of metadata for each 64MB chunk. By using a large chunk size, we reduce the need for frequent communication with the master to get chunk location information. 
+* It becomes feasible for a client to cache all the information related to where the data of large files is located. 
+* To reduce the risk of caching stale data, client metadata caches have timeouts. 
+* A large chunk size also makes it feasible to keep a TCP connection open to a chunkserver for an extended time, amortizing the time of setting up a TCP connection.
 
 ### File access
 To read a file, the client contacts the master to read a file’s metadata; specifically, to get the list of chunk handles. It then gets the location of each of the chunk handles. Since chunks are replicated, each chunk handle is associated with a list of chunkservers. The client can contact any available chunkserver to read chunk data.
@@ -318,3 +323,12 @@ First, the client is given a list of replicas that identifies the primary chunks
 When the client gets an acknowledgement from all replicas that the data has been received it then sends a write request to the primary, identifying the data that was sent in the previous phase. The primary is responsible for serialization of writes. It assigns consecutive serial numbers to all write requests that it has received, applies the writes to the file in serial-number order, and forwards the write requests in that order to the secondaries. Once the primary gets acknowledgements from all the secondaries, the primary responds back to the client and the write operation is complete.
 
 The key point to note is that data flow is different from control flow. The data flows from the client to a chunkserver and then from that chunkserver to another chunkserver, and from that other chunkserver to yet another one until all chunkservers that store replicas for that chunk have received the data. The control (the write request) flow goes from the client to the primary chunkserver for that chunk. The primary then forwards the request to all the secondaries. This ensures that the primary is in control of the order of writes even if it receives multiple write requests concurrently. All replicas will have data written in the same sequence. Chunk version numbers are used to detect if any replica has stale data that was not updated because that chunkserver was down during some update.
+
+## Hadoop Distributed File System (HDFS)
+
+### File system operations
+The Hadoop Distributed File System is inspired by GFS. The overall architecture is the same, although some terminology changes.
+
+<img width="217" alt="image" src="https://user-images.githubusercontent.com/19663316/210164033-add62db1-ebcf-4673-a0a8-9e2060f2237a.png">
+
+The file system provides a familiar file system interface. Files and directories can be created, deleted, renamed, and moved and symbolic links can be created. However, there is no goal of providing the rich set of features available through, say, a POSIX (Linux/BSD/OS X/Unix) or Windows interface. That is, synchronous I/O, byte-range locking, seek-and-modify, and a host of other features may not be supported. Moreover, the file system is provided through a set of user-level libraries and not as a kernel module under VFS. Applications have to be compiled to incorporate these libraries.
