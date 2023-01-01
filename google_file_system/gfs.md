@@ -341,3 +341,15 @@ The Hadoop Distributed File System is inspired by GFS. The overall architecture 
 * Each block of a file may be replicated on multiple DataNodes for high availability. The block size and replication factor is configurable per file. DataNodes are responsible for storing blocks, handling read/write requests, allocating and deleting blocks, and accepting commands to replicate blocks on another DataNode. 
 * A single **NameNode** is responsible for managing the name space of the file system and coordinating file access. It stores keeps track of which block numbers belong to which file and implements open, close, rename, and move operations on files and directories. 
 * All knowledge of files and directories resides in the NameNode.
+
+### Heartbeating and Replication
+
+DataNodes periodically send a **heartbeat** message and a **block report** to the NameNode. 
+* The heartbeat informs the NameNode that the DataNode is functioning. 
+* The block report contains a list of all the blocks on that DataNode. A block is considered safely replicated if the minimum number of replica blocks have been sent by block reports from all available DataNodes. 
+
+The NameNode waits for a configured percentage of DataNodes to check in and then waits an additional 30 seconds. After that time, if any data blocks do not have their minimum number of replicas, the NameNode sends replica requests to DataNodes, asking them to create replicas of specific blocks.
+
+* The system is designed to be rack-aware and data center-aware in order to improve availability and performance. What this means is that the NameNode knows which DataNodes occupy the same rack and which racks are in one data center. 
+* For performance, it is desirable to have a replica of a data block in the same rack. For availability, it is desirable to have a replica on a different rack (in case the entire rack goes down) or even in a different data center (in case the entire data center fails). 
+* HDFS supports a pluggable interface to support custom algorithms that decide on replica placement. In the default case of three replicas, the first replica goes to the local rack and both the second and third replicas go to the same remote rack.
