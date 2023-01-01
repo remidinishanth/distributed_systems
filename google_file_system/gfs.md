@@ -358,6 +358,7 @@ The NameNode waits for a configured percentage of DataNodes to check in and then
 
 The NameNode chooses a list of DataNodes that will host replicas of each block of a file. A client writes directly to the first replica. As the first replica gets the data from the client, it sends it to the second replica even before the entire block is written (e.g., it may get 4 KB out of a 64 MB block). As the second replica gets the data, it sends it to the third replica
 
+![image](https://user-images.githubusercontent.com/19663316/210164886-c0a5dd7d-c08c-4e50-9774-731e92e1d6ce.png)
 
 ### Implementation
 The NameNode contains two files: **EditLog** and **FsInfo**. 
