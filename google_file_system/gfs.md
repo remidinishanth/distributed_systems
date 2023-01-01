@@ -357,3 +357,15 @@ The NameNode waits for a configured percentage of DataNodes to check in and then
 ![image](https://user-images.githubusercontent.com/19663316/210164699-f603bab5-6255-4c4d-b947-5c708225dd06.png)
 
 The NameNode chooses a list of DataNodes that will host replicas of each block of a file. A client writes directly to the first replica. As the first replica gets the data from the client, it sends it to the second replica even before the entire block is written (e.g., it may get 4 KB out of a 64 MB block). As the second replica gets the data, it sends it to the third replica
+
+
+### Implementation
+The NameNode contains two files: **EditLog** and **FsInfo**. 
+* The EditLog is a persistent record of changes to any HDFS metadata (file creation, addition of new blocks to files, file deletion, changes in replication, etc.). It is stored as a file on the server’s native file system.
+* The FsInfo file stores the entire file system namespace. This includes file names, their location in directories, block mapping for each file, and file attributes. This is also stored as a file on the server’s native file system.
+
+The entire active file system image is kept in memory. On startup, the NameNode reads FsInfo and applies the list of changes in EditLog to create an up-to-date file system image. Then, the image is flushed to the disk and the EditLog is cleared. This sequence is called a checkpoint. From this point, changes to file system metadata are logged to EditLog but FsInfo is not modified until the next checkpoint.
+
+On DataNodes, each block is stored as a separate file in the local file system. The DataNode does not have any knowledge of file names, attributes, and associated blocks; all that is handled by the NameNode. It simply processes requests to create, delete, write, read blocks, or replicate blocks. Any use of directories is done strictly for local efficiency - to ensure that a directory does not end up with a huge number of files that will impact performance.
+
+To ensure data integrity, each HDFS file has a separate checksum file associated with it. This file is created by the client when the client creates the data file/. Upon retrieval, if there is a mismatch between the block checksum and the computed block checksum, the client can request a read from another DataNode.
