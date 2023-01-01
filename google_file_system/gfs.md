@@ -331,4 +331,6 @@ The Hadoop Distributed File System is inspired by GFS. The overall architecture 
 
 <img width="217" alt="image" src="https://user-images.githubusercontent.com/19663316/210164033-add62db1-ebcf-4673-a0a8-9e2060f2237a.png">
 
-The file system provides a familiar file system interface. Files and directories can be created, deleted, renamed, and moved and symbolic links can be created. However, there is no goal of providing the rich set of features available through, say, a POSIX (Linux/BSD/OS X/Unix) or Windows interface. That is, synchronous I/O, byte-range locking, seek-and-modify, and a host of other features may not be supported. Moreover, the file system is provided through a set of user-level libraries and not as a kernel module under VFS. Applications have to be compiled to incorporate these libraries.
+* The file system provides a familiar file system interface. Files and directories can be created, deleted, renamed, and moved and symbolic links can be created. 
+* However, there is no goal of providing the rich set of features available through, say, a POSIX (Linux/BSD/OS X/Unix) or Windows interface. That is, synchronous I/O, byte-range locking, seek-and-modify, and a host of other features may not be supported. 
+* Moreover, the file system is provided through a set of user-level libraries and not as a kernel module under VFS. Applications have to be compiled to incorporate these libraries.
