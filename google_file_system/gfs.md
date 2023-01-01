@@ -377,6 +377,4 @@ To ensure data integrity, each HDFS file has a separate checksum file associated
 
 * Google File System, Wikipedia article.
 
-* Robin Harris, Google File System Eval: Part 1, StorageMojo blog.
-
 * HDFS Architecture Guide, Apache Hadoop project, December 4, 2011.
