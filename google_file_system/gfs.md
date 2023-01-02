@@ -381,3 +381,5 @@ To ensure data integrity, each HDFS file has a separate checksum file associated
 * HDFS Architecture Guide, Apache Hadoop project, December 4, 2011.
 
 * https://melodiessim.netlify.app/gfs-summary/
+
+* https://liyafu.com/2021-10-22-how-gfs-works/
