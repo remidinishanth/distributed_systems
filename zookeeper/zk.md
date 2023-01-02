@@ -76,7 +76,6 @@ When one server goes down, clients will see a disconnect event and client will r
     - Like regular znodes but associated with sessions 
     - These nodes exists as long as the session that created the znode is active. When the session ends the znode is deleted.
     - They cannot have children, and disappear when that session ends
-    - A typical use case for ephemeral nodes is when using ZooKeeper for discovery of hosts in your distributed system. Each server can then publish its IP address in an ephemeral node, and should a server loose connectivity with ZooKeeper and fail to reconnect within the session timeout, then its information is deleted.
   - **Sequential** nodes have an ever-increasing number attached to them
     - Property of regular and ephemeral znodes
     - Has a universal, monotonically increasing counter appended to the name
@@ -144,21 +143,22 @@ The leader executes all write requests forwarded by followers. The leader then b
 <img width="945" alt="image" src="https://user-images.githubusercontent.com/19663316/210230558-2ab0d4de-6862-4529-836f-3e6f311e6bd7.png">
 
 ### Uses of Zookeeper
-
 * Two main categories
   - Service management
-  - Distributed Locking
+  - Distributed Locking: Locking and synchronization service
 
+#### Configuration of hosts
+A typical use case for ephemeral nodes is when using ZooKeeper for discovery of hosts in your distributed system. Each server can then publish its IP address in an ephemeral node, and should a server loose connectivity with ZooKeeper and fail to reconnect within the session timeout, then its information is deleted.
+
+* Configuration management: Up-to-date system config info for a joining node
+* Cluster management: Joining / leaving of nodes, real-time node status
+* Highly reliable data registry
 * Naming service
   - Identifying nodes in a cluster by name (“DNS” for nodes)
-* Configuration management
-  - Up-to-date system config info for a joining node
-* Cluster management
-  - Joining / leaving of nodes, real-time node status
-* Leader election
-  - Electing a node as leader for coordination purpose
-* Locking and synchronization service
-* Highly reliable data registry
 
-Ref:
+#### Leader election
+* Electing a node as leader for coordination purpose
+* An easy way of doing leader election with ZooKeeper is to let every server publish its information in a zNode that is both sequential and ephemeral. Then, whichever server has the lowest sequential zNode is the leader. If the leader or any other server for that matter, goes offline, its session dies and its ephemeral node is removed, and all other servers can observe who is the new leader.
+
+### Ref:
 * https://zookeeper.apache.org/doc/r3.1.2/zookeeperOver.html
