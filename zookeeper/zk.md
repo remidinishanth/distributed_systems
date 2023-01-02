@@ -1,11 +1,5 @@
 ## ZooKeeper
 
-A centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services
-* Distributed, **Consistent** Data Store
-* Highly Available
-* High performance
-* Strictly ordered access 
-
 ### Background
 * Developed at Yahoo! Research
 * Started as sub-project of Hadoop, now a top-level Apache project
@@ -18,6 +12,21 @@ A centralized service for maintaining configuration information, naming, providi
 ![image](https://user-images.githubusercontent.com/19663316/210208983-7d1917d7-6ce4-4301-b26b-5a16825a3788.png)
 
 ![image](https://user-images.githubusercontent.com/19663316/210209213-f95f370c-9db6-48af-97b3-d668678523a9.png)
+
+### Motivation
+
+* In the past: a single program running on a single computer with a single CPU
+* Today: applications consist of independent programs running on a changing set of computers
+* Difficulty: coordination of those independent programs
+* Developers have to deal with coordination logic and application logic at the same time
+
+> ZooKeeper: designed to relieve developers from writing coordination logic code.
+
+A centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services
+* Distributed, **Consistent** Data Store
+* Highly Available
+* High performance
+* Strictly ordered access 
 
 
 ### Highly Available
