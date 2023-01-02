@@ -1,3 +1,6 @@
+### Coarse-Grained Lock
+* Locks a set of related objects with a single lock.
+
 ### Google Chubby - Distributed lock manager
 
 Ref: https://people.cs.rutgers.edu/~pxk/417/notes/chubby.html
@@ -5,7 +8,6 @@ Ref: https://people.cs.rutgers.edu/~pxk/417/notes/chubby.html
 
 > Goal: Create a highly-available centralized lease manager and file system for small files that can 
 serve as a name server and configuration repository.
-
 
 Chubby is a highly available and persistent **distributed lock service** and file system created by Google and used in various projects and frameworks, including Bigtable and MapReduce. Its purpose is to manage locks for resources and store configuration information for various distributed services throughout the Google cluster environment. The key design goal of Chubby was high availability and high reliability.
 
