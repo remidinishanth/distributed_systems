@@ -147,7 +147,7 @@ The leader executes all write requests forwarded by followers. The leader then b
   - Service management
   - Distributed Locking: Locking and synchronization service
 
-#### Configuration of hosts
+#### Discovery of hosts
 A typical use case for ephemeral nodes is when using ZooKeeper for discovery of hosts in your distributed system. Each server can then publish its IP address in an ephemeral node, and should a server loose connectivity with ZooKeeper and fail to reconnect within the session timeout, then its information is deleted.
 
 * Configuration management: Up-to-date system config info for a joining node
@@ -157,8 +157,8 @@ A typical use case for ephemeral nodes is when using ZooKeeper for discovery of 
   - Identifying nodes in a cluster by name (“DNS” for nodes)
 
 #### Leader election
-* Electing a node as leader for coordination purpose
-* An easy way of doing leader election with ZooKeeper is to let every server publish its information in a zNode that is both sequential and ephemeral. Then, whichever server has the lowest sequential zNode is the leader. If the leader or any other server for that matter, goes offline, its session dies and its ephemeral node is removed, and all other servers can observe who is the new leader.
+An easy way of doing leader election with ZooKeeper is to let every server publish its information in a zNode that is both sequential and ephemeral. Then, whichever server has the lowest sequential zNode is the leader. If the leader or any other server for that matter, goes offline, its session dies and its ephemeral node is removed, and all other servers can observe who is the new leader.
+* Electing a node as leader for coordination purposes
 
 ### Ref:
 * https://zookeeper.apache.org/doc/r3.1.2/zookeeperOver.html
