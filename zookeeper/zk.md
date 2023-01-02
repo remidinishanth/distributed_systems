@@ -116,6 +116,22 @@ The leader executes all write requests forwarded by followers. The leader then b
 * The order of watch events corresponds to the order of the updates as seen by the ZooKeeper service
 * One time notifications; must be reset, changes can be missed between notification and reset of the watch 
 
+### Creation API
+* create(path, data, flags)
+  - flags enables a client to select the type of znode: regular or ephemeral, and set the sequential flag 
+* delete(path, version)
+  - Deletes the znode path if that znode is at the expected version 
+* setData(path, data, version)
+  - Writes data to znode path if the version number is the current version of the znode 
+
+### Get/Watch API
+* exists(path, watch)
+  - Returns true if the znode with path name exists,
+* getData(path, watch)
+  - Returns the data and metadata (eg, version information) 
+* getChildren(path, watch)
+  - Returns the set of names of the children of a znode
+
 ### Uses of Zookeeper
 * Naming service
   - Identifying nodes in a cluster by name (“DNS” for nodes)
