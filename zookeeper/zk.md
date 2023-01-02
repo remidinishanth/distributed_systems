@@ -162,6 +162,7 @@ An easy way of doing leader election with ZooKeeper is to let every server publi
 
 #### Message queue
 With the use of watchers one can implement a message queue by letting all clients interested in a certain topic register a watcher on a zNode for that topic, and messages regarding that topic can be broadcast to all the clients by writing to that zNode.
+* An important thing to note about watchers though, is that they’re always one shot, so if you want further updates to that zNode you have to re-register them. This implies that you might loose an update in between receiving one and re-registering, but you can detect this by utilizing the version number of the zNode. If, however, every version is important, then sequential zNodes is the way to go.
 
 ### Ref:
 * https://zookeeper.apache.org/doc/r3.1.2/zookeeperOver.html
