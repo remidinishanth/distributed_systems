@@ -65,6 +65,17 @@ operations/second
 When one server goes down, clients will see a disconnect event and client will re-connect themselves to another member of the quorum.
 <img width="967" alt="image" src="https://user-images.githubusercontent.com/19663316/210221305-6eb69a3d-fa1c-4f68-9165-4ea6db24891f.png">
 
+### Zookeeper data structure
+
+<img width="1047" alt="image" src="https://user-images.githubusercontent.com/19663316/210221770-a4c6b378-720f-46ad-9f56-5d2819a6b95a.png">
+
+* The name space provided by ZooKeeper is much like that of a standard file system. A name is a sequence of path elements separated by a slash (/). Every node in ZooKeeper's name space is identified by a path.
+* Unlike is standard file systems, **each node in a ZooKeeper namespace can have data** associated with it as well as children. It is like having a file-system that allows a file to also be a directory. (ZooKeeper was designed to store coordination data: status information, configuration, location information, etc., so the data stored at each node is usually small, in the byte to kilobyte range.) 
+
+![image](https://user-images.githubusercontent.com/19663316/210222011-ff442d5e-d0db-412f-80bf-f290823e1000.png)
+
+* Basically, every node in a ZooKeeper tree is a ZNode.
+  - **znode**: in-memory data node in ZooKeeper, organised in a hierarchical namespace (the data tree) 
 
 ### Uses of Zookeeper
 * Naming service
