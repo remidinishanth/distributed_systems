@@ -11,6 +11,15 @@ A centralized service for maintaining configuration information, naming, providi
 * Started as sub-project of Hadoop, now a top-level Apache project
 * Development is driven by application needs
 
+### ZooKeeper in the Hadoop ecosystem
+
+<img width="1145" alt="image" src="https://user-images.githubusercontent.com/19663316/210209115-0ddf7bd3-9c2c-41c3-8c93-5afa78a5d72b.png">
+
+![image](https://user-images.githubusercontent.com/19663316/210208983-7d1917d7-6ce4-4301-b26b-5a16825a3788.png)
+
+![image](https://user-images.githubusercontent.com/19663316/210209213-f95f370c-9db6-48af-97b3-d668678523a9.png)
+
+
 ### Highly Available
 Tolerates the loss of a **minority** of ensemble members and still function.
 * To tolerate a loss of `n` members, we need atleast `2 * n + 1` nodes because for `n` to be the minority, we need atleast `2 * n + 1` nodes.
