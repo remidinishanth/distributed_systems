@@ -147,6 +147,8 @@ The leader executes all write requests forwarded by followers. The leader then b
   - Service management
   - Distributed Locking: Locking and synchronization service
 
+> ZooKeeper was **not** implemented to be a large datastore.
+
 #### Discovery of hosts
 A typical use case for ephemeral nodes is when using ZooKeeper for discovery of hosts in your distributed system. Each server can then publish its IP address in an ephemeral node, and should a server loose connectivity with ZooKeeper and fail to reconnect within the session timeout, then its information is deleted.
 
