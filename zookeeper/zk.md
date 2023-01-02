@@ -53,18 +53,13 @@ operations/second
 <img width="967" alt="image" src="https://user-images.githubusercontent.com/19663316/210209709-8c3e372d-dc6a-4440-b014-3cc66c36f528.png">
 
 ### Uses of Zookeeper
-Naming service
-* Identifying nodes in a cluster by name (“DNS” for nodes)
-
-Configuration management
-* Up-to-date system config info for a joining node
-
-Cluster management
-* Joining / leaving of nodes, real-time node status
-
-Leader election
-* Electing a node as leader for coordination purpose
-
-Locking and synchronization service
-
-Highly reliable data registry
+* Naming service
+  - Identifying nodes in a cluster by name (“DNS” for nodes)
+* Configuration management
+  - Up-to-date system config info for a joining node
+* Cluster management
+  - Joining / leaving of nodes, real-time node status
+* Leader election
+  - Electing a node as leader for coordination purpose
+* Locking and synchronization service
+* Highly reliable data registry
