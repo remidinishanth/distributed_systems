@@ -149,3 +149,6 @@ The leader executes all write requests forwarded by followers. The leader then b
   - Electing a node as leader for coordination purpose
 * Locking and synchronization service
 * Highly reliable data registry
+
+Ref:
+* https://zookeeper.apache.org/doc/r3.1.2/zookeeperOver.html
