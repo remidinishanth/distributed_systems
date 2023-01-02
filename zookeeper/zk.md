@@ -90,6 +90,13 @@ When one server goes down, clients will see a disconnect event and client will r
 
 * The data stored at each znode in a namespace is read and written atomically. Reads get all the data bytes associated with a znode and a write replaces all the data. Each node has an Access Control List (ACL) that restricts who can do what.
 
+<img width="1135" alt="image" src="https://user-images.githubusercontent.com/19663316/210222967-dbf1716d-3ee7-4262-abdd-423c9bc47d4b.png">
+
+<img width="1135" alt="image" src="https://user-images.githubusercontent.com/19663316/210222994-0174803e-754b-4651-86b2-ec392f179552.png">
+
+<img width="1135" alt="image" src="https://user-images.githubusercontent.com/19663316/210223022-1dd592ca-a9dd-4a93-bbad-fa77e30fb1a1.png">
+
+
 ### Uses of Zookeeper
 * Naming service
   - Identifying nodes in a cluster by name (“DNS” for nodes)
