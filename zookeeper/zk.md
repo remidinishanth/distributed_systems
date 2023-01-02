@@ -142,6 +142,15 @@ The leader executes all write requests forwarded by followers. The leader then b
 
 <img width="945" alt="image" src="https://user-images.githubusercontent.com/19663316/210230558-2ab0d4de-6862-4529-836f-3e6f311e6bd7.png">
 
+The replicated database is an in-memory database containing the entire data tree. Updates are
+logged to disk for recoverability, and writes are serialized to disk before they are applied to
+the in-memory database.
+
+ZooKeeper uses a custom atomic messaging protocol. Since the messaging layer is atomic,
+ZooKeeper can guarantee that the local replicas never diverge. When the leader receives a
+write request, it calculates what the state of the system is when the write is to be applied and
+transforms this into a transaction that captures this new state.
+
 ### Uses of Zookeeper
 * Two main categories
   - Service management
