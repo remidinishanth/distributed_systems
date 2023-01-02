@@ -139,6 +139,11 @@ The leader executes all write requests forwarded by followers. The leader then b
   - executes multiple ZooKeeper operations or none of them.
 
 ### Uses of Zookeeper
+
+* Two main categories
+  - Service management
+  - Distributed Locking
+
 * Naming service
   - Identifying nodes in a cluster by name (“DNS” for nodes)
 * Configuration management
