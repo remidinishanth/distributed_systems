@@ -1,6 +1,6 @@
 # developing_as_developer
 
-MIT 6.824 Notes https://wizardforcel.gitbooks.io/distributed-systems-engineering-lecture-notes/content/l01-intro.html
+MIT 6.824 Notes https://wizardforcel.gitbooks.io/distributed-systems-engineering-lecture-notes/content/l01-intro.html and http://nil.csail.mit.edu/6.824/2015/schedule.html
 
 * https://thesmartcoder.dev/fantastic-books-by-developers-for-developers/
 
