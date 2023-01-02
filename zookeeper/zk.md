@@ -33,7 +33,9 @@ A centralized service for maintaining configuration information, naming, providi
 
 ### Highly Available
 Tolerates the loss of a **minority** of ensemble members and still function.
+* As long as a majority of the servers are available, the ZooKeeper service will be available.
 * To tolerate a loss of `n` members, we need atleast `2 * n + 1` nodes because for `n` to be the minority, we need atleast `2 * n + 1` nodes.
+* Its good to form an Ensemble of odd number of nodes - as n (even number) nodes tends to allow same number of failure as of n-1 (odd number) nodes.
 * It's recommended to have odd number(3 or 5) of nodes because we want to have majority surviving to continue to function, You don't get any benefit by having 6 nodes instead of 5 nodes, for both 5 or 6 nodes, we can only have loss of 2 nodes.
 
 ### High Performance
@@ -51,6 +53,11 @@ operations/second
 ### Basic Cluster Interactions
 
 <img width="967" alt="image" src="https://user-images.githubusercontent.com/19663316/210209709-8c3e372d-dc6a-4440-b014-3cc66c36f528.png">
+
+* ZooKeeper is replicated. Like the distributed processes it coordinates, ZooKeeper itself is intended to be replicated over a sets of hosts called an **ensemble**.
+  - ZooKeeper service is an ensemble of servers that use replication (high availability)  
+* During startup, When a leader doesn’t exist in the ensemble, ZooKeeper runs a leader election algorithm in the ensemble of servers.
+* Clients connect to a single ZooKeeper server. The client maintains a TCP connection through which it sends requests, gets responses, gets watch events, and sends heart beats. If the TCP connection to the server breaks, the client will connect to a different server.
 
 ### Uses of Zookeeper
 * Naming service
