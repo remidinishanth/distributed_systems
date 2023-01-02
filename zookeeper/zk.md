@@ -101,6 +101,19 @@ When one server goes down, clients will see a disconnect event and client will r
 
 <img width="1135" alt="image" src="https://user-images.githubusercontent.com/19663316/210223078-c84c5e82-3f43-43fa-8a35-7e141de17946.png">
 
+### Watches
+
+<img width="907" alt="image" src="https://user-images.githubusercontent.com/19663316/210224699-e17d77d2-d05a-49ea-a935-4497104f9731.png">
+
+<img width="907" alt="image" src="https://user-images.githubusercontent.com/19663316/210224725-5855af01-6414-45b4-a5b5-c8da05cea112.png">
+
+<img width="907" alt="image" src="https://user-images.githubusercontent.com/19663316/210224745-48b8321c-db65-4f2f-b1ef-11b0eff19b94.png">
+
+* Set against data or path changes
+* Ordered with respect to other events, other watches, and asynchronous replies.
+* A client will see a watch event for a node it is watching before seeing the new data that corresponds to that node.
+* The order of watch events corresponds to the order of the updates as seen by the ZooKeeper service
+* One time notifications; must be reset, changes can be missed between notification and reset of the watch 
 
 ### Uses of Zookeeper
 * Naming service
