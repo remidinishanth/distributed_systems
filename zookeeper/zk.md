@@ -25,7 +25,7 @@
 > ZooKeeper: designed to relieve developers from writing coordination logic code.
 
 A centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services
-* Distributed, **Consistent** Data Store
+* Distributed, **Consistent** Data Store - Some servers might be eventually consistent (see the sync api)
 * Highly Available
 * High performance
 * Strictly ordered access 
