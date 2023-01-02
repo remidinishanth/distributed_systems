@@ -52,7 +52,7 @@ operations/second
 
 ### Basic Cluster Interactions
 
-<img width="967" alt="image" src="https://user-images.githubusercontent.com/19663316/210209709-8c3e372d-dc6a-4440-b014-3cc66c36f528.png">
+![image](https://user-images.githubusercontent.com/19663316/210226040-96ecaa39-f445-45ad-a57c-43a3fecf100f.png)
 
 * ZooKeeper is replicated. Like the distributed processes it coordinates, ZooKeeper itself is intended to be replicated over a sets of hosts called an **ensemble**.
   - ZooKeeper service is an ensemble of servers that use replication (high availability)  
@@ -63,7 +63,6 @@ operations/second
   - Writes go through the leader & need majority consensus 
 
 When one server goes down, clients will see a disconnect event and client will re-connect themselves to another member of the quorum.
-<img width="967" alt="image" src="https://user-images.githubusercontent.com/19663316/210221305-6eb69a3d-fa1c-4f68-9165-4ea6db24891f.png">
 
 ### Zookeeper data structure
 
