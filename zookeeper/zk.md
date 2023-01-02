@@ -152,6 +152,9 @@ write request, it calculates what the state of the system is when the write is t
 transforms this into a transaction that captures this new state.
 
 ### Uses of Zookeeper
+* The programming interface to ZooKeeper is deliberately simple. With it, however, you can
+implement higher order operations, such as synchronizations primitives, group membership,
+ownership, etc. 
 * Two main categories
   - Service management
   - Distributed Locking: Locking and synchronization service
