@@ -62,6 +62,10 @@ operations/second
   - Can read from **any** ZooKeeper server
   - Writes go through the leader & need majority consensus 
 
+When one server goes down, clients will see a disconnect event and client will re-connect themselves to another member of the quorum.
+<img width="967" alt="image" src="https://user-images.githubusercontent.com/19663316/210221305-6eb69a3d-fa1c-4f68-9165-4ea6db24891f.png">
+
+
 ### Uses of Zookeeper
 * Naming service
   - Identifying nodes in a cluster by name (“DNS” for nodes)
