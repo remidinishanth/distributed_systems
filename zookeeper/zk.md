@@ -71,12 +71,12 @@ When one server goes down, clients will see a disconnect event and client will r
 
 * Nodes can contain data, have children, or both. Every node in a zookeper tree is called a znode.
 * Types of Znode
-  - Regular node:  Clients create and delete explicitly
-  - Ephemeral nodes are associated with the session that created them.
+  - **Regular** node:  Clients create and delete explicitly
+  - **Ephemeral** nodes are associated with the session that created them.
     - Like regular znodes but associated with sessions 
     - These nodes exists as long as the session that created the znode is active. When the session ends the znode is deleted.
     - They cannot have children, and disappear when that session ends
-  - Sequential nodes have an ever-increasing number attached to them
+  - **Sequential** nodes have an ever-increasing number attached to them
     - Property of regular and ephemeral znodes
     - Has a universal, monotonically increasing counter appended to the name
 
