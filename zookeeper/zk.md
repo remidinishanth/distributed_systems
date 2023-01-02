@@ -70,6 +70,7 @@ When one server goes down, clients will see a disconnect event and client will r
 <img width="1047" alt="image" src="https://user-images.githubusercontent.com/19663316/210221770-a4c6b378-720f-46ad-9f56-5d2819a6b95a.png">
 
 * Nodes can contain data, have children, or both. Every node in a zookeper tree is called a znode.
+  - **znode**: in-memory data node in ZooKeeper, organised in a hierarchical namespace (the data tree)  
 * Types of Znode
   - **Regular** node:  Clients create and delete explicitly
   - **Ephemeral** nodes are associated with the session that created them.
@@ -85,9 +86,6 @@ When one server goes down, clients will see a disconnect event and client will r
 * Unlike standard file systems, **each node in a ZooKeeper namespace can have data** associated with it as well as children. It is like having a file-system that allows a file to also be a directory. (ZooKeeper was designed to store coordination data: status information, configuration, location information, etc., so the data stored at each node is usually small, in the byte to kilobyte range.) 
 
 ![image](https://user-images.githubusercontent.com/19663316/210222011-ff442d5e-d0db-412f-80bf-f290823e1000.png)
-
-* Basically, every node in a ZooKeeper tree is a ZNode.
-  - **znode**: in-memory data node in ZooKeeper, organised in a hierarchical namespace (the data tree) 
 
 * Znodes maintain a stat structure that includes version numbers for data changes, ACL changes, and timestamps, to allow cache validations and coordinated updates. 
   - Each time a znode's data changes, the version number increases. 
