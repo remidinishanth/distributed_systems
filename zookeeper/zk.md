@@ -160,5 +160,8 @@ A typical use case for ephemeral nodes is when using ZooKeeper for discovery of 
 An easy way of doing leader election with ZooKeeper is to let every server publish its information in a zNode that is both sequential and ephemeral. Then, whichever server has the lowest sequential zNode is the leader. If the leader or any other server for that matter, goes offline, its session dies and its ephemeral node is removed, and all other servers can observe who is the new leader.
 * Electing a node as leader for coordination purposes
 
+#### Message queue
+With the use of watchers one can implement a message queue by letting all clients interested in a certain topic register a watcher on a zNode for that topic, and messages regarding that topic can be broadcast to all the clients by writing to that zNode.
+
 ### Ref:
 * https://zookeeper.apache.org/doc/r3.1.2/zookeeperOver.html
