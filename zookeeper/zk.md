@@ -21,3 +21,9 @@ Tolerates the loss of a **minority** of ensemble members and still function.
 * Performance measured around 50,000
 operations/second
 * Particularly fast for read performance, _built for read dominant workloads_
+
+### Strictly ordered access 
+* **Atomic Writes**
+* In the order you sent them
+* Changes always seen in the order they occurred
+* **Reliable**, no writes acked will be dropped 
