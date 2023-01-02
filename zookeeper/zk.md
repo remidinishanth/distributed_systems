@@ -96,6 +96,8 @@ When one server goes down, clients will see a disconnect event and client will r
 
 <img width="1135" alt="image" src="https://user-images.githubusercontent.com/19663316/210223022-1dd592ca-a9dd-4a93-bbad-fa77e30fb1a1.png">
 
+<img width="1135" alt="image" src="https://user-images.githubusercontent.com/19663316/210223078-c84c5e82-3f43-43fa-8a35-7e141de17946.png">
+
 
 ### Uses of Zookeeper
 * Naming service
