@@ -76,6 +76,7 @@ When one server goes down, clients will see a disconnect event and client will r
     - Like regular znodes but associated with sessions 
     - These nodes exists as long as the session that created the znode is active. When the session ends the znode is deleted.
     - They cannot have children, and disappear when that session ends
+    - A typical use case for ephemeral nodes is when using ZooKeeper for discovery of hosts in your distributed system. Each server can then publish its IP address in an ephemeral node, and should a server loose connectivity with ZooKeeper and fail to reconnect within the session timeout, then its information is deleted.
   - **Sequential** nodes have an ever-increasing number attached to them
     - Property of regular and ephemeral znodes
     - Has a universal, monotonically increasing counter appended to the name
