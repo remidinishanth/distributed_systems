@@ -56,7 +56,7 @@ operations/second
 
 * ZooKeeper is replicated. Like the distributed processes it coordinates, ZooKeeper itself is intended to be replicated over a sets of hosts called an **ensemble**.
   - ZooKeeper service is an ensemble of servers that use replication (high availability)  
-* During startup, When a leader doesn’t exist in the ensemble, ZooKeeper runs a leader election algorithm in the ensemble of servers.
+* During startup, When a leader doesn’t exist in the ensemble, ZooKeeper runs a leader election algorithm in the ensemble of servers. Only **one leader** and remaining all followers.
 * Clients connect to a single ZooKeeper server. The client maintains a TCP connection through which it sends requests, gets responses, gets watch events, and sends heart beats. If the TCP connection to the server breaks, the client will connect to a different server.
 
 ### Uses of Zookeeper
