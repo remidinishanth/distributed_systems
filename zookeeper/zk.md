@@ -159,7 +159,12 @@ A typical use case for ephemeral nodes is when using ZooKeeper for discovery of 
   - Identifying nodes in a cluster by name (“DNS” for nodes)
 
 #### Leader election
-An easy way of doing leader election with ZooKeeper is to let every server publish its information in a zNode that is both sequential and ephemeral. Then, whichever server has the lowest sequential zNode is the leader. If the leader or any other server for that matter, goes offline, its session dies and its ephemeral node is removed, and all other servers can observe who is the new leader.
+An easy way of doing leader election with ZooKeeper is to let every server publish its information in a zNode that is both sequential and ephemeral. 
+
+Then, whichever server has the **lowest sequential zNode** is the leader. If the leader or any other server for that matter, goes offline, its session dies and its ephemeral node is removed, and all other servers can observe who is the new leader.
+
+If we use write for leader instead of lowest sequential zNode, then Zookeeper will send the notification to all servers and all servers will try to write to the zookeeper to become a new leader at the same time creating a **herd effect**.
+
 * Electing a node as leader for coordination purposes
 
 #### Message queue
