@@ -69,6 +69,13 @@ When one server goes down, clients will see a disconnect event and client will r
 
 <img width="1047" alt="image" src="https://user-images.githubusercontent.com/19663316/210221770-a4c6b378-720f-46ad-9f56-5d2819a6b95a.png">
 
+* Nodes can contain data, have children, or both
+* Ephemeral nodes are associated with the session that created them. 
+  - These nodes exists as long as the session that created the znode is active. When the session ends the znode is deleted.
+  - They cannot have children, and disappear when that session ends
+* Sequential nodes have an ever-increasing number attached to them 
+
+#### File system analogy
 * The name space provided by ZooKeeper is much like that of a standard file system. A name is a sequence of path elements separated by a slash (/). Every node in ZooKeeper's name space is identified by a path.
 * Unlike is standard file systems, **each node in a ZooKeeper namespace can have data** associated with it as well as children. It is like having a file-system that allows a file to also be a directory. (ZooKeeper was designed to store coordination data: status information, configuration, location information, etc., so the data stored at each node is usually small, in the byte to kilobyte range.) 
 
@@ -77,11 +84,11 @@ When one server goes down, clients will see a disconnect event and client will r
 * Basically, every node in a ZooKeeper tree is a ZNode.
   - **znode**: in-memory data node in ZooKeeper, organised in a hierarchical namespace (the data tree) 
 
-* Znodes maintain a stat structure that includes version numbers for data changes, ACL changes, and timestamps, to allow cache validations and coordinated updates. Each time a znode's data changes, the version number increases. For instance, whenever a client retrieves data it also receives the version of the data.
+* Znodes maintain a stat structure that includes version numbers for data changes, ACL changes, and timestamps, to allow cache validations and coordinated updates. 
+  - Each time a znode's data changes, the version number increases. 
+  - For instance, whenever a client retrieves data it also receives the version of the data.
 
 * The data stored at each znode in a namespace is read and written atomically. Reads get all the data bytes associated with a znode and a write replaces all the data. Each node has an Access Control List (ACL) that restricts who can do what.
-
-* ZooKeeper also has the notion of ephemeral nodes. These znodes exists as long as the session that created the znode is active. When the session ends the znode is deleted.
 
 ### Uses of Zookeeper
 * Naming service
