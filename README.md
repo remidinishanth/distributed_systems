@@ -1,5 +1,7 @@
 # developing_as_developer
 
+MIT 6.824 Notes https://wizardforcel.gitbooks.io/distributed-systems-engineering-lecture-notes/content/l01-intro.html
+
 * https://thesmartcoder.dev/fantastic-books-by-developers-for-developers/
 
 TODO: **gRPC** - Why do we use it? Why is it becoming popular? https://people.cs.rutgers.edu/~pxk/417/notes/rpc.html
