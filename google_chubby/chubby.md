@@ -1,5 +1,7 @@
 ### Coarse-Grained Lock
-* Locks a set of related objects with a single lock.
+> Locks a set of related objects with a single lock.
+
+A Coarse-Grained Lock is a single lock that covers many objects. It not only simplifies the locking action itself but also frees you from having to load all the members of a group in order to lock them.
 
 ### Google Chubby - Distributed lock manager
 
