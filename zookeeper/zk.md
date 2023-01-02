@@ -6,12 +6,18 @@ A centralized service for maintaining configuration information, naming, providi
 * High performance
 * Strictly ordered access 
 
-#### Background
+### Background
 * Developed at Yahoo! Research
 * Started as sub-project of Hadoop, now a top-level Apache project
 * Development is driven by application needs
 
-### Highly Available, Fault tolerance
-Tolerates the loss of a minority of ensemble members and still function.
+### Highly Available
+Tolerates the loss of a **minority** of ensemble members and still function.
 * To tolerate a loss of `n` members, we need atleast `2 * n + 1` nodes because for `n` to be the minority, we need atleast `2 * n + 1` nodes.
 * It's recommended to have odd number(3 or 5) of nodes because we want to have majority surviving to continue to function, You don't get any benefit by having 6 nodes instead of 5 nodes, for both 5 or 6 nodes, we can only have loss of 2 nodes.
+
+### High Performance
+* All data is stored **in memory**
+* Performance measured around 50,000
+operations/second
+* Particularly fast for read performance, _built for read dominant workloads_
