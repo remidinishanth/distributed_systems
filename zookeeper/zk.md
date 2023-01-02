@@ -77,6 +77,12 @@ When one server goes down, clients will see a disconnect event and client will r
 * Basically, every node in a ZooKeeper tree is a ZNode.
   - **znode**: in-memory data node in ZooKeeper, organised in a hierarchical namespace (the data tree) 
 
+* Znodes maintain a stat structure that includes version numbers for data changes, ACL changes, and timestamps, to allow cache validations and coordinated updates. Each time a znode's data changes, the version number increases. For instance, whenever a client retrieves data it also receives the version of the data.
+
+* The data stored at each znode in a namespace is read and written atomically. Reads get all the data bytes associated with a znode and a write replaces all the data. Each node has an Access Control List (ACL) that restricts who can do what.
+
+* ZooKeeper also has the notion of ephemeral nodes. These znodes exists as long as the session that created the znode is active. When the session ends the znode is deleted.
+
 ### Uses of Zookeeper
 * Naming service
   - Identifying nodes in a cluster by name (“DNS” for nodes)
