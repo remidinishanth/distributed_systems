@@ -1,5 +1,7 @@
 ## ZooKeeper
 
+> “Because coordinating distributed systems is a Zoo”
+
 ### Background
 * Developed at Yahoo! Research
 * Started as sub-project of Hadoop, now a top-level Apache project
@@ -45,3 +47,24 @@ operations/second
 * In the order you sent them
 * Changes always seen in the order they occurred
 * **Reliable**, no writes acked will be dropped 
+
+### Basic Cluster Interactions
+
+<img width="967" alt="image" src="https://user-images.githubusercontent.com/19663316/210209709-8c3e372d-dc6a-4440-b014-3cc66c36f528.png">
+
+### Uses of Zookeeper
+Naming service
+* Identifying nodes in a cluster by name (“DNS” for nodes)
+
+Configuration management
+* Up-to-date system config info for a joining node
+
+Cluster management
+* Joining / leaving of nodes, real-time node status
+
+Leader election
+* Electing a node as leader for coordination purpose
+
+Locking and synchronization service
+
+Highly reliable data registry
