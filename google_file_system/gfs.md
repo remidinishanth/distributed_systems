@@ -6,6 +6,7 @@ Google needs a distributed file system that matches its applications needs. Solu
 
 GFS: _Scalable distributed file system for large distributed data-intensive applications._
 
+
 ### Why are we reading this paper?
 * Distributed storage is a key abstraction
 * Incorporates many of the recurring themes in Distributed Systems: 
@@ -371,6 +372,13 @@ On DataNodes, each block is stored as a separate file in the local file system. 
 
 To ensure data integrity, each HDFS file has a separate checksum file associated with it. This file is created by the client when the client creates the data file/. Upon retrieval, if there is a mismatch between the block checksum and the computed block checksum, the client can request a read from another DataNode.
 
+### Summary
+
+<img width="1577" alt="image" src="https://user-images.githubusercontent.com/19663316/210588075-554c428d-1a58-48fd-aa4e-89cd03b9422e.png">
+
+<img width="1577" alt="image" src="https://user-images.githubusercontent.com/19663316/210588217-2520114a-73dc-4433-9acf-d0e8909c8363.png">
+
+<img width="1621" alt="image" src="https://user-images.githubusercontent.com/19663316/210588337-d87234bb-a2a9-4661-ad0e-eaf1749f9ce3.png">
 
 ## Ref
 
