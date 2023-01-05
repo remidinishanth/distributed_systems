@@ -15,6 +15,12 @@ A framework for large-scale parallel processing
   - add function in reduce `(reduce #'+ '(0 1 2 3))` to `6`
 
 
+### Execution Overview
+
+<img width="890" alt="image" src="https://user-images.githubusercontent.com/19663316/210792948-4460abf7-4fc5-4db4-ade5-0f96100ab517.png">
+
+
+
 ### MapReduce Library
 
 A simple programming model that applies to many large-scale
