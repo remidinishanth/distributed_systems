@@ -41,7 +41,6 @@ merges together these values to form a possibly smaller set of values.
 
 
 ### MapReduce Library
-
 A simple programming model that applies to many large-scale
 computing problems
 
@@ -53,6 +52,7 @@ Hide messy details in MapReduce runtime library:
 * robustness
 * improvements to core library benefit all users of library!
 
+
 ### Typical problem solved by MapReduce
 * Read a lot of data
 * Map: extract something you care about from each record
@@ -60,4 +60,4 @@ Hide messy details in MapReduce runtime library:
 * Reduce: aggregate, summarize, filter, or transform
 * Write the results
 
-Outline stays the same, Map and Reduce change to fit the problem
+Outline stays the same, **Map** and **Reduce** functions change to fit the problem
