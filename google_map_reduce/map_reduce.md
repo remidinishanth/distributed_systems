@@ -10,6 +10,8 @@ MapReduce framework/library allows programmers without any experience with paral
 
 ### Motivation
 
+* Inverted index is a data-structure storing a mapping from content, such as words or numbers, to its locations where the word is present.
+
 ### MapReduce Etymology
 
 * MapReduce was created at Google in 2004 by Jeffrey Dean and Sanjay Ghemawat. 
