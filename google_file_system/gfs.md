@@ -380,6 +380,15 @@ To ensure data integrity, each HDFS file has a separate checksum file associated
 
 <img width="1621" alt="image" src="https://user-images.githubusercontent.com/19663316/210588337-d87234bb-a2a9-4661-ad0e-eaf1749f9ce3.png">
 
+### How GFS is Different From Other Distributed FS's
+Based on Google's workload, GFS assumes
+* High failure rate
+* Huge files (optimized for GB+ files)
+* Almost all writes are appends
+* Reads are either small and random OR big and streaming
+* There's no need to implement POSIX (no symbolic links, etc.)
+* Throughput is more important than latency
+
 ## Ref
 
 * Sanjay Ghemawat, Howard Gobioff, and Shun-Tak Leung, The Google File System. Google, SOSP’03, October 19–22, 2003.
