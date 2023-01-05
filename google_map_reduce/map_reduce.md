@@ -14,3 +14,12 @@ Hide messy details in MapReduce runtime library:
 * handling of machine failures
 * robustness
 * improvements to core library benefit all users of library!
+
+### Typical problem solved by MapReduce
+* Read a lot of data
+* Map: extract something you care about from each record
+* Shuffle and Sort
+* Reduce: aggregate, summarize, filter, or transform
+* Write the results
+
+Outline stays the same, Map and Reduce change to fit the problem
