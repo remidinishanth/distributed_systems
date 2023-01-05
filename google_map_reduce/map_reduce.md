@@ -19,6 +19,12 @@ MapReduce framework/library allows programmers without any experience with paral
 * The reduce function is given a binary function and a set of values as parameters. It combines all the values together using the binary function.
   - add function in reduce `(reduce #'+ '(0 1 2 3))` to `6`
 
+
+### Word-count example
+
+<img width="1154" alt="image" src="https://user-images.githubusercontent.com/19663316/210795017-6205fe34-f237-4151-904c-31dec4b9684f.png">
+
+
 ### Programming Model
 
 * The computation takes a set of **input** key/value pairs, and produces a set of **output** key/value pairs. 
