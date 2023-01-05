@@ -14,11 +14,19 @@ A framework for large-scale parallel processing
 * The reduce function is given a binary function and a set of values as parameters. It combines all the values together using the binary function.
   - add function in reduce `(reduce #'+ '(0 1 2 3))` to `6`
 
+### Programming Model
+
+* The computation takes a set of **input** key/value pairs, and produces a set of **output** key/value pairs. 
+* The user of the MapReduce library expresses the computation as two functions: **Map** and **Reduce**.
+* Map, written by the user, takes an input pair and produces a set of **intermediate** key/value pairs.
+* The MapReduce library **groups together all intermediate values associated with the same intermediate key** I and passes them
+to the Reduce function.
+* The Reduce function, also written by the user, accepts an intermediate key I and a set of values for that key. It
+merges together these values to form a possibly smaller set of values. 
 
 ### Execution Overview
 
 <img width="890" alt="image" src="https://user-images.githubusercontent.com/19663316/210792948-4460abf7-4fc5-4db4-ade5-0f96100ab517.png">
-
 
 
 ### MapReduce Library
