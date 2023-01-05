@@ -6,6 +6,8 @@ A framework for large-scale parallel processing
 
 MapReduce framework/library allows programmers without any experience with parallel and distributed systems to easily utilize the resources of a large distributed system.
 
+### Motivation
+
 ### MapReduce Etymology
 
 * MapReduce was created at Google in 2004 by Jeffrey Dean and Sanjay Ghemawat. 
