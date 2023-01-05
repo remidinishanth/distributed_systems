@@ -1,4 +1,9 @@
 ### MapReduce
+
+A framework for large-scale parallel processing
+
+> Goal: Create a distributed computing framework to process data on a massive scale.
+
 A simple programming model that applies to many large-scale
 computing problems
 
