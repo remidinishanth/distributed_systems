@@ -56,7 +56,7 @@ reduce   (k2,list(v2)) → list(v2)
 
 Programmer specifies two primary methods:
 * Map: `(k, v) ↦ <(k1,v1), (k2,v2), (k3,v3),…,(kn,vn)>`
-* Reduce: `(k', <v’1, v’2,…,v’n’>) ↦ <(k', v'’1), (k', v'’2),…,(k', v'’n’’)>`
+* Reduce: `(k', <v’1, v’2,…,v’m>) ↦ <(k', v'’1), (k', v'’2),…,(k', v'’k)>`
 
 All `v'` with same `k'` are reduced together. (Remember the invisible “Shuffle and Sort” step).
 
