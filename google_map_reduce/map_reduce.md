@@ -104,6 +104,9 @@ Master assigns each reduce task to a free worker
 * Worker sorts & applies user’s Reduce op to produce the output
 * User may specify Partition: which intermediate keys to which Reducers
 
+![image](https://user-images.githubusercontent.com/19663316/210928444-490f474a-4c2e-47ce-8d6d-79e49cfab356.png)
+
+
 ### Typical problem solved by MapReduce
 * Read a lot of data
 * **Map**: extract something you care about from each record
