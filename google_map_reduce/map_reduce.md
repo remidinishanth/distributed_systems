@@ -88,6 +88,22 @@ reduce(String key, Iterator values):
 
 <img width="890" alt="image" src="https://user-images.githubusercontent.com/19663316/210792948-4460abf7-4fc5-4db4-ade5-0f96100ab517.png">
 
+One master, many workers
+* Input data split into M map tasks (typically 64 MB in size)
+* Reduce phase partitioned into R reduce tasks (= # of output files)
+* Tasks are assigned to workers dynamically
+* Reasonable numbers inside Google: M=200,000; R=4,000; workers=2,000
+
+Master assigns each map task to a free worker
+* Considers locality of data to worker when assigning task
+* Worker reads task input (often from local disk!)
+* Worker produces R local files containing intermediate (k,v) pairs
+
+Master assigns each reduce task to a free worker
+* Worker reads intermediate (k,v) pairs from map workers
+* Worker sorts & applies user’s Reduce op to produce the output
+* User may specify Partition: which intermediate keys to which Reducers
+
 ### Typical problem solved by MapReduce
 * Read a lot of data
 * **Map**: extract something you care about from each record
