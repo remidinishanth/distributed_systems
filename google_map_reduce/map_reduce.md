@@ -10,7 +10,24 @@ MapReduce framework/library allows programmers without any experience with paral
 
 ### Motivation
 
-* Inverted index is a data-structure storing a mapping from content, such as words or numbers, to its locations where the word is present.
+* Inverted index is storing a mapping from content, such as words or numbers, to its documents where the word is present on the web. Indexing is the process by which search engines organize information before a search to enable super-fast responses to queries.
+* To index `20+` billion web pages, assuming each is of `20KB` size, we need to process `400+` terabytes of data.
+  - `20+` billion web pages `x 20KB` = `400+` terabytes
+  - One computer can read `30-35 MB/sec` from disk, so it takes four months to read the web
+  - `~1,000` hard drives just to store the web
+  - Good news: same problem with `1000` machines, `< 3` hours
+* Most such computations are conceptually straightforward. However, the input data is usually large and the computations have to be distributed across hundreds or thousands of machines in order to finish in a reasonable amount of time.
+* But to solve the problem on `1000` machines, we will need to write programs to handle
+  - communication and coordination: parallelize the computation and distribute the data
+  - handle failures and recovering from machine failure (all the time!)
+  - status reporting, debugging, optimization and locality
+* Similar difficulty repeats for every problem Google wants to solve
+* As a reaction to this complexity, Google designed an abstraction that allows us to express the simple computations we were trying to perform but hides the messy details in MapReduce runtime library:
+  - automatic parallelization
+  - load balancing
+  - data distribution: network and disk transfer optimization
+  - fault tolerance: handling of machine failures and robustness
+  - improvements to core library benefit all users of library!
 
 ### MapReduce Etymology
 
@@ -46,13 +63,7 @@ merges together these values to form a possibly smaller set of values.
 A simple programming model that applies to many large-scale
 computing problems
 
-Hide messy details in MapReduce runtime library:
-* automatic parallelization
-* load balancing
-* network and disk transfer optimization
-* handling of machine failures
-* robustness
-* improvements to core library benefit all users of library!
+
 
 
 ### Typical problem solved by MapReduce
