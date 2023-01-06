@@ -104,8 +104,28 @@ Master assigns each reduce task to a free worker
 * Worker sorts & applies user’s Reduce op to produce the output
 * User may specify Partition: which intermediate keys to which Reducers
 
-![image](https://user-images.githubusercontent.com/19663316/210928444-490f474a-4c2e-47ce-8d6d-79e49cfab356.png)
+### Mapreduce Granularity
 
+Fine granularity tasks: many more map tasks than machines
+* Minimizes time for fault recovery
+* Can pipeline shuffling with map execution
+* Better dynamic load balancing
+
+<img width="1112" alt="image" src="https://user-images.githubusercontent.com/19663316/210929099-95348780-b327-4b95-85b4-7f7776a687f3.png">
+
+### MapReduce: Fault Tolerance via Re-Execution
+
+Worker failure:
+* Detect failure via periodic heartbeats
+* Re-execute completed and in-progress map tasks
+* Re-execute in-progress reduce tasks
+* Task completion committed through master
+
+Master failure:
+* State is checkpointed to replicated file system
+* New master recovers & continues
+
+Very Robust: lost 1600 of 1800 machines once, but finished fine
 
 ### Typical problem solved by MapReduce
 * Read a lot of data
@@ -115,3 +135,7 @@ Master assigns each reduce task to a free worker
 * Write the results
 
 Outline stays the same, **Map** and **Reduce** functions change to fit the problem
+
+### Reference:
+* MapReduce: Simplified Data Processing on Large Clusters by Jeffrey Dean and Sanjay Ghemawat
+* The MapReduce Paradigm by Michael Kleber, Jan. 14, 2008
