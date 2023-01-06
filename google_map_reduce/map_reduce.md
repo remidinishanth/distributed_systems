@@ -50,15 +50,17 @@ to the Reduce function.
 **merges together these values** to form a possibly smaller set of values. 
 
 ```
-map        (k1,v1) → list(k2,v2)
-reduce     (k2,list(v2)) → list(v2)
+map      (k1,v1)       → list(k2,v2)
+reduce   (k2,list(v2)) → list(v2)
 ```
 
 ### Word-count example
 
 Counting the number of occurrences of each word in a large collection of documents.
+* The map function emits each word plus an associated count of occurrences (just ‘1’ in this simple example).
+* The reduce function sums together all counts emitted for a particular word.
 
-```
+```python
 map(String key, String value):
   // key: document name
   // value: document contents
