@@ -46,8 +46,8 @@ MapReduce framework/library allows programmers without any experience with paral
 * Map, written by the user, takes an input pair and produces a set of **intermediate** key/value pairs.
 * The MapReduce library **groups together all intermediate values associated with the same intermediate key** I and passes them
 to the Reduce function.
-* The Reduce function, also written by the user, accepts an intermediate key I and a set of values for that key. It
-merges together these values to form a possibly smaller set of values. 
+* The Reduce function, also written by the user, accepts an **intermediate key I** and a **set of values for that key**. It
+**merges together these values** to form a possibly smaller set of values. 
 
 
 ### Word-count example
