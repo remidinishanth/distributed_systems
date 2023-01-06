@@ -58,14 +58,6 @@ merges together these values to form a possibly smaller set of values.
 
 <img width="890" alt="image" src="https://user-images.githubusercontent.com/19663316/210792948-4460abf7-4fc5-4db4-ade5-0f96100ab517.png">
 
-
-### MapReduce Library
-A simple programming model that applies to many large-scale
-computing problems
-
-
-
-
 ### Typical problem solved by MapReduce
 * Read a lot of data
 * **Map**: extract something you care about from each record
