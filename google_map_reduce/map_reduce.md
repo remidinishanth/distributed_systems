@@ -49,8 +49,30 @@ to the Reduce function.
 * The Reduce function, also written by the user, accepts an **intermediate key I** and a **set of values for that key**. It
 **merges together these values** to form a possibly smaller set of values. 
 
+```
+map        (k1,v1) → list(k2,v2)
+reduce     (k2,list(v2)) → list(v2)
+```
 
 ### Word-count example
+
+Counting the number of occurrences of each word in a large collection of documents.
+
+```
+map(String key, String value):
+  // key: document name
+  // value: document contents
+  for each word w in value:
+    EmitIntermediate(w, "1");
+
+reduce(String key, Iterator values):
+  // key: a word
+  // values: a list of counts
+  int result = 0;
+  for each v in values:
+    result += ParseInt(v);
+  Emit(AsString(result));
+```
 
 <img width="1154" alt="image" src="https://user-images.githubusercontent.com/19663316/210795017-6205fe34-f237-4151-904c-31dec4b9684f.png">
 
