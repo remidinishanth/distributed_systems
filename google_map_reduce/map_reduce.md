@@ -68,9 +68,9 @@ computing problems
 
 ### Typical problem solved by MapReduce
 * Read a lot of data
-* Map: extract something you care about from each record
+* **Map**: extract something you care about from each record
 * Shuffle and Sort
-* Reduce: aggregate, summarize, filter, or transform
+* **Reduce**: aggregate, summarize, filter, or transform
 * Write the results
 
 Outline stays the same, **Map** and **Reduce** functions change to fit the problem
