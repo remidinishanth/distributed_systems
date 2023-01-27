@@ -34,7 +34,7 @@ A centralized service for maintaining configuration information, naming, providi
 ### Highly Available
 Tolerates the loss of a **minority** of ensemble members and still function.
 * As long as a majority of the servers are available, the ZooKeeper service will be available.
-* To tolerate a loss of `n` members, we need atleast `2 * n + 1` nodes because for `n` to be the minority, we need atleast `2 * n + 1` nodes.
+* To tolerate a loss of `n` members, we need atleast `2 * n + 1` nodes(that is there should be `n + 1` nodes available as majority) because for `n` to be the minority, we need atleast `2 * n + 1` nodes.
 * Its good to form an Ensemble of odd number of nodes - as `n` (even number) nodes tends to allow same number of failure as of `n - 1` (odd number) nodes.
 * It's recommended to have odd number(3 or 5) of nodes because we want to have majority surviving to continue to function, You don't get any benefit by having 6 nodes instead of 5 nodes, for both 5 or 6 nodes, we can only have loss of 2 nodes.
 
