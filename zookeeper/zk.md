@@ -66,6 +66,8 @@ operations/second
 
 When one server goes down, clients will see a disconnect event and client will re-connect themselves to another member of the quorum.
 
+One more thing with `2 * n + 1` servers is that, any two majorities will have atleast one overlap server. Because there are atleast `n + 1` in the majority, there is intersection with atleast one server from the previous majority.
+
 ### Zookeeper data structure
 
 <img width="1047" alt="image" src="https://user-images.githubusercontent.com/19663316/210221770-a4c6b378-720f-46ad-9f56-5d2819a6b95a.png">
