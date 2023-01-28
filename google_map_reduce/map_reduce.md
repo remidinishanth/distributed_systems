@@ -41,6 +41,8 @@ MapReduce framework/library allows programmers without any experience with paral
 
 ### Programming Model
 
+![image](https://user-images.githubusercontent.com/19663316/215261307-d7ccdc64-b1ec-4417-bc8e-df27b8c64308.png)
+
 * The computation takes a set of **input** key/value pairs, and produces a set of **output** key/value pairs. 
 * The user of the MapReduce library expresses the computation as two functions: **Map** and **Reduce**.
 * Map, written by the user, takes an input pair and produces a set of **intermediate** key/value pairs.
@@ -59,8 +61,6 @@ Programmer specifies two primary methods:
 * Reduce: `(k', <v’1, v’2,…,v’m>) ↦ <(k', v'’1), (k', v'’2),…,(k', v'’k)>`
 
 All `v'` with same `k'` are reduced together. (Remember the invisible “Shuffle and Sort” step).
-
-![image](https://user-images.githubusercontent.com/19663316/215261307-d7ccdc64-b1ec-4417-bc8e-df27b8c64308.png)
 
 
 ### Word-count example
