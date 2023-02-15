@@ -20,7 +20,7 @@ TODO: **GraphQL** - Why do we neeed it? Usecases, examples, sangria. Checkout ht
 
 Read about Shared Nothing Architecture. Differences with Microservices architecture.
 
-Read about **bazel** build and make files.
+Read about **bazel** build and make files. Also **bazel-gazelle**
 
 #### Read about Service discovery mechanism.
 * Consul
