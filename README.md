@@ -4,7 +4,32 @@ MIT 6.824 Notes https://wizardforcel.gitbooks.io/distributed-systems-engineering
 
 Read about google lectures at https://sites.google.com/site/mriap2008/lectures
 
+
+### TODO Books and blogs:
+
+✒ System Design Interview - An Insiders guide - https://amzn.to/3lRBV02
+
+✒ Designing Data Intensive applications - https://amzn.to/2U57Y0P
+
+✒ Solutions Architects Handbook - https://amzn.to/3lRBaUK
+
+✒ Three Easy Pieces - https://amzn.to/3AxqFKq
+
+✒ Fundamentals of Software Architecture - https://amzn.to/3xAsFQa
+
+✒ Blog Highscalability: http://highscalability.com/
+
+✒ Blog Dzone: https://dzone.com/
+
+✒ Netflix Tech Blog: https://netflixtechblog.com/
+
+✒ Uber Tech Blog: https://eng.uber.com/
+
+✒ Grab Tech Blog: https://engineering.grab.com/
+
 * https://thesmartcoder.dev/fantastic-books-by-developers-for-developers/
+
+### Other readings
 
 TODO: **gRPC** - Why do we use it? Why is it becoming popular? https://people.cs.rutgers.edu/~pxk/417/notes/rpc.html
 
