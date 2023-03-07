@@ -47,7 +47,8 @@ Read about Shared Nothing Architecture. Differences with Microservices architect
 
 Read about **bazel** build and make files. Also **bazel-gazelle**
 
-Also check out when to use which service
+Also check out when to use which service https://landscape.cncf.io/card-mode?project=graduated&grouping=no
+
 <img width="1688" alt="image" src="https://user-images.githubusercontent.com/19663316/223181241-1326918f-50b8-4e07-be02-01859482a1f4.png">
 
 Also few top services on CNCF https://www.cncf.io/projects/
