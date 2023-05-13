@@ -8,6 +8,18 @@ the only way to change an object's internal data. Because of these restrictions,
 object's internal state is said to be **encapsulated**; it cannot be accessed directly, and its
 representation is invisible from outside the object.
 
+**Interface**
+Specifying Object Interfaces
+
+Every operation declared by an object specifies the operation's name, the objects it
+takes as parameters, and the operation's return value. This is known as the operation's
+signature. The set of all signatures defined by an object's operations is called the
+interface to the object. 
+
+An object's interface characterizes the complete set of requests
+that can be sent to the object. Any request that matches a signature in the object's
+interface may be sent to the object.
+
 **Dynamic binding**:
 The run-time association of a request to an object and one of its operations is known as
 dynamic binding.
