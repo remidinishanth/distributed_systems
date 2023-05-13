@@ -9,7 +9,11 @@ object's internal state is said to be **encapsulated**; it cannot be accessed di
 representation is invisible from outside the object.
 
 An object's implementation is defined by its **class**. The class specifies the object's internal data and
-representation and defines the operations the object can perform.
+representation and defines the operations the object can perform. 
+
+Objects are created by instantiating a class. The object is said to be an instance of the
+class. The process of **instantiating** a class allocates storage for the object's internal data
+(made up of instance variables) and associates the operations with these data.
 
 **Interface**
 Specifying Object Interfaces
