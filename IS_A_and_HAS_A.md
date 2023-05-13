@@ -1,13 +1,15 @@
+<img width="1035" alt="image" src="https://github.com/remidinishanth/oops_and_design_patterns/assets/19663316/3424d51b-d71f-4c50-adce-89c213664f38">
+
+
 ### IS-A and HAS-A
 
 Using IS-A and HAS-A:
 Remember that when one class inherits from another, we say that the
-subclass extends the superclass. When you want to know if one thing should
-extend another, apply the IS-A test. 
+subclass extends the superclass. 
 
-Tub extends Bathroom, sounds reasonable.
+When you want to know if one thing should extend another, apply the IS-A test. 
 
-Until you apply the IS-A test.
+Tub extends Bathroom, sounds reasonable. Until you apply the IS-A test.
 
 To know if you’ve designed your types correctly, ask, “Does it make sense to
 say type X IS-A type Y?” If it doesn’t, you know there’s something wrong
