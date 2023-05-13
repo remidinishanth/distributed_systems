@@ -8,6 +8,9 @@ the only way to change an object's internal data. Because of these restrictions,
 object's internal state is said to be **encapsulated**; it cannot be accessed directly, and its
 representation is invisible from outside the object.
 
+An object's implementation is defined by its **class**. The class specifies the object's internal data and
+representation and defines the operations the object can perform.
+
 **Interface**
 Specifying Object Interfaces
 
