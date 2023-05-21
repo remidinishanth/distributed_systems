@@ -44,6 +44,12 @@ Can also try `df.resample('1H', origin=origin_start)`
 * Trend lines
 * Trading Uday Zone, see how the market is moving today and draw two lines and based on that, decide when to enter
 
+### Bullish vs Bearish
+
+* Bull attacks with horns from bottom to up, hence market going to upward
+* Bear attacks from top to bottom with hands, hence market is going in downward direction
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/d7fcecf8-36b1-48f6-a95c-b96972141004)
+
 
 ### Call and Put Option
 
