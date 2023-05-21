@@ -37,3 +37,9 @@ print(resampled_df)
 ```
 
 Can also try `df.resample('1H', origin=origin_start)`
+
+### Concepts
+* Price Action
+* Support Resistance
+* Trend lines
+* Trading Uday Zone, see how the market is moving today and draw two lines and based on that, decide when to enter
