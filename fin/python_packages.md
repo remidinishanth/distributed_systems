@@ -76,6 +76,16 @@ For instance, assume that the spot price of a stock is currently at Rs. 1,600 an
 Long Call option - Unlimited Profit, Buying Call option
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/c341527d-d33e-4456-a494-ce049511e273)
 
-
 Short call option - Limited Profit, Selling call option
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/6968dbc3-61d2-43c2-9bdf-1b2207e5c706)
+
+
+Buying a Call option
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/0fec9c82-6746-4916-98f0-cbf482d03a3c)
+
+Buying a Put option
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/c453e165-5a2f-4ea1-9a08-4a130b368602)
+
+#### Call option value (vs) Stock price
+
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/67cc129c-1aca-46a5-b795-c8a4ef752713)
