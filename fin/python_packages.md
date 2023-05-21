@@ -80,10 +80,12 @@ Short call option - Limited Profit, Selling call option
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/6968dbc3-61d2-43c2-9bdf-1b2207e5c706)
 
 
-Buying a Call option
+* Buying a Call option
+
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/0fec9c82-6746-4916-98f0-cbf482d03a3c)
 
-Buying a Put option
+* Buying a Put option
+
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/c453e165-5a2f-4ea1-9a08-4a130b368602)
 
 #### Call option value (vs) Stock price
