@@ -43,3 +43,14 @@ Can also try `df.resample('1H', origin=origin_start)`
 * Support Resistance
 * Trend lines
 * Trading Uday Zone, see how the market is moving today and draw two lines and based on that, decide when to enter
+
+<img width="922" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/ea9eef67-2aed-41c6-90a9-db96852f4135">
+
+* The intrinsic value of a call option = Spot price - Strike price
+* The intrinsic value of a put option = Strike price - Spot price
+
+#### In the money:
+
+If the intrinsic value of an options contract is a positive number, then the option is considered to be ‘in the money’.
+
+For instance, assume that the spot price of a stock is currently at Rs. 1,600 and the strike price of a call option of that said stock is Rs. 1,500. The intrinsic value of the said call option would be Rs. 100 (Rs. 1,600 - Rs. 1,500). Since the intrinsic value is positive, the call option of the stock is considered to be ‘in the money’.
