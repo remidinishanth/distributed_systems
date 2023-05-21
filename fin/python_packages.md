@@ -50,6 +50,8 @@ Can also try `df.resample('1H', origin=origin_start)`
 * Bear attacks from top to bottom with hands, hence market is going in downward direction
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/d7fcecf8-36b1-48f6-a95c-b96972141004)
 
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/72545224-e4ea-4141-9a5a-4091ae6b5c6c)
+
 
 ### Call and Put Option
 
