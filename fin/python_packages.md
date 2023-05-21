@@ -70,3 +70,12 @@ If the intrinsic value of an options contract is a positive number, then the opt
 For instance, assume that the spot price of a stock is currently at Rs. 1,600 and the strike price of a call option of that said stock is Rs. 1,500. The intrinsic value of the said call option would be Rs. 100 (Rs. 1,600 - Rs. 1,500). Since the intrinsic value is positive, the call option of the stock is considered to be ‘in the money’.
 
 <img width="687" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/994d7b40-21c2-4095-a116-72078a549057">
+
+#### Pay off
+
+Call option - Unlimited Profit
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/c341527d-d33e-4456-a494-ce049511e273)
+
+
+Put option - Limited Profit
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/6968dbc3-61d2-43c2-9bdf-1b2207e5c706)
