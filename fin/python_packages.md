@@ -73,9 +73,9 @@ For instance, assume that the spot price of a stock is currently at Rs. 1,600 an
 
 #### Pay off
 
-Call option - Unlimited Profit
+Long Call option - Unlimited Profit, Buying Call option
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/c341527d-d33e-4456-a494-ce049511e273)
 
 
-Put option - Limited Profit
+Short call option - Limited Profit, Selling call option
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/6968dbc3-61d2-43c2-9bdf-1b2207e5c706)
