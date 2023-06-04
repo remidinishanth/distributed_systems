@@ -70,6 +70,9 @@ Abstraction is an extension of encapsulation. It is the process of selecting dat
 ![](images/uml_diagrams_notation.png)
 ![](images/Uml_classes.png)
 
+<img width="875" alt="image" src="https://github.com/remidinishanth/oops_and_design_patterns/assets/19663316/fed863da-8236-41fe-afc5-df6e51db4fdf">
+
+
 ### Fundamental Priniciples
 
 ![](images/fundamental_priniciples.png)
