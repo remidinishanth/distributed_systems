@@ -112,3 +112,5 @@ KEY TAKEAWAYS
 * A bull call spread is an options strategy used when a trader is betting that a stock will have a limited increase in its price. 
 * The strategy uses two call options to create a range consisting of a lower strike price and an upper strike price.
 * The bullish call spread can limit the losses of owning stock, but it also caps the gains.
+
+Ref: https://zerodha.com/varsity/chapter/bull-call-spread/
