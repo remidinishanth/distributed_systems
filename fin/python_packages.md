@@ -102,6 +102,10 @@ When you do this ensure
 
 #### Bull call spread
 
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/6d5125d7-fa70-4ad0-ae59-baac0df85adc)
+
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/14e19f14-13d6-410d-9d4a-eec0c542eaec)
+
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/2a10121c-3724-4f16-a9d2-16a72e2090eb)
 
 KEY TAKEAWAYS
