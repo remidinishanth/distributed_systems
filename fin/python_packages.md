@@ -91,3 +91,11 @@ Short call option - Limited Profit, Selling call option
 #### Call option value (vs) Stock price
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/67cc129c-1aca-46a5-b795-c8a4ef752713)
+
+
+### Spreads
+
+When you do this ensure 
+* All strikes belong to the same underlying
+* Belong to the same expiry series
+* Each leg involves the same number of options
