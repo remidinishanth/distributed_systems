@@ -64,9 +64,11 @@ Polymorphism is a Greek word that literally means many shapes. Polymorphism is d
 
 Polymorphism, the idea that we can write code that works for types, and their subtypes.
 
-Polymorphism gives us a way to use a class exactly like its parent so there is no confusion with mixing types. This being said, each child sub-class keeps its own functions/methods as they are.
+Polymorphism gives us a way to use a class exactly like its parent so there is no confusion with mixing types. 
+This being said, each child sub-class keeps its own functions/methods as they are.
 
 A subclass can define its own unique behavior and still share the same functionalities or behavior of its parent/base class.
+In short, each class is able to respond differently to the same method. Hence the word Polymorphism.
 
 ### Abstraction
 Abstraction, where we can hide away implementation details only relying on a class type or an interface.
