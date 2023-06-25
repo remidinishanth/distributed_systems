@@ -67,8 +67,21 @@ Abstraction, where we can hide away implementation details only relying on a cla
 Abstraction is an extension of encapsulation. It is the process of selecting data from a larger pool to show only the relevant details to the object. 
 
 ### UML diagrams notation
+
+When creating a diagram using the Unified Modeling Language (UML), there are two views that
+can be expressed. 
+* The first is the contents and components of an individual class itself, the
+internal view of the class.
+* The second is the view reflecting relationships between classes, the
+external view of the class.
+
+Both parts are necessary for us to understand the internal structure
+and external relationships related to a class.
+
+#### Internal view
 ![image](https://github.com/remidinishanth/oops_and_design_patterns/assets/19663316/a6b99809-8bdb-476b-82e7-0a51a9887d87)
 
+#### External relationships
 ![](images/uml_diagrams_notation.png)
 ![](images/Uml_classes.png)
 
