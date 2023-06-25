@@ -120,6 +120,8 @@ Encapsulate what varies: Identify the aspects of your application that vary and 
 ### Inheritance versus composition
 ![](images/inhertitance_vs_composition.png)
 
+Inheritance allows one class to inherit from another
+class. We can thus abstract out attributes and behaviors for common classes.
 For example, dogs and cats are both mammals because a dog `is-a` mammal, and a cat `is-a` mammal.
 
 With composition, we can also build classes by embedding classes in other classes.
