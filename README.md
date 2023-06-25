@@ -75,6 +75,18 @@ Abstraction, where we can hide away implementation details only relying on a cla
 
 Abstraction is an extension of encapsulation. It is the process of selecting data from a larger pool to show only the relevant details to the object. 
 
+### Composition
+It is natural to think of objects as containing other objects.
+
+A computer contains video cards, keyboards, and drives. Although the computer can be considered an object 
+unto itself, the drive is also considered a valid object. 
+
+In fact, you could open up the computer and remove the drive and hold it in your
+hand. Both the computer and the drive are considered objects. It is just that the computer
+contains other objects—such as drives.
+
+In this way, objects are often built, or composed, from other objects: This is composition.
+
 ### UML diagrams notation
 
 When creating a diagram using the Unified Modeling Language (UML), there are two views that
