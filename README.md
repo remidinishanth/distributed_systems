@@ -134,3 +134,7 @@ This just doesn’t sound right when it rolls off the tongue (and because we are
 real-world systems, this is the effect we want). 
 
 Rather, we use the term has-a to describe composition relationships. A car `has-a(n)` engine.
+
+### Good Practices
+* One of the main advantages of OO programming is that classes can be reused. In general,
+reusable classes tend to have interfaces that are more abstract than concrete.
