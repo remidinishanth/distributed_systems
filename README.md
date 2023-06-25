@@ -119,3 +119,16 @@ Encapsulate what varies: Identify the aspects of your application that vary and 
 
 ### Inheritance versus composition
 ![](images/inhertitance_vs_composition.png)
+
+For example, dogs and cats are both mammals because a dog `is-a` mammal, and a cat `is-a` mammal.
+
+With composition, we can also build classes by embedding classes in other classes.
+Consider the relationship between a car and an engine. The benefits of separating the
+engine from the car are evident. 
+
+By building the engine separately, we can use the engine
+in various cars—not to mention other advantages. But we can’t say that an engine is-a car.
+This just doesn’t sound right when it rolls off the tongue (and because we are modeling
+real-world systems, this is the effect we want). 
+
+Rather, we use the term has-a to describe composition relationships. A car `has-a(n)` engine.
