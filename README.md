@@ -33,37 +33,40 @@ THE LANGUAGE OF OBJECT-ORIENTED PROGRAMMING
 In this list, the one thing that truly distinguishes object-oriented languages
 from procedural languages (C, Fortran, Basic, Pascal) is polymorphism.
 
-### The four pillars of object-oriented programming are:
+## The four pillars of object-oriented programming are:
 
 * Abstraction
 * Encapsulation
 * Inheritance
 * Polymorphism
 
-#### Inheritance
-Inheritance, the concept that we can reuse features or behaviors of a class by inheriting from it. 
+### Inheritance
+Inheritance is the concept that we can reuse features or behaviors of a class by inheriting from it. 
 
 You avoid duplicate code. You define a common protocol for a group of classes.
 
 You get a lot of OO mileage by designing with inheritance. You can get rid of duplicate
-code by abstracting out the behavior common to a group of classes, and sticking that code
-in a superclass. That way, when you need to modify it, you have only one place to update
+code by abstracting out the behavior common to a group of classes and sticking that code
+in a superclass. That way, when you need to modify it, you have only one place to update.
 
-#### Encapsulation
+Inheritance allows a class to inherit the attributes and methods of another class. This
+allows the creation of brand-new classes by abstracting out common attributes and behaviors.
+
+### Encapsulation
 Encapsulation is defined by the fact that objects contain both attributes and behaviors. Data hiding is a major part of encapsulation.
 
 Encapsulation, we can hide and protect the data in a class. 
 
 Encapsulation is accomplished when each object maintains a private state, inside a class. Other objects can not access this state directly, instead, they can only invoke a list of public functions. The object manages its own state via these functions and no other class can alter it unless explicitly allowed. In order to communicate with the object, you will need to utilize the methods provided. 
 
-#### Polymorphism
+### Polymorphism
 Polymorphism, the idea that we can write code that works for types, and their subtypes.
 
 Polymorphism gives us a way to use a class exactly like its parent so there is no confusion with mixing types. This being said, each child sub-class keeps its own functions/methods as they are.
 
 Polymorphism is derived from 2 Greek words: poly(many) and morphs(forms), so polymorphism means "many forms". A subclass can define its own unique behavior and still share the same functionalities or behavior of its parent/base class.
 
-#### Abstraction
+### Abstraction
 Abstraction, where we can hide away implementation details only relying on a class type or an interface.
 
 Abstraction is an extension of encapsulation. It is the process of selecting data from a larger pool to show only the relevant details to the object. 
