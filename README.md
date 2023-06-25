@@ -50,6 +50,8 @@ code by abstracting out the behavior common to a group of classes, and sticking 
 in a superclass. That way, when you need to modify it, you have only one place to update
 
 #### Encapsulation
+Encapsulation is defined by the fact that objects contain both attributes and behaviors. Data hiding is a major part of encapsulation.
+
 Encapsulation, we can hide and protect the data in a class. 
 
 Encapsulation is accomplished when each object maintains a private state, inside a class. Other objects can not access this state directly, instead, they can only invoke a list of public functions. The object manages its own state via these functions and no other class can alter it unless explicitly allowed. In order to communicate with the object, you will need to utilize the methods provided. 
