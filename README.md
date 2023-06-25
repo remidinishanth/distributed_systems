@@ -60,13 +60,13 @@ Encapsulation, we can hide and protect the data in a class.
 Encapsulation is accomplished when each object maintains a private state, inside a class. Other objects can not access this state directly, instead, they can only invoke a list of public functions. The object manages its own state via these functions and no other class can alter it unless explicitly allowed. In order to communicate with the object, you will need to utilize the methods provided. 
 
 ### Polymorphism
-Polymorphism is a Greek word that literally means many shapes.
+Polymorphism is a Greek word that literally means many shapes. Polymorphism is derived from 2 Greek words: poly(many) and morphs(forms), so polymorphism means "many forms". 
 
 Polymorphism, the idea that we can write code that works for types, and their subtypes.
 
 Polymorphism gives us a way to use a class exactly like its parent so there is no confusion with mixing types. This being said, each child sub-class keeps its own functions/methods as they are.
 
-Polymorphism is derived from 2 Greek words: poly(many) and morphs(forms), so polymorphism means "many forms". A subclass can define its own unique behavior and still share the same functionalities or behavior of its parent/base class.
+A subclass can define its own unique behavior and still share the same functionalities or behavior of its parent/base class.
 
 ### Abstraction
 Abstraction, where we can hide away implementation details only relying on a class type or an interface.
