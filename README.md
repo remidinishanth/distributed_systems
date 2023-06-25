@@ -87,6 +87,8 @@ contains other objects—such as drives.
 
 In this way, objects are often built, or composed, from other objects: This is composition.
 
+Just as with inheritance, composition provides a mechanism for building objects.
+
 ### UML diagrams notation
 
 When creating a diagram using the Unified Modeling Language (UML), there are two views that
