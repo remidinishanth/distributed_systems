@@ -157,3 +157,13 @@ the signature of the method is different each time.
 
 The signature consists of the method name and a parameter list. (Depending on the language, the signature may or may not include the return type. In Java
 and C#, the return type is not part of the signature.)
+
+### Multiple Inheritance
+
+Multiple inheritance is a very powerful technique, and in fact, some problems are quite difficult to solve without it. 
+
+Multiple inheritance can even solve some problems quite elegantly. However, multiple inheritance can significantly increase the complexity of a system, both for
+the programmer and the compiler writers.
+
+The designers of Java and .NET decided that the increased complexity of allowing multiple inheritance far outweighed its advantages, so they
+eliminated it from the language.
