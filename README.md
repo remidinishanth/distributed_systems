@@ -138,3 +138,11 @@ Rather, we use the term has-a to describe composition relationships. A car `has-
 ### Good Practices
 * One of the main advantages of OO programming is that classes can be reused. In general,
 reusable classes tend to have interfaces that are more abstract than concrete.
+
+### When is the constructor called?
+The new keyword creates a new instance of the `class`, thus allocating the required memory.
+
+Then the constructor itself is called, passing the arguments in the parameter list.
+
+The constructor provides the developer the opportunity to attend to the
+appropriate initialization.
