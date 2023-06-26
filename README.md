@@ -149,3 +149,10 @@ appropriate initialization.
 
 Code included inside a constructor should
 set the newly created object to its initial, stable, safe state.
+
+### Method Overloading
+
+Overloading allows a programmer to use the same method name over and over, as long as
+the signature of the method is different each time.
+
+The signature consists of the method name and a parameter list.
