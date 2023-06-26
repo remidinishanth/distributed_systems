@@ -146,3 +146,6 @@ Then the constructor itself is called, passing the arguments in the parameter li
 
 The constructor provides the developer the opportunity to attend to the
 appropriate initialization.
+
+Code included inside a constructor should
+set the newly created object to its initial, stable, safe state.
