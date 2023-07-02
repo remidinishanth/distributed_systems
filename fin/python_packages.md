@@ -118,4 +118,5 @@ Ref: https://zerodha.com/varsity/chapter/bull-call-spread/
 
 For Backtesting etc
 * https://github.com/jesse-ai/jesse
+  - Refer `def _execute(self)` in `Strategy` 
 * https://www.backtrader.com/ and https://github.com/kernc/backtesting.py
