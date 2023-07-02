@@ -114,3 +114,8 @@ KEY TAKEAWAYS
 * The bullish call spread can limit the losses of owning stock, but it also caps the gains.
 
 Ref: https://zerodha.com/varsity/chapter/bull-call-spread/
+
+
+For Backtesting etc
+* https://github.com/jesse-ai/jesse
+* https://www.backtrader.com/ and https://github.com/kernc/backtesting.py
