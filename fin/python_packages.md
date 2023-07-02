@@ -118,9 +118,11 @@ Ref: https://zerodha.com/varsity/chapter/bull-call-spread/
 
 For Backtesting etc
 * https://github.com/jesse-ai/jesse
-  - First you need to define your strategy, Refer `def _execute(self)` in `Strategy`
 
-![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/364e70f4-2894-4db8-8b21-3da3c7748f34)
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/382c4837-7f72-4db7-af97-61de5244ed93)
+
+
+  - First you need to define your strategy, Refer `def _execute(self)` in `Strategy`
 
   - Then based on your route, it does trading
   - ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/c66568d5-1b94-423b-b4aa-3e7937b734a7)
