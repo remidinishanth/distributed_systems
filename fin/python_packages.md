@@ -119,7 +119,7 @@ Ref: https://zerodha.com/varsity/chapter/bull-call-spread/
 For Backtesting etc
 * https://github.com/jesse-ai/jesse
 
-![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/382c4837-7f72-4db7-af97-61de5244ed93)
+<img width="1695" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/00498ccc-1f85-4210-af5d-e66b11eac0ea">
 
 
   - First you need to define your strategy, Refer `def _execute(self)` in `Strategy`
