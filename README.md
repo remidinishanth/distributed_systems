@@ -6,6 +6,8 @@ Design Patterns REF: https://www.d.umn.edu/~gshute/softeng/new/design_patterns/d
 
 Object-Oriented programming lets you extend a program without having to touch previously-tested, working code.
 
+Ref: https://www.dre.vanderbilt.edu/~schmidt/cs251/C++/lectures/PDFs/
+
 THE LANGUAGE OF OBJECT-ORIENTED PROGRAMMING
 ===========================================
 * Object: An object is a repository of data. For example, if MyList is a
