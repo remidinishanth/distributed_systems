@@ -53,6 +53,17 @@ Can also try `df.resample('1H', origin=origin_start)`
 ### Candle Stick Patterns
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/72545224-e4ea-4141-9a5a-4091ae6b5c6c)
 
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/096cd25d-f637-4d77-8b9d-a672464b76d3)
+
+#### Dark cover cloud
+The "dark cloud cover" is a candlestick pattern used in technical analysis to predict potential reversals in an upward trend
+
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/69f837e7-6f93-41a0-83f8-0c5acff2c939)
+
+The bearish candlestick should penetrate at least halfway into the body of the previous bullish candlestick. This shows that the bears are gaining strength and pushing the price lower.
+
+The dark cloud cover pattern suggests a potential reversal in the uptrend because it indicates that bears are starting to exert control over the market. It represents a shift in sentiment from bullishness to bearishness, and traders often interpret it as a signal to consider selling or taking profits.
+
 #### Classic example of Reversal
 <img width="383" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/a5370cc6-5f84-4159-b6ea-c68aed0159ff">
 
