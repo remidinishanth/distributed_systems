@@ -6,6 +6,9 @@
 * https://github.com/twopirllc/pandas-ta#quick-start
 * https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf
 
+### Also
+* https://tradingtick.com/
+* https://in.tradingview.com/chart/YQrjA7DA/
 
 Converting minute candles to hourly candles
 ```python
