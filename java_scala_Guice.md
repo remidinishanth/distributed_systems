@@ -37,3 +37,45 @@ public class MyClass {
     }
 }
 ```
+
+
+When we use Guice, We will need to modify the main to use Injector to get the instance of `MyClass` but we don't need to set up `GreetingService` explicitly in the main
+
+```java
+import com.google.inject.Guice;
+import com.google.inject.Inject;
+import com.google.inject.Injector;
+
+public class MyClass {
+    private final GreetingService greetingService;
+
+    @Inject
+    public MyClass(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
+    public void performGreeting() {
+        String message = greetingService.greet();
+        System.out.println(message);
+    }
+
+    public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new GuiceModule());
+        MyClass myClass = injector.getInstance(MyClass.class);
+        myClass.performGreeting();
+    }
+}
+```
+
+Now we a module which extends AbstractModule as follows
+
+```java
+import com.google.inject.AbstractModule;
+
+public class GuiceModule extends AbstractModule {
+    @Override
+    protected void configure() {
+        bind(GreetingService.class).to(GreetingServiceImpl.class);
+    }
+}
+```
