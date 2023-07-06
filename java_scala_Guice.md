@@ -35,6 +35,14 @@ public class MyClass {
 }
 ```
 
+However, this approach has some disadvantages:
+
+* Tight coupling: By directly instantiating the dependency within the class, you create tight coupling between MyClass and GreetingServiceImpl. This can make it harder to change or swap out the implementation later on.
+
+* Lack of flexibility: With direct instantiation, you cannot easily switch to a different implementation of GreetingService without modifying the MyClass code. This reduces the flexibility and maintainability of the codebase.
+
+* Difficulty in testing: It can be challenging to write unit tests for MyClass when the dependency is directly instantiated within the class. Testing may require more complex setup and mocking to isolate the behavior of MyClass.
+
 ## With Dependency Injection, Without Guice
 Without using Guice, this is how you will need to do things in java:
 
