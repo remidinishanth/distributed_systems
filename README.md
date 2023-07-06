@@ -29,8 +29,6 @@ Read about google lectures at https://sites.google.com/site/mriap2008/lectures
 
 * https://thesmartcoder.dev/fantastic-books-by-developers-for-developers/
 
-* Dependency Injection Using Guice in Java https://github.com/google/guice/wiki/GettingStarted
-
 ### Other readings
 
 TODO: **gRPC** - Why do we use it? Why is it becoming popular? https://people.cs.rutgers.edu/~pxk/417/notes/rpc.html
