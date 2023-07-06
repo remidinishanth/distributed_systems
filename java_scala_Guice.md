@@ -70,7 +70,17 @@ public class MyClass {
 }
 ```
 
+By using dependency injection, the benefits include:
+
+Loose coupling: MyClass doesn't need to know about the specific implementation of GreetingService. It only depends on the abstraction defined by the interface GreetingService.
+
+Flexibility: The implementation of GreetingService can be easily changed or swapped out by providing a different implementation while creating an instance of MyClass.
+
+Testability: With dependency injection, it becomes easier to write unit tests for MyClass. You can provide a mock or stub implementation of GreetingService during testing, enabling isolated testing of MyClass behavior.
+
 ## With Guice
+
+By using a dependency injection framework like Guice, you can further automate and streamline the injection process, manage the lifecycle of dependencies, and handle complex dependency graphs. It simplifies the management of dependencies and promotes modular design.
 
 When we use Guice, We will need to modify the main to use Injector to get the instance of `MyClass` but we don't need to set up `GreetingService` explicitly in the main
 
