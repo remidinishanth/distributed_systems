@@ -2,10 +2,7 @@ Guice (pronounced 'juice') is a lightweight dependency injection framework for J
 
 Dependency Injection Using Guice in Java https://github.com/google/guice/wiki/GettingStarted
 
-## Without Guice
-Without using Guice, this is how you will need to do things in java:
-
-<img width="680" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/7784dbec-ca4d-4ae9-bd70-5225cc854a91">
+## Without Dependency Injection, Bad code
 
 ```java
 // GreetingService.java
@@ -19,7 +16,31 @@ public class GreetingServiceImpl implements GreetingService {
         return "Hello, Normal without Guice!";
     }
 }
+```
 
+```java
+// MyClass.java
+public class MyClass {
+    private final GreetingService greetingService = new GreetingServiceImpl();
+
+    public void performGreeting() {
+        String message = greetingService.greet();
+        System.out.println(message);
+    }
+
+    public static void main(String[] args) {
+        MyClass myClass = new MyClass();
+        myClass.performGreeting();
+    }
+}
+```
+
+## With Dependency Injection, Without Guice
+Without using Guice, this is how you will need to do things in java:
+
+<img width="680" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/7784dbec-ca4d-4ae9-bd70-5225cc854a91">
+
+```java
 // MyClass.java
 public class MyClass {
     private final GreetingService greetingService;
