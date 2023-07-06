@@ -69,7 +69,7 @@ public class MyClass {
 }
 ```
 
-Now we a module which extends AbstractModule as follows
+Now we need module which extends inject.AbstractModule as follows, this tell that whenever we need GreetingService, pass GreetingServiceImpl, that way, we need not explicitly instantiate `GreetingServiceImpl` inside main class, so this can solve our problem when we need to recursively inject many classes
 
 ```java
 import com.google.inject.AbstractModule;
@@ -85,7 +85,7 @@ public class GuiceModule extends AbstractModule {
 
 ### Without using Constructor
 
-In the previous example, the dependency GreetingService was passed through the constructor of MyClass. If you want to inject the dependency without passing it through the constructor, you can use the @Inject annotation on a field instead. Here's an updated version:
+In the previous example, the dependency `GreetingService` was passed through the constructor of `MyClass`. If you want to inject the dependency without passing it through the constructor, you can use the `@Inject` annotation on a field instead. Here's an updated version:
 
 ```java
 import com.google.inject.Guice;
@@ -109,6 +109,6 @@ public class MyClass {
 }
 ```
 
-In this updated code, the GreetingService dependency is injected using the @Inject annotation on the field greetingService directly. The field is automatically populated by Guice when an instance of MyClass is created.
+In this updated code, the `GreetingService` dependency is injected using the `@Inject` annotation on the field `greetingService` directly. The field is automatically populated by Guice when an instance of `MyClass` is created.
 
-By using the @Inject annotation on the field, you don't need to pass the dependency through the constructor explicitly. Guice will take care of injecting the appropriate instance of GreetingService when creating an instance of MyClass.
+By using the `@Inject` annotation on the field, you don't need to pass the dependency through the constructor explicitly. Guice will take care of injecting the appropriate instance of `GreetingService` when creating an instance of MyClass.
