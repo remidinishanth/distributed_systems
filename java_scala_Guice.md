@@ -1,5 +1,6 @@
 Guice (pronounced 'juice') is a lightweight dependency injection framework for Java 8 and above, brought to you by Google.
 
+## Without Guice
 Without using Guice, this is how you will need to do things in java:
 
 <img width="680" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/7784dbec-ca4d-4ae9-bd70-5225cc854a91">
@@ -38,6 +39,7 @@ public class MyClass {
 }
 ```
 
+## With Guice
 
 When we use Guice, We will need to modify the main to use Injector to get the instance of `MyClass` but we don't need to set up `GreetingService` explicitly in the main
 
@@ -81,10 +83,11 @@ public class GuiceModule extends AbstractModule {
 ```
 
 
+### Without using Constructor
 
 In the previous example, the dependency GreetingService was passed through the constructor of MyClass. If you want to inject the dependency without passing it through the constructor, you can use the @Inject annotation on a field instead. Here's an updated version:
 
-```
+```java
 import com.google.inject.Guice;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
