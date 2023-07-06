@@ -79,3 +79,33 @@ public class GuiceModule extends AbstractModule {
     }
 }
 ```
+
+
+
+In the previous example, the dependency GreetingService was passed through the constructor of MyClass. If you want to inject the dependency without passing it through the constructor, you can use the @Inject annotation on a field instead. Here's an updated version:
+
+```
+import com.google.inject.Guice;
+import com.google.inject.Inject;
+import com.google.inject.Injector;
+
+public class MyClass {
+    @Inject
+    private GreetingService greetingService;
+
+    public void performGreeting() {
+        String message = greetingService.greet();
+        System.out.println(message);
+    }
+
+    public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new GuiceModule());
+        MyClass myClass = injector.getInstance(MyClass.class);
+        myClass.performGreeting();
+    }
+}
+```
+
+In this updated code, the GreetingService dependency is injected using the @Inject annotation on the field greetingService directly. The field is automatically populated by Guice when an instance of MyClass is created.
+
+By using the @Inject annotation on the field, you don't need to pass the dependency through the constructor explicitly. Guice will take care of injecting the appropriate instance of GreetingService when creating an instance of MyClass.
