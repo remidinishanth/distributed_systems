@@ -2,6 +2,8 @@ Guice (pronounced 'juice') is a lightweight dependency injection framework for J
 
 Dependency Injection Using Guice in Java https://github.com/google/guice/wiki/GettingStarted
 
+> Dependency injection is a design pattern wherein classes declare their dependencies as arguments instead of creating those dependencies
+
 ## Without Dependency Injection, Bad code
 
 ```java
