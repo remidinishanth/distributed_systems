@@ -80,6 +80,100 @@ Flexibility: The implementation of GreetingService can be easily changed or swap
 
 Testability: With dependency injection, it becomes easier to write unit tests for MyClass. You can provide a mock or stub implementation of GreetingService during testing, enabling isolated testing of MyClass behavior.
 
+## Using Factory
+
+Refer: https://github.com/google/guice/wiki/Motivation#factories
+
+A factory class decouples the client and implementing class. A simple factory uses static methods to get and set mock implementations for interfaces. A factory is implemented with some boilerplate code:
+```java
+public interface GreetingService {
+    String greet();
+}
+
+public class DefaultGreetingService implements GreetingService {
+    private final String name;
+
+    public DefaultGreetingService(String name) {
+        this.name = name;
+    }
+
+    public String greet() {
+        return "Hello, " + name + "!";
+    }
+}
+
+public class GreetingServiceFactory {
+    private static GreetingService instance;
+
+    public static void setInstance(GreetingService service) {
+        instance = service;
+    }
+
+    public static GreetingService getInstance() {
+        if (instance == null) {
+            return new DefaultGreetingService("John Doe");
+        }
+
+        return instance;
+    }
+}
+
+public class MyClass {
+    private final GreetingService greetingService;
+
+    public MyClass() {
+        this.greetingService = GreetingServiceFactory.getInstance();
+    }
+
+    public void performGreeting() {
+        String message = greetingService.greet();
+        System.out.println(message);
+    }
+
+    public static void main(String[] args) {
+        MyClass myClass = new MyClass();
+        myClass.performGreeting();
+    }
+}
+```
+
+So we can now test it like the following
+
+```java
+public class MyClassTest {
+    @Test
+    public void testPerformGreetingWithFakeService() {
+        // Create a fake implementation of GreetingService
+        GreetingService fakeService = new FakeGreetingService();
+
+        // Set the fake implementation in the factory
+        GreetingServiceFactory.setInstance(fakeService);
+
+        // Create an instance of MyClass
+        MyClass myClass = new MyClass();
+
+        // Perform the greeting
+        myClass.performGreeting();
+
+        // Verify the output
+        assertEquals("Hello, Fake User!", getConsoleOutput());
+    }
+
+    // Helper method to capture the console output
+    private String getConsoleOutput() {
+        // Replace this with your own implementation to capture the console output during the test
+        return ""; // Placeholder implementation
+    }
+
+    // Fake implementation of GreetingService
+    private static class FakeGreetingService implements GreetingService {
+        public String greet() {
+            return "Hello, Fake User!";
+        }
+    }
+}
+```
+
 ## With Guice
 
 By using a dependency injection framework like Guice, you can further automate and streamline the injection process, manage the lifecycle of dependencies, and handle complex dependency graphs. It simplifies the management of dependencies and promotes modular design.
