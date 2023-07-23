@@ -146,7 +146,7 @@ When you do this ensure
 KEY TAKEAWAYS
 * A bull call spread is an options strategy used when a trader is betting that a stock will have a limited increase in its price. 
 * The strategy uses two call options to create a range consisting of a lower strike price and an upper strike price.
-* The bullish call spread can limit the losses of owning stock, but it also caps the gains.
+* The bullish call spread can limit the losses of owning stock but also caps the gains.
 
 Ref: https://zerodha.com/varsity/chapter/bull-call-spread/
 
@@ -157,7 +157,7 @@ For Backtesting etc
 Refer check function in Strategy
 <img width="845" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/b5dc409d-a87d-4833-8208-c3c429872bb2">
 
-> `should_long()` and `should_short()` are for entering trades only. This means that they would get called on every new candle only if no position is open, and no order is active.
+> `should_long()` and `should_short()` are for entering trades only. This means they would get called on every new candle only if no position is open, and no order is active.
 
 > If you're looking to close trades dynamically, update_position() is what you're looking for.
 
@@ -174,6 +174,7 @@ Refer check function in Strategy
 Not a great design, in go_long we are hard coding, when all to enter and exit to take profits
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/68d05fd8-dcc9-4544-8155-861477fa2c4b)
 
+* `_execute_long` is just looking into `self.buy`, based on the price, it is looking at whether to place (`Stop`, `Limit` or `Market`) order.
 * `_detect_and_handle_entry_and_exit_modifications` has logic to handle `self.stop_loss` and `self.take_profit`
 
 
