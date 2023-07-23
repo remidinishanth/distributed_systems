@@ -71,6 +71,11 @@ The dark cloud cover pattern suggests a potential reversal in the uptrend becaus
 <img width="383" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/a5370cc6-5f84-4159-b6ea-c68aed0159ff">
 
 
+### Long vs Short
+
+[long-and-short-trading-term-definitions-1031122_FINAL-1501219fbdac4b0e90bca691294125ae.webm](https://github.com/remidinishanth/distributed_systems/assets/19663316/c419f002-0d55-4165-9b69-b2b2bb746a01)
+
+
 ### Call and Put Option
 
 <img width="616" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/cd928e2d-5440-4b4d-a016-74efca7c1bca">
