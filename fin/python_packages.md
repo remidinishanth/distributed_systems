@@ -6,6 +6,8 @@
 * https://github.com/twopirllc/pandas-ta#quick-start
 * https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf
 
+* Awesome resource https://napkinfinance.com/napkins/napkins/
+
 ### Also
 * https://tradingtick.com/
 * https://in.tradingview.com/chart/YQrjA7DA/
