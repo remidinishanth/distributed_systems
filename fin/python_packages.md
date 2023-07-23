@@ -154,6 +154,10 @@ Ref: https://zerodha.com/varsity/chapter/bull-call-spread/
 For Backtesting etc
 * https://github.com/jesse-ai/jesse
 
+Refer check function in Strategy
+<img width="845" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/b5dc409d-a87d-4833-8208-c3c429872bb2">
+
+
 <img width="1695" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/00498ccc-1f85-4210-af5d-e66b11eac0ea">
 
 
