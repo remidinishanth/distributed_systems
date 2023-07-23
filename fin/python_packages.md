@@ -77,6 +77,8 @@ The dark cloud cover pattern suggests a potential reversal in the uptrend becaus
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/7b33757b-d9fd-49ff-b4c7-0c8f130eaae4)
 
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/5bdd4a33-fafd-469d-b71d-8de372efa45e)
+
 
 ### Call and Put Option
 
