@@ -189,6 +189,11 @@ self._take_profit_orders.append(
 )
 ```
 
+* Using filters for entry and exit price, Having so many conditional statements in should_long()/should_short() is not good practice.
+
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/cd524203-fdbd-4a16-ae2b-98155b50b712)
+
+
 
 
 * https://www.backtrader.com/ and https://github.com/kernc/backtesting.py
