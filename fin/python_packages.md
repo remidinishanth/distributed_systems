@@ -177,6 +177,18 @@ Not a great design, in go_long we are hard coding, when all to enter and exit to
 * `_execute_long` is just looking into `self.buy`, based on the price, it is looking at whether to place (`Stop`, `Limit` or `Market`) order.
 * `_detect_and_handle_entry_and_exit_modifications` has logic to handle `self.buy`, `self.stop_loss`, and `self.take_profit` modifications in the program, it will cancel any non-executed orders and will place new ones as per the modifications.
   - Everything in that works using `if not np.array_equal(self.take_profit, self._take_profit)` whether things modified from earlier used values.
+  - Broker is handling reducing position as we start taking profit
+
+```python
+self._take_profit_orders.append(
+    self.broker.reduce_position_at(
+        o[0],
+        o[1],
+        order_roles.CLOSE_POSITION
+    )
+)
+```
+
 
 
 * https://www.backtrader.com/ and https://github.com/kernc/backtesting.py
