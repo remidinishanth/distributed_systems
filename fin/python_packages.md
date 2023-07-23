@@ -77,6 +77,7 @@ The dark cloud cover pattern suggests a potential reversal in the uptrend becaus
 
 [long-and-short-trading-term-definitions-1031122_FINAL-1501219fbdac4b0e90bca691294125ae.webm](https://github.com/remidinishanth/distributed_systems/assets/19663316/c419f002-0d55-4165-9b69-b2b2bb746a01)
 
+Thank of Long as buying something, Short as selling something
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/1ea97abe-34f1-4204-bfcd-d971efc1bfe1)
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/7b33757b-d9fd-49ff-b4c7-0c8f130eaae4)
