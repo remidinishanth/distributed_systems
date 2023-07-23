@@ -157,6 +157,9 @@ For Backtesting etc
 Refer check function in Strategy
 <img width="845" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/b5dc409d-a87d-4833-8208-c3c429872bb2">
 
+> `should_long()` and `should_short()` are for entering trades only. This means that they would get called on every new candle only if no position is open, and no order is active.
+
+> If you're looking to close trades dynamically, update_position() is what you're looking for.
 
 <img width="1695" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/00498ccc-1f85-4210-af5d-e66b11eac0ea">
 
