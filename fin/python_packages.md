@@ -175,7 +175,7 @@ Not a great design, in go_long we are hard coding, when all to enter and exit to
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/68d05fd8-dcc9-4544-8155-861477fa2c4b)
 
 * `_execute_long` is just looking into `self.buy`, based on the price, it is looking at whether to place (`Stop`, `Limit` or `Market`) order.
-* `_detect_and_handle_entry_and_exit_modifications` has logic to handle `self.stop_loss` and `self.take_profit`
+* `_detect_and_handle_entry_and_exit_modifications` has logic to handle `self.buy`, `self.stop_loss`, and `self.take_profit` modifications in the program, it will cancel any non-executed orders and will place new ones as per the modifications.
 
 
 * https://www.backtrader.com/ and https://github.com/kernc/backtesting.py
