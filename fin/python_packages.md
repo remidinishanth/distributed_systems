@@ -174,5 +174,7 @@ Refer check function in Strategy
 Not a great design, in go_long we are hard coding, when all to enter and exit to take profits
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/68d05fd8-dcc9-4544-8155-861477fa2c4b)
 
+* `_detect_and_handle_entry_and_exit_modifications` has logic to handle `self.stop_loss` and `self.take_profit`
+
 
 * https://www.backtrader.com/ and https://github.com/kernc/backtesting.py
