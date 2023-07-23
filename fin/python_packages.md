@@ -192,3 +192,14 @@ self._take_profit_orders.append(
 
 
 * https://www.backtrader.com/ and https://github.com/kernc/backtesting.py
+
+
+* Mayank's architecture https://twitter.com/mayank_408/status/1682270404470079488?s=20
+
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/1cde74fb-c40d-49c6-99ad-2500748f52ac)
+
+* TimeScaledDB is recommended for storing tick data
+* Communication - GRPC calls between service to service. REST is only for Broker API.
+
+Commments:
+* There should be some kind of feedback loop from RMS to OMS and the strategy logic part.
