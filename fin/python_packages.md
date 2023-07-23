@@ -161,6 +161,8 @@ Refer check function in Strategy
 
 > If you're looking to close trades dynamically, update_position() is what you're looking for.
 
+> `go_short()` Same as `go_long()` but uses `self.sell` for entry instead of `self.buy`
+
 <img width="1695" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/00498ccc-1f85-4210-af5d-e66b11eac0ea">
 
 
