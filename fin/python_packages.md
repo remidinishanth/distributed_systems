@@ -171,4 +171,8 @@ Refer check function in Strategy
   - Then based on your route, it does trading
   - ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/c66568d5-1b94-423b-b4aa-3e7937b734a7)
 
+Not a great design, in go_long we are hard coding, when all to enter and exit to take profits
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/68d05fd8-dcc9-4544-8155-861477fa2c4b)
+
+
 * https://www.backtrader.com/ and https://github.com/kernc/backtesting.py
