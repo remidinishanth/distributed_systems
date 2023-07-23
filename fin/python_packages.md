@@ -77,12 +77,15 @@ The dark cloud cover pattern suggests a potential reversal in the uptrend becaus
 
 [long-and-short-trading-term-definitions-1031122_FINAL-1501219fbdac4b0e90bca691294125ae.webm](https://github.com/remidinishanth/distributed_systems/assets/19663316/c419f002-0d55-4165-9b69-b2b2bb746a01)
 
-![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/f713bf90-4af2-4fc5-b1fd-fbf5aa586df9)
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/1ea97abe-34f1-4204-bfcd-d971efc1bfe1)
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/7b33757b-d9fd-49ff-b4c7-0c8f130eaae4)
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/5bdd4a33-fafd-469d-b71d-8de372efa45e)
 
+Long Put is somewhat confusing because the price of the underlying asset actually is going down, hence you buy a put, but it is called Long Put
+
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/f713bf90-4af2-4fc5-b1fd-fbf5aa586df9)
 
 ### Call and Put Option
 
