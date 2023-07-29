@@ -208,3 +208,22 @@ self._take_profit_orders.append(
 
 Commments:
 * There should be some kind of feedback loop from RMS to OMS and the strategy logic part.
+
+
+# Strategies
+
+### Simple moving averages (SMA) based strategies
+The basic idea of SMA usage for buy and sell signal generation is already decades
+old. SMAs are a major tool in the so-called technical analysis of stock prices. A
+signal is derived, for example, when an SMA defined on a shorter time window—
+say 42 days—crosses an SMA defined on a longer time window—say 252 days.
+
+### Momentum strategies
+These are strategies that are based on the hypothesis that recent performance will
+persist for some additional time. For example, a stock that is downward trending
+is assumed to do so for longer, which is why such a stock is to be shorted.
+
+### Mean-reversion strategies
+The reasoning behind mean-reversion strategies is that stock prices or prices of
+other financial instruments tend to revert to some mean level or to some trend
+level when they have deviated too much from such levels.
