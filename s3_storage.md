@@ -33,4 +33,6 @@ Metadata is critical to object storage technology.
 * This creates a flat structure, called a bucket, as opposed to hierarchical or tiered storage.
 * This lets you retrieve and analyze any object in the bucket, no matter the file type, based on its function and characteristics.
 
+Object storage is the ideal storage for data lakes because it delivers an architecture for large amounts of data, with each piece of data stored as an object, and the object metadata provides a unique identifier for easier access. 
+
 Ref: https://www.ibm.com/topics/object-storage
