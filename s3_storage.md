@@ -35,4 +35,10 @@ Metadata is critical to object storage technology.
 
 Object storage is the ideal storage for data lakes because it delivers an architecture for large amounts of data, with each piece of data stored as an object, and the object metadata provides a unique identifier for easier access. 
 
+#### What is a data lake?
+
+A data lake is a centralized repository that allows you to store all your structured and unstructured data at any scale. You can store your data as-is, without having to first structure the data, and run different types of analytics—from dashboards and visualizations to big data processing, real-time analytics, and machine learning to guide better decisions.
+
+You can seamlessly and nondisruptively increase storage from gigabytes to petabytes of content, paying only for what you use. 
+
 Ref: https://www.ibm.com/topics/object-storage
