@@ -10,6 +10,12 @@ Ref: https://www.baeldung.com/lucene
 
 ### Elastic Search
 
+An Elasticsearch index is a collection of documents that are related to each other. Elasticsearch stores data as JSON documents. Each document correlates a set of keys (names of fields or properties) with their corresponding values (strings, numbers, Booleans, dates, arrays of values, geolocations, or other types of data).
+
+Elasticsearch uses a data structure called an inverted index, which is designed to allow very fast full-text searches. An inverted index lists every unique word that appears in any document and identifies all of the documents each word occurs in.
+
+During the indexing process, Elasticsearch stores documents and builds an inverted index to make the document data searchable in near real-time. Indexing is initiated with the index API, through which you can add or update a JSON document in a specific index.
+
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/81160f50-1185-4085-a349-83bc5ea984b8)
 
 ### ELK stack
@@ -18,3 +24,4 @@ Ref: https://www.baeldung.com/lucene
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/bd2a4323-1067-4f08-b41d-3fe723dc5e4d)
 
+Ref: https://www.elastic.co/what-is/elasticsearch
