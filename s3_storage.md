@@ -3,6 +3,11 @@
 * Unstructured data (such as photos, videos, email, web pages, sensor data, and audio files).
 
 
+## S3, Azure Blob Storage, Google Cloud Storage
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/1b2b5c2e-fe49-4384-896e-a7bc7df54387)
+
+
+
 ## Object Storage Definition
 Object storage is a technology that manages data as objects. All data is stored in one large repository which may be distributed across multiple physical storage devices, instead of being divided into files or folders.
 
