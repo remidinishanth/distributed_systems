@@ -11,6 +11,11 @@
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/42b7d597-18c6-40aa-9bdd-4736ea06a70b)
 * Encryption at Rest with keys you manage or Google manage. No need to worry about security.
 
+* Based on the frequency of usage, we have storage classes
+
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/06093b29-1d9e-456f-a57b-f1d12c6fdd3e)
+
+
 ## Object Storage Definition
 Object storage is a technology that manages data as objects. All data is stored in one large repository which may be distributed across multiple physical storage devices, instead of being divided into files or folders.
 
