@@ -4,6 +4,7 @@
 
 
 ## S3, Azure Blob Storage, Google Cloud Storage
+
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/1b2b5c2e-fe49-4384-896e-a7bc7df54387)
 
 
