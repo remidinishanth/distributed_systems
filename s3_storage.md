@@ -26,6 +26,11 @@ Block storage splits a file into separate data blocks, and stores each of these 
 
 ## Metadata in the Object store
 
-Metadata is critical to object storage technology. With object storage, objects are kept in a single bucket and are not files inside of folders. Instead, object storage combines the pieces of data that make up a file, adds all the user-created metadata to that file, and attaches a custom identifier. This creates a flat structure, called a bucket, as opposed to hierarchical or tiered storage. This lets you retrieve and analyze any object in the bucket, no matter the file type, based on its function and characteristics.
+Metadata is critical to object storage technology. 
+
+* With object storage, objects are kept in a single bucket and are not files inside of folders.
+* Instead, object storage combines the pieces of data that make up a file, adds all the user-created metadata to that file, and attaches a custom identifier.
+* This creates a flat structure, called a bucket, as opposed to hierarchical or tiered storage.
+* This lets you retrieve and analyze any object in the bucket, no matter the file type, based on its function and characteristics.
 
 Ref: https://www.ibm.com/topics/object-storage
