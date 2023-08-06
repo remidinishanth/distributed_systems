@@ -10,6 +10,8 @@ Ref: https://www.baeldung.com/lucene
 
 ### Elastic Search
 
+Elastic Search is an open-source search and analytics engine based on the Apache Lucene library.
+
 An Elasticsearch index is a collection of documents that are related to each other. Elasticsearch stores data as JSON documents. Each document correlates a set of keys (names of fields or properties) with their corresponding values (strings, numbers, Booleans, dates, arrays of values, geolocations, or other types of data).
 
 Elasticsearch uses a data structure called an inverted index, which is designed to allow very fast full-text searches. An inverted index lists every unique word that appears in any document and identifies all of the documents each word occurs in.
