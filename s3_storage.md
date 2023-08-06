@@ -7,7 +7,8 @@
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/1b2b5c2e-fe49-4384-896e-a7bc7df54387)
 
-
+### Google Cloud storage
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/42b7d597-18c6-40aa-9bdd-4736ea06a70b)
 
 ## Object Storage Definition
 Object storage is a technology that manages data as objects. All data is stored in one large repository which may be distributed across multiple physical storage devices, instead of being divided into files or folders.
@@ -46,5 +47,6 @@ Object storage is the ideal storage for data lakes because it delivers an archit
 A data lake is a centralized repository that allows you to store all your structured and unstructured data at any scale. You can store your data as-is, without having to first structure the data, and run different types of analytics—from dashboards and visualizations to big data processing, real-time analytics, and machine learning to guide better decisions.
 
 You can seamlessly and nondisruptively increase storage from gigabytes to petabytes of content, paying only for what you use. 
+
 
 Ref: https://www.ibm.com/topics/object-storage
