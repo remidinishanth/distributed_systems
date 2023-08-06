@@ -23,3 +23,5 @@ Metadata is an important part of object storage technology. Metadata is determin
 
 
 Objects are discrete units of data that are stored in a structurally flat data environment. There are no folders, directories, or complex hierarchies as in a file-based system. Each object is a simple, self-contained repository that includes the data, metadata (descriptive information associated with an object), and a unique identifying ID number (instead of a file name and file path).
+
+Ref: https://www.ibm.com/topics/object-storage
