@@ -20,3 +20,5 @@ Ref: https://serverlessland.com/event-driven-architecture/visuals/message-queue-
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/86839c99-ca34-4e8e-8de8-06a3ed3ea4ac)
 
 Ref: https://stackoverflow.com/questions/36203764/how-can-i-scale-kafka-consumers to read about scaling of consuming
+
+Read at https://www.oreilly.com/library/view/kafka-the-definitive/9781491936153/ch04.html
