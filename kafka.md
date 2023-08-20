@@ -2,3 +2,14 @@ https://stackoverflow.com/questions/41744506/difference-between-stream-processin
 
 ## Event broker vs Message queue
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/a4bdffbf-bfff-4bf7-94e0-fa0b14ae5d42)
+
+
+#### MESSAGE QUEUE
+Messages are put onto a queue and a consumer consumes the message and processes them. Messages are acknowledged as consumed and deleted afterwards. Messages are split between consumers which makes it hard to communicate system with events.
+
+Example of this would be Amazon SQS. Publish messages to the queue and then listen to them, process them and they are removed from the queue.
+
+#### EVENT BROKER
+Event brokers are a push system, they push these events downstream to consumers. Example of this would be Amazon EventBridge.
+
+Ref: https://serverlessland.com/event-driven-architecture/visuals/message-queue-vs-event-broker
