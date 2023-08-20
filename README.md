@@ -4,6 +4,8 @@ MIT 6.824 Notes https://wizardforcel.gitbooks.io/distributed-systems-engineering
 
 Read about google lectures at https://sites.google.com/site/mriap2008/lectures
 
+Great resources at https://serverlessland.com/event-driven-architecture/visuals/why-use-message-brokers
+
 
 ### TODO Books and blogs:
 
