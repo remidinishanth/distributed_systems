@@ -13,3 +13,10 @@ Example of this would be Amazon SQS. Publish messages to the queue and then list
 Event brokers are a push system, they push these events downstream to consumers. Example of this would be Amazon EventBridge.
 
 Ref: https://serverlessland.com/event-driven-architecture/visuals/message-queue-vs-event-broker
+
+
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/e2456728-b302-40f1-907b-7d4880ac4090)
+
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/86839c99-ca34-4e8e-8de8-06a3ed3ea4ac)
+
+Ref: https://stackoverflow.com/questions/36203764/how-can-i-scale-kafka-consumers to read about scaling of consuming
