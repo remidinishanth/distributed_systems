@@ -52,3 +52,10 @@ Hadoop (a mapreduce engine) and
 designed for scaling horizontally on clusters of commodity hardware.
 
 Ref: https://www.youtube.com/watch?v=IuJldwJLyFM&t=824s
+
+### Document
+Document-oriented databases store, well, documents. In short, a document
+is like a hash, with a unique ID field and values that may be any of a variety
+of types, including more hashes.
+
+Examples: MongoDB, CouchDB
