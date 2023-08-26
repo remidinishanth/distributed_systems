@@ -47,4 +47,8 @@ With respect to structure, columnar is about midway between relational and key-v
 
 Example: HBase, Cassandra, and Hypertable.
 
+Using Google’s BigTablepaper as a blueprint, HBase is built on 
+Hadoop (a mapreduce engine) and
+designed for scaling horizontally on clusters of commodity hardware.
+
 Ref: https://www.youtube.com/watch?v=IuJldwJLyFM&t=824s
