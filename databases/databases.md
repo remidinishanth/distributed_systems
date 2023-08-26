@@ -1,7 +1,7 @@
 ## Types of datastore:
 Databases come in a variety of genres, such as 
 * Relational (Postgres),
-* Key-Value (Riak, Redis, Cassandra, Amazon DynamoDB),
+* Key-Value (Riak, Redis, Amazon DynamoDB),
 * Columnar - stores data in columns instead of rows (HBase),
 * Document-oriented (MongoDB, CouchDB), and
 * Graph (Neo4J).
@@ -40,7 +40,9 @@ Databases are so named because the important
 aspect of their design is that data from a given column (in the two-dimensional
 table sense) is stored together.
 
-In columnoriented databases, adding columns is quite inexpensive and is done on a
+In column-oriented databases, adding columns is quite inexpensive and is done on a
 row-by-row basis.
 
 With respect to structure, columnar is about midway between relational and key-value.
+
+Example: HBase, Cassandra, and Hypertable.
