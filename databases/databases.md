@@ -33,3 +33,14 @@ won’t be helpful when you have complex query and aggregation needs.
 
 Examples: Memcached (and its cousins memcachedb and membase), Voldemort, Redis
 and Riak.
+
+### Columnar
+
+Databases are so named because the important
+aspect of their design is that data from a given column (in the two-dimensional
+table sense) is stored together.
+
+In columnoriented databases, adding columns is quite inexpensive and is done on a
+row-by-row basis.
+
+With respect to structure, columnar is about midway between relational and key-value.
