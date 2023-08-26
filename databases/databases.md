@@ -59,3 +59,7 @@ is like a hash, with a unique ID field and values that may be any of a variety
 of types, including more hashes.
 
 Examples: MongoDB, CouchDB
+
+MongoDB is designed to be huge (the name mongo is extracted from the word humongous). 
+
+Like Mongo, CouchDB’s native query language is JavaScript.
