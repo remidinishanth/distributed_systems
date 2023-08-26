@@ -46,3 +46,5 @@ row-by-row basis.
 With respect to structure, columnar is about midway between relational and key-value.
 
 Example: HBase, Cassandra, and Hypertable.
+
+Ref: https://www.youtube.com/watch?v=IuJldwJLyFM&t=824s
