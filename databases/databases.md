@@ -43,6 +43,10 @@ table sense) is stored together.
 In column-oriented databases, adding columns is quite inexpensive and is done on a
 row-by-row basis.
 
+Each row can have a different set of columns, or none at
+all, allowing tables to remain sparse without incurring a storage cost for null
+values. With respect to structure, columnar is about midway between relational and key-value.
+
 With respect to structure, columnar is about midway between relational and key-value.
 
 Example: HBase, Cassandra, and Hypertable.
