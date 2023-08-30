@@ -67,3 +67,11 @@ Examples: MongoDB, CouchDB
 MongoDB is designed to be huge (the name mongo is extracted from the word humongous). 
 
 Like Mongo, CouchDB’s native query language is JavaScript.
+
+### Graph
+
+Graph databases excel at dealing with highly interconnected data.
+
+* A graph database consists of nodes and relationships between nodes. 
+* Both nodes and relationships can have properties—key-value pairs—that store data.
+* The real strength of graph databases is traversing through the nodes by following relationships.
