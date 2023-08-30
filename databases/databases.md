@@ -16,6 +16,9 @@ writing queries in Structured Query Language (SQL).
 Importantly, tables can join and morph
 into new, more complex tables, because of their mathematical basis in relational (set) theory.
 
+> RDBMSs are built atop a set theory branch called relational algebra — a combination of selections (WHERE ...), projections (SELECT ...), Cartesian
+products (JOIN ...), 
+
 Examples: MySQL, H2, HSQLDB, SQLite and Postgres.
 
 ### Key Value
