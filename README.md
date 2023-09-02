@@ -35,6 +35,9 @@ Great resources at https://serverlessland.com/event-driven-architecture/visuals/
 
 TODO: **gRPC** - Why do we use it? Why is it becoming popular? https://people.cs.rutgers.edu/~pxk/417/notes/rpc.html
 
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/acd93a43-0387-411d-b05b-40434feab590)
+
+
 TODO: **GraphQL** - Why do we neeed it? Usecases, examples, sangria. Checkout https://medium.com/@leeshapton/mental-maps-for-teaching-graphql-to-beginners-9db9b85ac957
 
  * An increasingly popular approach to tailor APIs to individual use cases is to use graph-based
