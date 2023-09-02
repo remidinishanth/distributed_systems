@@ -8,7 +8,6 @@ Databases come in a variety of genres, such as
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/3c4908e2-6e77-4f9f-bb86-0f78ae12be34)
 
-
 ### Relational
 
 Relational database management systems (RDBMSs)
@@ -81,3 +80,14 @@ Graph databases excel at dealing with highly interconnected data.
 * A graph database consists of nodes and relationships between nodes. 
 * Both nodes and relationships can have properties—key-value pairs—that store data.
 * The real strength of graph databases is traversing through the nodes by following relationships.
+
+
+### New SQL
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/6b5bb117-5efe-4f37-a183-480038f035fb)
+
+
+Here are some NewSQL databases to get you started:
+* 🔹 Google cloud spanner
+* 🔹 CockroachDB
+* 🔹 VoltDB
+* 🔹 SingleStore
