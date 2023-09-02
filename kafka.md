@@ -25,4 +25,5 @@ Read at https://www.oreilly.com/library/view/kafka-the-definitive/9781491936153/
 
 Zuul architecture, https://www.youtube.com/watch?v=6w6E_B55p0E
 
-![Uploading image.png…]()
+
+![1693476406513](https://github.com/remidinishanth/distributed_systems/assets/19663316/f1978c9a-b706-4806-ab38-04581e4c22b8)
