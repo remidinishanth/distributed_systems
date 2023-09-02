@@ -6,6 +6,9 @@ Databases come in a variety of genres, such as
 * Document-oriented (MongoDB, CouchDB), and
 * Graph (Neo4J).
 
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/3c4908e2-6e77-4f9f-bb86-0f78ae12be34)
+
+
 ### Relational
 
 Relational database management systems (RDBMSs)
