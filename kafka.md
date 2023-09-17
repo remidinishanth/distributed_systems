@@ -28,4 +28,5 @@ Zuul architecture, https://www.youtube.com/watch?v=6w6E_B55p0E
 
 ![1693476406513](https://github.com/remidinishanth/distributed_systems/assets/19663316/f1978c9a-b706-4806-ab38-04581e4c22b8)
 
-![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/18108cf5-7592-4d98-b7c6-21db7acd5100)
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/f757eede-a6c7-4fe0-b858-3bc8c4aef877)
+
