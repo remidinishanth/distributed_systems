@@ -27,6 +27,9 @@ During the indexing process, Elasticsearch stores documents and builds an invert
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/db1a816f-d426-4692-85e1-2948ae0c4a50)
 
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/a8a5e424-9185-4de8-a3d6-fdfc09332b26)
+
+
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/bd2a4323-1067-4f08-b41d-3fe723dc5e4d)
 
 Ref: https://www.elastic.co/what-is/elasticsearch
