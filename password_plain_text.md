@@ -10,8 +10,17 @@
 
 Ref: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#password-hashing-algorithms
 
+𝐖𝐡𝐚𝐭 𝐢𝐬 𝐬𝐚𝐥𝐭?
+According to OWASP guidelines, “a salt is a unique, randomly generated string that is added to each password as part of the hashing process”.
+ 
+𝐇𝐨𝐰 𝐭𝐨 𝐬𝐭𝐨𝐫𝐞 𝐚 𝐩𝐚𝐬𝐬𝐰𝐨𝐫𝐝 𝐚𝐧𝐝 𝐬𝐚𝐥𝐭?
+1️ A salt is not meant to be secret and it can be stored in plain text in the database. It is used to ensure the hash result is unique to each password.
+ 
+2️ The password can be stored in the database using the following format: 𝘩𝘢𝘴𝘩( 𝘱𝘢𝘴𝘴𝘸𝘰𝘳𝘥 + 𝘴𝘢𝘭𝘵).
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/8e304c2a-82b1-4b8f-824d-f62d331eb7bd)
+
+If you see in the above, password is never sent over wire to the server.
 
 Go has input support using `crypto` for Argon2, bcrypt and PBKDF2
 
