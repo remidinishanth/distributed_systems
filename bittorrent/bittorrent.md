@@ -51,12 +51,12 @@ over available peers.
 ### How to Incentivize Peers to Upload
 #### Basics of original BitTorrent (BT) protocol:
 * Create a `.torrent` file, which contains meta-information about the file (file name, length, info about pieces that comprise the file, URL of tracker).
-* Have a tracker. A server that knows the identity of all the peers involved in your file transfer.
+* Have a **tracker**. A server that knows the identity of all the peers involved in your file transfer.
 * To download:
- - Peer contacts tracker.
+ - **Peer** contacts tracker.
  - Tracker responds with list of other peers involved in transfer.
  - Peer connects to these other peers, begins to transfer blocks (see below).
- - Some peers are seeders: Already have the entire file (maybe servers that host the file, or just nice peers who are sticking around).
+ - Some peers are **seeders**: Already have the entire file (maybe servers that host the file, or just nice peers who are sticking around).
 
 #### In the actual download, peers request blocks: pieces of pieces.
 * Details/terminology doesn’t matter. Just know that blocks are small (~16KB) chunks of the file.
