@@ -13,6 +13,10 @@
 
 
 ## Peer-To-Peer (P2P) Networks for File-Sharing
+Compared to the more common server-client solution, a peer-to-peer approach has
+several advantages including increased robustness and resource providing, such as bandwidth,
+storage space and computing power, by peers.
+
 * Distribute the architecture to the extreme.
 * Once a client downloads (part of) the file from the server, that client can upload (part of) the file to others. Put clients to work!
 * In theory: Infinitely scalable.
