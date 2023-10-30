@@ -10,3 +10,11 @@
 #### More details about HTTP and FTP
 - FTP is a protocol specifically designed for file transfers, while HTTP is primarily used for serving web pages and web content.
 - FTP uses two TCP ports: port 20 for sending data and port 21 for sending control commands.
+
+
+## Peer-To-Peer (P2P) Networks for File-Sharing
+* Distribute the architecture to the extreme.
+* Once a client downloads (part of) the file from the server, that client can upload (part of) the file to others. Put clients to work!
+* In theory: Infinitely scalable.
+* P2P networks create overlays on top of the underlying Internet (so do CDNs).
+* Problem: What if users aren’t willing to upload?
