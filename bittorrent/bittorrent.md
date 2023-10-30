@@ -31,6 +31,9 @@ swarm of peers.
 * The centralized tracker provides the different entities with an address list
 over available peers.
 
+* BitTorrent is a technology/protocol which makes the distribution of files, especially large
+files, easier and less bandwidth consuming for the publisher. This is accomplished by utilizing the upload capacity of the peers that are downloading a file. 
+
 ### How to Incentivize Peers to Upload
 #### Basics of original BitTorrent (BT) protocol:
 * Create a `.torrent` file, which contains meta-information about the file (file name, length, info about pieces that comprise the file, URL of tracker).
