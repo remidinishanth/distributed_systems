@@ -140,3 +140,4 @@ A peer is anyone connected to a torrent file, and downloading or uploading data 
 ### Ref
 * https://iq.opengenus.org/bittorrent-architecture/
 * https://blogs.umass.edu/Techbytes/2015/04/28/bittorrent-an-explanation-of-the-protocol/
+* https://web.cs.ucla.edu/classes/cs217/05BitTorrent.pdf
