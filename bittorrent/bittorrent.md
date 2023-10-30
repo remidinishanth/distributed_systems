@@ -13,6 +13,10 @@
 
 
 ## Peer-To-Peer (P2P) Networks for File-Sharing
+
+In this model, files are distributed among the peers themselves, without relying on a central sever. 
+Each peer acts as both a consumer and a contributor. They can download and upload files to other peers within the network. 
+
 Compared to the more common server-client solution, a peer-to-peer approach has
 several advantages including increased robustness and resource providing, such as bandwidth,
 storage space and computing power, by peers.
