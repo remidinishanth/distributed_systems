@@ -137,6 +137,9 @@ file, and all pieces of the file are available.
 #### What’s being a “peer”?
 A peer is anyone connected to a torrent file, and downloading or uploading data to the collective network.
 
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/21e4a0aa-c64f-439c-a754-1d640a5e8919)
+
+
 ### Ref
 * https://iq.opengenus.org/bittorrent-architecture/
 * https://blogs.umass.edu/Techbytes/2015/04/28/bittorrent-an-explanation-of-the-protocol/
