@@ -77,5 +77,6 @@ over available peers.
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/9801d540-5f0c-4904-b712-ab0d4a21c019)
 
 
-Ref: https://iq.opengenus.org/bittorrent-architecture/
-
+### Ref
+* https://iq.opengenus.org/bittorrent-architecture/
+* https://blogs.umass.edu/Techbytes/2015/04/28/bittorrent-an-explanation-of-the-protocol/
