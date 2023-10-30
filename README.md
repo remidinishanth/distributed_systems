@@ -112,3 +112,6 @@ Core Concepts of Distributed Systems
 Peer-to-peer systems use DHTs, Key-Value/NoSQL stores uses DHTs, gossip, membership.
 
 ![image](https://user-images.githubusercontent.com/19663316/161790715-9d11faed-c5a0-45bf-b51d-8fb759f06f76.png)
+
+<img width="1106" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/f4bf5b19-ab49-42bc-b284-0c60829fcc96">
+
