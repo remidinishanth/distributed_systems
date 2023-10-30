@@ -23,6 +23,17 @@ storage space and computing power, by peers.
 * P2P networks create overlays on top of the underlying Internet (so do CDNs).
 * Problem: What if users aren’t willing to upload?
 
+### Problem with Traditional P2P networks
+
+* The problem with many “traditional” peer-to-peer file sharing protocols, is that most users have different speeds downlink and uplink.
+* This means that even though a user has plenty of bandwidth downlink, the speed of a file transfer to him will be
+restricted by a much smaller bandwidth uplink from the user he downloads from.
+#### Solution:
+* Bram Cohen this problem by splitting files into smaller pieces.
+* When requesting a file, the user’s computer sniffs around on the internet for people having one or more pieces of the wanted file.
+* He then downloads different parts of the file from different users at the same time and utilizes his downlink
+bandwidth better.
+
 ## Bit Torrent
 
 * BitTorrent is a technology/protocol which makes the distribution of files, especially large
