@@ -6,7 +6,7 @@ Read about google lectures at https://sites.google.com/site/mriap2008/lectures
 
 Great resources at https://serverlessland.com/event-driven-architecture/visuals/why-use-message-brokers
 
-Read https://2022-cs244.github.io/schedule/
+Read https://2022-cs244.github.io/schedule/ and http://www.scs.stanford.edu/20sp-cs244b/notes/
 
 
 ### TODO Books and blogs:
