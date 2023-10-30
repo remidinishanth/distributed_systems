@@ -25,14 +25,12 @@ storage space and computing power, by peers.
 
 ## Bit Torrent
 
-* BitTorrent base its operation around the concept of a torrent file, a centralized tracker and an associated
-swarm of peers. 
-
-* The centralized tracker provides the different entities with an address list
-over available peers.
-
 * BitTorrent is a technology/protocol which makes the distribution of files, especially large
 files, easier and less bandwidth consuming for the publisher. This is accomplished by utilizing the upload capacity of the peers that are downloading a file. 
+* BitTorrent base its operation around the concept of a torrent file, a centralized tracker and an associated
+swarm of peers. 
+* The centralized tracker provides the different entities with an address list
+over available peers.
 
 ### How to Incentivize Peers to Upload
 #### Basics of original BitTorrent (BT) protocol:
