@@ -48,15 +48,14 @@ swarm of peers.
 * The centralized tracker provides the different entities with an address list
 over available peers.
 
-### How to Incentivize Peers to Upload
 #### Basics of original BitTorrent (BT) protocol:
 * Create a `.torrent` file, which contains meta-information about the file (file name, length, info about pieces that comprise the file, URL of tracker).
 * Have a **tracker**. A server that knows the identity of all the peers involved in your file transfer.
 * To download:
- - **Peer** contacts tracker.
- - Tracker responds with list of other peers involved in transfer.
- - Peer connects to these other peers, begins to transfer blocks (see below).
- - Some peers are **seeders**: Already have the entire file (maybe servers that host the file, or just nice peers who are sticking around).
+  - **Peer** contacts tracker.
+  - Tracker responds with list of other peers involved in transfer.
+  - Peer connects to these other peers, begins to transfer blocks (see below).
+  - Some peers are **seeders**: Already have the entire file (maybe servers that host the file, or just nice peers who are sticking around).
 
 #### In the actual download, peers request blocks: pieces of pieces.
 * Details/terminology doesn’t matter. Just know that blocks are small (~16KB) chunks of the file.
@@ -72,10 +71,63 @@ over available peers.
 #### Lingering problem: tracker is central point of failure.
 #### Most BT clients today are “trackerless”, and use Distributed Hash Tables (DHTs) instead.
 
-## Architecture
+
+### Architecture
+
+BitTorrent in its original
+form matches the **hybrid** peer-to-peer concept. 
+
+It’s all about the torrent file, the centralized tracker
+and the associated swarm of peers.
+
+The BitTorrent architecture normally consists of the following entities:
+- a static metainfo file (a “torrent file”)
+- a ‘tracker’
+- an original downloader (“seed”)
+- the end user downloader (“leecher”)
+
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/4074576e-e92c-4ab2-86ac-dd8890670044)
+
+#### Torrent file
+
+* The first step in publishing a file using BitTorrent is to
+create a metainfo file from the file that you want to
+publish. 
+* The metainfo file is called a “torrent”. The
+torrent file contains the filename, size, hashing
+information and the URL of the “tracker”.
+* The “torrent” is needed by anyone who wants to download the file the
+torrent is created from. The torrent file can be distributed
+by e-mail, IRC, http etc.
+* To download or “seed” a file, you need a
+BitTorrent client. The BitTorrent client is a free
+application that administrates the download procedure.
+* A BitTorrent download is
+started by opening the torrent file in the BitTorrent client.
+
+#### Tracker
+
+* The tracker keeps a log of peers that are currently
+downloading a file, and helps them find each other.
+* The tracker is not directly involved in the transfer of data and
+does not have a copy of the file.
+* The tracker and the downloading users exchange information
+using a simple protocol on top of HTTP.
+
+* First, the user gives information to the tracker about
+which file it’s downloading, ports it’s listening on etc. The responce from the tracker is a list
+of other users which are downloading the same file and information on how to contact them.
+
+* This group of peers that all share the same torrent represents a ‘**swarm**’. 
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/9801d540-5f0c-4904-b712-ab0d4a21c019)
 
+#### What’s “seeding”?
+
+Seeding is the act of uploading to a torrent data stream. As a key part of the technology, seeding is what allows for data redundancy when other seeders go offline, as well as a boost to overall throughput/data speeds when other peers want to download a file.
+
+#### What’s being a “peer”?
+A peer is anyone connected to a torrent file, and downloading or uploading data to the collective network.
 
 ### Ref
 * https://iq.opengenus.org/bittorrent-architecture/
