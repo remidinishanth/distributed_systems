@@ -71,3 +71,11 @@ over available peers.
 #### This method of incentivizing peers is part of what allowed P2P file-sharing to take off.
 #### Lingering problem: tracker is central point of failure.
 #### Most BT clients today are “trackerless”, and use Distributed Hash Tables (DHTs) instead.
+
+## Architecture
+
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/9801d540-5f0c-4904-b712-ab0d4a21c019)
+
+
+Ref: https://iq.opengenus.org/bittorrent-architecture/
+
