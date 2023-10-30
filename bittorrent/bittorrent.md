@@ -126,6 +126,14 @@ of other users which are downloading the same file and information on how to con
 
 Seeding is the act of uploading to a torrent data stream. As a key part of the technology, seeding is what allows for data redundancy when other seeders go offline, as well as a boost to overall throughput/data speeds when other peers want to download a file.
 
+* An original downloader known as a “seed” has to be started.
+* A “seed” is a user that has the entire file.
+* A downloading user that has nothing or only parts of a file is called a “leecher”.
+* The “seed” must upload at least one complete copy of the file.
+* Once an entire copy is distributed amongst the other downloaders, the ‘seed’ can stop uploading and the download
+will still continue for all downloaders as long as there are enough people downloading the
+file, and all pieces of the file are available.
+
 #### What’s being a “peer”?
 A peer is anyone connected to a torrent file, and downloading or uploading data to the collective network.
 
