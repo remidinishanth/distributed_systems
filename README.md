@@ -119,3 +119,4 @@ Socker programming
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/a1ae9416-4463-4fad-b642-8d68d5a61323)
 
+Network Class assignments: https://piazza.com/class/hwxjf4snt151pt/post/15
