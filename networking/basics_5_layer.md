@@ -68,3 +68,5 @@ There is a PHY found at the end of every network interface (e.g. end of wire or 
 <img width="1021" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/c31c8968-0be9-4618-802d-2b2ed803154d">
 
 <img width="1054" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/c135e5ff-0ffa-421a-ab48-6e172f07e823">
+
+<img width="777" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/9c526693-d1e2-4aa1-bf9f-6b00b75588f7">
