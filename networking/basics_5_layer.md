@@ -70,3 +70,26 @@ There is a PHY found at the end of every network interface (e.g. end of wire or 
 <img width="1054" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/c135e5ff-0ffa-421a-ab48-6e172f07e823">
 
 <img width="777" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/9c526693-d1e2-4aa1-bf9f-6b00b75588f7">
+
+### Data Communications and Networking by Forouzan
+
+The computer with logical address `A` and physical address `10` needs to send a packet to the computer with logical address `P` and physical address `95`.
+
+<img width="849" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/42ad6ea1-aadb-485f-9d00-4f9751c52f47">
+
+* The network layer needs to find the physical address of the next hop before the packet can be delivered.
+* The network layer consults its routing table and finds the logical address of the next hop (router I) to be F.
+* The ARP finds the physical address of router 1 that corresponds to the logical address of 20.
+* Now the network layer passes this address to the data link layer, which in tum, encapsulates the packet with physical destination address 20 and physical source address 10.
+
+* The frame is received by every device on LAN 1, but is discarded by all except router 1, which finds that the destination physical address in the frame matches with its own physical address.
+* The router decapsulates the packet from the frame to read the logical destination address P. Since the logical destination address does not match the
+router's logical address, the router knows that the packet needs to be forwarded.
+
+* The router consults its routing table and ARP to find the physical destination address of the next hop (router 2), creates a new frame, encapsulates the packet, and sends it to router 2.
+* Note the physical addresses in the frame. The source physical address changes from 10 to 99.
+* The destination physical address changes from 20 (router 1 physical address) to 33 (router 2 physical address).
+* The logical source and destination addresses must remain the same; otherwise the packet will be lost.
+
+> The physical addresses(MAC address) will change from hop to hop, but the logical addresses(IP address) usually(there are some exceptions to
+this rule) remain the same.
