@@ -6,7 +6,12 @@
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/7d0515ff-14a2-4669-adef-2fbcb2ab4295)
 
+### Sending message
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/8b494d60-5d12-4631-bbf8-afc16a1f14a9)
+
+### Receiving message
+<img width="1706" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/264fa4de-dfe2-4c5b-a4d3-b21fb947cadd">
+
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/cb75ef43-d7a6-4f0d-a172-8c404e02e174)
 
