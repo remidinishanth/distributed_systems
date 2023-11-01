@@ -38,6 +38,8 @@ Note how the TCP protocol requires more information and overhead to guarantee da
 
 ## Data Link Layer (Layer 2)
 
+All hosts that have an IP address also have a MAC (Media Access Controller) address. Unlike IP addresses which are virtual, MAC addresses are fixed hardware based addresses that never change.
+
 This layer uses a Media Access Controller (MAC) to generate the frames that will be transmitted. As the name suggests, the MAC controls the physical transmission media.
 
 ### Ethernet and WiFi Frame Format
