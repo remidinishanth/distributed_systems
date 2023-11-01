@@ -93,3 +93,5 @@ router's logical address, the router knows that the packet needs to be forwarded
 
 > The physical addresses(MAC address) will change from hop to hop, but the logical addresses(IP address) usually(there are some exceptions to
 this rule) remain the same.
+
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/d51f3aab-151e-4e59-b0d9-9bcf1e50f99b)
