@@ -60,3 +60,8 @@ Note that the MAC for Ethernet and WiFi are different and generate different fra
 It sends and receives signals on the physical wire or antenna to transmit the bits found in frames.
 
 There is a PHY found at the end of every network interface (e.g. end of wire or antenna).
+
+## Summary
+
+<img width="1563" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/36edf3f2-986c-4940-af99-4f80a47c21a5">
+
