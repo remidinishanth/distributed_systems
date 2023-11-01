@@ -2,6 +2,8 @@
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/ac4cf316-47f4-4908-8138-33696a3498b5)
 
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/427c1cee-dfd5-4b80-b1c6-d7c91dbae734)
+
 
 ### Common Applications and their Protocols:
     * HTTP (Hypertext Transfer Protocol):
