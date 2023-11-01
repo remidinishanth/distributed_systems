@@ -4,8 +4,11 @@
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/427c1cee-dfd5-4b80-b1c6-d7c91dbae734)
 
+Note how the TCP protocol requires more information and overhead to guarantee data delivery.
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/6a2a293d-816a-4fff-9bfa-084b22018671)
 
-### Common Applications and their Protocols:
+
+#### Common Applications and their Protocols:
     * HTTP (Hypertext Transfer Protocol):
         Transport Protocol: TCP
         Description: Used for transferring hypertext documents on the World Wide Web. It is the foundation of any data exchange on the Web.
