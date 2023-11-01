@@ -12,7 +12,7 @@
 ### Receiving message
 <img width="1706" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/264fa4de-dfe2-4c5b-a4d3-b21fb947cadd">
 
-
+## Summary
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/cb75ef43-d7a6-4f0d-a172-8c404e02e174)
 
 Ref: https://microchipdeveloper.com/tcpip:tcp-ip-five-layer-model
