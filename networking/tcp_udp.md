@@ -1,7 +1,9 @@
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/2faf6170-a273-439c-b0a4-693d5d86e9ad)
 
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/ac4cf316-47f4-4908-8138-33696a3498b5)
 
 
+### Common Applications and their Protocols:
     * HTTP (Hypertext Transfer Protocol):
         Transport Protocol: TCP
         Description: Used for transferring hypertext documents on the World Wide Web. It is the foundation of any data exchange on the Web.
