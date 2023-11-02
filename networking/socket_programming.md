@@ -14,8 +14,10 @@ Note the web server has two sockets opened: one for each web page it is serving.
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/1d15f38b-9503-42b5-9231-8714d5a66d80)
 
+> [!NOTE]  
 > One host does not assign the socket number on both sides of the communication channel. The socket numbers assigned to each socket are only used by the host that assigned them. In other words, socket number 1 created on one host may be connected to socket number 5 on another host.
 
+> [!NOTE]  
 > Based on the Well-Known source port numbers assigned to each socket, we can determine sockets 1 and 2 were created by an HTTP server application and socket 3 was created by an SMTP or email server application.
 
 ### Sockets numbers may not be same on both sides
