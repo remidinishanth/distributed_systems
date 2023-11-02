@@ -2,6 +2,14 @@ Ref: https://www.cs.dartmouth.edu/~campbell/cs50/socketprogramming.html
 
 <img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/08025bfc-5c3b-4b9f-9bc4-435ad4cf5ae7">
 
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/3b0b924f-bab3-4ef0-ba86-1cfcae998d18)
+
+
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/0360e4e3-429c-4469-8831-7a818e0c0312)
+
+<img width="734" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/79d5badd-020b-4bd3-a696-c306470f91c2">
+
+
 <img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/02b5b096-f32e-40ad-bb75-d671d54e1994">
 
 <img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/6c9fba23-3241-4e18-b9bd-76f0fc4259be">
