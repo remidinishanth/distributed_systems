@@ -16,8 +16,11 @@ The primary difference between the two ratios is that the trailing P/E is based 
 
 <img width="1082" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/bd159a1c-e71a-4e90-b52c-c66a1dc4ea7c">
 
+<img width="798" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/91b450b8-84b6-40a6-b7bb-06aaedaea599">
 
-Ref: https://getmoneyrich.com/about-price-earning-ratio/
+#### Ref
+* https://www.drvijaymalik.com/3-principles-to-decide-investable-pe-ratio-of-a-stock-for-value-investors/
+* https://getmoneyrich.com/about-price-earning-ratio/
 
 
 ## Earnings yield
