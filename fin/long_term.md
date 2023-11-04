@@ -18,3 +18,20 @@ The primary difference between the two ratios is that the trailing P/E is based 
 
 
 Ref: https://getmoneyrich.com/about-price-earning-ratio/
+
+
+## Earnings yield
+One variation of price to earnings ratio is earnings yield. 
+
+### What is earnings yield? 
+* It is the inverse of the P/E ratio. To calculate earning yield we must keep trailing 12-months EPS in the numerator and share price in the denominator.
+
+That earning yield value is expressed as a percentage of the stock’s price.
+
+If the EPS of a stock is 5 and its current price is 100, its earning yield will be 5%. Interpreting earnings yield is easier than the P/E ratio.
+
+We can compare the earnings yield with the current yield of a 10-Yr government bond. If the earnings yield is higher, we can say that the stock is yielding better returns than the bond. Just for our information, the current yield of a 10-Year government bond is 7.2%. The inverse of earning yield is the P/E ratio. The inverse of 7.2% is 13.8x.
+
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/1a9300c8-ae18-4f3e-8f6e-2a95e3c7bed5)
+
+The PEG ratio is a metric that combines the P/E ratio and EPS’ future growth potential. It is an excellent metric for price valuation.
