@@ -9,3 +9,12 @@
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/762b7f87-310f-46a9-80e7-de5f481b947b)
 
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/78120d59-81f9-49be-98f5-2f9c175bcf84)
+
+
+The primary difference between the two ratios is that the trailing P/E is based on actual performance statistics while the forward P/E is based on performance estimates.
+
+<img width="1082" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/bd159a1c-e71a-4e90-b52c-c66a1dc4ea7c">
+
+
+Ref: https://getmoneyrich.com/about-price-earning-ratio/
