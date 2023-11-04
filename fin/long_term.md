@@ -6,3 +6,6 @@
 > To illustrate, if the PE is 10, it means that to get ₹1 of earnings in one year from a company, the investor is paying ₹10.
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/2ba37e0c-0c54-49c3-8c82-393e26e7220b)
+
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/762b7f87-310f-46a9-80e7-de5f481b947b)
+
