@@ -13,6 +13,14 @@ Rich people focus on building their assets.
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/625272ad-8882-4d7c-b2ee-806fc77ba599)
 
+“Wealth is a person’s ability to survive so many numbers of days forward—or, if I stopped working today, how long could I survive?”
+
+> “A new car loses nearly 25 percent of the price you pay for it the moment you drive it off the lot.”
+
+
+* “Keep expenses low, reduce liabilities, and diligently build a base of solid assets.”
+* “The best thing about money is that it works 24 hours a day and can work for generations.”
+
 
 ### Rule #1:
 
@@ -74,3 +82,48 @@ Rather than what we know, how fast we learn is more important in the information
 
 * Pay yourself first: the power of self-discipline. Self-control and a high tolerance for financial pressure are necessary to become rich.
 * Use assets to buy luxuries: the power of focus. Use assets instead of liabilities to buy luxuries.
+
+> “There is a difference between being poor and being broke. Broke is temporary. Poor is eternal.”
+
+> “Money comes and goes, but if you have the education about how money works, you gain power over it and can begin building wealth.”
+
+> “Often in the real world, it’s not the smart who get ahead, but the bold.”
+
+* Kiyosaki sees one thing in common in all of us, himself included. We all have tremendous potential, and we all are blessed with gifts. Yet the one thing that holds all of us back is some degree of self-doubt.
+
+* “The world is always handing you opportunities of a lifetime, every day of your life, but all too often, we fail to see them.”
+
+* “Great opportunities are not seen with your eyes. They are seen with your mind.”
+
+* “Job is an acronym for ‘Just Over Broke.’”
+
+* “Education is more valuable than money in the long run.”
+
+* “For most people, the reason they don’t win financially is that the pain of losing money is far greater than the joy of being rich.”
+
+
+
+
+
+
+Kiyosaki reminds people that financial IQ is made up of knowledge from four broad areas of expertise:         
+* Accounting
+* Investing
+* Understanding markets
+* The law
+
+The main management skills needed for success are:
+* Management of cash flow
+* Management of systems
+* Management of people
+
+There are five main reasons why financially literate people may still not develop abundant asset columns that could produce a large cash flow. The five reasons are:
+* Fear
+* Cynicism
+* Laziness
+* Bad habits
+* Arrogance
+
+
+The most common form of laziness is staying busy.
+
