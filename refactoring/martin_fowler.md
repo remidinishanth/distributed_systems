@@ -14,3 +14,5 @@ function to see what it does.
   - **Slide Statements** to bring the initializing code next to the accumulation
   - **Extract Function** to create a function for calculating the total
   - **Inline Variable** to remove the variable completely
+ 
+* Prefer to treat data as immutable as much as I can—mutable state quickly becomes something rotten.
