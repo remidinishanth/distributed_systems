@@ -69,3 +69,5 @@ write code that humans can understand.
 ![image](https://github.com/remidinishanth/oops_and_design_patterns/assets/19663316/c60ad4e3-9010-4335-9fe7-e9449e888430)
 
 ![image](https://github.com/remidinishanth/oops_and_design_patterns/assets/19663316/f48d4952-30b9-4587-a81c-48db5f0e8f60)
+
+* Ralph Johnson describes early refactorings as wiping the dirt off a window so you can see beyond.
