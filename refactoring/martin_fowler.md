@@ -71,3 +71,5 @@ write code that humans can understand.
 ![image](https://github.com/remidinishanth/oops_and_design_patterns/assets/19663316/f48d4952-30b9-4587-a81c-48db5f0e8f60)
 
 * Ralph Johnson describes early refactorings(restructing code into smaller functions) as wiping the dirt off a window so you can see beyond.
+
+* Kent Beck: "for each desired change, make the change easy(warning: this may be hard), then make the easy change"
