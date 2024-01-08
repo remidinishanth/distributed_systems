@@ -60,3 +60,4 @@ write code that humans can understand.
 * The two hats: Adding functionality and Refactoring
   - Adding functionality - doesn't change existing code, adding new capabilities and tests.
   - Refactoring - not adding functionality, only restructing code, don't need to add new tests(unless some cases are missing). May be change tests to accomodate interface
+* An important aspect of improving design is to eliminate duplicated code. By eliminating duplication, code says everything once and only once, which is essense of good design.
