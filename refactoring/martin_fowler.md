@@ -73,3 +73,5 @@ write code that humans can understand.
 * Ralph Johnson describes early refactorings(restructing code into smaller functions) as wiping the dirt off a window so you can see beyond.
 
 * Kent Beck: "for each desired change, make the change easy(warning: this may be hard), then make the easy change"
+
+* We need to refactor not for "clean code", "good engineering practices", or some moral reasons. It's pure economic, we need to refactor because it makes us faster - faster to add features, faster to fix bugs.
