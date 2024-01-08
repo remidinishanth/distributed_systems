@@ -54,3 +54,9 @@ is easy to find where the bug is.
 write code that humans can understand.
 * When programming, follow the camping rule: Always leave the code base healthier than when you found it.
 * The true test of good code is how easy it is to change it.
+
+## Chapter 2
+
+* The two hats: Adding functionality and Refactoring
+  - Adding functionality - doesn't change existing code, adding new capabilities and tests.
+  - Refactoring - not adding functionality, only restructing code, don't need to add new tests(unless some cases are missing). May be change tests to accomodate interface
