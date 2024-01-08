@@ -7,6 +7,8 @@ easier to understand and cheaper to modify without changing its observable behav
 * The verb’s definition is: Refactoring (verb): to restructure software by applying a series of refactorings
 without changing its observable behavior.
 
+Also read: https://wou.edu/las/cs/csclasses/cs161/Lectures/rulesofthumb.html#
+
 ## Chapter 1
 
 * Breaking down complicated chunks into small pieces is important, as is
@@ -65,3 +67,5 @@ write code that humans can understand.
 
 * The little time you spend on refactoring now pays huge in the long run, otherwise your code looks like patch on top of patches and hence difficult to understand, fix bugs or add new features
 ![image](https://github.com/remidinishanth/oops_and_design_patterns/assets/19663316/c60ad4e3-9010-4335-9fe7-e9449e888430)
+
+![image](https://github.com/remidinishanth/oops_and_design_patterns/assets/19663316/f48d4952-30b9-4587-a81c-48db5f0e8f60)
