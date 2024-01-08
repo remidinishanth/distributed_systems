@@ -1,6 +1,12 @@
 # Refactoring
 Book by Kent Beck and Martin Fowler
 
+The term “refactoring” can be used either as a noun or a verb. 
+* The noun’s definition is: Refactoring (noun): a change made to the internal structure of software to make it
+easier to understand and cheaper to modify without changing its observable behavior.
+* The verb’s definition is: Refactoring (verb): to restructure software by applying a series of refactorings
+without changing its observable behavior.
+
 ## Chapter 1
 
 * Breaking down complicated chunks into small pieces is important, as is
