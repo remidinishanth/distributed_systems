@@ -62,3 +62,6 @@ write code that humans can understand.
   - Refactoring - not adding functionality, only restructing code, don't need to add new tests(unless some cases are missing). May be change tests to accomodate interface
 * An important aspect of improving design is to eliminate duplicated code. By eliminating duplication, code says everything once and only once, which is essense of good design.
 * Kent Beck: "I'm not a great programmer; I'm just a good programmer with great habits."
+
+* The little time you spend on refactoring now pays huge in the long run, otherwise your code looks like patch on top of patches and hence difficult to understand, fix bugs or add new features
+![image](https://github.com/remidinishanth/oops_and_design_patterns/assets/19663316/c60ad4e3-9010-4335-9fe7-e9449e888430)
