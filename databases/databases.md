@@ -95,6 +95,7 @@ Examples: MongoDB, CouchDB
 • Document Model: collection of record documents containing a hierarchy of named field/value pairs.
 
 MongoDB is designed to be huge (the name mongo is extracted from the word humongous). 
+Ref: https://www.mongodb.com/document-databases
 
 Like Mongo, CouchDB’s native query language is JavaScript.
 
