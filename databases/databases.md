@@ -1,8 +1,6 @@
-## Types of datastore:
-
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/efd2765d-37a3-4380-a67d-483ccebd3d6d)
 
-
+## Types of datastore:
 Databases come in a variety of genres, such as 
 * Relational (Postgres),
 * Key-Value (Riak, Redis, Amazon DynamoDB),
