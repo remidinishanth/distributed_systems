@@ -1,3 +1,14 @@
+## Database and DBMS
+
+A database is an organized collection of inter-related data that models some aspect of the real-world
+(e.g., modeling the students in a class or a digital music store). 
+
+People often confuse “databases” with
+“database management systems” (e.g., MySQL, Oracle, MongoDB, Snowflake). A database management
+system (DBMS) is the software that manages a database.
+
+### Data Models
+
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/efd2765d-37a3-4380-a67d-483ccebd3d6d)
 
 ## Types of datastore:
