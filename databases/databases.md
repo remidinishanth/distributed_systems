@@ -43,6 +43,9 @@ products (JOIN ...),
 
 Examples: MySQL, H2, HSQLDB, SQLite and Postgres.
 
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/f95feee5-89c4-4caf-bb8d-d94df57e0035)
+
+
 ### Key Value
 
 As the name implies, a KV store pairs keys to values in much the same way that a map (or
