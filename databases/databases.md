@@ -97,6 +97,9 @@ Examples: MongoDB, CouchDB
 MongoDB is designed to be huge (the name mongo is extracted from the word humongous). 
 Ref: https://www.mongodb.com/document-databases
 
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/27e67fbf-f2a6-4bf7-b13b-dd8f20e989e2)
+
+
 Like Mongo, CouchDB’s native query language is JavaScript.
 
 ### Graph
