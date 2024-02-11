@@ -9,6 +9,13 @@ system (DBMS) is the software that manages a database.
 
 ### Data Models
 
+A data model is a collection of concepts for describing the data in database.
+Examples: relational (most common), NoSQL (key/value, document, graph), array/matrix/vectors (for machine learning)
+
+A schema is a description of a particular collection of data based on a data model.
+* A schema is a blueprint of the database which specifies what fields will be present and what would be their types.
+* For example an employee table will have an employee_ID column represented by a string of 10 digits and an employee_Name column with a string of 45 characters.
+
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/efd2765d-37a3-4380-a67d-483ccebd3d6d)
 
 ## Types of datastore:
