@@ -8,3 +8,7 @@ Why we need kubernetes
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/734f817d-5e89-47f9-a782-fc72daeeca41)
 
 Ref: https://newsletter.francofernando.com/p/kubernetes
+
+<img width="672" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/549f0cec-ac99-438d-ba7b-f668fe85c762">
+
+Ref: http://bit.ly/9stepsawesome
