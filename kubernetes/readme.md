@@ -6,3 +6,5 @@ and https://kubernetesbootcamp.github.io/kubernetes-bootcamp/index.html
 Why we need kubernetes
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/734f817d-5e89-47f9-a782-fc72daeeca41)
+
+Ref: https://newsletter.francofernando.com/p/kubernetes
