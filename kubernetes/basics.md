@@ -1,3 +1,5 @@
+<img width="1714" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/38ea0de2-ac75-4f6f-8e5a-875879861e79">
+
 Terms with which you should be familiar:
 
 * Cluster – Group of physical or virtual servers wherein  Kubernetes is installed. A set of worker machines, called nodes, that run containerized applications. Every cluster has at least one worker node.
