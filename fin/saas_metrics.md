@@ -1,3 +1,10 @@
+## Conversion Rate
+
+Conversion rate = (Paying Customers) / Leads
+
+<img width="1237" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/7d1412ac-30e5-41f6-b3d8-21f77752f326">
+
+
 ## Monthly Recurring Revenue - MRR
 
 All of your recurring revenue normalized into a monthly amount. It’s a metric usually used among subscription and SaaS companies.
