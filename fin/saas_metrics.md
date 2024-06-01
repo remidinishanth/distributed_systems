@@ -12,3 +12,9 @@ All of your recurring revenue normalized into a monthly amount. It’s a metric 
 <img width="1293" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/8c95b77e-aa8a-41df-9f73-fce032fe0357">
 
 <img width="822" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/acafe23a-690d-4493-8f20-68c5b418583d">
+
+## ARR
+
+* Annual Recurring Revenue(ARR) is a key metric used by subscription-based SaaS companies using term-based agreements.
+* ARR normalizes the contracted recurring revenue components of term subscriptions to a one-year period.
+* An alternative to monthly recurring revenue MRR, ARR is used almost **exclusively in B2B subscription** businesses with **multi-year agreements** to help financial leaders understand their annual revenue and visualize company growth year over year.
