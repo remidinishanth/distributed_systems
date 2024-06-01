@@ -18,3 +18,8 @@ All of your recurring revenue normalized into a monthly amount. It’s a metric 
 * Annual Recurring Revenue(ARR) is a key metric used by subscription-based SaaS companies using term-based agreements.
 * ARR normalizes the contracted recurring revenue components of term subscriptions to a one-year period.
 * An alternative to monthly recurring revenue MRR, ARR is used almost **exclusively in B2B subscription** businesses with **multi-year agreements** to help financial leaders understand their annual revenue and visualize company growth year over year.
+
+## Customer Lifetime Value (CLV)
+
+* How much is an average new customer value to your business?
+* Customer lifetime value is more valuable as a metric when you calculate its ratio to customer acquisition cost (CAC).
