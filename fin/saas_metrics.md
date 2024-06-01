@@ -22,4 +22,7 @@ All of your recurring revenue normalized into a monthly amount. It’s a metric 
 ## Customer Lifetime Value (CLV)
 
 * How much is an average new customer value to your business?
+* Customer lifetime value (CLV or CLTV) is a metric that indicates the total revenue a business can reasonably expect from a single customer account throughout the business relationship.
 * Customer lifetime value is more valuable as a metric when you calculate its ratio to customer acquisition cost (CAC).
+
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/f2231da2-c62e-41c3-8b74-b94ca98db1bb)
