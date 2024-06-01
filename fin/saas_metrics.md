@@ -26,3 +26,5 @@ All of your recurring revenue normalized into a monthly amount. It’s a metric 
 * Customer lifetime value is more valuable as a metric when you calculate its ratio to customer acquisition cost (CAC).
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/f2231da2-c62e-41c3-8b74-b94ca98db1bb)
+
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/cec757e8-a84f-412a-9739-639e78d0dfbb)
