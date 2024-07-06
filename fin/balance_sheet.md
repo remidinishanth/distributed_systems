@@ -8,6 +8,9 @@
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/4fb0960f-a785-4162-a70c-62deb5f3b1f3)
 
+* **Shareholder equity** is the money attributable to the owners of a business or its shareholders. It is also known as net assets since it is equivalent to the total assets of a company minus its liabilities or the debt it owes to non-shareholders.
+
+* **Retained earnings** are the net earnings a company either reinvests in the business or uses to pay off debt. The remaining amount is distributed to shareholders in the form of dividends.
 
 <img width="997" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/19068e49-58f4-4b44-a5c8-21b2d95e0011">
 
