@@ -6,6 +6,9 @@
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/3e039cce-1baa-4a75-ab40-7401b4824fe7)
 
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/4fb0960f-a785-4162-a70c-62deb5f3b1f3)
+
+
 <img width="997" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/19068e49-58f4-4b44-a5c8-21b2d95e0011">
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/c407eff2-7495-41ca-81ca-ae3d159457b8)
