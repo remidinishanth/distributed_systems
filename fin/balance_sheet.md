@@ -21,7 +21,12 @@
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/b3ea79dd-3ffb-46e5-89a5-ed671070788f)
 
+
+## How to do Valuation
+
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/896eea6f-0057-40fe-ad97-7bccde05cee8)
+
+<img width="1000" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/c2301b46-b0b2-40d4-a763-02885db13b7c">
 
 
 ## Calculating Book value
