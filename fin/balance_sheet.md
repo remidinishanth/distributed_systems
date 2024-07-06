@@ -2,6 +2,7 @@
 
 * Balance sheet refers to a financial statement that reports a company's assets, liabilities, and shareholder equity at a specific point in time.
 * The balance sheet adheres to an equation that equates assets with the sum of liabilities and shareholder equity.
+> ` Assets = Liabilities + Shareholders’ Equity `
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/3e039cce-1baa-4a75-ab40-7401b4824fe7)
 
