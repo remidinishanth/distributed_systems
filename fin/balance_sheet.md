@@ -5,3 +5,11 @@
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/b3ea79dd-3ffb-46e5-89a5-ed671070788f)
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/896eea6f-0057-40fe-ad97-7bccde05cee8)
+
+
+## Calculating Book value
+
+<img width="1628" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/4e9ed753-639e-4513-a1eb-929f85e91ebe">
+
+<img width="1628" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/08623c15-6b8d-4201-a602-a3ad5f649ef5">
+
