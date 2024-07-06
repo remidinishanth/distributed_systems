@@ -9,6 +9,9 @@
 
 ## Calculating Book value
 
+* Book value is the value of a company's assets after netting out its liabilities.
+* It approximates the total value shareholders would receive if the company were **liquidated**.
+
 <img width="1628" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/4e9ed753-639e-4513-a1eb-929f85e91ebe">
 
 <img width="1628" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/08623c15-6b8d-4201-a602-a3ad5f649ef5">
