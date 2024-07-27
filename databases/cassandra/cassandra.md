@@ -3,7 +3,8 @@
 >  Goal: How can we build an ultra-high performance, low-latency multi-table database that can grow incrementally to handle massive-scale data?
 
 Cassandra is a large-scale open-source NoSQL wide-column distributed database. It was developed at Facebook and its design was influenced by Amazon Dynamo and Google Bigtable.
-* Cassandra was initially designed at Facebook using a staged event-driven architecture (SEDA). This initial design implemented a combination of Amazon’s Dynamo distributed storage and replication techniques and Google’s Bigtable data and storage engine model. 
+* Cassandra was initially designed at Facebook using a staged event-driven architecture (SEDA).
+* This initial design implemented a combination of Amazon’s Dynamo distributed storage and replication techniques and Google’s Bigtable data and storage engine model. 
 
 ### Abstract
 
