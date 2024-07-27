@@ -4,7 +4,7 @@
 
 Cassandra is a large-scale open-source NoSQL wide-column distributed database. It was developed at Facebook and its design was influenced by Amazon Dynamo and Google Bigtable.
 * Cassandra was initially designed at Facebook using a staged event-driven architecture (SEDA).
-* This initial design implemented a combination of Amazon’s Dynamo distributed storage and replication techniques and Google’s Bigtable data and storage engine model. 
+* This initial design implemented a combination of Amazon’s Dynamo distributed storage and replication techniques and Google’s Bigtable data and storage engine model.
 
 ### Abstract
 
@@ -28,7 +28,7 @@ put while not sacrificing read efficiency
 of writes per day, and also scale with the number of users.
 
 
-* The key goals of Cassandra were high performance, incremental scalability, and high availability.
+* The key goals of Cassandra were **high performance**, **incremental scalability**, and **high availability**.
   * Since the CAP theorem tells us we must choose between consistency and availability if a network partition occurs, Cassandra opted for high availability at the expense of consistency, implementing an eventually consistent model.
   * This also helps with performance since there is no need to take and release locks across all nodes that store replicas of data that’s being modified.
 
