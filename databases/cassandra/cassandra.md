@@ -33,3 +33,9 @@ of writes per day, and also scale with the number of users.
 
 ![image](https://github.com/user-attachments/assets/1bbe43b9-ed7e-4afa-aaaf-c1cd640a6a55)
 
+
+
+Cassandra explicitly chooses not to implement operations that require cross-partition coordination as they are typically slow and hard to provide highly available global semantics. For example, Cassandra **does not support**:
+* Cross-partition transactions
+* Distributed joins
+* Foreign keys or referential integrity.
