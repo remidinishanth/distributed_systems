@@ -6,6 +6,9 @@ Cassandra is a large-scale open-source NoSQL wide-column distributed database. I
 * Cassandra was initially designed at Facebook using a staged event-driven architecture (SEDA).
 * This initial design implemented a combination of Amazon’s Dynamo distributed storage and replication techniques and Google’s Bigtable data and storage engine model.
 
+<img width="1516" alt="image" src="https://github.com/user-attachments/assets/05658a19-7c38-4ee6-912e-1f177f4dac82">
+
+
 ### Abstract
 
 * Cassandra is a distributed storage system for managing very
