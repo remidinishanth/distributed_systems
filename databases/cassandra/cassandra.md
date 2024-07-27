@@ -28,7 +28,8 @@ put while not sacrificing read efficiency
 of writes per day, and also scale with the number of users.
 
 
-* The key goals of Cassandra were high performance, incremental scalability, and high availability. Since the CAP theorem tells us we must choose between consistency and availability if a network partition occurs, Cassandra opted for high availability at the expense of consistency, implementing an eventually consistent model.
+* The key goals of Cassandra were high performance, incremental scalability, and high availability.
+ * Since the CAP theorem tells us we must choose between consistency and availability if a network partition occurs, Cassandra opted for high availability at the expense of consistency, implementing an eventually consistent model.
 * This also helps with performance since there is no need to take and release locks across all nodes that store replicas of data that’s being modified.
 
 ![image](https://github.com/user-attachments/assets/1bbe43b9-ed7e-4afa-aaaf-c1cd640a6a55)
