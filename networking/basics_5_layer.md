@@ -45,7 +45,7 @@ process.
   <summary> More details </summary>
 
 * The local host and the remote host are defined using IP addresses.
-* To define the processes, we need second identifiers, called port numbers. In
+* To define the processes, we need second identifiers, called **port numbers**. In
 the TCP/IP protocol suite, the port numbers are integers between 0 and 65,535 (16 bits).
 * The client program defines itself with a port number, called the ephemeral port
 number. The word ephemeral means “short-lived” and is used because the life of a
@@ -55,8 +55,20 @@ client is normally short. An ephemeral port number is recommended to be greater 
 however, cannot be chosen randomly. If the computer at the server site runs a server
 process and assigns a random number as the port number, the process at the client site
 that wants to access that server and use its services will not know the port number. TCP/
-IP has decided to use universal port numbers for servers; these are called well-known port numbers.
+IP has decided to use universal port numbers for servers; these are called **well-known port numbers**.
 Every client process knows the well-known port number of the corresponding server process.  
+
+Communication using Port numbers
+<img width="641" alt="image" src="https://github.com/user-attachments/assets/0c20bed8-1b21-4a16-a830-befeca38e025">
+
+
+<img width="641" alt="image" src="https://github.com/user-attachments/assets/7f067ec0-0b90-45e9-8433-c60744f2a120">
+
+A transport-layer protocol in the TCP suite needs both the IP address and the port number,
+at each end, to make a connection. The combination of an IP address and a port number is
+called a **socket address**.
+
+---
   
 </details>  
 
