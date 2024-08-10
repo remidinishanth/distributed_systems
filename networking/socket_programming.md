@@ -17,6 +17,11 @@ Ref: https://www.cs.dartmouth.edu/~campbell/cs50/socketprogramming.html
 
 <img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/6c9fba23-3241-4e18-b9bd-76f0fc4259be">
 
+### Data flow between wire and app
+
+<img width="471" alt="image" src="https://github.com/user-attachments/assets/191e43ab-b6aa-4e18-b65f-d81db26e28e9">
+
+
 ## Established Socket
 
 A socket is created by an application running in a host. The application assigns a transport protocol (TCP or UDP) and source and destination addresses to the socket. It identifies sockets by assigning numbers to them.
