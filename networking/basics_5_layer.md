@@ -1,8 +1,8 @@
-![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/8449fc09-9d06-4c22-a118-1b6e7e70550e)
-
-### 7 Layer vs 5 layer
+## 7 Layer vs 5 layer
 
 ![image](https://github.com/user-attachments/assets/6d937997-2529-4853-a3f4-c892b7ac797e)
+
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/8449fc09-9d06-4c22-a118-1b6e7e70550e)
 
 # Five Layer Software Model Overview
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/b3e5b738-0c80-4a15-b3d2-89b56cf34b85)
