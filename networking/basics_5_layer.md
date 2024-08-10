@@ -116,6 +116,15 @@ All hosts that have an IP address also have a MAC (Media Access Controller) addr
 
 This layer uses a Media Access Controller (MAC) to generate the frames that will be transmitted. As the name suggests, the MAC controls the physical transmission media.
 
+#### Summary
+We can consider the data-link layer as two sublayers. 
+* The upper sublayer is responsible for data-link control, and
+* The lower sublayer is responsible for resolving access to the shared media.
+
+Data-link control (DLC) deals with the design and procedures for communication between two adjacent nodes: node-to-node communication. 
+This sublayer is responsible for framing and error control. 
+Error control deals with data corruption during transmission.
+
 ### Ethernet and WiFi Frame Format
 
 As you probably guessed, the Data Link layer adds more than just the source and destination MAC addresses to the packet. 
