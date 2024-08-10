@@ -125,6 +125,9 @@ Data-link control (DLC) deals with the design and procedures for communication b
 This sublayer is responsible for framing and error control. 
 Error control deals with data corruption during transmission.
 
+<img width="1120" alt="image" src="https://github.com/user-attachments/assets/d8d16298-e031-4b46-87d6-373e8771dd18">
+
+
 ### Ethernet and WiFi Frame Format
 
 As you probably guessed, the Data Link layer adds more than just the source and destination MAC addresses to the packet. 
@@ -175,3 +178,5 @@ this rule) remain the same.
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/d51f3aab-151e-4e59-b0d9-9bcf1e50f99b)
 
 <img width="1562" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/814b299a-fb25-4b8e-b838-651a4b92e360">
+
+Ref: https://people.cs.rutgers.edu/~pxk/417/notes/pdf/01c-networking-slides.pdf 
