@@ -28,8 +28,8 @@ Read more at https://microchipdeveloper.com/tcpip:common-tcp-ip-applications (Aw
 
 ## Transport Layer (Layer 4)
 
-The first duty of a transport-layer protocol is to provide **process-to-process** communi-
-cation. A process is an application-layer entity (running program) that uses the services
+The first duty of a transport-layer protocol is to provide **process-to-process** communication. 
+A process is an application-layer entity (running program) that uses the services
 of the transport layer.
 
 The network layer is responsible for communication at the computer level (host-
