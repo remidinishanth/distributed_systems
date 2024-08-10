@@ -90,6 +90,16 @@ Note how the TCP protocol requires more information and overhead to guarantee da
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/b525663c-b138-4bcf-80c2-216b63e8cf02)
 
+
+### UDP
+* The User Datagram Protocol (UDP) is a connectionless, unreliable transport protocol. It
+does not add anything to the services of IP except for providing process-to-process
+communication instead of host-to-host communication.
+* UDP is a very simple protocol using a minimum of overhead. Sending a small message using
+UDP takes much less interaction between the sender and receiver than using TCP.
+* UDP packets, called user datagrams, have a fixed-size header of 8 bytes made up
+of four fields, each of 2 bytes (16 bits). 
+
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/a022b8c9-07ad-40d5-88c2-63b3e4523915)
 
 ## Network Layer (Layer 3)
