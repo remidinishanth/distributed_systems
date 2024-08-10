@@ -90,6 +90,11 @@ Note how the TCP protocol requires more information and overhead to guarantee da
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/b525663c-b138-4bcf-80c2-216b63e8cf02)
 
+### TCP
+
+* TCP (Transmission Control Protocol) provides reliable byte stream (connection-oriented) service. 
+* This layer of software ensures that packets arrive at the application in order and lost or corrupt packets are retransmitted.
+* The transport layer keeps track of the destination so the application can have the illusion of a connected data stream.
 
 ### UDP
 * The User Datagram Protocol (UDP) is a connectionless, unreliable transport protocol. It
