@@ -51,6 +51,12 @@ the TCP/IP protocol suite, the port numbers are integers between 0 and 65,535 (1
 number. The word ephemeral means “short-lived” and is used because the life of a
 client is normally short. An ephemeral port number is recommended to be greater than
 1023 for some client/server programs to work properly.
+* The server process must also define itself with a port number. This port number,
+however, cannot be chosen randomly. If the computer at the server site runs a server
+process and assigns a random number as the port number, the process at the client site
+that wants to access that server and use its services will not know the port number. TCP/
+IP has decided to use universal port numbers for servers; these are called well-known port numbers.
+Every client process knows the well-known port number of the corresponding server process.  
   
 </details>  
 
