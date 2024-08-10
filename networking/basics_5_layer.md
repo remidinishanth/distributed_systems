@@ -68,6 +68,17 @@ A transport-layer protocol in the TCP suite needs both the IP address and the po
 at each end, to make a connection. The combination of an IP address and a port number is
 called a **socket address**.
 
+
+Whenever an entity accepts items from more than one source, this is referred to as
+multiplexing (many to one); whenever an entity delivers items to more than one source,
+this is referred to as demultiplexing (one to many). The transport layer at the source
+performs multiplexing; the transport layer at the destination performs demultiplexing.
+
+Three client processes are running at the client site: P1, P2, and P3. The processes P1 and P3 need to
+send requests to the corresponding server process running in a server. 
+
+<img width="641" alt="image" src="https://github.com/user-attachments/assets/e2ed19b6-95a2-4346-9fa5-cb85f71aeae3">
+
 ---
   
 </details>  
