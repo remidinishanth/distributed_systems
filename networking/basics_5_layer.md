@@ -117,6 +117,8 @@ of four fields, each of 2 bytes (16 bits).
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/9542eb24-3b60-4812-b627-b428ffaee683)
 
+<img width="610" alt="image" src="https://github.com/user-attachments/assets/3ede1bd1-7635-43c3-8419-ad87a8da971b">
+
 #### Network layer and Data Link Layer
 * To send an IP packet out, the system needs to identify the link layer destination address (MAC, or Media Access Control address) on the local area network that corresponds to the desired IP destination (it may be the address of a router if the packet is going to a remote network). 
 * The **Address Resolution Protocol**, or ARP, accomplishes this. It works by broadcasting a request containing an IP address (the message asks, do you know the corresponding MAC address for this IP address?) and then waiting for a response from the computer with the corresponding IP address. 
