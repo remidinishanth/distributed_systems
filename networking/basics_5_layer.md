@@ -28,6 +28,20 @@ Read more at https://microchipdeveloper.com/tcpip:common-tcp-ip-applications (Aw
 
 ## Transport Layer (Layer 4)
 
+The first duty of a transport-layer protocol is to provide **process-to-process** communi-
+cation. A process is an application-layer entity (running program) that uses the services
+of the transport layer.
+
+The network layer is responsible for communication at the computer level (host-
+to-host communication). A network-layer protocol can deliver the message only to the
+destination computer. However, this is an incomplete delivery. The message still needs
+to be handed to the correct process. This is where a transport-layer protocol takes over.
+A transport-layer protocol is responsible for delivery of the message to the appropriate
+process.
+
+<img width="673" alt="image" src="https://github.com/user-attachments/assets/5211c4a2-48ca-4885-916d-4e7669a61ce6">
+
+
 The header added to messages by the Transport layer includes more than just the source and destination port numbers. Here we are showing all the information included in TCP and UDP headers.
 
 Note how the TCP protocol requires more information and overhead to guarantee data delivery.
