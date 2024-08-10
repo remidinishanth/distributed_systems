@@ -41,6 +41,19 @@ process.
 
 <img width="673" alt="image" src="https://github.com/user-attachments/assets/5211c4a2-48ca-4885-916d-4e7669a61ce6">
 
+<details>
+  <summary> More details </summary>
+
+* The local host and the remote host are defined using IP addresses.
+* To define the processes, we need second identifiers, called port numbers. In
+the TCP/IP protocol suite, the port numbers are integers between 0 and 65,535 (16 bits).
+* The client program defines itself with a port number, called the ephemeral port
+number. The word ephemeral means “short-lived” and is used because the life of a
+client is normally short. An ephemeral port number is recommended to be greater than
+1023 for some client/server programs to work properly.
+  
+</details>  
+
 
 The header added to messages by the Transport layer includes more than just the source and destination port numbers. Here we are showing all the information included in TCP and UDP headers.
 
