@@ -96,6 +96,8 @@ Note how the TCP protocol requires more information and overhead to guarantee da
 * This layer of software ensures that packets arrive at the application in order and lost or corrupt packets are retransmitted.
 * The transport layer keeps track of the destination so the application can have the illusion of a connected data stream.
 
+TCP tries to give a datagram some of the characteristics of a virtual circuit network. The TCP layer will send sequence numbers along with each packet of data, buffer received data in memory so they can be presented to the application in order, acknowledge received packets, and request a retransmission of missing or corrupt packets.
+
 ### UDP
 * The User Datagram Protocol (UDP) is a connectionless, unreliable transport protocol. It
 does not add anything to the services of IP except for providing process-to-process
