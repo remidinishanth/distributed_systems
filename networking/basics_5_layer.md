@@ -8,19 +8,26 @@
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/8449fc09-9d06-4c22-a118-1b6e7e70550e)
 
+---
+
 # Five Layer Software Model Overview
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/b3e5b738-0c80-4a15-b3d2-89b56cf34b85)
 
-<img width="1098" alt="image" src="https://github.com/user-attachments/assets/a870eb5d-2035-4034-84c0-58812d99ec01">
+---
+
+![image](https://github.com/user-attachments/assets/1259ee00-3132-4205-9d57-428f324096ed)
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/7d0515ff-14a2-4669-adef-2fbcb2ab4295)
 
+---
 
 ### Sending message
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/8b494d60-5d12-4631-bbf8-afc16a1f14a9)
 
 ### Receiving message
 <img width="1706" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/264fa4de-dfe2-4c5b-a4d3-b21fb947cadd">
+
+---
 
 ## Summary
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/cb75ef43-d7a6-4f0d-a172-8c404e02e174)
