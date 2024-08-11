@@ -54,6 +54,10 @@ This graphic shows a virtual TCP connection between a client and server. Note th
 
 <img width="652" alt="image" src="https://github.com/user-attachments/assets/a28d6424-cf25-41ab-a73d-00b2d44f053d">
 
+### TCP
+
+![image](https://github.com/user-attachments/assets/529f2e1f-58d4-4a11-9892-ac12928ad900)
+
 
 <img width="1120" alt="image" src="https://github.com/user-attachments/assets/4e5cdf0f-3f06-4083-b28a-3ff0faed8f75">
 
