@@ -44,6 +44,9 @@ This graphic shows a virtual TCP connection between a client and server. Note th
 
 ## Sockets
 
+<img width="1120" alt="image" src="https://github.com/user-attachments/assets/143f9616-dc43-4773-a845-0c79c1928b50">
+
+
 ![image](https://github.com/user-attachments/assets/16e999b6-ed20-4892-9485-e0fa1a699ecf)
 
 
