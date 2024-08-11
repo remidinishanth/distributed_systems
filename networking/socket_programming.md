@@ -41,3 +41,20 @@ Note the web server has two sockets opened: one for each web page it is serving.
 This graphic shows a virtual TCP connection between a client and server. Note the socket numbers are not the same on both sides of the channel. Hosts create, close and number their own sockets.
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/47b5a71d-0d00-41c0-9f2e-8af44fb9256e)
+
+## Sockets
+
+![image](https://github.com/user-attachments/assets/16e999b6-ed20-4892-9485-e0fa1a699ecf)
+
+
+<img width="1120" alt="image" src="https://github.com/user-attachments/assets/300008cd-4421-482d-9049-4544db916131">
+
+<img width="652" alt="image" src="https://github.com/user-attachments/assets/a28d6424-cf25-41ab-a73d-00b2d44f053d">
+
+
+<img width="1120" alt="image" src="https://github.com/user-attachments/assets/4e5cdf0f-3f06-4083-b28a-3ff0faed8f75">
+
+<img width="652" alt="image" src="https://github.com/user-attachments/assets/c4ce2f02-1b98-4ae4-85ae-f91c0531b2a4">
+
+
+Ref: https://people.cs.rutgers.edu/~pxk/417/notes/index.html
