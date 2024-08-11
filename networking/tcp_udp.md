@@ -60,4 +60,14 @@ Note how the TCP protocol requires more information and overhead to guarantee da
         Rationale: SNMP typically uses UDP for its simplicity and lower overhead. While it doesn't guarantee delivery, SNMP is often used for real-time monitoring where timely updates are crucial.
 
 In summary, the choice between TCP and UDP for these protocols is influenced by factors such as the need for reliable and ordered delivery, security considerations, and the characteristics of the data being transmitted.
-User
+
+## Notes
+
+<img width="1120" alt="image" src="https://github.com/user-attachments/assets/ba24e5e8-1029-42b8-a83e-43e7243eaf7b">
+
+<img width="1120" alt="image" src="https://github.com/user-attachments/assets/1147d021-a67d-4216-8f07-02b80c60131e">
+
+<img width="1120" alt="image" src="https://github.com/user-attachments/assets/5b8c0ee3-a8c6-40f5-8f17-be2d27aeb60d">
+
+
+Ref: https://people.cs.rutgers.edu/~pxk/417/notes/index.html
