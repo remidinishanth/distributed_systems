@@ -6,7 +6,9 @@ Also there is Adv Databases course
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/24b3af22-f1b1-4bbb-ab25-0da20bea4dd7)
 
-Isolation levels
+## Isolation levels
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/427f890e-a716-47ba-b274-b3caaeaad5af)
 
 Nice read about Cockroach DB https://www.cockroachlabs.com/blog/distributed-sql-key-value-store/
+
+<img width="1074" alt="image" src="https://github.com/user-attachments/assets/e24257e3-44df-4450-92f8-5a4e24d8a07b">
