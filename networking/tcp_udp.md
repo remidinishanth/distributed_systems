@@ -69,5 +69,11 @@ In summary, the choice between TCP and UDP for these protocols is influenced by 
 
 <img width="1120" alt="image" src="https://github.com/user-attachments/assets/5b8c0ee3-a8c6-40f5-8f17-be2d27aeb60d">
 
+### Sockets
+
+<img width="1120" alt="image" src="https://github.com/user-attachments/assets/300008cd-4421-482d-9049-4544db916131">
+
+<img width="1120" alt="image" src="https://github.com/user-attachments/assets/4e5cdf0f-3f06-4083-b28a-3ff0faed8f75">
+
 
 Ref: https://people.cs.rutgers.edu/~pxk/417/notes/index.html
