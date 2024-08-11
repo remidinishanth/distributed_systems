@@ -63,5 +63,6 @@ This graphic shows a virtual TCP connection between a client and server. Note th
 
 <img width="652" alt="image" src="https://github.com/user-attachments/assets/c4ce2f02-1b98-4ae4-85ae-f91c0531b2a4">
 
+The `accept()` function creates a new socket from the first connection request for the specified `socket_descriptor` and returns the file descriptor of the new socket. The file descriptor of this new socket is used in the `read()` and `write()` functions to send and receive data to and from the client node.
 
 Ref: https://people.cs.rutgers.edu/~pxk/417/notes/index.html
