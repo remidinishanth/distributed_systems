@@ -1,3 +1,5 @@
+Ref: https://github.com/lafengnan/ebooks-1
+
 # developing_as_developer
 
 MIT 6.824 Notes https://wizardforcel.gitbooks.io/distributed-systems-engineering-lecture-notes/content/l01-intro.html and http://nil.csail.mit.edu/6.824/2015/schedule.html
