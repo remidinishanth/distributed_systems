@@ -16,6 +16,8 @@ Also there is Adv Databases course
 * Microsoft Azure: Hosted SQL Server as Azure SQL Database
 * Google Cloud: Hosted PostgreSQL and MySQL in Cloud SQL, and also horizontally scaling Cloud Spanner
 
+![image](https://github.com/user-attachments/assets/e91eb4ea-e525-4b7e-8bea-d715f7b99977)
+
 
 ### Isolation levels
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/427f890e-a716-47ba-b274-b3caaeaad5af)
