@@ -112,6 +112,8 @@ Graph databases excel at dealing with highly interconnected data.
 
 ![image](https://github.com/user-attachments/assets/eac23130-8815-41fb-a01c-501cbdfff561)
 
+![image](https://github.com/user-attachments/assets/c3190d11-ac52-436c-b50c-94fd83669bc2)
+
 
 ### New SQL
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/6b5bb117-5efe-4f37-a183-480038f035fb)
