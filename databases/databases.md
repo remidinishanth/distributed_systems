@@ -125,3 +125,9 @@ Here are some NewSQL databases to get you started:
   - NoSQL databases provide highly functional APIs and data types that are purpose-built for each of their respective data models. 
 * Typically designed to **scale** out by using distributed clusters
 * NoSQL databases are optimized for specific data models and access patterns. These enable higher **performance** than if you were trying to accomplish similar functionality with relational databases.
+
+### Terminology
+
+<img width="920" alt="image" src="https://github.com/user-attachments/assets/addadada-f6b9-40e9-b2ef-54421a012cfa">
+
+Ref: https://aws.amazon.com/nosql/
