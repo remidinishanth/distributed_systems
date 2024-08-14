@@ -6,9 +6,18 @@ Also there is Adv Databases course
 
 ![image](https://github.com/user-attachments/assets/9ac0d78a-9437-47df-b122-87b754b9929f)
 
+## SQL
+
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/24b3af22-f1b1-4bbb-ab25-0da20bea4dd7)
 
-## Isolation levels
+
+* Cloud Agnostic: Oracle, Microsoft SQL Server, IBM DB2, PostgreSQL, and MySQL
+* AWS: Hosted PostgreSQL and MySQL in Relational Database Service (RDS)
+* Microsoft Azure: Hosted SQL Server as Azure SQL Database
+* Google Cloud: Hosted PostgreSQL and MySQL in Cloud SQL, and also horizontally scaling Cloud Spanner
+
+
+### Isolation levels
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/427f890e-a716-47ba-b274-b3caaeaad5af)
 
 Nice read about Cockroach DB https://www.cockroachlabs.com/blog/distributed-sql-key-value-store/
