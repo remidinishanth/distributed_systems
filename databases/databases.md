@@ -114,9 +114,14 @@ Graph databases excel at dealing with highly interconnected data.
 ### New SQL
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/6b5bb117-5efe-4f37-a183-480038f035fb)
 
-
 Here are some NewSQL databases to get you started:
 * 🔹 Google cloud spanner
 * 🔹 CockroachDB
 * 🔹 VoltDB
 * 🔹 SingleStore
+
+### NoSQL:
+* Ideal for applications that need **flexible schema**
+  - NoSQL databases provide highly functional APIs and data types that are purpose-built for each of their respective data models. 
+* Typically designed to **scale** out by using distributed clusters
+* NoSQL databases are optimized for specific data models and access patterns. These enable higher **performance** than if you were trying to accomplish similar functionality with relational databases.
