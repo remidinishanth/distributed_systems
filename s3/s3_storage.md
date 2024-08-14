@@ -5,7 +5,7 @@
 
 Blob storage is a type of cloud storage for unstructured data. 
 * Unstructured data is data that doesn't adhere to a particular data model or definition, such as text or binary data.
-* A "blob," which is short for Binary Large Object, is a mass of data in binary form that does not necessarily conform to any file format.
+* A "blob," which is short for **B**inary **L**arge **Ob**ject, is a mass of data in binary form that does not necessarily conform to any file format.
 * Blob storage keeps these masses of data in non-hierarchical storage areas called data lakes.
 
 
