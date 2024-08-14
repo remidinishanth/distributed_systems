@@ -4,6 +4,8 @@ F2023 #00 - Course Overview & Logistics (CMU Intro to Database Systems)
 
 Also there is Adv Databases course
 
+![image](https://github.com/user-attachments/assets/9ac0d78a-9437-47df-b122-87b754b9929f)
+
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/24b3af22-f1b1-4bbb-ab25-0da20bea4dd7)
 
 ## Isolation levels
