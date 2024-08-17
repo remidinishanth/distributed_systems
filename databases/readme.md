@@ -23,20 +23,10 @@ However, this idea of consistency depends on the application’s notion of invar
 
 Atomicity, isolation, and durability are properties of the database, whereas consis‐ tency (in the ACID sense) is a property of the application.
 
-### Summary
-![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/24b3af22-f1b1-4bbb-ab25-0da20bea4dd7)
-
-### SQL Databases
-
-* Cloud Agnostic: Oracle, Microsoft SQL Server, IBM DB2, PostgreSQL, and MySQL
-* AWS: Hosted PostgreSQL and MySQL in Relational Database Service (RDS)
-* Microsoft Azure: Hosted SQL Server as Azure SQL Database
-* Google Cloud: Hosted PostgreSQL and MySQL in Cloud SQL, and also horizontally scaling Cloud Spanner
-
-![image](https://github.com/user-attachments/assets/e91eb4ea-e525-4b7e-8bea-d715f7b99977)
-
-
 ### Isolation levels
+
+Concurrently running transactions shouldn’t interfere with each other. For example, if one transaction makes several writes, then another transaction should see either all or none of those writes, but not some subset.
+
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/427f890e-a716-47ba-b274-b3caaeaad5af)
 
 ![image](https://github.com/user-attachments/assets/e9f83dd0-16d0-40a6-946a-d5b5e42d1587)
@@ -50,6 +40,18 @@ Atomicity, isolation, and durability are properties of the database, whereas con
 🔹 Read Uncommitted: The data modification can be read by other transactions before a transaction is committed.
 
 ![image](https://github.com/user-attachments/assets/24cd023b-1b63-43eb-afa2-02acf7b944c6)
+
+### Summary
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/24b3af22-f1b1-4bbb-ab25-0da20bea4dd7)
+
+### SQL Databases
+
+* Cloud Agnostic: Oracle, Microsoft SQL Server, IBM DB2, PostgreSQL, and MySQL
+* AWS: Hosted PostgreSQL and MySQL in Relational Database Service (RDS)
+* Microsoft Azure: Hosted SQL Server as Azure SQL Database
+* Google Cloud: Hosted PostgreSQL and MySQL in Cloud SQL, and also horizontally scaling Cloud Spanner
+
+![image](https://github.com/user-attachments/assets/e91eb4ea-e525-4b7e-8bea-d715f7b99977)
 
 
 Nice read about Cockroach DB https://www.cockroachlabs.com/blog/distributed-sql-key-value-store/
