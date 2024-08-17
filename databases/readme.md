@@ -59,7 +59,9 @@ With dirty writes, conflicting writes from different transactions can be mixed u
 
 ![image](https://github.com/user-attachments/assets/2b2b16b5-ee79-4d3a-beee-2187623c97c1)
 
-If a transaction can overwrite data written by another transaction that is not yet committed (or aborted), this is called a “Dirty Write”.
+If a transaction can overwrite data written by another transaction that is not yet committed (or aborted), this is called a “Dirty Write”. If transactions update multiple objects, dirty writes can lead to a bad outcome.
+
+Transactions running at the read committed isolation level must prevent dirty writes, usually by delaying the second write until the first write’s transaction has committed or aborted.
 
 ### Summary
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/24b3af22-f1b1-4bbb-ab25-0da20bea4dd7)
