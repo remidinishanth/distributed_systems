@@ -53,6 +53,14 @@ No need to even write, you can just read too and you might end up reading uncomm
 
 ![image](https://github.com/user-attachments/assets/49cf0f86-f9f2-4e1e-bc6d-2dbb7c025bb0)
 
+#### Dirty Write
+
+With dirty writes, conflicting writes from different transactions can be mixed up.
+
+![image](https://github.com/user-attachments/assets/2b2b16b5-ee79-4d3a-beee-2187623c97c1)
+
+If a transaction can overwrite data written by another transaction that is not yet committed (or aborted), this is called a “Dirty Write”.
+
 ### Summary
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/24b3af22-f1b1-4bbb-ab25-0da20bea4dd7)
 
