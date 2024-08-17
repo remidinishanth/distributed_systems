@@ -63,13 +63,20 @@ If a transaction can overwrite data written by another transaction that is not y
 
 Transactions running at the read committed isolation level must prevent dirty writes, usually by delaying the second write until the first write’s transaction has committed or aborted.
 
-#### Implementation
+#### Implementation details preventing Dirty Writes and Dirty Reads
 
-Most commonly, databases prevent dirty writes by using **row-level locks**: 
-* When a transaction wants to modify a particular object (row or document), it must first acquire a lock on that object.
-* It must then hold that lock until the transaction is committed or aborted.
-* Only one transaction can hold the lock for any given object; if another transaction wants to write to the same object, it must wait until the first transaction is committed or aborted before it can acquire the lock and continue.
-* This locking is done automatically by databases in read committed mode (or stronger isolation levels).
+> [!NOTE]  
+> Most commonly, databases prevent dirty writes by using **row-level locks**: 
+> * When a transaction wants to modify a particular object (row or document), it must first acquire a lock on that object.
+> * It must then hold that lock until the transaction is committed or aborted.
+> * Only one transaction can hold the lock for any given object; if another transaction wants to write to the same object, it must wait until the first transaction is committed or aborted before it can acquire the lock and continue.
+> * This locking is done automatically by databases in read committed mode (or stronger isolation levels).
+>
+> Preventing Dirty reads:
+> * For every object that is written, the database remembers both the old committed value and the new value set by the transaction that currently holds the write lock.
+> * While the transaction is ongoing, any other transactions that read the object are simply given the old value.
+> * Only when the new value is committed do transactions switch over to reading the new value.
+
 
 ### Summary
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/24b3af22-f1b1-4bbb-ab25-0da20bea4dd7)
