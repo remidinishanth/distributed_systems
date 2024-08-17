@@ -77,6 +77,15 @@ Transactions running at the read committed isolation level must prevent dirty wr
 > * While the transaction is ongoing, any other transactions that read the object are simply given the old value.
 > * Only when the new value is committed do transactions switch over to reading the new value.
 
+### Snapshot Isolation and Repeatable Read
+
+> Read Committed provides isolation again dirty reads and dirty writes, but still there are few issues.
+
+![image](https://github.com/user-attachments/assets/8a673f42-00fa-49ea-835c-ca5a0a094062)
+
+* Say Alice has $1,000 of savings at a bank, split across two accounts with $500 each. 
+* Now a transaction transfers $100 from one of her accounts to the other.
+* To Alice it now appears as though she only has a total of $900 in her accounts — it seems that $100 has vanished into thin air.
 
 ### Summary
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/24b3af22-f1b1-4bbb-ab25-0da20bea4dd7)
