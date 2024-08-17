@@ -8,7 +8,7 @@ Also there is Adv Databases course
 
 ## SQL
 
-### Atomicity
+### Atomicity (all-or-nothing guarantee)
 Atomicity: The system can only be in the state it was before the operation or after the operation, not something in between.
 
 In the context of ACID, atomicity is not about concurrency. It does not describe what happens if several processes try to access the same data at the same time, because that is covered under the letter I, for isolation.
