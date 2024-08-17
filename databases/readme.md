@@ -47,6 +47,7 @@ Concurrently running transactions shouldn’t interfere with each other. For exa
 Violating isolation: one transaction reads another transaction’s uncommitted writes (a “dirty read”)
 
 ![image](https://github.com/user-attachments/assets/096db127-df30-460f-9f72-58ec3ad69b54)
+Ref: https://maxnilz.com/docs/003-database/015-concurrency-control/
 
 No need to even write, you can just read too and you might end up reading uncommitted write
 
