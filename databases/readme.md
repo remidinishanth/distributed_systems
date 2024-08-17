@@ -41,6 +41,17 @@ Concurrently running transactions shouldn’t interfere with each other. For exa
 
 ![image](https://github.com/user-attachments/assets/24cd023b-1b63-43eb-afa2-02acf7b944c6)
 
+
+#### Dirty Read
+
+Violating isolation: one transaction reads another transaction’s uncommitted writes (a “dirty read”)
+
+![image](https://github.com/user-attachments/assets/096db127-df30-460f-9f72-58ec3ad69b54)
+
+No need to even write, you can just read too and you might end up reading uncommitted write
+
+![image](https://github.com/user-attachments/assets/49cf0f86-f9f2-4e1e-bc6d-2dbb7c025bb0)
+
 ### Summary
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/24b3af22-f1b1-4bbb-ab25-0da20bea4dd7)
 
