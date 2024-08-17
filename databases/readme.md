@@ -24,6 +24,16 @@ Also there is Adv Databases course
 
 ![image](https://github.com/user-attachments/assets/e9f83dd0-16d0-40a6-946a-d5b5e42d1587)
 
+🔹 Serializalble: This is the highest isolation level. Concurrent transactions are guaranteed to be executed in sequence.
+
+🔹 Repeatable Read: Data read during the transaction stays the same as the transaction starts.
+
+🔹 Read Committed: Data modification can only be read after the transaction is committed.
+
+🔹 Read Uncommitted: The data modification can be read by other transactions before a transaction is committed.
+
+![image](https://github.com/user-attachments/assets/24cd023b-1b63-43eb-afa2-02acf7b944c6)
+
 
 Nice read about Cockroach DB https://www.cockroachlabs.com/blog/distributed-sql-key-value-store/
 
