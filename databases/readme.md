@@ -86,6 +86,11 @@ Transactions running at the read committed isolation level must prevent dirty wr
 * Say Alice has $1,000 of savings at a bank, split across two accounts with $500 each. 
 * Now a transaction transfers $100 from one of her accounts to the other.
 * To Alice it now appears as though she only has a total of $900 in her accounts — it seems that $100 has vanished into thin air.
+* This anomaly is called a nonrepeatable read or read skew.
+* This is not a big problem if we read the data again -- temporary inconsistency. But if we take backup of database, then our backup might have inconsistency.
+
+![image](https://github.com/user-attachments/assets/34ecdd54-33ea-49b0-a2c2-853b495715c5)
+
 
 ### Summary
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/24b3af22-f1b1-4bbb-ab25-0da20bea4dd7)
