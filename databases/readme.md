@@ -8,8 +8,13 @@ Also there is Adv Databases course
 
 ## SQL
 
+Atomicity: The system can only be in the state it was before the operation or after the operation, not something in between.
+
+In the context of ACID, atomicity is not about concurrency. It does not describe what happens if several processes try to access the same data at the same time, because that is covered under the letter I, for isolation
+
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/24b3af22-f1b1-4bbb-ab25-0da20bea4dd7)
 
+### SQL Databases
 
 * Cloud Agnostic: Oracle, Microsoft SQL Server, IBM DB2, PostgreSQL, and MySQL
 * AWS: Hosted PostgreSQL and MySQL in Relational Database Service (RDS)
