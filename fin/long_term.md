@@ -18,6 +18,19 @@ The primary difference between the two ratios is that the trailing P/E is based 
 
 <img width="798" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/91b450b8-84b6-40a6-b7bb-06aaedaea599">
 
+
+> [!NOTE]  
+> PE ratio tells you how much investors are paying for each dollar of a company's earnings.
+> 
+> * If a stock has a PE ratio of 20, it means the stock costs 20 times the earnings per share. It's best used for comparing stocks in the same sector, where tech stocks tend to   have higher ratios due to growth expectations, but banks usually have lower PE ratios because of their slower growth.
+> * If a company has a lower PE ratio, you’re paying less for its earnings, so it could be a better buy.
+> * When a stock has a low PE ratio,
+>   - it could be because earnings increased fast, but the stock price hasn’t caught up yet, making it undervalued.
+>   -  It could also mean earnings stayed the same, but investors lost confidence, causing the stock price to drop.
+> * When a stock has a high PE ratio, it could mean investors are betting on future growth despite low current earnings, which raises the stock price. But it might also indicate the stock is overvalued if the hype isn't matched by earnings.
+> 
+> PE ratio alone doesn't tell you if a stock is good or bad. But, when used with other indicators, it helps explain why a company's PE ratio is what it is. Comparing PE ratios of peers can show you which stock offers better value.
+
 #### Ref
 * https://www.drvijaymalik.com/3-principles-to-decide-investable-pe-ratio-of-a-stock-for-value-investors/
 * https://getmoneyrich.com/about-price-earning-ratio/
