@@ -31,6 +31,8 @@ The primary difference between the two ratios is that the trailing P/E is based 
 > 
 > PE ratio alone doesn't tell you if a stock is good or bad. But, when used with other indicators, it helps explain why a company's PE ratio is what it is. Comparing PE ratios of peers can show you which stock offers better value.
 
+The most profitable situtation is when you find a stock with a strong earnings trend that is trading at Industry(or broader Market) PE ratio.
+
 #### Ref
 * https://www.drvijaymalik.com/3-principles-to-decide-investable-pe-ratio-of-a-stock-for-value-investors/
 * https://getmoneyrich.com/about-price-earning-ratio/
