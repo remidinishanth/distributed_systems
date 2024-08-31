@@ -31,8 +31,11 @@ Well, the miners are incentivised with bitcoins for the efforts in managing the 
 
 Transaction validation is carried out independently by all miners. 
 The process involves validation of more than 20 criteria, including size, syntax, et cetera. 
-Some of these criteria are: Referenced Input Unspent Transaction Output, UTXOs are valid, 
-reference output UTXOs are correct, reference input amount and output amount matched sufficiently, 
+Some of these criteria are: 
+* Referenced Input Unspent Transaction Output,
+* UTXOs are valid,
+* reference output UTXOs are correct,
+* reference input amount and output amount matched sufficiently, 
 invalid transactions are rejected and will not be broadcast.
 
 All the valid transactions are added to a pool of transactions. Miners select a set of transaction from this pool to create a block. This creates a challenge. If every miner adds the block to the chain, there will be many branches to the chain, resulting in inconsistent state. Recall, the blockchain is a single consistent linked chain of flux. 
