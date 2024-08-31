@@ -1,3 +1,6 @@
+![image](https://github.com/user-attachments/assets/cf871a82-ca8c-46b6-b117-ea32d8674d29)
+
+
 Here is the basic structure of a blockchain. 
 * **Transaction** is the basic element of the Bitcoin Blockchain. Transactions are validated and broadcast. 
 * Many transactions form a **block**. Many box form a chain through a digital data link. 
