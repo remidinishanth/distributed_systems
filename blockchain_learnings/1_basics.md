@@ -4,7 +4,9 @@ There have been many attempts to create digital money in the past, but they have
 
 The prevailing issue is trust. If someone creates a new currency called the X dollar, how can we trust that they won't give themselves a million X dollars, or steal your X dollars for themselves?
 
-Bitcoin was designed to solve this problem by using a specific type of database called a blockchain(Blockchain technology, at its core, is no more than a ledger to store information about transactions. To that point, blockchains can be considered as databases). Most normal databases, such as an SQL database, have someone in charge who can change the entries (e.g. giving themselves a million X dollars). Blockchain is different because nobody is in charge; it’s run by the people who use it. What’s more, bitcoins can’t be faked, hacked or double spent – so people that own this money can trust that it has some value.
+* Bitcoin was designed to solve this problem by using a specific type of database called a blockchain(Blockchain technology, at its core, is no more than a ledger to store information about transactions. To that point, blockchains can be considered as databases). 
+* Most normal databases, such as an SQL database, have someone in charge who can change the entries (e.g. giving themselves a million X dollars). 
+* Blockchain is different because nobody is in charge; it’s run by the people who use it. What’s more, bitcoins can’t be faked, hacked or double spent – so people that own this money can trust that it has some value.
 
 REF: https://www.euromoney.com/learning/blockchain-explained/what-is-blockchain
 
