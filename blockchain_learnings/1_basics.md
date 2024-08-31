@@ -74,7 +74,7 @@ So, validation, verification, consensus, and immutable recording lead to the tru
 Let's consider a common scenario.
 
 * Say Alice is lending Bob $10,000. This is one single peer to peer transaction. Alice and Bob both make a note of it on a ledger.
-* What if Alice changes the entry from $10,000 to $11,000? Alternatively, WHat if Bob changes her entry from $10,000 to $1,000? 
+* What if Alice changes the entry from $10,000 to $11,000? Alternatively, What if Bob changes her entry from $10,000 to $1,000? 
 * To prevent this trust violation, we need to seek the help of people around us, Lisa, Allison, and Francis. Provide all of them a valid copy of this ledger.
 * This is the basic concept of an immutable distributed ledger defined in a blockchain process.
 
