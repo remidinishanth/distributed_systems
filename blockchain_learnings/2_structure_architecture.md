@@ -2,7 +2,7 @@
 
 
 ![image](https://github.com/user-attachments/assets/a32b1f97-e944-4ed8-a61b-b495efe5e1b2)
-
+Ref: https://bitcoin.org/en/how-it-works
 
 
 Here is the basic structure of a blockchain. 
