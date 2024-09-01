@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/cf871a82-ca8c-46b6-b117-ea32d8674d29)
+![image](https://github.com/user-attachments/assets/1c6bd9b7-01b7-4fa8-828c-370c681b1533)
+
 
 
 Here is the basic structure of a blockchain. 
