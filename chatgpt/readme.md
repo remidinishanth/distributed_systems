@@ -1,3 +1,6 @@
+The transformer uses self-attention mechanisms to focus on different parts of the input text during each processing step. 
+This allows the model to consider the context of each word in relation to other words in the input text.
+
 Refer:
 * https://www.youtube.com/watch?v=SZorAJ4I-sA&ab_channel=GoogleCloudTech
 
