@@ -1,6 +1,12 @@
+## Tranformer
+
 The transformer uses self-attention mechanisms to focus on different parts of the input text during each processing step. 
 This allows the model to consider the context of each word in relation to other words in the input text.
 
+![image](https://github.com/user-attachments/assets/373f4550-7e11-4604-8ad5-05f2e726faee)
+
+
+Ref: https://www.youtube.com/watch?v=wjZofJX0v4M
 <img width="1520" alt="image" src="https://github.com/user-attachments/assets/a39a7017-4c2a-471d-9bba-a90fef792252">
 
 
