@@ -9,4 +9,4 @@ Refer:
   - 🌐 BERT utilizes semi-supervised learning for better performance on unlabeled data.
 
 * Attention is all you need https://arxiv.org/abs/1706.03762
-* https://www.youtube.com/watch?v=Pnd8bCJ4Z3A
+* [AWESOME] https://www.youtube.com/watch?v=Pnd8bCJ4Z3A
