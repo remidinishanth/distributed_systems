@@ -37,9 +37,11 @@ Concurrently running transactions shouldn’t interfere with each other. For exa
 
 🔹 Read Committed: Data modification can only be read after the transaction is committed.
 
-🔹 Read Uncommitted: The data modification can be read by other transactions before a transaction is committed.
+🔹 Read Uncommitted: Other transactions can read the data modification before a transaction is committed.
 
 ![image](https://github.com/user-attachments/assets/24cd023b-1b63-43eb-afa2-02acf7b944c6)
+
+![image](https://github.com/user-attachments/assets/0a768881-6dcd-4f3a-b015-2c85e35c2749)
 
 
 #### Dirty Read
