@@ -23,6 +23,9 @@ However, this idea of consistency depends on the application’s notion of invar
 
 Atomicity, isolation, and durability are properties of the database, whereas consistency (in the ACID sense) is a property of the application.
 
+#### Atomicity vs Isolation
+![image](https://github.com/user-attachments/assets/7f7a964a-3048-445f-9512-9b33db24a47f)
+
 ### Isolation levels
 
 Concurrently running transactions shouldn’t interfere with each other. For example, if one transaction makes several writes, then another transaction should see either all or none of those writes, but not some subset.
