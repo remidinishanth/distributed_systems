@@ -43,6 +43,7 @@ Concurrently running transactions shouldn’t interfere with each other. For exa
 
 ![image](https://github.com/user-attachments/assets/0a768881-6dcd-4f3a-b015-2c85e35c2749)
 
+Ref: https://blog.bytebytego.com/p/what-are-database-isolation-levels
 
 #### Dirty Read
 
