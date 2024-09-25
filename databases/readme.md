@@ -9,11 +9,11 @@ Also there is Adv Databases course
 ## SQL
 
 ### Atomicity (all-or-nothing guarantee)
-Atomicity: The system can only be in the state it was before the operation or after the operation, not something in between.
+Atomicity: The system can only be in the state it was before or after the operation, not something in between.
 
 In the context of ACID, atomicity is not about concurrency. It does not describe what happens if several processes try to access the same data at the same time, because that is covered under the letter I, for isolation.
 
-Atomicity simplifies this problem: if a transaction was aborted, the application can be sure that it didn’t change anything, so it can safely be retried.
+Atomicity simplifies this problem: if a transaction was aborted, the application can be sure it didn’t change anything, so it can safely be retried.
 
 ### Consistency
 
@@ -21,7 +21,7 @@ The idea of ACID consistency is that you have certain statements about your data
 
 However, this idea of consistency depends on the application’s notion of invariants, and it’s the application’s responsibility to define its transactions correctly so that they preserve consistency. 
 
-Atomicity, isolation, and durability are properties of the database, whereas consis‐ tency (in the ACID sense) is a property of the application.
+Atomicity, isolation, and durability are properties of the database, whereas consistency (in the ACID sense) is a property of the application.
 
 ### Isolation levels
 
