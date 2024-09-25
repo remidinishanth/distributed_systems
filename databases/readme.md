@@ -26,6 +26,7 @@ Atomicity, isolation, and durability are properties of the database, whereas con
 #### Atomicity vs Isolation
 ![image](https://github.com/user-attachments/assets/7f7a964a-3048-445f-9512-9b33db24a47f)
 
+#### Single-object writes
 * Atomicity can be implemented using a log for crash recovery(see “Making B-trees reliable”), and
   - In order to make the database resilient to crashes, it is common for B-tree implementations to include an additional data structure on disk: a write-ahead log (WAL, also known as a redo log). This is an append-only file to which every B-tree modification must be written before it can be applied to the pages of the tree itself. When the database comes back up after a crash, this log is used to restore the B-tree back to a consistent state.   
 * Isolation can be implemented using a lock on each object (allowing only one thread to access an object at any one
