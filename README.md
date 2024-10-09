@@ -12,6 +12,8 @@ Great resources at https://serverlessland.com/event-driven-architecture/visuals/
 
 Read https://2022-cs244.github.io/schedule/ and http://www.scs.stanford.edu/20sp-cs244b/notes/
 
+![image](https://github.com/user-attachments/assets/cae05edf-b1dc-4982-88b9-8c980386e2cd)
+
 
 ### TODO Books and blogs:
 
