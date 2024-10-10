@@ -26,3 +26,5 @@ CI/CD: Netflix employs various tools such as JIRA, Confluence, PagerDuty, Jenkin
 ![image](https://github.com/user-attachments/assets/ffb09c42-a8eb-4cf6-a36d-ff429da92a46)
 
 Ref: https://dev.to/gbengelebs/netflix-system-design-how-netflix-onboards-new-content-2dlb
+
+![image](https://github.com/user-attachments/assets/2103919f-a678-411a-8389-a566509d92b8)
