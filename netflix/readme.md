@@ -1,5 +1,7 @@
 Ref: https://highscalability.com/netflix-what-happens-when-you-press-play/
 
+TODO: https://codersguild.github.io/System-Design/Netflix%20Architecture/
+
 ![image](https://github.com/user-attachments/assets/8c1c4415-3554-4ed7-a985-6bb3eb3cb60c)
 
 Mobile and web: Netflix has adopted Swift and Kotlin to build native mobile apps. For its web application, it uses React.
