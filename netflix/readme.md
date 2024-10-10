@@ -19,3 +19,6 @@ Video storage: Netflix uses S3 and Open Connect for video storage.
 Data processing: Netflix utilizes Flink and Spark for data processing, which is then visualized using Tableau. Redshift is used for processing structured data warehouse information.
 
 CI/CD: Netflix employs various tools such as JIRA, Confluence, PagerDuty, Jenkins, Gradle, Chaos Monkey, Spinnaker, Atlas, and more for CI/CD processes.
+
+
+![image](https://github.com/user-attachments/assets/edb05c58-13bf-4288-9cf5-12f22ccf9268)
