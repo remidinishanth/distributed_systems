@@ -87,3 +87,16 @@ The run-loop is the most complicated part of the nginx worker code. It includes 
 > The NGINX configuration recommended in most cases – running one worker process per CPU core – makes the most efficient use of hardware resources.
 
 General rule (not specific to Nginx) For an IO intensive you can schedule hundreds of threads but for compute-intensive workload it should be proportional to number of cores.
+
+#### Inside worker
+
+Each NGINX worker process is initialized with the NGINX configuration and is provided with a set of listen sockets by the master process.
+
+![image](https://github.com/user-attachments/assets/0dd9b5ac-6d33-47c0-a7f9-a69cb32b2f69)
+
+The NGINX worker processes begin by waiting for events on the listen sockets (accept_mutex and kernel socket sharding). Events are initiated by new incoming connections. These connections are assigned to a
+state machine – the HTTP state machine is the most commonly used, but NGINX also implements state machines for stream (raw TCP) traffic and for a number of mail protocols (SMTP, IMAP, and POP3).
+
+![image](https://github.com/user-attachments/assets/1254ca7c-8738-4f78-861a-913a1aa4542c)
+
+Most web servers that perform the same functions as NGINX use a similar state machine – the difference lies in the implementation.
