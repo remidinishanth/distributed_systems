@@ -100,6 +100,9 @@ Nginx uses an event loop, which is a programming construct that repeatedly check
 
 By using an event-driven architecture and a single thread, Nginx can handle a large number of connections with minimal overhead.
 
+![image](https://github.com/user-attachments/assets/1172a275-dff6-4d4d-9d96-26b3a908a63b)
+
+
 #### Workers Model
 
 As previously mentioned, nginx doesn't spawn a process or thread for every connection. Instead, worker processes accept new requests from a shared "listen" socket and execute a highly efficient run-loop inside each worker to process thousands of connections per worker. There's no specialized arbitration or distribution of connections to the workers in nginx; this work is done by the OS kernel mechanisms. Upon startup, an initial set of listening sockets is created. workers then continuously accept, read from and write to the sockets while processing HTTP requests and responses.
@@ -124,3 +127,7 @@ state machine – the HTTP state machine is the most commonly used, but NGINX al
 ![image](https://github.com/user-attachments/assets/1254ca7c-8738-4f78-861a-913a1aa4542c)
 
 Most web servers that perform the same functions as NGINX use a similar state machine – the difference lies in the implementation.
+
+![image](https://github.com/user-attachments/assets/840b2549-b814-4bb4-9193-5b69eb743e33)
+
+![image](https://github.com/user-attachments/assets/504332b4-249b-4242-90a8-02cc0237d343)
