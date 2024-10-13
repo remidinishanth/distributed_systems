@@ -30,7 +30,7 @@ Key Features:
 
 NGINX leads the pack in web performance, and it’s all due to the way the software is designed. Whereas many web servers and application servers use a simple threaded or process‑based architecture, NGINX stands out with a sophisticated event‑driven architecture that enables it to scale to hundreds of thousands of concurrent connections on modern hardware.
 
-NGINX follows the master-slave architecture by supporting event-driven, asynchronous and non-blocking model.
+NGINX follows the master-slave architecture by supporting **event-driven**, **asynchronous**, and **non-blocking** model.
 
 ![image](https://github.com/user-attachments/assets/7f0ae307-179f-4a87-9433-4de01e4b19a1)
 
@@ -41,3 +41,5 @@ NGINX uses a predictable process model that is tuned to the available hardware r
 * The cache loader process runs at startup to load the disk‑based cache into memory, and then exits. It is scheduled conservatively, so its resource demands are low.
 * The cache manager process runs periodically and prunes entries from the disk caches to keep them within the configured sizes.
 * The worker processes do all of the work! They handle network connections, read and write content to disk, and communicate with upstream servers.
+
+![image](https://github.com/user-attachments/assets/f3f11c0c-6bd9-4281-8424-5718ed25d351)
