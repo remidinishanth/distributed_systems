@@ -15,6 +15,9 @@ It was originally designed as a web server with high performance and reliability
 
 Besides functioning as an HTTP server, NGINX acts as a proxy server for email (IMAP, POP3, and SMTP) and a reverse proxy and load balancer for HTTP, TCP, and UDP servers.
 
+![image](https://github.com/user-attachments/assets/2a3481ec-f2ee-45de-8b79-0bc8c21267ae)
+
+
 #### Web server
 
 NGINX is a web server that renders the pages we have developed using HTML, CSS, and JavaScript. It is one of the topmost web servers among the server’s available in the market. NGINX is preferred for its single-threaded, event-driven, non-blocking and master-slave architecture.
@@ -27,6 +30,11 @@ Key Features:
 * Load Balancing: Distributes client requests across multiple backend servers.
 * SSL Termination: Handles SSL/TLS encryption and decryption.
 * Caching: Can cache responses from backend servers to reduce load and latency.
+
+![image](https://github.com/user-attachments/assets/a5341aeb-b1b3-4b7f-9831-5e983ac46d58)
+
+![image](https://github.com/user-attachments/assets/2e921037-b0dc-4b3e-a8e4-1f70dba324a1)
+
 
 ## Alternatives to Nginx
 * Apache HTTP Server (Apache)
@@ -48,6 +56,12 @@ Aimed at solving the C10K problem of 10,000 simultaneous connections, Nginx was 
 * NGINX was designed with reverse proxying and load balancing as core features.
 
 Ref: https://aosabook.org/en/v2/nginx.html
+
+
+![image](https://github.com/user-attachments/assets/aa8bc0c4-7366-42ca-8295-ac4f142bde85)
+
+![image](https://github.com/user-attachments/assets/b07d9b47-cb6f-425b-9e91-8f22e42388f9)
+
 
 ## Architecture:
 
