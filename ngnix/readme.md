@@ -1,5 +1,7 @@
 ## NGNIX
 
+Ref: https://aosabook.org/en/v2/nginx.html
+
 nginx ("engine x") is an 
 * HTTP web server,
 * reverse proxy,
@@ -26,6 +28,20 @@ Key Features:
 * SSL Termination: Handles SSL/TLS encryption and decryption.
 * Caching: Can cache responses from backend servers to reduce load and latency.
 
+## Why it was created?
+
+NGINX was created to address limitations in the then-dominant web server, **Apache HTTP Server**, particularly related to handling high concurrency (large numbers of simultaneous connections) efficiently.
+
+Originally, Apache architecture matched the then-existing operating systems and hardware, but also the state of the Internet, where a website was typically a standalone physical server running a single instance of Apache. It was architected to spawn a copy of itself for each new connection, which was not suitable for nonlinear scalability of a website.
+
+Aimed at solving the C10K problem of 10,000 simultaneous connections, Nginx was written with a different architecture in mind—one that is much more suitable for nonlinear scalability in both the number of simultaneous connections and requests per second. nginx is event-based, so it does not follow Apache's style of spawning new processes or threads for each web page request.
+
+* High Concurrency - Apache Server used a multi-threaded or multi-process model where each connection consumed a thread or process, leading to high memory use and inefficiency under heavy load.
+  - NGINX was designed with an event-driven, asynchronous, and non-blocking architecture. This allows it to handle thousands of simultaneous connections within a handful of worker processes. Instead of creating a new thread or process for each connection, NGINX uses a more efficient loop that can handle multiple connections as events, thus drastically reducing memory and CPU usage. 
+* NGINX was designed with reverse proxying and load balancing as core features.
+
+Ref: https://aosabook.org/en/v2/nginx.html
+
 ## Architecture:
 
 NGINX leads the pack in web performance, and it’s all due to the way the software is designed. Whereas many web servers and application servers use a simple threaded or process‑based architecture, NGINX stands out with a sophisticated event‑driven architecture that enables it to scale to hundreds of thousands of concurrent connections on modern hardware.
@@ -43,3 +59,5 @@ NGINX uses a predictable process model that is tuned to the available hardware r
 * The worker processes do all of the work! They handle network connections, read and write content to disk, and communicate with upstream servers.
 
 ![image](https://github.com/user-attachments/assets/f3f11c0c-6bd9-4281-8424-5718ed25d351)
+
+![image](https://github.com/user-attachments/assets/e4cc5fda-e3ce-402a-a792-8dcab0eeae4e)
