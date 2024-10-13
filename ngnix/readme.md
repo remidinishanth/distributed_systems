@@ -84,6 +84,8 @@ As previously mentioned, nginx doesn't spawn a process or thread for every conne
 
 The run-loop is the most complicated part of the nginx worker code. It includes comprehensive inner calls and relies heavily on the idea of asynchronous task handling. Asynchronous operations are implemented through modularity, event notifications, extensive use of callback functions and fine-tuned timers. Overall, the key principle is to be as non-blocking as possible. The only situation where nginx can still block is when there's not enough disk storage performance for a worker process.
 
+Because nginx does not fork a process or thread per connection, memory usage is very conservative and extremely efficient in the vast majority of cases. nginx conserves CPU cycles as well because there's no ongoing create-destroy pattern for processes or threads.
+
 > The NGINX configuration recommended in most cases – running one worker process per CPU core – makes the most efficient use of hardware resources.
 
 General rule (not specific to Nginx) For an IO intensive you can schedule hundreds of threads but for compute-intensive workload it should be proportional to number of cores.
