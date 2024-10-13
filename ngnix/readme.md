@@ -92,6 +92,14 @@ NGINX uses a predictable process model that is tuned to the available hardware r
 ![image](https://github.com/user-attachments/assets/e4cc5fda-e3ce-402a-a792-8dcab0eeae4e)
 
 
+#### Event Driven Architecture
+
+When a connection is received, it is added to a queue of events that the server needs to process. Instead of blocking on the connection and waiting for a response, Nginx is free to continue processing other events in the queue.
+
+Nginx uses an event loop, which is a programming construct that repeatedly checks for new events and handles them as they arrive. When an event is received, Nginx determines the appropriate action to take based on its configuration and the type of event. This may involve serving static content, proxying requests to another server, or handling SSL encryption.
+
+By using an event-driven architecture and a single thread, Nginx can handle a large number of connections with minimal overhead.
+
 #### Workers Model
 
 As previously mentioned, nginx doesn't spawn a process or thread for every connection. Instead, worker processes accept new requests from a shared "listen" socket and execute a highly efficient run-loop inside each worker to process thousands of connections per worker. There's no specialized arbitration or distribution of connections to the workers in nginx; this work is done by the OS kernel mechanisms. Upon startup, an initial set of listening sockets is created. workers then continuously accept, read from and write to the sockets while processing HTTP requests and responses.
