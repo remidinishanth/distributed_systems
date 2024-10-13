@@ -1,4 +1,4 @@
-## NGNIX
+## NGINX
 
 Ref: https://aosabook.org/en/v2/nginx.html
 
@@ -27,6 +27,13 @@ Key Features:
 * Load Balancing: Distributes client requests across multiple backend servers.
 * SSL Termination: Handles SSL/TLS encryption and decryption.
 * Caching: Can cache responses from backend servers to reduce load and latency.
+
+## Alternatives to Nginx
+* Apache HTTP Server (Apache)
+* LiteSpeed
+* HAProxy
+* Traefik (doesn't support caching)
+* Caddy
 
 ## Why it was created?
 
