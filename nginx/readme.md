@@ -94,6 +94,12 @@ NGINX uses a predictable process model that is tuned to the available hardware r
 
 ![image](https://github.com/user-attachments/assets/e4cc5fda-e3ce-402a-a792-8dcab0eeae4e)
 
+![image](https://github.com/user-attachments/assets/ae0e5f3c-9cc6-43c8-ac16-df0cf1783d78)
+
+![image](https://github.com/user-attachments/assets/66418319-391b-4712-ad3c-9cdbb98380b6)
+
+![image](https://github.com/user-attachments/assets/37b960cd-1a32-43e2-8971-1be1098e095a)
+
 
 #### Event Driven Architecture
 
