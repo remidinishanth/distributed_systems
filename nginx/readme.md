@@ -2,6 +2,9 @@
 
 Ref: https://aosabook.org/en/v2/nginx.html
 
+![image](https://github.com/user-attachments/assets/c2c79287-044e-4929-ba96-50c217793b47)
+
+
 nginx ("engine x") is an 
 * HTTP web server,
 * reverse proxy,
