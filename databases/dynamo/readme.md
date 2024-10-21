@@ -1,3 +1,6 @@
+> Goal: Create a practical implementation of a key-value store that is highly scalable, decentralized, replicated, and efficient.
+
+
 ![image](https://github.com/user-attachments/assets/80e2cdbc-34c4-4ee6-af00-32f0fc2f8633)
 
 <img width="1234" alt="image" src="https://github.com/user-attachments/assets/eb21d6eb-7597-4aed-904c-48faab64e55c">
