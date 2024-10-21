@@ -20,6 +20,10 @@ Ref: https://blog.bytebytego.com/p/a-deep-dive-into-amazon-dynamodb
 
 Ref: https://pk.org/417/notes/dynamo.html
 
+
+## TODO
 Also Refer: https://github.com/alexdebrie/awesome-dynamodb?tab=readme-ov-file#videos
 
 Ref: https://engineering.cred.club/dynamodb-internals-90c87184ab88
+
+* https://blog.bytebytego.com/i/142530454/architecture-of-dynamodb
