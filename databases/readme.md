@@ -10,6 +10,8 @@ Also there is Adv Databases course
 
 ![image](https://github.com/user-attachments/assets/10004cce-290e-4783-b611-60662a17d9df)
 
+Ref: https://bikas-katwal.medium.com/mongodb-vs-cassandra-vs-rdbms-where-do-they-stand-in-the-cap-theorem-1bae779a7a15
+
 ## SQL
 
 ### Atomicity (all-or-nothing guarantee)
