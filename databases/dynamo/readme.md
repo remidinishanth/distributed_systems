@@ -7,3 +7,12 @@
 ![image](https://github.com/user-attachments/assets/1d3b100e-004f-4a6a-bebb-3599448b3d41)
 
 Ref: https://blog.bytebytego.com/p/a-deep-dive-into-amazon-dynamodb
+
+
+![image](https://github.com/user-attachments/assets/231443c2-8f5f-494b-ab0d-2db726cf0864)
+
+![image](https://github.com/user-attachments/assets/fde2492c-1d74-46b0-aadc-19c1c4150f2a)
+
+![image](https://github.com/user-attachments/assets/22e59adf-447f-481c-8f30-1074067d5ab3)
+
+Ref: https://pk.org/417/notes/dynamo.html
