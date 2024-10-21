@@ -19,3 +19,5 @@ Ref: https://blog.bytebytego.com/p/a-deep-dive-into-amazon-dynamodb
 ![image](https://github.com/user-attachments/assets/22e59adf-447f-481c-8f30-1074067d5ab3)
 
 Ref: https://pk.org/417/notes/dynamo.html
+
+Also Refer: https://github.com/alexdebrie/awesome-dynamodb?tab=readme-ov-file#videos
