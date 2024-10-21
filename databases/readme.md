@@ -6,6 +6,9 @@ Also there is Adv Databases course
 
 ![image](https://github.com/user-attachments/assets/9ac0d78a-9437-47df-b122-87b754b9929f)
 
+CAP and Databases
+![image](https://github.com/user-attachments/assets/10004cce-290e-4783-b611-60662a17d9df)
+
 ## SQL
 
 ### Atomicity (all-or-nothing guarantee)
