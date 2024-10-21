@@ -4,4 +4,6 @@
 
 ![image](https://github.com/user-attachments/assets/8424323d-884d-4ddc-bb3a-3e9ca042643e)
 
+![image](https://github.com/user-attachments/assets/1d3b100e-004f-4a6a-bebb-3599448b3d41)
+
 Ref: https://blog.bytebytego.com/p/a-deep-dive-into-amazon-dynamodb
