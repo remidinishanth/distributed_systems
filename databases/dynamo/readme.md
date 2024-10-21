@@ -28,3 +28,5 @@ Also Refer: https://github.com/alexdebrie/awesome-dynamodb?tab=readme-ov-file#vi
 Ref: https://engineering.cred.club/dynamodb-internals-90c87184ab88
 
 * https://blog.bytebytego.com/i/142530454/architecture-of-dynamodb
+
+* https://gist.github.com/ryandotsmith/c95fd21fab91b0823328
