@@ -20,8 +20,13 @@
 
 ![image](https://github.com/user-attachments/assets/ea68d72c-9867-4dde-ac10-f4ad2e491e26)
 
+![image](https://github.com/user-attachments/assets/b53fbeb3-bf51-46c9-bed4-ab16c0873e14)
+
 ![image](https://github.com/user-attachments/assets/ca74a8ea-00e1-413f-9818-f888f437b8be)
 
+![image](https://github.com/user-attachments/assets/6901d206-f5bd-4ad7-a2bb-4efae3684cc7)
+
+![image](https://github.com/user-attachments/assets/864e48a0-46ea-4d0a-8aab-7c3815449edd)
 
 ### Commands
 
