@@ -32,6 +32,9 @@
 
 ![image](https://github.com/user-attachments/assets/cfb4aaeb-2a9c-453b-bc51-a71386700291)
 
+![image](https://github.com/user-attachments/assets/56b6becc-d1e1-443b-b752-5d9132218d52)
+
+
 ### Boot Process
 
 ![image](https://github.com/user-attachments/assets/942dfde5-b494-47e8-a341-51910d70c577)
