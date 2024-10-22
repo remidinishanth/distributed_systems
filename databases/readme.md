@@ -6,6 +6,16 @@ Also there is Adv Databases course
 
 ![image](https://github.com/user-attachments/assets/9ac0d78a-9437-47df-b122-87b754b9929f)
 
+Selecting the right database is crucial for project success. Here's a summary of key points:
+
+- SQL databases offer structured data storage, SQL support, and relational capabilities.
+- NoSQL databases provide flexibility, scalability, and distributed architectures.
+- Specialized databases like columnar, graph, spatial, and time-series cater to specific needs.
+- Evaluate key features, benefits, and providers to make an informed decision.
+
+![image](https://github.com/user-attachments/assets/522de78a-695a-423a-9a7f-e23a632f91c0)
+
+
 ### CAP and Databases
 
 ![image](https://github.com/user-attachments/assets/10004cce-290e-4783-b611-60662a17d9df)
