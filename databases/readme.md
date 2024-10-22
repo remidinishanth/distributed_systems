@@ -6,6 +6,7 @@ Also there is Adv Databases course
 
 ![image](https://github.com/user-attachments/assets/9ac0d78a-9437-47df-b122-87b754b9929f)
 
+### Types of Databases
 Selecting the right database is crucial for project success. Here's a summary of key points:
 
 - SQL databases offer structured data storage, SQL support, and relational capabilities.
@@ -15,6 +16,18 @@ Selecting the right database is crucial for project success. Here's a summary of
 
 ![image](https://github.com/user-attachments/assets/522de78a-695a-423a-9a7f-e23a632f91c0)
 
+#### Vector DB
+
+![image](https://github.com/user-attachments/assets/f6eff1be-3803-4639-a50e-9cae9feb51f1)
+
+A vector database indexes and stores vector embeddings for fast retrieval and similarity search, with capabilities like CRUD operations, metadata filtering, and horizontal scaling.
+
+A vector database stores high-dimensional vectors extracted from various unstructured data, like audio, video, image, and text. Then we can calculate the similarity among unstructured data. Typical use cases include:
+
+- finding similar images or text
+- recommending similar products
+- detecting abnormalities
+- temporarily store embeddings for large amounts of input
 
 ### CAP and Databases
 
