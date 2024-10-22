@@ -16,6 +16,13 @@
 
 ![image](https://github.com/user-attachments/assets/a133ec99-96e7-47e8-a12c-e9b7335d38df)
 
+### Julia Evans
+
+![image](https://github.com/user-attachments/assets/ea68d72c-9867-4dde-ac10-f4ad2e491e26)
+
+![image](https://github.com/user-attachments/assets/ca74a8ea-00e1-413f-9818-f888f437b8be)
+
+
 ### Commands
 
 ![image](https://github.com/user-attachments/assets/cfb4aaeb-2a9c-453b-bc51-a71386700291)
