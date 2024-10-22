@@ -30,7 +30,7 @@
 
 * Step 3 - Choose a booting device to boot the OS from. This can be the hard drive, the network server, or CD ROM.
 
-* Step 4 - BIOS/UEFI runs the boot loader (GRUB), which provides a menu to choose the OS or the kernel functions.
+* Step 4 - BIOS/UEFI runs the boot loader (GRUB - Grand Unified Bootloader), which provides a menu to choose the OS or the kernel functions.
 
 * Step 5 - After the kernel is ready, we now switch to the user space. The kernel starts up systemd as the first user-space process, which manages the processes and services, probes all remaining hardware, mounts filesystems, and runs a desktop environment.
 
