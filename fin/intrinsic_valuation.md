@@ -35,3 +35,5 @@ Now if a company(or young start-up) is losing money currently, then in the futur
 
 Financial balance sheet
 ![image](https://github.com/user-attachments/assets/d568d91d-dc36-4ac6-b575-c51a71954190)
+
+![image](https://github.com/user-attachments/assets/d945e22f-300c-4752-ab2a-bb9cd0acb48e)
