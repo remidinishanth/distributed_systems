@@ -8,8 +8,10 @@
 ### Definition
 
 Definition
-Intrinsic valuation, also known as absolute valuation, assesses a company's worth based on its expected future cash flows and growth potential. 
+Intrinsic or absolute valuation assesses a company's worth based on its expected future cash flows and growth potential. 
 It does not depend on external market conditions or the valuations of comparable companies, making it particularly useful for evaluating unique or high-growth firms.
+
+![image](https://github.com/user-attachments/assets/43fedbb2-0017-420b-85b2-4db931c8f23a)
 
 Intrinsic valuation is a method used to determine the true value of a company based on its fundamental financial performance, rather than relying on market prices. 
 
