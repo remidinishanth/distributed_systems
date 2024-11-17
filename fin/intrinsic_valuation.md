@@ -11,19 +11,18 @@ Definition
 Intrinsic or absolute valuation assesses a company's worth based on its expected future cash flows and growth potential. 
 It does not depend on external market conditions or the valuations of comparable companies, making it particularly useful for evaluating unique or high-growth firms.
 
-![image](https://github.com/user-attachments/assets/43fedbb2-0017-420b-85b2-4db931c8f23a)
-
 Intrinsic valuation is a method used to determine the true value of a company based on its fundamental financial performance, rather than relying on market prices. 
-
-Ref: https://quartr.com/insights/investment-strategy/aswath-damodaran-the-dean-of-valuation
-
-![image](https://github.com/user-attachments/assets/b9ca5849-0679-42ff-a902-0244b7b66f73)
 
 
 ### DCF
 
 ![image](https://github.com/user-attachments/assets/e186ce04-9653-4b58-b227-eecf4b82ca27)
 
-![image](https://github.com/user-attachments/assets/cd40a555-e8c0-4276-b8ee-4c9e662ff564)
-
 ![image](https://github.com/user-attachments/assets/d754b037-ff87-4c19-87d7-15621eca028a)
+
+
+## Aswath Damodaran Notes
+
+![image](https://github.com/user-attachments/assets/43fedbb2-0017-420b-85b2-4db931c8f23a)
+
+![image](https://github.com/user-attachments/assets/0d0d74c7-1ce5-4b60-b2b9-66c8cee7bab8)
