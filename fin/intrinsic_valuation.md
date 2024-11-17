@@ -16,3 +16,12 @@ Intrinsic valuation is a method used to determine the true value of a company ba
 Ref: https://quartr.com/insights/investment-strategy/aswath-damodaran-the-dean-of-valuation
 
 ![image](https://github.com/user-attachments/assets/b9ca5849-0679-42ff-a902-0244b7b66f73)
+
+
+### DCF
+
+![image](https://github.com/user-attachments/assets/e186ce04-9653-4b58-b227-eecf4b82ca27)
+
+![image](https://github.com/user-attachments/assets/cd40a555-e8c0-4276-b8ee-4c9e662ff564)
+
+![image](https://github.com/user-attachments/assets/d754b037-ff87-4c19-87d7-15621eca028a)
