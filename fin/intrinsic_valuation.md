@@ -26,3 +26,7 @@ Intrinsic valuation is a method used to determine the true value of a company ba
 ![image](https://github.com/user-attachments/assets/43fedbb2-0017-420b-85b2-4db931c8f23a)
 
 ![image](https://github.com/user-attachments/assets/0d0d74c7-1ce5-4b60-b2b9-66c8cee7bab8)
+
+Now if a company(or young start-up) is losing money currently, then in the future, it should have disproportionately large positive cash flows.
+
+![image](https://github.com/user-attachments/assets/0d44f0d0-7cc4-4bbc-92cd-5780ffe11121)
