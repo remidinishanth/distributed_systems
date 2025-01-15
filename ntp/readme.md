@@ -1,4 +1,11 @@
 
+Understanding ntpd configuration file
+
+https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/6/html/deployment_guide/s1-understanding_the_ntpd_configuration_file
+
+![image](https://github.com/user-attachments/assets/60947af3-4503-4e05-aa1b-fdfba7b8858e)
+
+
 Chrony is an implementation of the Network Time Protocol (NTP). You can use Chrony:
 
 * to synchronize the system clock with NTP servers,
