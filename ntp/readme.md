@@ -13,7 +13,7 @@ Chrony is an alternative implementation of the Network Time Protocol (NTP), prim
 
 Chrony consists of two main programs:
 
-* chronyd - A daemon that runs in the background and adjusts the system clock.
+* chronyd - A daemon that runs in userspace in the background and adjusts the system clock.
 * chronyc - A command-line interface for monitoring and controlling chronyd.
 
 Advantages of Chrony
