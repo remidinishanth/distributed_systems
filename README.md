@@ -1,5 +1,7 @@
 Ref: https://github.com/lafengnan/ebooks-1
 
+Read https://github.com/CodeBear801/tech_summary/blob/master/tech-summary/papers/colossus.md 
+
 and https://github.com/keyvanakbary/learning-notes/blob/master/books/designing-data-intensive-applications.md
 
 # developing_as_developer
