@@ -19,3 +19,16 @@ Docker uses containerd under the hood to run containers. Kubernetes can use cont
 Ref: https://stackoverflow.com/questions/46649592/dockerd-vs-docker-containerd-vs-docker-runc-vs-docker-containerd-ctr-vs-docker-c 
 
 ![image](https://github.com/user-attachments/assets/cfe2c01d-c2fe-4a5a-91f8-dbcc2539d10a)
+
+
+![image](https://github.com/user-attachments/assets/a40ed94c-6320-43c0-9e4c-a855675ef3cf)
+
+The containerd architecture consists of the following components:
+* containerd-shim: A shim is a process that runs inside the container and provides a communication channel between the container and containerd.
+* containerd-daemon: The daemon is the main process that manages containers. It is responsible for creating, starting, stopping, and deleting containers. It also manages the container’s lifecycle, including the start and stop of its processes.
+* containerd-cri: The CRI plugin provides a gRPC interface to containerd. It is used by container orchestration platforms like Kubernetes to manage containers.
+
+
+![image](https://github.com/user-attachments/assets/7201cfc1-ea2f-45ca-a7f8-248bf90d1de8)
+
+Ref: https://collabnix.com/containerd-vs-docker-whats-the-difference/
