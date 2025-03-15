@@ -19,3 +19,6 @@ Ref: http://bit.ly/9stepsawesome
 
 ![image](https://github.com/user-attachments/assets/321cc113-bb7f-4fae-be96-a7676c7ec853)
 
+### Containers, Pods, Deployment
+
+![image](https://github.com/user-attachments/assets/53eb8a8b-0319-448e-9de7-acd797ba0fde)
