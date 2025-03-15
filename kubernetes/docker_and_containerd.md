@@ -32,3 +32,10 @@ The containerd architecture consists of the following components:
 ![image](https://github.com/user-attachments/assets/7201cfc1-ea2f-45ca-a7f8-248bf90d1de8)
 
 Ref: https://collabnix.com/containerd-vs-docker-whats-the-difference/
+
+
+In Linux environments, container management tools like Docker are built on a more granular set of container tools: runc and containerd.
+![image](https://github.com/user-attachments/assets/a07661ed-9cae-474a-b539-72ae2a5fc2c7)
+
+* runc is a Linux command-line tool for creating and running containers according to the OCI container runtime specification.
+* containerd is a daemon that manages container life cycle from downloading and unpacking the container image to container execution and supervision.
