@@ -17,3 +17,5 @@ Docker uses containerd under the hood to run containers. Kubernetes can use cont
 ![image](https://github.com/user-attachments/assets/476823da-c08c-4102-9322-1f82b53303b6)
 
 Ref: https://stackoverflow.com/questions/46649592/dockerd-vs-docker-containerd-vs-docker-runc-vs-docker-containerd-ctr-vs-docker-c 
+
+![image](https://github.com/user-attachments/assets/cfe2c01d-c2fe-4a5a-91f8-dbcc2539d10a)
