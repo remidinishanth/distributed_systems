@@ -12,3 +12,8 @@ Ref: https://newsletter.francofernando.com/p/kubernetes
 <img width="672" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/549f0cec-ac99-438d-ba7b-f668fe85c762">
 
 Ref: http://bit.ly/9stepsawesome
+
+## Architecture
+
+![image](https://github.com/user-attachments/assets/21192418-ccde-4508-96aa-395216e52312)
+
