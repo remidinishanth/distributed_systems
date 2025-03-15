@@ -1,3 +1,19 @@
+## Background
+
+Kubernetes project created the container runtime interface (CRI) to make
+the runtime layer pluggable. This means you can pick and choose the best runtimes
+for your needs. For example, some runtimes provide better isolation, whereas others
+provide better performance.
+
+Kubernetes 1.24 finally removed support for Docker as a runtime as it was bloated
+and overkill for what Kubernetes needed. Since then, most new Kubernetes clusters
+ship with containerd as the default runtime. 
+
+Fortunately, containerd is a stripped-down version of Docker optimized for Kubernetes, and it
+fully supports applications containerized by Docker. In fact, Docker, containerd, and
+Kubernetes all work with images and containers that implement the Open Container
+Initiative (OCI) standards.
+
 ## Containerd
 
 containerd is a high-level container runtime, aka container manager. 
