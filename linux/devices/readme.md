@@ -78,6 +78,89 @@ It also serves as a scalable volume for maintenance.
 
 ![image](https://github.com/user-attachments/assets/2b17c6b2-287f-4106-b4ce-25aa65743f33)
 
+
+```
+[rksupport@VR-POLARIS-VW-D27E2E4 ~]$ lsblk
+NAME              MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                 8:0    0   64G  0 disk
+├─sda1              8:1    0    1G  0 part /boot
+└─sda2              8:2    0   63G  0 part
+  ├─root-os       253:0    0   24G  0 lvm  /
+  ├─root-home     253:4    0   15G  0 lvm  /home
+  └─root-reserved 253:5    0   24G  0 lvm
+sdb                 8:16   0  100G  0 disk
+└─opt-minio       253:1    0  102G  0 lvm  /opt/minio
+sdc                 8:32   0  700G  0 disk
+├─opt-polaris     253:2    0  501G  0 lvm  /opt/polaris
+├─opt-monitoring  253:3    0  101G  0 lvm  /opt/monitoring
+├─opt-staging     253:6    0   50G  0 lvm  /opt/staging
+└─opt-reserved    253:7    0   49G  0 lvm
+sdd                 8:48   0  450G  0 disk
+├─opt-mysql       253:8    0  400G  0 lvm  /opt/mysql
+└─opt-mq          253:9    0   50G  0 lvm  /opt/mq
+sde                 8:64   0    1G  0 disk
+└─opt-minio       253:1    0  102G  0 lvm  /opt/minio
+sdf                 8:80   0    1G  0 disk
+└─opt-minio       253:1    0  102G  0 lvm  /opt/minio
+sdg                 8:96   0    1G  0 disk
+└─opt-polaris     253:2    0  501G  0 lvm  /opt/polaris
+sdh                 8:112  0    1G  0 disk
+sdi                 8:128  0    1G  0 disk
+```
+
+This is basically from
+
+```
+Physical Device Layout (from lsblk)
+================================================================================
+
+sda (64G) ──┬─ sda1 (1G, partition) ─────────────────────────────────→ /boot
+            │
+            └─ sda2 (63G, partition) 
+                  │
+                  └─ [LVM PV: root-vg] ─┬─ root-os       (24G, LV)   → /
+                                         ├─ root-home    (15G, LV)   → /home
+                                         └─ root-reserved(24G, LV)   → (not mounted)
+
+sdb (100G) ──┬─ sdb1 (entire disk as LVM PV)
+               │
+               └─ [LVM PV: opt-vg] ─────── opt-minio     (102G, LV)  → /opt/minio
+
+sdc (700G) ──┬─ sdc1 (entire disk as LVM PV)
+               │
+               └─ [LVM PV: opt-vg] ─┬─ opt-polaris     (501G, LV)   → /opt/polaris
+                                     ├─ opt-monitoring (101G, LV)   → /opt/monitoring
+                                     ├─ opt-staging    (50G, LV)    → /opt/staging
+                                     └─ opt-reserved   (49G, LV)    → (not mounted)
+```
+
+
+```
++------------------------+
+|  Physical Disk (sda)   |
++------------------------+
+           |
+   +----------------+
+   |   Partition    |  (e.g., sda2, marked for LVM)
+   +----------------+
+           |
+   +-------------------------+                (Optional: several disks/partitions below)
+   |   LVM Physical Volume   |
+   +-------------------------+
+           |
+   +-------------------+
+   |   Volume Group    |      (VG can use many PVs, combine them!)
+   +-------------------+
+           |
+   +----------+---------+---------+---------+
+   | Logical  | Logical | Logical | Logical |
+   | Volume   | Volume  | Volume  | Volume  |
+   +----------+---------+---------+---------+
+     /         /home      /var
+  (Mountpoints; formatted with fs)
+```
+
+
 ### Useful commands
 <img width="775" alt="image" src="https://github.com/user-attachments/assets/a6343cab-f243-4109-ad0e-db2aff00deac" />
 
