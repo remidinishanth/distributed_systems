@@ -21,6 +21,12 @@ A `&>` sends both stdout and stderr file descriptors to `/dev/null`.
 ![image](https://github.com/user-attachments/assets/e7878018-f8c2-447c-90ec-ee052c535968)
 
 
+### Character vs Block device
+
+![image](https://github.com/user-attachments/assets/d2e80327-aaaa-4603-a0b7-b4ad8fa5ed01)
+
+
+
 https://dev.to/shankarsurya035/how-to-create-lvm-partition-in-linux-dgo
 
 LVM creates a logical volume that aggregates multiple disks to stripe reads and writes. 
