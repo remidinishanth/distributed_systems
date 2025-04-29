@@ -26,30 +26,35 @@ Linux splits all devices into three classes: block devices, character devices, a
 
 <img width="780" alt="image" src="https://github.com/user-attachments/assets/c542150f-eb35-436c-8a2b-e9f549d1b921" />
 
-### Character vs Block device
-
-![image](https://github.com/user-attachments/assets/d2e80327-aaaa-4603-a0b7-b4ad8fa5ed01)
-
 A character-stream device transfers bytes one by one, whereas a block device transfers a block of bytes as a unit.
 
-#### Character devices
-* A character (char) device is one that can be accessed as a stream of bytes (like afile); a char driver is in charge of implementing this behavior. Such a driver usually implements at least the open, close, read, and write system calls.
-* The text console (/dev/console) and the serial ports (/dev/ttyS0 and friends) are examples of char devices, as they are well represented by the stream abstraction.
-* Char devices are accessed by means of filesystem nodes, such as /dev/tty1 and /dev/lp0.
-  - The only relevant difference between a char device and a regular file is that you can always move back and forth in the regular file, whereas most char devices are just data channels, which you can only access sequentially. There exist, nonetheless, char devices that look like data areas, and you can move back and
-forth in them; for instance, this usually applies to frame grabbers, where the
-applications can access the whole acquired image using mmap or sleek.
 
 #### Block devices
-* Like char devices, block devices are accessed by filesystem nodes in the /dev
-directory. 
-* A block device is a device (e.g., a disk) that can host a filesystem.
-  - In most Unix systems, a block device can only handle I/O operations that transfer one or more whole blocks, which are usually 512 bytes (or a larger power of  two) bytes in length.
-  - Linux, instead, allows the application to read and write a block device like a char device—it permits the transfer of any number of bytes at a time. As a result, block and char devices differ only in the way data is managed
-internally by the kernel, and thus in the kernel/driver software interface. Like a
-char device, each block device is accessed through a filesystem node, and the difference between them is transparent to the user.
-* Block drivers have a completely different interface to the kernel than char drivers.
+* Block devices include all devices that allow random access to completely
+independent, fixed-sized blocks of data, including hard disks and floppy disks,
+CD-ROMs and Blu-ray discs, and flash memory. 
+* Block devices are typically used to store file systems, but direct access to a block device is also allowed
+so that programs can create and repair the file system that the device contains.
+* Applications can also access these block devices directly if they wish.
+For example, a database application may prefer to perform its own fine-tuned
+layout of data onto a disk rather than using the general-purpose file system.
 
+#### Character devices
+Character devices include most other devices, such as mice and keyboards.
+
+The fundamental difference between block and character devices is random
+access—block devices are accessed randomly, while character devices are
+accessed serially. For example, seeking to a certain position in a file might
+be supported for a DVD but makes no sense for a pointing device such as a
+mouse.
+
+#### Network devices
+Network devices are dealt with differently from block and character
+devices. Users cannot directly transfer data to network devices. Instead,
+they must communicate indirectly by opening a connection to the kernel’s
+networking subsystem.
+
+![image](https://github.com/user-attachments/assets/d2e80327-aaaa-4603-a0b7-b4ad8fa5ed01)
 
 https://dev.to/shankarsurya035/how-to-create-lvm-partition-in-linux-dgo
 
