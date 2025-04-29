@@ -4,6 +4,15 @@
 
 Ref: https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/dev.html
 
+For example:
+
+The null device in Unix systems is /dev/null.
+* Its purpose is to immediately discard anything sent to it.
+* It’s also known as a bucket or a blackhole, like throwing something in a trash bucket or sending it to a blackhole never to be seen again.
+
+![image](https://github.com/user-attachments/assets/94525d09-beda-4456-b43c-1018dbfba63d)
+
+
 https://dev.to/shankarsurya035/how-to-create-lvm-partition-in-linux-dgo
 
 LVM creates a logical volume that aggregates multiple disks to stripe reads and writes. 
