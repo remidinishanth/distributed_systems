@@ -160,6 +160,8 @@ sdc (700G) ──┬─ sdc1 (entire disk as LVM PV)
   (Mountpoints; formatted with fs)
 ```
 
+<img width="435" alt="image" src="https://github.com/user-attachments/assets/62af8ca9-dc4b-412c-9385-2bff619cbbbf" />
+
 
 ### Useful commands
 <img width="775" alt="image" src="https://github.com/user-attachments/assets/a6343cab-f243-4109-ad0e-db2aff00deac" />
