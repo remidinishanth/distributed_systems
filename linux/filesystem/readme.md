@@ -12,6 +12,10 @@ The null device in Unix systems is /dev/null.
 
 ![image](https://github.com/user-attachments/assets/94525d09-beda-4456-b43c-1018dbfba63d)
 
+If we wanted to send a specific file descriptor output, we would use `1>` for stdout and we would use `2>` for stderr.
+
+A `&>` sends both stdout and stderr file descriptors to `/dev/null`.
+
 
 https://dev.to/shankarsurya035/how-to-create-lvm-partition-in-linux-dgo
 
