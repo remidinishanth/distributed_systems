@@ -1,5 +1,8 @@
 <img width="1638" alt="image" src="https://github.com/user-attachments/assets/338eac5f-e1b6-431f-a922-d1ff0a116e7d" />
 
+<img width="710" alt="image" src="https://github.com/user-attachments/assets/2872f4e1-7119-4cbb-8073-36972d632ada" />
+
+
 https://dev.to/shankarsurya035/how-to-create-lvm-partition-in-linux-dgo
 
 LVM creates a logical volume that aggregates multiple disks to stripe reads and writes. 
