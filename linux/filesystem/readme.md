@@ -2,6 +2,7 @@
 
 <img width="710" alt="image" src="https://github.com/user-attachments/assets/2872f4e1-7119-4cbb-8073-36972d632ada" />
 
+Ref: https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/dev.html
 
 https://dev.to/shankarsurya035/how-to-create-lvm-partition-in-linux-dgo
 
