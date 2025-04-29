@@ -20,6 +20,11 @@ A `&>` sends both stdout and stderr file descriptors to `/dev/null`.
 
 ![image](https://github.com/user-attachments/assets/e7878018-f8c2-447c-90ec-ee052c535968)
 
+### Devices
+
+Linux splits all devices into three classes: block devices, character devices, and network devices.
+
+<img width="780" alt="image" src="https://github.com/user-attachments/assets/c542150f-eb35-436c-8a2b-e9f549d1b921" />
 
 ### Character vs Block device
 
@@ -29,8 +34,7 @@ A character-stream device transfers bytes one by one, whereas a block device tra
 
 #### Character devices
 * A character (char) device is one that can be accessed as a stream of bytes (like afile); a char driver is in charge of implementing this behavior. Such a driver usually implements at least the open, close, read, and write system calls.
-* The text console (/dev/console) and the serial ports (/dev/ttyS0 and friends) are examples
-of char devices, as they are well represented by the stream abstraction.
+* The text console (/dev/console) and the serial ports (/dev/ttyS0 and friends) are examples of char devices, as they are well represented by the stream abstraction.
 * Char devices are accessed by means of filesystem nodes, such as /dev/tty1 and /dev/lp0.
   - The only relevant difference between a char device and a regular file is that you can always move back and forth in the regular file, whereas most char devices are just data channels, which you can only access sequentially. There exist, nonetheless, char devices that look like data areas, and you can move back and
 forth in them; for instance, this usually applies to frame grabbers, where the
