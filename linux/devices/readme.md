@@ -25,6 +25,8 @@ A `&>` sends both stdout and stderr file descriptors to `/dev/null`.
 
 ![image](https://github.com/user-attachments/assets/d2e80327-aaaa-4603-a0b7-b4ad8fa5ed01)
 
+A character-stream device transfers bytes one by one, whereas a block device transfers a block of bytes as a unit.
+
 #### Character devices
 * A character (char) device is one that can be accessed as a stream of bytes (like afile); a char driver is in charge of implementing this behavior. Such a driver usually implements at least the open, close, read, and write system calls.
 * The text console (/dev/console) and the serial ports (/dev/ttyS0 and friends) are examples
