@@ -1,5 +1,7 @@
 <img width="1638" alt="image" src="https://github.com/user-attachments/assets/338eac5f-e1b6-431f-a922-d1ff0a116e7d" />
 
+<img width="1464" alt="image" src="https://github.com/user-attachments/assets/fb869e98-485d-4263-ac54-1d6c92607ceb" />
+
 <img width="710" alt="image" src="https://github.com/user-attachments/assets/2872f4e1-7119-4cbb-8073-36972d632ada" />
 
 Ref: https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/dev.html
@@ -15,6 +17,8 @@ The null device in Unix systems is /dev/null.
 If we wanted to send a specific file descriptor output, we would use `1>` for stdout and we would use `2>` for stderr.
 
 A `&>` sends both stdout and stderr file descriptors to `/dev/null`.
+
+![image](https://github.com/user-attachments/assets/e7878018-f8c2-447c-90ec-ee052c535968)
 
 
 https://dev.to/shankarsurya035/how-to-create-lvm-partition-in-linux-dgo
