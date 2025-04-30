@@ -136,7 +136,6 @@ sdc (700G) ──┬─ sdc1 (entire disk as LVM PV)
                                      └─ opt-reserved   (49G, LV)    → (not mounted)
 ```
 
-
 ```
 +------------------------+
 |  Physical Disk (sda)   |
@@ -163,6 +162,9 @@ sdc (700G) ──┬─ sdc1 (entire disk as LVM PV)
 ```
 
 <img width="435" alt="image" src="https://github.com/user-attachments/assets/62af8ca9-dc4b-412c-9385-2bff619cbbbf" />
+
+
+![image](https://github.com/user-attachments/assets/acbf4615-0539-4e02-98cc-d8fe2619b760)
 
 Physical Disk, Volume Groups and Logical volumes
 ![image](https://github.com/user-attachments/assets/05d28321-949f-45ce-9a4d-cebb82805555)
