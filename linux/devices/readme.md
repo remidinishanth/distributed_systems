@@ -264,6 +264,9 @@ tmpfs /dev/shm tmpfs defaults,relatime,nodev,noexec,nosuid 0 0
 ```
 
 Explanation 
+
+<img width="844" alt="image" src="https://github.com/user-attachments/assets/69a6676c-fce7-4d1d-a716-da49ec5f5d25" />
+
 ```
 # c entry details:
 # /dev/mapper/root-os     /                       xfs     defaults        0 1
