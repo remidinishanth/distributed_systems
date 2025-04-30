@@ -147,6 +147,9 @@ Transactions running at the read committed isolation level must prevent dirty wr
 
 ![image](https://github.com/user-attachments/assets/afa4c32d-77a2-42f4-8299-801ac3d60c6b)
 
+![image](https://github.com/user-attachments/assets/d9f0f1e6-49bc-4597-9634-3b55f0cb24dd)
+
+
 
 Nice read about Cockroach DB https://www.cockroachlabs.com/blog/distributed-sql-key-value-store/
 
