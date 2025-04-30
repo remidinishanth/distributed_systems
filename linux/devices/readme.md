@@ -171,10 +171,6 @@ Using `pvs`, `vgs` and `lvs`, we can inspect them
 
 ![image](https://github.com/user-attachments/assets/05d28321-949f-45ce-9a4d-cebb82805555)
 
-
-The blkid command in Linux is a tool to locate and display block device attributes, such as filesystem type, UUID, and label.
-
-
 Use `lsblk` to get a broad view — “what storage is connected, what's a partition, what's an LVM logical volume?”
 
 Use `pvs` to focus on the building blocks of LVM setups — “which disks/partitions are being managed by LVM and how?”
@@ -187,6 +183,9 @@ Which devices are used as LVM physical volumes? (LVM only)
 
 `vgs` — shows info per-volume group in LVM
 `lvs` — shows info per-logical volume in LVM
+
+
+The `blkid` command in Linux is a tool to locate and display block device attributes, such as filesystem type, UUID, and label.
 
 ```
 [rksupport@VR-POLARIS-VW-D27E2E4 ~]$ sudo blkid
