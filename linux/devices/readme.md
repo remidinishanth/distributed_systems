@@ -168,6 +168,28 @@ Physical Disk, Volume Groups and Logical volumes
 ![image](https://github.com/user-attachments/assets/05d28321-949f-45ce-9a4d-cebb82805555)
 
 
+The blkid command in Linux is a tool to locate and display block device attributes, such as filesystem type, UUID, and label
+
+```
+[rksupport@VR-POLARIS-VW-D27E2E4 ~]$ sudo blkid
+/dev/sda1: UUID="c2707e9e-2e27-43a5-91d1-0d25e1f08dd2" TYPE="ext4"
+/dev/sda2: UUID="ZeML8J-Nae7-pMCZ-PBis-PHel-RdXO-6iEK8a" TYPE="LVM2_member"
+/dev/sde: UUID="tN9ohY-yhKb-Lpwh-oJbR-5R1E-z1YO-5fOHwC" TYPE="LVM2_member"
+/dev/sdb: UUID="ZUPGiI-cqEs-0nHi-Zr7S-2bZl-V1Yk-sHI2sz" TYPE="LVM2_member"
+/dev/sdc: UUID="G6BrpZ-m9C6-mECZ-RDTL-fHW9-d0rv-Ggvt0v" TYPE="LVM2_member"
+/dev/mapper/root-os: UUID="36686917-4f3d-4395-8b29-2ab4738455c5" TYPE="xfs"
+/dev/sdd: UUID="yX2shS-qSly-x6ic-RXel-MeDl-HncV-6Z12mz" TYPE="LVM2_member"
+/dev/mapper/opt-minio: UUID="41906eed-ef27-495e-9034-e5d547eff490" TYPE="xfs"
+/dev/mapper/opt-polaris: UUID="9aa1d5ca-2ee5-4295-b9a8-16b657aa975d" TYPE="xfs"
+/dev/mapper/root-home: UUID="0232af07-1aef-41d9-bb3a-f0a5c843b7b7" TYPE="xfs"
+/dev/mapper/opt-monitoring: UUID="6079ccd3-6c43-4b7d-976f-45a5a71fe49a" TYPE="xfs"
+/dev/mapper/opt-staging: UUID="7a24813a-a10c-4081-ba10-18fb1747a39f" TYPE="xfs"
+/dev/mapper/opt-mysql: UUID="02195633-663c-4f2a-b10b-f782795f7849" TYPE="xfs"
+/dev/mapper/opt-mq: UUID="176fb9c8-ca43-4590-a99b-50728cd6e91c" TYPE="xfs"
+/dev/sdf: UUID="owxQp8-q80i-1TTR-98M3-wd7n-MkBS-vx5lvI" TYPE="LVM2_member"
+/dev/sdg: UUID="plOHfP-3YGd-6vac-DKC6-rWUS-X103-ZexUPJ" TYPE="LVM2_member"
+```
+
 ### Useful commands
 <img width="775" alt="image" src="https://github.com/user-attachments/assets/a6343cab-f243-4109-ad0e-db2aff00deac" />
 
