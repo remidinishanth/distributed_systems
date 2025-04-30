@@ -164,6 +164,9 @@ sdc (700G) ──┬─ sdc1 (entire disk as LVM PV)
 
 <img width="435" alt="image" src="https://github.com/user-attachments/assets/62af8ca9-dc4b-412c-9385-2bff619cbbbf" />
 
+Physical Disk, Volume Groups and Logical volumes
+![image](https://github.com/user-attachments/assets/05d28321-949f-45ce-9a4d-cebb82805555)
+
 
 ### Useful commands
 <img width="775" alt="image" src="https://github.com/user-attachments/assets/a6343cab-f243-4109-ad0e-db2aff00deac" />
