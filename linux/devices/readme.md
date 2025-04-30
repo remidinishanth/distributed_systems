@@ -232,10 +232,78 @@ The `blkid` command in Linux is a tool to locate and display block device attrib
 /dev/sdg: UUID="plOHfP-3YGd-6vac-DKC6-rWUS-X103-ZexUPJ" TYPE="LVM2_member"
 ```
 
+<img width="1168" alt="image" src="https://github.com/user-attachments/assets/9f7df455-567c-4044-abc4-75e7f5afe32b" />
+
+`sudo fdisk -l` lists all the partitions and disks connected to your Linux machine.
+
+
+Your Linux system's filesystem table, aka `fstab`, is a configuration table designed to ease the burden of mounting and unmounting file systems to a machine. It is a set of rules used to control how different filesystems are treated each time they are introduced to a system.
+
+The output of fstab
+
+```
+[rksupport@VR-POLARIS-VW-D27E2E4 ~]$ cat /etc/fstab
+
+#
+# /etc/fstab
+# Created by anaconda on Mon Jan 20 15:59:48 2025
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+/dev/mapper/root-os     /                       xfs     defaults        0 0
+UUID=c2707e9e-2e27-43a5-91d1-0d25e1f08dd2 /boot                   ext4    defaults        1 2
+/dev/mapper/root-home   /home                   xfs     defaults,nosuid        0 0
+tmpfs /dev/shm tmpfs defaults,relatime,nodev,noexec,nosuid 0 0
+/dev/mapper/opt-minio /opt/minio xfs defaults 0 2
+/dev/mapper/opt-monitoring /opt/monitoring xfs defaults 0 2
+/dev/mapper/opt-mq /opt/mq xfs defaults 0 2
+/dev/mapper/opt-mysql /opt/mysql xfs defaults 0 2
+/dev/mapper/opt-polaris /opt/polaris xfs defaults 0 2
+/dev/mapper/opt-staging /opt/staging xfs defaults 0 2
+```
+
+Explanation 
+```
+# c entry details:
+# /dev/mapper/root-os     /                       xfs     defaults        0 1
+# * /dev/mapper/root-os <--- defines the storage device (i.e. /dev/sda2)
+# * /                   <--- tells the mount command where it should mount the
+#                            <file system> to.
+# * xfs                 <--- defines the file system type of the device or
+#                            partition to be mounted
+# * defaults            <--- define particular options for filesystems. Some
+#                            options relate only to the filesystem itself. Some
+#                            of the more common options are:
+#                            auto  - file system will mount automatically at boot
+#                            exec  - allow the execution binaries that are on
+#                                    that partition (default).
+#                            ro    - mount the filesystem read only
+#                            rw    - mount the filesystem read-write
+#                            sync  - I/O should be done synchronously
+#                            async - I/O should be done asynchronously
+#                            nouser - only allow root to mount the filesystem
+#                            defaults - default mount settings (equivalent to rw,
+#                                       suid,dev,exec,auto,nouser,async).
+#                            suid - allow the operation of suid, and sgid bits.
+# * 0                   <--- is used by the dump utility to decide when to make
+#                            a backup. When installed, dump checks the entry and
+#                            uses the number to decide if a file system should
+#                            be backed up. Possible entries are 0 and 1. If 0,
+#                            dump will ignore the file system, if 1, dump will
+#                            make a backup. Most users will not have dump
+#                            installed, so they should put 0 for the <dump>
+#                            entry
+# * 1                       <--- fsck reads the <pass> number and determines in
+#                            which order the file systems should be checked.
+#                            Possible entries are 0, 1, and 2. The root file
+#                            system should have the highest priority, 1, all
+#                            other file systems you want to have checked should
+#                            get a 2. File systems with a <pass> value 0 will
+#                            not be checked by the fsck utility.
+#
+```
+
 ### Useful commands
 <img width="775" alt="image" src="https://github.com/user-attachments/assets/a6343cab-f243-4109-ad0e-db2aff00deac" />
 
-
-<img width="1168" alt="image" src="https://github.com/user-attachments/assets/9f7df455-567c-4044-abc4-75e7f5afe32b" />
-
-`sudo fdisk -l` lists all the partitions and disks connected to your Linux machine. Let's break it down step by step:
