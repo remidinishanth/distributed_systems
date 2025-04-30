@@ -185,6 +185,31 @@ Which devices are used as LVM physical volumes? (LVM only)
 `lvs` — shows info per-logical volume in LVM
 
 
+`pvs` along with VG
+
+```
+[rksupport@VR-POLARIS-VW-D27E2E4 ~]$ sudo pvs -a -o +vg_name,lv_name
+  PV         VG   Fmt  Attr PSize    PFree VG   LV
+  /dev/sda1            ---        0     0
+  /dev/sda2  root lvm2 a--   <63.00g    0  root home
+  /dev/sda2  root lvm2 a--   <63.00g    0  root os
+  /dev/sda2  root lvm2 a--   <63.00g    0  root reserved
+  /dev/sdb   opt  lvm2 a--  <100.00g    0  opt  minio
+  /dev/sdc   opt  lvm2 a--  <700.00g    0  opt  polaris
+  /dev/sdc   opt  lvm2 a--  <700.00g    0  opt  monitoring
+  /dev/sdc   opt  lvm2 a--  <700.00g    0  opt  staging
+  /dev/sdc   opt  lvm2 a--  <700.00g    0  opt  reserved
+  /dev/sdc   opt  lvm2 a--  <700.00g    0  opt  monitoring
+  /dev/sdd   opt  lvm2 a--  <450.00g    0  opt  mysql
+  /dev/sdd   opt  lvm2 a--  <450.00g    0  opt  mq
+  /dev/sde   opt  lvm2 a--  1020.00m    0  opt  minio
+  /dev/sdf   opt  lvm2 a--  1020.00m    0  opt  minio
+  /dev/sdg   opt  lvm2 a--  1020.00m    0  opt  polaris
+  /dev/sdh             ---        0     0
+  /dev/sdi             ---        0     0
+```
+
+
 The `blkid` command in Linux is a tool to locate and display block device attributes, such as filesystem type, UUID, and label.
 
 ```
