@@ -9,3 +9,6 @@
 * dup() and dup2() can be used to manipulate file descriptors
 
 Ref: https://www.cs.fsu.edu/~baker/opsys/notes/unixfiles.html
+
+![image](https://github.com/user-attachments/assets/0762cb57-cb75-4b3a-aec3-88ef63e15c39)
+
