@@ -1,3 +1,6 @@
+![image](https://github.com/user-attachments/assets/8861c639-b9d9-46ec-a9fd-d2dece885318)
+
+
 ### File Descriptor
 * is an integer that refers to an open file description
 * the mapping of decriptor to description is local to a specific process
