@@ -74,3 +74,12 @@
 
 ![image](https://github.com/user-attachments/assets/a717401b-1261-43cc-8539-84244c9dff51)
 
+### Performance Observability Tools
+
+<img width="1063" alt="image" src="https://github.com/user-attachments/assets/591106ec-23fc-4ccc-80fb-8540f4801b1e" />
+
+![image](https://github.com/user-attachments/assets/530c50a0-742b-40b7-81b7-4707cb90434b)
+
+
+![image](https://github.com/user-attachments/assets/b8d47d33-dd4b-450f-94a7-e0135a83b236)
+
