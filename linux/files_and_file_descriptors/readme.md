@@ -6,13 +6,19 @@ File descriptors are an index into a file descriptor table stored by the kernel.
 * is an integer that refers to an open file description
 * the mapping of decriptor to description is local to a specific process
 * the open file description is a kernel data structure, not directly accessible by the process
-* 0 is the file descriptor for stdin
-* 1 is the file descriptor for stdout
-* 2 is the file descriptor for stderr
+
+![image](https://github.com/user-attachments/assets/e15baf3d-1266-467b-9525-59052e8a81cf)
+
 * other file descriptors are assigned as open() is called
 * dup() and dup2() can be used to manipulate file descriptors
 
 Ref: https://www.cs.fsu.edu/~baker/opsys/notes/unixfiles.html
 
 ![image](https://github.com/user-attachments/assets/0762cb57-cb75-4b3a-aec3-88ef63e15c39)
+
+## Virtual File System
+<img width="785" alt="image" src="https://github.com/user-attachments/assets/c20d2465-292e-4793-ad46-fb0df67a8df3" />
+
+
+<img width="597" alt="image" src="https://github.com/user-attachments/assets/de5cc6f9-45c0-489b-9b61-b37d1a9c7235" />
 
