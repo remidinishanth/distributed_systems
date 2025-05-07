@@ -39,11 +39,13 @@
 
 ![image](https://github.com/user-attachments/assets/864e48a0-46ea-4d0a-8aab-7c3815449edd)
 
-### Commands
+## Commands
 
 ![image](https://github.com/user-attachments/assets/cfb4aaeb-2a9c-453b-bc51-a71386700291)
 
 ![image](https://github.com/user-attachments/assets/56b6becc-d1e1-443b-b752-5d9132218d52)
+
+<img width="885" alt="image" src="https://github.com/user-attachments/assets/69396e2b-318b-4030-9070-3d79d1150c04" />
 
 
 ### Boot Process
