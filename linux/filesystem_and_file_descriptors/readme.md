@@ -14,11 +14,36 @@ File descriptors are an index into a file descriptor table stored by the kernel.
 
 Ref: https://www.cs.fsu.edu/~baker/opsys/notes/unixfiles.html
 
+## File Descriptors
+* How do we interact with Linux Filesystem via 𝐟𝐢𝐥𝐞 𝐝𝐞𝐬𝐜𝐫𝐢𝐩𝐭𝐨𝐫𝐬?
+
+A file descriptor represents an open file. It is a unique number assigned by the operating system to each file. It is an 𝐚𝐛𝐬𝐭𝐫𝐚𝐜𝐭𝐢𝐨𝐧 for working with files. We need to use file descriptors to read from or write to files in our program.
+
+Each process maintains its own file descriptor table.
+
+🔹 In User Space
+When we open a file called “fileA.txt” in Process 1234, we get file descriptor fd1, which is equal to 3. We can then pass the file descriptor to other functions, to write data to the file.
+
+🔹 In Kernel Space
+In Linux kernel, there is a 𝐩𝐫𝐨𝐜𝐞𝐬𝐬 𝐭𝐚𝐛𝐥𝐞 to maintain the data for the processes. Each process has an entry in the table. Each process maintains a file descriptor table, with file descriptors as its indices.
+
+The file pointer points to an entry in the 𝐨𝐩𝐞𝐧 𝐟𝐢𝐥𝐞 𝐭𝐚𝐛𝐥𝐞, which has information about open files across all processes. Multiple file descriptors can point to the same file table entry. For example, file descriptor 0,1 and 2 point to the same open file table entry.
+
+Since different open file table entries can represent the same file, it is a waste of resources to store the file static information so many times. We need another abstraction layer called ‘vnode table’ to store the static data.
+
+![image](https://github.com/user-attachments/assets/f62807ba-e39b-4c0c-9424-f0d7fed26c1b)
+
 ![image](https://github.com/user-attachments/assets/0762cb57-cb75-4b3a-aec3-88ef63e15c39)
+
+![image](https://github.com/user-attachments/assets/4b615ad2-6e51-48cb-84ca-3991c5dd2b13)
+
 
 ## Virtual File System
 <img width="785" alt="image" src="https://github.com/user-attachments/assets/c20d2465-292e-4793-ad46-fb0df67a8df3" />
 
 
 <img width="597" alt="image" src="https://github.com/user-attachments/assets/de5cc6f9-45c0-489b-9b61-b37d1a9c7235" />
+
+## Memory Types
+![image](https://github.com/user-attachments/assets/4dbe62ca-5ee7-4d57-b9dc-624143bb89f0)
 
