@@ -5,6 +5,10 @@
 
 ![image](https://github.com/user-attachments/assets/5240466a-baa2-4fba-bbae-f35e91dbbba3)
 
+### Components
+<img width="931" alt="image" src="https://github.com/user-attachments/assets/7508763f-51ef-4e57-993d-865446446a22" />
+
+### File system
 ![image](https://github.com/user-attachments/assets/93114437-78ab-4e05-b40d-93089a411205)
 
 ![image](https://github.com/user-attachments/assets/61fb391d-c984-4c63-be07-06637f4156ec)
