@@ -1,3 +1,7 @@
+![image](https://github.com/user-attachments/assets/7df9cb19-2dcf-40c8-8edf-3b69fbd2fcc7)
+From The UNIX Time-Sharing System, Dennis M. Ritchie and Ken Thompson, Bell Laboratories
+
+
 ![image](https://github.com/user-attachments/assets/157b5629-38b1-415d-a8d9-a499aa379b16)
 
 <img width="1638" alt="image" src="https://github.com/user-attachments/assets/338eac5f-e1b6-431f-a922-d1ff0a116e7d" />
