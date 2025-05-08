@@ -1,7 +1,7 @@
 ## TODO
 * https://homepages.uc.edu/~thomam/Intro_Unix_Text/TOC.html
 * https://dsf.berkeley.edu/cs262/FFS.pdf
-* https://ops.tips/blog/what-is-slash-proc/
+* https://ops.tips/blog/what-is-slash-proc/ and Proc FS
 
 ![image](https://github.com/user-attachments/assets/488bc987-89d4-4ff2-bd7d-769acb27c96b)
 
