@@ -5,6 +5,7 @@
 * https://ops.tips/blog/what-is-slash-proc/ and Proc FS
 * https://www.cs.fsu.edu/~baker/opsys/notes/unixfiles.html
 * Looks good https://www.cs.fsu.edu/~baker/opsys/notes/
+* https://users.cs.jmu.edu/bernstdh/web/common/lectures/summary_unix_file-descriptors.php
 
 ![image](https://github.com/user-attachments/assets/488bc987-89d4-4ff2-bd7d-769acb27c96b)
 
