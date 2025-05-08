@@ -4,6 +4,7 @@
 * https://dsf.berkeley.edu/cs262/FFS.pdf
 * https://ops.tips/blog/what-is-slash-proc/ and Proc FS
 * https://www.cs.fsu.edu/~baker/opsys/notes/unixfiles.html
+* Looks good https://www.cs.fsu.edu/~baker/opsys/notes/
 
 ![image](https://github.com/user-attachments/assets/488bc987-89d4-4ff2-bd7d-769acb27c96b)
 
