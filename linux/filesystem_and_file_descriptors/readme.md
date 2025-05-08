@@ -47,3 +47,10 @@ Since different open file table entries can represent the same file, it is a was
 ## Memory Types
 ![image](https://github.com/user-attachments/assets/4dbe62ca-5ee7-4d57-b9dc-624143bb89f0)
 
+## File permissions
+
+![image](https://github.com/user-attachments/assets/86a85bbd-103c-43eb-baed-d2bbe8620dad)
+
+![image](https://github.com/user-attachments/assets/28a8140f-b032-47fa-93a2-c91d5e172833)
+
+![image](https://github.com/user-attachments/assets/6e8c7466-c6e3-48e8-8cc3-9fa3befb51c5)
