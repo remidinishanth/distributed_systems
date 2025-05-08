@@ -2,6 +2,9 @@ File descriptors are an index into a file descriptor table stored by the kernel.
 
 <img width="1081" alt="image" src="https://github.com/user-attachments/assets/1b450486-8fb7-4894-a75d-d1ee063c8290" />
 
+![image](https://github.com/user-attachments/assets/9f01897d-b63e-4da2-bfc3-ad57a125008e)
+Ref: The UNIX Time- Sharing System by DM Ritchie · 1974 
+
 ### File Descriptor
 * is an integer that refers to an open file description
 * the mapping of decriptor to description is local to a specific process
