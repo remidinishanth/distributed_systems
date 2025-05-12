@@ -82,6 +82,11 @@ Kubernetes Storage Options — Persistent Volumes (PV), Persistent Volume Claims
 
 ![image](https://github.com/user-attachments/assets/7d3c03c8-478a-4662-a224-d3a97176fe76)
 
+### Config Maps
+A ConfigMap is an API object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume.
+
+<img width="953" alt="image" src="https://github.com/user-attachments/assets/ac7e3803-9a0d-46c9-bb16-4b588ffdc1b0" />
+
 
 ### Ref
 * https://www.mirantis.com/blog/kubernetes-cheat-sheet/
