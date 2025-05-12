@@ -87,6 +87,9 @@ A ConfigMap is an API object used to store non-confidential data in key-value pa
 
 <img width="953" alt="image" src="https://github.com/user-attachments/assets/ac7e3803-9a0d-46c9-bb16-4b588ffdc1b0" />
 
+### Stateful Sets
+<img width="932" alt="image" src="https://github.com/user-attachments/assets/60a34942-4a9e-4b3d-81fd-cbb2ba60a05f" />
+
 
 ### Ref
 * https://www.mirantis.com/blog/kubernetes-cheat-sheet/
