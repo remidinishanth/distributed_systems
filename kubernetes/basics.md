@@ -72,6 +72,17 @@ Services allow your applications to receive traffic. Services can be exposed in 
 
 ![](images/k8s_i10.png)  
 
+### Storage
+Kubernetes Storage Options — Persistent Volumes (PV), Persistent Volume Claims (PVC), Storage Classes (SC).
+* Persistent Volume — low level representation of a storage volume.
+* Persistent Volume Claim — binding between a Pod and Persistent Volume.
+* Storage Class — allows for dynamic provisioning of Persistent Volumes.
+
+<img width="931" alt="image" src="https://github.com/user-attachments/assets/e43b8d82-a66b-40f1-91d8-5ef5741116c7" />
+
+![image](https://github.com/user-attachments/assets/7d3c03c8-478a-4662-a224-d3a97176fe76)
+
+
 ### Ref
 * https://www.mirantis.com/blog/kubernetes-cheat-sheet/
 * https://kubernetesbootcamp.github.io/kubernetes-bootcamp/index.html
