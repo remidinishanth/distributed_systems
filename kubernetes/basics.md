@@ -64,6 +64,9 @@ Services allow your applications to receive traffic. Services can be exposed in 
 * `LoadBalancer` - Creates an external load balancer in the current cloud (if supported) and assigns a fixed, external IP to the Service. Superset of NodePort.
 * `ExternalName` - Maps the Service to the contents of the externalName field (e.g. `foo.bar.example.com`), by returning a CNAME record with its value. No proxying of any kind is set up. This type requires v1.7 or higher of kube-dns, or CoreDNS version 0.0.8 or higher.
 
+![image](https://github.com/user-attachments/assets/bee4af44-471a-47cf-862d-9d2548fec145)
+
+
 #### Nodeport
 
 ![](images/k8s_i10.png)  
