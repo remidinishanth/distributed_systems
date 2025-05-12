@@ -90,6 +90,10 @@ A ConfigMap is an API object used to store non-confidential data in key-value pa
 ### Stateful Sets
 <img width="932" alt="image" src="https://github.com/user-attachments/assets/60a34942-4a9e-4b3d-81fd-cbb2ba60a05f" />
 
+#### StatefulSet vs. DaemonSet vs. Deployment
+* StatefulSet: Manages stateful applications requiring stable identities and persistent storage.
+* DaemonSet: Ensures a copy of a pod runs on every node for node-level services like logging.
+* Deployment: Manages stateless applications with flexible, declarative updates.
 
 ### Ref
 * https://www.mirantis.com/blog/kubernetes-cheat-sheet/
