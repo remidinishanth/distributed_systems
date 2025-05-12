@@ -66,6 +66,7 @@ Services allow your applications to receive traffic. Services can be exposed in 
 
 ![image](https://github.com/user-attachments/assets/bee4af44-471a-47cf-862d-9d2548fec145)
 
+![image](https://github.com/user-attachments/assets/2f2a1a3a-1f37-493c-af89-8f5ca5846754)
 
 #### Nodeport
 
