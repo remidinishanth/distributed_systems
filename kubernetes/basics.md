@@ -90,6 +90,22 @@ A ConfigMap is an API object used to store non-confidential data in key-value pa
 ### Stateful Sets
 <img width="932" alt="image" src="https://github.com/user-attachments/assets/60a34942-4a9e-4b3d-81fd-cbb2ba60a05f" />
 
+If you have a StatefulSet called tkb-sts with five replicas and the tkb-sts-3 replica fails, the controller starts a new Pod with the same name and attaches it to the surviving volumes.
+
+* We’ve already said that StatefulSets are for applications that need Pods to be predictable
+and long-lived.
+* This might involve applications connecting to specific Pods rather than
+letting the Service perform round-robin load balancing across all Pods.
+* To make this possible, StatefulSets use a headless Service to create reliable and predictable DNS names
+for every Pod. Other apps can then query DNS (the service registry) for the full list of
+Pods and make direct connections.
+
+<img width="686" alt="image" src="https://github.com/user-attachments/assets/5b625b65-be3b-4652-a64a-eee6ee328459" />
+
+A headless Service is a regular Kubernetes Service object without a ClusterIP address
+(spec.clusterIP set to None). It becomes a StatefulSet’s governing Service when you list
+it in the StatefulSet config under spec.serviceName.
+
 #### StatefulSet vs. DaemonSet vs. Deployment
 * StatefulSet: Manages stateful applications requiring stable identities and persistent storage.
 * DaemonSet: Ensures a copy of a pod runs on every node for node-level services like logging.
