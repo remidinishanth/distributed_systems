@@ -5,6 +5,8 @@ The official documentation says kubernetes networking model requires:
 
 Must Read https://mvallim.github.io/kubernetes-under-the-hood/documentation/kube-flannel.html and https://www.devopsschool.com/tutorial/kubernetes/kubernetes-cni-flannel-overlay-networking.html
 
+Todo: https://iximiuz.com/en/posts/service-discovery-in-kubernetes/
+
 * Every Pod will have its own network namespace and containers inside that Pod share the same IP address and ports.
   - All communication between these containers would happen via the localhost as they are all part of the same namespace.
 * In Kubernetes, every node has a designated CIDR range of IPs for Pods. This would ensure that every Pod gets a unique IP address that can be seen by other Pods in the cluster and also ensures that when a new Pod is created, the IP address never overlaps.  
