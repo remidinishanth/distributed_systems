@@ -3,7 +3,7 @@ The official documentation says kubernetes networking model requires:
 * all nodes can communicate with all containers (and vice-versa) without NAT
 * the IP that a container sees itself as is the same IP that others see it as
 
-Must Read https://mvallim.github.io/kubernetes-under-the-hood/documentation/kube-flannel.html 
+Must Read https://mvallim.github.io/kubernetes-under-the-hood/documentation/kube-flannel.html and https://www.devopsschool.com/tutorial/kubernetes/kubernetes-cni-flannel-overlay-networking.html
 
 * Every Pod will have its own network namespace and containers inside that Pod share the same IP address and ports.
   - All communication between these containers would happen via the localhost as they are all part of the same namespace.
