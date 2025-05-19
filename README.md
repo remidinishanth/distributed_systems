@@ -1,3 +1,5 @@
+Awesome resource: https://codersguild.github.io/System-Design/Youtube%20Architecture/
+
 Ref: https://github.com/lafengnan/ebooks-1
 
 Read https://github.com/CodeBear801/tech_summary/blob/master/tech-summary/papers/colossus.md 
