@@ -12,3 +12,5 @@ Sorted Strings Table (SSTable) is a persistent file format used by ScyllaDB, Apa
 * Periodically the memtable is flushed to persistent storage in the form of SSTables on disk.
 * SSTables in Cassandra or ScyllaDB serve as the building blocks of the total data stored in the database.
 * SSTables are immutable, so updates to data create a new SSTable file instead of changing the existing ones.
+
+![image](https://github.com/user-attachments/assets/74ce822c-b368-4255-a2d2-e808cdcbf822)
