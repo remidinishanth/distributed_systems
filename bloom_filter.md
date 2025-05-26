@@ -21,10 +21,12 @@ Design a data structure with the following characteristics:
 * the bits at all identified buckets are set to one
 
 There is a probability that some bits on the array are set to one multiple times due to hash collisions.
+
 ![image](https://github.com/user-attachments/assets/220efe39-5c59-41d4-acef-14d79f358613)
 
 ## Membership test
 * Verify if the hash bits at all identified buckets are set to one
+
 ![image](https://github.com/user-attachments/assets/2dc29d8f-574a-41d9-b2db-c5e7804c1221)
 
 ### False positive case
