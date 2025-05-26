@@ -3,3 +3,6 @@
 False positives are possible. it might say, element might exist, even thought it isn't.
 
 But when it doesn't exist, it would never say it exists.
+
+
+Ref to https://systemdesign.one/bloom-filters-explained/ 
