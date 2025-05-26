@@ -53,6 +53,9 @@ The properties of an optimal hash function for the bloom filter are the followin
 Ref: https://ricardoanderegg.com/posts/bloom-filters-poster/
 
 ## Applications
+
+![image](https://github.com/user-attachments/assets/f2fefdbe-d596-4d2a-938d-3a42acfb3378)
+
 For example, one use case of Bloom filters is the following: you have a huge list of malicious URLs. In your browser, before a user navigates to a new URL, you want to check if it’s inside the list of dangerous URLs. You can use a bloom filter to do that! It will take less space than saving the full list of URLs, and if the answer from the Bloom filter is “no” (the URL is not a malicious one), you can safely let the user visit it
 
 ![image](https://github.com/user-attachments/assets/8d0cb71b-8ae2-44af-a53d-e0adc8f5c8fa)
