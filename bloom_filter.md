@@ -5,4 +5,13 @@ False positives are possible. it might say, element might exist, even thought it
 But when it doesn't exist, it would never say it exists.
 
 
+## Requirements
+Design a data structure with the following characteristics:
+* constant time complexity to test membership
+* a small amount of memory to test membership
+* insert and query operations should be parallelizable
+* test membership can yield approximate results
+
+
+
 Ref to https://systemdesign.one/bloom-filters-explained/ 
