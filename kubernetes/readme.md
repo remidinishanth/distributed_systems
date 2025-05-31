@@ -9,6 +9,8 @@ and https://kubernetesbootcamp.github.io/kubernetes-bootcamp/index.html
 
 Ref: https://newsletter.francofernando.com/p/kubernetes
 
+<img width="1071" alt="image" src="https://github.com/user-attachments/assets/dac3573c-599b-4eaa-8e75-71c690b58786" />
+
 <img width="672" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/549f0cec-ac99-438d-ba7b-f668fe85c762">
 
 Ref: http://bit.ly/9stepsawesome
