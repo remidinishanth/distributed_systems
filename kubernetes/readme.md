@@ -17,13 +17,41 @@ Ref: http://bit.ly/9stepsawesome
 
 ## Architecture
 
+<img width="1065" alt="image" src="https://github.com/user-attachments/assets/7fd5b490-d95e-459d-b6e5-bc95d4ab0960" />
+
 ![image](https://github.com/user-attachments/assets/21192418-ccde-4508-96aa-395216e52312)
 
 ![image](https://github.com/user-attachments/assets/321cc113-bb7f-4fae-be96-a7676c7ec853)
 
+<img width="1455" alt="image" src="https://github.com/user-attachments/assets/0107343f-c0c2-4721-a29f-4af5792055b3" />
+
 ![image](https://github.com/user-attachments/assets/c7d85057-4782-4712-8604-08ca1886d539)
 
+<img width="1437" alt="image" src="https://github.com/user-attachments/assets/7dffcf71-1cf2-41f7-9f79-7be5b2472d35" />
+
+### Concepts
+
+<img width="1202" alt="image" src="https://github.com/user-attachments/assets/b1e1d210-cc98-48a4-8674-cf06448d729a" />
+
+<img width="1345" alt="image" src="https://github.com/user-attachments/assets/fc51c6be-30a7-4579-ae2f-03fbc8bc12a9" />
+
+<img width="960" alt="image" src="https://github.com/user-attachments/assets/46e0fa27-977b-40e4-9af7-9b1606c224cf" />
 
 ### Containers, Pods, Deployment
 
+<img width="1192" alt="image" src="https://github.com/user-attachments/assets/b6c6e11e-c6c8-42d7-a901-855ae297a32c" />
+
+
 ![image](https://github.com/user-attachments/assets/53eb8a8b-0319-448e-9de7-acd797ba0fde)
+
+<img width="1279" alt="image" src="https://github.com/user-attachments/assets/a24363aa-d6a8-4392-be48-9feec2ff7e92" />
+
+<img width="1406" alt="image" src="https://github.com/user-attachments/assets/cc5fa89b-d819-4257-be58-47006f7ac1ae" />
+
+### Operator
+
+<img width="1189" alt="image" src="https://github.com/user-attachments/assets/77e14f6c-5829-4ac5-88bc-5123d1772f28" />
+
+<img width="1358" alt="image" src="https://github.com/user-attachments/assets/c01c9756-62c3-42c7-b1c6-abe93b43f04b" />
+
+
