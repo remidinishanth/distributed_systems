@@ -21,7 +21,7 @@ Ref: http://bit.ly/9stepsawesome
 
 ### K8S components in a nutshell
 * YAML file & kubectl cmdline. 
-* K8s node: CRI, Kubelet,Kubeproxy  
+* K8s node: CRI, Kubelet, Kubeproxy  
 * K8s master: ETCd, APIserver, Controller & Scheduler
 
 ![image](https://github.com/user-attachments/assets/21192418-ccde-4508-96aa-395216e52312)
