@@ -54,4 +54,7 @@ Ref: http://bit.ly/9stepsawesome
 
 <img width="1358" alt="image" src="https://github.com/user-attachments/assets/c01c9756-62c3-42c7-b1c6-abe93b43f04b" />
 
+### Stateful service
+
+<img width="1249" alt="image" src="https://github.com/user-attachments/assets/b7538d96-24d6-4f58-aae7-254f46c6abb5" />
 
