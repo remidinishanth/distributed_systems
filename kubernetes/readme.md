@@ -24,6 +24,8 @@ Ref: http://bit.ly/9stepsawesome
 * K8s node: CRI, Kubelet, Kubeproxy  
 * K8s master: ETCd, APIserver, Controller & Scheduler
 
+![image](https://github.com/user-attachments/assets/35dc72ea-62bd-4bbd-a9fa-29af82204cc0)
+
 ![image](https://github.com/user-attachments/assets/21192418-ccde-4508-96aa-395216e52312)
 
 ![image](https://github.com/user-attachments/assets/321cc113-bb7f-4fae-be96-a7676c7ec853)
