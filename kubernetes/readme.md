@@ -32,7 +32,20 @@ Ref: http://bit.ly/9stepsawesome
 
 <img width="1455" alt="image" src="https://github.com/user-attachments/assets/0107343f-c0c2-4721-a29f-4af5792055b3" />
 
+### K8s Controller
+
+> How to get from the current state to the declared target state?
+
+![image](https://github.com/user-attachments/assets/a5de85a6-a61a-47aa-8608-4c142097c010)
+
+<img width="1409" alt="image" src="https://github.com/user-attachments/assets/2c9dabb1-dc95-422c-b700-9673f4e1efc5" />
+
+<img width="1167" alt="image" src="https://github.com/user-attachments/assets/4b46c862-18f3-4b11-bdb1-5758a032ef8a" />
+
 ![image](https://github.com/user-attachments/assets/c7d85057-4782-4712-8604-08ca1886d539)
+
+![image](https://github.com/user-attachments/assets/6819d3e8-4cfa-459e-8b08-31400391a8eb)
+
 
 <img width="1437" alt="image" src="https://github.com/user-attachments/assets/7dffcf71-1cf2-41f7-9f79-7be5b2472d35" />
 
