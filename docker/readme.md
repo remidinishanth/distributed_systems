@@ -6,6 +6,13 @@ Two core concepts:
 
 ![image](https://github.com/user-attachments/assets/b949a89b-d710-48f9-9baf-a675dc3a3e58)
 
+### Cgroups
+![image](https://github.com/user-attachments/assets/0061da2d-84b4-4f73-8d62-38e4fd806895)
+
+
+## Concepts
+![image](https://github.com/user-attachments/assets/7ccf890e-bc91-433e-bcc4-2a7a412374c4)
+
 
 ![image](https://github.com/user-attachments/assets/d0c42348-1143-4ab5-8c3b-3c31c05fd5da)
 
