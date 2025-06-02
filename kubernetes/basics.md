@@ -85,6 +85,12 @@ Kubernetes Storage Options — Persistent Volumes (PV), Persistent Volume Claims
 
 ![image](https://github.com/user-attachments/assets/7d3c03c8-478a-4662-a224-d3a97176fe76)
 
+PV: A PV is a storage resource located in the cluster. Administrators can manually provision PVs, and Kubernetes can use storage classes to dynamically provisioned PVs.
+
+PVC: A PVC is a storage request made by a user. It works similarly to a pod but consumes PV resources rather than node resources.
+
+CSI: The Container Storage Interface (CSI) is a standard interface that allows container orchestrators to expose storage systems to containers they manage.
+
 ### Static Provisioning and Dynamic Provisioning
 
 ![image](https://github.com/user-attachments/assets/56138ffc-0459-49a2-8d7c-15f2a3e2fb27)
