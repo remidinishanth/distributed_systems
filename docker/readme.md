@@ -14,6 +14,8 @@ Two core concepts:
 
 ![image](https://github.com/user-attachments/assets/c52fb749-e7a6-4f5d-ae3a-d1486be7029f)
 
+![image](https://github.com/user-attachments/assets/65039f74-d7f1-471d-9c7d-e12dab06f2a4)
+
 
 ## Concepts
 ![image](https://github.com/user-attachments/assets/7ccf890e-bc91-433e-bcc4-2a7a412374c4)
