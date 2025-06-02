@@ -6,8 +6,13 @@ Two core concepts:
 
 ![image](https://github.com/user-attachments/assets/b949a89b-d710-48f9-9baf-a675dc3a3e58)
 
+### Namespaces
+![image](https://github.com/user-attachments/assets/cc3688c7-cfd1-4ff6-9851-7642c672aee4)
+
 ### Cgroups
 ![image](https://github.com/user-attachments/assets/0061da2d-84b4-4f73-8d62-38e4fd806895)
+
+![image](https://github.com/user-attachments/assets/c52fb749-e7a6-4f5d-ae3a-d1486be7029f)
 
 
 ## Concepts
