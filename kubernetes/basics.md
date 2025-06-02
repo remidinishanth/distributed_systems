@@ -73,6 +73,9 @@ Services allow your applications to receive traffic. Services can be exposed in 
 ![](images/k8s_i10.png)  
 
 ### Storage
+
+<img width="609" alt="image" src="https://github.com/user-attachments/assets/ee2fe9af-dc81-4fba-a8e9-437ab24aa823" />
+
 Kubernetes Storage Options — Persistent Volumes (PV), Persistent Volume Claims (PVC), Storage Classes (SC).
 * Persistent Volume — low level representation of a storage volume.
 * Persistent Volume Claim — binding between a Pod and Persistent Volume.
