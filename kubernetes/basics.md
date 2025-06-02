@@ -89,7 +89,7 @@ PV: A PV is a storage resource located in the cluster. Administrators can manual
 
 PVC: A PVC is a storage request made by a user. It works similarly to a pod but consumes PV resources rather than node resources.
 
-CSI: The Container Storage Interface (CSI) is a standard interface that allows container orchestrators to expose storage systems to containers they manage.
+CSI: The Container Storage Interface (CSI) is a standard interface that allows container orchestrators to expose exposing arbitrary block and file storage systems to containers they manage.
 
 ### Static Provisioning and Dynamic Provisioning
 
