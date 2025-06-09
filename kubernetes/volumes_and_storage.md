@@ -64,6 +64,9 @@ PVC: A PVC is a storage request made by a user. It works similarly to a pod but 
 
 CSI: The Container Storage Interface (CSI) is a standard interface that allows container orchestrators to expose exposing arbitrary block and file storage systems to containers they manage.
 
+![image](https://github.com/user-attachments/assets/1648079f-c649-40aa-9ad0-5ad2653c9690)
+
+
 ### Static Provisioning and Dynamic Provisioning
 
 ![image](https://github.com/user-attachments/assets/56138ffc-0459-49a2-8d7c-15f2a3e2fb27)
