@@ -70,6 +70,14 @@ CSI: The Container Storage Interface (CSI) is a standard interface that allows c
 
 ![image](https://github.com/user-attachments/assets/56138ffc-0459-49a2-8d7c-15f2a3e2fb27)
 
+### CSI
+
+In Kubernetes, in-tree storage drivers were storage plugins that were directly part of the core Kubernetes code. They were being phased out in favor of CSI (Container Storage Interface) drivers, which are plug-ins that are separate from the Kubernetes core.
+
+Prior to CSI, Kubernetes provided a powerful volume plugin system. These volume plugins were “in-tree” meaning their code was part of the core Kubernetes code and shipped with the core Kubernetes binaries. 
+
+However, adding support for new volume plugins to Kubernetes was challenging. Vendors that wanted to add support for their storage system to Kubernetes (or even fix a bug in an existing volume plugin) were forced to align with the Kubernetes release process. 
+
 ### Stateful Sets
 <img width="932" alt="image" src="https://github.com/user-attachments/assets/60a34942-4a9e-4b3d-81fd-cbb2ba60a05f" />
 
