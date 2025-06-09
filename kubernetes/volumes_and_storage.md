@@ -78,6 +78,13 @@ Prior to CSI, Kubernetes provided a powerful volume plugin system. These volume 
 
 However, adding support for new volume plugins to Kubernetes was challenging. Vendors that wanted to add support for their storage system to Kubernetes (or even fix a bug in an existing volume plugin) were forced to align with the Kubernetes release process. 
 
+![image](https://github.com/user-attachments/assets/ea3134cf-0180-4b13-8549-43c71fa09f9d)
+
+The Kubernetes Storage Special Interest Group (SIG) defines three methods to implement a volume plugin:
+1. In-tree volume plugin [deprecated],
+2. Out-of-tree FlexVolume driver [deprecated],
+3. Out-of-tree CSI driver.
+
 ### Stateful Sets
 <img width="932" alt="image" src="https://github.com/user-attachments/assets/60a34942-4a9e-4b3d-81fd-cbb2ba60a05f" />
 
