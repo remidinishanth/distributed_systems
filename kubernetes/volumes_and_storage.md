@@ -1,5 +1,7 @@
-
 ## Volumes
+
+Kubernetes volumes provide a way for containers in a pod to access and share data via the filesystem. 
+
 ![image](https://github.com/user-attachments/assets/2aa50e52-f653-4e8b-8f9a-a02f3dc9a34c)
 
 ![image](https://github.com/user-attachments/assets/f33ddd49-a7d5-4f23-b5df-7a866e248277)
