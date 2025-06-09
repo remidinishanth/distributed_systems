@@ -4,8 +4,6 @@ Kubernetes volumes provide a way for containers in a pod to access and share dat
 
 ![image](https://github.com/user-attachments/assets/2aa50e52-f653-4e8b-8f9a-a02f3dc9a34c)
 
-![image](https://github.com/user-attachments/assets/f33ddd49-a7d5-4f23-b5df-7a866e248277)
-
 <img width="750" alt="image" src="https://github.com/user-attachments/assets/8c07890b-36dc-4b17-bdb6-45b89d73992a" />
 
 At its core, a volume is a directory, possibly with some data in it, which is accessible to the containers in a pod.
@@ -13,6 +11,8 @@ At its core, a volume is a directory, possibly with some data in it, which is ac
 To use a volume, specify the volumes to provide for the Pod in `.spec.volumes` and declare where to mount those volumes into containers in `.spec.containers[*].volumeMounts`.
 
 For each container defined within a Pod, you must independently specify where to mount each volume that the container uses.
+
+![image](https://github.com/user-attachments/assets/f33ddd49-a7d5-4f23-b5df-7a866e248277)
 
 ### Empty dir
 
