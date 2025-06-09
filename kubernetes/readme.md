@@ -70,6 +70,8 @@ Ref: http://bit.ly/9stepsawesome
 
 ### Operator
 
+Operators are Kubernetes extensions that use custom resources to manage applications and their components.
+
 <img width="1189" alt="image" src="https://github.com/user-attachments/assets/77e14f6c-5829-4ac5-88bc-5123d1772f28" />
 
 <img width="1358" alt="image" src="https://github.com/user-attachments/assets/c01c9756-62c3-42c7-b1c6-abe93b43f04b" />
