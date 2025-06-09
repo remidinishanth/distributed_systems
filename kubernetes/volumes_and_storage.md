@@ -45,6 +45,8 @@ A ConfigMap is an API object used to store non-confidential data in key-value pa
 
 <img width="953" alt="image" src="https://github.com/user-attachments/assets/ac7e3803-9a0d-46c9-bb16-4b588ffdc1b0" />
 
+![image](https://github.com/user-attachments/assets/1648079f-c649-40aa-9ad0-5ad2653c9690)
+
 ## Storage
 
 <img width="609" alt="image" src="https://github.com/user-attachments/assets/ee2fe9af-dc81-4fba-a8e9-437ab24aa823" />
@@ -63,9 +65,6 @@ PV: A PV is a storage resource located in the cluster. Administrators can manual
 PVC: A PVC is a storage request made by a user. It works similarly to a pod but consumes PV resources rather than node resources.
 
 CSI: The Container Storage Interface (CSI) is a standard interface that allows container orchestrators to expose exposing arbitrary block and file storage systems to containers they manage.
-
-![image](https://github.com/user-attachments/assets/1648079f-c649-40aa-9ad0-5ad2653c9690)
-
 
 ### Static Provisioning and Dynamic Provisioning
 
