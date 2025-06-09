@@ -1,10 +1,39 @@
 
-### Volumes
+## Volumes
 ![image](https://github.com/user-attachments/assets/2aa50e52-f653-4e8b-8f9a-a02f3dc9a34c)
 
 ![image](https://github.com/user-attachments/assets/f33ddd49-a7d5-4f23-b5df-7a866e248277)
 
-### Storage
+
+### Config Maps
+A ConfigMap is an API object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume.
+
+<img width="953" alt="image" src="https://github.com/user-attachments/assets/ac7e3803-9a0d-46c9-bb16-4b588ffdc1b0" />
+
+### Empty dir
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myvolumes-pod
+spec:
+  containers:
+  - image: alpine
+    imagePullPolicy: IfNotPresent
+    name: myvolumes-container
+    
+    command: [    'sh', '-c', 'echo The Bench Container 1 is Running ; sleep 3600']
+    
+    volumeMounts:
+    - mountPath: /demo
+      name: demo-volume
+  volumes:
+  - name: demo-volume
+    emptyDir: {}
+```
+
+## Storage
 
 <img width="609" alt="image" src="https://github.com/user-attachments/assets/ee2fe9af-dc81-4fba-a8e9-437ab24aa823" />
 
@@ -26,12 +55,6 @@ CSI: The Container Storage Interface (CSI) is a standard interface that allows c
 ### Static Provisioning and Dynamic Provisioning
 
 ![image](https://github.com/user-attachments/assets/56138ffc-0459-49a2-8d7c-15f2a3e2fb27)
-
-
-### Config Maps
-A ConfigMap is an API object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume.
-
-<img width="953" alt="image" src="https://github.com/user-attachments/assets/ac7e3803-9a0d-46c9-bb16-4b588ffdc1b0" />
 
 ### Stateful Sets
 <img width="932" alt="image" src="https://github.com/user-attachments/assets/60a34942-4a9e-4b3d-81fd-cbb2ba60a05f" />
