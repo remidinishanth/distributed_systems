@@ -14,6 +14,9 @@ For each container defined within a Pod, you must independently specify where to
 
 ![image](https://github.com/user-attachments/assets/f33ddd49-a7d5-4f23-b5df-7a866e248277)
 
+<img width="756" alt="image" src="https://github.com/user-attachments/assets/eeff785d-da1d-461b-b518-671434333310" />
+
+
 ### Empty dir
 
 ```
