@@ -6,11 +6,13 @@ Kubernetes volumes provide a way for containers in a pod to access and share dat
 
 ![image](https://github.com/user-attachments/assets/f33ddd49-a7d5-4f23-b5df-7a866e248277)
 
+<img width="750" alt="image" src="https://github.com/user-attachments/assets/8c07890b-36dc-4b17-bdb6-45b89d73992a" />
 
-### Config Maps
-A ConfigMap is an API object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume.
+At its core, a volume is a directory, possibly with some data in it, which is accessible to the containers in a pod.
 
-<img width="953" alt="image" src="https://github.com/user-attachments/assets/ac7e3803-9a0d-46c9-bb16-4b588ffdc1b0" />
+To use a volume, specify the volumes to provide for the Pod in `.spec.volumes` and declare where to mount those volumes into containers in `.spec.containers[*].volumeMounts`.
+
+For each container defined within a Pod, you must independently specify where to mount each volume that the container uses.
 
 ### Empty dir
 
@@ -34,6 +36,14 @@ spec:
   - name: demo-volume
     emptyDir: {}
 ```
+
+### Config Maps
+
+A ConfigMap provides a way to inject configuration data into pods.
+
+A ConfigMap is an API object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume.
+
+<img width="953" alt="image" src="https://github.com/user-attachments/assets/ac7e3803-9a0d-46c9-bb16-4b588ffdc1b0" />
 
 ## Storage
 
