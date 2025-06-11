@@ -1,5 +1,7 @@
 ## Volumes
 
+Awesome tutorial https://medium.com/@dunefro/part-1-4-container-attached-storage-with-openebs-understand-volume-provisioning-in-kubernetes-e7d7497dfe7f 
+
 Kubernetes volumes provide a way for containers in a pod to access and share data via the filesystem. 
 
 ![image](https://github.com/user-attachments/assets/2aa50e52-f653-4e8b-8f9a-a02f3dc9a34c)
