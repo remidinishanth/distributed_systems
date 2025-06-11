@@ -57,3 +57,5 @@ Since different open file table entries can represent the same file, it is a was
 ![image](https://github.com/user-attachments/assets/28a8140f-b032-47fa-93a2-c91d5e172833)
 
 ![image](https://github.com/user-attachments/assets/6e8c7466-c6e3-48e8-8cc3-9fa3befb51c5)
+
+<img width="587" alt="image" src="https://github.com/user-attachments/assets/7d738d8a-77e5-4bc2-b356-6071fd84c030" />
