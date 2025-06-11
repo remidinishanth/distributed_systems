@@ -1,13 +1,12 @@
 ## Systemd
 
-Systemd is a system and service manager for Linux operating systems, primarily functioning as the init system that starts and manages user space processes
+`systemd`, also known as system daemon, is a kind of init software under GNU/Linux operating system.
 
-Systemd acts as PID 1, meaning it's the first process started by the kernel, and it's responsible for bringing up and maintaining other services. 
+Systemd is a system and service manager for Linux operating systems, primarily functioning as the init system that starts and manages user space processes.
 
 While Systemd has become the standard, some distributions still use `SysV` or `LSB` init scripts. 
 
-
-systemd, also known as system daemon, is a kind of init software under GNU/Linux operating system.
+Systemd acts as PID 1, meaning it's the first process started by the kernel, and it's responsible for bringing up and maintaining other services. 
 
 Purpose of development:
 * to provide a better framework for representing dependencies between services
