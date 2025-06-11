@@ -22,8 +22,10 @@ Ref: https://docs.rockylinux.org/books/admin_guide/16-about-sytemd/
 
 ![image](https://github.com/user-attachments/assets/05b3c649-1ef9-4859-8d77-06d5d3eb5143)
 
-
 ![image](https://github.com/user-attachments/assets/a4c59c3a-3b1b-42be-a3a4-09e8bc51af50)
+
+<img width="587" alt="image" src="https://github.com/user-attachments/assets/b9f62711-c5d3-419a-a097-21841eace690" />
+
 
 Cheatsheet:
 
