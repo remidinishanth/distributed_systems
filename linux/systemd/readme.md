@@ -20,4 +20,15 @@ Ref: https://docs.rockylinux.org/books/admin_guide/16-about-sytemd/
 > systemd provides aggressive parallelization capabilities, uses socket and D-Bus activation for starting services, offers on-demand starting of daemons, keeps track of processes using Linux cgroups, supports snapshotting and restoring of the system state, maintains mount and automount points and implements a powerful transactional dependency-based service control logic. It can work as a drop-in replacement for sysvinit.
 
 
+![image](https://github.com/user-attachments/assets/05b3c649-1ef9-4859-8d77-06d5d3eb5143)
+
+
 ![image](https://github.com/user-attachments/assets/a4c59c3a-3b1b-42be-a3a4-09e8bc51af50)
+
+Cheatsheet:
+
+* systemctl list-units | grep postgres
+* systemctl status name.service
+* systemctl start name.service
+* systemctl stop name.service
+* systemctl restart name.service
