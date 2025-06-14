@@ -1,0 +1,23 @@
+# The main title of your website.
+title: Distributed Systems Notes
+
+# A short description of your website for search engines.
+description: My notes and projects for the Distributed Systems course.
+
+# Use GitHub Flavored Markdown for more features.
+markdown: GFM
+
+# List of Jekyll plugins to use.
+plugins:
+  - jekyll-relative-links
+
+# Configuration for the jekyll-relative-links plugin.
+# This automatically converts links like [file](file.md) to the correct HTML link.
+relative_links:
+  enabled:     true
+  collections: true
+
+# Force Jekyll to include the root README.md file in the build process.
+# This is REQUIRED for your homepage to be generated.
+include:
+  - README.md
