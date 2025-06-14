@@ -1,40 +1,93 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole site, values
-# which you are expected to set up once and rarely edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. You need to restart the server process to reflect your changes.
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.author }}, and so on.
+# Name of the workflow
+name: Build and Deploy Jekyll Site
 
-# The main title of your website. Appears in the browser tab and site header.
-title: Distributed Systems Notes
+# Controls when the workflow will run
+on:
+  # Runs on pushes targeting the default branch (usually "main")
+  push:
+    branches: ["main"]
 
-# A short description of your website. Used by search engines.
-description: My notes and projects for the Distributed Systems course.
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
-# The Markdown processor to use. GFM is GitHub Flavored Markdown.
-markdown: GFM
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
-# List of Jekyll plugins to use.
-plugins:
-  - jekyll-relative-links
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
-# Configuration for the jekyll-relative-links plugin.
-# This automatically converts .md links to .html links.
-relative_links:
-  enabled:     true
-  collections: true
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Check out your repository's code
+      - name: Checkout
+        uses: actions/checkout@v4
 
-# A list of files and folders to explicitly include in the site build.
-# By default, Jekyll ignores README.md, so we must include it.
-include:
-  - README.md
-  # You could include other files here too, like:
-  # - LICENSE.md
+      # Step 2: Automatically generate README.md files for directories
+      - name: Generate Directory READMEs
+        run: |
+          # Find all directories, but exclude hidden ones (.git, .github) and the Jekyll site output (_site)
+          find . -mindepth 1 -type d -not -path '*/\.*' -not -path './_site*' | while read -r dir; do
+            # Check if an index.md or README.md already exists to avoid overwriting your work
+            if [ ! -f "$dir/index.md" ] && [ ! -f "$dir/README.md" ]; then
+              echo "Creating README for directory: $dir"
+              
+              # Create the README.md file with Jekyll Front Matter to apply site styles
+              echo -e "---\nlayout: default\n---\n\n# Index of \`$dir\`\n" > "$dir/README.md"
+              
+              # Add a link to go "up" to the parent directory for easier navigation
+              echo -e "### [../](../)\n" >> "$dir/README.md"
+              
+              # List all subdirectories within this directory
+              echo -e "## Directories\n" >> "$dir/README.md"
+              ls -d "$dir"/*/ 2>/dev/null | while read -r subdir; do
+                base_subdir=$(basename "$subdir")
+                echo "- [$base_subdir/]($base_subdir/)" >> "$dir/README.md"
+              done
+              
+              # List all files within this directory
+              echo -e "\n## Files\n" >> "$dir/README.md"
+              find "$dir" -maxdepth 1 -type f -not -name 'README.md' | while read -r file; do
+                base_file=$(basename "$file")
+                echo "- [$base_file]($base_file)" >> "$dir/README.md"
+              done
+            else
+              echo "Skipping directory (index already exists): $dir"
+            fi
+          done
 
-# You can add more settings here as needed, like:
-# author: Your Name
-# email: your-email@example.com
+      # Step 3: Setup GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # Step 4: Build the site with Jekyll
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      # Step 5: Upload the built site as an artifact
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    # This job depends on the 'build' job completing successfully
+    needs: build
+    steps:
+      # Step 6: Deploy the uploaded artifact to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
