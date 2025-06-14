@@ -77,6 +77,10 @@
 
 * Step 8 - The users are presented with a login window. The system is now ready.
 
+
+![image](https://github.com/user-attachments/assets/b1d2a670-5a38-405e-a849-3f21e7e2f9a1)
+
+
 ### Network
 
 ![image](https://github.com/user-attachments/assets/65f54108-b5c7-4785-b62d-5d3ffcb01813)
