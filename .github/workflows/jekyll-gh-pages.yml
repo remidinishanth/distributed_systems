@@ -1,8 +1,9 @@
-# Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+# Name of the workflow
+name: Build and Deploy Jekyll Site
 
+# Controls when the workflow will run
 on:
-  # Runs on pushes targeting the default branch
+  # Runs on pushes targeting the default branch (usually "main")
   push:
     branches: ["main"]
 
@@ -15,8 +16,7 @@ permissions:
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# Allow only one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -26,15 +26,55 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # Step 1: Check out your repository's code
       - name: Checkout
         uses: actions/checkout@v4
+
+      # Step 2: Automatically generate README.md files for directories
+      - name: Generate Directory READMEs
+        run: |
+          # Find all directories, but exclude hidden ones (.git, .github) and the Jekyll site output (_site)
+          find . -mindepth 1 -type d -not -path '*/\.*' -not -path './_site*' | while read -r dir; do
+            # Check if an index.md or README.md already exists to avoid overwriting your work
+            if [ ! -f "$dir/index.md" ] && [ ! -f "$dir/README.md" ]; then
+              echo "Creating README for directory: $dir"
+              
+              # Create the README.md file with Jekyll Front Matter to apply site styles
+              echo -e "---\nlayout: default\n---\n\n# Index of \`$dir\`\n" > "$dir/README.md"
+              
+              # Add a link to go "up" to the parent directory for easier navigation
+              echo -e "### [../](../)\n" >> "$dir/README.md"
+              
+              # List all subdirectories within this directory
+              echo -e "## Directories\n" >> "$dir/README.md"
+              ls -d "$dir"/*/ 2>/dev/null | while read -r subdir; do
+                base_subdir=$(basename "$subdir")
+                echo "- [$base_subdir/]($base_subdir/)" >> "$dir/README.md"
+              done
+              
+              # List all files within this directory
+              echo -e "\n## Files\n" >> "$dir/README.md"
+              find "$dir" -maxdepth 1 -type f -not -name 'README.md' | while read -r file; do
+                base_file=$(basename "$file")
+                echo "- [$base_file]($base_file)" >> "$dir/README.md"
+              done
+            else
+              echo "Skipping directory (index already exists): $dir"
+            fi
+          done
+
+      # Step 3: Setup GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
+      # Step 4: Build the site with Jekyll
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
           destination: ./_site
+
+      # Step 5: Upload the built site as an artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
@@ -44,8 +84,10 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    # This job depends on the 'build' job completing successfully
     needs: build
     steps:
+      # Step 6: Deploy the uploaded artifact to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
