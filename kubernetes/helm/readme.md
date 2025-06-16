@@ -12,6 +12,8 @@
 
 <img width="1545" alt="image" src="https://github.com/user-attachments/assets/20ee412f-486f-4058-8de6-ab8863f9d1ed" />
 
+## Commands
+<img width="1536" alt="image" src="https://github.com/user-attachments/assets/da4a8b37-89fd-476e-9aa2-67ed720c2fee" />
 
 ## V2 vs V3
 
