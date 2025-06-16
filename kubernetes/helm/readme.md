@@ -15,6 +15,11 @@
 ## Commands
 <img width="1536" alt="image" src="https://github.com/user-attachments/assets/da4a8b37-89fd-476e-9aa2-67ed720c2fee" />
 
+<img width="1673" alt="image" src="https://github.com/user-attachments/assets/7520a785-9923-4bc3-8e70-0c4b9345126e" />
+
+<img width="1673" alt="image" src="https://github.com/user-attachments/assets/2876803e-b37b-48e4-b649-8a9a5a1d4ece" />
+
+
 ## V2 vs V3
 
 <img width="1495" alt="image" src="https://github.com/user-attachments/assets/50ee5311-efe9-4fd1-ab7f-7e4e07cfdcce" />
