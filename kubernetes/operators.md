@@ -2,9 +2,15 @@
 
 > People who run workloads on Kubernetes often like to use automation to take care of repeatable tasks. The operator pattern captures how you can write code to automate a task beyond what Kubernetes itself provides.
 
-
-
 https://kubernetes.io/docs/concepts/extend-kubernetes/operator/#operators-in-kubernetes
 
 
-Also read https://www.cncf.io/blog/2022/06/15/kubernetes-operators-what-are-they-some-examples/
+Operators are Kubernetes extensions that use custom resources to manage applications and their components.
+
+<img width="1189" alt="image" src="https://github.com/user-attachments/assets/77e14f6c-5829-4ac5-88bc-5123d1772f28" />
+
+<img width="1358" alt="image" src="https://github.com/user-attachments/assets/c01c9756-62c3-42c7-b1c6-abe93b43f04b" />
+
+
+
+[TODO] https://www.cncf.io/blog/2022/06/15/kubernetes-operators-what-are-they-some-examples/
