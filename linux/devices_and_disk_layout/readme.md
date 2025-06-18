@@ -62,7 +62,11 @@ networking subsystem.
 
 ![image](https://github.com/user-attachments/assets/d2e80327-aaaa-4603-a0b7-b4ad8fa5ed01)
 
+![image](https://github.com/user-attachments/assets/44ff55a4-0956-49e0-8f78-0a9befeb5214)
+
 https://dev.to/shankarsurya035/how-to-create-lvm-partition-in-linux-dgo
+
+## Logical Volume Management
 
 LVM creates a logical volume that aggregates multiple disks to stripe reads and writes. 
 It also serves as a scalable volume for maintenance.
