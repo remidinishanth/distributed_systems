@@ -66,6 +66,9 @@ networking subsystem.
 
 https://dev.to/shankarsurya035/how-to-create-lvm-partition-in-linux-dgo
 
+
+> Special files for char drivers are identified by a “c” in the first column of the output of ls -l. Block devices appear in /dev as well, but they are identified by a “b.” The focus of this chapter is on char devices, but much of the following information applies to block devices as well.
+
 ## Logical Volume Management
 
 LVM creates a logical volume that aggregates multiple disks to stripe reads and writes. 
