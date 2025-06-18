@@ -4,6 +4,8 @@
 
 https://kubernetes.io/docs/concepts/extend-kubernetes/operator/#operators-in-kubernetes
 
+<img width="731" alt="image" src="https://github.com/user-attachments/assets/5dca270e-7b20-4e87-b7a7-55121b0fb480" />
+
 
 Operators are Kubernetes extensions that use custom resources to manage applications and their components.
 
