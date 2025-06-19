@@ -138,6 +138,9 @@ Storage classes knows how to provide the PVs on appropriate disks.
 <img width="1129" alt="image" src="https://github.com/user-attachments/assets/2b1ad945-54dd-412d-bc91-c6a8707ab9c2" />
 
 
+<img width="1199" alt="image" src="https://github.com/user-attachments/assets/f8574bc8-a2bd-40a0-ae35-4b14c26968b2" />
+
+
 
 #### StatefulSet vs. DaemonSet vs. Deployment
 * StatefulSet: Manages stateful applications requiring stable identities and persistent storage.
