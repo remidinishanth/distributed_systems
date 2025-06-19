@@ -142,6 +142,9 @@ Storage classes knows how to provide the PVs on appropriate disks.
 
 ReadWriteOnce (RWO): The volume can be mounted as read-write by a single **node**. This is at node level not at Pod level. If the access modes are specified as ReadWriteOncePod, the volume is constrained and can be mounted on only a single Pod.
 
+Example:
+<img width="1236" alt="image" src="https://github.com/user-attachments/assets/b6ef63da-7a45-4aee-961b-47bb91f4315c" />
+
 
 #### StatefulSet vs. DaemonSet vs. Deployment
 * StatefulSet: Manages stateful applications requiring stable identities and persistent storage.
