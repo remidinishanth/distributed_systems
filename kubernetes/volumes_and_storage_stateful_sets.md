@@ -140,6 +140,7 @@ Storage classes knows how to provide the PVs on appropriate disks.
 
 <img width="1199" alt="image" src="https://github.com/user-attachments/assets/f8574bc8-a2bd-40a0-ae35-4b14c26968b2" />
 
+ReadWriteOnce (RWO): The volume can be mounted as read-write by a single **node**. This is at node level not at Pod level.
 
 
 #### StatefulSet vs. DaemonSet vs. Deployment
