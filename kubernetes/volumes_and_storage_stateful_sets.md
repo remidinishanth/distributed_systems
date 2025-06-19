@@ -114,6 +114,11 @@ A headless Service is a regular Kubernetes Service object without a ClusterIP ad
 (spec.clusterIP set to None). It becomes a StatefulSet’s governing Service when you list
 it in the StatefulSet config under spec.serviceName.
 
+## Stateful Sets
+
+<img width="1016" alt="image" src="https://github.com/user-attachments/assets/e51fe713-1aae-4eba-8bc7-04bc0d47b806" />
+
+
 #### StatefulSet vs. DaemonSet vs. Deployment
 * StatefulSet: Manages stateful applications requiring stable identities and persistent storage.
 * DaemonSet: Ensures a copy of a pod runs on every node for node-level services like logging.
