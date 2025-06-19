@@ -116,7 +116,11 @@ it in the StatefulSet config under spec.serviceName.
 
 ## Stateful Sets
 
+Pod mounts volume
 <img width="1016" alt="image" src="https://github.com/user-attachments/assets/e51fe713-1aae-4eba-8bc7-04bc0d47b806" />
+
+PV and PVC are binded
+![image](https://github.com/user-attachments/assets/276daeaf-f2a9-45e9-bdcb-505a14c806ec)
 
 
 #### StatefulSet vs. DaemonSet vs. Deployment
