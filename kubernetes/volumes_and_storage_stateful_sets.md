@@ -122,6 +122,8 @@ Pod mounts volume
 PV and PVC are binded
 ![image](https://github.com/user-attachments/assets/276daeaf-f2a9-45e9-bdcb-505a14c806ec)
 
+![image](https://github.com/user-attachments/assets/51cfd7df-7e08-4a4c-a324-d70f050779fa)
+
 
 #### StatefulSet vs. DaemonSet vs. Deployment
 * StatefulSet: Manages stateful applications requiring stable identities and persistent storage.
