@@ -124,6 +124,20 @@ PV and PVC are binded
 
 ![image](https://github.com/user-attachments/assets/51cfd7df-7e08-4a4c-a324-d70f050779fa)
 
+### Storage classes and Dynamic Provisioning
+
+Representation of entire class of storage
+![image](https://github.com/user-attachments/assets/054fd039-5af9-4a20-be8b-6adf593d2aa1)
+
+Admin creates storage class, and now admin no longer need to pre-provision all of the PVs
+
+Storage classes knows how to provide the PVs on appropriate disks.
+
+![image](https://github.com/user-attachments/assets/1f027460-0210-4045-b862-660a8ee62b34)
+
+<img width="1129" alt="image" src="https://github.com/user-attachments/assets/2b1ad945-54dd-412d-bc91-c6a8707ab9c2" />
+
+
 
 #### StatefulSet vs. DaemonSet vs. Deployment
 * StatefulSet: Manages stateful applications requiring stable identities and persistent storage.
