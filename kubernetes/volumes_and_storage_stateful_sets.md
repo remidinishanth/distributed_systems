@@ -135,6 +135,9 @@ Dynamic Provisioning
 
 ### Summary
 
+![image](https://github.com/user-attachments/assets/a93e8128-8d5d-4823-b0e1-8a7ecad0f47e)
+
+
 ![image](https://github.com/user-attachments/assets/56138ffc-0459-49a2-8d7c-15f2a3e2fb27)
 
 ### CSI
