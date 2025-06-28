@@ -1,3 +1,10 @@
+Read awesome resources: 
+* https://yuminlee2.medium.com/kubernetes-service-networking-2169f04ce02a
+* CNI https://yuminlee2.medium.com/kubernetes-container-network-interface-cni-ee5b21514664
+* Weave net plugin: https://yuminlee2.medium.com/kubernetes-weave-net-cni-plugin-810849203c73
+
+## Networking
+
 The official documentation says kubernetes networking model requires:
 * all containers can communicate with all other containers without NAT
 * all nodes can communicate with all containers (and vice-versa) without NAT
