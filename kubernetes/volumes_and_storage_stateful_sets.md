@@ -67,6 +67,24 @@ A ConfigMap is an API object used to store non-confidential data in key-value pa
 ![image](https://github.com/user-attachments/assets/cf8f5462-555d-4d6a-aff0-1b5f620cbb76)
 
 
+### Secrets
+
+Secrets are API objects in Kubernetes, which store sensitive information like passwords, keys, and tokens in base64 format. 
+
+Secrets separate sensitive data from application code, making it easier to manage and modify independently.
+
+`-n : no trailing newline`
+
+![image](https://github.com/user-attachments/assets/42b8a973-a854-433a-b01a-e99d8f625c25)
+
+
+![image](https://github.com/user-attachments/assets/d1880dc5-8cac-4b35-b690-ac6a0f57b843)
+
+
+![image](https://github.com/user-attachments/assets/dc0b940f-e37a-43f6-8332-7bf910bfbfc0)
+
+
+Ref: https://yuminlee2.medium.com/kubernetes-secrets-4287b5a83606
 
 ## Storage
 
