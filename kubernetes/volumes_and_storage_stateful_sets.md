@@ -63,6 +63,7 @@ A ConfigMap is an API object used to store non-confidential data in key-value pa
 
 <img width="953" alt="image" src="https://github.com/user-attachments/assets/ac7e3803-9a0d-46c9-bb16-4b588ffdc1b0" />
 
+
 ![image](https://github.com/user-attachments/assets/cf8f5462-555d-4d6a-aff0-1b5f620cbb76)
 
 
