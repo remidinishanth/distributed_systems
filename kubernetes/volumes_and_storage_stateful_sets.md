@@ -29,6 +29,11 @@ For each container defined within a Pod, you must independently specify where to
 
 ### Empty dir
 
+An emptyDir in Kubernetes is a type of volume that is created as empty when a Pod is assigned to a Node. 
+It exists as long as that Pod is running on that Node.
+
+Provides a temporary directory that all containers in a Pod can read and write to.
+
 ```
 apiVersion: v1
 kind: Pod
