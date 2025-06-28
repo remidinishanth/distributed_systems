@@ -101,14 +101,14 @@ Ref: https://seifrajhi.github.io/blog/kubernetes-storage-deep-dive/
 
 <img width="738" alt="image" src="https://github.com/user-attachments/assets/a97aae2a-db8e-4c91-83f7-3ce3d9a62528" />
 
-### Deep dive
-
-<img width="609" alt="image" src="https://github.com/user-attachments/assets/ee2fe9af-dc81-4fba-a8e9-437ab24aa823" />
-
 Kubernetes Storage Options — Persistent Volumes (PV), Persistent Volume Claims (PVC), Storage Classes (SC).
 * Persistent Volume — low-level representation of a storage volume.
 * Persistent Volume Claim — binding between a Pod and a Persistent Volume.
 * Storage Class — allows for dynamic provisioning of Persistent Volumes.
+
+### Deep dive
+
+<img width="609" alt="image" src="https://github.com/user-attachments/assets/ee2fe9af-dc81-4fba-a8e9-437ab24aa823" />
 
 <img width="931" alt="image" src="https://github.com/user-attachments/assets/e43b8d82-a66b-40f1-91d8-5ef5741116c7" />
 
