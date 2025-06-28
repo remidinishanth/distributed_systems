@@ -14,9 +14,15 @@ At its core, a volume is a directory, possibly with some data in it, which is ac
 
 To use a volume, specify the volumes to provide for the Pod in `.spec.volumes` and declare where to mount those volumes into containers in `.spec.containers[*].volumeMounts`.
 
+![image](https://github.com/user-attachments/assets/2e56f26b-f725-4fbd-af16-453d01c137ec)
+
 For each container defined within a Pod, you must independently specify where to mount each volume that the container uses.
 
 ![image](https://github.com/user-attachments/assets/f33ddd49-a7d5-4f23-b5df-7a866e248277)
+
+![image](https://github.com/user-attachments/assets/afee4f8a-387a-402b-87df-209982e1360e)
+
+## Special Volumes
 
 <img width="756" alt="image" src="https://github.com/user-attachments/assets/eeff785d-da1d-461b-b518-671434333310" />
 
