@@ -82,6 +82,13 @@ Secrets separate sensitive data from application code, making it easier to manag
 
 Ref: https://yuminlee2.medium.com/kubernetes-secrets-4287b5a83606
 
+
+## Why do we need PV?
+
+* Volume decouples the storage from the Container. Its lifecycle is coupled to a pod. It enables safe container restarts and sharing data between containers in a pod.
+
+* Persistent Volume decouples the storage from the Pod. Its lifecycle is independent. It enables safe pod restarts and sharing data between pods. Allows data to persist even if the Pod is deleted. 
+
 ## Storage
 
 Awesome tutorial 
@@ -93,13 +100,6 @@ Awesome tutorial
 Ref: https://seifrajhi.github.io/blog/kubernetes-storage-deep-dive/
 
 <img width="738" alt="image" src="https://github.com/user-attachments/assets/a97aae2a-db8e-4c91-83f7-3ce3d9a62528" />
-
-
-#### Why do we need PV?
-
-* Volume decouples the storage from the Container. Its lifecycle is coupled to a pod. It enables safe container restarts and sharing data between containers in a pod.
-
-* Persistent Volume decouples the storage from the Pod. Its lifecycle is independent. It enables safe pod restarts and sharing data between pods. Allows data to persist even if the Pod is deleted. 
 
 ### Deep dive
 
