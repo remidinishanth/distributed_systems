@@ -129,12 +129,13 @@ CSI: The Container Storage Interface (CSI) is a standard interface that allows c
 Static Provisioning
 ![image](https://github.com/user-attachments/assets/fb365f50-fb40-433a-9886-6186b54bfb4f)
 
-
-![image](https://github.com/user-attachments/assets/56138ffc-0459-49a2-8d7c-15f2a3e2fb27)
-
 Dynamic Provisioning
 
 <img width="931" alt="image" src="https://github.com/user-attachments/assets/e43b8d82-a66b-40f1-91d8-5ef5741116c7" />
+
+### Summary
+
+![image](https://github.com/user-attachments/assets/56138ffc-0459-49a2-8d7c-15f2a3e2fb27)
 
 ### CSI
 
