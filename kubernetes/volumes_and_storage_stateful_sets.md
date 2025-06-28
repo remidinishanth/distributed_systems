@@ -106,11 +106,12 @@ Kubernetes Storage Options — Persistent Volumes (PV), Persistent Volume Claims
 * Persistent Volume Claim — binding between a Pod and a Persistent Volume.
 * Storage Class — allows for dynamic provisioning of Persistent Volumes.
 
+![image](https://github.com/user-attachments/assets/7d3c03c8-478a-4662-a224-d3a97176fe76)
+
+
 ### Deep dive
 
 <img width="609" alt="image" src="https://github.com/user-attachments/assets/ee2fe9af-dc81-4fba-a8e9-437ab24aa823" />
-
-![image](https://github.com/user-attachments/assets/7d3c03c8-478a-4662-a224-d3a97176fe76)
 
 PV: A PV is a storage resource located in the cluster. Administrators can manually provision PVs, and Kubernetes can use storage classes to dynamically provision PVs.
 
