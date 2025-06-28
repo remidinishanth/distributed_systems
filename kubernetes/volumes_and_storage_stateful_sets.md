@@ -108,6 +108,9 @@ Kubernetes Storage Options — Persistent Volumes (PV), Persistent Volume Claims
 
 ![image](https://github.com/user-attachments/assets/7d3c03c8-478a-4662-a224-d3a97176fe76)
 
+![image](https://github.com/user-attachments/assets/f81de816-4217-4476-9e79-ecf70d7ca664)
+
+Ref: https://seifrajhi.github.io/blog/kubernetes-storage-deep-dive/
 
 ### Deep dive
 
@@ -120,11 +123,6 @@ PVC: A PVC is a storage request made by a user. It works similarly to a pod but 
 CSI: The Container Storage Interface (CSI) is a standard interface that allows container orchestrators to expose arbitrary block and file storage systems to containers they manage.
 
 ![image](https://github.com/user-attachments/assets/1c2e8580-dfe6-4a08-9ea8-38bec1507abf)
-
-
-![image](https://github.com/user-attachments/assets/f81de816-4217-4476-9e79-ecf70d7ca664)
-
-Ref: https://seifrajhi.github.io/blog/kubernetes-storage-deep-dive/
 
 ### Static Provisioning and Dynamic Provisioning
 
