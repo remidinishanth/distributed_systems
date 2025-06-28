@@ -1,7 +1,3 @@
-Awesome tutorial 
-* https://medium.com/@dunefro/part-1-4-container-attached-storage-with-openebs-understand-volume-provisioning-in-kubernetes-e7d7497dfe7f
-* https://www.digihunch.com/2021/06/kubernetes-storage-explained/
-
 ## Volumes
 
 Kubernetes volumes provide a way for containers in a pod to access and share data via the filesystem. 
@@ -87,6 +83,10 @@ Secrets separate sensitive data from application code, making it easier to manag
 Ref: https://yuminlee2.medium.com/kubernetes-secrets-4287b5a83606
 
 ## Storage
+
+Awesome tutorial 
+* https://medium.com/@dunefro/part-1-4-container-attached-storage-with-openebs-understand-volume-provisioning-in-kubernetes-e7d7497dfe7f
+* https://www.digihunch.com/2021/06/kubernetes-storage-explained/
 
 ![image](https://github.com/user-attachments/assets/da5f45cb-b404-4125-a52e-349133323357)
 
