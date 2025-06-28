@@ -73,8 +73,8 @@ Ref: https://seifrajhi.github.io/blog/kubernetes-storage-deep-dive/
 <img width="609" alt="image" src="https://github.com/user-attachments/assets/ee2fe9af-dc81-4fba-a8e9-437ab24aa823" />
 
 Kubernetes Storage Options — Persistent Volumes (PV), Persistent Volume Claims (PVC), Storage Classes (SC).
-* Persistent Volume — low level representation of a storage volume.
-* Persistent Volume Claim — binding between a Pod and Persistent Volume.
+* Persistent Volume — low-level representation of a storage volume.
+* Persistent Volume Claim — binding between a Pod and a Persistent Volume.
 * Storage Class — allows for dynamic provisioning of Persistent Volumes.
 
 <img width="931" alt="image" src="https://github.com/user-attachments/assets/e43b8d82-a66b-40f1-91d8-5ef5741116c7" />
@@ -95,6 +95,10 @@ CSI: The Container Storage Interface (CSI) is a standard interface that allows c
 Ref: https://seifrajhi.github.io/blog/kubernetes-storage-deep-dive/
 
 ### Static Provisioning and Dynamic Provisioning
+
+Static Provisioning
+![image](https://github.com/user-attachments/assets/fb365f50-fb40-433a-9886-6186b54bfb4f)
+
 
 ![image](https://github.com/user-attachments/assets/56138ffc-0459-49a2-8d7c-15f2a3e2fb27)
 
