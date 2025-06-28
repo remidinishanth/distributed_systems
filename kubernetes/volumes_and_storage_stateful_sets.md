@@ -56,6 +56,14 @@ A ConfigMap is an API object used to store non-confidential data in key-value pa
 
 ## Storage
 
+![image](https://github.com/user-attachments/assets/da5f45cb-b404-4125-a52e-349133323357)
+
+Ref: https://seifrajhi.github.io/blog/kubernetes-storage-deep-dive/
+
+<img width="738" alt="image" src="https://github.com/user-attachments/assets/a97aae2a-db8e-4c91-83f7-3ce3d9a62528" />
+
+### Deep dive
+
 <img width="609" alt="image" src="https://github.com/user-attachments/assets/ee2fe9af-dc81-4fba-a8e9-437ab24aa823" />
 
 Kubernetes Storage Options — Persistent Volumes (PV), Persistent Volume Claims (PVC), Storage Classes (SC).
@@ -67,7 +75,7 @@ Kubernetes Storage Options — Persistent Volumes (PV), Persistent Volume Claims
 
 ![image](https://github.com/user-attachments/assets/7d3c03c8-478a-4662-a224-d3a97176fe76)
 
-PV: A PV is a storage resource located in the cluster. Administrators can manually provision PVs, and Kubernetes can use storage classes to dynamically provisioned PVs.
+PV: A PV is a storage resource located in the cluster. Administrators can manually provision PVs, and Kubernetes can use storage classes to dynamically provision PVs.
 
 PVC: A PVC is a storage request made by a user. It works similarly to a pod but consumes PV resources rather than node resources.
 
@@ -75,6 +83,10 @@ CSI: The Container Storage Interface (CSI) is a standard interface that allows c
 
 ![image](https://github.com/user-attachments/assets/1c2e8580-dfe6-4a08-9ea8-38bec1507abf)
 
+
+![image](https://github.com/user-attachments/assets/f81de816-4217-4476-9e79-ecf70d7ca664)
+
+Ref: https://seifrajhi.github.io/blog/kubernetes-storage-deep-dive/
 
 ### Static Provisioning and Dynamic Provisioning
 
@@ -84,7 +96,7 @@ CSI: The Container Storage Interface (CSI) is a standard interface that allows c
 
 In Kubernetes, in-tree storage drivers were storage plugins that were directly part of the core Kubernetes code. They were being phased out in favor of CSI (Container Storage Interface) drivers, which are plug-ins that are separate from the Kubernetes core.
 
-Prior to CSI, Kubernetes provided a powerful volume plugin system. These volume plugins were “in-tree” meaning their code was part of the core Kubernetes code and shipped with the core Kubernetes binaries. 
+Before CSI, Kubernetes provided a powerful volume plugin system. These volume plugins were “in-tree” meaning their code was part of the core Kubernetes code and shipped with the core Kubernetes binaries. 
 
 However, adding support for new volume plugins to Kubernetes was challenging. Vendors that wanted to add support for their storage system to Kubernetes (or even fix a bug in an existing volume plugin) were forced to align with the Kubernetes release process. 
 
