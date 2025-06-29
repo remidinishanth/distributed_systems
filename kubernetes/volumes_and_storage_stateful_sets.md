@@ -4,6 +4,8 @@
 
 <img width="1194" alt="image" src="https://github.com/user-attachments/assets/5f14231a-957a-4e4a-9547-d423a1546aa1" />
 
+<img width="1197" alt="image" src="https://github.com/user-attachments/assets/fd67a4d4-7621-4155-afe7-93250a405af0" />
+
 Ref: Kubernetes Storage Lingo 101 talk
 
 ## Volumes
