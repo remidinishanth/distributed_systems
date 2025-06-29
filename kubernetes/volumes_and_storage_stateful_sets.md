@@ -111,6 +111,8 @@ PVC doesn't have any details regarding to where the storage is etc. **Portabilit
 
 ![image](https://github.com/user-attachments/assets/384e3899-6068-477a-a98e-8538c661fe7f)
 
+<img width="998" alt="image" src="https://github.com/user-attachments/assets/f517add5-70a4-4bd6-9798-2ce996ff20bd" />
+
 
 
 * Volume decouples the storage from the Container. Its lifecycle is coupled to a pod. It enables safe container restarts and sharing data between containers in a pod.
