@@ -14,6 +14,9 @@ Kubernetes volumes provide a way for containers in a pod to access and share dat
 
 ![image](https://github.com/user-attachments/assets/2aa50e52-f653-4e8b-8f9a-a02f3dc9a34c)
 
+<img width="1197" alt="image" src="https://github.com/user-attachments/assets/68c2796e-1b56-41b8-a39b-7b35b5372390" />
+
+
 <img width="750" alt="image" src="https://github.com/user-attachments/assets/8c07890b-36dc-4b17-bdb6-45b89d73992a" />
 
 At its core, a volume is a directory, possibly with some data in it, which is accessible to the containers in a pod.
