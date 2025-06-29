@@ -143,10 +143,12 @@ CSI: The Container Storage Interface (CSI) is a standard interface that allows c
 
 ### Static Provisioning and Dynamic Provisioning
 
-Static Provisioning
+#### Static Provisioning
 ![image](https://github.com/user-attachments/assets/fb365f50-fb40-433a-9886-6186b54bfb4f)
 
-Dynamic Provisioning
+#### Dynamic Provisioning
+
+The implementation of dynamic volume provisioning is based on the StorageClass abstraction.
 
 <img width="931" alt="image" src="https://github.com/user-attachments/assets/e43b8d82-a66b-40f1-91d8-5ef5741116c7" />
 
