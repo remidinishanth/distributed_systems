@@ -107,11 +107,6 @@ Because this data needs to be accessible from any cluster node, it must be store
 Ref: Kubernetes in Action
 
 
-### Kubernetes docs
-
-![image](https://github.com/user-attachments/assets/ad3f9889-b28f-442c-b69c-f229166bb5bd)
-
-
 ## Storage
 
 Awesome tutorial 
@@ -132,6 +127,10 @@ Kubernetes Storage Options — Persistent Volumes (PV), Persistent Volume Claims
 ![image](https://github.com/user-attachments/assets/7d3c03c8-478a-4662-a224-d3a97176fe76)
 
 <img width="1026" alt="image" src="https://github.com/user-attachments/assets/78328ede-3760-4da7-965c-6e07f3b34d01" />
+
+### Kubernetes docs
+
+![image](https://github.com/user-attachments/assets/ad3f9889-b28f-442c-b69c-f229166bb5bd)
 
 
 ![image](https://github.com/user-attachments/assets/f81de816-4217-4476-9e79-ecf70d7ca664)
