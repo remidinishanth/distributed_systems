@@ -94,6 +94,11 @@ Ref: https://yuminlee2.medium.com/kubernetes-secrets-4287b5a83606
 
 <img width="1035" alt="image" src="https://github.com/user-attachments/assets/f55ae0d0-5ee9-4b24-b523-4c0781ade0c0" />
 
+If you’re thinking of using a hostPath volume as the place to store a database’s
+data directory, think again. Because the volume’s contents are stored on a specific
+node’s filesystem, when the database pod gets rescheduled to another node, it will no
+longer see the data.
+
 Ref: Kubernetes in Action
 
 ## Storage
