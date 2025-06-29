@@ -107,7 +107,10 @@ If you have your Pod on GCE, then you can port it to OnPrem or to AWS
 
 Think in terms of Cluster Admin Persona and User Persona. Admins provide storage, user need not worry, they can just port the application.
 
-PVC doesn't have any details regarding to where the storage is etc. Portability.
+PVC doesn't have any details regarding to where the storage is etc. **Portability**.
+
+![image](https://github.com/user-attachments/assets/384e3899-6068-477a-a98e-8538c661fe7f)
+
 
 
 * Volume decouples the storage from the Container. Its lifecycle is coupled to a pod. It enables safe container restarts and sharing data between containers in a pod.
