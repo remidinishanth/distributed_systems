@@ -106,6 +106,12 @@ Because this data needs to be accessible from any cluster node, it must be store
 
 Ref: Kubernetes in Action
 
+
+### Kubernetes docs
+
+![image](https://github.com/user-attachments/assets/ad3f9889-b28f-442c-b69c-f229166bb5bd)
+
+
 ## Storage
 
 Awesome tutorial 
