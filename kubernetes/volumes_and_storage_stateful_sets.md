@@ -99,6 +99,11 @@ data directory, think again. Because the volume’s contents are stored on a spe
 node’s filesystem, when the database pod gets rescheduled to another node, it will no
 longer see the data.
 
+When an application running in a pod needs to persist data to disk and have that
+same data available even when the pod is rescheduled to another node, you can’t use
+any of the volume types we’ve mentioned so far. 
+Because this data needs to be accessible from any cluster node, it must be stored on some type of network-attached storage (NAS).
+
 Ref: Kubernetes in Action
 
 ## Storage
