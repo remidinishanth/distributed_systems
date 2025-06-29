@@ -105,9 +105,12 @@ If you have your Pod on GCE, then you can port it to OnPrem or to AWS
 
 ![image](https://github.com/user-attachments/assets/17931b9f-81d1-41d5-be28-43b009ab4f37)
 
-Think in terms of Cluster Admin Persona and User Persona. Admins provide storage, user need not worry, they can just port the application.
+Think in terms of Cluster Admin Persona and User Persona. Admins provide storage, users need not worry, they can just port the application.
 
-PVC doesn't have any details regarding to where the storage is etc. **Portability**.
+<img width="953" alt="image" src="https://github.com/user-attachments/assets/d4c58e3b-4930-4546-bbe8-9b8f95f5564a" />
+
+
+PVC doesn't have any details regarding where the storage is, etc. **Portability**.
 
 ![image](https://github.com/user-attachments/assets/384e3899-6068-477a-a98e-8538c661fe7f)
 
