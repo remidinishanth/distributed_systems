@@ -114,6 +114,9 @@ Think in terms of Cluster Admin Persona and User Persona. Admins provide storage
 
 <img width="1031" alt="image" src="https://github.com/user-attachments/assets/413bddfc-a690-4237-86ec-488e71b4becc" />
 
+As soon as you create the claim, Kubernetes finds the appropriate PersistentVolume
+and binds it to the claim. The PersistentVolume’s capacity must be large enough to
+accommodate what the claim requests.
 
 PVC doesn't have any details regarding where the storage is, etc. **Portability**.
 
