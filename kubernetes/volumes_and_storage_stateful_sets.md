@@ -97,6 +97,15 @@ Ref: https://yuminlee2.medium.com/kubernetes-secrets-4287b5a83606
 
 ## Why do we need PV?
 
+If you have your Pod on GCE, then you can port it to OnPrem or to AWS
+<img width="1197" alt="image" src="https://github.com/user-attachments/assets/ab1274c0-fb64-4a3e-8238-bfbd182935d0" />
+
+
+![image](https://github.com/user-attachments/assets/b894b271-cb05-47e8-a0fa-74fb5198ea59)
+
+![image](https://github.com/user-attachments/assets/17931b9f-81d1-41d5-be28-43b009ab4f37)
+
+
 * Volume decouples the storage from the Container. Its lifecycle is coupled to a pod. It enables safe container restarts and sharing data between containers in a pod.
 
 * Persistent Volume decouples the storage from the Pod. Its lifecycle is independent. It enables safe pod restarts and sharing data between pods. Allows data to persist even if the Pod is deleted.
