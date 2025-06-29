@@ -84,12 +84,17 @@ Secrets separate sensitive data from application code, making it easier to manag
 
 Ref: https://yuminlee2.medium.com/kubernetes-secrets-4287b5a83606
 
-
 ## Why do we need PV?
 
 * Volume decouples the storage from the Container. Its lifecycle is coupled to a pod. It enables safe container restarts and sharing data between containers in a pod.
 
-* Persistent Volume decouples the storage from the Pod. Its lifecycle is independent. It enables safe pod restarts and sharing data between pods. Allows data to persist even if the Pod is deleted. 
+* Persistent Volume decouples the storage from the Pod. Its lifecycle is independent. It enables safe pod restarts and sharing data between pods. Allows data to persist even if the Pod is deleted.
+
+### Host Path volumes
+
+<img width="1035" alt="image" src="https://github.com/user-attachments/assets/f55ae0d0-5ee9-4b24-b523-4c0781ade0c0" />
+
+Ref: Kubernetes in Action
 
 ## Storage
 
