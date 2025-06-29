@@ -1,5 +1,11 @@
 > Container in a pod has its own isolated filesystem, because the filesystem comes from the container’s image.
 
+### Storage Lingo
+
+<img width="1194" alt="image" src="https://github.com/user-attachments/assets/5f14231a-957a-4e4a-9547-d423a1546aa1" />
+
+Ref: Kubernetes Storage Lingo 101 talk
+
 ## Volumes
 
 Kubernetes volumes provide a way for containers in a pod to access and share data via the filesystem. 
