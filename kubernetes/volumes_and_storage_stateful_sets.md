@@ -133,6 +133,8 @@ Because this data needs to be accessible from any cluster node, it must be store
 
 Ref: Kubernetes in Action
 
+<img width="1197" alt="image" src="https://github.com/user-attachments/assets/b85d5550-72e1-41fd-9ba4-9fe2be709a55" />
+
 
 ## Storage
 
