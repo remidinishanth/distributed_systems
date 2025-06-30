@@ -9,10 +9,8 @@ repository: "remidinishanth/distributed_systems"
 markdown: kramdown
 highlighter: rouge
 
-# Plugins (these are automatically included with github-pages gem)
+# Minimal plugins for faster builds
 plugins:
-  - jekyll-feed
-  - jekyll-sitemap
   - jekyll-seo-tag
 
 # Collections for organizing content
@@ -58,13 +56,10 @@ exclude:
 include:
   - _pages
 
-# Kramdown settings
+# Kramdown settings - minimal for speed
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    block:
-      line_numbers: true
 
 # Navigation structure (will be auto-generated)
 navigation:

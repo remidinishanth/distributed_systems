@@ -1,118 +1,16 @@
-<nav class="site-navigation">
-  <div class="nav-container">
-    <a href="{{ '/' | relative_url }}" class="nav-logo">
-      <h2>Distributed Systems Hub</h2>
+<nav class="site-nav">
+  <div class="wrapper">
+    <a href="{{ '/' | relative_url }}">
+      <strong>Distributed Systems Hub</strong>
     </a>
-    
-    <ul class="nav-links">
-      <li><a href="{{ '/' | relative_url }}" {% if page.url == "/" %}class="active"{% endif %}>Home</a></li>
-      <li><a href="{{ '/topics/' | relative_url }}" {% if page.url == "/topics/" %}class="active"{% endif %}>Topics</a></li>
-      <li><a href="{{ '/all-files/' | relative_url }}" {% if page.url == "/all-files/" %}class="active"{% endif %}>All Files</a></li>
-      <li><a href="{{ '/about/' | relative_url }}" {% if page.url == "/about/" %}class="active"{% endif %}>About</a></li>
+
+    <ul class="nav-list">
+      <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/topics/' | relative_url }}">Topics</a></li>
+      <li><a href="{{ '/all-files/' | relative_url }}">All Files</a></li>
+      <li><a href="{{ '/about/' | relative_url }}">About</a></li>
     </ul>
-    
-    <div class="nav-search">
-      <input type="search" placeholder="Search topics..." id="search-input">
-    </div>
   </div>
 </nav>
 
-<style>
-.site-navigation {
-  background: #24292e;
-  color: white;
-  padding: 1rem 0;
-  margin-bottom: 2rem;
-}
 
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.nav-logo h2 {
-  margin: 0;
-  color: white;
-  font-size: 1.5rem;
-}
-
-.nav-logo {
-  text-decoration: none;
-  color: white;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 2rem;
-}
-
-.nav-links a {
-  color: #f6f8fa;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background-color 0.2s;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  background-color: #0366d6;
-  color: white;
-}
-
-.nav-search {
-  min-width: 200px;
-}
-
-.nav-search input {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #586069;
-  border-radius: 4px;
-  background: #2f363d;
-  color: white;
-}
-
-.nav-search input::placeholder {
-  color: #959da5;
-}
-
-@media (max-width: 768px) {
-  .nav-container {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .nav-links {
-    gap: 1rem;
-  }
-  
-  .nav-search {
-    min-width: 100%;
-  }
-}
-</style>
-
-<script>
-// Simple search functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const searchInput = document.getElementById('search-input');
-  if (searchInput) {
-    searchInput.addEventListener('keypress', function(e) {
-      if (e.key === 'Enter') {
-        const query = this.value.toLowerCase();
-        // Simple redirect to topics page with search
-        window.location.href = '{{ "/topics/" | relative_url }}#' + encodeURIComponent(query);
-      }
-    });
-  }
-});
-</script>

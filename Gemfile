@@ -3,10 +3,8 @@ source "https://rubygems.org"
 # Use GitHub Pages gem which includes Jekyll and compatible plugins
 gem "github-pages", group: :jekyll_plugins
 
-# Additional plugins (these are included in github-pages but listed for clarity)
+# Minimal plugins for faster builds
 group :jekyll_plugins do
-  gem "jekyll-feed"
-  gem "jekyll-sitemap"
   gem "jekyll-seo-tag"
 end
 
