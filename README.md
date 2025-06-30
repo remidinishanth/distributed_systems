@@ -5,6 +5,8 @@ category: "general"
 description: "A comprehensive collection of distributed systems concepts, papers, and implementations"
 ---
 
+Read: https://remidinishanth.github.io/distributed_systems
+
 # Distributed Systems Learning Repository
 
 Awesome resource: https://codersguild.github.io/System-Design/Youtube%20Architecture/
