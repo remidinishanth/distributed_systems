@@ -1,6 +1,6 @@
 # Jekyll Configuration for Distributed Systems Learning Repository
-title: "Distributed Systems Learning Hub"
-description: "A comprehensive collection of distributed systems concepts, papers, and implementations"
+title: "Distributed Systems"
+description: "A collection of distributed systems concepts, papers, and implementations"
 baseurl: "/distributed_systems" # Repository name
 url: "https://remidinishanth.github.io" # GitHub username
 repository: "remidinishanth/distributed_systems"
@@ -68,5 +68,3 @@ navigation:
     url: "/"
   - title: "Topics"
     url: "/topics/"
-  - title: "About"
-    url: "/about/"
