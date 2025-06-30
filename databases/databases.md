@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Databases"
+category: "databases"
+---
+
 ## Database and DBMS
 
 A database is an organized collection of inter-related data that models some aspect of the real-world

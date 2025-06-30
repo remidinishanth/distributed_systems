@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Todo"
+category: "general"
+---
+
 * Understand how to use bazel for building things
   - get a deeper understaning
 * Understand pytest framework in a deeper level

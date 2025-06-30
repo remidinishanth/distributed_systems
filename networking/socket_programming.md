@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Socket Programming"
+category: "networking"
+---
+
 <img width="1241" alt="image" src="https://github.com/user-attachments/assets/9c02ba2d-e569-48c6-95ce-3b9e68dbf447">
 
 

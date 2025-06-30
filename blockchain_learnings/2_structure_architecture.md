@@ -1,3 +1,9 @@
+---
+layout: page
+title: "2 Structure Architecture"
+category: "blockchain_learnings"
+---
+
 ![image](https://github.com/user-attachments/assets/1c6bd9b7-01b7-4fa8-828c-370c681b1533)
 
 

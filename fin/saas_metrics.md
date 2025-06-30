@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Saas Metrics"
+category: "fin"
+---
+
 ## Conversion Rate
 
 Conversion rate = (Paying Customers) / Leads

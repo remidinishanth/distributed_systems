@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Consistent Hashing"
+category: "hashing"
+---
+
 ### Motivation for consistent hashing:
 * Minimize keys that needs to be re-distributed when servers are added or removed
 * Easy to scale horizontally - wants data to be more evenly distributed

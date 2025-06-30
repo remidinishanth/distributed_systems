@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Map Reduce"
+category: "google_map_reduce"
+---
+
 ### MapReduce
 
 A framework for large-scale parallel processing.

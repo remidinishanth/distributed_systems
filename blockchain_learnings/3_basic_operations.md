@@ -1,3 +1,9 @@
+---
+layout: page
+title: "3 Basic Operations"
+category: "blockchain_learnings"
+---
+
 * The algorithm for consensus in the Bitcoin blockchain is called **Proof of Work** protocol.
 It gets its name because it involves “work” or computational power to solve the puzzle and to claim the right to form the next block.
 

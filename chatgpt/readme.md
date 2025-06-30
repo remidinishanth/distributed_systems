@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Readme"
+category: "chatgpt"
+---
+
 ## Tranformer
 
 The transformer uses self-attention mechanisms to focus on different parts of the input text during each processing step. 

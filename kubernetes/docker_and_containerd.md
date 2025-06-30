@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Docker And Containerd"
+category: "kubernetes"
+---
+
 ## Background
 
 Kubernetes project created the container runtime interface (CRI) to make

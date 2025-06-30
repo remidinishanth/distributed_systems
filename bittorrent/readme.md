@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Readme"
+category: "bittorrent"
+---
+
 ## File-Sharing: Getting a File from One Person (Machine) to Another
 #### Can use client/server:
 * Client requests file, server responds with the data.

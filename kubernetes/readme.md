@@ -1,3 +1,11 @@
+---
+layout: page
+title: "Kubernetes"
+category: "container-orchestration"
+tags: ["kubernetes", "containers", "orchestration", "microservices"]
+description: "Container orchestration with Kubernetes - concepts, architecture, and practical examples"
+---
+
 Also checkout: https://docs.google.com/document/d/10w2ynbbVisw6XHhq6ohB5pVVlXh8hdCWTHahc4ieQYQ/edit
 
 and https://kubernetesbootcamp.github.io/kubernetes-bootcamp/index.html

@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Balance Sheet"
+category: "fin"
+---
+
 ## Balance Sheet
 
 * Balance sheet refers to a financial statement that reports a company's assets, liabilities, and shareholder equity at a specific point in time.

@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Kubectl"
+category: "kubernetes"
+---
+
 ```shell
 kubectl < get | delete | create >   < resource_type>
 ```

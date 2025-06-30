@@ -1,0 +1,72 @@
+# Jekyll Configuration for Distributed Systems Learning Repository
+title: "Distributed Systems Learning Hub"
+description: "A comprehensive collection of distributed systems concepts, papers, and implementations"
+baseurl: "" # Change this to your repository name if it's not the main GitHub Pages repo
+url: "https://nishanth.reddy.github.io" # Change this to your GitHub username
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections for organizing content
+collections:
+  topics:
+    output: true
+    permalink: /:collection/:name/
+
+# Default layouts for different content types
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "topics"
+    values:
+      layout: "topic"
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - "*.pdf"
+
+# Include files that start with underscore
+include:
+  - _pages
+
+# Kramdown settings
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+# Navigation structure (will be auto-generated)
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "Topics"
+    url: "/topics/"
+  - title: "About"
+    url: "/about/"

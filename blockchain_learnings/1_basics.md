@@ -1,3 +1,9 @@
+---
+layout: page
+title: "1 Basics"
+category: "blockchain_learnings"
+---
+
 ## Why is there so much hype around blockchain technology?
 
 There have been many attempts to create digital money in the past, but they have always failed.

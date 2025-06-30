@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Volumes And Storage Stateful Sets"
+category: "kubernetes"
+---
+
 > Container in a pod has its own isolated filesystem, because the filesystem comes from the container’s image.
 
 ### Storage Lingo

@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Readme"
+category: "docker"
+---
+
 Two core concepts:
 * Namespaces: Keeps your processes separated in isolated groups
 * Cgroups: Controls the resources allocated

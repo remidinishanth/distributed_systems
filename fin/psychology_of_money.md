@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Psychology Of Money"
+category: "fin"
+---
+
 ## Morgan Housel, The Psychology of Money
 1. “ Spending money to show people how much money you have is the fastest way to have less money. ”
 2. “ Planning is important, but the most important part of every plan is to plan on the (plan not going according to plan). ”

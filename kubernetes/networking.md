@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Networking"
+category: "kubernetes"
+---
+
 Read awesome resources: 
 * https://yuminlee2.medium.com/kubernetes-service-networking-2169f04ce02a
 * CNI https://yuminlee2.medium.com/kubernetes-container-network-interface-cni-ee5b21514664
