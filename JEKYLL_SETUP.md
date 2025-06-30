@@ -6,9 +6,9 @@ This repository is now configured to automatically build and deploy to GitHub Pa
 
 ### 1. Jekyll Configuration (`_config.yml`)
 - Site metadata and description
-- Plugin configuration for SEO, feeds, and sitemaps
+- Minimal plugin configuration for fast builds (SEO only)
 - Custom collections and defaults
-- Markdown processing with syntax highlighting
+- Optimized markdown processing
 
 ### 2. GitHub Actions Workflow (`.github/workflows/jekyll-gh-pages.yml`)
 - Automatic building on push to main branch
@@ -100,7 +100,7 @@ description: "Brief description of the topic"
 ## 🎨 Customization
 
 ### Styling
-- Edit `assets/custom.css` for visual customizations
+- Edit `assets/minimal.css` for visual customizations (optimized for performance)
 - Modify `_layouts/` files for structural changes
 - Update `_includes/navigation.html` for menu changes
 
@@ -130,14 +130,12 @@ bundle exec jekyll serve
 
 - ✅ Automatic site generation from markdown files
 - ✅ Responsive design for mobile and desktop
-- ✅ Search functionality
-- ✅ Syntax highlighting for code blocks
-- ✅ Math equation support (MathJax)
+- ✅ Fast, lightweight search functionality
+- ✅ Basic syntax highlighting for code blocks
 - ✅ SEO optimization
-- ✅ RSS feed generation
-- ✅ Sitemap generation
 - ✅ Social media meta tags
 - ✅ Print-friendly styles
+- ✅ Optimized for fast loading (minimal dependencies)
 
 ## 🔄 Automatic Updates
 
