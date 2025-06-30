@@ -32,19 +32,38 @@ This repository contains a comprehensive collection of distributed systems conce
 - **Cloud Services** (AWS, monitoring, storage)
 - **Development Tools** (Protobuf, build systems)
 
+## 📊 Repository Overview
+
+{% assign all_content_files = site.pages | where_exp: "page", "page.path contains '.md'" | where_exp: "page", "page.path != 'topics.md'" | where_exp: "page", "page.path != 'index.md'" | where_exp: "page", "page.path != 'about.md'" | where_exp: "page", "page.name != 'JEKYLL_SETUP.md'" | where_exp: "page", "page.name != 'PR_INSTRUCTIONS.md'" %}
+
+<div class="repository-stats">
+  <div class="stat-card">
+    <h3>{{ all_content_files | size }}</h3>
+    <p>Total Files</p>
+  </div>
+  <div class="stat-card">
+    {% assign unique_categories = all_content_files | map: "category" | uniq | size %}
+    <h3>{{ unique_categories }}</h3>
+    <p>Categories</p>
+  </div>
+  <div class="stat-card">
+    {% assign files_by_dir = all_content_files | group_by_exp: "page", "page.path | split: '/' | pop | join: '/'" %}
+    <h3>{{ files_by_dir | size }}</h3>
+    <p>Directories</p>
+  </div>
+</div>
+
 ## 🎯 Featured Topics
 
 <div class="featured-topics">
 {% assign featured = "raft,kafka,kubernetes,databases,google_file_system,blockchain_learnings" | split: "," %}
 {% for topic_name in featured %}
-  {% assign topic_pages = site.pages | where_exp: "page", "page.path contains topic_name" %}
+  {% assign topic_pages = all_content_files | where_exp: "page", "page.path contains topic_name" %}
   {% for topic in topic_pages limit: 1 %}
-    {% if topic.path contains 'readme.md' or topic.path contains 'README.md' %}
   <div class="featured-topic">
-    <h3><a href="{{ topic.url | relative_url }}">{{ topic_name | replace: "_", " " | replace: "-", " " | capitalize }}</a></h3>
+    <h3><a href="{{ topic.url | relative_url }}">{{ topic.title | default: topic_name | replace: "_", " " | replace: "-", " " | capitalize }}</a></h3>
     <p>{{ topic.description | default: "Essential distributed systems concept" }}</p>
   </div>
-    {% endif %}
   {% endfor %}
 {% endfor %}
 </div>
@@ -118,5 +137,35 @@ This is a living document that grows with new learnings and discoveries. Feel fr
   color: #586069;
   margin-bottom: 0;
   font-size: 0.9em;
+}
+
+.repository-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: bold;
+  color: white;
+  border: none;
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
 }
 </style>

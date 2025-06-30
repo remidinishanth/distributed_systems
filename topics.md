@@ -8,9 +8,12 @@ permalink: /topics/
 
 This is a comprehensive collection of distributed systems concepts, implementations, and learning resources. Each topic contains detailed notes, papers, and practical examples.
 
+{% include search_all_files.html %}
+
 ## Topics by Category
 
-{% assign topics_by_category = site.pages | where_exp: "page", "page.path contains '.md'" | where_exp: "page", "page.path != 'README.md'" | where_exp: "page", "page.path != 'topics.md'" | where_exp: "page", "page.path != 'index.md'" | group_by: "category" %}
+{% assign all_md_pages = site.pages | where_exp: "page", "page.path contains '.md'" | where_exp: "page", "page.path != 'topics.md'" | where_exp: "page", "page.path != 'index.md'" | where_exp: "page", "page.path != 'about.md'" | where_exp: "page", "page.name != 'JEKYLL_SETUP.md'" | where_exp: "page", "page.name != 'PR_INSTRUCTIONS.md'" %}
+{% assign topics_by_category = all_md_pages | group_by: "category" %}
 
 {% for category_group in topics_by_category %}
   {% if category_group.name != "" %}
@@ -32,7 +35,7 @@ This is a comprehensive collection of distributed systems concepts, implementati
 
 ## All Topics (Alphabetical)
 
-{% assign all_topics = site.pages | where_exp: "page", "page.path contains '.md'" | where_exp: "page", "page.path != 'README.md'" | where_exp: "page", "page.path != 'topics.md'" | where_exp: "page", "page.path != 'index.md'" | sort: "title" %}
+{% assign all_topics = all_md_pages | sort: "title" %}
 
 <div class="topics-grid">
 {% for topic in all_topics %}
@@ -107,3 +110,7 @@ This is a comprehensive collection of distributed systems concepts, implementati
   font-size: 0.8em;
 }
 </style>
+
+---
+
+{% include all_files_navigation.html %}
