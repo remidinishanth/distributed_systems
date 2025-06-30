@@ -6,7 +6,8 @@
     
     <ul class="nav-links">
       <li><a href="{{ '/' | relative_url }}" {% if page.url == "/" %}class="active"{% endif %}>Home</a></li>
-      <li><a href="{{ '/topics/' | relative_url }}" {% if page.url == "/topics/" %}class="active"{% endif %}>All Topics</a></li>
+      <li><a href="{{ '/topics/' | relative_url }}" {% if page.url == "/topics/" %}class="active"{% endif %}>Topics</a></li>
+      <li><a href="{{ '/all-files/' | relative_url }}" {% if page.url == "/all-files/" %}class="active"{% endif %}>All Files</a></li>
       <li><a href="{{ '/about/' | relative_url }}" {% if page.url == "/about/" %}class="active"{% endif %}>About</a></li>
     </ul>
     
