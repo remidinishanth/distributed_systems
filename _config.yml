@@ -1,8 +1,9 @@
 # Jekyll Configuration for Distributed Systems Learning Repository
 title: "Distributed Systems Learning Hub"
 description: "A comprehensive collection of distributed systems concepts, papers, and implementations"
-baseurl: "" # Change this to your repository name if it's not the main GitHub Pages repo
-url: "https://nishanth.reddy.github.io" # Change this to your GitHub username
+baseurl: "/distributed_systems" # Repository name
+url: "https://remidinishanth.github.io" # GitHub username
+repository: "remidinishanth/distributed_systems"
 
 # Build settings
 markdown: kramdown

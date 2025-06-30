@@ -1,10 +1,21 @@
 ---
 layout: page
-title: "Clean any data which is not within market time
+title: "Python Packages for Finance"
+category: "fin"
+description: "Python packages and code snippets for financial data analysis"
+---
+
+# Python Packages for Finance
+
+## Data Cleaning
+
+Clean any data which is not within market time:
+```python
 df = df[(df.datetime.dt.time > datetime.time(9, 15)) & (df.datetime.dt.time < datetime.time(15, 31))]
 
 df['calender_date'] = df.datetime.dt.date
 day_wise_data = df.groupby(df['calender_date'])
+```
 
 
 combined_data = []

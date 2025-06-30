@@ -1,9 +1,13 @@
 ---
 layout: page
-title: "Five Layer Software Model Overview
-![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/b3e5b738-0c80-4a15-b3d2-89b56cf34b85)
-
+title: "Five Layer Software Model Overview"
+category: "networking"
+description: "Understanding the five-layer networking model and protocols"
 ---
+
+# Five Layer Software Model Overview
+
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/b3e5b738-0c80-4a15-b3d2-89b56cf34b85)
 
 ![image](https://github.com/user-attachments/assets/1259ee00-3132-4205-9d57-428f324096ed)
 

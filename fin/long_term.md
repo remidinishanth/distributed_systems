@@ -1,6 +1,13 @@
 ---
 layout: page
-title: "PE ratio
+title: "Long Term Investment Analysis"
+category: "fin"
+description: "PE ratios and long-term investment strategies"
+---
+
+# Long Term Investment Analysis
+
+## PE Ratio
 
 * PE ratio is the most widely used parameter to analyse whether the stock of any company is overvalued or undervalued at any point in time.
 * It is calculated by dividing the current market price (CMP) of stock by profit/earnings per share (EPS).
