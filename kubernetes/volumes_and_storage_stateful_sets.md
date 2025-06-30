@@ -151,6 +151,8 @@ HostPath is different from Local PV
 
 <img width="1197" alt="image" src="https://github.com/user-attachments/assets/d3dde3c1-1a5b-46dd-bc37-bc74cb71b457" />
 
+<img width="891" alt="image" src="https://github.com/user-attachments/assets/1579ff95-266e-4f9f-b6fd-c6131fd162e8" />
+
 
 ## Storage
 
