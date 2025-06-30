@@ -1,6 +1,23 @@
 ---
 layout: page
-title: "developing_as_developer
+title: "Distributed Systems Learning Repository"
+category: "general"
+description: "A comprehensive collection of distributed systems concepts, papers, and implementations"
+---
+
+# Distributed Systems Learning Repository
+
+Awesome resource: https://codersguild.github.io/System-Design/Youtube%20Architecture/
+
+Ref: https://github.com/lafengnan/ebooks-1
+
+Read https://github.com/CodeBear801/tech_summary/blob/master/tech-summary/papers/colossus.md
+
+and https://github.com/keyvanakbary/learning-notes/blob/master/books/designing-data-intensive-applications.md
+
+![image](https://github.com/user-attachments/assets/e0438cdb-f2ad-45e8-8d38-71e3fd71999f)
+
+## Developing as Developer
 
 MIT 6.824 Notes https://wizardforcel.gitbooks.io/distributed-systems-engineering-lecture-notes/content/l01-intro.html and http://nil.csail.mit.edu/6.824/2015/schedule.html
 

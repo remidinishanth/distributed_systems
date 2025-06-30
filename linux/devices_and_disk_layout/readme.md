@@ -1,6 +1,11 @@
 ---
 layout: page
-title: "# /etc/fstab
+title: "Devices and Disk Layout"
+category: "linux"
+description: "Linux devices, disk layout, and filesystem configuration"
+---
+
+# /etc/fstab
 # Created by anaconda on Mon Jan 20 15:59:48 2025
 #
 # Accessible filesystems, by reference, are maintained under '/dev/disk'
