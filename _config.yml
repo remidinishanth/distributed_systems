@@ -12,6 +12,7 @@ highlighter: rouge
 # Minimal plugins for faster builds
 plugins:
   - jekyll-seo-tag
+  - jekyll-feed
 
 # Collections for organizing content
 collections:
