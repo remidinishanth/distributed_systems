@@ -17,10 +17,6 @@ category: "zookeeper"
 
 <img width="1145" alt="image" src="https://user-images.githubusercontent.com/19663316/210209115-0ddf7bd3-9c2c-41c3-8c93-5afa78a5d72b.png">
 
-![image](https://user-images.githubusercontent.com/19663316/210208983-7d1917d7-6ce4-4301-b26b-5a16825a3788.png)
-
-![image](https://user-images.githubusercontent.com/19663316/210209213-f95f370c-9db6-48af-97b3-d668678523a9.png)
-
 ### Motivation
 
 * In the past: a single program running on a single computer with a single CPU
