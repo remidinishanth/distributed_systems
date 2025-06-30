@@ -1,208 +1,35 @@
-<!-- Complete file navigation showing ALL markdown files organized by folder -->
+<!-- Simple file navigation -->
 <div class="all-files-navigation">
-  <h2>📁 Complete File Structure</h2>
-  <p>Every markdown file in the repository, organized by folder:</p>
-  
+  <h2>File Structure</h2>
+
   {% assign all_md_files = site.pages | where_exp: "page", "page.path contains '.md'" | where_exp: "page", "page.path != 'topics.md'" | where_exp: "page", "page.path != 'index.md'" | where_exp: "page", "page.path != 'about.md'" | where_exp: "page", "page.name != 'JEKYLL_SETUP.md'" | where_exp: "page", "page.name != 'PR_INSTRUCTIONS.md'" %}
-  
-  <!-- Group files by their directory -->
+
   {% assign files_by_dir = all_md_files | group_by_exp: "page", "page.path | split: '/' | pop | join: '/'" %}
-  
-  <div class="file-tree">
-    {% for dir_group in files_by_dir %}
-      {% assign dir_name = dir_group.name %}
-      {% if dir_name == "" %}
-        {% assign display_dir = "📄 Root Directory" %}
-      {% else %}
-        {% assign display_dir = "📁 " | append: dir_name %}
-      {% endif %}
-      
-      <div class="directory-section">
-        <h3 class="directory-name">{{ display_dir }}</h3>
-        <ul class="file-list">
-          {% assign sorted_files = dir_group.items | sort: "name" %}
-          {% for file in sorted_files %}
-            <li class="file-item">
-              <a href="{{ file.url | relative_url }}" class="file-link">
-                <span class="file-icon">📝</span>
-                <span class="file-name">{{ file.name | replace: ".md", "" | replace: "_", " " | replace: "-", " " | capitalize }}</span>
-                {% if file.title and file.title != file.name %}
-                  <span class="file-title">- {{ file.title }}</span>
-                {% endif %}
-              </a>
-              {% if file.description %}
-                <p class="file-description">{{ file.description }}</p>
-              {% endif %}
-              {% if file.category %}
-                <span class="file-category">{{ file.category }}</span>
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    {% endfor %}
-  </div>
-  
-  <!-- Statistics -->
-  <div class="file-stats">
-    <h3>📊 Repository Statistics</h3>
-    <div class="stats-grid">
-      <div class="stat-item">
-        <span class="stat-number">{{ all_md_files | size }}</span>
-        <span class="stat-label">Total Files</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">{{ files_by_dir | size }}</span>
-        <span class="stat-label">Directories</span>
-      </div>
-      <div class="stat-item">
-        {% assign categorized_files = all_md_files | where_exp: "page", "page.category" %}
-        <span class="stat-number">{{ categorized_files | size }}</span>
-        <span class="stat-label">Categorized</span>
-      </div>
+
+  {% for dir_group in files_by_dir %}
+    {% assign dir_name = dir_group.name %}
+    {% if dir_name == "" %}
+      {% assign display_dir = "Root Directory" %}
+    {% else %}
+      {% assign display_dir = dir_name %}
+    {% endif %}
+
+    <div class="directory-section">
+      <h3 class="directory-name">{{ display_dir }}</h3>
+      <ul class="file-list">
+        {% assign sorted_files = dir_group.items | sort: "name" %}
+        {% for file in sorted_files %}
+          <li class="file-item">
+            <a href="{{ file.url | relative_url }}">
+              {{ file.name | replace: ".md", "" | replace: "_", " " | replace: "-", " " | capitalize }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
     </div>
-  </div>
+  {% endfor %}
+
+  <p><strong>Total Files:</strong> {{ all_md_files | size }}</p>
 </div>
 
-<style>
-.all-files-navigation {
-  margin: 2rem 0;
-}
 
-.file-tree {
-  margin: 1.5rem 0;
-}
-
-.directory-section {
-  margin-bottom: 2rem;
-  border: 1px solid #e1e4e8;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.directory-name {
-  background: #f6f8fa;
-  margin: 0;
-  padding: 1rem;
-  border-bottom: 1px solid #e1e4e8;
-  font-size: 1.1rem;
-  color: #24292e;
-}
-
-.file-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.file-item {
-  border-bottom: 1px solid #f1f3f4;
-  padding: 0.75rem 1rem;
-  transition: background-color 0.2s;
-}
-
-.file-item:hover {
-  background-color: #f8f9fa;
-}
-
-.file-item:last-child {
-  border-bottom: none;
-}
-
-.file-link {
-  text-decoration: none;
-  color: #24292e;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.file-link:hover {
-  color: #0366d6;
-}
-
-.file-icon {
-  font-size: 1rem;
-}
-
-.file-name {
-  font-weight: 500;
-}
-
-.file-title {
-  color: #586069;
-  font-weight: normal;
-}
-
-.file-description {
-  margin: 0.5rem 0 0 2rem;
-  color: #586069;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-.file-category {
-  background: #f1f8ff;
-  color: #0366d6;
-  padding: 0.2rem 0.5rem;
-  border-radius: 3px;
-  font-size: 0.8rem;
-  margin-left: auto;
-}
-
-.file-stats {
-  background: #f6f8fa;
-  border: 1px solid #e1e4e8;
-  border-radius: 6px;
-  padding: 1.5rem;
-  margin-top: 2rem;
-}
-
-.file-stats h3 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
-}
-
-.stat-item {
-  text-align: center;
-  padding: 1rem;
-  background: white;
-  border-radius: 4px;
-  border: 1px solid #e1e4e8;
-}
-
-.stat-number {
-  display: block;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #0366d6;
-}
-
-.stat-label {
-  display: block;
-  font-size: 0.9rem;
-  color: #586069;
-  margin-top: 0.5rem;
-}
-
-@media (max-width: 768px) {
-  .file-link {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .file-description {
-    margin-left: 0;
-  }
-  
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-}
-</style>

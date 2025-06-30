@@ -1,293 +1,60 @@
-<!-- Search functionality for ALL markdown files -->
-<div class="search-all-files">
-  <div class="search-container">
-    <h3>🔍 Search All Files</h3>
-    <input type="text" id="file-search" placeholder="Search across all files..." class="search-input">
-    <div id="search-results" class="search-results"></div>
-  </div>
+<!-- Simple search functionality -->
+<div class="simple-search">
+  <h3>Search Files</h3>
+  <input type="text" id="simple-search" placeholder="Search files..." class="search-input">
+  <div id="simple-results" class="search-results"></div>
 </div>
 
-<!-- Generate searchable data for all files -->
 <script>
-window.searchData = [
+// Lightweight search data - only titles and URLs
+window.simpleSearchData = [
   {% assign all_searchable_files = site.pages | where_exp: "page", "page.path contains '.md'" | where_exp: "page", "page.path != 'topics.md'" | where_exp: "page", "page.path != 'index.md'" | where_exp: "page", "page.path != 'about.md'" | where_exp: "page", "page.name != 'JEKYLL_SETUP.md'" | where_exp: "page", "page.name != 'PR_INSTRUCTIONS.md'" %}
   {% for file in all_searchable_files %}
   {
     "title": "{{ file.title | default: file.name | replace: '.md', '' | replace: '_', ' ' | replace: '-', ' ' | capitalize | jsonify }}",
-    "name": "{{ file.name | jsonify }}",
     "url": "{{ file.url | relative_url | jsonify }}",
-    "category": "{{ file.category | default: 'general' | jsonify }}",
-    "description": "{{ file.description | default: '' | jsonify }}",
-    "path": "{{ file.path | jsonify }}",
-    "content": "{{ file.content | strip_html | truncatewords: 50 | jsonify }}"
+    "path": "{{ file.path | jsonify }}"
   }{% unless forloop.last %},{% endunless %}
   {% endfor %}
 ];
 
-// Search functionality
+// Simple search
 document.addEventListener('DOMContentLoaded', function() {
-  const searchInput = document.getElementById('file-search');
-  const searchResults = document.getElementById('search-results');
-  
-  if (!searchInput || !searchResults) return;
-  
-  let searchTimeout;
-  
-  searchInput.addEventListener('input', function() {
-    clearTimeout(searchTimeout);
-    searchTimeout = setTimeout(() => {
-      performSearch(this.value.trim());
-    }, 300);
-  });
-  
-  function performSearch(query) {
+  const input = document.getElementById('simple-search');
+  const results = document.getElementById('simple-results');
+
+  if (!input || !results) return;
+
+  input.addEventListener('input', function() {
+    const query = this.value.trim().toLowerCase();
+
     if (query.length < 2) {
-      searchResults.innerHTML = '';
-      searchResults.style.display = 'none';
+      results.style.display = 'none';
       return;
     }
-    
-    const results = searchFiles(query);
-    displayResults(results, query);
-  }
-  
-  function searchFiles(query) {
-    const queryLower = query.toLowerCase();
-    const results = [];
-    
-    window.searchData.forEach(file => {
-      let score = 0;
-      let matches = [];
-      
-      // Search in title (highest priority)
-      if (file.title.toLowerCase().includes(queryLower)) {
-        score += 10;
-        matches.push('title');
-      }
-      
-      // Search in filename
-      if (file.name.toLowerCase().includes(queryLower)) {
-        score += 8;
-        matches.push('filename');
-      }
-      
-      // Search in category
-      if (file.category.toLowerCase().includes(queryLower)) {
-        score += 6;
-        matches.push('category');
-      }
-      
-      // Search in description
-      if (file.description.toLowerCase().includes(queryLower)) {
-        score += 4;
-        matches.push('description');
-      }
-      
-      // Search in content
-      if (file.content.toLowerCase().includes(queryLower)) {
-        score += 2;
-        matches.push('content');
-      }
-      
-      // Search in path
-      if (file.path.toLowerCase().includes(queryLower)) {
-        score += 1;
-        matches.push('path');
-      }
-      
-      if (score > 0) {
-        results.push({
-          ...file,
-          score: score,
-          matches: matches
-        });
-      }
-    });
-    
-    return results.sort((a, b) => b.score - a.score).slice(0, 20);
-  }
-  
-  function displayResults(results, query) {
-    if (results.length === 0) {
-      searchResults.innerHTML = '<div class="no-results">No files found matching "' + query + '"</div>';
+
+    const matches = window.simpleSearchData.filter(file =>
+      file.title.toLowerCase().includes(query) ||
+      file.path.toLowerCase().includes(query)
+    ).slice(0, 10);
+
+    if (matches.length > 0) {
+      results.innerHTML = matches.map(file =>
+        `<div><a href="${file.url}">${file.title}</a></div>`
+      ).join('');
+      results.style.display = 'block';
     } else {
-      const resultsHtml = results.map(file => `
-        <div class="search-result-item">
-          <a href="${file.url}" class="result-link">
-            <div class="result-title">${highlightText(file.title, query)}</div>
-            <div class="result-path">${file.path}</div>
-            ${file.description ? `<div class="result-description">${highlightText(file.description, query)}</div>` : ''}
-            <div class="result-meta">
-              <span class="result-category">${file.category}</span>
-              <span class="result-matches">Matches: ${file.matches.join(', ')}</span>
-            </div>
-          </a>
-        </div>
-      `).join('');
-      
-      searchResults.innerHTML = `
-        <div class="results-header">${results.length} file(s) found</div>
-        ${resultsHtml}
-      `;
+      results.innerHTML = '<div>No matches found</div>';
+      results.style.display = 'block';
     }
-    
-    searchResults.style.display = 'block';
-  }
-  
-  function highlightText(text, query) {
-    const regex = new RegExp(`(${query})`, 'gi');
-    return text.replace(regex, '<mark>$1</mark>');
-  }
-  
-  // Close search results when clicking outside
+  });
+
   document.addEventListener('click', function(e) {
-    if (!e.target.closest('.search-all-files')) {
-      searchResults.style.display = 'none';
+    if (!e.target.closest('.simple-search')) {
+      results.style.display = 'none';
     }
   });
 });
 </script>
 
-<style>
-.search-all-files {
-  margin: 2rem 0;
-  position: relative;
-}
 
-.search-container {
-  background: #f6f8fa;
-  border: 1px solid #e1e4e8;
-  border-radius: 6px;
-  padding: 1.5rem;
-}
-
-.search-container h3 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  color: #24292e;
-}
-
-.search-input {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #d1d5da;
-  border-radius: 6px;
-  font-size: 1rem;
-  background: white;
-}
-
-.search-input:focus {
-  outline: none;
-  border-color: #0366d6;
-  box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.1);
-}
-
-.search-results {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: white;
-  border: 1px solid #e1e4e8;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-height: 400px;
-  overflow-y: auto;
-  z-index: 1000;
-  margin-top: 0.5rem;
-}
-
-.results-header {
-  padding: 0.75rem 1rem;
-  background: #f6f8fa;
-  border-bottom: 1px solid #e1e4e8;
-  font-weight: 600;
-  color: #586069;
-}
-
-.search-result-item {
-  border-bottom: 1px solid #f1f3f4;
-}
-
-.search-result-item:last-child {
-  border-bottom: none;
-}
-
-.result-link {
-  display: block;
-  padding: 1rem;
-  text-decoration: none;
-  color: inherit;
-  transition: background-color 0.2s;
-}
-
-.result-link:hover {
-  background-color: #f8f9fa;
-  text-decoration: none;
-}
-
-.result-title {
-  font-weight: 600;
-  color: #0366d6;
-  margin-bottom: 0.25rem;
-}
-
-.result-path {
-  font-size: 0.9rem;
-  color: #586069;
-  margin-bottom: 0.25rem;
-}
-
-.result-description {
-  font-size: 0.9rem;
-  color: #24292e;
-  margin-bottom: 0.5rem;
-  line-height: 1.4;
-}
-
-.result-meta {
-  display: flex;
-  gap: 1rem;
-  font-size: 0.8rem;
-}
-
-.result-category {
-  background: #f1f8ff;
-  color: #0366d6;
-  padding: 0.2rem 0.5rem;
-  border-radius: 3px;
-}
-
-.result-matches {
-  color: #586069;
-}
-
-.no-results {
-  padding: 1rem;
-  text-align: center;
-  color: #586069;
-}
-
-mark {
-  background-color: #fff3cd;
-  padding: 0.1rem 0.2rem;
-  border-radius: 2px;
-}
-
-@media (max-width: 768px) {
-  .search-results {
-    position: fixed;
-    top: auto;
-    left: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    max-height: 50vh;
-  }
-  
-  .result-meta {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-}
-</style>
