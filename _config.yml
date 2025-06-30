@@ -7,9 +7,8 @@ url: "https://nishanth.reddy.github.io" # Change this to your GitHub username
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: minima
 
-# Plugins
+# Plugins (these are automatically included with github-pages gem)
 plugins:
   - jekyll-feed
   - jekyll-sitemap
@@ -49,6 +48,10 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - "*.pdf"
+  - _plugins
+  - _scripts
+  - PR_INSTRUCTIONS.md
+  - JEKYLL_SETUP.md
 
 # Include files that start with underscore
 include:
