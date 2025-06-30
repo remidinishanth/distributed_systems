@@ -22,3 +22,5 @@ Operators are Kubernetes extensions that use custom resources to manage applicat
 
 
 [TODO] https://www.cncf.io/blog/2022/06/15/kubernetes-operators-what-are-they-some-examples/
+
+Read: https://medium.com/better-programming/building-a-highly-available-kubernetes-operator-using-golang-fe4a44c395c2
