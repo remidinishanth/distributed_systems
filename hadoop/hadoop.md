@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Hadoop"
+category: "hadoop"
+---
+
 Todo: https://data-flair.training/blogs/hadoop-ecosystem-components/
 
 * Hadoop is a sturdy, scalable computing platform

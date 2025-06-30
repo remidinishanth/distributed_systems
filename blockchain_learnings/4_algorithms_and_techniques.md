@@ -1,3 +1,9 @@
+---
+layout: page
+title: "4 Algorithms And Techniques"
+category: "blockchain_learnings"
+---
+
 Two key cryptographic concepts are
 1. Public-key cryptography, or asymmetric cryptography
 2. Hashing

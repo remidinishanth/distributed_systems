@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Gfs"
+category: "google_file_system"
+---
+
 ## The Google File System
 
 Sanjay Ghemawat, Howard Gobioff, and Shun-Tak Leung (SOSP 2003)

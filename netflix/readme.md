@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Readme"
+category: "netflix"
+---
+
 Ref: https://highscalability.com/netflix-what-happens-when-you-press-play/
 
 TODO: https://codersguild.github.io/System-Design/Netflix%20Architecture/

@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Bloom Filter"
+category: "general"
+---
+
 > Probabilistic Data Structure To Check Membership
 
 ![image](https://github.com/user-attachments/assets/1e8361b7-303b-4f2f-b9d9-6fff343830b3)

@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Readme"
+category: "etcd"
+---
+
 * https://www.youtube.com/watch?v=OmphHSaO1sE Awesome explanation
 
 * https://www.ibm.com/cloud/learn/etcd

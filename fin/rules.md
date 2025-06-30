@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Rules"
+category: "fin"
+---
+
 Walter Jerome Schloss, a well-regarded value investor as well as a notable disciple of the Benjamin Graham school of investing.
 
 ## 16 Golden Rules of Investing

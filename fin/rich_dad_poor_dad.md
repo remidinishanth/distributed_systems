@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Rich Dad Poor Dad"
+category: "fin"
+---
+
 
 ### Assets: Put money into my pockets.
 

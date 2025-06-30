@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Tcp Udp"
+category: "networking"
+---
+
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/2faf6170-a273-439c-b0a4-693d5d86e9ad)
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/ac4cf316-47f4-4908-8138-33696a3498b5)

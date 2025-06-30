@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Readme"
+category: "ntp"
+---
+
 
 Understanding ntpd configuration file
 

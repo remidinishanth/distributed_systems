@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Readme"
+category: "blockchain_learnings"
+---
+
 ## blockchain_learnings
 
 Read https://jeiwan.net/posts/building-blockchain-in-go-part-1/

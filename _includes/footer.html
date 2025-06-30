@@ -1,0 +1,119 @@
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Distributed Systems Hub</h3>
+        <p>A comprehensive learning resource for distributed systems concepts, papers, and implementations.</p>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="{{ '/topics/' | relative_url }}">All Topics</a></li>
+          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+          <li><a href="https://github.com/{{ site.github_username | default: 'your-username' }}/{{ site.github.repository_name | default: 'distributed_systems' }}">GitHub Repository</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="{{ '/topics/' | relative_url }}#consensus">Consensus Algorithms</a></li>
+          <li><a href="{{ '/topics/' | relative_url }}#storage">Distributed Storage</a></li>
+          <li><a href="{{ '/topics/' | relative_url }}#messaging">Message Processing</a></li>
+          <li><a href="{{ '/topics/' | relative_url }}#orchestration">Container Orchestration</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title | default: "Distributed Systems Hub" }}. 
+         Built with <a href="https://jekyllrb.com/">Jekyll</a> and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+      <p>Last updated: {{ site.time | date: "%B %d, %Y" }}</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+.site-footer {
+  background: #f6f8fa;
+  border-top: 1px solid #e1e4e8;
+  margin-top: 3rem;
+  padding: 2rem 0 1rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: #24292e;
+  margin-bottom: 1rem;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+}
+
+.footer-section h4 {
+  font-size: 1rem;
+}
+
+.footer-section p {
+  color: #586069;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid #e1e4e8;
+  padding-top: 1rem;
+  text-align: center;
+  color: #586069;
+  font-size: 0.9rem;
+}
+
+.footer-bottom a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+</style>

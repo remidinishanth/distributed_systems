@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Intrinsic Valuation"
+category: "fin"
+---
+
 ## Intrinsic Value - Foundation
 
 ![image](https://github.com/user-attachments/assets/3c63ed3f-fcb5-4b8d-bb83-4c2a5b2c9f16)

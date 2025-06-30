@@ -1,0 +1,107 @@
+---
+layout: default
+---
+
+<article class="topic">
+  <header class="topic-header">
+    <h1 class="topic-title">{{ page.title | default: page.name | replace: "_", " " | replace: "-", " " | capitalize }}</h1>
+    {% if page.description %}
+      <p class="topic-description">{{ page.description }}</p>
+    {% endif %}
+    
+    <div class="topic-meta">
+      {% if page.category %}
+        <span class="topic-category">Category: {{ page.category }}</span>
+      {% endif %}
+      {% if page.tags %}
+        <div class="topic-tags">
+          Tags: 
+          {% for tag in page.tags %}
+            <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="topic-content">
+    {{ content }}
+  </div>
+
+  {% if page.related_topics %}
+  <section class="related-topics">
+    <h3>Related Topics</h3>
+    <ul>
+      {% for topic in page.related_topics %}
+        <li><a href="{{ topic.url | relative_url }}">{{ topic.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <nav class="topic-navigation">
+    <a href="{{ '/topics/' | relative_url }}" class="back-to-topics">← Back to All Topics</a>
+  </nav>
+</article>
+
+<style>
+.topic-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+.topic-title {
+  margin-bottom: 0.5rem;
+  color: #24292e;
+}
+
+.topic-description {
+  font-size: 1.1em;
+  color: #586069;
+  margin-bottom: 1rem;
+}
+
+.topic-meta {
+  font-size: 0.9em;
+  color: #586069;
+}
+
+.topic-category {
+  margin-right: 1rem;
+}
+
+.topic-tags .tag {
+  background: #f1f8ff;
+  color: #0366d6;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  margin-right: 0.5rem;
+  font-size: 0.8em;
+}
+
+.topic-content {
+  line-height: 1.6;
+}
+
+.related-topics {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e1e4e8;
+}
+
+.topic-navigation {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e1e4e8;
+}
+
+.back-to-topics {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.back-to-topics:hover {
+  text-decoration: underline;
+}
+</style>

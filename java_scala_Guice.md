@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Java Scala Guice"
+category: "general"
+---
+
 Guice (pronounced 'juice') is a lightweight dependency injection framework for Java 8 and above, brought to you by Google.
 
 Dependency Injection Using Guice in Java https://github.com/google/guice/wiki/GettingStarted

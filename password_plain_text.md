@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Password Plain Text"
+category: "general"
+---
+
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/c0075e09-b77e-46ba-8286-b858f2694c05)
 

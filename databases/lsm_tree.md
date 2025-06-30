@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Lsm Tree"
+category: "databases"
+---
+
 A log-structured merge-tree (LSM tree) is a data structure and storage architecture used by RocksDB.
 
 ## SSTable (Sorted String Table)

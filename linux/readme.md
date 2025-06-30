@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Readme"
+category: "linux"
+---
+
 ## TODO
 * https://bottomupcs.com/ch01s03.html
 * https://homepages.uc.edu/~thomam/Intro_Unix_Text/TOC.html

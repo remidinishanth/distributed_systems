@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Chubby"
+category: "google_chubby"
+---
+
 ### Coarse-Grained Lock
 > Locks a set of related objects with a single lock.
 
