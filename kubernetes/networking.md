@@ -8,6 +8,7 @@ Read awesome resources:
 * https://yuminlee2.medium.com/kubernetes-service-networking-2169f04ce02a
 * CNI https://yuminlee2.medium.com/kubernetes-container-network-interface-cni-ee5b21514664
 * Weave net plugin: https://yuminlee2.medium.com/kubernetes-weave-net-cni-plugin-810849203c73
+* Ref: Understanding Kubernetes Networking in 30 Minutes - Ricardo Katz & James Strong Conference talk
 
 ## Networking
 
@@ -41,6 +42,9 @@ Pod-to-Service Networking
 Ref: https://blog.purestorage.com/purely-technical/kubernetes-cluster-networking-components/
 
 CNI Plugin
+<img width="1108" alt="image" src="https://github.com/user-attachments/assets/56d736c7-1b0d-4e17-973b-765684f0fb02" />
+
+
 ![image](https://github.com/user-attachments/assets/3dd1bf94-6979-4de5-9962-a1dce0890366)
 
 Flannel is a Container Network Interface (CNI) plugin for Kubernetes that provides a simple overlay network, essential for pod-to-pod communication across different nodes in the cluster. It assigns unique subnets to each node and encapsulates packets at the host level, allowing pods to communicate even if they reside on different physical machines. 
