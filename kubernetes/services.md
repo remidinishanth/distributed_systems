@@ -19,3 +19,5 @@ How Services work internally
 <img width="1164" alt="image" src="https://github.com/user-attachments/assets/409a66b7-cfad-4e3a-82b1-edf2d5eae429" />
 
 Ref: Kubernetes Networking Intro and Deep-Dive - Bowei Du & Tim Hockin, Google -  Conference talk
+
+<img width="1199" alt="image" src="https://github.com/user-attachments/assets/a5cfea48-4a66-4e12-a3f7-5a2c23f47312" />
