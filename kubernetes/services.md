@@ -13,3 +13,9 @@ Headless service
 
 ![image](https://github.com/user-attachments/assets/23116aa8-2916-42fa-8aa8-27991ac1265f)
 
+
+How Services work internally
+
+<img width="1164" alt="image" src="https://github.com/user-attachments/assets/409a66b7-cfad-4e3a-82b1-edf2d5eae429" />
+
+Ref: Kubernetes Networking Intro and Deep-Dive - Bowei Du & Tim Hockin, Google -  Conference talk
