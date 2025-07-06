@@ -18,6 +18,9 @@ Which components handle these different APIs
 <img width="944" alt="image" src="https://github.com/user-attachments/assets/1499bab2-702d-4918-bea5-27423a7cb632" />
 
 
+<img width="1031" alt="image" src="https://github.com/user-attachments/assets/d704ad09-36d5-4b0a-93fa-ab15f5ecf32a" />
+
+
 The official documentation says kubernetes networking model requires:
 * all containers can communicate with all other containers without NAT
 * all nodes can communicate with all containers (and vice-versa) without NAT
