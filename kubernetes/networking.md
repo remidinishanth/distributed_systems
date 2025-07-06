@@ -29,6 +29,8 @@ The official documentation says kubernetes networking model requires:
 * all nodes can communicate with all containers (and vice-versa) without NAT
 * the IP that a container sees itself as is the same IP that others see it as
 
+<img width="1562" alt="image" src="https://github.com/user-attachments/assets/c9548c4c-b2d9-435b-ba28-beeddad87d55" />
+
 Must Read https://mvallim.github.io/kubernetes-under-the-hood/documentation/kube-flannel.html and https://www.devopsschool.com/tutorial/kubernetes/kubernetes-cni-flannel-overlay-networking.html
 
 Todo: https://iximiuz.com/en/posts/service-discovery-in-kubernetes/
