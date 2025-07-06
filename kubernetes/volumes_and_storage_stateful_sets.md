@@ -153,11 +153,13 @@ Ref: Kubernetes in Action
 
 <img width="1197" alt="image" src="https://github.com/user-attachments/assets/b85d5550-72e1-41fd-9ba4-9fe2be709a55" />
 
-HostPath is different from Local PV
+#### HostPath is different from Local PV
 
 <img width="1197" alt="image" src="https://github.com/user-attachments/assets/d3dde3c1-1a5b-46dd-bc37-bc74cb71b457" />
 
 <img width="891" alt="image" src="https://github.com/user-attachments/assets/1579ff95-266e-4f9f-b6fd-c6131fd162e8" />
+
+<img width="1535" alt="image" src="https://github.com/user-attachments/assets/b8bf653d-bb3c-4fe3-ad56-311014281f0a" />
 
 
 ## Storage
