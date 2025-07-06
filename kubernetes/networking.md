@@ -15,10 +15,13 @@ Read awesome resources:
 <img width="944" alt="image" src="https://github.com/user-attachments/assets/e2d03ce5-0207-4327-83fd-34dcff0714bb" />
 
 Which components handle these different APIs
+
 <img width="944" alt="image" src="https://github.com/user-attachments/assets/1499bab2-702d-4918-bea5-27423a7cb632" />
 
 
 <img width="1031" alt="image" src="https://github.com/user-attachments/assets/d704ad09-36d5-4b0a-93fa-ab15f5ecf32a" />
+
+<img width="1199" alt="image" src="https://github.com/user-attachments/assets/7ee09ae7-64d7-4fd8-8544-a5e96eb60028" />
 
 
 The official documentation says kubernetes networking model requires:
