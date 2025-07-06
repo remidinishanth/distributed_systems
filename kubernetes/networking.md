@@ -14,6 +14,8 @@ Read awesome resources:
 
 <img width="944" alt="image" src="https://github.com/user-attachments/assets/e2d03ce5-0207-4327-83fd-34dcff0714bb" />
 
+<img width="944" alt="image" src="https://github.com/user-attachments/assets/1499bab2-702d-4918-bea5-27423a7cb632" />
+
 
 The official documentation says kubernetes networking model requires:
 * all containers can communicate with all other containers without NAT
