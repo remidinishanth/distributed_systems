@@ -29,10 +29,10 @@ Which components handle these different APIs
 <img width="1199" alt="image" src="https://github.com/user-attachments/assets/7ee09ae7-64d7-4fd8-8544-a5e96eb60028" />
 
 
-The official documentation says kubernetes networking model requires:
-* all containers can communicate with all other containers without NAT
-* all nodes can communicate with all containers (and vice-versa) without NAT
-* the IP that a container sees itself as is the same IP that others see it as
+The official documentation says the Kubernetes Network Model requires that:
+* Pods are all able to communicate with one another without the need to make use of Network Address Translation (NAT).
+* Nodes - the machines that run the Kubernetes cluster. These can be either virtual or physical machines, or indeed anything else that is able to run Kubernetes - are also able to communicate with all the Pods, without the need for NAT.
+* Each Pod will see itself with the same IP that other Pods see it as having.
 
 <img width="1562" alt="image" src="https://github.com/user-attachments/assets/c9548c4c-b2d9-435b-ba28-beeddad87d55" />
 
