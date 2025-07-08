@@ -12,6 +12,11 @@ Read awesome resources:
 
 ## Networking
 
+Overview
+
+![image](https://github.com/user-attachments/assets/d82374fa-f335-4889-80bb-ee977238df61)
+
+
 <img width="944" alt="image" src="https://github.com/user-attachments/assets/e2d03ce5-0207-4327-83fd-34dcff0714bb" />
 
 Which components handle these different APIs
@@ -73,3 +78,25 @@ It works by first configuring an overlay network, with an IP range and the size 
 <img width="888" alt="image" src="https://github.com/user-attachments/assets/813c0c3c-85c1-4b8c-988a-3761b7ebe020" />
 
 
+## CNI Plugin
+
+How it works
+
+![image](https://github.com/user-attachments/assets/4050fc69-563e-4c5b-9411-35c8b769bc58)
+
+
+![image](https://github.com/user-attachments/assets/af9acab9-1e5f-4215-971b-0e35655cf01c)
+
+* In Overlay mode, a container is independent of the host’s IP address range. During cross-host communication, tunnels are established between hosts and all packets in the container CIDR block are encapsulated as packets exchanged between hosts in the underlying physical network. This mode removes the dependency on the underlying network.
+* In Routing mode, hosts and containers belong to different CIDR blocks. Cross-host communication is implemented through routing. No tunnels are established between different hosts for packet encapsulation. However, route interconnection partially depends on the underlying network. For example, a reachable route must exist from the underlying network to Layer 2.
+* In Underlay mode, containers and hosts are located at the same network layer and share the same position. Network interconnection between containers depends on the underlying network. Therefore, this mode is highly dependent on the underlying capabilities.
+
+Ref: https://alibaba-cloud.medium.com/getting-started-with-kubernetes-kubernetes-cnis-and-cni-plug-ins-10c33e44ac88
+
+### Overlay networking
+
+Flannel is created by CoreOS for Kubernetes networking, it also can be used as a general software defined network solution for other purpose.
+
+To achieve kubernetes' network requirements, flannel’s idea is simple: create another flat network which runs above the host network, this is the so-called overlay network. All containers(Pod) will be assigned one ip address in this overlay network, they communicate with each other by calling each other’s ip address directly.
+
+Ref: https://www.devopsschool.com/tutorial/kubernetes/kubernetes-cni-flannel-overlay-networking.html
