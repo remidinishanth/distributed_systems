@@ -42,14 +42,6 @@ Ref: https://serverlessland.com/event-driven-architecture/visuals/message-queue-
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/e2456728-b302-40f1-907b-7d4880ac4090)
 
-#### Consumers
-
-<img width="1456" height="914" alt="image" src="https://github.com/user-attachments/assets/8a1491f5-e0d2-4d75-aa18-1a3d1f368289" />
-
-![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/86839c99-ca34-4e8e-8de8-06a3ed3ea4ac)
-
-Ref: https://stackoverflow.com/questions/36203764/how-can-i-scale-kafka-consumers to read about scaling of consuming
-
 Read at https://www.oreilly.com/library/view/kafka-the-definitive/9781491936153/ch04.html
 
 Zuul architecture, https://www.youtube.com/watch?v=6w6E_B55p0E
@@ -73,3 +65,10 @@ Ref: Kafka white paper
 
 <img width="1495" height="712" alt="image" src="https://github.com/user-attachments/assets/df44e52d-6a48-4883-b7c9-90953b548451" />
 
+#### Consumers
+
+<img width="1272" height="755" alt="image" src="https://github.com/user-attachments/assets/e048a411-edc7-40d5-b933-3dbb899217b5" />
+
+<img width="1456" height="914" alt="image" src="https://github.com/user-attachments/assets/8a1491f5-e0d2-4d75-aa18-1a3d1f368289" />
+
+Ref: https://stackoverflow.com/questions/36203764/how-can-i-scale-kafka-consumers to read about scaling of consuming
