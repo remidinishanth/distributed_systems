@@ -15,6 +15,14 @@ It’s easy enough to say that we can divide the work among multiple computers b
 <img width="575" height="439" alt="image" src="https://github.com/user-attachments/assets/206e47ab-68ca-42dc-ab8b-7fd0f3ddc9c3" />
 
 
+Overview
+
+<img width="863" height="666" alt="image" src="https://github.com/user-attachments/assets/52416eed-7a48-4486-b3d5-5849dde96d7d" />
+
+Ref: https://jaceklaskowski.gitbooks.io/apache-kafka/content/kafka-overview.html
+
+
+
 https://stackoverflow.com/questions/41744506/difference-between-stream-processing-and-message-processing
 
 ## Event broker vs Message queue
