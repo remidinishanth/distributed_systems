@@ -88,6 +88,7 @@ Write scalability
 Read scalability
 <img width="1638" height="1148" alt="image" src="https://github.com/user-attachments/assets/8797b247-fd7a-41b0-bf7d-f09d64880ab4" />
 
+Ref: https://www.instaclustr.com/blog/the-power-of-kafka-partitions-how-to-get-the-most-out-of-your-kafka-cluster/
 
 ### Zookeeper
 
