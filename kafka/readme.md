@@ -53,5 +53,16 @@ Zuul architecture, https://www.youtube.com/watch?v=6w6E_B55p0E
 
 ![1693476406513](https://github.com/remidinishanth/distributed_systems/assets/19663316/f1978c9a-b706-4806-ab38-04581e4c22b8)
 
-![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/f757eede-a6c7-4fe0-b858-3bc8c4aef877)
+### Topics and Paritions
+
+<img width="589" height="666" alt="image" src="https://github.com/user-attachments/assets/faee0cab-dd82-4a0a-b2c0-e0c3167775a5" />
+
+Ref: Kafka white paper
+
+<img width="589" height="307" alt="image" src="https://github.com/user-attachments/assets/91efd441-83ba-4c59-9618-dae607f42a06" />
+
+
+<img width="673" height="369" alt="image" src="https://github.com/user-attachments/assets/68c43db3-0a3c-42c1-b4cd-66b75aa26f65" />
+
+<img width="850" height="444" alt="image" src="https://github.com/user-attachments/assets/d5754de4-fbad-4bda-ac46-ad9aaebe92d8" />
 
