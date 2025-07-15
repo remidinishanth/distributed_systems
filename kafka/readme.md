@@ -42,6 +42,10 @@ Ref: https://serverlessland.com/event-driven-architecture/visuals/message-queue-
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/e2456728-b302-40f1-907b-7d4880ac4090)
 
+#### Consumers
+
+<img width="1456" height="914" alt="image" src="https://github.com/user-attachments/assets/8a1491f5-e0d2-4d75-aa18-1a3d1f368289" />
+
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/86839c99-ca34-4e8e-8de8-06a3ed3ea4ac)
 
 Ref: https://stackoverflow.com/questions/36203764/how-can-i-scale-kafka-consumers to read about scaling of consuming
