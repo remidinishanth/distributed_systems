@@ -4,6 +4,8 @@ title: "Kafka"
 category: "general"
 ---
 
+Also read https://pk.org/417/notes/kafka.html 
+
 https://stackoverflow.com/questions/41744506/difference-between-stream-processing-and-message-processing
 
 ## Event broker vs Message queue
