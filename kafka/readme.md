@@ -83,6 +83,10 @@ Ref: Kafka white paper
 Ref: https://stackoverflow.com/questions/36203764/how-can-i-scale-kafka-consumers to read about scaling of consuming
 
 
+### Zookeeper
+
+<img width="1490" height="814" alt="image" src="https://github.com/user-attachments/assets/c70f474a-f0a4-4aad-a45d-8ff1452602c1" />
+
 
 ## TODO:
 Zuul architecture, https://www.youtube.com/watch?v=6w6E_B55p0E
