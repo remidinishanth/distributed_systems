@@ -6,6 +6,15 @@ category: "general"
 
 Also read https://pk.org/417/notes/kafka.html 
 
+> Goal: Create a distributed messaging system to handle large-scale streams of messages.
+
+How can a cluster of computers handle the influx of never-ending streams of data, coming from multiple sources? This data may come from industrial sensors, IoT devices scattered around the world, or log files from tens of thousands of systems in a data center.
+
+It’s easy enough to say that we can divide the work among multiple computers but how would we exactly do that?
+
+<img width="575" height="439" alt="image" src="https://github.com/user-attachments/assets/206e47ab-68ca-42dc-ab8b-7fd0f3ddc9c3" />
+
+
 https://stackoverflow.com/questions/41744506/difference-between-stream-processing-and-message-processing
 
 ## Event broker vs Message queue
