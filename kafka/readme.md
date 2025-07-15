@@ -40,7 +40,12 @@ Event brokers are a push system, they push these events downstream to consumers.
 Ref: https://serverlessland.com/event-driven-architecture/visuals/message-queue-vs-event-broker
 
 
-![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/e2456728-b302-40f1-907b-7d4880ac4090)
+<img width="1379" height="809" alt="image" src="https://github.com/user-attachments/assets/91af6d2a-090f-4a99-9332-9e7fe60ac025" />
+
+<img width="1456" height="809" alt="image" src="https://github.com/user-attachments/assets/1d88cb63-72bb-483d-bcc9-930a4d246785" />
+
+
+### Kafka
 
 Read at https://www.oreilly.com/library/view/kafka-the-definitive/9781491936153/ch04.html
 
