@@ -82,6 +82,12 @@ Ref: Kafka white paper
 
 Ref: https://stackoverflow.com/questions/36203764/how-can-i-scale-kafka-consumers to read about scaling of consuming
 
+Write scalability
+<img width="917" height="511" alt="image" src="https://github.com/user-attachments/assets/09062fee-f99c-48cd-b3e6-dae86dfb0671" />
+
+Read scalability
+<img width="805" height="509" alt="image" src="https://github.com/user-attachments/assets/7798c1fa-fd46-44f2-872c-057fcb3240f4" />
+
 
 ### Zookeeper
 
