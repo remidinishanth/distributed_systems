@@ -49,8 +49,6 @@ Ref: https://serverlessland.com/event-driven-architecture/visuals/message-queue-
 
 Read at https://www.oreilly.com/library/view/kafka-the-definitive/9781491936153/ch04.html
 
-Zuul architecture, https://www.youtube.com/watch?v=6w6E_B55p0E
-
 
 ![1693476406513](https://github.com/remidinishanth/distributed_systems/assets/19663316/f1978c9a-b706-4806-ab38-04581e4c22b8)
 
@@ -77,3 +75,7 @@ Ref: Kafka white paper
 <img width="1456" height="914" alt="image" src="https://github.com/user-attachments/assets/8a1491f5-e0d2-4d75-aa18-1a3d1f368289" />
 
 Ref: https://stackoverflow.com/questions/36203764/how-can-i-scale-kafka-consumers to read about scaling of consuming
+
+
+## TODO:
+Zuul architecture, https://www.youtube.com/watch?v=6w6E_B55p0E
