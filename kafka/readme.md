@@ -70,3 +70,6 @@ Ref: Kafka white paper
 
 <img width="850" height="444" alt="image" src="https://github.com/user-attachments/assets/d5754de4-fbad-4bda-ac46-ad9aaebe92d8" />
 
+
+<img width="1495" height="712" alt="image" src="https://github.com/user-attachments/assets/df44e52d-6a48-4883-b7c9-90953b548451" />
+
