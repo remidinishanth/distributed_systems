@@ -47,6 +47,9 @@ Ref: https://serverlessland.com/event-driven-architecture/visuals/message-queue-
 
 ### Kafka
 
+<img width="1466" height="773" alt="image" src="https://github.com/user-attachments/assets/2b6f75b9-b44a-49a4-b835-9bec6fe36a11" />
+
+
 Read at https://www.oreilly.com/library/view/kafka-the-definitive/9781491936153/ch04.html
 
 
@@ -70,11 +73,15 @@ Ref: Kafka white paper
 
 #### Consumers
 
+<img width="1462" height="705" alt="image" src="https://github.com/user-attachments/assets/ff0cc06a-809b-4771-a7a3-2822b897c37e" />
+
+
 <img width="1272" height="755" alt="image" src="https://github.com/user-attachments/assets/e048a411-edc7-40d5-b933-3dbb899217b5" />
 
 <img width="1456" height="914" alt="image" src="https://github.com/user-attachments/assets/8a1491f5-e0d2-4d75-aa18-1a3d1f368289" />
 
 Ref: https://stackoverflow.com/questions/36203764/how-can-i-scale-kafka-consumers to read about scaling of consuming
+
 
 
 ## TODO:
