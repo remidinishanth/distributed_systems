@@ -54,6 +54,9 @@ AMQP Protocol
 
 <img width="1361" height="644" alt="image" src="https://github.com/user-attachments/assets/5b797e2d-573e-40cb-8e49-0959e59a3bda" />
 
+RabbitMQ supports different types of Exchanges, to achieve Pubsub-like functionality, fanout with multiple queues as subscription is good
+<img width="1180" height="720" alt="image" src="https://github.com/user-attachments/assets/6e1ed711-9b12-4e6d-baf8-0dcb8ba955d1" />
+
 
 ### Kafka
 
