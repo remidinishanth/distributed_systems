@@ -57,9 +57,9 @@ AMQP Protocol
 RabbitMQ supports different types of Exchanges, to achieve Pubsub-like functionality, fanout with multiple queues as subscription is good
 <img width="1180" height="720" alt="image" src="https://github.com/user-attachments/assets/6e1ed711-9b12-4e6d-baf8-0dcb8ba955d1" />
 
-Similarly in SNS + SQS for achiving fanout
+Similarly, in SNS + SQS for achieving similar functionality
 
-<img width="502" height="458" alt="image" src="https://github.com/user-attachments/assets/c104cd2c-d611-493f-818d-b12db10e113e" />
+<img width="723" height="448" alt="image" src="https://github.com/user-attachments/assets/1fcbb4dc-5661-464c-b035-c63597cba63c" />
 
 
 ### Kafka
