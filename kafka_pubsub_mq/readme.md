@@ -44,6 +44,16 @@ Ref: https://serverlessland.com/event-driven-architecture/visuals/message-queue-
 
 <img width="1456" height="809" alt="image" src="https://github.com/user-attachments/assets/1d88cb63-72bb-483d-bcc9-930a4d246785" />
 
+### How Google PubSub achieves similar functionality
+
+By separating Topic and Subscription
+
+<img width="2538" height="1305" alt="image" src="https://github.com/user-attachments/assets/5d0c08ca-7ba2-4482-bbcc-e8382cbd1b9a" />
+
+AMQP Protocol
+
+<img width="1361" height="644" alt="image" src="https://github.com/user-attachments/assets/5b797e2d-573e-40cb-8e49-0959e59a3bda" />
+
 
 ### Kafka
 
