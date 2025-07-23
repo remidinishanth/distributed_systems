@@ -2,6 +2,10 @@ TICK stack: Telegraf, InfluxDB, Chronograf, and Kapacitor.
 
 TIG stack: Telegraf, InfluxDB, Grafana
 
+* Telegraf: Collecting data
+* Influxdb: Saving data
+* Grafana: Displaying data
+
 <img width="2124" height="1400" alt="image" src="https://github.com/user-attachments/assets/a4fe2c28-8979-44ab-80f7-983cfee8f2a7" />
 
 
