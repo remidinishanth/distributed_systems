@@ -1,3 +1,6 @@
+<img width="1625" height="923" alt="image" src="https://github.com/user-attachments/assets/801f3b35-d56e-41ae-ab75-ca51bfebe692" />
+
+
 TICK stack: Telegraf, InfluxDB, Chronograf, and Kapacitor.
 
 The TICK stack stands for
