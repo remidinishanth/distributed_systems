@@ -1,5 +1,10 @@
 TICK stack: Telegraf, InfluxDB, Chronograf, and Kapacitor.
 
+TIG stack: Telegraf, InfluxDB, Grafana
+
+<img width="1200" height="446" alt="image" src="https://github.com/user-attachments/assets/82c65106-c5e4-45dd-9730-aa08edbf3e1f" />
+
+
 ## What Is InfluxDB?
 
 InfluxDB is an open source time series database (TSDB). 
