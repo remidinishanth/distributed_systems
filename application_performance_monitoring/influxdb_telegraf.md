@@ -23,6 +23,10 @@ InfluxDB is an ideal choice for IoT applications due to the following benefits:
 * Schema-less design: Easily adapts to various IoT data formats.
 * Integrations: Works seamlessly with MQTT, Telegraf, and Grafana.
 
+## Telegraf
+
+<img width="1200" height="482" alt="image" src="https://github.com/user-attachments/assets/e6275969-a384-4d38-b7e0-8ee240ae37e2" />
+
 ## MQTT
 
 MQTT (Message Queuing Telemetry Transport) is a lightweight publish/subscribe messaging protocol optimized for machine-to-machine (M2M) communication in IoT environments.
