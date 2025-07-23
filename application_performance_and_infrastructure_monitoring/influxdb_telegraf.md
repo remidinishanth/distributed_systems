@@ -2,6 +2,9 @@ TICK stack: Telegraf, InfluxDB, Chronograf, and Kapacitor.
 
 TIG stack: Telegraf, InfluxDB, Grafana
 
+<img width="2124" height="1400" alt="image" src="https://github.com/user-attachments/assets/a4fe2c28-8979-44ab-80f7-983cfee8f2a7" />
+
+
 <img width="1200" height="446" alt="image" src="https://github.com/user-attachments/assets/82c65106-c5e4-45dd-9730-aa08edbf3e1f" />
 
 Ref: https://www.influxdata.com/blog/infrastructure-monitoring-basics-telegraf-influxdb-grafana/
