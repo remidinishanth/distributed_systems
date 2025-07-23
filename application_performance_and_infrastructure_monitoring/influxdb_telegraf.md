@@ -1,5 +1,12 @@
 TICK stack: Telegraf, InfluxDB, Chronograf, and Kapacitor.
 
+The TICK stack stands for
+* Telegraph: a server agent for collecting and reporting metrics
+* InfluxDB:  a high-performance time series database which uses SQL like syntax to query the data.
+* Chronograph: a user interface to quickly see the data  stored in InfluxDB to build visualization dashboards and alerts
+* Kapacitor: a data-processing engine that can process, stream and batch data from InfluxDB
+
+
 <img width="1305" height="913" alt="image" src="https://github.com/user-attachments/assets/cab75c53-638c-406f-a4e7-6b0a7c3ab886" />
 
 
