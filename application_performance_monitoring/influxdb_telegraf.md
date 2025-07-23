@@ -4,6 +4,7 @@ TIG stack: Telegraf, InfluxDB, Grafana
 
 <img width="1200" height="446" alt="image" src="https://github.com/user-attachments/assets/82c65106-c5e4-45dd-9730-aa08edbf3e1f" />
 
+Ref: https://www.influxdata.com/blog/infrastructure-monitoring-basics-telegraf-influxdb-grafana/
 
 ## What Is InfluxDB?
 
