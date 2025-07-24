@@ -12,6 +12,8 @@ Client libraries help in pulling metrics from the applications and send it to th
 
 #### Exporters
 
+<img width="1948" height="730" alt="image" src="https://github.com/user-attachments/assets/ce0b01b5-3a00-4812-8aa0-6c53e7ea01ab" />
+
 Exporter - A Prometheus exporter is any application that exposes metric data in a format that can be collected (or
 "scraped") by the Prometheus server.
 
