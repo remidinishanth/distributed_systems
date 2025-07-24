@@ -4,6 +4,9 @@ title: "Readme"
 category: "application_performance_monitoring"
 ---
 
+<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/829e263d-108a-4157-bc79-d3eed9436746" />
+
+
 * Read about https://newrelic.com/platform/application-monitoring
 * https://www.metricfire.com/blog/cloudwatch-vs-alternatives/
 
