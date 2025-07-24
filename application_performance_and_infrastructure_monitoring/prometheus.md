@@ -43,6 +43,8 @@ The system collects data samples over time, each of which is a tuple of an UNIX 
 
 <img width="1594" height="442" alt="image" src="https://github.com/user-attachments/assets/58f09269-a5e6-4488-9932-4150daa26a7a" />
 
+<img width="1362" height="639" alt="image" src="https://github.com/user-attachments/assets/254f800f-d9d1-481a-ba52-03d2ff3888d4" />
+
 <img width="2461" height="801" alt="image" src="https://github.com/user-attachments/assets/6196304a-5274-4967-8180-1f87bd05b0b7" />
 
 Ref: https://training.promlabs.com/training/introduction-to-prometheus/prometheus-an-overview/time-series-data-model/
