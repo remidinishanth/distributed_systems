@@ -8,11 +8,16 @@
 
 <img width="2024" height="838" alt="image" src="https://github.com/user-attachments/assets/f4b4a716-1352-4695-bf89-e42dde82e654" />
 
+Client libraries help in pulling metrics from the applications and send it to the Prometheus Server as direct instrumentation.
+
 Exporter - A Prometheus exporter is any application that exposes metric data in a format that can be collected (or
 "scraped") by the Prometheus server.
 
 For example, Node Exporter runs on a Linux machine and collects a variety of system metrics. It then exposes them to
 Prometheus.
+
+<img width="1364" height="758" alt="image" src="https://github.com/user-attachments/assets/4eb88768-a20b-40d7-b91d-7df2366b278e" />
+
 
 <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/01e3ddab-3782-4831-87f8-c652ce5e864a" />
 
