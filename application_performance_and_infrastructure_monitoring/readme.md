@@ -4,6 +4,10 @@ title: "Readme"
 category: "application_performance_monitoring"
 ---
 
+
+<img width="1868" height="804" alt="image" src="https://github.com/user-attachments/assets/4cc54970-bbbe-41ae-8a91-a7f3a396cb16" />
+
+
 <img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/829e263d-108a-4157-bc79-d3eed9436746" />
 
 
