@@ -4,6 +4,8 @@ title: "Kafka"
 category: "general"
 ---
 
+Todo: https://medium.com/@yuvarajl/why-nutanix-beam-went-ahead-with-apache-pulsar-instead-of-apache-kafka-1415f592dbbb 
+
 Also read https://pk.org/417/notes/kafka.html 
 
 > Goal: Create a distributed messaging system to handle large-scale streams of messages.
