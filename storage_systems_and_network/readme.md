@@ -6,3 +6,7 @@
 ## Thick provisioning vs Thin provisioning
 
 <img width="1164" height="468" alt="image" src="https://github.com/user-attachments/assets/ce328474-a40a-4dbf-a171-271ec96f49b1" />
+
+<img width="1838" height="1064" alt="image" src="https://github.com/user-attachments/assets/8d6b8b7b-fdfc-4e83-9aac-0a85a831fbe4" />
+
+Thin provisioning can introduce higher latency compared to thick provisioning due to the on-the-fly allocation of storage space and potential need for zeroing out blocks before writing data.
