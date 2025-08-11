@@ -46,6 +46,7 @@ Since different open file table entries can represent the same file, it is a was
 
 ![image](https://github.com/user-attachments/assets/4b615ad2-6e51-48cb-84ca-3991c5dd2b13)
 
+And also read https://stackoverflow.com/questions/5256599/what-are-file-descriptors-explained-in-simple-terms
 
 ## Virtual File System
 <img width="785" alt="image" src="https://github.com/user-attachments/assets/c20d2465-292e-4793-ad46-fb0df67a8df3" />
