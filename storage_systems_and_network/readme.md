@@ -2,7 +2,12 @@
 
 <img width="2012" height="1282" alt="image" src="https://github.com/user-attachments/assets/7bee1245-e28e-428b-a91a-c663a4667aeb" />
 
+---
+
 NFS and SMB are protocols of NAS
+
+---
+
 <img width="782" height="595" alt="image" src="https://github.com/user-attachments/assets/21e489b4-995a-40c6-9e0a-4ca2b184afeb" />
 
 
