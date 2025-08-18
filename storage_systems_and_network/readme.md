@@ -16,6 +16,11 @@ This system employs protocols like
 
 enabling seamless data exchange between multiple users.
 
+<img width="864" height="547" alt="image" src="https://github.com/user-attachments/assets/652a82bc-a808-42e6-83b0-740265f75f56" />
+
+<img width="1280" height="1848" alt="image" src="https://github.com/user-attachments/assets/d38576a0-f4ff-47af-91a9-8ce3e6d596a6" />
+
+
 ## Thick provisioning vs Thin provisioning
 
 <img width="1164" height="468" alt="image" src="https://github.com/user-attachments/assets/ce328474-a40a-4dbf-a171-271ec96f49b1" />
