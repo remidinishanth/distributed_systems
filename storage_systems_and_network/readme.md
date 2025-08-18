@@ -20,6 +20,18 @@ enabling seamless data exchange between multiple users.
 
 <img width="1280" height="1848" alt="image" src="https://github.com/user-attachments/assets/d38576a0-f4ff-47af-91a9-8ce3e6d596a6" />
 
+### NFS
+<img width="1406" height="1300" alt="image" src="https://github.com/user-attachments/assets/1fe90ffd-4383-41be-8e10-388ee7a2b505" />
+
+
+#### SMB
+<img width="1416" height="1308" alt="image" src="https://github.com/user-attachments/assets/a49f9458-f7d9-4a79-be5e-87ad084de538" />
+
+#### NAS
+<img width="1424" height="1298" alt="image" src="https://github.com/user-attachments/assets/65cc3378-4697-4d7d-9387-b85c82fc00ac" />
+
+<img width="1514" height="1038" alt="image" src="https://github.com/user-attachments/assets/de58290e-fe3b-4908-8742-02d26f8c2595" />
+
 
 ## Thick provisioning vs Thin provisioning
 
