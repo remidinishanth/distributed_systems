@@ -6,6 +6,15 @@
 
 <img width="800" height="388" alt="image" src="https://github.com/user-attachments/assets/7280743a-ad0a-408b-b492-3a8fee86bf05" />
 
+### NAS
+
+The NAS device itself is a network node—much like computers and other TCP/IP devices, all of which maintain their own IP address—and the NAS file service uses the ethernet network to send and receive files. 
+
+This system employs protocols like 
+* Network File System (NFS) and
+* Server Message Block (SMB),
+
+enabling seamless data exchange between multiple users.
 
 ## Thick provisioning vs Thin provisioning
 
