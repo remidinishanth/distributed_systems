@@ -12,3 +12,5 @@ An Application Binary Interface (ABI) defines the low-level rules for how compil
 particularly between programs and the operating system.
 
 <img width="1038" height="639" alt="image" src="https://github.com/user-attachments/assets/655e3385-f0d4-4290-a824-ebe1da6cd94a" />
+
+You cannot pass seven arguments or cannot use more than 8 bytes in a register
