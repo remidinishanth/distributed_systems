@@ -1,4 +1,4 @@
-<img width="993" height="552" alt="image" src="https://github.com/user-attachments/assets/3ccdf85f-8a0e-45dc-851f-8eb65edd2a0e" />
+<img width="1038" height="639" alt="image" src="https://github.com/user-attachments/assets/c765f82d-7516-4a5a-96a2-804c4eb52542" /><img width="993" height="552" alt="image" src="https://github.com/user-attachments/assets/3ccdf85f-8a0e-45dc-851f-8eb65edd2a0e" />
 
 `const void*`
 * `void *` because it doesn't care the type of pointer
@@ -7,3 +7,8 @@
 Basic Hello world program, even lower level than C
 
 <img width="1036" height="470" alt="image" src="https://github.com/user-attachments/assets/d5933edf-4ed4-4f24-bc35-0e05c8bc5f81" />
+
+An Application Binary Interface (ABI) defines the low-level rules for how compiled code interacts, 
+particularly between programs and the operating system.
+
+<img width="1038" height="639" alt="image" src="https://github.com/user-attachments/assets/655e3385-f0d4-4290-a824-ebe1da6cd94a" />
