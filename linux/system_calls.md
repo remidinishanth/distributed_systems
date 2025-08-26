@@ -22,3 +22,7 @@ You cannot pass seven arguments or cannot use more than 8 bytes in a register
 <img width="1075" height="464" alt="image" src="https://github.com/user-attachments/assets/a91a4e53-76a9-4dde-a87a-bfb784e2da15" />
 
 <img width="1076" height="684" alt="image" src="https://github.com/user-attachments/assets/f71ae7b1-29bd-402c-b662-0cafe80e60a2" />
+
+Disassemble the 36 bytes and we get
+
+<img width="1076" height="573" alt="image" src="https://github.com/user-attachments/assets/8ac2fa7a-f7c6-4e9e-b3e9-deae57f97754" />
