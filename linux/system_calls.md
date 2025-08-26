@@ -1,3 +1,5 @@
+Source: https://github.com/eyolfson/os-slides 
+
 <img width="1038" height="639" alt="image" src="https://github.com/user-attachments/assets/c765f82d-7516-4a5a-96a2-804c4eb52542" /><img width="993" height="552" alt="image" src="https://github.com/user-attachments/assets/3ccdf85f-8a0e-45dc-851f-8eb65edd2a0e" />
 
 `const void*`
@@ -16,3 +18,5 @@ particularly between programs and the operating system.
 You cannot pass seven arguments or cannot use more than 8 bytes in a register
 
 <img width="1075" height="478" alt="image" src="https://github.com/user-attachments/assets/db3faa88-6b72-411b-8f1f-4fa59af1eb33" />
+
+<img width="1075" height="464" alt="image" src="https://github.com/user-attachments/assets/a91a4e53-76a9-4dde-a87a-bfb784e2da15" />
