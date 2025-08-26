@@ -4,6 +4,10 @@ title: "Readme"
 category: "filesystem_and_file_descriptors"
 ---
 
+<img width="2132" height="896" alt="image" src="https://github.com/user-attachments/assets/234a77e8-8246-4cb6-a72d-204412b525e6" />
+
+Ref: Operating system ECE353 (University of Toronto)
+
 File descriptors are an index into a file descriptor table stored by the kernel. The kernel creates a file descriptor in response to an open call and associates the file descriptor with some abstraction of an underlying file-like object, be that an actual hardware device, or a file system or something else entirely. Consequently a process's read or write calls that reference that file descriptor are routed to the correct place by the kernel to ultimately do something useful.
 
 <img width="1081" alt="image" src="https://github.com/user-attachments/assets/1b450486-8fb7-4894-a75d-d1ee063c8290" />
