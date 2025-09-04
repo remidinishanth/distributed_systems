@@ -2,6 +2,7 @@
 
 or DARE - Data at Rest encryption. 
 
+* For client side encryption, modern data encryption strategies often employ a two-layer model of key management. This helps balance strong security with operational flexibility.
 * The data is encrypted with a DEK(Data Encryption Key) by a symmetric encryption algorithm such as AES256.
 * The DEK is then encrypted using an asymmetric encryption algorithm such as RSA and this key is referred to as the KEK (Key Encryption Key).
 * These encryption operations, and the keys used to support them, are typically performed on some HSM (hardware security module) the cloud provider manages behind the scenes.
