@@ -23,3 +23,14 @@ Also refer to https://www.lambrospetrou.com/articles/encryption/
 <img width="806" height="429" alt="image" src="https://github.com/user-attachments/assets/bf29e8e1-792d-444a-ac38-3b8d40bbcc53" />
 
 <img width="806" height="409" alt="image" src="https://github.com/user-attachments/assets/2278f68d-596e-47b6-ad5b-a99d7a692aee" />
+
+
+### How KMS helps
+
+<img width="1420" height="1946" alt="image" src="https://github.com/user-attachments/assets/1f7c39ab-bdb6-46b0-b8f5-46bace0ab864" />
+
+Key rotation happens at the KEK level, not for the billions of DEKs you might have.
+
+<img width="1710" height="1148" alt="image" src="https://github.com/user-attachments/assets/4b371c87-7b29-4f07-84bb-90ecec1c5bd1" />
+
+<img width="717" height="520" alt="image" src="https://github.com/user-attachments/assets/484aefe7-de63-483e-8216-96b1ff2d5401" />
