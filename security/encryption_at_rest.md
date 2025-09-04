@@ -10,6 +10,9 @@ or DARE - Data at Rest encryption.
 <img width="1022" height="633" alt="image" src="https://github.com/user-attachments/assets/5101ac88-d060-4417-8579-e77646ee537e" />
 
 
+<img width="751" height="399" alt="image" src="https://github.com/user-attachments/assets/add9d43c-5b8b-4753-b548-87cb90c784ef" />
+
+
 ### Symmetric encryption and Key rotation
 
 Also refer to https://www.lambrospetrou.com/articles/encryption/ 
