@@ -1,6 +1,6 @@
 ## Encryption at rest
 
-Encryption at rest or (Data at Rest) Encryption. 
+or DARE - Data at Rest encryption. 
 
 * The data is encrypted with a DEK(Data Encryption Key) by a symmetric encryption algorithm such as AES256.
 * The DEK is then encrypted using an asymmetric encryption algorithm such as RSA and this key is referred to as the KEK (Key Encryption Key).
