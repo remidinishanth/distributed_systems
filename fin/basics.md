@@ -44,3 +44,13 @@
 ### Forward PE
 
 <img width="880" height="440" alt="image" src="https://github.com/user-attachments/assets/5f1f9695-ec87-4812-bd9b-6e9ff051d427" />
+
+<img width="1146" height="742" alt="image" src="https://github.com/user-attachments/assets/2eee9de0-4670-4b75-a9c5-058b9520d37b" />
+
+<img width="1152" height="648" alt="image" src="https://github.com/user-attachments/assets/3a495558-b2ed-45c2-9af8-fcb1f2fb7016" />
+
+## Price/Earnings to Growth ratio (PEG)
+
+<img width="1024" height="578" alt="image" src="https://github.com/user-attachments/assets/7c29567f-5a26-4992-914c-6932b05fc900" />
+
+<img width="630" height="350" alt="image" src="https://github.com/user-attachments/assets/3727ddfd-86af-49b9-b92f-073eb2892e90" />
