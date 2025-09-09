@@ -4,6 +4,29 @@ title: "Balance Sheet"
 category: "fin"
 ---
 
+## Financial Statements
+
+<img width="1160" height="1160" alt="image" src="https://github.com/user-attachments/assets/1507388d-5aaf-4a2f-bd06-5596e8c7027c" />
+
+<img width="766" height="573" alt="image" src="https://github.com/user-attachments/assets/27b9fdbb-d2dc-45d0-9366-fd791b17ca82" />
+
+
+## Balance Sheet
+
+> A balance sheet is a financial document designed to communicate exactly how much a company or organization is worth—its so-called “book value.” The balance sheet achieves this by listing out and tallying up all of a company’s assets, liabilities, and owners’ equity as of a particular date, also known as the “reporting date."
+
+<img width="1200" height="800" alt="image" src="https://github.com/user-attachments/assets/0bbd5e1a-7f04-407e-afb7-81c98f8096ff" />
+
+<img width="1160" height="1160" alt="image" src="https://github.com/user-attachments/assets/bc7a9c94-505d-49fe-8af5-7904e7928517" />
+
+<img width="736" height="736" alt="image" src="https://github.com/user-attachments/assets/c89138c9-fd10-4e8c-b923-9d56add45a3f" />
+
+<img width="736" height="735" alt="image" src="https://github.com/user-attachments/assets/bda103ed-1707-4a83-932f-bb6d8d065f56" />
+
+https://online.hbs.edu/blog/post/how-to-read-a-balance-sheet
+
+<img width="802" height="1300" alt="image" src="https://github.com/user-attachments/assets/331ed4a1-08a3-414a-9398-abf9ad78f753" />
+
 ## Balance Sheet
 
 https://online.hbs.edu/blog/post/how-to-read-a-balance-sheet
