@@ -1,3 +1,10 @@
+<img width="800" height="1000" alt="image" src="https://github.com/user-attachments/assets/044ed337-61c1-4f34-90c7-7af1585cdde7" />
+
+<img width="1800" height="2050" alt="image" src="https://github.com/user-attachments/assets/135d6d94-a814-4408-8172-146518f0d6ea" />
+
+<img width="1206" height="1787" alt="image" src="https://github.com/user-attachments/assets/2b7f1019-ad70-4231-ab80-9d7787e88757" />
+
+
 ## Market Capitalization
 
 <img width="828" height="465" alt="image" src="https://github.com/user-attachments/assets/a953aad7-7a30-4cc0-80dd-8c2e561db303" />
