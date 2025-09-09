@@ -6,6 +6,8 @@ category: "fin"
 
 ## Balance Sheet
 
+https://online.hbs.edu/blog/post/how-to-read-a-balance-sheet
+
 * Balance sheet refers to a financial statement that reports a company's assets, liabilities, and shareholder equity at a specific point in time.
 * The balance sheet adheres to an equation that equates assets with the sum of liabilities and shareholder equity.
 > ` Assets = Liabilities + Shareholders’ Equity `
