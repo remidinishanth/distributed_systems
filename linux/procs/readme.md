@@ -44,13 +44,18 @@ openxs@ao756:~$ ps aux | grep mysqld
 mysql    30580  0.7  8.1 746308 313984 ?       Sl   Jan02   9:55 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid
 ```
 
+
 So there will be the `/proc/30580` directory with the following content:
 
 <img width="1000" height="502" alt="image" src="https://github.com/user-attachments/assets/49a89a0f-33b7-4c0c-a3b9-086b8eb3684d" />
 
-I highlighted the files and directories I consider most useful. 
+Highlighted are the files and directories are more useful. 
 Note also "Permission denied" messages above that you may get while accessing some files in `/proc`, 
 even related to the processes you own. You may still need root/sudo access (or belong to some dedicated group) to read them.
+
+<img width="1620" height="1500" alt="image" src="https://github.com/user-attachments/assets/deb12ffd-11a3-4105-8bab-04f00c761b20" />
+
+
 
 <img width="1702" height="356" alt="image" src="https://github.com/user-attachments/assets/83964633-b1c2-4871-8a8c-3f2d6f81a3c5" />
 
