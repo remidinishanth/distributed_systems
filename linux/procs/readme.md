@@ -97,3 +97,7 @@ even related to the processes you own. You may still need root/sudo access (or b
 ### maps
 
 <img width="2264" height="1722" alt="image" src="https://github.com/user-attachments/assets/09281f15-7a93-4832-a082-cc29f225585a" />
+
+### status
+
+<img width="2184" height="1738" alt="image" src="https://github.com/user-attachments/assets/8634aac0-cf32-4732-84c5-f16127e6f8bd" />
