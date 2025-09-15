@@ -37,6 +37,8 @@ Every command line tool like ps,top,vmstat,free derives its results from parsing
 
 <img width="816" height="693" alt="image" src="https://github.com/user-attachments/assets/3573c4d5-28f5-448f-a2f2-163315ed0d71" />
 
+<img width="4096" height="4094" alt="image" src="https://github.com/user-attachments/assets/a45922d7-b09e-48d0-9cac-8954c499771e" />
+
 
 Most  of it is read-only, but some files allow to change kernel variables. 
 
