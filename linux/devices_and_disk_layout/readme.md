@@ -5,6 +5,10 @@ category: "linux"
 description: "Linux devices, disk layout, and filesystem configuration"
 ---
 
+<img width="800" height="445" alt="image" src="https://github.com/user-attachments/assets/5a4b9d1f-8d20-429f-9c64-2183e3a54632" />
+
+
+```
 # /etc/fstab
 # Created by anaconda on Mon Jan 20 15:59:48 2025
 #
