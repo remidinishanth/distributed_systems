@@ -1,7 +1,7 @@
 Ways of Encryption
 
 * Application side, Read more at https://www.percona.com/blog/transparent-data-encryption-tde/
-  - Server side encryption(MySQL stores the tables etc encrypted, but when we read etc we get unencrypted data)
+  - Server side encryption(MySQL stores the tables etc encrypted, but when we read etc we get unencrypted data) - the encryption process is transparent to the user, allowing them to access and manipulate the data as usual without worrying about the encryption and decryption process.
   - Client side encryption(Client writes encrypted data to server, say we encrypt and store that encrypted data in MySQL rows)
 
 <img width="1347" height="656" alt="image" src="https://github.com/user-attachments/assets/1d7f8ec2-04fb-43cf-9d03-54d1e156144a" />
