@@ -34,8 +34,15 @@ It forms the foundation of the logical volume manager (LVM), software RAIDs and 
 
 https://gitlab.com/cryptsetup/cryptsetup
 
-LUKS (Linux Unified Key Setup) is the standard on-disk format for disk encryption on Linux systems, based on the dm-crypt kernel module.
-
 <img width="300" height="900" alt="image" src="https://github.com/user-attachments/assets/bdd1e970-9a36-4f28-821d-f752ea84fa67" />
 
 <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/ff1b7116-4185-45f1-96d4-a145c90abe77" />
+
+Raw DM-Crypt requires manual key management. You have to handle key derivation, storage, and potential header formats yourself, which is prone to errors like weak key generation or incompatibility across systems.
+
+## Linux Unified Key Setup (LUKS)
+
+LUKS builds on DM-Crypt by standardizing the on-disk format for encrypted volumes, focusing on key management. It's essentially a header format that stores metadata (like encryption parameters and key slots) at the beginning of the block device.
+
+LUKS (Linux Unified Key Setup) is the standard on-disk format for disk encryption on Linux systems, based on the dm-crypt kernel module.
+
