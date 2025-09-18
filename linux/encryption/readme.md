@@ -42,6 +42,10 @@ It forms the foundation of the logical volume manager (LVM), software RAIDs and 
 
 `dm-crypt` is the Linux kernel's device mapper(dm) crypto target. A transparent disk encryption subsystem in the Linux kernel. It is implemented as a device mapper target and may be stacked on top of other device mapper transformations. 
 
+dm-crypt is a transparent disk encryption subsystem. That being said, it's better suited to encrypt disks and partitions. It can encrypt files, but they have to be mapped as devices for this to work. You can still encrypt files by using loop devices, cryptsetup will even automatically create those loop devices as needed.
+
+If you want to encrypt only one file, GnuPG could be a better tool. Example: `gpg -c filename`
+
 <img width="1936" height="1080" alt="image" src="https://github.com/user-attachments/assets/21250f3b-69f2-4b58-92ee-91f903698d19" />
 
 https://gitlab.com/cryptsetup/cryptsetup
