@@ -11,6 +11,11 @@ Nice blog https://wiki.archlinux.org/title/Data-at-rest_encryption
 
 <img width="1347" height="656" alt="image" src="https://github.com/user-attachments/assets/1d7f8ec2-04fb-43cf-9d03-54d1e156144a" />
 
+
+> All data-at-rest encryption methods operate in such a way that even though the disk actually holds encrypted data, the operating system and applications "see" it as the corresponding normal readable data as long as the cryptographic container (i.e. the logical part of the disk that holds the encrypted data) has been "unlocked" and mounted.
+Ref: https://wiki.archlinux.org/title/Data-at-rest_encryption
+
+
 > Device Mapper - Framework provided by the Linux Kernel, used to map physical block devices to higher level virtual block devices
 
 > DM-Crypt - A target used with device mapper that provides transparent encryption. Allows us to create a virtual block device and have all data be encrypted on the fly before being committed to disk and can decrypt in the same way for reads.
