@@ -17,6 +17,9 @@ Ref: https://wiki.archlinux.org/title/Data-at-rest_encryption
 
 For this to happen, some "secret information" (usually in the form of a keyfile and/or passphrase) needs to be supplied by the user, from which the actual encryption key can be derived (and stored in the kernel keyring for the duration of the session).
 
+<img width="1862" height="1442" alt="image" src="https://github.com/user-attachments/assets/5a4c9a2c-83f8-4deb-a9f6-6e3356975445" />
+
+
 > Device Mapper - Framework provided by the Linux Kernel, used to map physical block devices to higher level virtual block devices
 
 > DM-Crypt - A target used with device mapper that provides transparent encryption. Allows us to create a virtual block device and have all data be encrypted on the fly before being committed to disk and can decrypt in the same way for reads.
