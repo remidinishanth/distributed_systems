@@ -72,12 +72,10 @@ networking subsystem.
 
 ![image](https://github.com/user-attachments/assets/44ff55a4-0956-49e0-8f78-0a9befeb5214)
 
-https://dev.to/shankarsurya035/how-to-create-lvm-partition-in-linux-dgo
-
 
 > Special files for char drivers are identified by a “c” in the first column of the output of ls -l. Block devices appear in /dev as well, but they are identified by a “b.” The focus of this chapter is on char devices, but much of the following information applies to block devices as well.
 
-## Logical Volume Management
+# Logical Volume Management
 
 LVM creates a logical volume that aggregates multiple disks to stripe reads and writes. 
 It also serves as a scalable volume for maintenance.
@@ -89,6 +87,8 @@ It also serves as a scalable volume for maintenance.
 * This adds an extra layer between the physical disks and the file system, allowing you to create a logical volume instead of a physical disk.
 
 * LVM allows you to easily resize, extend and decrease the logical volume when you need it.
+
+https://dev.to/shankarsurya035/how-to-create-lvm-partition-in-linux-dgo
 
 
 ![image](https://github.com/user-attachments/assets/8bc1e9ec-824b-4466-a098-de9888f56736)
