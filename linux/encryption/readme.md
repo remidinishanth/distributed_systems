@@ -23,10 +23,16 @@ It forms the foundation of the logical volume manager (LVM), software RAIDs and 
 
 <img width="640" height="494" alt="image" src="https://github.com/user-attachments/assets/9fd64a8a-ba21-46e7-b05c-2078dfad983f" />
 
+## dm-crypt
+
+`dm-crypt` is the Linux kernel's device mapper(dm) crypto target.
+
+<img width="1936" height="1080" alt="image" src="https://github.com/user-attachments/assets/21250f3b-69f2-4b58-92ee-91f903698d19" />
+
 https://gitlab.com/cryptsetup/cryptsetup
 
 LUKS (Linux Unified Key Setup) is the standard on-disk format for disk encryption on Linux systems, based on the dm-crypt kernel module.
 
-<img width="600" height="1800" alt="image" src="https://github.com/user-attachments/assets/bdd1e970-9a36-4f28-821d-f752ea84fa67" />
+<img width="300" height="900" alt="image" src="https://github.com/user-attachments/assets/bdd1e970-9a36-4f28-821d-f752ea84fa67" />
 
-<img width="1936" height="1080" alt="image" src="https://github.com/user-attachments/assets/21250f3b-69f2-4b58-92ee-91f903698d19" />
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/ff1b7116-4185-45f1-96d4-a145c90abe77" />
