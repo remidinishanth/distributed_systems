@@ -15,6 +15,7 @@ Nice blog https://wiki.archlinux.org/title/Data-at-rest_encryption
 > All data-at-rest encryption methods operate in such a way that even though the disk actually holds encrypted data, the operating system and applications "see" it as the corresponding normal readable data as long as the cryptographic container (i.e. the logical part of the disk that holds the encrypted data) has been "unlocked" and mounted.
 Ref: https://wiki.archlinux.org/title/Data-at-rest_encryption
 
+For this to happen, some "secret information" (usually in the form of a keyfile and/or passphrase) needs to be supplied by the user, from which the actual encryption key can be derived (and stored in the kernel keyring for the duration of the session).
 
 > Device Mapper - Framework provided by the Linux Kernel, used to map physical block devices to higher level virtual block devices
 
