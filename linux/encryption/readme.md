@@ -1,3 +1,5 @@
+Nice blog https://wiki.archlinux.org/title/Data-at-rest_encryption
+
 ## Ways of Encryption
 
 * Application side, Read more at https://www.percona.com/blog/transparent-data-encryption-tde/
