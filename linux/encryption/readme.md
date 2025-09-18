@@ -20,6 +20,8 @@ For this to happen, some "secret information" (usually in the form of a keyfile 
 
 <img width="1862" height="1442" alt="image" src="https://github.com/user-attachments/assets/5a4c9a2c-83f8-4deb-a9f6-6e3356975445" />
 
+<img width="1576" height="838" alt="image" src="https://github.com/user-attachments/assets/5584d73e-e93e-4265-8823-ba75c17076d7" />
+
 
 > Device Mapper - Framework provided by the Linux Kernel, used to map physical block devices to higher level virtual block devices
 
