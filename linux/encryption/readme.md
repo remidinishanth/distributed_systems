@@ -11,7 +11,7 @@ Nice blog https://wiki.archlinux.org/title/Data-at-rest_encryption
 
 <img width="1347" height="656" alt="image" src="https://github.com/user-attachments/assets/1d7f8ec2-04fb-43cf-9d03-54d1e156144a" />
 
-
+-------
 
 > All data-at-rest encryption methods operate in such a way that even though the disk actually holds encrypted data, the operating system and applications "see" it as the corresponding normal readable data as long as the cryptographic container (i.e. the logical part of the disk that holds the encrypted data) has been "unlocked" and mounted.
 Ref: https://wiki.archlinux.org/title/Data-at-rest_encryption
