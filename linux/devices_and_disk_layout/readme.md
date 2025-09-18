@@ -230,27 +230,130 @@ Which devices are used as LVM physical volumes? (LVM only)
   /dev/sdi             ---        0     0
 ```
 
+Along with these, we also have `pvdisplay`, `vgdisplay` and `lvdisplay` for PV display and etc
+
+```
+[polaris@VR-POLARIS-VW-91BC3A4 ~]$ sudo vgdisplay
+  --- Volume group ---
+  VG Name               root
+  System ID
+  Format                lvm2
+  Metadata Areas        1
+  Metadata Sequence No  4
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                3
+  Open LV               2
+  Max PV                0
+  Cur PV                1
+  Act PV                1
+  VG Size               <63.00 GiB
+  PE Size               4.00 MiB
+  Total PE              16127
+  Alloc PE / Size       16127 / <63.00 GiB
+  Free  PE / Size       0 / 0
+  VG UUID               0NrBsW-ehg9-Bdon-m510-UQXq-8vbO-pfSVb3
+
+  --- Volume group ---
+  VG Name               opt
+  System ID
+  Format                lvm2
+  Metadata Areas        3
+  Metadata Sequence No  10
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                7
+  Open LV               6
+  Max PV                0
+  Cur PV                3
+  Act PV                3
+  VG Size               1.22 TiB
+  PE Size               4.00 MiB
+  Total PE              319997
+  Alloc PE / Size       319997 / 1.22 TiB
+  Free  PE / Size       0 / 0
+  VG UUID               lytVm1-ujE1-YncF-IuT8-N1jZ-trtV-M9PkQk
+```
+
 
 The `blkid` command in Linux is a tool to locate and display block device attributes, such as filesystem type, UUID, and label.
 
 ```
-[rksupport@VR-POLARIS-VW-D27E2E4 ~]$ sudo blkid
-/dev/sda1: UUID="c2707e9e-2e27-43a5-91d1-0d25e1f08dd2" TYPE="ext4"
-/dev/sda2: UUID="ZeML8J-Nae7-pMCZ-PBis-PHel-RdXO-6iEK8a" TYPE="LVM2_member"
-/dev/sde: UUID="tN9ohY-yhKb-Lpwh-oJbR-5R1E-z1YO-5fOHwC" TYPE="LVM2_member"
-/dev/sdb: UUID="ZUPGiI-cqEs-0nHi-Zr7S-2bZl-V1Yk-sHI2sz" TYPE="LVM2_member"
-/dev/sdc: UUID="G6BrpZ-m9C6-mECZ-RDTL-fHW9-d0rv-Ggvt0v" TYPE="LVM2_member"
-/dev/mapper/root-os: UUID="36686917-4f3d-4395-8b29-2ab4738455c5" TYPE="xfs"
-/dev/sdd: UUID="yX2shS-qSly-x6ic-RXel-MeDl-HncV-6Z12mz" TYPE="LVM2_member"
-/dev/mapper/opt-minio: UUID="41906eed-ef27-495e-9034-e5d547eff490" TYPE="xfs"
-/dev/mapper/opt-polaris: UUID="9aa1d5ca-2ee5-4295-b9a8-16b657aa975d" TYPE="xfs"
-/dev/mapper/root-home: UUID="0232af07-1aef-41d9-bb3a-f0a5c843b7b7" TYPE="xfs"
-/dev/mapper/opt-monitoring: UUID="6079ccd3-6c43-4b7d-976f-45a5a71fe49a" TYPE="xfs"
-/dev/mapper/opt-staging: UUID="7a24813a-a10c-4081-ba10-18fb1747a39f" TYPE="xfs"
-/dev/mapper/opt-mysql: UUID="02195633-663c-4f2a-b10b-f782795f7849" TYPE="xfs"
-/dev/mapper/opt-mq: UUID="176fb9c8-ca43-4590-a99b-50728cd6e91c" TYPE="xfs"
-/dev/sdf: UUID="owxQp8-q80i-1TTR-98M3-wd7n-MkBS-vx5lvI" TYPE="LVM2_member"
-/dev/sdg: UUID="plOHfP-3YGd-6vac-DKC6-rWUS-X103-ZexUPJ" TYPE="LVM2_member"
+[polaris@VR-POLARIS-VW-91BC3A4 ~]$ sudo blkid
+/dev/mapper/opt-minio: UUID="3983cfaf-05c8-4233-a3e3-692ce25584cd" TYPE="xfs"
+/dev/mapper/opt-polaris: UUID="4ebd110b-cc1d-4aa6-8a58-6d343becb4e6" TYPE="xfs"
+/dev/mapper/opt-monitoring: UUID="8bdd31cc-4b27-4559-9e20-52350805ba66" TYPE="xfs"
+/dev/mapper/opt-staging: UUID="cd2cc370-7669-4f8d-8b67-8477bd7187fb" TYPE="xfs"
+/dev/mapper/opt-mysql: UUID="13c8c5ee-3b0c-46a4-bd70-ab8a27fd53c5" TYPE="xfs"
+/dev/mapper/opt-mq: UUID="7ce2b8e8-bdc4-4b96-b541-cfcb35385e2d" TYPE="xfs"
+/dev/sda1: UUID="ad518300-f50c-4377-ac57-bea56835a9c3" TYPE="ext4"
+/dev/sda2: UUID="W9cdjA-uQad-3eYS-sS4a-Azdf-jmnt-zp3GxA" TYPE="LVM2_member"
+/dev/sdb: UUID="F5Wgdf-nfQy-X2BX-k68Z-Omwh-GCe9-T359Jr" TYPE="LVM2_member"
+/dev/sdd: UUID="8s48Uh-lRor-3Iyn-Pj3H-UXf7-jO8Z-42wHND" TYPE="LVM2_member"
+/dev/mapper/root-os: UUID="f26e3ea6-ab9c-4144-a180-6e38ea47a4f6" TYPE="xfs"
+/dev/sdc: UUID="TtNnXV-DwVJ-sIV3-XnPn-oGyr-f1bv-FXCmwd" TYPE="LVM2_member"
+/dev/mapper/root-home: UUID="5e6edbae-e89b-4fb2-8fac-ba47a35dae2e" TYPE="xfs"
+```
+
+## Device mapper
+
+The Linux device mapper is a modular kernel framework that maps physical block devices onto higher-level virtual block devices, allowing for features like volume management, encryption, RAID, and snapshots by processing I/O requests through configurable mapping tables. 
+
+It operates in kernel space and is used by various subsystems to create abstracted, flexible storage layers without needing custom drivers for each use case.
+
+### LVM and Device mapper
+
+When you create a Logical Volume Manager (LVM) setup—such as a physical volume (PV), volume group (VG), or logical volume (LV)—it directly relies on the device mapper to instantiate the virtual devices. 
+
+For instance, each logical volume appears as a block device under `/dev/mapper/` (e.g., `/dev/mapper/vgname-lvname`), which is a device mapper target that maps the underlying physical storage extents to the virtual LV. This mapping is created automatically during LVM commands like `lvcreate`, and you can inspect active mappings with tools such as `dmsetup ls` or `dmsetup info`.
+
+
+```
+[polaris@VR-POLARIS-VW-91BC3A4 ~]$ sudo dmsetup ls
+opt-monitoring	(253:5)
+opt-staging	(253:6)
+opt-mq	(253:9)
+opt-polaris	(253:4)
+opt-reserved	(253:7)
+opt-mysql	(253:8)
+root-reserved	(253:2)
+root-os	(253:0)
+root-home	(253:1)
+opt-minio	(253:3)
+[polaris@VR-POLARIS-VW-91BC3A4 ~]$ sudo dmsetup info
+Name:              opt-monitoring
+State:             ACTIVE
+Read Ahead:        8192
+Tables present:    LIVE
+Open count:        1
+Event number:      0
+Major, minor:      253, 5
+Number of targets: 2
+UUID: LVM-lytVm1ujE1YncFIuT8N1jZtrtVM9PkQkpEcxdc0CTvGfjP250sjo40Zo3lxi8A8D
+
+Name:              opt-staging
+State:             ACTIVE
+Read Ahead:        8192
+Tables present:    LIVE
+Open count:        1
+Event number:      0
+Major, minor:      253, 6
+Number of targets: 1
+UUID: LVM-lytVm1ujE1YncFIuT8N1jZtrtVM9PkQkcYIqACqbLZwTvX9P131x6iPdjegVnLZb
+
+Name:              opt-mq
+State:             ACTIVE
+Read Ahead:        8192
+Tables present:    LIVE
+Open count:        1
+Event number:      0
+Major, minor:      253, 9
+Number of targets: 1
+UUID: LVM-lytVm1ujE1YncFIuT8N1jZtrtVM9PkQkq7I2wQkOInuOnd6te9nAd9LJPZpdUPrp
+
+... continued
 ```
 
 <img width="1168" alt="image" src="https://github.com/user-attachments/assets/9f7df455-567c-4044-abc4-75e7f5afe32b" />
@@ -263,17 +366,17 @@ Your Linux system's filesystem table, aka `fstab`, is a configuration table desi
 The output of fstab
 
 ```
-[rksupport@VR-POLARIS-VW-D27E2E4 ~]$ cat /etc/fstab
+[polaris@VR-POLARIS-VW-91BC3A4 ~]$ cat /etc/fstab
 
 #
 # /etc/fstab
-# Created by anaconda on Mon Jan 20 15:59:48 2025
+# Created by anaconda on Wed Aug 20 14:58:49 2025
 #
 # Accessible filesystems, by reference, are maintained under '/dev/disk'
 # See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
 #
 /dev/mapper/root-os     /                       xfs     defaults        0 0
-UUID=c2707e9e-2e27-43a5-91d1-0d25e1f08dd2 /boot                   ext4    defaults        1 2
+UUID=ad518300-f50c-4377-ac57-bea56835a9c3 /boot                   ext4    defaults        1 2
 /dev/mapper/root-home   /home                   xfs     defaults,nosuid        0 0
 tmpfs /dev/shm tmpfs defaults,relatime,nodev,noexec,nosuid 0 0
 /dev/mapper/opt-minio /opt/minio xfs defaults 0 2
