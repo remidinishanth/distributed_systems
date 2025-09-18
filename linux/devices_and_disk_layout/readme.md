@@ -157,6 +157,11 @@ sdc (700G) ──┬─ sdc1 (entire disk as LVM PV)
 
 <img width="800" height="445" alt="image" src="https://github.com/user-attachments/assets/5a4b9d1f-8d20-429f-9c64-2183e3a54632" />
 
+If we are using LVM for K8s Persistent Volume, this is how it would look like
+<img width="776" height="1736" alt="image" src="https://github.com/user-attachments/assets/ef91a4d8-8689-4216-bb71-50a5df7890c0" />
+
+source: https://github.com/openebs/lvm-localpv/tree/develop
+
 ```
 +------------------------+
 |  Physical Disk (sda)   |
