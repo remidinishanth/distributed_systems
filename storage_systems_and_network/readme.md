@@ -47,6 +47,9 @@ enabling seamless data exchange between multiple users.
 
 ## Thick provisioning vs Thin provisioning
 
+<img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/8cdf79b4-c908-4bd1-b25f-4fd6a3518d03" />
+
+
 <img width="1164" height="468" alt="image" src="https://github.com/user-attachments/assets/ce328474-a40a-4dbf-a171-271ec96f49b1" />
 
 <img width="1838" height="1064" alt="image" src="https://github.com/user-attachments/assets/8d6b8b7b-fdfc-4e83-9aac-0a85a831fbe4" />
