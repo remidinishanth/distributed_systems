@@ -66,3 +66,11 @@ LUKS builds on DM-Crypt by standardizing the on-disk format for encrypted volume
 
 LUKS (Linux Unified Key Setup) is the standard on-disk format for disk encryption on Linux systems, based on the dm-crypt kernel module.
 
+
+## Trusted Platform Module (TPM)
+
+In Linux, a TPM is a hardware chip on your computer's motherboard that acts as a secure cryptoprocessor to store cryptographic keys, perform cryptographic operations, and ensure the integrity of the system's boot process.
+
+Linux systems use TPMs for key management, device authentication, and to bind secrets, like disk encryption keys, to the system's secure state through Platform Configuration Registers (PCRs). 
+
+Trusted Platform Module (TPM) is an international standard for a secure cryptoprocessor, which is a dedicated microprocessor designed to secure hardware by integrating cryptographic keys into devices.
