@@ -73,4 +73,4 @@ In Linux, a TPM is a hardware chip on your computer's motherboard that acts as a
 
 Linux systems use TPMs for key management, device authentication, and to bind secrets, like disk encryption keys, to the system's secure state through Platform Configuration Registers (PCRs). 
 
-Trusted Platform Module (TPM) is an international standard for a secure cryptoprocessor, which is a dedicated microprocessor designed to secure hardware by integrating cryptographic keys into devices.
+The TPM specification is an operating system agnostic, international standard (from the Trusted Computing Group and International Standards Organization) for a secure cryptoprocessor, which is a dedicated microprocessor designed to secure hardware by integrating cryptographic keys into devices.
