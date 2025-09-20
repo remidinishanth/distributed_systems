@@ -79,6 +79,8 @@ LUKS, the Linux Unified Key Setup, is a standard for disk encryption.
 
 ### Demo
 
+<img width="1024" height="551" alt="image" src="https://github.com/user-attachments/assets/706ae5a9-0dcd-46e1-a3c7-8301eef82776" />
+
 ```
 cryptsetup --verbose --cipher aes-xts-plain64 --key-size 512 --iter-time=4000 --hash sha512 --key-file=pw.txt luksFormat /dev/sdc
 ```
@@ -94,6 +96,13 @@ cryptsetup --verbose --cipher aes-xts-plain64 --key-size 512 --iter-time=4000 --
 
 * `--hash sha512`: The hashing algorithm used in the key derivation process. SHA-512 is a secure hashing algorithm.
 * `--key-file=pw.txt` : Instead of prompting you to type a passphrase, this tells cryptsetup to use the content of the file pw.txt as the passphrase. This is useful for scripting.
+
+
+```
+time cryptsetup open --type luks /dev/sdc cryptdemo --key-file=pw.txt
+```
+* `--type luks`: Explicitly tells the command that this is a LUKS device.
+* `cryptdemo`: The name for the decrypted virtual device that will be created. You will see it at `/dev/mapper/cryptdemo`
 
 <img width="1292" height="1140" alt="image" src="https://github.com/user-attachments/assets/8c8ed32d-da51-4ea7-b40f-3d9803ee4df2" />
 
