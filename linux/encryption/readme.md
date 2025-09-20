@@ -71,8 +71,11 @@ Raw DM-Crypt requires manual key management. You have to handle key derivation, 
 
 LUKS builds on DM-Crypt by standardizing the on-disk format for encrypted volumes, focusing on key management. It's essentially a header format that stores metadata (like encryption parameters and key slots) at the beginning of the block device.
 
-LUKS (Linux Unified Key Setup) is the standard on-disk format for disk encryption on Linux systems, based on the dm-crypt kernel module.
+LUKS is the standard on-disk format for disk encryption on Linux systems, based on the dm-crypt kernel module.
 
+LUKS, the Linux Unified Key Setup, is a standard for disk encryption.
+* It adds a standardized header at the start of the device, a keyslot area directly behind the header and the bulk data area behind that.
+* The whole set is called a 'LUKS container'. The device that a LUKS container resides on is called a 'LUKS device'.
 
 ## Trusted Platform Module (TPM)
 
