@@ -34,6 +34,9 @@ Refer to https://man7.org/linux/man-pages/index.html
 ### File system
 ![image](https://github.com/user-attachments/assets/93114437-78ab-4e05-b40d-93089a411205)
 
+<img width="1546" height="602" alt="image" src="https://github.com/user-attachments/assets/39ad3949-01d0-4882-9d75-f4c4e1daeee5" />
+
+
 ![image](https://github.com/user-attachments/assets/61fb391d-c984-4c63-be07-06637f4156ec)
 
 ![image](https://github.com/user-attachments/assets/a49ae909-5042-4fa1-b703-9e4e7e62dce5)
