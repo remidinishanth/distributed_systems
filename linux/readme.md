@@ -5,6 +5,7 @@ category: "linux"
 ---
 
 ## TODO
+* https://tldp.org/LDP/lpg/node1.html - Great code examples
 * https://bottomupcs.com/ch01s03.html
 * https://homepages.uc.edu/~thomam/Intro_Unix_Text/TOC.html
 * https://dsf.berkeley.edu/cs262/FFS.pdf
