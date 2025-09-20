@@ -77,6 +77,27 @@ LUKS, the Linux Unified Key Setup, is a standard for disk encryption.
 * It adds a standardized header at the start of the device, a keyslot area directly behind the header and the bulk data area behind that.
 * The whole set is called a 'LUKS container'. The device that a LUKS container resides on is called a 'LUKS device'.
 
+### Demo
+
+```
+cryptsetup --verbose --cipher aes-xts-plain64 --key-size 512 --iter-time=4000 --hash sha512 --key-file=pw.txt luksFormat /dev/sdc
+```
+
+* `--cipher aes-xts-plain64`: Specifies the encryption algorithm.
+  - `aes`: The Advanced Encryption Standard, a very common and secure cipher.
+  -  `xts`: A block cipher mode (XTS-AES) designed for disk encryption that prevents an attacker from seeing patterns in the data.
+  -  `plain64`: The initialization vector (IV) mode.
+
+* `--key-size 512`: Sets the size of the master encryption key in bits. A 512-bit key is very strong.
+
+* `--iter-time=4000`: This is a security feature to make brute-force attacks much harder. It tells the system to spend 4000 milliseconds (4 seconds) repeatedly hashing your passphrase to derive the actual decryption key. A longer time means it's much slower for an attacker to guess passwords.
+
+* `--hash sha512`: The hashing algorithm used in the key derivation process. SHA-512 is a secure hashing algorithm.
+* `--key-file=pw.txt` : Instead of prompting you to type a passphrase, this tells cryptsetup to use the content of the file pw.txt as the passphrase. This is useful for scripting.
+
+<img width="1292" height="1140" alt="image" src="https://github.com/user-attachments/assets/8c8ed32d-da51-4ea7-b40f-3d9803ee4df2" />
+
+
 ## Trusted Platform Module (TPM)
 
 <img width="624" height="351" alt="image" src="https://github.com/user-attachments/assets/26589a84-3da2-4117-8bd7-538a148be545" />
