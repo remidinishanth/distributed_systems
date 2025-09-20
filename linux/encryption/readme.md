@@ -114,6 +114,9 @@ cryptsetup luksDump /dev/sdc
 
 <img width="1218" height="1624" alt="image" src="https://github.com/user-attachments/assets/ad2d16e6-d09e-43f5-85d8-e907f451f732" />
 
+Storing data on unencrypted and encrypted volumes
+<img width="1288" height="1710" alt="image" src="https://github.com/user-attachments/assets/b073d0cf-972c-4ebd-81bc-2cfe05996fed" />
+
 
 ## Trusted Platform Module (TPM)
 
