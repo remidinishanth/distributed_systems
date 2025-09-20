@@ -13,6 +13,10 @@ category: "linux"
 * Looks good https://www.cs.fsu.edu/~baker/opsys/notes/
 * https://users.cs.jmu.edu/bernstdh/web/common/lectures/summary_unix_file-descriptors.php
 
+
+<img width="1432" height="1264" alt="image" src="https://github.com/user-attachments/assets/795a385c-9597-49bd-8c3f-43a9ba96dc32" />
+
+
 ![image](https://github.com/user-attachments/assets/488bc987-89d4-4ff2-bd7d-769acb27c96b)
 
 ![image](https://github.com/user-attachments/assets/a412aa46-bb58-4d64-b41f-0aefb2ae5516)
