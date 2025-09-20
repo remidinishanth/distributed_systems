@@ -1,5 +1,17 @@
 Source: https://mysqlentomologist.blogspot.com/2021/01/linux-proc-filesystem-for-mysql-dbas.html
 
+## Proc
+
+![image](https://github.com/user-attachments/assets/43504491-a1e9-430c-9fb5-e8dbf0878562)
+
+
+### Julia Evans
+
+![image](https://github.com/user-attachments/assets/ea68d72c-9867-4dde-ac10-f4ad2e491e26)
+
+![image](https://github.com/user-attachments/assets/b53fbeb3-bf51-46c9-bed4-ab16c0873e14)
+
+
 Basically, the proc filesystem is a pseudo-filesystem which provides an interface to kernel data structures. It is commonly mounted at /proc:   
 
 
