@@ -29,6 +29,9 @@ For this to happen, some "secret information" (usually in the form of a keyfile 
 
 > LUKS - Linux Unified Key Setup Provides an efficient user-friendly way to store and manage keys. Without LUKS, DM-Crypt can be more cumbersome and error-prone.
 
+<img width="1694" height="352" alt="image" src="https://github.com/user-attachments/assets/87b12d15-ebe0-4a03-8306-b71297137c58" />
+
+
 ## Device Mapper
 
 The device mapper is a framework provided by the Linux kernel for mapping physical block devices onto higher-level virtual block devices. 
@@ -68,6 +71,9 @@ LUKS (Linux Unified Key Setup) is the standard on-disk format for disk encryptio
 
 
 ## Trusted Platform Module (TPM)
+
+<img width="624" height="351" alt="image" src="https://github.com/user-attachments/assets/26589a84-3da2-4117-8bd7-538a148be545" />
+
 
 In Linux, a TPM is a hardware chip on your computer's motherboard that acts as a secure cryptoprocessor to store cryptographic keys, perform cryptographic operations, and ensure the integrity of the system's boot process.
 
