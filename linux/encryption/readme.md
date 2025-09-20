@@ -107,6 +107,14 @@ time cryptsetup open --type luks /dev/sdc cryptdemo --key-file=pw.txt
 <img width="1292" height="1140" alt="image" src="https://github.com/user-attachments/assets/8c8ed32d-da51-4ea7-b40f-3d9803ee4df2" />
 
 
+`luksDump` Dumps the LUKS header information from the physical device. This works even if the volume is locked. It shows you the configuration (cipher, hash, etc.) and information about the key slots.
+```
+cryptsetup luksDump /dev/sdc
+```
+
+<img width="1218" height="1624" alt="image" src="https://github.com/user-attachments/assets/ad2d16e6-d09e-43f5-85d8-e907f451f732" />
+
+
 ## Trusted Platform Module (TPM)
 
 <img width="624" height="351" alt="image" src="https://github.com/user-attachments/assets/26589a84-3da2-4117-8bd7-538a148be545" />
