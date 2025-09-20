@@ -17,6 +17,8 @@ category: "linux"
 
 <img width="1432" height="1264" alt="image" src="https://github.com/user-attachments/assets/795a385c-9597-49bd-8c3f-43a9ba96dc32" />
 
+<img width="1656" height="988" alt="image" src="https://github.com/user-attachments/assets/56c17d0a-3994-4088-8146-1a6a658aa06a" />
+
 
 ![image](https://github.com/user-attachments/assets/488bc987-89d4-4ff2-bd7d-769acb27c96b)
 
