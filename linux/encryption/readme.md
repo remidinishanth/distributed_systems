@@ -1,4 +1,4 @@
-Nice blog https://wiki.archlinux.org/title/Data-at-rest_encryption
+<img width="1694" height="352" alt="image" src="https://github.com/user-attachments/assets/37baac18-1935-4a71-a628-7261a7b13cea" />Nice blog https://wiki.archlinux.org/title/Data-at-rest_encryption
 
 ## Ways of Encryption
 
@@ -56,6 +56,10 @@ If you want to encrypt only one file, GnuPG could be a better tool. Example: `gp
 <img width="1936" height="1080" alt="image" src="https://github.com/user-attachments/assets/21250f3b-69f2-4b58-92ee-91f903698d19" />
 
 https://gitlab.com/cryptsetup/cryptsetup
+
+When you unlock an encrypted volume, cryptsetup creates a new
+device mapping that applications can access like any regular storage device. The actual encryption and decryption work is
+performed transparently by the kernel’s device-mapper dm-crypt driver.
 
 <img width="300" height="900" alt="image" src="https://github.com/user-attachments/assets/bdd1e970-9a36-4f28-821d-f752ea84fa67" />
 
