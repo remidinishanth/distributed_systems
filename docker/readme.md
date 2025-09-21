@@ -65,6 +65,11 @@ On most Linux systems, this very large number(2^63 - 1) is used to represent an 
 9223372036854771712
 ```
 
+### Deep Dive into Docker Internals - Union Filesystem
+
+https://martinheinz.dev/blog/44
+
+
 ### Overlay filesystem
 
 ![image](https://github.com/user-attachments/assets/c52fb749-e7a6-4f5d-ae3a-d1486be7029f)
