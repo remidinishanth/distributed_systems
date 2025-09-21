@@ -15,6 +15,22 @@ Two core concepts:
 ### Namespaces
 ![image](https://github.com/user-attachments/assets/cc3688c7-cfd1-4ff6-9851-7642c672aee4)
 
+
+```
+docker run traefik
+```
+
+```
+pstree -spa 66560
+
+systemd,1 --system --deserialize 18
+  └─containerd-shim,66535 -namespace moby -id 0ac949292b659a21e0037c91c7149f6fea12235ae4c5840d8448714081973154 -address /run/containerd/containerd.sock
+      └─traefik,66560 traefik
+```
+
+<img width="1570" height="1264" alt="image" src="https://github.com/user-attachments/assets/075e7630-9cb2-4561-b6fe-8864cf4ee844" />
+
+
 ### Cgroups
 ![image](https://github.com/user-attachments/assets/0061da2d-84b4-4f73-8d62-38e4fd806895)
 
