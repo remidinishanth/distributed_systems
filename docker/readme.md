@@ -42,6 +42,8 @@ Similary, we can check
 ### Cgroups
 ![image](https://github.com/user-attachments/assets/0061da2d-84b4-4f73-8d62-38e4fd806895)
 
+<img width="1758" height="864" alt="image" src="https://github.com/user-attachments/assets/e10e9df1-19ec-4ba2-a5ed-ff9ae1ecec8e" />
+
 ```
 ➜  ~ head -n 1 /proc/66560/cgroup
 
@@ -55,6 +57,7 @@ On most Linux systems, this very large number(2^63 - 1) is used to represent an 
 
 9223372036854771712
 ```
+
 
 ![image](https://github.com/user-attachments/assets/c52fb749-e7a6-4f5d-ae3a-d1486be7029f)
 
