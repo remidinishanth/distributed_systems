@@ -107,6 +107,51 @@ TARGET                                                                          
 /var/lib/docker/overlay2/45629581e8696009c105d94ba07e3eb69ce4cc05cc963132cdfb5103d07fb926/merged overlay overlay rw,relatime,lowerdir=/var/lib/docker/overlay2/l/MEJZY4W3TTOIOOSQFSI76TU5IR:/var/lib/docker/overlay2/l
 ```
 
+In the following, we can see:
+* The Root Filesystem (OverlayFS) `1427 ... / ... overlay overlay rw,lowerdir=...,upperdir=...,workdir=...`
+* Virtual Filesystems (/proc, /dev, /sys) `1428 1429 ...`
+* Cgroups Mounts `1433 ...`
+* Container-Specific Config Files `1447 1448 1449`
+
+```
+➜  ~ sudo cat /proc/66560/mountinfo
+1427 1267 0:159 / / rw,relatime master:58 - overlay overlay rw,lowerdir=/var/lib/docker/overlay2/l/MEJZY4W3TTOIOOSQFSI76TU5IR:/var/lib/docker/overlay2/l/TXPWWDBIAR4MKWCSSEQXD2G5GX:/var/lib/docker/overlay2/l/OR3RPUZHUFDK3NKMHT24VXK254:/var/lib/docker/overlay2/l/EN5ZHUWKYHDCGGK57EMO27PGDJ:/var/lib/docker/overlay2/l/ME4EEDCZPBSQLDBRU4CANROOQH,upperdir=/var/lib/docker/overlay2/45629581e8696009c105d94ba07e3eb69ce4cc05cc963132cdfb5103d07fb926/diff,workdir=/var/lib/docker/overlay2/45629581e8696009c105d94ba07e3eb69ce4cc05cc963132cdfb5103d07fb926/work
+1428 1427 0:166 / /proc rw,nosuid,nodev,noexec,relatime - proc proc rw
+1429 1427 0:167 / /dev rw,nosuid - tmpfs tmpfs rw,size=65536k,mode=755
+1430 1429 0:168 / /dev/pts rw,nosuid,noexec,relatime - devpts devpts rw,gid=5,mode=620,ptmxmode=666
+1431 1427 0:169 / /sys ro,nosuid,nodev,noexec,relatime - sysfs sysfs ro
+1432 1431 0:170 / /sys/fs/cgroup rw,nosuid,nodev,noexec,relatime - tmpfs tmpfs rw,mode=755
+1433 1432 0:29 /docker/0ac949292b659a21e0037c91c7149f6fea12235ae4c5840d8448714081973154 /sys/fs/cgroup/systemd ro,nosuid,nodev,noexec,relatime master:11 - cgroup cgroup rw,xattr,name=systemd
+1434 1432 0:31 /docker/0ac949292b659a21e0037c91c7149f6fea12235ae4c5840d8448714081973154 /sys/fs/cgroup/perf_event ro,nosuid,nodev,noexec,relatime master:14 - cgroup cgroup rw,perf_event
+1435 1432 0:32 /docker/0ac949292b659a21e0037c91c7149f6fea12235ae4c5840d8448714081973154 /sys/fs/cgroup/cpu,cpuacct ro,nosuid,nodev,noexec,relatime master:15 - cgroup cgroup rw,cpu,cpuacct
+1436 1432 0:33 /docker/0ac949292b659a21e0037c91c7149f6fea12235ae4c5840d8448714081973154 /sys/fs/cgroup/cpuset ro,nosuid,nodev,noexec,relatime master:16 - cgroup cgroup rw,cpuset
+1437 1432 0:34 /docker/0ac949292b659a21e0037c91c7149f6fea12235ae4c5840d8448714081973154 /sys/fs/cgroup/blkio ro,nosuid,nodev,noexec,relatime master:17 - cgroup cgroup rw,blkio
+1438 1432 0:35 /docker/0ac949292b659a21e0037c91c7149f6fea12235ae4c5840d8448714081973154 /sys/fs/cgroup/rdma ro,nosuid,nodev,noexec,relatime master:18 - cgroup cgroup rw,rdma
+1439 1432 0:36 /docker/0ac949292b659a21e0037c91c7149f6fea12235ae4c5840d8448714081973154 /sys/fs/cgroup/net_cls,net_prio ro,nosuid,nodev,noexec,relatime master:19 - cgroup cgroup rw,net_cls,net_prio
+1440 1432 0:37 /docker/0ac949292b659a21e0037c91c7149f6fea12235ae4c5840d8448714081973154 /sys/fs/cgroup/devices ro,nosuid,nodev,noexec,relatime master:20 - cgroup cgroup rw,devices
+1441 1432 0:38 /docker/0ac949292b659a21e0037c91c7149f6fea12235ae4c5840d8448714081973154 /sys/fs/cgroup/freezer ro,nosuid,nodev,noexec,relatime master:21 - cgroup cgroup rw,freezer
+1442 1432 0:39 /docker/0ac949292b659a21e0037c91c7149f6fea12235ae4c5840d8448714081973154 /sys/fs/cgroup/hugetlb ro,nosuid,nodev,noexec,relatime master:22 - cgroup cgroup rw,hugetlb
+1443 1432 0:40 /docker/0ac949292b659a21e0037c91c7149f6fea12235ae4c5840d8448714081973154 /sys/fs/cgroup/memory ro,nosuid,nodev,noexec,relatime master:23 - cgroup cgroup rw,memory
+1444 1432 0:41 /docker/0ac949292b659a21e0037c91c7149f6fea12235ae4c5840d8448714081973154 /sys/fs/cgroup/pids ro,nosuid,nodev,noexec,relatime master:24 - cgroup cgroup rw,pids
+1445 1429 0:165 / /dev/mqueue rw,nosuid,nodev,noexec,relatime - mqueue mqueue rw
+1446 1429 0:171 / /dev/shm rw,nosuid,nodev,noexec,relatime - tmpfs shm rw,size=65536k
+1447 1427 8:1 /var/lib/docker/containers/0ac949292b659a21e0037c91c7149f6fea12235ae4c5840d8448714081973154/resolv.conf /etc/resolv.conf rw,relatime - ext4 /dev/sda1 rw,errors=remount-ro,data=ordered
+1448 1427 8:1 /var/lib/docker/containers/0ac949292b659a21e0037c91c7149f6fea12235ae4c5840d8448714081973154/hostname /etc/hostname rw,relatime - ext4 /dev/sda1 rw,errors=remount-ro,data=ordered
+1449 1427 8:1 /var/lib/docker/containers/0ac949292b659a21e0037c91c7149f6fea12235ae4c5840d8448714081973154/hosts /etc/hosts rw,relatime - ext4 /dev/sda1 rw,errors=remount-ro,data=ordered
+1268 1428 0:166 /bus /proc/bus ro,nosuid,nodev,noexec,relatime - proc proc rw
+1269 1428 0:166 /fs /proc/fs ro,nosuid,nodev,noexec,relatime - proc proc rw
+1270 1428 0:166 /irq /proc/irq ro,nosuid,nodev,noexec,relatime - proc proc rw
+1271 1428 0:166 /sys /proc/sys ro,nosuid,nodev,noexec,relatime - proc proc rw
+1272 1428 0:166 /sysrq-trigger /proc/sysrq-trigger ro,nosuid,nodev,noexec,relatime - proc proc rw
+1273 1428 0:172 / /proc/acpi ro,relatime - tmpfs tmpfs ro
+1274 1428 0:167 /null /proc/kcore rw,nosuid - tmpfs tmpfs rw,size=65536k,mode=755
+1275 1428 0:167 /null /proc/keys rw,nosuid - tmpfs tmpfs rw,size=65536k,mode=755
+1276 1428 0:167 /null /proc/timer_list rw,nosuid - tmpfs tmpfs rw,size=65536k,mode=755
+1277 1428 0:167 /null /proc/sched_debug rw,nosuid - tmpfs tmpfs rw,size=65536k,mode=755
+1278 1428 0:173 / /proc/scsi ro,relatime - tmpfs tmpfs ro
+1279 1431 0:174 / /sys/firmware ro,relatime - tmpfs tmpfs ro
+```
+
 ![image](https://github.com/user-attachments/assets/65039f74-d7f1-471d-9c7d-e12dab06f2a4)
 
 
