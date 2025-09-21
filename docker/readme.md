@@ -30,6 +30,14 @@ systemd,1 --system --deserialize 18
 
 <img width="1570" height="1264" alt="image" src="https://github.com/user-attachments/assets/075e7630-9cb2-4561-b6fe-8864cf4ee844" />
 
+> nsenter - run program in different namespaces
+
+#### Filesystem (Mount Namespace) comparision
+<img width="1694" height="1852" alt="image" src="https://github.com/user-attachments/assets/ae55839b-758b-471c-866a-82255c4a91df" />
+
+Similary, we can check
+* `sudo nsenter -t 66560 -u -- hostname` and `hostname` for Hostname (UTS Namespace)
+* `sudo nsenter -t 66560 -u -- ip addr` and `ip addr` for Network (Net Namespace)
 
 ### Cgroups
 ![image](https://github.com/user-attachments/assets/0061da2d-84b4-4f73-8d62-38e4fd806895)
