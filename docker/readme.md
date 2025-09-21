@@ -75,6 +75,8 @@ On most Linux systems, this very large number(2^63 - 1) is used to represent an 
 
 ## History
 
+A Brief History of Containers (by Jeff Victor & Kir Kolyshkin)
+
 <img width="1938" height="1170" alt="image" src="https://github.com/user-attachments/assets/350bd7ad-b9d6-4ec5-bd64-6ec22ffadfc2" />
 
 * 2005: Open VZ (Open Virtuzzo) is an operating system-level virtualization technology for Linux which **uses a patched Linux kernel** for virtualization, isolation, resource management and checkpointing. The code was not released as part of the official Linux kernel.
