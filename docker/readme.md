@@ -92,6 +92,14 @@ CONTAINER ID   IMAGE                                                    COMMAND 
 overlay on /var/lib/docker/overlay2/45629581e8696009c105d94ba07e3eb69ce4cc05cc963132cdfb5103d07fb926/merged type overlay (rw,relatime,lowerdir=/var/lib/docker/overlay2/l/MEJZY4W3TTOIOOSQFSI76TU5IR:/var/lib/docker/overlay2/l/TXPWWDBIAR4MKWCSSEQXD2G5GX:/var/lib/docker/overlay2/l/OR3RPUZHUFDK3NKMHT24VXK254:/var/lib/docker/overlay2/l/EN5ZHUWKYHDCGGK57EMO27PGDJ:/var/lib/docker/overlay2/l/ME4EEDCZPBSQLDBRU4CANROOQH,upperdir=/var/lib/docker/overlay2/45629581e8696009c105d94ba07e3eb69ce4cc05cc963132cdfb5103d07fb926/diff,workdir=/var/lib/docker/overlay2/45629581e8696009c105d94ba07e3eb69ce4cc05cc963132cdfb5103d07fb926/work)
 ```
 
+
+```
+sudo findmnt --target /var/lib/docker/overlay2/45629581e8696009c105d94ba07e3eb69ce4cc05cc963132cdfb5103d07fb926/merged
+
+TARGET                                                                                           SOURCE  FSTYPE  OPTIONS
+/var/lib/docker/overlay2/45629581e8696009c105d94ba07e3eb69ce4cc05cc963132cdfb5103d07fb926/merged overlay overlay rw,relatime,lowerdir=/var/lib/docker/overlay2/l/MEJZY4W3TTOIOOSQFSI76TU5IR:/var/lib/docker/overlay2/l
+```
+
 ![image](https://github.com/user-attachments/assets/65039f74-d7f1-471d-9c7d-e12dab06f2a4)
 
 
