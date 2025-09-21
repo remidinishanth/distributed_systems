@@ -58,8 +58,31 @@ On most Linux systems, this very large number(2^63 - 1) is used to represent an 
 9223372036854771712
 ```
 
+### Overlay filesystem
 
 ![image](https://github.com/user-attachments/assets/c52fb749-e7a6-4f5d-ae3a-d1486be7029f)
+
+```
+docker inspect traefik | grep GraphDriver -A 18
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/44eac91bcc11009b4bc33aa25b9d23d9b175f31b548d458b1db0f9acd61d829c/diff:/var/lib/docker/overlay2/da89c4703e3774e3a5ee4f0821232d19a7d4a006c60cf253c9d656c9c1e0910d/diff:/var/lib/docker/overlay2/4f9ef368c98bdfe533018873f57eb8a2aaa1815ed967ebf31683e0b3d5224975/diff",
+                "MergedDir": "/var/lib/docker/overlay2/54d68871e061924a04e9f5929876c1f62799ef505e2850bfb453e44d5c785982/merged",
+                "UpperDir": "/var/lib/docker/overlay2/54d68871e061924a04e9f5929876c1f62799ef505e2850bfb453e44d5c785982/diff",
+                "WorkDir": "/var/lib/docker/overlay2/54d68871e061924a04e9f5929876c1f62799ef505e2850bfb453e44d5c785982/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:418dccb7d85a63a6aa574439840f7a6fa6fd2321b3e2394568a317735e867d35",
+                "sha256:faf775a2a8504f139a068232457158e10b1ff50b91c9d3467a061a2159a199d7",
+                "sha256:715ffac416753161b795ef96b7e2fe7a2f78a802762fd268e99fe5b3d404f166",
+                "sha256:41c0b1e856ea23192479242fe74cc906a87cda7b353272e7a5a3485c3b763cf3"
+            ]
+        },
+```
 
 ![image](https://github.com/user-attachments/assets/65039f74-d7f1-471d-9c7d-e12dab06f2a4)
 
