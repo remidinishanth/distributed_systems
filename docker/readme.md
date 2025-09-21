@@ -6,6 +6,8 @@ category: "docker"
 
 <img width="2020" height="774" alt="image" src="https://github.com/user-attachments/assets/911412e5-b386-4ece-9511-43c5b501c91c" />
 
+<img width="2004" height="1398" alt="image" src="https://github.com/user-attachments/assets/362f1996-ab98-4b8d-b0ea-39612ce73ffa" />
+
 
 Two core concepts:
 * Namespaces: Keeps your processes separated in isolated groups
