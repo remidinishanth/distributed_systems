@@ -94,7 +94,7 @@ overlay on /var/lib/docker/overlay2/45629581e8696009c105d94ba07e3eb69ce4cc05cc96
 
 
 ```
-sudo findmnt --target /var/lib/docker/overlay2/45629581e8696009c105d94ba07e3eb69ce4cc05cc963132cdfb5103d07fb926/merged
+➜  ~ sudo findmnt --target /var/lib/docker/overlay2/45629581e8696009c105d94ba07e3eb69ce4cc05cc963132cdfb5103d07fb926/merged
 
 TARGET                                                                                           SOURCE  FSTYPE  OPTIONS
 /var/lib/docker/overlay2/45629581e8696009c105d94ba07e3eb69ce4cc05cc963132cdfb5103d07fb926/merged overlay overlay rw,relatime,lowerdir=/var/lib/docker/overlay2/l/MEJZY4W3TTOIOOSQFSI76TU5IR:/var/lib/docker/overlay2/l
