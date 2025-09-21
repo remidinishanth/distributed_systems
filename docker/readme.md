@@ -42,6 +42,20 @@ Similary, we can check
 ### Cgroups
 ![image](https://github.com/user-attachments/assets/0061da2d-84b4-4f73-8d62-38e4fd806895)
 
+```
+➜  ~ head -n 1 /proc/66560/cgroup
+
+12:pids:/docker/0ac949292b659a21e0037c91c7149f6fea12235ae4c5840d8448714081973154
+```
+
+
+On most Linux systems, this very large number(2^63 - 1) is used to represent an "unlimited" or "no-limit" setting within cgroups.
+```
+➜  ~ cat /sys/fs/cgroup/memory/docker/0ac949292b659a21e0037c91c7149f6fea12235ae4c5840d8448714081973154/memory.limit_in_bytes
+
+9223372036854771712
+```
+
 ![image](https://github.com/user-attachments/assets/c52fb749-e7a6-4f5d-ae3a-d1486be7029f)
 
 ![image](https://github.com/user-attachments/assets/65039f74-d7f1-471d-9c7d-e12dab06f2a4)
