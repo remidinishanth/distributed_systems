@@ -8,8 +8,10 @@ category: "docker"
 
 <img width="2004" height="1398" alt="image" src="https://github.com/user-attachments/assets/362f1996-ab98-4b8d-b0ea-39612ce73ffa" />
 
+<img width="2076" height="1392" alt="image" src="https://github.com/user-attachments/assets/2e605634-7013-423b-b1d0-5c433d66e269" />
 
-Two core concepts:
+
+## Two core concepts:
 * Namespaces: Keeps your processes separated in isolated groups
 * Cgroups: Controls the resources allocated
 
