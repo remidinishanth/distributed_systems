@@ -46,6 +46,66 @@ Similary, we can check
 * `sudo nsenter -t 66560 -u -- hostname` and `hostname` for Hostname (UTS Namespace)
 * `sudo nsenter -t 66560 -u -- ip addr` and `ip addr` for Network (Net Namespace)
 
+#### Implementation
+
+<img width="1442" height="1382" alt="image" src="https://github.com/user-attachments/assets/cfd0357f-de6c-420e-a27d-5dfe4f7b48af" />
+
+
+```c
+
+#define _GNU_SOURCE
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <stdio.h>
+#include <sched.h>
+#include <signal.h>
+#include <unistd.h>
+
+/* Define a stack for clone, stack size 1M */
+#define STACK_SIZE (1024 * 1024)
+
+static char container_stack [ STACK_SIZE ] ;
+
+char * const container_args [] = {
+    "/bin/bash" ,
+    NULL
+} ;
+
+int container_main(void* arg)
+{
+    /* Looking at the PID of the child process,
+    we can see that the pid of the output child process is 1 */
+    printf("Container [%5d] - inside the container!\n", getpid());
+    sethostname("container",10);
+    execv(container_args[0], container_args);
+    printf("Something's wrong!\n");
+    return 1;
+}
+
+int main()
+{
+    printf("Parent [%5d] - start a container!\n", getpid());
+    /* PID namespace - CLONE_NEWPID */
+    int container_pid = clone(container_main, container_stack+STACK_SIZE, 
+            CLONE_NEWUTS | CLONE_NEWPID | SIGCHLD, NULL); 
+    waitpid(container_pid, NULL, 0);
+    printf("Parent - container stopped!\n");
+    return 0;
+}
+```
+
+Output
+
+```
+hchen@ubuntu:~$ sudo ./pid
+Parent [ 3474] - start a container!
+Container [ 1] - inside the container!
+root@container:~# echo $$
+1
+```
+
+Ref: https://coolshell.cn/articles/17010.html
+
 ### Cgroups
 ![image](https://github.com/user-attachments/assets/0061da2d-84b4-4f73-8d62-38e4fd806895)
 
