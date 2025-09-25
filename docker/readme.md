@@ -258,6 +258,8 @@ Ref: https://stackoverflow.com/questions/46649592/dockerd-vs-docker-containerd-v
 
 https://blog.quarkslab.com/digging-into-runtimes-runc.html
 
+Ref: https://terenceli.github.io/%E6%8A%80%E6%9C%AF/2021/12/22/runc-internals-1
+
 ## History
 
 A Brief History of Containers (by Jeff Victor & Kir Kolyshkin)
