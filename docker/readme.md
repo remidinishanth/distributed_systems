@@ -233,6 +233,8 @@ In the following, we can see:
 
 <img width="554" height="418" alt="image" src="https://github.com/user-attachments/assets/800bbe98-a47f-4532-9730-545a83af3954" />
 
+<img width="958" height="510" alt="image" src="https://github.com/user-attachments/assets/11eabf61-ccd6-48e0-b5fd-52d12ce02899" />
+
 
 ## What happens under the hood when we create a new container on Linux?
 
@@ -241,8 +243,6 @@ In the following, we can see:
 * RunC spins up the container and exits, however shim remains connected to the container. This is also the case when multiple containers are spun up.
 
 <img width="1198" height="988" alt="image" src="https://github.com/user-attachments/assets/02f82160-aab8-4ad7-91d1-7de0e753056d" />
-
-<img width="958" height="510" alt="image" src="https://github.com/user-attachments/assets/11eabf61-ccd6-48e0-b5fd-52d12ce02899" />
 
 <img width="2437" height="1530" alt="image" src="https://github.com/user-attachments/assets/807bc203-ae39-479b-a160-80417f4cfe65" />
 
