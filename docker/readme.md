@@ -231,6 +231,23 @@ In the following, we can see:
 
 ![image](https://github.com/user-attachments/assets/bcf96052-df30-44ae-800f-43c5455af245)
 
+<img width="554" height="418" alt="image" src="https://github.com/user-attachments/assets/800bbe98-a47f-4532-9730-545a83af3954" />
+
+
+## What happens under the hood when we create a new container on Linux?
+
+* When the command is fired from CLI by the user, it makes an API call to the docker daemon, which then calls containerD via GRPC, which further calls shim process and runC.
+*  ContainerD handles execution/lifecycle operations like start, stop, pause and unpause. OCI (Open Container Initiative) layer does the interface with the kernel.
+* RunC spins up the container and exits, however shim remains connected to the container. This is also the case when multiple containers are spun up.
+
+<img width="1198" height="988" alt="image" src="https://github.com/user-attachments/assets/02f82160-aab8-4ad7-91d1-7de0e753056d" />
+
+<img width="958" height="510" alt="image" src="https://github.com/user-attachments/assets/11eabf61-ccd6-48e0-b5fd-52d12ce02899" />
+
+<img width="2437" height="1530" alt="image" src="https://github.com/user-attachments/assets/807bc203-ae39-479b-a160-80417f4cfe65" />
+
+Ref: https://stackoverflow.com/questions/46649592/dockerd-vs-docker-containerd-vs-docker-runc-vs-docker-containerd-ctr-vs-docker-c
+
 
 ## History
 
