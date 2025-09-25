@@ -235,6 +235,9 @@ In the following, we can see:
 
 <img width="958" height="510" alt="image" src="https://github.com/user-attachments/assets/11eabf61-ccd6-48e0-b5fd-52d12ce02899" />
 
+<img width="1782" height="1080" alt="image" src="https://github.com/user-attachments/assets/6eb0aea4-cfb3-4b7b-a8bf-8f27e974d8c9" />
+
+
 
 ## What happens under the hood when we create a new container on Linux?
 
