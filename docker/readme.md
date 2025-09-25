@@ -251,6 +251,12 @@ In the following, we can see:
 
 Ref: https://stackoverflow.com/questions/46649592/dockerd-vs-docker-containerd-vs-docker-runc-vs-docker-containerd-ctr-vs-docker-c
 
+<img width="492" height="452" alt="image" src="https://github.com/user-attachments/assets/2c2516af-4900-474f-aab4-021a4efbebf2" />
+
+
+## TODO
+
+https://blog.quarkslab.com/digging-into-runtimes-runc.html
 
 ## History
 
