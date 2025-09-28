@@ -14,7 +14,14 @@ As a proposed, if you receive majority, then you become the leader
 
 <img width="2786" height="1176" alt="image" src="https://github.com/user-attachments/assets/d9b76c40-65f8-412d-8335-5db531d19675" />
 
+
 <img width="1454" height="1212" alt="image" src="https://github.com/user-attachments/assets/5f777980-17b1-4a75-b2e8-9cc7bb476050" />
+
+
+<img width="3162" height="1478" alt="image" src="https://github.com/user-attachments/assets/1dc7ab61-d4e0-4ca1-9ddd-67bcba30c9ac" />
+
+<img width="3402" height="1560" alt="image" src="https://github.com/user-attachments/assets/20206aed-e30a-4f2b-abb3-4032f5ebf757" />
+
 
 ### Multi-paxos
 
