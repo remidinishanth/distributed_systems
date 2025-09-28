@@ -22,6 +22,9 @@ As a proposed, if you receive majority, then you become the leader
 
 <img width="3434" height="1564" alt="image" src="https://github.com/user-attachments/assets/a1f266eb-777d-4da5-8df8-5bb0c966b04a" />
 
+3 milestones that happen
+
+<img width="3368" height="932" alt="image" src="https://github.com/user-attachments/assets/217a4645-579e-4c3c-ae62-5cc9ffdec718" />
 
 
 ### Multi-paxos
