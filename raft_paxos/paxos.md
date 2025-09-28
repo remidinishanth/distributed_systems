@@ -26,6 +26,10 @@ As a proposed, if you receive majority, then you become the leader
 
 <img width="3368" height="932" alt="image" src="https://github.com/user-attachments/assets/217a4645-579e-4c3c-ae62-5cc9ffdec718" />
 
+When multiple proposals happen
+
+<img width="3404" height="1570" alt="image" src="https://github.com/user-attachments/assets/94485f99-b3a2-450c-8542-39568b741954" />
+
 
 ### Multi-paxos
 
