@@ -1,3 +1,11 @@
+### Consensus
+
+<img width="3090" height="608" alt="image" src="https://github.com/user-attachments/assets/73e8df1d-2cb7-4ee2-bf23-2f8a2a3bbeed" />
+
+Ref: Youtube, The Paxos Algorithm - Google Techtalks
+
+### Paxos
+
 <img width="2780" height="1164" alt="image" src="https://github.com/user-attachments/assets/bb32c062-4161-4cb0-a715-b28a5c77787e" />
 
 As a proposed, if you receive majority, then you become the leader
