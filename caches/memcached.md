@@ -128,6 +128,14 @@ Facebook employed a clever strategy to optimize network communication between th
 
 ### Problems with Caching
 
+**Leases**: 
+* Facebook introduced a new mechanism we call leases to address
+two problems: stale sets and thundering herds.
+* A stale set occurs when a web server sets a value in memcache
+that does not reflect the latest value that should be
+cached.
+* This can occur when concurrent updates to memcache get reordered.
+
 <img width="1311" height="936" alt="image" src="https://github.com/user-attachments/assets/123c1bbf-48f5-4482-9a40-ee5b4bfc87f3" />
 
 <img width="1311" height="817" alt="image" src="https://github.com/user-attachments/assets/a2f9503c-15c4-4aea-a2e6-073ea7920c29" />
