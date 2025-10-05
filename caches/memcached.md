@@ -240,6 +240,12 @@ these deletes to the memcache deployment in every frontend cluster in that regio
 Inter-cluster bandwidth is less than Intra-cluster bandwidth.
 <img width="1221" height="948" alt="image" src="https://github.com/user-attachments/assets/0f821203-7072-4fa5-9716-9a4229156e77" />
 
+
+### Geographically distributed clusters
+
+<img width="949" height="628" alt="image" src="https://github.com/user-attachments/assets/b847ae6c-53fe-46bf-8c73-ec0020b3c1ae" />
+
+
 <img width="1253" height="948" alt="image" src="https://github.com/user-attachments/assets/1f87287f-b832-4873-9be1-4703f3314f21" />
 
 <img width="1253" height="927" alt="image" src="https://github.com/user-attachments/assets/28a78291-b422-4521-863a-ad79593c2bd6" />
