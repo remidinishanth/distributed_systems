@@ -177,15 +177,6 @@ within a few milliseconds.
 
 <img width="1311" height="817" alt="image" src="https://github.com/user-attachments/assets/a2f9503c-15c4-4aea-a2e6-073ea7920c29" />
 
-<img width="1221" height="948" alt="image" src="https://github.com/user-attachments/assets/387eed73-3b09-4dc9-a799-91c17defb263" />
-
-<img width="1221" height="948" alt="image" src="https://github.com/user-attachments/assets/0f821203-7072-4fa5-9716-9a4229156e77" />
-
-<img width="1253" height="948" alt="image" src="https://github.com/user-attachments/assets/1f87287f-b832-4873-9be1-4703f3314f21" />
-
-<img width="1253" height="927" alt="image" src="https://github.com/user-attachments/assets/28a78291-b422-4521-863a-ad79593c2bd6" />
-
-
 ### Many memcache servers in one cluster 
 
 When you add more webservers, we would need more memcache servers
@@ -214,3 +205,22 @@ switches if those responses arrive all at once.
 when a request goes unanswered.
 * The window applies to all memcache requests independently of destination;
 whereas TCP windows apply only to a single stream.
+
+### Multiple clusters
+
+The all to all communication limits horizontal scalability
+
+<img width="655" height="428" alt="image" src="https://github.com/user-attachments/assets/c0837e3e-0784-4fa5-a5a4-6ce18f9ad999" />
+
+Now we will need to keep the caches consistent
+
+<img width="870" height="594" alt="image" src="https://github.com/user-attachments/assets/fde43e7a-5d75-4041-b049-90b52a0da73d" />
+
+
+<img width="1221" height="948" alt="image" src="https://github.com/user-attachments/assets/387eed73-3b09-4dc9-a799-91c17defb263" />
+
+<img width="1221" height="948" alt="image" src="https://github.com/user-attachments/assets/0f821203-7072-4fa5-9716-9a4229156e77" />
+
+<img width="1253" height="948" alt="image" src="https://github.com/user-attachments/assets/1f87287f-b832-4873-9be1-4703f3314f21" />
+
+<img width="1253" height="927" alt="image" src="https://github.com/user-attachments/assets/28a78291-b422-4521-863a-ad79593c2bd6" />
