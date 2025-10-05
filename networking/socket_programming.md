@@ -56,6 +56,9 @@ Clients
 The client need not **bind**, **listen** or **accept**. All client needs to do is to just connect to the server.
 `int connect (int sockfd, struct sockaddr *toaddr, socklen_t addrlen)`
 
+![image](https://github.com/user-attachments/assets/529f2e1f-58d4-4a11-9892-ac12928ad900)
+
+
 <img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/08025bfc-5c3b-4b9f-9bc4-435ad4cf5ae7">
 
 <img width="1628" height="882" alt="image" src="https://github.com/user-attachments/assets/d1bc26f3-008d-4b14-bc80-5a9fd1a6ed28" />
@@ -109,9 +112,6 @@ This graphic shows a virtual TCP connection between a client and server. Note th
 <img width="652" alt="image" src="https://github.com/user-attachments/assets/a28d6424-cf25-41ab-a73d-00b2d44f053d">
 
 ### TCP
-
-![image](https://github.com/user-attachments/assets/529f2e1f-58d4-4a11-9892-ac12928ad900)
-
 
 <img width="1120" alt="image" src="https://github.com/user-attachments/assets/4e5cdf0f-3f06-4083-b28a-3ff0faed8f75">
 
