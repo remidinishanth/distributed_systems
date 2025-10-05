@@ -1,4 +1,4 @@
-Also refer to https://timilearning.com/posts/mit-6.824/lecture-16-memcache-at-facebook/
+Also refer to https://timilearning.com/posts/mit-6.824/lecture-16-memcache-at-facebook/ and https://blog.bytebytego.com/p/how-facebook-served-billions-of-requests
 
 <img width="1107" height="559" alt="image" src="https://github.com/user-attachments/assets/140d7c24-51ec-4565-a36e-842e24ac51d0" />
 
@@ -140,6 +140,9 @@ Facebook employed a clever strategy to optimize network communication between th
 
 ### Problems with Caching
 
+<img width="1396" height="1600" alt="image" src="https://github.com/user-attachments/assets/e9ae3f06-cc56-4697-9839-b02ce09febe8" />
+
+
 **Leases**: 
 * Facebook introduced a new mechanism we call leases to address
 two problems: stale sets and thundering herds.
@@ -159,6 +162,9 @@ client to set data back into the cache when that client experiences a cache miss
 * Leases prevent stale sets in a manner similar to how load-link/storeconditional operates
 
 <img width="663" height="468" alt="image" src="https://github.com/user-attachments/assets/0bd37ae8-8618-4a02-9ab5-b8902b533065" />
+
+<img width="1573" height="1600" alt="image" src="https://github.com/user-attachments/assets/1837fcf0-c0c4-4e93-ac16-14d2a7748d41" />
+
 
 
 * A thundering herd happens when a specific key undergoes heavy read and write activity. 
@@ -181,6 +187,7 @@ within a few milliseconds.
 * Thus, when waiting clients retry the request, the data is often present in cache.
 
 <img width="1311" height="817" alt="image" src="https://github.com/user-attachments/assets/a2f9503c-15c4-4aea-a2e6-073ea7920c29" />
+
 
 ### Many memcache servers in one cluster 
 
@@ -264,3 +271,5 @@ Facebook is ok to write to master DB across because fb is read heavy system with
 ## Memory allocation
 
 <img width="1406" height="1258" alt="image" src="https://github.com/user-attachments/assets/a1110814-a54f-4815-923b-79311bcd3e39" />
+
+<img width="776" height="840" alt="image" src="https://github.com/user-attachments/assets/10eaec9d-4408-4b57-8e06-a0f583efafbe" />
