@@ -158,6 +158,21 @@ client to set data back into the cache when that client experiences a cache miss
 * As the write activity repeatedly invalidates the recently set values, many reads default to the more costly
 path. The lease mechanism solves both problems.
 
+All servers see a cache miss and everyone reaches out to database, increasing the load on the database.
+
+* A slight modification to leases also mitigates thundering herds.
+* Each memcached server regulates the rate at which it returns tokens.
+* By default, we configure these servers to return a token only once every 10 seconds per
+key.
+* Requests for a key’s value within 10 seconds of a token being issued results in a special notification telling
+the client to wait a short amount of time.
+* Typically, the client with the lease will have successfully set the data
+within a few milliseconds.
+* Thus, when waiting clients retry the request, the data is often present in cache.
+
+<img width="645" height="436" alt="image" src="https://github.com/user-attachments/assets/17d86474-5eff-42d2-a49b-b101c462bc59" />
+
+
 <img width="1311" height="817" alt="image" src="https://github.com/user-attachments/assets/a2f9503c-15c4-4aea-a2e6-073ea7920c29" />
 
 <img width="1221" height="948" alt="image" src="https://github.com/user-attachments/assets/387eed73-3b09-4dc9-a799-91c17defb263" />
