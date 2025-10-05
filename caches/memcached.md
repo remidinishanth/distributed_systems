@@ -184,3 +184,15 @@ within a few milliseconds.
 <img width="1253" height="948" alt="image" src="https://github.com/user-attachments/assets/1f87287f-b832-4873-9be1-4703f3314f21" />
 
 <img width="1253" height="927" alt="image" src="https://github.com/user-attachments/assets/28a78291-b422-4521-863a-ad79593c2bd6" />
+
+
+### Many memcache servers in one cluster 
+
+When you add more webservers, we would need more memcache servers
+
+<img width="1316" height="604" alt="image" src="https://github.com/user-attachments/assets/024d5696-f509-4f03-a628-0e028ea7b0be" />
+
+This would lead to every server communicating to every memcache server, all to all communication
+
+<img width="917" height="692" alt="image" src="https://github.com/user-attachments/assets/752a2edc-c1bf-439b-9312-f7a26dda5d80" />
+
