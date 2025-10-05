@@ -8,6 +8,7 @@ but originally intended for use in speeding up dynamic web applications by allev
 
 Ref: https://memcached.org/about
 
+Ref: https://engineering.fb.com/2013/04/15/core-infra/scaling-memcache-at-facebook/
 
 <img width="941" height="559" alt="image" src="https://github.com/user-attachments/assets/d3b833f3-cc07-4b78-ac9b-b09b6452548f" />
 
