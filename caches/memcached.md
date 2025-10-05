@@ -3,6 +3,10 @@
 Pre-memcache
 <img width="1289" height="940" alt="image" src="https://github.com/user-attachments/assets/fdb27233-14d4-4351-9e97-f8f762238630" />
 
+<img width="1311" height="911" alt="image" src="https://github.com/user-attachments/assets/46bf6b19-e8af-45b2-bcd4-3ba36c7f3d6b" />
+
+<img width="1311" height="885" alt="image" src="https://github.com/user-attachments/assets/dc13ef73-99b6-4ef9-b890-954aeca4b17d" />
+
 
 > memcached is a high-performance, distributed memory object caching system, generic in nature, 
 but originally intended for use in speeding up dynamic web applications by alleviating database load.
