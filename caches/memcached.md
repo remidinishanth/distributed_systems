@@ -53,6 +53,8 @@ Facebook took up the open-source version of Memcached and enhanced it to build a
 * They took this basic building block, made it more efficient, and used it to build a distributed key-value store
 that can process billions of requests per second that supports the world’s largest social network. 
 
+<img width="603" height="304" alt="image" src="https://github.com/user-attachments/assets/fbaa7888-5725-4d8a-826f-e93c002d7f51" />
+
 
 The following properties greatly influence their design.
 * First, users consume an order of magnitude more content than they create. This behavior results in a workload
