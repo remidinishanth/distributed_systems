@@ -47,7 +47,14 @@ if((bind(sockfd, (struct sockaddr *) &my_addr, sizeof(saddr)) < 0 {
 } 
 ```
 
-Only the server needs to listen `int listen (int sockfd, int backlog)`, backlog specifies the maximum number of pending connections the kernel should queue for the socket. Listen returns `0` if OK, `-1` on error
+Only the server needs to listen `int listen (int sockfd, int backlog)`, backlog specifies the maximum number of pending connections the kernel should queue for the socket. Listen returns `0` if OK, `-1` on error.
+
+Only the server can accept the incoming client connections `int accept (int sockfd, struct sockaddr *fromaddr, socklen_t *addrlen)`
+
+Clients
+
+The client need not **bind**, **listen** or **accept**. All client needs to do is to just connect to the server.
+`int connect (int sockfd, struct sockaddr *toaddr, socklen_t addrlen)`
 
 <img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/08025bfc-5c3b-4b9f-9bc4-435ad4cf5ae7">
 
