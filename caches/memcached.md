@@ -76,6 +76,24 @@ For example, Each key is assigned to the node that falls closest to it in a cloc
 
 Clients maintain a map of all available servers, which is updated through an auxiliary configuration system.
 
+
+#### **Client-server communication**: 
+* Memcached servers do not communicate with each other.
+* When appropriate, we embed the complexity of the system into a stateless
+client rather than in the memcached servers.
+  - This greatly
+simplifies memcached and allows us to focus on making
+it highly performant for a more limited use case.
+* Keeping the clients stateless enables rapid iteration in the
+software and simplifies our deployment process.
+* Client logic is provided as two components. a library that can be embedded into applications or as a standalone proxy
+named mcrouter. This proxy presents a memcached
+server interface and routes the requests/replies to/from
+other servers.
+
+<img width="1628" height="1908" alt="image" src="https://github.com/user-attachments/assets/f4887672-a38a-423e-9751-4ab5c83096c1" />
+
+
 ### Reducing latency
 
 At Facebook's scale, a single web request can trigger hundreds of fetch requests to retrieve data from Memcached servers. Consider a scenario where a user loads a popular page containing numerous posts and comments. 
