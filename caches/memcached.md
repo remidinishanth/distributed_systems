@@ -5,8 +5,13 @@ Pre-memcache
 
 <img width="1311" height="911" alt="image" src="https://github.com/user-attachments/assets/46bf6b19-e8af-45b2-bcd4-3ba36c7f3d6b" />
 
+Adding memcache
+
 <img width="1311" height="885" alt="image" src="https://github.com/user-attachments/assets/dc13ef73-99b6-4ef9-b890-954aeca4b17d" />
 
+<img width="1311" height="825" alt="image" src="https://github.com/user-attachments/assets/587947c6-8f6e-4737-8dea-81120b2daaf9" />
+
+## What is memcache
 
 > memcached is a high-performance, distributed memory object caching system, generic in nature, 
 but originally intended for use in speeding up dynamic web applications by alleviating database load.
