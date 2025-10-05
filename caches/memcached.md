@@ -136,6 +136,16 @@ that does not reflect the latest value that should be
 cached.
 * This can occur when concurrent updates to memcache get reordered.
 
+How lease token solves this
+
+* Intuitively, a memcached instance gives a lease to a
+client to set data back into the cache when that client experiences a cache miss. 
+* The lease is a 64-bit token bound to the specific key the client originally requested.
+* The client provides the lease token when setting the value in the cache.
+* With the lease token, memcached can verify and determine whether the data should be stored and thus arbitrate concurrent writes.
+* Verification can fail if memcached has invalidated the lease token due to receiving a delete request for that item.
+* Leases prevent stale sets in a manner similar to how load-link/storeconditional operates
+
 <img width="1311" height="936" alt="image" src="https://github.com/user-attachments/assets/123c1bbf-48f5-4482-9a40-ee5b4bfc87f3" />
 
 * A thundering herd happens when a specific key undergoes heavy read and write activity. 
