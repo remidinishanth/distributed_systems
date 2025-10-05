@@ -151,7 +151,8 @@ client to set data back into the cache when that client experiences a cache miss
 * Verification can fail if memcached has invalidated the lease token due to receiving a delete request for that item.
 * Leases prevent stale sets in a manner similar to how load-link/storeconditional operates
 
-<img width="1311" height="936" alt="image" src="https://github.com/user-attachments/assets/123c1bbf-48f5-4482-9a40-ee5b4bfc87f3" />
+<img width="663" height="468" alt="image" src="https://github.com/user-attachments/assets/0bd37ae8-8618-4a02-9ab5-b8902b533065" />
+
 
 * A thundering herd happens when a specific key undergoes heavy read and write activity. 
 * As the write activity repeatedly invalidates the recently set values, many reads default to the more costly
