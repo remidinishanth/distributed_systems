@@ -40,6 +40,9 @@ Memcached is a well known, simple, inmemory caching solution. Memcached was orig
 
 Ref: https://www.linuxjournal.com/article/7451
 
+<img width="1295" height="1039" alt="image" src="https://github.com/user-attachments/assets/95982ff2-4d9e-44d2-adac-fcb476909381" />
+
+
 Facebook took up the open-source version of Memcached and enhanced it to build a distributed key-value store. This enhanced version was known as `Memcache`.
 
 * The open-source version Facebook started with provides a singlemachine in-memory hash table.
