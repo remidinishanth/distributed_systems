@@ -30,7 +30,6 @@ https://stackoverflow.com/questions/41744506/difference-between-stream-processin
 ## Event broker vs Message queue
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/a4bdffbf-bfff-4bf7-94e0-fa0b14ae5d42)
 
-
 #### MESSAGE QUEUE
 Messages are put onto a queue and a consumer consumes the message and processes them. Messages are acknowledged as consumed and deleted afterwards. Messages are split between consumers which makes it hard to communicate system with events.
 
@@ -40,6 +39,38 @@ Example of this would be Amazon SQS. Publish messages to the queue and then list
 Event brokers are a push system, they push these events downstream to consumers. Example of this would be Amazon EventBridge.
 
 Ref: https://serverlessland.com/event-driven-architecture/visuals/message-queue-vs-event-broker
+
+
+Message Queue (MQ)
+
+- Designed for delivery guarantees (at-least-once, exactly-once).
+- Great for sporadic workloads and asynchronous tasks.
+- Messages are consumed and removed. Once acknowledged, they’re gone.
+- Think: order processing, background jobs, retry logic.
+
+Stream
+
+- Designed for real-time, high-throughput, continuous data.
+- Data is append-only and replayable.
+- Multiple consumers can read the same stream independently.
+- Think: real-time analytics dashboards, fraud detection, monitoring pipelines.
+
+<img width="1434" height="2075" alt="image" src="https://github.com/user-attachments/assets/b39ba146-18f0-4748-8180-95d59aa74cc4" />
+
+
+A message queue here would introduce unnecessary latency and discard historical events that analytics needs to stay accurate.
+
+Rule of thumb:
+- If you care about delivery → Message Queue.
+- If you care about freshness & scale → Stream.
+
+That’s why the right answer here is: Streams for real-time analytics.
+
+Why Streams fit Aaron’s case (real-time analytics for e-commerce):
+
+- Freshness matters → Streams process events as they arrive, with low latency.
+- Replayability matters → If a consumer goes down, it can re-read from the offset.
+- Scale matters → Streams partition data for massive parallel consumption.
 
 
 <img width="1379" height="809" alt="image" src="https://github.com/user-attachments/assets/91af6d2a-090f-4a99-9332-9e7fe60ac025" />
