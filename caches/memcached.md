@@ -246,6 +246,7 @@ Inter-cluster bandwidth is less than Intra-cluster bandwidth.
 <img width="949" height="628" alt="image" src="https://github.com/user-attachments/assets/b847ae6c-53fe-46bf-8c73-ec0020b3c1ae" />
 
 
+Facebook is ok to write to master DB across because fb is read heavy system with 2 orders of higher magnitude
 <img width="1253" height="948" alt="image" src="https://github.com/user-attachments/assets/1f87287f-b832-4873-9be1-4703f3314f21" />
 
 <img width="1253" height="927" alt="image" src="https://github.com/user-attachments/assets/28a78291-b422-4521-863a-ad79593c2bd6" />
