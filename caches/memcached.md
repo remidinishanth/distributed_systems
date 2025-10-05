@@ -65,12 +65,15 @@ Clients maintain a map of all available servers, which is updated through an aux
 
 ### Reducing latency
 
+At Facebook's scale, a single web request can trigger hundreds of fetch requests to retrieve data from Memcached servers. Consider a scenario where a user loads a popular page containing numerous posts and comments. 
+
+<img width="1600" height="1123" alt="image" src="https://github.com/user-attachments/assets/b73c3b03-1147-495b-b09a-7080466e4419" />
+
+
 **Parallel requests and batching**: 
 * They structure our webapplication code to minimize the number of network
 round trips necessary to respond to page requests.
-* They
-construct a directed acyclic graph (DAG) representing
-the dependencies between data. A web server uses this
-DAG to maximize the number of items that can be
-fetched concurrently. On average these batches consist
-of 24 keys per request
+* They construct a directed acyclic graph (DAG) representing
+the dependencies between data. By analyzing the DAG, the web server can determine the optimal order and grouping of data fetches.
+* A web server uses this DAG to maximize the number of items that can be fetched concurrently. On average these batches consist
+of 24 keys per request.
