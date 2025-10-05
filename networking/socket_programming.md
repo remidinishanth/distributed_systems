@@ -8,6 +8,14 @@ category: "networking"
 
 Ref: https://www.cs.dartmouth.edu/~campbell/cs50/socketprogramming.html
 
+The system call to create a socket is `int socket (domain, type, protocol);` 
+```c
+    // AF_INET: IPv4 Internet protocols, AF_INET6 for Ipv6
+    // SOCK_STREAM: Provides sequenced, reliable, two-way, connection-based byte streams (TCP), SOCK_DGRAM for UDP
+    // 0: Specifies the default protocol for the given domain and type
+    int sockfd = socket(AF_INET, SOCK_STREAM, 0);
+```
+
 <img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/08025bfc-5c3b-4b9f-9bc4-435ad4cf5ae7">
 
 <img width="1628" height="882" alt="image" src="https://github.com/user-attachments/assets/d1bc26f3-008d-4b14-bc80-5a9fd1a6ed28" />
