@@ -60,3 +60,17 @@ Consistent Hashing is a technique that allows the distribution of a set of keys 
 For example, Each key is assigned to the node that falls closest to it in a clockwise direction.
 
 <img width="1600" height="1461" alt="image" src="https://github.com/user-attachments/assets/e643f11a-14af-4e50-8e59-1557206a1d79" />
+
+Clients maintain a map of all available servers, which is updated through an auxiliary configuration system.
+
+### Reducing latency
+
+**Parallel requests and batching**: 
+* They structure our webapplication code to minimize the number of network
+round trips necessary to respond to page requests.
+* They
+construct a directed acyclic graph (DAG) representing
+the dependencies between data. A web server uses this
+DAG to maximize the number of items that can be
+fetched concurrently. On average these batches consist
+of 24 keys per request
