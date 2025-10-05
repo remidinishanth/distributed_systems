@@ -45,7 +45,6 @@ Ref: https://www.linuxjournal.com/article/7451
 
 <img width="1295" height="1039" alt="image" src="https://github.com/user-attachments/assets/95982ff2-4d9e-44d2-adac-fcb476909381" />
 
-
 Facebook took up the open-source version of Memcached and enhanced it to build a distributed key-value store. This enhanced version was known as `Memcache`.
 
 * The open-source version Facebook started with provides a singlemachine in-memory hash table.
@@ -69,6 +68,9 @@ Major design goals:
 * They treat the probability of reading transient stale data as a parameter to
 be tuned, similar to responsiveness. Willing to expose slightly stale data in exchange for insulating a
 backend storage service from excessive load.
+
+<img width="911" height="597" alt="image" src="https://github.com/user-attachments/assets/a50cbb6b-c727-42d7-a469-edbacfe6eef1" />
+
 
 ### How requests are served
 
