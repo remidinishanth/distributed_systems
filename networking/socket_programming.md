@@ -4,17 +4,15 @@ title: "Socket Programming"
 category: "networking"
 ---
 
-<img width="1628" height="882" alt="image" src="https://github.com/user-attachments/assets/d1bc26f3-008d-4b14-bc80-5a9fd1a6ed28" />
-
-
 <img width="1241" alt="image" src="https://github.com/user-attachments/assets/9c02ba2d-e569-48c6-95ce-3b9e68dbf447">
 
 Ref: https://www.cs.dartmouth.edu/~campbell/cs50/socketprogramming.html
 
 <img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/08025bfc-5c3b-4b9f-9bc4-435ad4cf5ae7">
 
-![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/3b0b924f-bab3-4ef0-ba86-1cfcae998d18)
+<img width="1628" height="882" alt="image" src="https://github.com/user-attachments/assets/d1bc26f3-008d-4b14-bc80-5a9fd1a6ed28" />
 
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/3b0b924f-bab3-4ef0-ba86-1cfcae998d18)
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/0360e4e3-429c-4469-8831-7a818e0c0312)
 
