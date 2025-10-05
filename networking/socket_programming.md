@@ -16,7 +16,7 @@ The system call to create a socket is `int socket (domain, type, protocol);`
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
 ```
 
-Bind system call `int bind (int sockfd, const struct sockaddr *my_addr, socklen_t addrlen);`
+Only the server needs to bind. Bind system call `int bind (int sockfd, const struct sockaddr *my_addr, socklen_t addrlen);`
 
 <img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/08025bfc-5c3b-4b9f-9bc4-435ad4cf5ae7">
 
