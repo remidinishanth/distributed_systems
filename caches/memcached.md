@@ -11,6 +11,8 @@ Ref: https://memcached.org/about
 
 <img width="941" height="559" alt="image" src="https://github.com/user-attachments/assets/d3b833f3-cc07-4b78-ac9b-b09b6452548f" />
 
+<img width="2222" height="672" alt="image" src="https://github.com/user-attachments/assets/dc939ab8-aef4-42ef-926d-1a8cb1df15bd" />
+
 
 <img width="941" height="559" alt="image" src="https://github.com/user-attachments/assets/ab51a430-2fa8-45fc-90f4-232164577dca" />
 
@@ -26,6 +28,15 @@ Facebook took up the open-source version of Memcached and enhanced it to build a
 * Memcached is a well known, simple, inmemory caching solution. 
 * Facebook leverages memcached as a building block to construct and scale a distributed key-value store that
 supports the world’s largest social network.
+
+
+The following properties greatly influence the design.
+* First, users consume an order of magnitude more content than they create. This behavior results in a workload
+dominated by fetching data and suggests that caching
+can have significant advantages.
+* Second, our read operations fetch data from a variety of sources such as
+MySQL databases, HDFS installations, and backend services. This heterogeneity requires a flexible caching
+strategy able to store data from disparate sources.
 
 <img width="1456" height="873" alt="image" src="https://github.com/user-attachments/assets/f3ddd7c9-9741-4cbd-be61-74e632dad787" />
 
