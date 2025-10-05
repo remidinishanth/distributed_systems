@@ -34,6 +34,9 @@ Ref: https://engineering.fb.com/2013/04/15/core-infra/scaling-memcache-at-facebo
 
 ## How Facebook served billions of requests per second Using Memcached
 
+<img width="1064" height="697" alt="image" src="https://github.com/user-attachments/assets/69e45fc0-5958-4185-aa91-3c55f598ee9c" />
+
+
 Memcached is a well known, simple, inmemory caching solution. Memcached was originally developed by Brad Fitzpatrick for LiveJournal in 2003. It was originally written in Perl, but is rewritten in C by Anatoly Vorobey.
 
 <img width="1226" height="595" alt="image" src="https://github.com/user-attachments/assets/52ded5e8-61c1-4143-83d3-eb8149abc328" />
