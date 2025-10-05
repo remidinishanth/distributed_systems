@@ -1,3 +1,5 @@
+Also refer to https://timilearning.com/posts/mit-6.824/lecture-16-memcache-at-facebook/
+
 <img width="1107" height="559" alt="image" src="https://github.com/user-attachments/assets/140d7c24-51ec-4565-a36e-842e24ac51d0" />
 
 Pre-memcache
@@ -257,3 +259,8 @@ Facebook is ok to write to master DB across because fb is read heavy system with
 <img width="1253" height="948" alt="image" src="https://github.com/user-attachments/assets/1f87287f-b832-4873-9be1-4703f3314f21" />
 
 <img width="1253" height="927" alt="image" src="https://github.com/user-attachments/assets/28a78291-b422-4521-863a-ad79593c2bd6" />
+
+
+## Memory allocation
+
+<img width="1406" height="1258" alt="image" src="https://github.com/user-attachments/assets/a1110814-a54f-4815-923b-79311bcd3e39" />
