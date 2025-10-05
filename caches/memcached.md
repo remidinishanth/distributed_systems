@@ -70,10 +70,19 @@ At Facebook's scale, a single web request can trigger hundreds of fetch requests
 <img width="1600" height="1123" alt="image" src="https://github.com/user-attachments/assets/b73c3b03-1147-495b-b09a-7080466e4419" />
 
 
-**Parallel requests and batching**: 
+#### Parallel requests and batching**: 
 * They structure our webapplication code to minimize the number of network
 round trips necessary to respond to page requests.
 * They construct a directed acyclic graph (DAG) representing
 the dependencies between data. By analyzing the DAG, the web server can determine the optimal order and grouping of data fetches.
 * A web server uses this DAG to maximize the number of items that can be fetched concurrently. On average these batches consist
 of 24 keys per request.
+
+
+#### Using UDP 
+Facebook employed a clever strategy to optimize network communication between the web servers and the Memcache server.
+
+* For fetch requests, Facebook configured the clients to use UDP instead of TCP. 
+* As you may know, UDP is a connectionless protocol and much faster than TCP. By using UDP, the clients can send fetch requests to the Memcache servers with less network overhead, resulting in faster request processing and reduced latency.
+* However, UDP has a drawback: it doesn’t guarantee the delivery of packets. If a packet is lost during transmission, UDP doesn’t have a built-in mechanism to retransmit it. 
+* To handle such cases, they treated UDP packet loss as a cache miss on the client side. If a response isn’t received within a specific timeframe, the client assumes that the data is not available in the cache and proceeds to fetch it from the primary data source.
