@@ -273,3 +273,10 @@ Facebook is ok to write to master DB across because fb is read heavy system with
 <img width="1406" height="1258" alt="image" src="https://github.com/user-attachments/assets/a1110814-a54f-4815-923b-79311bcd3e39" />
 
 <img width="776" height="840" alt="image" src="https://github.com/user-attachments/assets/10eaec9d-4408-4b57-8e06-a0f583efafbe" />
+
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/fc729e86-aad1-4d16-bf20-30fd1c1d19b9" />
+
+<img width="802" height="557" alt="image" src="https://github.com/user-attachments/assets/84d588ae-8705-43e1-a57e-98e62c869384" />
+
+
+<img width="1552" height="1680" alt="image" src="https://github.com/user-attachments/assets/2d84d5d9-041d-45c2-924b-eb74aa5e802a" />
