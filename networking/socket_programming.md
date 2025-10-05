@@ -25,6 +25,26 @@ struct sockaddr_in {
     struct in_addr sin_addr; // see struct in_addr below
     char sin_zero[8]; // zero this if you want to
 };
+
+
+
+struct sockaddr_in my_addr; 
+int sockfd; 
+
+if ((sockfd = socket (AF_INET, SOCK_STREAM, 0) < 0) {
+    printf (“Error while creating the socket</span>n”);
+    exit(1);
+}
+
+bzero (&my_addr, sizeof(my_addr)); // zero structure out 
+my_addr.sin_family = AF_INET; // match the socket() call
+my_addr.sin_port = htons(5100); // specify port to listen on
+my_addr.sin_addr.s_addr = htonl(INADDR_ANY); //allow the server to accept a client connection on any interface
+
+if((bind(sockfd, (struct sockaddr *) &my_addr, sizeof(saddr)) < 0 {
+    printf(“Error in binding</span>n”);
+     exit(1);
+} 
 ```
 
 <img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/08025bfc-5c3b-4b9f-9bc4-435ad4cf5ae7">
