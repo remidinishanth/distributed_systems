@@ -26,6 +26,7 @@ Memcached is a well known, simple, inmemory caching solution. Memcached was orig
 Facebook took up the open-source version of Memcached and enhanced it to build a distributed key-value store. This enhanced version was known as `Memcache`.
 
 * The open-source version Facebook started with provides a singlemachine in-memory hash table.
+* > memcached provides no server-to-server coordination; it is an in-memory hash table running on a single server
 * They took this basic building block, made it more efficient, and used it to build a distributed key-value store
 that can process billions of requests per second that supports the world’s largest social network. 
 
@@ -37,6 +38,12 @@ can have significant advantages.
 * Second, our read operations fetch data from a variety of sources such as
 MySQL databases, HDFS installations, and backend services. This heterogeneity requires a flexible caching
 strategy able to store data from disparate sources.
+
+Major design goals:
+* Any change must impact a userfacing or operational issue. Optimizations that have limited scope are rarely considered.
+* They treat the probability of reading transient stale data as a parameter to
+be tuned, similar to responsiveness. Willing to expose slightly stale data in exchange for insulating a
+backend storage service from excessive load.
 
 ### How requests are served
 
