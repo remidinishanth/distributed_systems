@@ -21,16 +21,16 @@ Ref: https://memcached.org/about
 
 ## How Facebook served billions of requests per second Using Memcached
 
-Memcached was originally developed by Brad Fitzpatrick for LiveJournal in 2003. It was originally written in Perl, but is rewritten in C by Anatoly Vorobey.
+Memcached is a well known, simple, inmemory caching solution. Memcached was originally developed by Brad Fitzpatrick for LiveJournal in 2003. It was originally written in Perl, but is rewritten in C by Anatoly Vorobey.
 
 Facebook took up the open-source version of Memcached and enhanced it to build a distributed key-value store. This enhanced version was known as `Memcache`.
 
-* Memcached is a well known, simple, inmemory caching solution. 
-* Facebook leverages memcached as a building block to construct and scale a distributed key-value store that
-supports the world’s largest social network.
+* The open-source version Facebook started with provides a singlemachine in-memory hash table.
+* They took this basic building block, made it more efficient, and used it to build a distributed key-value store
+that can process billions of requests per second that supports the world’s largest social network. 
 
 
-The following properties greatly influence the design.
+The following properties greatly influence their design.
 * First, users consume an order of magnitude more content than they create. This behavior results in a workload
 dominated by fetching data and suggests that caching
 can have significant advantages.
