@@ -208,7 +208,18 @@ whereas TCP windows apply only to a single stream.
 
 ### Multiple clusters
 
-The all to all communication limits horizontal scalability
+* It is tempting to buy more web and memcached servers to scale a cluster as demand increases. 
+* However, naıvely scaling the system does not eliminate all problems.
+* > Highly requested items will only become more popular as more web servers are added to cope with increased
+user traffic.
+* Incast congestion also worsens as the number of memcached servers increases.
+* We therefore split `our web and memcached servers` into multiple frontend clusters.
+* These clusters, along with a storage cluster that contain the databases, define a region.
+* This region architecture also allows for smaller failure domains and a tractable network configuration.
+* We trade replication of data for more independent failure domains, tractable network configuration, and a reduction of incast congestion.
+
+
+The all to all communication limits horizontal scalability.
 
 <img width="655" height="428" alt="image" src="https://github.com/user-attachments/assets/c0837e3e-0784-4fa5-a5a4-6ce18f9ad999" />
 
