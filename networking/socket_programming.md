@@ -4,8 +4,10 @@ title: "Socket Programming"
 category: "networking"
 ---
 
-<img width="1241" alt="image" src="https://github.com/user-attachments/assets/9c02ba2d-e569-48c6-95ce-3b9e68dbf447">
+<img width="1628" height="882" alt="image" src="https://github.com/user-attachments/assets/d1bc26f3-008d-4b14-bc80-5a9fd1a6ed28" />
 
+
+<img width="1241" alt="image" src="https://github.com/user-attachments/assets/9c02ba2d-e569-48c6-95ce-3b9e68dbf447">
 
 Ref: https://www.cs.dartmouth.edu/~campbell/cs50/socketprogramming.html
 
