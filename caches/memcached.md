@@ -104,3 +104,5 @@ Facebook employed a clever strategy to optimize network communication between th
 ### Problems with Caching
 
 <img width="1311" height="936" alt="image" src="https://github.com/user-attachments/assets/123c1bbf-48f5-4482-9a40-ee5b4bfc87f3" />
+
+<img width="1311" height="817" alt="image" src="https://github.com/user-attachments/assets/a2f9503c-15c4-4aea-a2e6-073ea7920c29" />
