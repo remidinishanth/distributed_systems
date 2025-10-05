@@ -36,6 +36,10 @@ Ref: https://engineering.fb.com/2013/04/15/core-infra/scaling-memcache-at-facebo
 
 Memcached is a well known, simple, inmemory caching solution. Memcached was originally developed by Brad Fitzpatrick for LiveJournal in 2003. It was originally written in Perl, but is rewritten in C by Anatoly Vorobey.
 
+<img width="1226" height="595" alt="image" src="https://github.com/user-attachments/assets/52ded5e8-61c1-4143-83d3-eb8149abc328" />
+
+Ref: https://www.linuxjournal.com/article/7451
+
 Facebook took up the open-source version of Memcached and enhanced it to build a distributed key-value store. This enhanced version was known as `Memcache`.
 
 * The open-source version Facebook started with provides a singlemachine in-memory hash table.
