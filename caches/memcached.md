@@ -196,3 +196,21 @@ This would lead to every server communicating to every memcache server, all to a
 
 <img width="917" height="692" alt="image" src="https://github.com/user-attachments/assets/752a2edc-c1bf-439b-9312-f7a26dda5d80" />
 
+One of the Problem is
+
+When server wants some values and it does a wide parallel fetch.
+<img width="655" height="293" alt="image" src="https://github.com/user-attachments/assets/c9e38549-7c39-4347-9e6a-8a9232599118" />
+
+When the server returns the responses, we would see packet drops on the client side because of network congestion
+
+<img width="655" height="488" alt="image" src="https://github.com/user-attachments/assets/751a95ba-c1ba-4e57-bade-d00d1ace9ca6" />
+
+Memcache clients implement flowcontrol mechanisms to limit incast congestion.
+* When a client requests a large number of keys, the responses can overwhelm components such as rack and cluster
+switches if those responses arrive all at once.
+* Clients therefore use a sliding window mechanism to control the number of outstanding requests.
+* When the client receives a response, the next request can be sent.
+* Similar to TCP’s congestion control, the size of this sliding window grows slowly upon a successful request and shrinks
+when a request goes unanswered.
+* The window applies to all memcache requests independently of destination;
+whereas TCP windows apply only to a single stream.
