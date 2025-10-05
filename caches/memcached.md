@@ -272,11 +272,14 @@ Facebook is ok to write to master DB across because fb is read heavy system with
 
 <img width="1406" height="1258" alt="image" src="https://github.com/user-attachments/assets/a1110814-a54f-4815-923b-79311bcd3e39" />
 
+<img width="314" height="512" alt="image" src="https://github.com/user-attachments/assets/5eb25943-4e2d-4212-95ff-9a9cdaa01715" />
+
+
 <img width="776" height="840" alt="image" src="https://github.com/user-attachments/assets/10eaec9d-4408-4b57-8e06-a0f583efafbe" />
 
 <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/fc729e86-aad1-4d16-bf20-30fd1c1d19b9" />
 
 <img width="802" height="557" alt="image" src="https://github.com/user-attachments/assets/84d588ae-8705-43e1-a57e-98e62c869384" />
 
+One of the improvements Facebook made to memcached was moving to a smaller exponential so there is not as much waste in storing values in chunks. Instead of 2^n for the slab allocation, the latest versions of memcached use a much smaller growth exponential, 1.25^n, so you will see slabs with sizes 1KB, 1.25KB, 1.56KB, etc… This means that instead of 25% waste on average, you should see closer to 10%. Effectively you regain 15% of your memcached memory just by installing the latest version!
 
-<img width="1552" height="1680" alt="image" src="https://github.com/user-attachments/assets/2d84d5d9-041d-45c2-924b-eb74aa5e802a" />
