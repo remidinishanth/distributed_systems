@@ -162,6 +162,7 @@ All servers see a cache miss and everyone reaches out to database, increasing th
 
 <img width="645" height="436" alt="image" src="https://github.com/user-attachments/assets/17d86474-5eff-42d2-a49b-b101c462bc59" />
 
+Caches arbitrates access to the database:
 * A slight modification to leases also mitigates thundering herds.
 * Each memcached server regulates the rate at which it returns tokens.
 * By default, we configure these servers to return a token only once every 10 seconds per
