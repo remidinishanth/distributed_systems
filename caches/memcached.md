@@ -228,6 +228,13 @@ Now we will need to keep the caches consistent
 <img width="870" height="594" alt="image" src="https://github.com/user-attachments/assets/fde43e7a-5d75-4041-b049-90b52a0da73d" />
 
 
+* SQL statements that modify authoritative state are amended to include memcache keys that need to be
+invalidated once the transaction commits.
+* We deploy invalidation daemons (named mcsqueal) on every
+database.
+* Each daemon inspects the SQL statements that its database commits, extracts any deletes, and broadcasts
+these deletes to the memcache deployment in every frontend cluster in that region.
+
 <img width="1221" height="948" alt="image" src="https://github.com/user-attachments/assets/387eed73-3b09-4dc9-a799-91c17defb263" />
 
 <img width="1221" height="948" alt="image" src="https://github.com/user-attachments/assets/0f821203-7072-4fa5-9716-9a4229156e77" />
