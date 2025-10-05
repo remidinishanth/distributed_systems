@@ -50,3 +50,13 @@ backend storage service from excessive load.
 <img width="1456" height="873" alt="image" src="https://github.com/user-attachments/assets/f3ddd7c9-9741-4cbd-be61-74e632dad787" />
 
 > They choose to delete cached data instead of updating it because deletes are idempotent.
+
+### Consistent Hashing
+
+Items are distributed across the memcached servers through consistent hashing.
+
+Consistent Hashing is a technique that allows the distribution of a set of keys across multiple nodes in a way that minimizes the impact of node failures or additions. 
+
+For example, Each key is assigned to the node that falls closest to it in a clockwise direction.
+
+<img width="1600" height="1461" alt="image" src="https://github.com/user-attachments/assets/e643f11a-14af-4e50-8e59-1557206a1d79" />
