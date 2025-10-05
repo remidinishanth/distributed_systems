@@ -38,6 +38,8 @@ can have significant advantages.
 MySQL databases, HDFS installations, and backend services. This heterogeneity requires a flexible caching
 strategy able to store data from disparate sources.
 
+### How requests are served
+
 <img width="1456" height="873" alt="image" src="https://github.com/user-attachments/assets/f3ddd7c9-9741-4cbd-be61-74e632dad787" />
 
-
+> They choose to delete cached data instead of updating it because deletes are idempotent.
