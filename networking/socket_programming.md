@@ -47,6 +47,8 @@ if((bind(sockfd, (struct sockaddr *) &my_addr, sizeof(saddr)) < 0 {
 } 
 ```
 
+Only the server needs to listen `int listen (int sockfd, int backlog)`, backlog specifies the maximum number of pending connections the kernel should queue for the socket. Listen returns `0` if OK, `-1` on error
+
 <img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/08025bfc-5c3b-4b9f-9bc4-435ad4cf5ae7">
 
 <img width="1628" height="882" alt="image" src="https://github.com/user-attachments/assets/d1bc26f3-008d-4b14-bc80-5a9fd1a6ed28" />
