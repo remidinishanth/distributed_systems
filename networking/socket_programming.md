@@ -16,6 +16,8 @@ The system call to create a socket is `int socket (domain, type, protocol);`
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
 ```
 
+
+
 Only the server needs to bind. Bind system call `int bind (int sockfd, const struct sockaddr *my_addr, socklen_t addrlen);`
 
 ```c
@@ -46,6 +48,9 @@ if((bind(sockfd, (struct sockaddr *) &my_addr, sizeof(saddr)) < 0 {
      exit(1);
 } 
 ```
+
+* By calling listen, the socket is converted into a listening socket, on which incoming connections from clients will be accepted by the kernel.
+* These three steps, `socket`, `bind`, and `listen`, are the normal steps for any TCP server to prepare what we call the listening descriptor `sockfd` in our case
 
 Only the server needs to listen `int listen (int sockfd, int backlog)`, backlog specifies the maximum number of pending connections the kernel should queue for the socket. Listen returns `0` if OK, `-1` on error.
 
