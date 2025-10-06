@@ -49,6 +49,10 @@ if((bind(sockfd, (struct sockaddr *) &my_addr, sizeof(saddr)) < 0 {
 } 
 ```
 
+* We specify the IP address as `INADDR_ANY`, which allows the server to accept a client connection on any
+interface, in case the server host has multiple interfaces
+
+**Convert socket to listening socket**
 * By calling listen, the socket is converted into a listening socket, on which incoming connections from clients will be accepted by the kernel.
 * These three steps, `socket`, `bind`, and `listen`, are the normal steps for any TCP server to prepare what we call the listening descriptor `sockfd` in our case
 
