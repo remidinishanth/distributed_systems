@@ -167,3 +167,36 @@ See the welcome socket
 <img width="823" height="571" alt="image" src="https://github.com/user-attachments/assets/a8f8e638-a5b5-4b3f-b19c-63f31f09f0e7" />
 
 <img width="3400" height="2548" alt="image" src="https://github.com/user-attachments/assets/389c5094-d6b5-4591-b92f-eb456511e49d" />
+
+Our initial client/server application uses TCP as its transport layer. We
+   would like to change that in order to have UDP running instead.
+   Let's explore what we need to change in order to achieve that:
+   A. Remember that you have to use SOCK_DGRAM instead of SOCK_STREAM
+   B. UDP is a much smaller protocol than TCP. It is connectionless, so 
+      there is no need to connect/listen/accept. Delete or comment out all 
+      the code that was used for those functions.
+   D. We will not need any of the lines from:
+      newsockfd = accept ....
+      all the way to the line before:
+      while (read(...)
+      Also, since we do not use newsockfd in this case, reading and writing
+      should happen at the sockfd socket, so change the reading/writing/closing
+      to take sockfd instead.
+      No need for the exit(EXIT_SUCCESS) either.
+   C. Since we don't open a connection to a certain address/port, we need to 
+      send the server address everytime we send packets of data. So, we cannot
+      use read/write, that do not have functionality for client and server
+      addresses. So, let's change read() and write() to recvfrom() and 
+      sendto() respectively. The functions are as follows:
+
+      sendto(sockfd, &outbuffer, 1, 0,  &serveraddr, sizeof(serveraddr))
+      instead of:
+      write(sockfd, &outbuffer, 1)
+
+      and:
+      
+      recvfrom(sockfd, &inbuffer, 1, 0, &serveraddr, &serveraddrlength)
+      instead of:
+      read(sockfd, &inbuffer, 1)
+
+<img width="1335" height="925" alt="image" src="https://github.com/user-attachments/assets/5a089643-cb74-41df-97f7-6813129b3961" />
