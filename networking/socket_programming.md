@@ -12,7 +12,9 @@ Ref: https://www.cs.dartmouth.edu/~campbell/cs50/socketprogramming.html
 
 <img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/08025bfc-5c3b-4b9f-9bc4-435ad4cf5ae7">
 
-Sockets are endpoints for sending and receiving data across a network.
+Sockets are endpoints for sending and receiving data across a network. 
+
+Sockets are a fundamental abstraction for inter-process communication (IPC), particularly over networks.
 
 A socket is one endpoint of a two-way communication link between two programs running on a network. 💻 ↔️ 🌐 ↔️ 💻 
 
