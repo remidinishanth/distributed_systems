@@ -14,13 +14,15 @@ Ref: https://www.cs.dartmouth.edu/~campbell/cs50/socketprogramming.html
 
 Sockets are endpoints for sending and receiving data across a network. 
 
-Sockets are a fundamental abstraction for inter-process communication (IPC), particularly over networks.
+Sockets are a fundamental abstraction for process-to-process / inter-process communication (IPC), particularly over networks. It can also be used within the same machine.
 
 A socket is one endpoint of a two-way communication link between two programs running on a network. 💻 ↔️ 🌐 ↔️ 💻 
 
 Mainly two types:
-* TCP Sockets (Stream Sockets)
-* UDP Sockets (Datagram Sockets)
+* TCP Sockets (Stream Sockets) `SOCK_STREAM`
+* UDP Sockets (Datagram Sockets) `SOCK_DGRAM`
+
+Address family: `AF_INET` for IPv4, `AF_INET6` for IPv6, or `AF_UNIX` for local IPC
 
 <img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/02b5b096-f32e-40ad-bb75-d671d54e1994">
 
