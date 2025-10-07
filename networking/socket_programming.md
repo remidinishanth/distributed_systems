@@ -4,6 +4,8 @@ title: "Socket Programming"
 category: "networking"
 ---
 
+Read good blog https://web.mit.edu/6.031/www/sp20/classes/24-sockets-networking/ 
+
 <img width="1241" alt="image" src="https://github.com/user-attachments/assets/9c02ba2d-e569-48c6-95ce-3b9e68dbf447">
 
 Ref: https://www.cs.dartmouth.edu/~campbell/cs50/socketprogramming.html
