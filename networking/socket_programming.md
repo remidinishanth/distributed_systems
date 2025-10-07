@@ -12,8 +12,13 @@ Ref: https://www.cs.dartmouth.edu/~campbell/cs50/socketprogramming.html
 
 <img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/08025bfc-5c3b-4b9f-9bc4-435ad4cf5ae7">
 
-<img width="734" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/79d5badd-020b-4bd3-a696-c306470f91c2">
+Sockets are endpoints for sending and receiving data across a network.
 
+A socket is one endpoint of a two-way communication link between two programs running on a network. 💻 ↔️ 🌐 ↔️ 💻 
+
+Mainly two types:
+* TCP Sockets (Stream Sockets)
+* UDP Sockets (Datagram Sockets)
 
 <img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/02b5b096-f32e-40ad-bb75-d671d54e1994">
 
@@ -29,6 +34,10 @@ Ref: https://www.cs.dartmouth.edu/~campbell/cs50/socketprogramming.html
 
 <img width="471" alt="image" src="https://github.com/user-attachments/assets/191e43ab-b6aa-4e18-b65f-d81db26e28e9">
 
+
+### TCP sockets
+
+<img width="734" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/79d5badd-020b-4bd3-a696-c306470f91c2">
 
 The system call to create a socket is `int socket (domain, type, protocol);` 
 ```c
