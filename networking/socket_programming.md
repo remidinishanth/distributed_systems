@@ -110,6 +110,13 @@ The client need not **bind**, **listen** or **accept**. All client needs to do i
 
 <img width="3400" height="2926" alt="image" src="https://github.com/user-attachments/assets/e65c4c59-afba-4a11-93f3-59190614179e" />
 
+Refer to the following code, Each new accept is creating a new socket and then we are creating a fork to handle it 
+
+https://github.com/remidinishanth/distributed_systems/blob/main/networking/sockets/tcpechoserver.c#L72-L78
+
+<img width="800" height="512" alt="image" src="https://github.com/user-attachments/assets/b29d37c7-d639-4fa2-8345-75db996f026a" />
+
+
 ### UDP sockets
 
 <img width="823" height="571" alt="image" src="https://github.com/user-attachments/assets/a8f8e638-a5b5-4b3f-b19c-63f31f09f0e7" />
