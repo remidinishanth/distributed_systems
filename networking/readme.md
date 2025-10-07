@@ -6,7 +6,7 @@ category: "networking"
 
 Awesome resource: https://microchipdeveloper.com/networking:start
 
-Todo: https://unixism.net/2019/04/linux-applications-performance-introduction/ 
+Todo: https://unixism.net/2019/04/linux-applications-performance-introduction/ and https://www.softprayog.in/programming/socket-programming-using-the-select-system-call 
 
 <img width="339" height="294" alt="image" src="https://github.com/user-attachments/assets/601b396b-1b2d-437d-b2b1-146ebd04d32e" />
 
