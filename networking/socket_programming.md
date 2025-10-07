@@ -158,6 +158,9 @@ https://github.com/remidinishanth/distributed_systems/blob/572e1af70522d37d83fad
 
 <img width="800" height="512" alt="image" src="https://github.com/user-attachments/assets/b29d37c7-d639-4fa2-8345-75db996f026a" />
 
+See the welcome socket
+<img width="1364" height="973" alt="image" src="https://github.com/user-attachments/assets/8ea987e7-788d-4fea-bc87-2baf66839f17" />
+
 
 ### UDP sockets
 
