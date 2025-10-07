@@ -8,6 +8,28 @@ category: "networking"
 
 Ref: https://www.cs.dartmouth.edu/~campbell/cs50/socketprogramming.html
 
+### Sockets definition
+
+<img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/08025bfc-5c3b-4b9f-9bc4-435ad4cf5ae7">
+
+<img width="734" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/79d5badd-020b-4bd3-a696-c306470f91c2">
+
+
+<img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/02b5b096-f32e-40ad-bb75-d671d54e1994">
+
+<img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/6c9fba23-3241-4e18-b9bd-76f0fc4259be">
+
+### How Sockets fit in Network stack
+
+<img width="1628" height="882" alt="image" src="https://github.com/user-attachments/assets/d1bc26f3-008d-4b14-bc80-5a9fd1a6ed28" />
+
+![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/0360e4e3-429c-4469-8831-7a818e0c0312)
+
+### Data flow between wire and app
+
+<img width="471" alt="image" src="https://github.com/user-attachments/assets/191e43ab-b6aa-4e18-b65f-d81db26e28e9">
+
+
 The system call to create a socket is `int socket (domain, type, protocol);` 
 ```c
     // AF_INET: IPv4 Internet protocols, AF_INET6 for Ipv6
@@ -67,25 +89,6 @@ The client need not **bind**, **listen** or **accept**. All client needs to do i
 
 ![image](https://github.com/user-attachments/assets/529f2e1f-58d4-4a11-9892-ac12928ad900)
 
-
-<img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/08025bfc-5c3b-4b9f-9bc4-435ad4cf5ae7">
-
-<img width="1628" height="882" alt="image" src="https://github.com/user-attachments/assets/d1bc26f3-008d-4b14-bc80-5a9fd1a6ed28" />
-
-![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/3b0b924f-bab3-4ef0-ba86-1cfcae998d18)
-
-![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/0360e4e3-429c-4469-8831-7a818e0c0312)
-
-<img width="734" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/79d5badd-020b-4bd3-a696-c306470f91c2">
-
-
-<img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/02b5b096-f32e-40ad-bb75-d671d54e1994">
-
-<img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/6c9fba23-3241-4e18-b9bd-76f0fc4259be">
-
-### Data flow between wire and app
-
-<img width="471" alt="image" src="https://github.com/user-attachments/assets/191e43ab-b6aa-4e18-b65f-d81db26e28e9">
 
 
 ## Established Socket
