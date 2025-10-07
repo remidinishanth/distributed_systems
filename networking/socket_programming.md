@@ -28,6 +28,8 @@ Mainly two types:
 
 <img width="1628" height="882" alt="image" src="https://github.com/user-attachments/assets/d1bc26f3-008d-4b14-bc80-5a9fd1a6ed28" />
 
+### How does sockets fit in OS stack
+
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/0360e4e3-429c-4469-8831-7a818e0c0312)
 
 ### Data flow between wire and app
