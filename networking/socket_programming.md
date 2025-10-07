@@ -102,8 +102,17 @@ Clients
 The client need not **bind**, **listen** or **accept**. All client needs to do is to just connect to the server.
 `int connect (int sockfd, struct sockaddr *toaddr, socklen_t addrlen)`
 
+### TCP sockets, there is connect where there is 3 way handshake
+
 ![image](https://github.com/user-attachments/assets/529f2e1f-58d4-4a11-9892-ac12928ad900)
 
+<img width="3400" height="2926" alt="image" src="https://github.com/user-attachments/assets/e65c4c59-afba-4a11-93f3-59190614179e" />
+
+### UDP sockets
+
+<img width="823" height="571" alt="image" src="https://github.com/user-attachments/assets/a8f8e638-a5b5-4b3f-b19c-63f31f09f0e7" />
+
+<img width="3400" height="2548" alt="image" src="https://github.com/user-attachments/assets/389c5094-d6b5-4591-b92f-eb456511e49d" />
 
 
 ## Established Socket
