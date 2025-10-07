@@ -112,7 +112,7 @@ The client need not **bind**, **listen** or **accept**. All client needs to do i
 
 Refer to the following code, Each new accept is creating a new socket and then we are creating a fork to handle it 
 
-https://github.com/remidinishanth/distributed_systems/blob/main/networking/sockets/tcpechoserver.c#L72-L78
+https://github.com/remidinishanth/distributed_systems/blob/572e1af70522d37d83fadd097534525aa628c4b0/networking/sockets/tcpechoserver.c#L72-L78
 
 <img width="800" height="512" alt="image" src="https://github.com/user-attachments/assets/b29d37c7-d639-4fa2-8345-75db996f026a" />
 
