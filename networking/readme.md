@@ -6,6 +6,8 @@ category: "networking"
 
 Awesome resource: https://microchipdeveloper.com/networking:start
 
+Todo: https://unixism.net/2019/04/linux-applications-performance-introduction/ 
+
 ## Sockets & Networking 
 
 https://ocw.mit.edu/ans7870/6/6.005/s16/classes/21-sockets-networking/
