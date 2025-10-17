@@ -132,6 +132,8 @@ https://martinheinz.dev/blog/44
 
 ### Overlay filesystem
 
+What is overlay fs https://wiki.archlinux.org/title/Overlay_filesystem 
+
 ![image](https://github.com/user-attachments/assets/c52fb749-e7a6-4f5d-ae3a-d1486be7029f)
 
 ```
