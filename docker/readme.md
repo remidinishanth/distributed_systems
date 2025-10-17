@@ -134,8 +134,12 @@ https://martinheinz.dev/blog/44
 
 What is overlay fs https://wiki.archlinux.org/title/Overlay_filesystem 
 
+![image](https://github.com/user-attachments/assets/c52fb749-e7a6-4f5d-ae3a-d1486be7029f)
+
+#### Ubuntu example
 <img width="1100" height="667" alt="image" src="https://github.com/user-attachments/assets/d5ba6ecc-a397-44b1-90a3-4b99eaf68721" />
 
+#### How containers use this
 <img width="985" height="588" alt="image" src="https://github.com/user-attachments/assets/41c4b677-0943-4b00-aea6-e0494e242808" />
 
 If container writes any files, it doesn't modify anything in lower layers
@@ -143,7 +147,7 @@ If container writes any files, it doesn't modify anything in lower layers
 <img width="1706" height="690" alt="image" src="https://github.com/user-attachments/assets/f513fa8a-837d-4e31-8559-b444a594d6a7" />
 
 
-![image](https://github.com/user-attachments/assets/c52fb749-e7a6-4f5d-ae3a-d1486be7029f)
+
 
 ```
 ➜  ~ docker ps
