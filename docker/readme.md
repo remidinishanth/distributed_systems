@@ -237,6 +237,69 @@ Ignore typos my AI generated image
 <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/290338f7-f00e-4140-8368-aff3e271d9a7" />
 
 
+### Changes to the image
+
+```
+➜  ~ docker diff c702369a8429
+A /nishanth.txt
+C /root
+A /root/.ash_history
+```
+
+* `A` stands for Add.
+* This indicates that a new file named `nishanth.txt` has been created in the container's root (/) directory. This file did not exist in the original traefik image
+
+
+```
+docker history traefik
+IMAGE          CREATED       CREATED BY                                      SIZE      COMMENT
+a14917e96c7b   3 weeks ago   LABEL org.opencontainers.image.vendor=Traefi…   0B        buildkit.dockerfile.v0
+<missing>      3 weeks ago   CMD ["traefik"]                                 0B        buildkit.dockerfile.v0
+<missing>      3 weeks ago   ENTRYPOINT ["/entrypoint.sh"]                   0B        buildkit.dockerfile.v0
+<missing>      3 weeks ago   EXPOSE map[80/tcp:{}]                           0B        buildkit.dockerfile.v0
+<missing>      3 weeks ago   COPY entrypoint.sh / # buildkit                 419B      buildkit.dockerfile.v0
+<missing>      3 weeks ago   RUN /bin/sh -c set -ex;  apkArch="$(apk --pr…   168MB     buildkit.dockerfile.v0
+<missing>      3 weeks ago   RUN /bin/sh -c apk --no-cache add ca-certifi…   1MB       buildkit.dockerfile.v0
+<missing>      3 weeks ago   CMD ["/bin/sh"]                                 0B        buildkit.dockerfile.v0
+<missing>      3 weeks ago   ADD alpine-minirootfs-3.22.2-x86_64.tar.gz /…   8.32MB    buildkit.dockerfile.v0
+```
+
+The docker file is https://github.com/traefik/traefik-library-image/blob/master/v3.5/alpine/Dockerfile, you can relate above with the following
+
+```
+FROM alpine:3.22
+RUN apk --no-cache add ca-certificates tzdata
+RUN set -ex; \
+	apkArch="$(apk --print-arch)"; \
+	case "$apkArch" in \
+		armhf) arch='armv6' ;; \
+		aarch64) arch='arm64' ;; \
+		x86_64) arch='amd64' ;; \
+		riscv64) arch='riscv64' ;; \
+		s390x) arch='s390x' ;; \
+		ppc64le) arch='ppc64le' ;; \
+		*) echo >&2 "error: unsupported architecture: $apkArch"; exit 1 ;; \
+	esac; \
+	wget --quiet -O /tmp/traefik.tar.gz "https://github.com/traefik/traefik/releases/download/v3.5.3/traefik_v3.5.3_linux_$arch.tar.gz"; \
+	tar xzvf /tmp/traefik.tar.gz -C /usr/local/bin traefik; \
+	rm -f /tmp/traefik.tar.gz; \
+	chmod +x /usr/local/bin/traefik
+COPY entrypoint.sh /
+EXPOSE 80
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["traefik"]
+
+# Metadata
+LABEL org.opencontainers.image.vendor="Traefik Labs" \
+    org.opencontainers.image.url="https://traefik.io" \
+    org.opencontainers.image.source="https://github.com/traefik/traefik" \
+    org.opencontainers.image.title="Traefik" \
+    org.opencontainers.image.description="A modern reverse-proxy" \
+    org.opencontainers.image.version="v3.5.3" \
+    org.opencontainers.image.documentation="https://docs.traefik.io"
+```
+
+
 ![image](https://github.com/user-attachments/assets/65039f74-d7f1-471d-9c7d-e12dab06f2a4)
 
 
