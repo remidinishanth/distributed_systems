@@ -147,44 +147,44 @@ If container writes any files, it doesn't modify anything in lower layers
 <img width="1706" height="690" alt="image" src="https://github.com/user-attachments/assets/f513fa8a-837d-4e31-8559-b444a594d6a7" />
 
 
-
-
 ```
-➜  ~ docker ps
-CONTAINER ID   IMAGE                                                    COMMAND                  CREATED             STATUS             PORTS                                                  NAMES
-0ac949292b65   traefik                                                  "/entrypoint.sh trae…"   About an hour ago   Up About an hour   80/tcp                                                 adoring_bhabha
+docker run -d traefik
+c702369a8429445312f561631ef8871ed9b8c055551151e549190398fef936e6
 ```
 
+Running `mount -t overlay` inside the docker
 ```
-➜  ~ docker inspect 0ac949292b65 | grep  GraphDriver -A 8
+docker exec -it c702369a8429 sh
+/ # mount -t overlay
+overlay on / type overlay (rw,relatime,lowerdir=/var/lib/docker/overlay2/l/CK3RK6RKLXTDLCVT7J6XUNJFYI:/var/lib/docker/overlay2/l/MJZW5RC5EQX5QV64ZQFI5YRA6V:/var/lib/docker/overlay2/l/XG3WJGGNM4CP67RWANTABIWBOL:/var/lib/docker/overlay2/l/X32XXQFB6ADFFO2FLDCVIV6J2K:/var/lib/docker/overlay2/l/T72XWGVHJ6FWJXBYGSBLRK6FPE,upperdir=/var/lib/docker/overlay2/79ded441a3bd88ad3721bf119dc626690444ce58c9ed378f5a1b923667abe413/diff,workdir=/var/lib/docker/overlay2/79ded441a3bd88ad3721bf119dc626690444ce58c9ed378f5a1b923667abe413/work)
+```
+
+```
+docker inspect c702369a8429 | grep  GraphDriver -A 8
         "GraphDriver": {
             "Data": {
-                "LowerDir": "/var/lib/docker/overlay2/45629581e8696009c105d94ba07e3eb69ce4cc05cc963132cdfb5103d07fb926-init/diff:/var/lib/docker/overlay2/54d68871e061924a04e9f5929876c1f62799ef505e2850bfb453e44d5c785982/diff:/var/lib/docker/overlay2/44eac91bcc11009b4bc33aa25b9d23d9b175f31b548d458b1db0f9acd61d829c/diff:/var/lib/docker/overlay2/da89c4703e3774e3a5ee4f0821232d19a7d4a006c60cf253c9d656c9c1e0910d/diff:/var/lib/docker/overlay2/4f9ef368c98bdfe533018873f57eb8a2aaa1815ed967ebf31683e0b3d5224975/diff",
-                "MergedDir": "/var/lib/docker/overlay2/45629581e8696009c105d94ba07e3eb69ce4cc05cc963132cdfb5103d07fb926/merged",
-                "UpperDir": "/var/lib/docker/overlay2/45629581e8696009c105d94ba07e3eb69ce4cc05cc963132cdfb5103d07fb926/diff",
-                "WorkDir": "/var/lib/docker/overlay2/45629581e8696009c105d94ba07e3eb69ce4cc05cc963132cdfb5103d07fb926/work"
+                "ID": "c702369a8429445312f561631ef8871ed9b8c055551151e549190398fef936e6",
+                "LowerDir": "/var/lib/docker/overlay2/79ded441a3bd88ad3721bf119dc626690444ce58c9ed378f5a1b923667abe413-init/diff:/var/lib/docker/overlay2/0107d134713b05fc02091a41f1da372a9c9a0b7442f0c6a9ec130ace13940fe8/diff:/var/lib/docker/overlay2/8e8803ebddca09cd58274141eed8e426ddb4d3b96273cdda29c61f17ca20513b/diff:/var/lib/docker/overlay2/6b075fb9786d41cae6451f6ccc4e7708133646b57f45460394508e63a0da822b/diff:/var/lib/docker/overlay2/8beff5c84e30b1915a9017f659232bacde302c7386b5a9b7e4196b3932492780/diff",
+                "MergedDir": "/var/lib/docker/overlay2/79ded441a3bd88ad3721bf119dc626690444ce58c9ed378f5a1b923667abe413/merged",
+                "UpperDir": "/var/lib/docker/overlay2/79ded441a3bd88ad3721bf119dc626690444ce58c9ed378f5a1b923667abe413/diff",
+                "WorkDir": "/var/lib/docker/overlay2/79ded441a3bd88ad3721bf119dc626690444ce58c9ed378f5a1b923667abe413/work"
             },
             "Name": "overlay2"
-        },
-```
+```            
+
+Also on the host by searching merged dir `/var/lib/docker/overlay2/79ded441a3bd88ad3721bf119dc626690444ce58c9ed378f5a1b923667abe413/merged`
 
 ```
-➜  ~ docker inspect adoring_bhabha | grep MergedDir
-
-                "MergedDir": "/var/lib/docker/overlay2/45629581e8696009c105d94ba07e3eb69ce4cc05cc963132cdfb5103d07fb926/merged",
-```
-
-```
-➜  ~ mount | grep 45629581e8696009c105d94ba07e3eb69ce4cc05cc963132cdfb5103d07fb926
-overlay on /var/lib/docker/overlay2/45629581e8696009c105d94ba07e3eb69ce4cc05cc963132cdfb5103d07fb926/merged type overlay (rw,relatime,lowerdir=/var/lib/docker/overlay2/l/MEJZY4W3TTOIOOSQFSI76TU5IR:/var/lib/docker/overlay2/l/TXPWWDBIAR4MKWCSSEQXD2G5GX:/var/lib/docker/overlay2/l/OR3RPUZHUFDK3NKMHT24VXK254:/var/lib/docker/overlay2/l/EN5ZHUWKYHDCGGK57EMO27PGDJ:/var/lib/docker/overlay2/l/ME4EEDCZPBSQLDBRU4CANROOQH,upperdir=/var/lib/docker/overlay2/45629581e8696009c105d94ba07e3eb69ce4cc05cc963132cdfb5103d07fb926/diff,workdir=/var/lib/docker/overlay2/45629581e8696009c105d94ba07e3eb69ce4cc05cc963132cdfb5103d07fb926/work)
+➜  ~ mount | grep 79ded441a3bd88ad3721bf119dc6266904
+overlay on /var/lib/docker/overlay2/79ded441a3bd88ad3721bf119dc626690444ce58c9ed378f5a1b923667abe413/merged type overlay (rw,relatime,lowerdir=/var/lib/docker/overlay2/l/CK3RK6RKLXTDLCVT7J6XUNJFYI:/var/lib/docker/overlay2/l/MJZW5RC5EQX5QV64ZQFI5YRA6V:/var/lib/docker/overlay2/l/XG3WJGGNM4CP67RWANTABIWBOL:/var/lib/docker/overlay2/l/X32XXQFB6ADFFO2FLDCVIV6J2K:/var/lib/docker/overlay2/l/T72XWGVHJ6FWJXBYGSBLRK6FPE,upperdir=/var/lib/docker/overlay2/79ded441a3bd88ad3721bf119dc626690444ce58c9ed378f5a1b923667abe413/diff,workdir=/var/lib/docker/overlay2/79ded441a3bd88ad3721bf119dc626690444ce58c9ed378f5a1b923667abe413/work)
 ```
 
 
 ```
-➜  ~ sudo findmnt --target /var/lib/docker/overlay2/45629581e8696009c105d94ba07e3eb69ce4cc05cc963132cdfb5103d07fb926/merged
-
+➜  ~ sudo findmnt --target /var/lib/docker/overlay2/79ded441a3bd88ad3721bf119dc626690444ce58c9ed378f5a1b923667abe413/merged
 TARGET                                                                                           SOURCE  FSTYPE  OPTIONS
-/var/lib/docker/overlay2/45629581e8696009c105d94ba07e3eb69ce4cc05cc963132cdfb5103d07fb926/merged overlay overlay rw,relatime,lowerdir=/var/lib/docker/overlay2/l/MEJZY4W3TTOIOOSQFSI76TU5IR:/var/lib/docker/overlay2/l
+/var/lib/docker/overlay2/79ded441a3bd88ad3721bf119dc626690444ce58c9ed378f5a1b923667abe413/merged overlay overlay rw,relatime,lowerdir=/var/lib/docker/overlay2/l/CK3RK6RKLXTDLCVT7J6XUNJFYI:/var/lib/docker/overlay2/l
+➜  ~
 ```
 
 In the following, we can see:
