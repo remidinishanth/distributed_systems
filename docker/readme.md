@@ -233,6 +233,10 @@ In the following, we can see detailed map of the filesystem environment for dock
 1019 1125 0:95 / /sys/firmware ro,relatime - tmpfs tmpfs ro
 ```
 
+Ignore typos my AI generated image
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/290338f7-f00e-4140-8368-aff3e271d9a7" />
+
+
 ![image](https://github.com/user-attachments/assets/65039f74-d7f1-471d-9c7d-e12dab06f2a4)
 
 
