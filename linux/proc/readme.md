@@ -117,7 +117,6 @@ even related to the processes you own. You may still need root/sudo access (or b
 
 ### status
 
-<img width="1106" height="417" alt="image" src="https://github.com/user-attachments/assets/2a0434c2-c4ca-4739-814b-03d0adcb3bb0" />
-
-
 <img width="2184" height="1738" alt="image" src="https://github.com/user-attachments/assets/8634aac0-cf32-4732-84c5-f16127e6f8bd" />
+
+<img width="1106" height="417" alt="image" src="https://github.com/user-attachments/assets/2a0434c2-c4ca-4739-814b-03d0adcb3bb0" />
