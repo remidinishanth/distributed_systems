@@ -156,7 +156,7 @@ Refer to the following code, Each new accept is creating a new socket and then w
 
 https://github.com/remidinishanth/distributed_systems/blob/572e1af70522d37d83fadd097534525aa628c4b0/networking/sockets/tcpechoserver.c#L72-L78
 
-How to differentitate parent and newly forked child
+How to differentitate parent and newly forked child, we need to use return value
 <img width="1001" height="435" alt="image" src="https://github.com/user-attachments/assets/8f54490d-75f0-489f-a393-8772a07b5ebc" />
 
 
