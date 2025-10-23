@@ -119,10 +119,11 @@ even related to the processes you own. You may still need root/sudo access (or b
 
 <img width="2184" height="1738" alt="image" src="https://github.com/user-attachments/assets/8634aac0-cf32-4732-84c5-f16127e6f8bd" />
 
+#### Process state
 <img width="1106" height="417" alt="image" src="https://github.com/user-attachments/assets/2a0434c2-c4ca-4739-814b-03d0adcb3bb0" />
 
-<img width="675" height="405" alt="image" src="https://github.com/user-attachments/assets/4864fb39-e153-4d67-9088-aca094d001f6" />
+<img width="3402" height="3220" alt="image" src="https://github.com/user-attachments/assets/ac6c4e59-7443-4a6d-be3a-9b81485bf767" />
 
 <img width="1318" height="644" alt="image" src="https://github.com/user-attachments/assets/325e9620-7a40-4973-aae4-0ac9428e8225" />
 
-<img width="3402" height="3220" alt="image" src="https://github.com/user-attachments/assets/ac6c4e59-7443-4a6d-be3a-9b81485bf767" />
+
