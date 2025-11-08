@@ -30,9 +30,14 @@ Figure shows the general layout of virtual memory, which can be much larger than
 
 
 
-virtual address space, which is the programmers logical view of process memory storage. The actual physical layout is controlled by the process's page table.
+Virtual address space, which is the programmers logical view of process memory storage. The actual physical layout is controlled by the process's page table.
 
 <img width="281" height="651" alt="image" src="https://github.com/user-attachments/assets/54f0b363-33da-47b6-9d99-1bbfbfb37839" />
+
+* We have the two regions of the address space that may grow (and shrink) while the program runs. 
+* We place them like this because each wishes to be able to grow, and by putting them at opposite ends of the address
+space, we can allow such growth: they just have to grow in opposite
+directions.
 
 
 Virtual memory also allows the sharing of files and memory by multiple processes, with several benefits:
