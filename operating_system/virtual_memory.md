@@ -27,3 +27,16 @@ When a different part of the program is needed, the operating system swaps it in
 Figure shows the general layout of virtual memory, which can be much larger than physical memory:
 <img width="733" height="585" alt="image" src="https://github.com/user-attachments/assets/9f712fc6-ede3-4058-8143-8f79e6651c62" />
 
+
+
+virtual address space, which is the programmers logical view of process memory storage. The actual physical layout is controlled by the process's page table.
+
+<img width="281" height="651" alt="image" src="https://github.com/user-attachments/assets/54f0b363-33da-47b6-9d99-1bbfbfb37839" />
+
+
+Virtual memory also allows the sharing of files and memory by multiple processes, with several benefits:
+* System libraries can be shared by mapping them into the virtual address space of more than one process.
+* Processes can also share virtual memory by mapping the same block of memory to more than one process.
+* Process pages can be shared during a fork( ) system call, eliminating the need to copy all of the pages of the original ( parent ) process.
+
+<img width="646" height="435" alt="image" src="https://github.com/user-attachments/assets/e3e1d626-d77c-492f-b593-8632d0d88192" />
