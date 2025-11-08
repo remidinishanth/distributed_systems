@@ -17,7 +17,9 @@ variable?” because the virtual address space of the program is large and has l
 of room for that sort of thing.
 
 
-<img width="1000" height="327" alt="image" src="https://github.com/user-attachments/assets/d591d3e9-9a16-47d8-8b42-d36251047a63" />
+<img width="1026" height="497" alt="image" src="https://github.com/user-attachments/assets/183f5043-18e0-4cf7-89e4-c3640dcfb45e" />
+
+<img width="1026" height="347" alt="image" src="https://github.com/user-attachments/assets/e6a6a584-1bcc-40de-bf0b-bb7d7d8b690e" />
 
 
 Without virtual memory, a program couldn't run if it was larger than the available physical RAM. 
