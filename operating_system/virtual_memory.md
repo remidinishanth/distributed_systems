@@ -40,6 +40,11 @@ space, we can allow such growth: they just have to grow in opposite
 directions.
 
 
+Example C Program and address space
+<img width="951" height="1003" alt="image" src="https://github.com/user-attachments/assets/041369ce-3577-41d4-9bb1-207b4192f1b5" />
+
+
+
 Virtual memory also allows the sharing of files and memory by multiple processes, with several benefits:
 * System libraries can be shared by mapping them into the virtual address space of more than one process.
 * Processes can also share virtual memory by mapping the same block of memory to more than one process.
