@@ -16,6 +16,7 @@ programmer, you never have to worry about things like “where should I store th
 variable?” because the virtual address space of the program is large and has lots
 of room for that sort of thing.
 
+
 <img width="1000" height="327" alt="image" src="https://github.com/user-attachments/assets/d591d3e9-9a16-47d8-8b42-d36251047a63" />
 
 
