@@ -40,3 +40,14 @@ Virtual memory also allows the sharing of files and memory by multiple processes
 * Process pages can be shared during a fork( ) system call, eliminating the need to copy all of the pages of the original ( parent ) process.
 
 <img width="646" height="435" alt="image" src="https://github.com/user-attachments/assets/e3e1d626-d77c-492f-b593-8632d0d88192" />
+
+
+## Demand paging
+
+<img width="1154" height="714" alt="image" src="https://github.com/user-attachments/assets/db91a732-4d95-46c6-929d-c1a8c930560d" />
+
+The basic idea behind demand paging is that when a process is swapped in, 
+its pages are not swapped in all at once. 
+
+Rather they are swapped in only when the process needs them. (on demand) This is termed a lazy swapper, although a pager is a more accurate term.
+
