@@ -1,3 +1,5 @@
+Good reference: https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/9_VirtualMemory.html
+
 > For understanding virtual memory, start with this: _every address generated
 by a user program is a virtual address_. The OS is just providing an illusion
 to each process, specifically that it has its own large and private memory; with
