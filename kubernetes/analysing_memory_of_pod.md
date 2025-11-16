@@ -1,3 +1,5 @@
+https://community.ibm.com/community/user/blogs/leo-varghese/2024/06/04/kubernetes-memory-metrics
+
 When you check the running container and navigate to the folder path `/sys/fs/cgroup/memory`, 
 you obtain all the memory details of the container. In this directory, 
 you can find memory metrics such as usage, limits, cache, and so on.
