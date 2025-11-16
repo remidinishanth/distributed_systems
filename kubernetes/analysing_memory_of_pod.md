@@ -170,6 +170,28 @@ cat /sys/fs/cgroup/memory/kubepods/burstable/pod8657690b-b81c-4ffd-84fe-585ef6f0
 134217728
 ```
 
+also other fields
+
+```
+memory.usage_in_bytes		 # show current memory(RSS+Cache) usage.
+memory.memsw.usage_in_bytes	 # show current memory+Swap usage
+memory.limit_in_bytes		 # set/show limit of memory usage
+memory.memsw.limit_in_bytes	 # set/show limit of memory+Swap usage
+memory.failcnt			 # show the number of memory usage hits limits
+memory.memsw.failcnt		 # show the number of memory+Swap hits limits
+memory.max_usage_in_bytes	 # show max memory usage recorded
+memory.memsw.usage_in_bytes	 # show max memory+Swap usage recorded
+memory.soft_limit_in_bytes	 # set/show soft limit of memory usage
+memory.stat			 # show various statistics
+memory.use_hierarchy		 # set/show hierarchical account enabled
+memory.force_empty		 # trigger forced move charge to parent
+memory.swappiness		 # set/show swappiness parameter of vmscan
+...
+```
+
+<img width="960" height="720" alt="image" src="https://github.com/user-attachments/assets/c9f2572b-6716-4298-ba37-18a1aa4cb01e" />
+
+
 We can also get the pod uid `pod8657690b-b81c-4ffd-84fe-585ef6f08eb7` using `kubectl get pod <your-pod-name> -n <your-namespace> -o jsonpath='{.metadata.uid}'`
 
 and container id, we can get it from describing the pod, using `kubectl describe pod <your-pod-name> -n <your-namespace>`
