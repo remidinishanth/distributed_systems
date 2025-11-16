@@ -89,6 +89,8 @@ Containers:
 
 Here `burstable` is the part of QoS. QoS (Quality of Service) is a classification system that determines how "important" your pod is
 
+We can verify that using `kubectl get pod <your-pod-name> -n <your-namespace> -o jsonpath='{.status.qosClass}'`
+
 <img width="1001" height="377" alt="image" src="https://github.com/user-attachments/assets/d1ed2e94-60f9-4250-befd-22831f52dc94" />
 
 <img width="1864" height="1541" alt="image" src="https://github.com/user-attachments/assets/fd92fada-9bfe-4379-9717-9b549f5b0d3c" />
