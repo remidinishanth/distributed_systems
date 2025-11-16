@@ -42,6 +42,27 @@ total_unevictable 0
 /sys/fs/cgroup/memory $
 ```
 
+Inside the pod, we can also check
+
+```
+/ $ ps -o pid,comm,vsz,rss
+PID   COMMAND          VSZ  RSS
+    1 main.bin         2.2g 119m
+   51 sh               1752  724
+   57 ps               1668  304
+```
+
+and
+
+```
+/ $ grep -E 'Name|VmPeak|VmSize|VmRSS|Threads' /proc/1/status
+Name:	main.bin
+VmPeak:	 2307988 kB
+VmSize:	 2307988 kB
+VmRSS:	  121500 kB
+Threads:	11
+```
+
 You can get to the same directory by checking the process id and then same as well
 
 * Get the running container docker id, you can also use `docker ps | grep <pod-name>` to get the container id
