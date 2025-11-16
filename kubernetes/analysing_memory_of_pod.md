@@ -52,6 +52,8 @@ PID   COMMAND          VSZ  RSS
    57 ps               1668  304
 ```
 
+RSS(Resident set size) is the physical memory in the main memory that doesn’t correspond to anything on disk. RSS includes stacks, heaps, and anonymous memory maps.
+
 and
 
 ```
@@ -70,6 +72,14 @@ You can get to the same directory by checking the process id and then same as we
 
 ```
 docker inspect $(kubectl get pod <your-pod-name> -n <your-namespace> -o jsonpath='{.status.containerStatuses[0].containerID}' | cut -d'/' -f3) | grep '"Pid":'
+```
+
+And then for the whole container 
+
+```
+VR-POLARIS-VW-1697084:/proc/27038$ ps -p 27038 -o pid,user,vsz,rss,stat,start,time,command
+  PID USER        VSZ   RSS STAT  STARTED     TIME COMMAND
+27038 planet   2308308 122796 Ssl   Nov 14 00:03:33 /main.bin
 ```
 
 And then by checking the `/proc/<pid>/cgroup`
