@@ -108,9 +108,16 @@ Containers:
     ...
 ```
 
-Here `burstable` is the part of QoS. QoS (Quality of Service) is a classification system that determines how "important" your pod is
+Here, `burstable` is the part of QoS. QoS (Quality of Service) is a classification system that determines how "important" your pod is
 
 We can verify that using `kubectl get pod <your-pod-name> -n <your-namespace> -o jsonpath='{.status.qosClass}'`
+
+<img width="3865" height="1320" alt="image" src="https://github.com/user-attachments/assets/4e62d884-f6c3-41ec-9591-d7c1a6e0bb1c" />
+
+Each pod falls into one of three classes, based on how it defines its CPU and memory requests and limits:
+* A Guaranteed pod has CPU and memory requests that are exactly the same as their limits. These get the best performance and priority.
+* A Burstable pod has a lower request than limit—so it’s guaranteed a baseline, but it can use more if there’s room.
+* A Best-Effort pod doesn’t define any requests or limits. It uses whatever’s left and is the first to get throttled or evicted when things get tight.
 
 <img width="1001" height="377" alt="image" src="https://github.com/user-attachments/assets/d1ed2e94-60f9-4250-befd-22831f52dc94" />
 
