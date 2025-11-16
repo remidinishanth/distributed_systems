@@ -41,3 +41,38 @@ total_active_file 14168064
 total_unevictable 0
 /sys/fs/cgroup/memory $
 ```
+
+You can get to the same directory by checking the process id and then same as well
+
+* Get the running container docker id, you can also use `docker ps | grep <pod-name>` to get the container id
+* Then do docker inspect and get the Pid
+
+```
+docker inspect $(kubectl get pod <your-pod-name> -n <your-namespace> -o jsonpath='{.status.containerStatuses[0].containerID}' | cut -d'/' -f3) | grep '"Pid":'
+```
+
+And then by checking the `/proc/<pid>/cgroup`
+
+```
+VR-POLARIS-VW-1697084:/proc/27038$ cat /proc/27038/cgroup
+11:freezer:/kubepods/burstable/pod8657690b-b81c-4ffd-84fe-585ef6f08eb7/55906a09ba7e4abe794f650a365ab0cc6bc280623d571e229fae8b5ca7fd4272
+10:pids:/kubepods/burstable/pod8657690b-b81c-4ffd-84fe-585ef6f08eb7/55906a09ba7e4abe794f650a365ab0cc6bc280623d571e229fae8b5ca7fd4272
+9:cpuset:/kubepods/burstable/pod8657690b-b81c-4ffd-84fe-585ef6f08eb7/55906a09ba7e4abe794f650a365ab0cc6bc280623d571e229fae8b5ca7fd4272
+8:devices:/kubepods/burstable/pod8657690b-b81c-4ffd-84fe-585ef6f08eb7/55906a09ba7e4abe794f650a365ab0cc6bc280623d571e229fae8b5ca7fd4272
+7:memory:/kubepods/burstable/pod8657690b-b81c-4ffd-84fe-585ef6f08eb7/55906a09ba7e4abe794f650a365ab0cc6bc280623d571e229fae8b5ca7fd4272
+6:perf_event:/kubepods/burstable/pod8657690b-b81c-4ffd-84fe-585ef6f08eb7/55906a09ba7e4abe794f650a365ab0cc6bc280623d571e229fae8b5ca7fd4272
+5:cpuacct,cpu:/kubepods/burstable/pod8657690b-b81c-4ffd-84fe-585ef6f08eb7/55906a09ba7e4abe794f650a365ab0cc6bc280623d571e229fae8b5ca7fd4272
+4:hugetlb:/kubepods/burstable/pod8657690b-b81c-4ffd-84fe-585ef6f08eb7/55906a09ba7e4abe794f650a365ab0cc6bc280623d571e229fae8b5ca7fd4272
+3:blkio:/kubepods/burstable/pod8657690b-b81c-4ffd-84fe-585ef6f08eb7/55906a09ba7e4abe794f650a365ab0cc6bc280623d571e229fae8b5ca7fd4272
+2:net_prio,net_cls:/kubepods/burstable/pod8657690b-b81c-4ffd-84fe-585ef6f08eb7/55906a09ba7e4abe794f650a365ab0cc6bc280623d571e229fae8b5ca7fd4272
+1:name=systemd:/kubepods/burstable/pod8657690b-b81c-4ffd-84fe-585ef6f08eb7/55906a09ba7e4abe794f650a365ab0cc6bc280623d571e229fae8b5ca7fd4272
+```
+
+The cgroup path for your pod (named pod8657690b-b81c-4ffd-84fe-585ef6f08eb7) is nested under `/kubepods/burstable/`
+
+```
+cat /sys/fs/cgroup/memory/kubepods/burstable/pod8657690b-b81c-4ffd-84fe-585ef6f08eb7/memory.limit_in_bytes
+134217728
+```
+
+We can also get the pod uid `pod8657690b-b81c-4ffd-84fe-585ef6f08eb7` using `kubectl get pod <your-pod-name> -n <your-namespace> -o jsonpath='{.metadata.uid}'`
