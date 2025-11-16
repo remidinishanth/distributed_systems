@@ -68,7 +68,7 @@ VR-POLARIS-VW-1697084:/proc/27038$ cat /proc/27038/cgroup
 1:name=systemd:/kubepods/burstable/pod8657690b-b81c-4ffd-84fe-585ef6f08eb7/55906a09ba7e4abe794f650a365ab0cc6bc280623d571e229fae8b5ca7fd4272
 ```
 
-The cgroup path for your pod (named pod8657690b-b81c-4ffd-84fe-585ef6f08eb7) is nested under `/kubepods/burstable/`
+The cgroup path for your pod (named pod8657690b-b81c-4ffd-84fe-585ef6f08eb7) is nested under `/kubepods/burstable/` and the full cgroup path you provided: `/kubepods/burstable/pod<Pod-UID>/<Container-ID>`
 
 ```
 cat /sys/fs/cgroup/memory/kubepods/burstable/pod8657690b-b81c-4ffd-84fe-585ef6f08eb7/memory.limit_in_bytes
@@ -76,3 +76,13 @@ cat /sys/fs/cgroup/memory/kubepods/burstable/pod8657690b-b81c-4ffd-84fe-585ef6f0
 ```
 
 We can also get the pod uid `pod8657690b-b81c-4ffd-84fe-585ef6f08eb7` using `kubectl get pod <your-pod-name> -n <your-namespace> -o jsonpath='{.metadata.uid}'`
+
+and container id, we can get it from describing the pod, using `kubectl describe pod <your-pod-name> -n <your-namespace>`
+
+```
+Containers:
+  my-app-container:
+    Container ID:   docker://55906a09ba7e4abe794f650a365ab0cc6bc280623d571e229fae8b5ca7fd4272
+    Image:          my-image:latest
+    ...
+```
