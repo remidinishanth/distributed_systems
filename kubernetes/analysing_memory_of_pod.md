@@ -1,4 +1,5 @@
-https://community.ibm.com/community/user/blogs/leo-varghese/2024/06/04/kubernetes-memory-metrics
+https://community.ibm.com/community/user/blogs/leo-varghese/2024/06/04/kubernetes-memory-metrics and
+https://www.alibabacloud.com/help/en/arms/application-monitoring/developer-reference/memory-metrics
 
 When you check the running container and navigate to the folder path `/sys/fs/cgroup/memory`, 
 you obtain all the memory details of the container. In this directory, 
@@ -81,6 +82,69 @@ VR-POLARIS-VW-1697084:/proc/27038$ ps -p 27038 -o pid,user,vsz,rss,stat,start,ti
   PID USER        VSZ   RSS STAT  STARTED     TIME COMMAND
 27038 planet   2308308 122796 Ssl   Nov 14 00:03:33 /main.bin
 ```
+
+
+```
+cat /proc/27038/status
+Name:	main.bin
+Umask:	0022
+State:	S (sleeping)
+Tgid:	27038
+Ngid:	0
+Pid:	27038
+PPid:	26939
+TracerPid:	0
+Uid:	1000	1000	1000	1000
+Gid:	1000	1000	1000	1000
+FDSize:	64
+Groups:	1000
+VmPeak:	 2308308 kB
+VmSize:	 2308308 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  137840 kB
+VmRSS:	  122796 kB
+RssAnon:	   57680 kB
+RssFile:	   65116 kB
+RssShmem:	       0 kB
+VmData:	 2034808 kB
+VmStk:	     184 kB
+VmExe:	  124824 kB
+VmLib:	       0 kB
+VmPTE:	     748 kB
+VmSwap:	       0 kB
+Threads:	11
+SigQ:	0/377913
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000000000
+SigCgt:	fffffffd7fc1feff
+CapInh:	0000000000000000
+CapPrm:	0000000000000000
+CapEff:	0000000000000000
+CapBnd:	0000000000000000
+CapAmb:	0000000000000000
+NoNewPrivs:	1
+Seccomp:	0
+Speculation_Store_Bypass:	thread vulnerable
+Cpus_allowed:	ff
+Cpus_allowed_list:	0-7
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	233638
+nonvoluntary_ctxt_switches:	684
+```
+
+<img width="954" height="1178" alt="image" src="https://github.com/user-attachments/assets/70c15de3-322d-4e83-8eaa-70c6e79be545" />
+
+<img width="1068" height="531" alt="image" src="https://github.com/user-attachments/assets/83b020b6-66cb-4899-815c-222619c22d46" />
+
+<img width="1277" height="781" alt="image" src="https://github.com/user-attachments/assets/91a2f1ee-f316-469a-9837-97af6bc63b02" />
+
+<img width="1068" height="531" alt="image" src="https://github.com/user-attachments/assets/9590a6e4-b177-45ae-ad39-d2bd4b90351a" />
+
+Awesome resource: https://www.alibabacloud.com/help/en/arms/application-monitoring/developer-reference/memory-metrics
 
 And then by checking the `/proc/<pid>/cgroup`
 
