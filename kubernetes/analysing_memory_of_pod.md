@@ -218,3 +218,118 @@ Each pod falls into one of three classes, based on how it defines its CPU and me
 <img width="1001" height="377" alt="image" src="https://github.com/user-attachments/assets/d1ed2e94-60f9-4250-befd-22831f52dc94" />
 
 <img width="1864" height="1541" alt="image" src="https://github.com/user-attachments/assets/fd92fada-9bfe-4379-9717-9b549f5b0d3c" />
+
+
+Script to analyze
+
+```
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
+  echo "Usage: $0 [PID]"
+  echo "  PID defaults to 1 if not provided."
+  exit 0
+fi
+
+PID="${1:-1}"
+
+if [[ ! -r "/proc/$PID/status" || ! -r "/proc/$PID/smaps" ]]; then
+  echo "Error: /proc/$PID/status or /proc/$PID/smaps not readable (invalid PID?)." >&2
+  exit 1
+fi
+
+CG=$(awk -F: '/memory/{print $3; exit}' "/proc/$PID/cgroup")
+MEMCG="/sys/fs/cgroup/memory${CG}"
+
+if [[ ! -d "$MEMCG" ]]; then
+  echo "Error: memory cgroup path '$MEMCG' not found." >&2
+  exit 1
+fi
+
+echo "=== MEMORY BREAKDOWN ($(hostname) @ $(date)) ==="
+
+limit_bytes=$(< "$MEMCG/memory.limit_in_bytes")
+usage_bytes=$(< "$MEMCG/memory.usage_in_bytes")
+
+limit_mib=$(awk -v v="$limit_bytes" 'BEGIN{printf "%.1f", v/1024/1024}')
+usage_mib=$(awk -v v="$usage_bytes" 'BEGIN{printf "%.1f", v/1024/1024}')
+
+echo "Limit:      ${limit_mib} MiB"
+echo "Usage:      ${usage_mib} MiB"
+echo ""
+
+total_rss_mib=$(awk '/VmRSS/{printf "%.1f", $2/1024}' "/proc/$PID/status")
+echo "Total RSS: ${total_rss_mib} MiB"
+echo ""
+
+awk '
+function get_stats() {
+  rss = 0; private_clean = 0; private_dirty = 0; shared_clean = 0; shared_dirty = 0
+  for (i = 0; i < 11; i++) {
+    if (getline <= 0) return 0
+    if ($1 == "Rss:") rss = $2
+    if ($1 == "Private_Clean:") private_clean = $2
+    if ($1 == "Private_Dirty:") private_dirty = $2
+    if ($1 == "Shared_Clean:") shared_clean = $2
+    if ($1 == "Shared_Dirty:") shared_dirty = $2
+  }
+  return 1
+}
+$0 ~ /^[0-9a-f]/ {
+  addr = $1; perms = $2; offset = $3; dev = $4; inode = $5
+  path = $0
+  sub(/^[0-9a-f- ]+ [^ ]+ [^ ]+ [^ ]+ [^ ]+ /, "", path)
+  if (!get_stats()) next
+  if (path ~ /\[heap\]/) heap += rss
+  if (path ~ /\[stack\]/) stack += rss
+  if (path ~ /\[anon\]/ || path == "") anon_mmap += rss
+  if (path ~ /main.bin/) code += rss
+  if (path ~ /lib/) lib += rss
+  if (path !~ /lib/ && path !~ /main.bin/ && path != "" && path !~ /\[/) data_file += rss
+}
+END {
+  total_anon_rss = heap + stack + anon_mmap
+  print "RSS (Anon): " total_anon_rss/1024 " MiB"
+  print "  └ Heap: " heap/1024 " MiB"
+  print "  └ Stack (all threads): " stack/1024 " MiB"
+  print "  └ Anon Mmap: " anon_mmap/1024 " MiB"
+  print ""
+  print "File RSS: " (code + lib + data_file)/1024 " MiB"
+  print "  └ Code (main.bin): " code/1024 " MiB"
+  print "  └ Libs (/lib/*): " lib/1024 " MiB"
+  print "  └ Data Files (other): " data_file/1024 " MiB"
+}
+' "/proc/$PID/smaps"
+
+echo ""
+echo "Usage is sum of Cgroup RSS + File Cache"
+
+stat_file="$MEMCG/memory.stat"
+
+cg_rss=$(awk "/^total_rss /{printf \"%.1f\", \$2/1024/1024}" "$stat_file")
+cg_act_anon=$(awk "/^total_active_anon /{printf \"%.1f\", \$2/1024/1024}" "$stat_file")
+cg_inact_anon=$(awk "/^total_inactive_anon /{printf \"%.1f\", \$2/1024/1024}" "$stat_file")
+
+echo "Cgroup RSS (Anon): ${cg_rss} MiB"
+echo "  └ Active Anon: ${cg_act_anon} MiB"
+echo "  └ Inactive Anon: ${cg_inact_anon} MiB"
+echo ""
+
+cache=$(awk "/^total_cache /{printf \"%.1f\", \$2/1024/1024}" "$stat_file")
+act_file=$(awk "/^total_active_file /{printf \"%.1f\", \$2/1024/1024}" "$stat_file")
+inact_file=$(awk "/^total_inactive_file /{printf \"%.1f\", \$2/1024/1024}" "$stat_file")
+mapped_file=$(awk "/^total_mapped_file /{printf \"%.1f\", \$2/1024/1024}" "$stat_file")
+
+echo "File Cache: ${cache} MiB"
+echo "  ├ Active File:   ${act_file} MiB"
+echo "  ├ Inactive File: ${inact_file} MiB"
+echo "  └ Mapped File:   ${mapped_file} MiB"
+echo ""
+
+headroom_mib=$(awk -v limit="$limit_bytes" -v usage="$usage_bytes" 'BEGIN{printf "%.1f", (limit-usage)/1024/1024}')
+majfaults=$(awk "/^pgmajfault /{print \$2}" "$stat_file")
+
+echo "Headroom:   ${headroom_mib} MiB"
+echo "MajFaults:  ${majfaults}"
+```
