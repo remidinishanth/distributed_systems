@@ -11,6 +11,7 @@ TODO: https://cs61.seas.harvard.edu/site/2025/Datarep/
 TODO:
 * https://vladmihalcea.com/how-does-mvcc-multi-version-concurrency-control-work/
 * https://deepaksood619.github.io/databases/concepts/isolation-levels/
+* DB WAL https://sqlite.org/wal.html
 * Docker https://martinheinz.dev/blog/44 and https://coolshell.cn/articles/17010.html
 * Project based learning https://github.com/practical-tutorials/project-based-learning?tab=readme-ov-file#go
 * The Architecture of Open Source Applications https://aosabook.org/en/
