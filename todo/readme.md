@@ -15,5 +15,6 @@ TODO:
 * Docker https://martinheinz.dev/blog/44 and https://coolshell.cn/articles/17010.html
 * Project based learning https://github.com/practical-tutorials/project-based-learning?tab=readme-ov-file#go
 * The Architecture of Open Source Applications https://aosabook.org/en/
+* K8s informers https://medium.com/@jeevanragula/demystifying-kubernetes-informer-streamlining-event-driven-workflows-955285166993
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/b41c42fc-4763-40d5-a14e-cf03444cc44f)
