@@ -8,4 +8,9 @@ TODO: http://www.scs.stanford.edu/20sp-cs244b/notes/
 
 TODO: https://cs61.seas.harvard.edu/site/2025/Datarep/
 
+TODO:
+* https://vladmihalcea.com/how-does-mvcc-multi-version-concurrency-control-work/
+* https://deepaksood619.github.io/databases/concepts/isolation-levels/
+* https://martinheinz.dev/blog/44
+
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/b41c42fc-4763-40d5-a14e-cf03444cc44f)
