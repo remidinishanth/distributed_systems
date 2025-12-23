@@ -49,9 +49,16 @@ for less popular (often older) content, which we refer to as the long tail.
 
 <img width="923" height="431" alt="image" src="https://github.com/user-attachments/assets/1613080f-aaab-4b01-91f5-3f2152376b09" />
 
+Issues
+
+<img width="1110" height="710" alt="image" src="https://github.com/user-attachments/assets/d104bc2b-50fc-4435-9592-7c89f63da798" />
+
+
 ## Requirements
 
 <img width="1092" height="658" alt="image" src="https://github.com/user-attachments/assets/f5e6454f-a6fd-417c-85f1-dd5ef75477c2" />
+
+<img width="1110" height="585" alt="image" src="https://github.com/user-attachments/assets/23ff0814-6f73-432f-b74d-2230c2273970" />
 
 
 ## Haystack
