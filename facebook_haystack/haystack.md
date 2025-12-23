@@ -32,6 +32,12 @@ Since each image is stored in its own file, there is an enormous amount of metad
 
 <img width="657" height="636" alt="image" src="https://github.com/user-attachments/assets/3b7947b8-8c9a-40ce-9ae4-d935a23ec108" />
 
+The major lesson we learned is that CDNs by themselves do not offer a practical solution to serving photos on a
+social networking site. 
+
+> CDNs do effectively serve the hottest photos— profile pictures and photos that have
+been recently uploaded—but a social networking site like Facebook also generates a large number of requests
+for less popular (often older) content, which we refer to as the long tail.
 
 
 <img width="1288" height="608" alt="image" src="https://github.com/user-attachments/assets/1a643d19-6e85-4978-ae3e-afc9961c2ff9" />
