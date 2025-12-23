@@ -59,3 +59,10 @@ for less popular (often older) content, which we refer to as the long tail.
 <img width="542" height="543" alt="image" src="https://github.com/user-attachments/assets/d20e824e-bef7-4faf-8631-a3078029c2a4" />
 
 <img width="1118" height="696" alt="image" src="https://github.com/user-attachments/assets/944bba65-46f0-484c-acfa-6944be091133" />
+
+
+<img width="1269" height="547" alt="image" src="https://github.com/user-attachments/assets/48de4304-95df-424b-a7b2-5b0be0eeb399" />
+
+### Upload
+
+<img width="1269" height="641" alt="image" src="https://github.com/user-attachments/assets/cf4e8176-158a-4c88-9ee8-a24465bb5da4" />
