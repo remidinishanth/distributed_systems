@@ -104,3 +104,12 @@ Layout of Haystack Index file
 ## Infrastructure details
 
 <img width="810" height="408" alt="image" src="https://github.com/user-attachments/assets/20491a41-0814-4ba6-a26b-2ef99ec6ec53" />
+
+### Storage 
+
+<img width="786" height="484" alt="image" src="https://github.com/user-attachments/assets/a4c1baf0-bdf9-4192-a341-83342fa18598" />
+
+
+### HTTP server
+
+<img width="768" height="187" alt="image" src="https://github.com/user-attachments/assets/097cc236-d416-4ee7-a53f-98119ee0a438" />
