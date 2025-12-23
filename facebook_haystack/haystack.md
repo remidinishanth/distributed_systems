@@ -96,6 +96,10 @@ Issues
 Layout of Haystack Index file
 <img width="1110" height="300" alt="image" src="https://github.com/user-attachments/assets/cd4d3c3d-3ad4-447c-aaa6-4ea74338a494" />
 
+### Deletes
+
+<img width="1098" height="290" alt="image" src="https://github.com/user-attachments/assets/acb8b0cc-2d60-468d-afd1-323e2da185e9" />
+
 
 ## Infrastructure details
 
