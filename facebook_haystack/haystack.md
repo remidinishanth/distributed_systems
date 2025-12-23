@@ -17,7 +17,7 @@ The Photos application is one of Facebook’s most popular features. They handle
 
 <img width="780" height="451" alt="image" src="https://github.com/user-attachments/assets/f7f516bc-c7b7-43ca-9a76-3b8843556108" />
 
-
+<img width="1288" height="608" alt="image" src="https://github.com/user-attachments/assets/1a643d19-6e85-4978-ae3e-afc9961c2ff9" />
 
 ## NFS photo infrastructure
 The old photo infrastructure consisted of several tiers:
@@ -44,9 +44,6 @@ for less popular (often older) content, which we refer to as the long tail.
 
 
 <img width="1290" height="641" alt="image" src="https://github.com/user-attachments/assets/50a057d9-f772-4128-b7f1-69f4a49e8c81" />
-
-
-<img width="1288" height="608" alt="image" src="https://github.com/user-attachments/assets/1a643d19-6e85-4978-ae3e-afc9961c2ff9" />
 
 <img width="923" height="431" alt="image" src="https://github.com/user-attachments/assets/1613080f-aaab-4b01-91f5-3f2152376b09" />
 
