@@ -40,6 +40,8 @@ social networking site.
 been recently uploaded—but a social networking site like Facebook also generates a large number of requests
 for less popular (often older) content, which we refer to as the long tail.
 
+<img width="1118" height="696" alt="image" src="https://github.com/user-attachments/assets/683e247c-33a7-46e4-9509-e786e1cae96b" />
+
 
 <img width="1290" height="641" alt="image" src="https://github.com/user-attachments/assets/50a057d9-f772-4128-b7f1-69f4a49e8c81" />
 
@@ -47,3 +49,14 @@ for less popular (often older) content, which we refer to as the long tail.
 <img width="1288" height="608" alt="image" src="https://github.com/user-attachments/assets/1a643d19-6e85-4978-ae3e-afc9961c2ff9" />
 
 <img width="923" height="431" alt="image" src="https://github.com/user-attachments/assets/1613080f-aaab-4b01-91f5-3f2152376b09" />
+
+## Requirements
+
+<img width="1092" height="658" alt="image" src="https://github.com/user-attachments/assets/f5e6454f-a6fd-417c-85f1-dd5ef75477c2" />
+
+
+## Haystack
+
+<img width="810" height="408" alt="image" src="https://github.com/user-attachments/assets/20491a41-0814-4ba6-a26b-2ef99ec6ec53" />
+
+<img width="542" height="543" alt="image" src="https://github.com/user-attachments/assets/d20e824e-bef7-4faf-8631-a3078029c2a4" />
