@@ -30,5 +30,8 @@ Since each image is stored in its own file, there is an enormous amount of metad
 * Cachr: a caching server tier caching smaller Facebook “profile” images.
 * NFS file handle cache – deployed on the photo serving tier eliminates some of the NFS storage tier metadata overhead
 
+<img width="657" height="636" alt="image" src="https://github.com/user-attachments/assets/3b7947b8-8c9a-40ce-9ae4-d935a23ec108" />
+
+
 
 <img width="1288" height="608" alt="image" src="https://github.com/user-attachments/assets/1a643d19-6e85-4978-ae3e-afc9961c2ff9" />
