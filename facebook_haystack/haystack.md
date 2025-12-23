@@ -80,6 +80,13 @@ for less popular (often older) content, which we refer to as the long tail.
 
 <img width="1250" height="588" alt="image" src="https://github.com/user-attachments/assets/8c848f9f-96da-49ca-8655-80394675322d" />
 
+### Index File
+
+<img width="1250" height="588" alt="image" src="https://github.com/user-attachments/assets/0546e13d-1d62-4b70-ad7d-fcc7430f3c3f" />
+
+Layout of Haystack Index file
+<img width="1110" height="300" alt="image" src="https://github.com/user-attachments/assets/cd4d3c3d-3ad4-447c-aaa6-4ea74338a494" />
+
 
 ## Infrastructure details
 
