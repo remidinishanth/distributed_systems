@@ -40,4 +40,7 @@ been recently uploaded—but a social networking site like Facebook also generat
 for less popular (often older) content, which we refer to as the long tail.
 
 
+<img width="1290" height="641" alt="image" src="https://github.com/user-attachments/assets/50a057d9-f772-4128-b7f1-69f4a49e8c81" />
+
+
 <img width="1288" height="608" alt="image" src="https://github.com/user-attachments/assets/1a643d19-6e85-4978-ae3e-afc9961c2ff9" />
