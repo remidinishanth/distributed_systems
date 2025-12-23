@@ -13,6 +13,10 @@ The Photos application is one of Facebook’s most popular features. They handle
 <img width="1175" height="579" alt="image" src="https://github.com/user-attachments/assets/50f85038-d046-4a23-8401-c52dd20819a7" />
 
 
+<img width="780" height="451" alt="image" src="https://github.com/user-attachments/assets/f7f516bc-c7b7-43ca-9a76-3b8843556108" />
+
+
+
 ## NFS photo infrastructure
 The old photo infrastructure consisted of several tiers:
 
