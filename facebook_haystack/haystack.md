@@ -78,6 +78,9 @@ for less popular (often older) content, which we refer to as the long tail.
 
 <img width="1269" height="641" alt="image" src="https://github.com/user-attachments/assets/cf4e8176-158a-4c88-9ee8-a24465bb5da4" />
 
+<img width="1250" height="588" alt="image" src="https://github.com/user-attachments/assets/8c848f9f-96da-49ca-8655-80394675322d" />
+
+
 ## Infrastructure details
 
 <img width="810" height="408" alt="image" src="https://github.com/user-attachments/assets/20491a41-0814-4ba6-a26b-2ef99ec6ec53" />
