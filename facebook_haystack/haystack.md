@@ -24,13 +24,12 @@ The old photo infrastructure consisted of several tiers:
 * Photo serving tier receives HTTP requests for photo images and serves them from the NFS storage tier.
 * NFS storage tier built on top of commercial storage appliances.
 
+<img width="657" height="636" alt="image" src="https://github.com/user-attachments/assets/3b7947b8-8c9a-40ce-9ae4-d935a23ec108" />
 
 Since each image is stored in its own file, there is an enormous amount of metadata generated on the storage tier due to the namespace directories and file inodes. The amount of metadata far exceeds the caching abilities of the NFS storage tier, resulting in multiple I/O operations per photo upload or read request. The whole photo serving infrastructure is bottlenecked on the high metadata overhead of the NFS storage tier, which is one of the reasons why Facebook relies heavily on CDNs to serve photos. Two additional optimizations were deployed in order to mitigate this problem to some degree:
 
-* Cachr: a caching server tier caching smaller Facebook “profile” images.
+* `Cachr`: a caching server tier caching smaller Facebook “profile” images.
 * NFS file handle cache – deployed on the photo serving tier eliminates some of the NFS storage tier metadata overhead
-
-<img width="657" height="636" alt="image" src="https://github.com/user-attachments/assets/3b7947b8-8c9a-40ce-9ae4-d935a23ec108" />
 
 The major lesson we learned is that CDNs by themselves do not offer a practical solution to serving photos on a
 social networking site. 
