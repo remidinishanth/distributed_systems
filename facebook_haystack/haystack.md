@@ -63,6 +63,15 @@ for less popular (often older) content, which we refer to as the long tail.
 
 <img width="1269" height="547" alt="image" src="https://github.com/user-attachments/assets/48de4304-95df-424b-a7b2-5b0be0eeb399" />
 
+### Components
+
+<img width="1269" height="590" alt="image" src="https://github.com/user-attachments/assets/26c308ca-2f82-4a60-9fc2-970d709a88ed" />
+
+<img width="1269" height="599" alt="image" src="https://github.com/user-attachments/assets/2ecc5c37-da17-465e-b10e-c1cc7fbe45a6" />
+
+<img width="1269" height="599" alt="image" src="https://github.com/user-attachments/assets/3a9623ad-a9d4-4d9c-84d1-294664d35e45" />
+
+
 ### Upload
 
 <img width="1269" height="641" alt="image" src="https://github.com/user-attachments/assets/cf4e8176-158a-4c88-9ee8-a24465bb5da4" />
