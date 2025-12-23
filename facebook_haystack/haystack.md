@@ -1,6 +1,8 @@
 Needle in a haystack: efficient storage of billions of photos
 
-Ref: https://engineering.fb.com/2009/04/30/core-infra/needle-in-a-haystack-efficient-storage-of-billions-of-photos/
+Ref: 
+* https://engineering.fb.com/2009/04/30/core-infra/needle-in-a-haystack-efficient-storage-of-billions-of-photos/
+* https://massivetechinterview.blogspot.com/2015/06/finding-needle-in-haystack-facebooks.html
 
 <img width="1000" height="667" alt="image" src="https://github.com/user-attachments/assets/ad71a38a-9398-4bb6-865b-c435539162b3" />
 
