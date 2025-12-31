@@ -67,6 +67,9 @@ MinIO protects against `BitRot`, or silent data corruption, which can have many 
 ## Put and Get Operation
 
 ### Storing an Object (The PUT Request)
+
+<img width="1137" height="911" alt="image" src="https://github.com/user-attachments/assets/7c0955af-93ee-418d-9115-9c560a92708d" />
+
 When a client sends an object to the cluster, MinIO follows a specific sequence to ensure data is stored safely and evenly distributed.
 
 * Step 1: Hashing: The object name is processed by a deterministic hash function to create a unique hash value.
@@ -88,9 +91,6 @@ Note: MinIO uses `SipHash` for this process. This algorithm ensures that objects
 For example, with 5 data blocks and 3 parity blocks
 
 <img width="1452" height="895" alt="image" src="https://github.com/user-attachments/assets/ba80d04b-8806-41ff-bd96-574dcf06a89d" />
-
-
-<img width="1137" height="911" alt="image" src="https://github.com/user-attachments/assets/7c0955af-93ee-418d-9115-9c560a92708d" />
 
 ```mermaid
 graph TB
