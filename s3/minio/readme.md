@@ -54,7 +54,7 @@ When a client sends an object to the cluster, MinIO follows a specific sequence 
 
 * Step 4: Writing: These blocks are written to the prescribed drives.
 
-Note: MinIO uses SipHash for this process. This algorithm ensures that objects are distributed evenly across all drives, resulting in near-uniform disk utilization.
+Note: MinIO uses `SipHash` for this process. This algorithm ensures that objects are distributed evenly across all drives, resulting in near-uniform disk utilization.
 
 <img width="1606" height="929" alt="image" src="https://github.com/user-attachments/assets/25a0614e-a95f-41e3-adcf-e5278acca6f0" />
 
