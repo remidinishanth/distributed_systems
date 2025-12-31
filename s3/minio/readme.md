@@ -249,6 +249,10 @@ To retrieve data, MinIO reverses the logic used during the write process.
 
 Ref: https://minio-docs.tf.fo/operations/concepts/healing
 
+<img width="1136" height="946" alt="image" src="https://github.com/user-attachments/assets/f3711710-afca-4123-8ba6-0c07469876b7" />
+
+Ref: https://minio-docs.tf.fo/operations/data-recovery
+
 ## Site to Site Replication
 
 <img width="827" height="427" alt="image" src="https://github.com/user-attachments/assets/dbb719ec-3363-45a8-922e-ebcc9a63dd14" />
