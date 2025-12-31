@@ -4,6 +4,8 @@ MinIO just does one thing - Object storage for Private cloud
 
 <img width="1142" height="499" alt="image" src="https://github.com/user-attachments/assets/ea1e33e0-cac3-47b9-b975-987243174e59" />
 
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/82863b5c-7278-4c28-981b-94dd71b614db" />
+
 
 All the nodes running distributed MinIO setup are recommended to be homogeneous, i.e. same operating system, same number of drives and same network interconnects.
 
@@ -15,6 +17,11 @@ Start distributed MinIO instance on n nodes with m drives each mounted at `/expo
 
 Ref: https://github.com/minio/minio/blob/master/docs/distributed/README.md
 
+## MinIO Server Pools
+
+![serverpools](https://github.com/user-attachments/assets/a25b361c-e253-4c06-983a-e95b4d0ae464)
+
+A server pool is a set of minio server nodes which pool their drives and resources, creating a unit of expansion. All nodes in a server pool share their hardware resources in an isolated namespace. 
 
 ## Erasure coding
 
