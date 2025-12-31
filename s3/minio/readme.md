@@ -82,6 +82,105 @@ Note: MinIO uses `SipHash` for this process. This algorithm ensures that objects
 
 <img width="1137" height="911" alt="image" src="https://github.com/user-attachments/assets/7c0955af-93ee-418d-9115-9c560a92708d" />
 
+```mermaid
+graph TB
+    Start[Client: PUT Object] --> CheckExisting{Object Already<br/>Exists?}
+    
+    CheckExisting -->|Yes| UseExistingPool[Use Same Pool<br/>as Existing Object]
+    CheckExisting -->|No| SelectPool[Select Pool Based on<br/>Available Space]
+    
+    SelectPool --> CalcSpace[Calculate Available Space<br/>for Each Pool]
+    CalcSpace --> FilterPools[Filter Pools:<br/>- Skip Suspended<br/>- Skip Rebalancing<br/>- Check Disk Space]
+    FilterPools --> WeightedRandom[Weighted Random Selection<br/>Based on Available Space]
+    
+    WeightedRandom --> PoolSelected[Pool Selected]
+    UseExistingPool --> PoolSelected
+    
+    PoolSelected --> HashObject[Hash Object Name<br/>Using SipHash/CRC]
+    HashObject --> SelectSet[Select Erasure Set<br/>setIndex = hash mod numSets]
+    
+    SelectSet --> CreateMetadata[Create FileInfo Metadata<br/>with Distribution Order]
+    CreateMetadata --> CalcDistribution[Calculate Distribution:<br/>hashOrder based on object name]
+    
+    CalcDistribution --> ErasureEncode[Erasure Encode Object<br/>Split into Data + Parity Shards]
+    
+    ErasureEncode --> ShardCalc[For N drives in set:<br/>Data Shards = K<br/>Parity Shards = M<br/>N = K + M]
+    
+    ShardCalc --> ShuffleDisks[Shuffle Disks According<br/>to Distribution Order]
+    ShuffleDisks --> WriteShard[Write Each Shard to<br/>Corresponding Drive]
+    
+    WriteShard --> WriteMetadata[Write xl.meta with:<br/>- Erasure Info<br/>- Distribution Array<br/>- Shard Index]
+    
+    WriteMetadata --> Complete[Write Complete]
+    
+    style Start fill:#e1f5ff
+    style Complete fill:#d4edda
+    style SelectPool fill:#fff3cd
+    style HashObject fill:#fff3cd
+    style ErasureEncode fill:#f8d7da
+    style WriteShard fill:#d4edda
+```
+
+We are searching all the server pools in parallel to see if we find the object using the deterministic erasure set.
+
+
+```mermaid
+sequenceDiagram
+    participant Client
+    participant MinIO as MinIO Server
+    participant PoolMgr as Pool Manager
+    participant SetMgr as Erasure Set Manager
+    participant EC as Erasure Coder
+    participant Disk1 as Drive 1
+    participant Disk2 as Drive 2
+    participant DiskN as Drive N
+    
+    Client->>MinIO: PUT /bucket/object
+    MinIO->>PoolMgr: getPoolIdx(bucket, object, size)
+    
+    alt Object Already Exists
+        PoolMgr->>PoolMgr: Query all pools in parallel
+        PoolMgr->>PoolMgr: GetObjectInfo() on each pool
+        PoolMgr->>PoolMgr: Object found in Pool 2
+        PoolMgr-->>MinIO: Use Pool 2 (existing)
+    else New Object
+        PoolMgr->>PoolMgr: getServerPoolsAvailableSpace()
+        PoolMgr->>PoolMgr: Filter: skip suspended/rebalancing
+        PoolMgr->>PoolMgr: Weighted random selection
+        PoolMgr-->>MinIO: Use Pool 1 (most space)
+    end
+    
+    MinIO->>SetMgr: Hash object name
+    SetMgr->>SetMgr: sipHashMod(objectName, numSets)
+    SetMgr-->>MinIO: Erasure Set 3
+    
+    MinIO->>EC: Create FileInfo metadata
+    EC->>EC: hashOrder(objectName, drives)
+    EC->>EC: Generate distribution array
+    Note over EC: Distribution: [3,1,4,2,5,...]
+    
+    MinIO->>EC: Encode object (K data + M parity)
+    EC->>EC: Split into data blocks
+    EC->>EC: Calculate parity using Reed-Solomon
+    EC-->>MinIO: Data + Parity shards
+    
+    MinIO->>SetMgr: Shuffle disks by distribution
+    SetMgr-->>MinIO: Ordered disk list
+    
+    par Write to all drives in parallel
+        MinIO->>Disk1: Write shard 1 + xl.meta
+        MinIO->>Disk2: Write shard 2 + xl.meta
+        MinIO->>DiskN: Write shard N + xl.meta
+    end
+    
+    Disk1-->>MinIO: Success
+    Disk2-->>MinIO: Success
+    DiskN-->>MinIO: Success
+    
+    MinIO->>MinIO: Check write quorum (K drives)
+    MinIO-->>Client: 200 OK
+```
+
 
 ### Retrieving an Object (The GET Request)
 To retrieve data, MinIO reverses the logic used during the write process.
