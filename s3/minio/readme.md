@@ -265,4 +265,7 @@ Ref: https://minio-docs.tf.fo/operations/data-recovery
 
 <img width="2540" height="1216" alt="image" src="https://github.com/user-attachments/assets/231e0ec3-20e3-45c9-8c2e-b703ed8e4e9b" />
 
+<img width="1375" height="872" alt="image" src="https://github.com/user-attachments/assets/6e6a6e02-44b8-4e32-b552-22a134de5f40" />
+
+
 Ref: https://blog.min.io/minio-dsync-a-distributed-locking-and-syncing-package-for-go/
