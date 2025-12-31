@@ -26,6 +26,19 @@ Erasure Coding (EC): MinIO employs Reed-Solomon erasure coding to break objects 
 
 The value K here constitutes the read quorum for the deployment. The erasure set must therefore have at least K healthy drives in the erasure set to support read operations.
 
+<img width="960" height="540" alt="image" src="https://github.com/user-attachments/assets/83ffabbc-95dc-4ac7-8fa7-832d27d59b87" />
+
+Ref: https://blog.min.io/erasure-coding-vs-raid/
+
+Not only does MinIO erasure coding protect objects against data loss in the event that multiple drives and nodes fail, MinIO also protects and heals at the object level. 
+* The ability to heal one object at a time is a dramatic advantage over systems such as RAID that heal at the volume level.
+* A corrupt object could be restored in MinIO in seconds vs. hours in RAID.
+
+
+MinIO protects against `BitRot`, or silent data corruption, which can have many different causes such as power current spikes, bugs in disk firmware and even simply aging drives. 
+* MinIO uses the `HighwayHash` algorithm to compute a hash on read and verify it on write from the application, across the network and to the storage media.
+* This process is highly efficient - it can achieve hashing speeds over 10 GB/sec on a single core on Intel CPUs - and has minimal impact on normal read/write operations across the erasure set. 
+
 ## Put and Get Operation
 
 ### Storing an Object (The PUT Request)
