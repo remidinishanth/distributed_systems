@@ -73,6 +73,24 @@ MinIO protects against `BitRot`, or silent data corruption, which can have many 
 
 <img width="1137" height="911" alt="image" src="https://github.com/user-attachments/assets/7c0955af-93ee-418d-9115-9c560a92708d" />
 
+- Choosing an erasure set for the object is decided during `PutObject()`, object names are used to find the right erasure set using the following pseudo code.
+
+```go
+// hashes the key returning an integer.
+func sipHashMod(key string, cardinality int, id [16]byte) int {
+        if cardinality <= 0 {
+                return -1
+        }
+        sip := siphash.New(id[:])
+        sip.Write([]byte(key))
+        return int(sip.Sum64() % uint64(cardinality))
+}
+```
+
+Input for the key is the object name specified in `PutObject()`, returns a unique index. This index is one of the erasure sets where the object will reside. This function is a consistent hash for a given object name i.e for a given object name the index returned is always the same.
+
+
+
 When a client sends an object to the cluster, MinIO follows a specific sequence to ensure data is stored safely and evenly distributed.
 
 * Step 1: Hashing: The object name is processed by a deterministic hash function to create a unique hash value.
