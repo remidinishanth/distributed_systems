@@ -67,6 +67,15 @@ MinIO protects against `BitRot`, or silent data corruption, which can have many 
 * MinIO uses the `HighwayHash` algorithm to compute a hash on read and verify it on write from the application, across the network and to the storage media.
 * This process is highly efficient - it can achieve hashing speeds over 10 GB/sec on a single core on Intel CPUs - and has minimal impact on normal read/write operations across the erasure set. https://github.com/google/highwayhash
 
+### Read request
+
+<img width="758" height="799" alt="image" src="https://github.com/user-attachments/assets/7367da38-6071-49c5-9934-7c4ae10027b6" />
+
+### Write request
+
+<img width="758" height="900" alt="image" src="https://github.com/user-attachments/assets/7d221209-56e3-4924-96ba-2c0d74e9248f" />
+
+
 ## Put and Get Operation
 
 ### Storing an Object (The PUT Request)
