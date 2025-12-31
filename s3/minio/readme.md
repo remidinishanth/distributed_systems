@@ -224,6 +224,11 @@ To retrieve data, MinIO reverses the logic used during the write process.
 
 * Step 4: Delivery: The verified object is sent back to the client.
 
+## Healing
+
+<img width="868" height="930" alt="image" src="https://github.com/user-attachments/assets/e90b355a-6810-4648-823b-5baddacf7d64" />
+
+
 ## Site to Site Replication
 
 <img width="827" height="427" alt="image" src="https://github.com/user-attachments/assets/dbb719ec-3363-45a8-922e-ebcc9a63dd14" />
