@@ -228,6 +228,9 @@ To retrieve data, MinIO reverses the logic used during the write process.
 
 <img width="868" height="930" alt="image" src="https://github.com/user-attachments/assets/e90b355a-6810-4648-823b-5baddacf7d64" />
 
+<img width="688" height="945" alt="image" src="https://github.com/user-attachments/assets/0f3218db-1d01-4b99-a652-20172683fb60" />
+
+Ref: https://minio-docs.tf.fo/operations/concepts/healing
 
 ## Site to Site Replication
 
