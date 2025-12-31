@@ -73,6 +73,14 @@ MinIO protects against `BitRot`, or silent data corruption, which can have many 
 
 ### Write request
 
+Two cases:
+* Case 1: Parity < 50% of drives
+  - Write Quorum = Parity
+* Case 2: Parity = 50% of drives
+  - Write Quorum = Parity + 1
+
+> If parity equals 1/2 (half) the number of erasure set drives, write quorum equals parity + 1 (one) to avoid data inconsistency due to 'split brain' scenarios.
+
 <img width="758" height="900" alt="image" src="https://github.com/user-attachments/assets/7d221209-56e3-4924-96ba-2c0d74e9248f" />
 
 
