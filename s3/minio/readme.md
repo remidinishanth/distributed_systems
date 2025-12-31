@@ -19,6 +19,35 @@ Erasure Coding (EC): MinIO employs Reed-Solomon erasure coding to break objects 
 
 The value K here constitutes the read quorum for the deployment. The erasure set must therefore have at least K healthy drives in the erasure set to support read operations.
 
+## Put and Get Operation
+
+### Storing an Object (The PUT Request)
+When a client sends an object to the cluster, MinIO follows a specific sequence to ensure data is stored safely and evenly distributed.
+
+* Step 1: Hashing: The object name is processed by a deterministic hash function to create a unique hash value.
+
+* Step 2: Drive Selection: A modulus function is applied to that hash value. The result determines the specific set of drives (erasure set) where the data will live.
+
+* Step 3: Erasure Coding: Simultaneously, the Erasure Code Engine processes the object data. It breaks the object into:
+  - Data blocks: The actual content.
+  - Parity blocks: Redundancy data for recovery.
+
+* Step 4: Writing: These blocks are written to the prescribed drives.
+
+Note: MinIO uses SipHash for this process. This algorithm ensures that objects are distributed evenly across all drives, resulting in near-uniform disk utilization.
+
+<img width="1606" height="929" alt="image" src="https://github.com/user-attachments/assets/25a0614e-a95f-41e3-adcf-e5278acca6f0" />
+
+### Retrieving an Object (The GET Request)
+To retrieve data, MinIO reverses the logic used during the write process.
+
+* Step 1: Location Calculation: The client requests the file by name. MinIO runs the name through the same hash and modulus functions used during the PUT request to identify the correct drives immediately.
+
+* Step 2: Retrieval: The system reads the object shards (blocks) from those specific drives.
+
+* Step 3: Reassembly & Verification: The shards are passed back through the Erasure Code Engine. The engine reassembles the original object and verifies its integrity ("sanity check") to ensure no corruption occurred.
+
+* Step 4: Delivery: The verified object is sent back to the client.
 
 ## Site to Site Replication
 
