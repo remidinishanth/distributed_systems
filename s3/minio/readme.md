@@ -16,6 +16,9 @@ Legacy object storage architecture
 
 ## Architecture
 
+<img width="2540" height="1216" alt="image" src="https://github.com/user-attachments/assets/231e0ec3-20e3-45c9-8c2e-b703ed8e4e9b" />
+
+
 All the nodes running distributed MinIO setup are recommended to be homogeneous, i.e. same operating system, same number of drives and same network interconnects.
 
 Start distributed MinIO instance on n nodes with m drives each mounted at `/export1` to `/exportm` (pictured below), by running this command on all the `n` nodes:
