@@ -7,6 +7,10 @@ MinIO just does one thing - Object storage for Private cloud
 <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/82863b5c-7278-4c28-981b-94dd71b614db" />
 
 
+Legacy object storage architecture
+<img width="1591" height="863" alt="image" src="https://github.com/user-attachments/assets/86218141-aa98-478d-9b7b-02a18b6faf71" />
+
+
 ## Architecture
 
 All the nodes running distributed MinIO setup are recommended to be homogeneous, i.e. same operating system, same number of drives and same network interconnects.
