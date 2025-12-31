@@ -18,4 +18,6 @@ Data shards contain a portion of a given object. Parity shards contain a mathema
 The value K here constitutes the read quorum for the deployment. The erasure set must therefore have at least K healthy drives in the erasure set to support read operations.
 
 
+## Site to Site Replication
 
+<img width="827" height="427" alt="image" src="https://github.com/user-attachments/assets/dbb719ec-3363-45a8-922e-ebcc9a63dd14" />
