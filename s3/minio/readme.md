@@ -17,6 +17,11 @@ Start distributed MinIO instance on n nodes with m drives each mounted at `/expo
 
 Ref: https://github.com/minio/minio/blob/master/docs/distributed/README.md
 
+
+We will see Pools and Erasure coding in the following sections
+<img width="961" height="440" alt="image" src="https://github.com/user-attachments/assets/d916ce30-b3c0-46d5-9ab9-f31801b8872b" />
+
+
 ## MinIO Server Pools
 
 ![serverpools](https://github.com/user-attachments/assets/a25b361c-e253-4c06-983a-e95b4d0ae464)
