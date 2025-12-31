@@ -83,6 +83,8 @@ Note: MinIO uses `SipHash` for this process. This algorithm ensures that objects
 
 <img width="1606" height="929" alt="image" src="https://github.com/user-attachments/assets/25a0614e-a95f-41e3-adcf-e5278acca6f0" />
 
+<img width="3192" height="1766" alt="image" src="https://github.com/user-attachments/assets/9f0b687c-5923-49c5-8eaf-8f9131dbefaf" />
+
 
 <img width="1137" height="911" alt="image" src="https://github.com/user-attachments/assets/7c0955af-93ee-418d-9115-9c560a92708d" />
 
