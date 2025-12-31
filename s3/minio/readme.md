@@ -2,6 +2,9 @@ MinIO just does one thing - Object storage for Private cloud
 
 <img width="1105" height="588" alt="image" src="https://github.com/user-attachments/assets/b9fdf6eb-b52c-460d-89e0-fc90a2762f2f" />
 
+<img width="1326" height="744" alt="image" src="https://github.com/user-attachments/assets/226c6dad-f468-4140-998d-86641a9115eb" />
+
+
 <img width="689" height="241" alt="image" src="https://github.com/user-attachments/assets/a5f7c369-978a-4944-94d7-46ce8c87c160" />
 
 
