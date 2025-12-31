@@ -46,7 +46,7 @@ Data shards contain a portion of a given object. Parity shards contain a mathema
 The value K here constitutes the read quorum for the deployment. The erasure set must therefore have at least K healthy drives in the erasure set to support read operations.
 
 
-Here say we have small object which only has 1 part - `part.1`, now in this case, we have 2 data blocks and 2 parity blocks for this part, Disk 1 and Disk 4 stores data blocks and Disk 2 and Disk 3 stores parity blocks.
+Here say we have small object which only has 1 part - `part.1`, now in this case, we have 2 data blocks and 2 parity blocks for this part.
 <img width="960" height="540" alt="image" src="https://github.com/user-attachments/assets/83ffabbc-95dc-4ac7-8fa7-832d27d59b87" />
 
 Ref: https://blog.min.io/erasure-coding-vs-raid/
