@@ -12,8 +12,11 @@ MinIO just does one thing - Object storage for Private cloud
 
 <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/82863b5c-7278-4c28-981b-94dd71b614db" />
 
+* Minio adopts a metadata-free database design for high performance, avoiding the metabase becoming a performance bottleneck for the entire system, and limiting failures to a single cluster, so that no other clusters are involved.
+* Minio is also fully compatible with the S3 interface, so it can also be used as a gateway to provide S3 access to the outside world.
+* Use both Minio Erasure code and checksum to prevent hardware failures. Even if you lose more than half of your hard drive, you can still recover from it. (N/2)-1 node failure is also allowed in the distribution
 
-Legacy object storage architecture
+### Legacy object storage architecture
 <img width="1591" height="863" alt="image" src="https://github.com/user-attachments/assets/86218141-aa98-478d-9b7b-02a18b6faf71" />
 
 
