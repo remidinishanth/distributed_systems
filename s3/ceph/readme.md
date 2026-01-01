@@ -85,6 +85,13 @@ PGs do not own OSDs. CRUSH assigns many placement groups to each OSD pseudo-rand
 Ref: https://ceph.io/en/news/blog/2014/how-data-is-stored-in-ceph-cluster/
 
 
+<img width="2048" height="1090" alt="image" src="https://github.com/user-attachments/assets/0bb2cad5-2095-4389-946e-502c1e25eb07" />
+
+* In this cluster, the files created (A.txt and J.txt in my diagram) are converted into several objects. These objects are then distributed into placement groups (pg) which are put into pools.
+* A pool has some properties configured as how many replicas of a pg will be stored in the cluster (3 by default). Those pg will finally be physically stored into an Object Storage Daemon (OSD). An OSD stores pg (and so the objects within it) and provides access to them over the network.
+
+Ref: https://www.dbi-services.com/blog/introduction-to-rook-ceph-for-kubernetes/
+
 ### Rebalancing
 
 <img width="1068" height="708" alt="image" src="https://github.com/user-attachments/assets/8f7ed77d-9547-4839-98e2-9ce927c74392" />
