@@ -7,6 +7,11 @@ Unlike traditional architectures that rely on centralized controller nodes—whi
 CRUSH enables Ceph clients to communicate directly with OSDs, bypassing the need for a centralized server or broker. 
 
 
+Ceph uniquely delivers object, block, and file storage in one unified system.
+
+<img width="693" height="490" alt="image" src="https://github.com/user-attachments/assets/22915a4b-0bff-4a28-a806-c833ca148680" />
+
+
 ## HOW :: Data is Storage Inside Ceph Cluster
 
 <img width="1079" height="806" alt="image" src="https://github.com/user-attachments/assets/e7346264-79aa-4838-baa7-8e107b941d3d" />
