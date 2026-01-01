@@ -42,6 +42,12 @@ writes), significantly improving overall scalability.
 
 Ref: `Ceph: A Scalable, High-Performance Distributed File System paper`
 
+
+## Architecture
+
+<img width="1285" height="832" alt="image" src="https://github.com/user-attachments/assets/63cd3c58-21b4-4f59-95b0-f90e82060f8f" />
+
+
 ## HOW :: Data is Storage Inside Ceph Cluster
 
 <img width="1079" height="806" alt="image" src="https://github.com/user-attachments/assets/e7346264-79aa-4838-baa7-8e107b941d3d" />
