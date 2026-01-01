@@ -48,6 +48,8 @@ Block storage splits a file into separate data blocks, and stores each of these 
 
 * Cloud object storage systems distribute this data across multiple physical devices but allow users to access the content efficiently from a single, virtual storage repository.
 
+<img width="1095" height="780" alt="image" src="https://github.com/user-attachments/assets/87674af0-d4e5-4961-a2b3-42e3094b5dd7" />
+
 
 ## Metadata in the Object store
 
