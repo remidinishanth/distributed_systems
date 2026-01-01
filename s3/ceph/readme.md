@@ -48,8 +48,6 @@ Ref: `Ceph: A Scalable, High-Performance Distributed File System paper`
 
 <img width="849" height="517" alt="image" src="https://github.com/user-attachments/assets/7a17da7a-2024-4746-944e-0412f2176f46" />
 
-<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/028cfa19-0259-407c-be91-2aba019c6d3f" />
-
 ### Pools
 
 The Ceph storage system supports the notion of ‘Pools’, which are logical partitions for storing objects.
@@ -80,3 +78,8 @@ PGs do not own OSDs. CRUSH assigns many placement groups to each OSD pseudo-rand
 <img width="1079" height="806" alt="image" src="https://github.com/user-attachments/assets/e7346264-79aa-4838-baa7-8e107b941d3d" />
 
 Ref: https://ceph.io/en/news/blog/2014/how-data-is-stored-in-ceph-cluster/
+
+
+## Bluestore
+
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/028cfa19-0259-407c-be91-2aba019c6d3f" />
