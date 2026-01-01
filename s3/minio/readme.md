@@ -295,6 +295,8 @@ Ref: https://e-whisper.com/posts/9462/
 
 In addition to being a storage system service, Minio can also be used as a gateway, and the backend can be used with distributed file systems such as NAS systems and HDFS systems, or third-party storage systems such as S3 and OSS. With the Minio gateway, S3-compatible APIs can be added to these back-end systems for easy management and portability, because S3 APIs are already a de facto label in the object storage world.
 
+<img width="984" height="760" alt="image" src="https://github.com/user-attachments/assets/402f972a-ea67-4c56-966f-938ad454f3a9" />
+
 
 * MinIO introduced the gateway feature early on to help make the S3 API ubiquitous. From legacy POSIX-based SAN/NAS systems to modern cloud storage services, the different MinIO gateway modules brought S3 API compatibility where it did not exist previously.
 * The primary objective was to provide sufficient time to port the applications over a modern cloud-native architecture.
