@@ -75,9 +75,19 @@ When CRUSH assigns a placement group to an OSD, it calculates a series of OSDsâ€
 
 PGs do not own OSDs. CRUSH assigns many placement groups to each OSD pseudo-randomly to ensure that data gets distributed evenly across the cluster. 
 
+> This layer of indirection allows Ceph to rebalance dynamically when new Ceph OSD Daemons and the underlying OSD devices come online
+
+
+### Summary
+
 <img width="1079" height="806" alt="image" src="https://github.com/user-attachments/assets/e7346264-79aa-4838-baa7-8e107b941d3d" />
 
 Ref: https://ceph.io/en/news/blog/2014/how-data-is-stored-in-ceph-cluster/
+
+
+### Rebalancing
+
+<img width="1068" height="708" alt="image" src="https://github.com/user-attachments/assets/8f7ed77d-9547-4839-98e2-9ce927c74392" />
 
 
 ## Bluestore
