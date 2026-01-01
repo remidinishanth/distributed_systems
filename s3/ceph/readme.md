@@ -15,7 +15,20 @@ Ceph uniquely delivers object, block, and file storage in one unified system.
 <img width="1920" height="1342" alt="image" src="https://github.com/user-attachments/assets/52f44c4f-affb-4e5a-abe3-b839a81428a1" />
 Ref: https://canonical.com/blog/ceph-storage-on-ubuntu-an-overview
 
+
+
 <img width="849" height="517" alt="image" src="https://github.com/user-attachments/assets/7a17da7a-2024-4746-944e-0412f2176f46" />
+
+
+
+Ceph is designed to be scalable and to have no single point of failure. 
+
+* Object Storage Daemon (OSD) - OSDs manage data, interact with logical disks
+* Monitor (MON) - Manages cluster state(monitor map, the manager map, the OSD map, and the CRUSH map) https://docs.ceph.com/en/reef/architecture/#cluster-map 
+* Manager (MGR) - Provides additional features
+* Metadata Servers (MDS) - The Ceph metadata server daemon must be running in any Ceph cluster that runs the CephFS file system
+
+<img width="530" height="350" alt="image" src="https://github.com/user-attachments/assets/8508d331-a67c-46cd-a728-0e8c6dfd8256" />
 
 
 
