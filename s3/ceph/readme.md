@@ -55,6 +55,14 @@ Ceph Clients retrieve a Cluster Map from a Ceph Monitor, and write RADOS objects
 
 <img width="440" height="238" alt="image" src="https://github.com/user-attachments/assets/8fee4a4a-01cf-467c-b120-17fef100948e" />
 
+### Placement Groups
+
+* Tracking object placement on a per-object basis within a pool is computationally expensive at scale.
+*  To facilitate high performance at scale, Ceph subdivides a pool into placement groups, assigns each individual object to a placement group, and assigns the placement group to a primary OSD.
+*  If an OSD fails or the cluster re-balances, Ceph can move or replicate an entire placement group—​i.e., all of the objects in the placement groups—​without having to address each object individually. This allows a Ceph cluster to re-balance or recover efficiently.
+
+<img width="780" height="588" alt="image" src="https://github.com/user-attachments/assets/9a5de55b-f869-4706-a559-b8babf9df5fa" />
+
 
 ## HOW :: Data is Storage Inside Ceph Cluster
 
