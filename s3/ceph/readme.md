@@ -9,7 +9,8 @@ CRUSH enables Ceph clients to communicate directly with OSDs, bypassing the need
 
 Ceph uniquely delivers object, block, and file storage in one unified system.
 
-<img width="693" height="490" alt="image" src="https://github.com/user-attachments/assets/22915a4b-0bff-4a28-a806-c833ca148680" />
+<img width="1118" height="786" alt="image" src="https://github.com/user-attachments/assets/330ed975-85ac-412b-8575-71002b7f613c" />
+
 
 
 ## HOW :: Data is Storage Inside Ceph Cluster
