@@ -16,6 +16,13 @@ MinIO just does one thing - Object storage for Private cloud
 * Minio is also fully compatible with the S3 interface, so it can also be used as a gateway to provide S3 access to the outside world.
 * Use both Minio Erasure code and checksum to prevent hardware failures. Even if you lose more than half of your hard drive, you can still recover from it. (N/2)-1 node failure is also allowed in the distribution
 
+<img width="1181" height="619" alt="image" src="https://github.com/user-attachments/assets/82ac9b76-b73d-4bf0-a084-bcdc3ceaac49" />
+
+<img width="1209" height="672" alt="image" src="https://github.com/user-attachments/assets/3bf05817-6bb7-4d08-86df-db43fe8b0f71" />
+
+<img width="1104" height="676" alt="image" src="https://github.com/user-attachments/assets/e82fa817-cbfa-4e66-aac9-1c06b528884f" />
+
+
 ### Legacy object storage architecture
 <img width="1591" height="863" alt="image" src="https://github.com/user-attachments/assets/86218141-aa98-478d-9b7b-02a18b6faf71" />
 
@@ -329,6 +336,15 @@ While we have only scratched the surface, MinIO is packed with advanced features
 * Identity and Access Management (IAM): Control who can access what, just like in a big cloud environment. You can create users, groups, and define fine grained policies.
 
 * Replication: Copy data automatically across different MinIO instances for disaster recovery and high availability.
+
+
+## Encryption
+
+<img width="1245" height="626" alt="image" src="https://github.com/user-attachments/assets/0571b920-39c8-494e-972d-0d48d7b06592" />
+
+<img width="1245" height="626" alt="image" src="https://github.com/user-attachments/assets/b73e3512-bc87-4115-8689-d9f5872562fe" />
+
+<img width="1245" height="678" alt="image" src="https://github.com/user-attachments/assets/eb419eca-2356-4086-ab6c-f453c25094d4" />
 
 
 ## TODO
