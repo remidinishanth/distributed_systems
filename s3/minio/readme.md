@@ -312,6 +312,9 @@ In addition to being a storage system service, Minio can also be used as a gatew
 
 <img width="697" height="354" alt="image" src="https://github.com/user-attachments/assets/5b0d98dd-b760-4cf6-98ca-17349637d92f" />
 
+<img width="1024" height="800" alt="image" src="https://github.com/user-attachments/assets/f28dbef2-d8fa-41e2-9952-8476ef0ade6d" />
+
+
 * The Gateway was initially developed to allow customers to use the S3 API to work with backends, such as NFS, Azure Blob and HDFS, that would not otherwise support it.
 * The S3 API is ubiquitous (thanks in part to MinIO Gateway), but if we were to continue developing the MinIO Gateway, we would simply be perpetuating older technologies that are neither high-performance nor cloud-native. Also, addressing the ongoing technical challenges required to maintain MinIO Gateway for each backend are time and resource intensive so it makes much more sense to deprecate it entirely.
 
