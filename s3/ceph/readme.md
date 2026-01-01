@@ -15,9 +15,6 @@ Ref: https://canonical.com/blog/ceph-storage-on-ubuntu-an-overview
 
 <img width="1118" height="786" alt="image" src="https://github.com/user-attachments/assets/330ed975-85ac-412b-8575-71002b7f613c" />
 
-<img width="849" height="517" alt="image" src="https://github.com/user-attachments/assets/7a17da7a-2024-4746-944e-0412f2176f46" />
-
-
 
 Ceph is designed to be scalable and to have no single point of failure. 
 
@@ -48,6 +45,8 @@ Ref: `Ceph: A Scalable, High-Performance Distributed File System paper`
 ## Architecture
 
 <img width="1285" height="832" alt="image" src="https://github.com/user-attachments/assets/63cd3c58-21b4-4f59-95b0-f90e82060f8f" />
+
+<img width="849" height="517" alt="image" src="https://github.com/user-attachments/assets/7a17da7a-2024-4746-944e-0412f2176f46" />
 
 <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/028cfa19-0259-407c-be91-2aba019c6d3f" />
 
