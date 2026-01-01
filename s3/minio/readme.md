@@ -314,6 +314,20 @@ Reason for deprecation:
 
 Ref: https://blog.min.io/minio-gateway-migration/ and https://blog.min.io/deprecation-of-the-minio-gateway/ 
 
+## Beyond the Basics: What Else Can MinIO Do?
+
+While we have only scratched the surface, MinIO is packed with advanced features:
+
+* Versioning: Keep multiple versions of an object. Accidentally overwrote a file? No problem, just revert to an earlier version!
+
+* Object Locking (WORM): Enforce "Write Once, Read Many" protection, making data immutable for compliance or security. Once written, it cannot be changed or deleted for a set period.
+
+* Lifecycle Management: Automatically move or delete objects after a certain time, saving storage costs.
+
+* Identity and Access Management (IAM): Control who can access what, just like in a big cloud environment. You can create users, groups, and define fine grained policies.
+
+* Replication: Copy data automatically across different MinIO instances for disaster recovery and high availability.
+
 
 ## TODO
 * https://blog.min.io/minio-versioning-metadata-deep-dive/
