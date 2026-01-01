@@ -7,3 +7,6 @@ Access pattern of data
 
 
 <img width="1098" height="713" alt="image" src="https://github.com/user-attachments/assets/d2988ab5-1af8-4c46-8a9c-119d5cecb835" />
+
+Append only volumes and in-memory index, to allow reading with only one disk read.
+<img width="1098" height="713" alt="image" src="https://github.com/user-attachments/assets/04c31e42-2a9a-496f-a59b-edf67177e0eb" />
