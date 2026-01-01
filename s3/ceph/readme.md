@@ -63,6 +63,7 @@ Ceph Clients retrieve a Cluster Map from a Ceph Monitor, and write RADOS objects
 
 <img width="780" height="588" alt="image" src="https://github.com/user-attachments/assets/9a5de55b-f869-4706-a559-b8babf9df5fa" />
 
+Ref: https://docs.redhat.com/en/documentation/red_hat_ceph_storage/1.2.3/html/storage_strategies/about-placement-groups
 
 ## HOW :: Data is Storage Inside Ceph Cluster
 
