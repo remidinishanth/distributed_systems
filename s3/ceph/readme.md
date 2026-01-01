@@ -12,6 +12,9 @@ Ceph uniquely delivers object, block, and file storage in one unified system.
 <img width="1118" height="786" alt="image" src="https://github.com/user-attachments/assets/330ed975-85ac-412b-8575-71002b7f613c" />
 
 
+<img width="849" height="517" alt="image" src="https://github.com/user-attachments/assets/7a17da7a-2024-4746-944e-0412f2176f46" />
+
+
 
 ## HOW :: Data is Storage Inside Ceph Cluster
 
