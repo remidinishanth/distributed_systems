@@ -51,6 +51,10 @@ Block storage splits a file into separate data blocks, and stores each of these 
 <img width="1095" height="780" alt="image" src="https://github.com/user-attachments/assets/87674af0-d4e5-4961-a2b3-42e3094b5dd7" />
 
 
+
+<img width="1496" height="740" alt="image" src="https://github.com/user-attachments/assets/4412fec1-4354-4c23-8d9a-1228a115e9c4" />
+
+
 ## Metadata in the Object store
 
 Metadata is critical to object storage technology. 
