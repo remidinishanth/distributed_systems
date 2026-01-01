@@ -45,6 +45,16 @@ Ref: `Ceph: A Scalable, High-Performance Distributed File System paper`
 
 <img width="1285" height="832" alt="image" src="https://github.com/user-attachments/assets/63cd3c58-21b4-4f59-95b0-f90e82060f8f" />
 
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/028cfa19-0259-407c-be91-2aba019c6d3f" />
+
+### Pools
+
+The Ceph storage system supports the notion of ‘Pools’, which are logical partitions for storing objects.
+
+Ceph Clients retrieve a Cluster Map from a Ceph Monitor, and write RADOS objects to pools. The way that Ceph places the data in the pools is determined by the pool’s size or number of replicas, the CRUSH rule, and the number of placement groups in the pool.
+
+<img width="440" height="238" alt="image" src="https://github.com/user-attachments/assets/8fee4a4a-01cf-467c-b120-17fef100948e" />
+
 
 ## HOW :: Data is Storage Inside Ceph Cluster
 
