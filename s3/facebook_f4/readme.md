@@ -4,3 +4,6 @@
 
 Access pattern of data
 <img width="2292" height="1420" alt="image" src="https://github.com/user-attachments/assets/99bc9e42-9b98-49f2-8e68-d177f0b35739" />
+
+
+<img width="1098" height="713" alt="image" src="https://github.com/user-attachments/assets/d2988ab5-1af8-4c46-8a9c-119d5cecb835" />
