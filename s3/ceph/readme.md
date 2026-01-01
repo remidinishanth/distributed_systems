@@ -28,6 +28,8 @@ Ceph is designed to be scalable and to have no single point of failure.
 
 ### What are OSD
 
+<img width="400" height="126" alt="image" src="https://github.com/user-attachments/assets/c367b338-fae1-477f-b9e2-5cdc1d35fcb6" />
+
 * More recent distributed file systems have adopted architectures based on object-based storage, in which conventional hard disks are replaced with intelligent object
 storage devices (OSDs) which combine a CPU, network interface, and local cache with an underlying disk or RAID.
 * OSDs replace the traditional block-level interface with one in which clients can read
@@ -72,8 +74,6 @@ When CRUSH assigns a placement group to an OSD, it calculates a series of OSDsâ€
 <img width="770" height="224" alt="image" src="https://github.com/user-attachments/assets/6855a121-72ca-4aae-92c4-2b84047afe20" />
 
 PGs do not own OSDs. CRUSH assigns many placement groups to each OSD pseudo-randomly to ensure that data gets distributed evenly across the cluster. 
-
-<img width="400" height="126" alt="image" src="https://github.com/user-attachments/assets/c367b338-fae1-477f-b9e2-5cdc1d35fcb6" />
 
 <img width="1079" height="806" alt="image" src="https://github.com/user-attachments/assets/e7346264-79aa-4838-baa7-8e107b941d3d" />
 
