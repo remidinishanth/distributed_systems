@@ -41,3 +41,25 @@ You can distinct its architecture by four high-level services:
 <img width="879" height="650" alt="image" src="https://github.com/user-attachments/assets/6c9fe2fa-17af-4178-8818-2125973d9069" />
 
 <img width="1600" height="1088" alt="image" src="https://github.com/user-attachments/assets/5b163daa-97a1-4225-b74b-f3418f8362f6" />
+
+### Storage Fleet
+
+<img width="802" height="617" alt="image" src="https://github.com/user-attachments/assets/b8051fa1-f417-4229-a1e4-02c90739fcff" />
+
+### Hard Drives
+
+<img width="792" height="581" alt="image" src="https://github.com/user-attachments/assets/5cfdedcf-6a00-4f24-9fec-52963171f21c" />
+
+<img width="1600" height="841" alt="image" src="https://github.com/user-attachments/assets/a1f1330a-0dd8-43cb-b989-916b7431b4c9" />
+
+### Replication
+
+<img width="746" height="615" alt="image" src="https://github.com/user-attachments/assets/c623f769-b8c6-42f4-a567-534596f318de" />
+
+### Heat Management at Scale
+
+<img width="1492" height="1502" alt="image" src="https://github.com/user-attachments/assets/0ebaa341-22d9-4d3b-9188-f82ceddaa4be" />
+
+<img width="1600" height="889" alt="image" src="https://github.com/user-attachments/assets/8d42b67b-20d9-4683-8bc9-23e8e2d0df82" />
+
+
