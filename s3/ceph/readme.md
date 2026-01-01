@@ -94,6 +94,9 @@ Ref: https://ceph.io/en/news/blog/2014/how-data-is-stored-in-ceph-cluster/
 
 Ref: https://www.dbi-services.com/blog/introduction-to-rook-ceph-for-kubernetes/
 
+<img width="1653" height="739" alt="image" src="https://github.com/user-attachments/assets/e90b8dd7-6fd9-4ce4-b8ab-b5997354b723" />
+
+
 ### Rebalancing
 
 <img width="1068" height="708" alt="image" src="https://github.com/user-attachments/assets/8f7ed77d-9547-4839-98e2-9ce927c74392" />
