@@ -31,6 +31,16 @@ Ceph is designed to be scalable and to have no single point of failure.
 <img width="530" height="350" alt="image" src="https://github.com/user-attachments/assets/8508d331-a67c-46cd-a728-0e8c6dfd8256" />
 
 
+### What are OSD
+
+* More recent distributed file systems have adopted architectures based on object-based storage, in which conventional hard disks are replaced with intelligent object
+storage devices (OSDs) which combine a CPU, network interface, and local cache with an underlying disk or RAID.
+* OSDs replace the traditional block-level interface with one in which clients can read
+or write byte ranges to much larger (and often variably sized) named objects, distributing low-level block allocation decisions to the devices themselves.
+* Clients typically interact with a metadata server (MDS) to perform metadata operations (open, rename), while communicating directly with OSDs to perform file I/O (reads and
+writes), significantly improving overall scalability.
+
+Ref: `Ceph: A Scalable, High-Performance Distributed File System paper`
 
 ## HOW :: Data is Storage Inside Ceph Cluster
 
