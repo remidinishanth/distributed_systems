@@ -80,13 +80,12 @@ PGs do not own OSDs. CRUSH assigns many placement groups to each OSD pseudo-rand
 
 ### Summary
 
-<img width="1152" height="739" alt="image" src="https://github.com/user-attachments/assets/1daf35de-9975-42b5-82f5-32ebc58106c5" />
-
-
 <img width="1079" height="806" alt="image" src="https://github.com/user-attachments/assets/e7346264-79aa-4838-baa7-8e107b941d3d" />
 
 Ref: https://ceph.io/en/news/blog/2014/how-data-is-stored-in-ceph-cluster/
 
+
+<img width="1152" height="739" alt="image" src="https://github.com/user-attachments/assets/1daf35de-9975-42b5-82f5-32ebc58106c5" />
 
 <img width="2048" height="1090" alt="image" src="https://github.com/user-attachments/assets/0bb2cad5-2095-4389-946e-502c1e25eb07" />
 
