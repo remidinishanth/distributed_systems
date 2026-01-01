@@ -4,6 +4,9 @@ Ref: https://www.codesmith.io/blog/amazon-s3-storage-diagramming-system-design
 
 <img width="1496" height="788" alt="image" src="https://github.com/user-attachments/assets/4efdb68d-d240-4045-87e8-e3e315cee38e" />
 
+<img width="1496" height="740" alt="image" src="https://github.com/user-attachments/assets/58af9939-8535-4cdb-bd58-030dcf701410" />
+
+
 <img width="969" height="698" alt="image" src="https://github.com/user-attachments/assets/3f5317e9-0deb-46b9-8ce8-ce6d249af493" />
 
 ## Timeline of features
