@@ -68,3 +68,10 @@ You can seamlessly and nondisruptively increase storage from gigabytes to petaby
 
 
 Ref: https://www.ibm.com/topics/object-storage
+
+
+## Timeline of features
+
+<img width="759" height="671" alt="image" src="https://github.com/user-attachments/assets/37d16048-97a7-4089-b172-6fff0dd4d0d7" />
+
+Ref: https://highscalability.com/behind-aws-s3s-massive-scale/
