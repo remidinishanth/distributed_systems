@@ -295,10 +295,22 @@ Ref: https://e-whisper.com/posts/9462/
 
 In addition to being a storage system service, Minio can also be used as a gateway, and the backend can be used with distributed file systems such as NAS systems and HDFS systems, or third-party storage systems such as S3 and OSS. With the Minio gateway, S3-compatible APIs can be added to these back-end systems for easy management and portability, because S3 APIs are already a de facto label in the object storage world.
 
+
+* MinIO introduced the gateway feature early on to help make the S3 API ubiquitous. From legacy POSIX-based SAN/NAS systems to modern cloud storage services, the different MinIO gateway modules brought S3 API compatibility where it did not exist previously.
+* The primary objective was to provide sufficient time to port the applications over a modern cloud-native architecture.
+* In the gateway mode, MinIO ran as a stateless proxy service, performing inline translation of the object storage functions from the S3 API to their corresponding equivalent backend functions.
+* At any given time, the MinIO gateway service could be turned off and the only loss was S3 compatibility. The objects were always written to the backend in their native format, be it NFS or Azure Blob, or HDFS. 
+
 <img width="697" height="354" alt="image" src="https://github.com/user-attachments/assets/5b0d98dd-b760-4cf6-98ca-17349637d92f" />
 
 * The Gateway was initially developed to allow customers to use the S3 API to work with backends, such as NFS, Azure Blob and HDFS, that would not otherwise support it.
 * The S3 API is ubiquitous (thanks in part to MinIO Gateway), but if we were to continue developing the MinIO Gateway, we would simply be perpetuating older technologies that are neither high-performance nor cloud-native. Also, addressing the ongoing technical challenges required to maintain MinIO Gateway for each backend are time and resource intensive so it makes much more sense to deprecate it entirely.
+
+Reason for deprecation:
+* The S3 API has evolved considerably since we started, and what began as inline translation morphed into something much more.
+* Critical S3 capabilities like versioning, bucket replication, immutability/object locking, s3-select, encryption, and compression couldn’t be supported in the gateway mode without introducing a proprietary backend format.
+* It would defeat the purpose of the gateway mode because the backend could no longer be read directly without the help of the gateway service.
+* The backends would merely act as storage media for the gateway and you might as well run MinIO in server mode. Thus it became a compromise that MinIO no longer wanted to engage in. This meant it was time for us to let go. 
 
 Ref: https://blog.min.io/minio-gateway-migration/ and https://blog.min.io/deprecation-of-the-minio-gateway/ 
 
