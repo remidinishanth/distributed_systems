@@ -36,6 +36,12 @@ We will see Pools and Erasure coding in the following sections
 <img width="961" height="440" alt="image" src="https://github.com/user-attachments/assets/d916ce30-b3c0-46d5-9ab9-f31801b8872b" />
 
 
+
+### Decentralized architecture
+
+Minio adopts a decentralized shared-nothing architecture, where object data is scattered and stored on multiple hard disks on different nodes, providing unified namespace access and load balancing between servers through load balancing or DNS rounding
+
+
 ## MinIO Server Pools
 
 ![serverpools](https://github.com/user-attachments/assets/a25b361c-e253-4c06-983a-e95b4d0ae464)
@@ -270,5 +276,15 @@ Ref: https://minio-docs.tf.fo/operations/data-recovery
 
 <img width="1375" height="872" alt="image" src="https://github.com/user-attachments/assets/6e6a6e02-44b8-4e32-b552-22a134de5f40" />
 
-
 Ref: https://blog.min.io/minio-dsync-a-distributed-locking-and-syncing-package-for-go/
+
+### Distributed lock management
+
+Similar to distributed databases, Minio suffers from data consistency issues: while one client reads an object, another client may be modifying or deleting the object. To avoid inconsistencies. Minio specifically designed and implemented the dsync distributed lock manager to control data consistency.
+
+* A lock request from any one node is broadcast to all online nodes in the cluster
+* If consent is received from N/2+1 nodes, the acquisition is successful
+* There is no master node, each node is peered to each other, and the stale lock detection mechanism is used between nodes to determine the status of nodes and the lock status
+* Due to the simple design, it is relatively rough. It has certain defects, and supports up to 32 nodes. Scenarios where lock loss cannot be avoided. However, the available needs are basically met.
+
+Ref: https://e-whisper.com/posts/9462/
