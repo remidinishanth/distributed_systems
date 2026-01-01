@@ -40,6 +40,10 @@ writes), significantly improving overall scalability.
 
 Ref: `Ceph: A Scalable, High-Performance Distributed File System paper`
 
+* The Ceph Storage Cluster receives data from Ceph Clients--whether it comes through a Ceph Block Device, Ceph Object Storage, the Ceph File System, or a custom implementation that you create by using librados.
+* The data received by the Ceph Storage Cluster is stored as RADOS objects.
+* Each object is stored on an Object Storage Device (this is also called an “OSD”). Ceph OSDs control read, write, and replication operations on storage drives.
+
 
 ## Architecture
 
@@ -65,14 +69,14 @@ Ceph Clients retrieve a Cluster Map from a Ceph Monitor, and write RADOS objects
 
 Ref: https://docs.redhat.com/en/documentation/red_hat_ceph_storage/1.2.3/html/storage_strategies/about-placement-groups
 
-## HOW :: Data is Storage Inside Ceph Cluster
+When CRUSH assigns a placement group to an OSD, it calculates a series of OSDs—​the first being the primary. 
+* Each pool has a number of placement groups (PGs) within it. CRUSH dynamically maps PGs to OSDs. When a Ceph Client stores objects, CRUSH maps each RADOS object to a PG.
 
-* The Ceph Storage Cluster receives data from Ceph Clients--whether it comes through a Ceph Block Device, Ceph Object Storage, the Ceph File System, or a custom implementation that you create by using librados.
-* The data received by the Ceph Storage Cluster is stored as RADOS objects.
-* Each object is stored on an Object Storage Device (this is also called an “OSD”). Ceph OSDs control read, write, and replication operations on storage drives.
+<img width="770" height="224" alt="image" src="https://github.com/user-attachments/assets/6855a121-72ca-4aae-92c4-2b84047afe20" />
+
+PGs do not own OSDs. CRUSH assigns many placement groups to each OSD pseudo-randomly to ensure that data gets distributed evenly across the cluster. 
 
 <img width="400" height="126" alt="image" src="https://github.com/user-attachments/assets/c367b338-fae1-477f-b9e2-5cdc1d35fcb6" />
-
 
 <img width="1079" height="806" alt="image" src="https://github.com/user-attachments/assets/e7346264-79aa-4838-baa7-8e107b941d3d" />
 
