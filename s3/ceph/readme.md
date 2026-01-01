@@ -48,6 +48,13 @@ Ref: `Ceph: A Scalable, High-Performance Distributed File System paper`
 
 ## HOW :: Data is Storage Inside Ceph Cluster
 
+* The Ceph Storage Cluster receives data from Ceph Clients--whether it comes through a Ceph Block Device, Ceph Object Storage, the Ceph File System, or a custom implementation that you create by using librados.
+* The data received by the Ceph Storage Cluster is stored as RADOS objects.
+* Each object is stored on an Object Storage Device (this is also called an “OSD”). Ceph OSDs control read, write, and replication operations on storage drives.
+
+<img width="400" height="126" alt="image" src="https://github.com/user-attachments/assets/c367b338-fae1-477f-b9e2-5cdc1d35fcb6" />
+
+
 <img width="1079" height="806" alt="image" src="https://github.com/user-attachments/assets/e7346264-79aa-4838-baa7-8e107b941d3d" />
 
 Ref: https://ceph.io/en/news/blog/2014/how-data-is-stored-in-ceph-cluster/
