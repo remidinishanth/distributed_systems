@@ -10,3 +10,5 @@ Access pattern of data
 
 Append only volumes and in-memory index, to allow reading with only one disk read.
 <img width="1098" height="713" alt="image" src="https://github.com/user-attachments/assets/04c31e42-2a9a-496f-a59b-edf67177e0eb" />
+
+<img width="1098" height="713" alt="image" src="https://github.com/user-attachments/assets/68871abe-dedb-405a-8bc5-4a9faa4aa104" />
