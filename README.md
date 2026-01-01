@@ -19,7 +19,6 @@ and https://github.com/keyvanakbary/learning-notes/blob/master/books/designing-d
 
 ![image](https://github.com/user-attachments/assets/e0438cdb-f2ad-45e8-8d38-71e3fd71999f)
 
-## Developing as Developer
 
 MIT 6.824 Notes https://wizardforcel.gitbooks.io/distributed-systems-engineering-lecture-notes/content/l01-intro.html and http://nil.csail.mit.edu/6.824/2015/schedule.html
 
