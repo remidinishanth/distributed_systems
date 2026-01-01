@@ -12,3 +12,8 @@
 <img width="1524" height="907" alt="image" src="https://github.com/user-attachments/assets/bbecee3b-35ee-461e-a0cf-659f73af2a5e" />
 
 Ref: https://cosc349.cspages.otago.ac.nz/lectures/L03-virtualisation.pdf
+
+
+## VM virtualization
+
+<img width="1580" height="811" alt="image" src="https://github.com/user-attachments/assets/62879aba-16c3-4944-9c84-904eef7f9810" />
