@@ -290,3 +290,16 @@ Similar to distributed databases, Minio suffers from data consistency issues: wh
 Lock throughput decreases as cluster grows.
 
 Ref: https://e-whisper.com/posts/9462/
+
+## MinIO Object Storage Gateway [Deprecated]
+
+In addition to being a storage system service, Minio can also be used as a gateway, and the backend can be used with distributed file systems such as NAS systems and HDFS systems, or third-party storage systems such as S3 and OSS. With the Minio gateway, S3-compatible APIs can be added to these back-end systems for easy management and portability, because S3 APIs are already a de facto label in the object storage world.
+
+<img width="697" height="354" alt="image" src="https://github.com/user-attachments/assets/5b0d98dd-b760-4cf6-98ca-17349637d92f" />
+
+* The Gateway was initially developed to allow customers to use the S3 API to work with backends, such as NFS, Azure Blob and HDFS, that would not otherwise support it.
+* The S3 API is ubiquitous (thanks in part to MinIO Gateway), but if we were to continue developing the MinIO Gateway, we would simply be perpetuating older technologies that are neither high-performance nor cloud-native. Also, addressing the ongoing technical challenges required to maintain MinIO Gateway for each backend are time and resource intensive so it makes much more sense to deprecate it entirely.
+
+Ref: https://blog.min.io/minio-gateway-migration/ and https://blog.min.io/deprecation-of-the-minio-gateway/ 
+
+
