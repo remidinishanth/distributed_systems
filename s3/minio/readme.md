@@ -315,3 +315,5 @@ Reason for deprecation:
 Ref: https://blog.min.io/minio-gateway-migration/ and https://blog.min.io/deprecation-of-the-minio-gateway/ 
 
 
+## TODO
+* https://blog.min.io/minio-versioning-metadata-deep-dive/
