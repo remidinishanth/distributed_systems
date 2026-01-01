@@ -62,4 +62,8 @@ You can distinct its architecture by four high-level services:
 
 <img width="1600" height="889" alt="image" src="https://github.com/user-attachments/assets/8d42b67b-20d9-4683-8bc9-23e8e2d0df82" />
 
+But as the system aggregates millions of workloads, the underlying traffic to the storage flattens out remarkably. The aggregate demand results in a smoothened out, more predictable throughput.
 
+When you aggregate on a large enough scale, a single workload cannot influence the aggregate peak.
+
+The problem then becomes much easier to solve - you simply need to balance out a smooth demand rate across many disks.
