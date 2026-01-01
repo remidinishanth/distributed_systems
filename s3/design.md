@@ -19,5 +19,18 @@ Ref: https://highscalability.com/behind-aws-s3s-massive-scale/
 
 <img width="1406" height="1226" alt="image" src="https://github.com/user-attachments/assets/d64329e5-4e73-4fba-adb2-a63dbd0b81cc" />
 
+## Architecture
+
+S3 is said to be composed of more than 300 microservices.
+
+It tries to follow the core design principle of simplicity.
+
+You can distinct its architecture by four high-level services:
+* a front-end fleet with a REST API
+* a namespace service
+* a storage fleet full of hard disks
+* a storage management fleet that does background operations, like replication and tiering.
 
 <img width="879" height="650" alt="image" src="https://github.com/user-attachments/assets/6c9fe2fa-17af-4178-8818-2125973d9069" />
+
+<img width="1600" height="1088" alt="image" src="https://github.com/user-attachments/assets/5b163daa-97a1-4225-b74b-f3418f8362f6" />
