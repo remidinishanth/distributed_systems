@@ -287,4 +287,6 @@ Similar to distributed databases, Minio suffers from data consistency issues: wh
 * There is no master node, each node is peered to each other, and the stale lock detection mechanism is used between nodes to determine the status of nodes and the lock status
 * Due to the simple design, it is relatively rough. It has certain defects, and supports up to 32 nodes. Scenarios where lock loss cannot be avoided. However, the available needs are basically met.
 
+Lock throughput decreases as cluster grows.
+
 Ref: https://e-whisper.com/posts/9462/
