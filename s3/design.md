@@ -1,4 +1,12 @@
+Ref: https://www.codesmith.io/blog/amazon-s3-storage-diagramming-system-design
+
 <img width="969" height="698" alt="image" src="https://github.com/user-attachments/assets/3f5317e9-0deb-46b9-8ce8-ce6d249af493" />
+
+## Timeline of features
+
+<img width="759" height="671" alt="image" src="https://github.com/user-attachments/assets/37d16048-97a7-4089-b172-6fff0dd4d0d7" />
+
+Ref: https://highscalability.com/behind-aws-s3s-massive-scale/
 
 <img width="904" height="450" alt="image" src="https://github.com/user-attachments/assets/3ba82a6a-9a6b-41cf-b6f5-aa0aa95b8418" />
 
