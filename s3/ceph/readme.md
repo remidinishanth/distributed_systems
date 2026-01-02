@@ -1,6 +1,10 @@
+## Ceph: A Scalable, High Performance Distributed File System
+<img width="968" height="719" alt="image" src="https://github.com/user-attachments/assets/0e3dbef2-7b56-4400-9dac-ef2640ed59fe" />
+
 <img width="1134" height="628" alt="image" src="https://github.com/user-attachments/assets/bb98c875-7406-4e97-b825-548c6c4a6c5b" />
 
 Ceph is designed to be extremely scalable; it is built upon the **Reliable Autonomic Distributed Object Store (RADOS)**, a self-healing, self-managing storage layer that handles the fundamental complexity of data replication, failure detection, and recovery. 
+
 
 Unlike traditional architectures that rely on centralized controller nodes—which often become performance bottlenecks or single points of failure — Ceph employs a calculated placement algorithm known as **CRUSH (Controlled Replication Under Scalable Hashing)** to distribute data across a heterogeneous cluster.
 
@@ -33,6 +37,9 @@ Ceph is designed to be scalable and to have no single point of failure.
 <img width="530" height="350" alt="image" src="https://github.com/user-attachments/assets/8508d331-a67c-46cd-a728-0e8c6dfd8256" />
 
 
+<img width="1105" height="613" alt="image" src="https://github.com/user-attachments/assets/ffb9acad-56e2-4913-81cb-9c10ab4c1674" />
+
+
 ### What are OSD
 
 <img width="400" height="126" alt="image" src="https://github.com/user-attachments/assets/c367b338-fae1-477f-b9e2-5cdc1d35fcb6" />
@@ -44,11 +51,19 @@ or write byte ranges to much larger (and often variably sized) named objects, di
 * Clients typically interact with a metadata server (MDS) to perform metadata operations (open, rename), while communicating directly with OSDs to perform file I/O (reads and
 writes), significantly improving overall scalability.
 
-Ref: `Ceph: A Scalable, High-Performance Distributed File System paper`
+Ref: `Ceph: A Scalable, High-Performance Distributed File System`
 
 * The Ceph Storage Cluster receives data from Ceph Clients--whether it comes through a Ceph Block Device, Ceph Object Storage, the Ceph File System, or a custom implementation that you create by using librados.
 * The data received by the Ceph Storage Cluster is stored as RADOS objects.
 * Each object is stored on an Object Storage Device (this is also called an “OSD”). Ceph OSDs control read, write, and replication operations on storage drives.
+
+<img width="1105" height="778" alt="image" src="https://github.com/user-attachments/assets/75159e46-2a0e-4e7e-8d39-b12579c26e0b" />
+
+<img width="1105" height="829" alt="image" src="https://github.com/user-attachments/assets/5305d882-bd36-4f9a-b58e-02e51765ffc1" />
+
+<img width="1105" height="754" alt="image" src="https://github.com/user-attachments/assets/0ccb1e3f-372f-47cd-b934-54df94520ba9" />
+
+<img width="1105" height="729" alt="image" src="https://github.com/user-attachments/assets/cfe7db7d-756a-44ba-a0db-cb84eb4921fa" />
 
 
 ## Architecture
@@ -122,6 +137,13 @@ Ref: https://devops-insider.mygraphql.com/zh-cn/latest/ceph/ceph-mapping/ceph-ma
 ### Rebalancing
 
 <img width="1068" height="708" alt="image" src="https://github.com/user-attachments/assets/8f7ed77d-9547-4839-98e2-9ce927c74392" />
+
+## Distributed Metadata Server
+
+<img width="1105" height="729" alt="image" src="https://github.com/user-attachments/assets/479bf446-3020-44d3-8514-0feb594e5805" />
+
+
+<img width="1105" height="637" alt="image" src="https://github.com/user-attachments/assets/cf39b001-0c27-471e-9a8a-fc105e287a5f" />
 
 
 ## Bluestore
