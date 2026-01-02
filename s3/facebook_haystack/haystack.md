@@ -99,6 +99,9 @@ Atleast 3 disk IOPS and because of nested inode, even more
 Layout of Haystack Index file
 <img width="1110" height="300" alt="image" src="https://github.com/user-attachments/assets/cd4d3c3d-3ad4-447c-aaa6-4ea74338a494" />
 
+<img width="1603" height="876" alt="image" src="https://github.com/user-attachments/assets/468d1cde-05c5-4772-9085-4dc4d82f7975" />
+
+
 ### Deletes
 
 <img width="1098" height="290" alt="image" src="https://github.com/user-attachments/assets/acb8b0cc-2d60-468d-afd1-323e2da185e9" />
