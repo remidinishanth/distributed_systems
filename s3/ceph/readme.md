@@ -204,3 +204,7 @@ responsibility for managing the file system directory hierarchy among tens or ev
 <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/028cfa19-0259-407c-be91-2aba019c6d3f" />
 
 Ref: `File Systems Unfit as Distributed Storage Backends: Lessons from 10 Years of Ceph Evolution` paper
+
+
+
+Ref: https://insujang.github.io/2020-08-30/introduction-to-ceph/
