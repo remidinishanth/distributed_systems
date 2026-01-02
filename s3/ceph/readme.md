@@ -7,6 +7,9 @@ https://devops-insider.mygraphql.com/zh-cn/latest/ceph/ceph-mapping/ceph-mapping
 The primary goals of the architecture are scalability (to hundreds of petabytes and beyond), performance, and reliability.
 <img width="968" height="719" alt="image" src="https://github.com/user-attachments/assets/0e3dbef2-7b56-4400-9dac-ef2640ed59fe" />
 
+<img width="909" height="527" alt="image" src="https://github.com/user-attachments/assets/8895441d-c8f1-448b-a270-0b128fc7d9bf" />
+
+
 <img width="1134" height="628" alt="image" src="https://github.com/user-attachments/assets/bb98c875-7406-4e97-b825-548c6c4a6c5b" />
 
 Ceph is designed to be extremely scalable; it is built upon the **Reliable Autonomic Distributed Object Store (RADOS)**, a self-healing, self-managing storage layer that handles the fundamental complexity of data replication, failure detection, and recovery. 
