@@ -31,6 +31,9 @@ Ceph is designed to be scalable and to have no single point of failure.
 * Manager (MGR) - Provides additional features like external monitoring, dashboard
 * Metadata Servers (MDS) - The Ceph metadata server daemon must be running in any Ceph cluster that runs the CephFS file system
 
+<img width="704" height="404" alt="image" src="https://github.com/user-attachments/assets/bc7e4578-88e2-4c2c-9ff1-c4fc15076ac1" />
+
+
 <img width="1040" height="678" alt="image" src="https://github.com/user-attachments/assets/e14e8fcd-8765-404b-b654-98885133cf1c" />
 
 
