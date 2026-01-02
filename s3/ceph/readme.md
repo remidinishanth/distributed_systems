@@ -202,7 +202,7 @@ We use bucket id instead of bucket name, because users can rename bucket
 
 
 Bucket Indexing
-
+* To return list of objects in the bucket quickly, similar to directory
 <img width="671" height="369" alt="image" src="https://github.com/user-attachments/assets/18877233-dc8b-4275-9f10-5a11083ab094" />
 
 <img width="684" height="363" alt="image" src="https://github.com/user-attachments/assets/0593a5f9-34a4-4106-a9cb-53083358965a" />
