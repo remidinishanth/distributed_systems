@@ -1,4 +1,4 @@
-<img width="708" height="355" alt="image" src="https://github.com/user-attachments/assets/5a6d8cee-92be-4dd7-881f-98e46a58bfdc" />## Ceph: A Scalable, High Performance Distributed File System
+## Ceph: A Scalable, High Performance Distributed File System
 
 [2019-JUN-27 :: Ceph Tech Talk - Intro to Ceph](www.youtube.com/watch?v=PmLPbrf-x9g&amp;t=725s)
 
