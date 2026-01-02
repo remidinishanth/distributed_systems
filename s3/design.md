@@ -77,6 +77,8 @@ You can distinct its architecture by four high-level services:
 
 <img width="559" height="288" alt="image" src="https://github.com/user-attachments/assets/a454ac54-c901-4919-8594-f96a9eacd702" />
 
+<img width="1024" height="523" alt="image" src="https://github.com/user-attachments/assets/9a02a771-0e48-4c18-81c0-87f5e17e6354" />
+
 
 ## Download
 
