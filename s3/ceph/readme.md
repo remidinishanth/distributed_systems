@@ -81,6 +81,10 @@ Ceph Clients retrieve a Cluster Map from a Ceph Monitor, and write RADOS objects
 
 <img width="440" height="238" alt="image" src="https://github.com/user-attachments/assets/8fee4a4a-01cf-467c-b120-17fef100948e" />
 
+
+<img width="743" height="384" alt="image" src="https://github.com/user-attachments/assets/25163ead-9638-4b93-b690-4d7147e5c35d" />
+
+
 ### Placement Groups
 
 * Tracking object placement on a per-object basis within a pool is computationally expensive at scale.
@@ -137,8 +141,22 @@ Ref: https://devops-insider.mygraphql.com/zh-cn/latest/ceph/ceph-mapping/ceph-ma
 <img width="1058" height="602" alt="image" src="https://github.com/user-attachments/assets/de3cd3bf-cf43-4ee8-9328-e1d1dd00f92a" />
 
 
+## Rados Gateway
 
-### Rebalancing
+<img width="735" height="333" alt="image" src="https://github.com/user-attachments/assets/35f8608e-14ab-4542-8518-f837b6aec65f" />
+
+<img width="735" height="390" alt="image" src="https://github.com/user-attachments/assets/5ee6d64e-a425-4c45-9ef1-3e9209e2463d" />
+
+## CephFS
+
+<img width="769" height="419" alt="image" src="https://github.com/user-attachments/assets/e25c67cf-68d1-4109-969f-d160b378c0d0" />
+
+<img width="642" height="419" alt="image" src="https://github.com/user-attachments/assets/d5f94809-3a68-4023-bc0b-1c306849b644" />
+
+<img width="753" height="419" alt="image" src="https://github.com/user-attachments/assets/0826dd55-b1a9-46a9-a482-f2fa46ef7c3c" />
+
+
+## Rebalancing
 
 <img width="1068" height="708" alt="image" src="https://github.com/user-attachments/assets/8f7ed77d-9547-4839-98e2-9ce927c74392" />
 
