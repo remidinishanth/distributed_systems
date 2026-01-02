@@ -24,8 +24,11 @@ Ceph is designed to be scalable and to have no single point of failure.
 
 * Object Storage Daemon (OSD) - OSDs manage data, interact with logical disks
 * Monitor (MON) - Manages cluster state(monitor map, the manager map, the OSD map, and the CRUSH map) https://docs.ceph.com/en/reef/architecture/#cluster-map 
-* Manager (MGR) - Provides additional features
+* Manager (MGR) - Provides additional features like external monitoring, dashboard
 * Metadata Servers (MDS) - The Ceph metadata server daemon must be running in any Ceph cluster that runs the CephFS file system
+
+<img width="1040" height="678" alt="image" src="https://github.com/user-attachments/assets/e14e8fcd-8765-404b-b654-98885133cf1c" />
+
 
 <img width="530" height="350" alt="image" src="https://github.com/user-attachments/assets/8508d331-a67c-46cd-a728-0e8c6dfd8256" />
 
