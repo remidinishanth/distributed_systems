@@ -33,6 +33,22 @@ Ref: https://highscalability.com/behind-aws-s3s-massive-scale/
 
 <img width="1406" height="1226" alt="image" src="https://github.com/user-attachments/assets/d64329e5-4e73-4fba-adb2-a63dbd0b81cc" />
 
+
+The design philosophy of object storage is very similar to that of the UNIX file system. 
+* In UNIX, when we save a file in the local file system, it does not save the filename and file data together.
+* Instead, the filename is stored in a data structure called "inode" and the file data is stored in different disk locations.
+* The inode contains a list of file block pointers that point to the disk locations of the file data.
+* When we access a local file, we first fetch the metadata in the inode. We then read the file data by following the file block pointers to the actual disk locations.
+
+The object storage works similarly. 
+* The inode becomes the metadata store that stores all the object metadata.
+* The hard disk becomes the data store that stores the object data.
+* In the UNIX file system, the inode uses the file block pointer to record the location of data on the hard disk.
+* In object storage, the metadata store uses the ID of the object to find the corresponding object data in the data store, via a network request.
+
+
+<img width="559" height="471" alt="image" src="https://github.com/user-attachments/assets/d3d69c0e-a578-44d7-97bd-68d92a354ef9" />
+
 ## Architecture
 
 S3 is said to be composed of more than 300 microservices.
