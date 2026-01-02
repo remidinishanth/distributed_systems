@@ -14,7 +14,7 @@ Ceph uniquely delivers object, block, and file storage in one unified system.
 Ref: https://canonical.com/blog/ceph-storage-on-ubuntu-an-overview
 
 
-<img width="654" height="295" alt="image" src="https://github.com/user-attachments/assets/cc14c2d2-0f65-4c71-9f3e-72c3f76a92b8" />
+<img width="655" height="292" alt="image" src="https://github.com/user-attachments/assets/419b7475-7bea-499f-b8ac-38df281d0c4a" />
 
 
 <img width="1118" height="786" alt="image" src="https://github.com/user-attachments/assets/330ed975-85ac-412b-8575-71002b7f613c" />
