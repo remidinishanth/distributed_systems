@@ -180,19 +180,22 @@ Ref: https://devops-insider.mygraphql.com/zh-cn/latest/ceph/ceph-mapping/ceph-ma
 
 <img width="735" height="390" alt="image" src="https://github.com/user-attachments/assets/5ee6d64e-a425-4c45-9ef1-3e9209e2463d" />
 
+### RGW Components
 <img width="991" height="501" alt="image" src="https://github.com/user-attachments/assets/99c6cd4c-a927-4ec4-80fb-54e068bb360b" />
 
 <img width="991" height="747" alt="image" src="https://github.com/user-attachments/assets/1b62df89-34ff-47b5-ac24-fc0a63187c45" />
 
 <img width="991" height="538" alt="image" src="https://github.com/user-attachments/assets/014aa67c-ff8a-400f-88ba-8c82388a4780" />
 
+RGW vs RADOS Object
+
 <img width="991" height="597" alt="image" src="https://github.com/user-attachments/assets/b29c7c58-9159-4849-a225-f79fb47e4119" />
 
-<img width="991" height="649" alt="image" src="https://github.com/user-attachments/assets/1cf6616d-d65d-4788-9d97-554a89f87cb1" />
+<img width="640" height="362" alt="image" src="https://github.com/user-attachments/assets/e34916ef-f061-46bc-adda-3206980f282f" />
 
-<img width="991" height="649" alt="image" src="https://github.com/user-attachments/assets/93f433a2-9497-4533-af31-07329bab3693" />
+Bucket Indexing
 
-<img width="991" height="649" alt="image" src="https://github.com/user-attachments/assets/c51f1d53-82c1-4005-85b4-5ae5744859ad" />
+<img width="671" height="369" alt="image" src="https://github.com/user-attachments/assets/18877233-dc8b-4275-9f10-5a11083ab094" />
 
 <img width="1147" height="752" alt="image" src="https://github.com/user-attachments/assets/de9c0e41-02e3-4b2a-b570-1dde3180ca1c" />
 
