@@ -72,6 +72,7 @@ You can distinct its architecture by four high-level services:
 
 <img width="1330" height="750" alt="image" src="https://github.com/user-attachments/assets/a05b8047-622f-4dec-a62e-e9d2b32f4f11" />
 
+<img width="1024" height="523" alt="image" src="https://github.com/user-attachments/assets/9a02a771-0e48-4c18-81c0-87f5e17e6354" />
 
 ## Upload
 
@@ -81,8 +82,6 @@ You can distinct its architecture by four high-level services:
 <img width="2196" height="2646" alt="image" src="https://github.com/user-attachments/assets/05ded656-3837-4ed4-85eb-09784618d7d2" />
 
 <img width="559" height="288" alt="image" src="https://github.com/user-attachments/assets/a454ac54-c901-4919-8594-f96a9eacd702" />
-
-<img width="1024" height="523" alt="image" src="https://github.com/user-attachments/assets/9a02a771-0e48-4c18-81c0-87f5e17e6354" />
 
 
 ## Download
