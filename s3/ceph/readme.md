@@ -215,7 +215,7 @@ Hence we first write the tail, then do a prepare(similar to 2-Phase commit) and 
 
 <img width="1147" height="752" alt="image" src="https://github.com/user-attachments/assets/2c3c99da-937c-4146-a18b-675592a0f06e" />
 
-
+More details about Omap(object map) is present at https://ivanzz1001.github.io/records/post/ceph/2019/01/05/ceph-src-code-part7_5
 
 
 ## CephFS
