@@ -140,6 +140,10 @@ Ref: https://devops-insider.mygraphql.com/zh-cn/latest/ceph/ceph-mapping/ceph-ma
 
 <img width="1058" height="602" alt="image" src="https://github.com/user-attachments/assets/de3cd3bf-cf43-4ee8-9328-e1d1dd00f92a" />
 
+### Rebalancing
+
+<img width="1068" height="708" alt="image" src="https://github.com/user-attachments/assets/8f7ed77d-9547-4839-98e2-9ce927c74392" />
+
 
 ## Rados Gateway
 
@@ -155,18 +159,12 @@ Ref: https://devops-insider.mygraphql.com/zh-cn/latest/ceph/ceph-mapping/ceph-ma
 
 <img width="753" height="419" alt="image" src="https://github.com/user-attachments/assets/0826dd55-b1a9-46a9-a482-f2fa46ef7c3c" />
 
-
-## Rebalancing
-
-<img width="1068" height="708" alt="image" src="https://github.com/user-attachments/assets/8f7ed77d-9547-4839-98e2-9ce927c74392" />
-
-## Distributed Metadata Server
+### Distributed Metadata Server
 
 <img width="1105" height="729" alt="image" src="https://github.com/user-attachments/assets/479bf446-3020-44d3-8514-0feb594e5805" />
 
 
 <img width="1105" height="637" alt="image" src="https://github.com/user-attachments/assets/cf39b001-0c27-471e-9a8a-fc105e287a5f" />
-
 
 ## Bluestore
 
