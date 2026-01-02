@@ -149,4 +149,16 @@ Ref: https://devops-insider.mygraphql.com/zh-cn/latest/ceph/ceph-mapping/ceph-ma
 
 ## Bluestore
 
+For a decade, the Ceph distributed file system followed the
+conventional wisdom of building its storage backend on top
+of local file systems. This is a preferred choice for most distributed file systems today because it allows them to benefit
+from the convenience and maturity of battle-tested code.
+Ceph’s experience, however, shows that this comes at a high
+price. 
+* First, developing a zero-overhead transaction mechanism is challenging.
+* Second, metadata performance at the local level can significantly affect performance at the distributed level.
+* Third, supporting emerging storage hardware is painstakingly slow.
+
+Ceph addressed these issues with BlueStore, a new backend designed to run directly on raw storage devices
+
 <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/028cfa19-0259-407c-be91-2aba019c6d3f" />
