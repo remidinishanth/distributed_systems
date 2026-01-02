@@ -35,6 +35,8 @@ It is easier to understand object-based storage when you compare it to more trad
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/17eea566-1f2e-4978-9a46-0f9652a9871f)
 
+<img width="720" height="540" alt="image" src="https://github.com/user-attachments/assets/8e6b5470-c07e-49e1-9bc1-3de0b3503192" />
+
 ### File storage
 File storage stores data in folders. This method, also known as hierarchical storage, simulates how paper documents are stored. When data needs to be accessed, a computer system must look for it using its path in the folder structure.
 
