@@ -110,6 +110,8 @@ The original paper doesn't talk about Pools
 
 <img width="596" height="561" alt="image" src="https://github.com/user-attachments/assets/a3c549fe-567d-4913-ace1-c8097fbd2f1d" />
 
+Ref: https://devops-insider.mygraphql.com/zh-cn/latest/ceph/ceph-mapping/ceph-mapping.html
+
 * Objects that are stored in a Ceph cluster are put into pools.
 * Pools represent logical partitions of the cluster to the outside world. For each pool a set of rules can be defined, for example, how many replications of each object must exist. The standard configuration of pools is called replicated pool.
 
