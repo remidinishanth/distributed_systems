@@ -161,4 +161,9 @@ price.
 
 Ceph addressed these issues with BlueStore, a new backend designed to run directly on raw storage devices
 
+<img width="517" height="392" alt="image" src="https://github.com/user-attachments/assets/6268352d-2f80-4cb7-9301-550cc4810fac" />
+
+
 <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/028cfa19-0259-407c-be91-2aba019c6d3f" />
+
+Ref: `File Systems Unfit as Distributed Storage Backends: Lessons from 10 Years of Ceph Evolution` paper
