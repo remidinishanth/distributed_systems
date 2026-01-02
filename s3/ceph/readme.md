@@ -2,6 +2,8 @@
 
 [2019-JUN-27 :: Ceph Tech Talk - Intro to Ceph](www.youtube.com/watch?v=PmLPbrf-x9g&amp;t=725s)
 
+https://devops-insider.mygraphql.com/zh-cn/latest/ceph/ceph-mapping/ceph-mapping.html
+
 The primary goals of the architecture are scalability (to hundreds of petabytes and beyond), performance, and reliability.
 <img width="968" height="719" alt="image" src="https://github.com/user-attachments/assets/0e3dbef2-7b56-4400-9dac-ef2640ed59fe" />
 
