@@ -42,6 +42,12 @@ You can distinct its architecture by four high-level services:
 
 <img width="1600" height="1088" alt="image" src="https://github.com/user-attachments/assets/5b163daa-97a1-4225-b74b-f3418f8362f6" />
 
+
+## Upload
+
+<img width="2196" height="2646" alt="image" src="https://github.com/user-attachments/assets/05ded656-3837-4ed4-85eb-09784618d7d2" />
+
+
 ### Storage Fleet
 
 <img width="802" height="617" alt="image" src="https://github.com/user-attachments/assets/b8051fa1-f417-4229-a1e4-02c90739fcff" />
