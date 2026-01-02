@@ -99,6 +99,15 @@ Ref: https://www.dbi-services.com/blog/introduction-to-rook-ceph-for-kubernetes/
 
 <img width="1653" height="739" alt="image" src="https://github.com/user-attachments/assets/e90b8dd7-6fd9-4ce4-b8ab-b5997354b723" />
 
+The original paper doesn't talk about Pools
+
+<img width="596" height="561" alt="image" src="https://github.com/user-attachments/assets/a3c549fe-567d-4913-ace1-c8097fbd2f1d" />
+
+* Objects that are stored in a Ceph cluster are put into pools.
+* Pools represent logical partitions of the cluster to the outside world. For each pool a set of rules can be defined, for example, how many replications of each object must exist. The standard configuration of pools is called replicated pool.
+
+<img width="1059" height="605" alt="image" src="https://github.com/user-attachments/assets/18b105df-ed88-47b0-8160-7b97e0c75f60" />
+
 
 ### Rebalancing
 
