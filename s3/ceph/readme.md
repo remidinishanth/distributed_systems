@@ -110,7 +110,8 @@ The original paper doesn't talk about Pools
 * Objects that are stored in a Ceph cluster are put into pools.
 * Pools represent logical partitions of the cluster to the outside world. For each pool a set of rules can be defined, for example, how many replications of each object must exist. The standard configuration of pools is called replicated pool.
 
-<img width="1059" height="605" alt="image" src="https://github.com/user-attachments/assets/18b105df-ed88-47b0-8160-7b97e0c75f60" />
+<img width="1058" height="602" alt="image" src="https://github.com/user-attachments/assets/de3cd3bf-cf43-4ee8-9328-e1d1dd00f92a" />
+
 
 
 ### Rebalancing
