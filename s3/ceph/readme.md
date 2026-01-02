@@ -150,8 +150,9 @@ Ref: https://devops-insider.mygraphql.com/zh-cn/latest/ceph/ceph-mapping/ceph-ma
 
 <img width="1058" height="602" alt="image" src="https://github.com/user-attachments/assets/de3cd3bf-cf43-4ee8-9328-e1d1dd00f92a" />
 
-![Uploading image.png…]()
 
+
+<img width="638" height="359" alt="image" src="https://github.com/user-attachments/assets/d2b51464-6818-4c48-ab06-80f743f337c4" />
 
 ### Rebalancing
 
@@ -159,6 +160,8 @@ Ref: https://devops-insider.mygraphql.com/zh-cn/latest/ceph/ceph-mapping/ceph-ma
 
 
 ## Rados Gateway
+
+<img width="570" height="182" alt="image" src="https://github.com/user-attachments/assets/433cf7bf-c02f-42e0-b370-3864ab0160ee" />
 
 <img width="735" height="333" alt="image" src="https://github.com/user-attachments/assets/35f8608e-14ab-4542-8518-f837b6aec65f" />
 
