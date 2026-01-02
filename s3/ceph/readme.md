@@ -87,6 +87,9 @@ Ref: https://ceph.io/en/news/blog/2014/how-data-is-stored-in-ceph-cluster/
 
 <img width="1152" height="739" alt="image" src="https://github.com/user-attachments/assets/1daf35de-9975-42b5-82f5-32ebc58106c5" />
 
+<img width="908" height="429" alt="image" src="https://github.com/user-attachments/assets/fb3bc96b-9810-46bf-92b6-b8620539ab8f" />
+
+
 <img width="2048" height="1090" alt="image" src="https://github.com/user-attachments/assets/0bb2cad5-2095-4389-946e-502c1e25eb07" />
 
 * In this cluster, the files created (A.txt and J.txt in my diagram) are converted into several objects. These objects are then distributed into placement groups (pg) which are put into pools.
