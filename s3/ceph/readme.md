@@ -1,4 +1,4 @@
-## Ceph: A Scalable, High Performance Distributed File System
+<img width="708" height="355" alt="image" src="https://github.com/user-attachments/assets/5a6d8cee-92be-4dd7-881f-98e46a58bfdc" />## Ceph: A Scalable, High Performance Distributed File System
 
 [2019-JUN-27 :: Ceph Tech Talk - Intro to Ceph](www.youtube.com/watch?v=PmLPbrf-x9g&amp;t=725s)
 
@@ -193,13 +193,24 @@ RGW vs RADOS Object
 
 <img width="640" height="362" alt="image" src="https://github.com/user-attachments/assets/e34916ef-f061-46bc-adda-3206980f282f" />
 
+<img width="2066" height="1432" alt="image" src="https://github.com/user-attachments/assets/1f32bbb5-d41d-431e-b630-e2de67e15945" />
+
+<img width="708" height="355" alt="image" src="https://github.com/user-attachments/assets/5710f40f-6b6d-4ca1-abb6-73baa90b06d1" />
+
+
+
 Bucket Indexing
 
 <img width="671" height="369" alt="image" src="https://github.com/user-attachments/assets/18877233-dc8b-4275-9f10-5a11083ab094" />
 
+<img width="684" height="363" alt="image" src="https://github.com/user-attachments/assets/0593a5f9-34a4-4106-a9cb-53083358965a" />
+
+
 <img width="1147" height="752" alt="image" src="https://github.com/user-attachments/assets/de9c0e41-02e3-4b2a-b570-1dde3180ca1c" />
 
 <img width="1147" height="752" alt="image" src="https://github.com/user-attachments/assets/2c3c99da-937c-4146-a18b-675592a0f06e" />
+
+
 
 
 ## CephFS
