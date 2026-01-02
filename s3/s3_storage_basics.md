@@ -58,6 +58,10 @@ Block storage splits a file into separate data blocks, and stores each of these 
 
 <img width="1496" height="740" alt="image" src="https://github.com/user-attachments/assets/4412fec1-4354-4c23-8d9a-1228a115e9c4" />
 
+## Multi-part upload
+
+<img width="693" height="389" alt="image" src="https://github.com/user-attachments/assets/fdcf7090-1144-494b-b132-51eeb4152b6f" />
+
 
 ## Metadata in the Object store
 
