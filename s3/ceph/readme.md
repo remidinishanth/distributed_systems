@@ -208,7 +208,9 @@ Bucket Indexing
 Hence during object creation, we need to update bucket index
 <img width="684" height="363" alt="image" src="https://github.com/user-attachments/assets/0593a5f9-34a4-4106-a9cb-53083358965a" />
 
+We need all the above operations to be atomic to avoid inconsistencies, where bucket index is updated but object wasn't created etc
 
+Hence we first write the tail, then do a prepare(similar to 2-Phase commit) and only after that, we commit
 <img width="1147" height="752" alt="image" src="https://github.com/user-attachments/assets/de9c0e41-02e3-4b2a-b570-1dde3180ca1c" />
 
 <img width="1147" height="752" alt="image" src="https://github.com/user-attachments/assets/2c3c99da-937c-4146-a18b-675592a0f06e" />
