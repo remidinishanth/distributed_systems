@@ -2,6 +2,13 @@ Ref: https://www.codesmith.io/blog/amazon-s3-storage-diagramming-system-design
 
 <img width="1168" height="610" alt="image" src="https://github.com/user-attachments/assets/b8dc2118-d57d-4169-8657-ee3b391a6b11" />
 
+**Bucket:** A logical container for objects. The bucket name is globally unique. To upload data to S3, we must first create a bucket. 
+
+**Object:** An object is an individual piece of data we store in a bucket. It contains object data (also called payload) and metadata. Object data can be any sequence of bytes we want to store. The metadata is a set of name-value pairs that describe the object.
+
+
+
+
 <img width="1496" height="788" alt="image" src="https://github.com/user-attachments/assets/4efdb68d-d240-4045-87e8-e3e315cee38e" />
 
 <img width="1496" height="740" alt="image" src="https://github.com/user-attachments/assets/58af9939-8535-4cdb-bd58-030dcf701410" />
