@@ -51,6 +51,11 @@ The object storage works similarly.
 
 ## Architecture
 
+<img width="1024" height="318" alt="image" src="https://github.com/user-attachments/assets/80e23478-64a0-4bae-8a6a-a1e7b68c3c82" />
+
+High level, ref: https://newsletter.systemdesign.one/p/s3-architecture
+
+
 S3 is said to be composed of more than 300 microservices.
 
 It tries to follow the core design principle of simplicity.
