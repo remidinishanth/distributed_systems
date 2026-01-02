@@ -64,6 +64,11 @@ Ref: `Ceph: A Scalable, High-Performance Distributed File System`
 
 <img width="1105" height="778" alt="image" src="https://github.com/user-attachments/assets/75159e46-2a0e-4e7e-8d39-b12579c26e0b" />
 
+Decoupled Data and Metadata—Ceph maximizes the separation of file metadata management from the storage
+of file data. 
+* Metadata operations (open, rename, etc.) are collectively managed by a metadata server cluster, while clients interact directly with OSDs to perform file
+I/O (reads and writes).
+
 <img width="1105" height="829" alt="image" src="https://github.com/user-attachments/assets/5305d882-bd36-4f9a-b58e-02e51765ffc1" />
 
 <img width="1105" height="754" alt="image" src="https://github.com/user-attachments/assets/0ccb1e3f-372f-47cd-b934-54df94520ba9" />
