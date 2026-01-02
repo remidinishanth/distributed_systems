@@ -73,6 +73,13 @@ You can distinct its architecture by four high-level services:
 
 <img width="2196" height="2646" alt="image" src="https://github.com/user-attachments/assets/05ded656-3837-4ed4-85eb-09784618d7d2" />
 
+<img width="559" height="288" alt="image" src="https://github.com/user-attachments/assets/a454ac54-c901-4919-8594-f96a9eacd702" />
+
+
+## Download
+
+<img width="699" height="464" alt="image" src="https://github.com/user-attachments/assets/b6d23e37-0fca-4fd8-a2a7-15e71ad6fec7" />
+
 
 ### Storage Fleet
 
