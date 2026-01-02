@@ -53,6 +53,9 @@ Issues
 
 <img width="1110" height="710" alt="image" src="https://github.com/user-attachments/assets/d104bc2b-50fc-4435-9592-7c89f63da798" />
 
+Atleast 3 disk IOPS and because of nested inode, even more
+<img width="1707" height="608" alt="image" src="https://github.com/user-attachments/assets/87863699-914b-4b0f-a1f4-1413de322082" />
+
 
 ## Requirements
 
