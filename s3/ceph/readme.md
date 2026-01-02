@@ -1,4 +1,6 @@
 ## Ceph: A Scalable, High Performance Distributed File System
+
+The primary goals of the architecture are scalability (to hundreds of petabytes and beyond), performance, and reliability.
 <img width="968" height="719" alt="image" src="https://github.com/user-attachments/assets/0e3dbef2-7b56-4400-9dac-ef2640ed59fe" />
 
 <img width="1134" height="628" alt="image" src="https://github.com/user-attachments/assets/bb98c875-7406-4e97-b825-548c6c4a6c5b" />
