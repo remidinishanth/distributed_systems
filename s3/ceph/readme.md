@@ -35,6 +35,12 @@ Ref: https://canonical.com/blog/ceph-storage-on-ubuntu-an-overview
 
 Ceph is designed to be scalable and to have no single point of failure. 
 
+
+### RADOS
+
+<img width="729" height="527" alt="image" src="https://github.com/user-attachments/assets/5ebf34a6-20c4-4fd4-830c-62daf7176c20" />
+
+
 * Object Storage Daemon (OSD) - OSDs manage data, interact with logical disks
 * Monitor (MON) - Manages cluster state(monitor map, the manager map, the OSD map, and the CRUSH map) https://docs.ceph.com/en/reef/architecture/#cluster-map 
 * Manager (MGR) - Provides additional features like external monitoring, dashboard
