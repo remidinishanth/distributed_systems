@@ -45,6 +45,9 @@ Ceph is designed to be scalable and to have no single point of failure.
 <img width="1105" height="613" alt="image" src="https://github.com/user-attachments/assets/ffb9acad-56e2-4913-81cb-9c10ab4c1674" />
 
 
+<img width="1313" height="721" alt="image" src="https://github.com/user-attachments/assets/2d98764f-2647-4132-a455-872100b8ec8f" />
+
+
 ### What are OSD
 
 <img width="400" height="126" alt="image" src="https://github.com/user-attachments/assets/c367b338-fae1-477f-b9e2-5cdc1d35fcb6" />
@@ -146,6 +149,9 @@ Ref: https://devops-insider.mygraphql.com/zh-cn/latest/ceph/ceph-mapping/ceph-ma
 * Pools represent logical partitions of the cluster to the outside world. For each pool a set of rules can be defined, for example, how many replications of each object must exist. The standard configuration of pools is called replicated pool.
 
 <img width="1058" height="602" alt="image" src="https://github.com/user-attachments/assets/de3cd3bf-cf43-4ee8-9328-e1d1dd00f92a" />
+
+![Uploading image.png…]()
+
 
 ### Rebalancing
 
