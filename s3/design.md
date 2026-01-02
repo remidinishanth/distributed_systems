@@ -65,6 +65,8 @@ You can distinct its architecture by four high-level services:
 
 <img width="1600" height="1088" alt="image" src="https://github.com/user-attachments/assets/5b163daa-97a1-4225-b74b-f3418f8362f6" />
 
+<img width="1330" height="750" alt="image" src="https://github.com/user-attachments/assets/a05b8047-622f-4dec-a62e-e9d2b32f4f11" />
+
 
 ## Upload
 
