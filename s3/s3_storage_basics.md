@@ -8,6 +8,8 @@ category: "s3"
 * Semi-structured data (such as JSON, XML, and CSV files), and
 * Unstructured data (such as photos, videos, email, web pages, sensor data, and audio files).
 
+<img width="1700" height="674" alt="image" src="https://github.com/user-attachments/assets/865ffd0b-9479-4086-adf0-bc70f9d3ee0f" />
+
 
 Blob storage is a type of cloud storage for unstructured data. 
 * Unstructured data is data that doesn't adhere to a particular data model or definition, such as text or binary data.
