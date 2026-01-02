@@ -63,8 +63,6 @@ Ref: `Ceph: A Scalable, High-Performance Distributed File System`
 
 <img width="1105" height="754" alt="image" src="https://github.com/user-attachments/assets/0ccb1e3f-372f-47cd-b934-54df94520ba9" />
 
-<img width="1105" height="729" alt="image" src="https://github.com/user-attachments/assets/cfe7db7d-756a-44ba-a0db-cb84eb4921fa" />
-
 
 ## Architecture
 
@@ -99,6 +97,9 @@ PGs do not own OSDs. CRUSH assigns many placement groups to each OSD pseudo-rand
 
 > This layer of indirection allows Ceph to rebalance dynamically when new Ceph OSD Daemons and the underlying OSD devices come online
 
+### CRUSH
+
+<img width="1105" height="729" alt="image" src="https://github.com/user-attachments/assets/cfe7db7d-756a-44ba-a0db-cb84eb4921fa" />
 
 ### Summary
 
