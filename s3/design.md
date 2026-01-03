@@ -88,6 +88,29 @@ You can distinct its architecture by four high-level services:
 
 <img width="699" height="464" alt="image" src="https://github.com/user-attachments/assets/b6d23e37-0fca-4fd8-a2a7-15e71ad6fec7" />
 
+## Multi-part upload
+
+> How can we optimize performance when we upload large files to object storage service such as S3?
+
+<img width="3819" height="1028" alt="image" src="https://github.com/user-attachments/assets/8d5507b6-fcdf-4bfa-810d-77f3b0a5bf5e" />
+
+<img width="341" height="377" alt="image" src="https://github.com/user-attachments/assets/4ced34f2-89ab-4035-ad59-3738e5bbc9f8" />
+
+
+* It is possible to upload such a large object file directly, but it could take a long time.
+* If the network connection fails in the middle of the upload, we have to start over.
+* A better solution is to slice a large object into smaller parts and upload them independently.
+
+<img width="2317" height="1260" alt="image" src="https://github.com/user-attachments/assets/7296c7e4-fefb-42e3-a33a-d475a0e0e2ce" />
+
+<img width="1120" height="1378" alt="image" src="https://github.com/user-attachments/assets/b655c3ea-29ca-4ff2-a6f4-41abd21f915e" />
+
+You can now break your larger objects into chunks and upload a number of chunks in parallel. If the upload of a chunk fails, you can simply restart it. You’ll be able to improve your overall upload speed by taking advantage of parallelism.
+
+Ref: https://blog.bytebytego.com/p/how-to-upload-a-large-file-to-s3 and https://aws.amazon.com/blogs/aws/amazon-s3-multipart-upload/
+
+<img width="1197" height="1179" alt="image" src="https://github.com/user-attachments/assets/bd193688-05b0-492c-856d-b62a9af9520b" />
+
 
 ### Storage Fleet
 
