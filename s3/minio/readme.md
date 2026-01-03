@@ -49,7 +49,6 @@ We will see Pools and Erasure coding in the following sections
 
 Minio adopts a decentralized shared-nothing architecture, where object data is scattered and stored on multiple hard disks on different nodes, providing unified namespace access and load balancing between servers through load balancing or DNS rounding
 
-
 ## MinIO Server Pools
 
 ![serverpools](https://github.com/user-attachments/assets/a25b361c-e253-4c06-983a-e95b4d0ae464)
@@ -59,6 +58,87 @@ A server pool is a set of minio server nodes which pool their drives and resourc
 The other important point here involves rebalance-free, non-disruptive expansion. With MinIO’s server pool approach - rebalancing is not required to expand. Ref: https://blog.min.io/no-rebalancing-object-storage/
 
 A MinIO cluster is built on server pools, and server pools are built on erasure sets.
+
+
+## Code Structure
+
+```mermaid
+graph TB
+    subgraph "1. Entry Point"
+        A[Application Entry<br/>& Initialization]
+    end
+
+    subgraph "2. HTTP Server Layer"
+        B[HTTP Server<br/>Router & Middleware]
+    end
+
+    subgraph "3. API Handler Layer"
+        C[S3 API Handlers<br/>Request Processing]
+    end
+
+    subgraph "4. Object Layer Interface"
+        D[ObjectLayer Interface<br/>Abstraction Layer]
+    end
+
+    subgraph "5. Erasure Server Pools"
+        E[Pool Manager<br/>Multi-Pool Coordination]
+    end
+
+    subgraph "6. Erasure Sets"
+        F[Set Manager<br/>Consistent Hashing]
+    end
+
+    subgraph "7. Erasure Objects"
+        G[Erasure Logic<br/>Quorum & Operations]
+    end
+
+    subgraph "8. Storage Layer"
+        H[Disk I/O<br/>File Operations]
+    end
+
+    subgraph "9. Metadata Layer"
+        I[xl.meta Management<br/>Version Control]
+    end
+
+    subgraph "10. Healing Layer"
+        J[Self-Repair<br/>Background Scanner]
+    end
+
+    subgraph "11. Erasure Coding"
+        K[Reed-Solomon<br/>Data Protection]
+    end
+
+    subgraph "12. Bitrot Protection"
+        L[Hash Verification<br/>Integrity Checks]
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
+    
+    G -.Healing.-> J
+    G -.Encoding.-> K
+    H -.Verification.-> L
+    
+    style A fill:#e1f5ff,stroke:#01579b,stroke-width:3px,color:#000
+    style B fill:#f3e5f5,stroke:#4a148c,stroke-width:3px,color:#000
+    style C fill:#e8f5e9,stroke:#1b5e20,stroke-width:3px,color:#000
+    style D fill:#fff3e0,stroke:#e65100,stroke-width:3px,color:#000
+    style E fill:#fce4ec,stroke:#880e4f,stroke-width:3px,color:#000
+    style F fill:#e0f2f1,stroke:#004d40,stroke-width:3px,color:#000
+    style G fill:#f1f8e9,stroke:#33691e,stroke-width:3px,color:#000
+    style H fill:#e3f2fd,stroke:#0d47a1,stroke-width:3px,color:#000
+    style I fill:#fef5e7,stroke:#f39c12,stroke-width:3px,color:#000
+    style J fill:#fadbd8,stroke:#c0392b,stroke-width:3px,color:#000
+    style K fill:#d5f4e6,stroke:#117a65,stroke-width:3px,color:#000
+    style L fill:#ebdef0,stroke:#6c3483,stroke-width:3px,color:#000
+```
+
 
 ## Erasure coding
 
