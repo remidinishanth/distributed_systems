@@ -250,6 +250,127 @@ graph TB
     style XLStorage fill:#f1f8e9,stroke:#33691e,stroke-width:2px,color:#000
 ```
 
+Interfaces in MinIO
+
+```mermaid
+classDiagram
+    class ObjectLayer {
+        <<interface>>
+        +GetObjectNInfo() GetObjectReader
+        +PutObject() ObjectInfo
+        +DeleteObject() ObjectInfo
+        +GetObjectInfo() ObjectInfo
+        +ListObjects() ListObjectsInfo
+        +MakeBucket() error
+        +NewMultipartUpload() NewMultipartUploadResult
+        +GetDisks() []StorageAPI
+    }
+    
+    class erasureServerPools {
+        -poolMeta poolMeta
+        -serverPools []*erasureSets
+        -deploymentID [16]byte
+        +PutObject() ObjectInfo
+        +GetObjectNInfo() GetObjectReader
+        +getPoolIdx() int
+    }
+    
+    class erasureSets {
+        -sets []*erasureObjects
+        -format *formatErasureV3
+        -erasureDisks [][]StorageAPI
+        -setCount int
+        -setDriveCount int
+        +PutObject() ObjectInfo
+        +getHashedSet() int
+    }
+    
+    class erasureObjects {
+        -setDriveCount int
+        -defaultParityCount int
+        -getDisks func()[]StorageAPI
+        -nsMutex *nsLockMap
+        +PutObject() ObjectInfo
+        +putObject() ObjectInfo
+        +defaultWQuorum() int
+        +defaultRQuorum() int
+    }
+    
+    class StorageAPI {
+        <<interface>>
+        +ReadVersion() FileInfo
+        +WriteMetadata() error
+        +DeleteVersion() error
+        +CreateFile() error
+        +ReadFile() int64
+        +MakeVol() error
+        +ListVols() []VolInfo
+        +GetDiskID() string
+        +IsOnline() bool
+    }
+    
+    class xlStorage {
+        -diskPath string
+        -endpoint Endpoint
+        -diskID string
+        -formatFile string
+        +WriteMetadata() error
+        +ReadVersion() FileInfo
+        +CreateFile() error
+        +ReadFile() int64
+    }
+    
+    class storageRESTClient {
+        -endpoint Endpoint
+        -restClient *rest.Client
+        -diskID string
+        +WriteMetadata() error
+        +ReadVersion() FileInfo
+        +CreateFile() error
+    }
+    
+    class xlStorageDiskIDCheck {
+        -storage StorageAPI
+        -diskID string
+        -healthCheck bool
+        +WriteMetadata() error
+        +ReadVersion() FileInfo
+    }
+    
+    class Erasure {
+        -encoder func()Encoder
+        -dataBlocks int
+        -parityBlocks int
+        -blockSize int64
+        +EncodeData() [][]byte
+        +DecodeDataBlocks() error
+        +ShardSize() int64
+    }
+    
+    ObjectLayer <|.. erasureServerPools : implements
+    ObjectLayer <|.. erasureSets : implements
+    ObjectLayer <|.. erasureObjects : implements
+    
+    erasureServerPools *-- erasureSets : contains
+    erasureSets *-- erasureObjects : contains
+    erasureObjects --> StorageAPI : uses
+    erasureObjects --> Erasure : uses
+    
+    StorageAPI <|.. xlStorage : implements
+    StorageAPI <|.. storageRESTClient : implements
+    StorageAPI <|.. xlStorageDiskIDCheck : implements
+    
+    xlStorageDiskIDCheck o-- StorageAPI : wraps
+    
+    style ObjectLayer fill:#e1f5ff,stroke:#01579b,stroke-width:3px,color:#000
+    style StorageAPI fill:#e1f5ff,stroke:#01579b,stroke-width:3px,color:#000
+    style erasureServerPools fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style erasureSets fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style erasureObjects fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style xlStorage fill:#f1f8e9,stroke:#33691e,stroke-width:2px,color:#000
+    style Erasure fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#000
+```
+
 ## Erasure coding
 
 * Erasure sets, built per server pool, are sets of nodes and drives to which MinIO applies erasure coding to protect data from loss and corruption. 
