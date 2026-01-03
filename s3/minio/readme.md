@@ -561,6 +561,131 @@ sequenceDiagram
 ```
 
 
+```mermaid
+graph TB
+    subgraph "Client"
+        C[PUT /mybucket/image.jpg<br/>10 MB]
+    end
+    
+    subgraph "Layer 1: HTTP Server"
+        H[HTTP Router<br/>Match route]
+    end
+    
+    subgraph "Layer 2: API Handler"
+        A[PutObjectHandler<br/>Parse request<br/>Create PutObjReader]
+    end
+    
+    subgraph "Layer 3: Server Pools"
+        SP[erasureServerPools<br/>Select Pool 0<br/>based on space]
+    end
+    
+    subgraph "Layer 4: Erasure Sets"
+        ES[erasureSets<br/>Hash object name<br/>Select Set 3]
+    end
+    
+    subgraph "Layer 5: Erasure Objects"
+        EO[erasureObjects<br/>Setup EC:12+4<br/>WriteQuorum: 12]
+    end
+    
+    subgraph "Layer 6: Encoding Loop"
+        L1[Read Block 1<br/>1 MB]
+        L2[Encode to<br/>16 shards]
+        L3[Write to<br/>16 disks]
+        L4[Check<br/>quorum]
+        L5{More<br/>blocks?}
+    end
+    
+    subgraph "Layer 7: Reed-Solomon"
+        RS[Split 1 MB into<br/>12 data shards<br/>Generate 4 parity]
+    end
+    
+    subgraph "Layer 8: Parallel Writes"
+        W1[Disk 1<br/>Write D1]
+        W2[Disk 2<br/>Write D2]
+        W3[Disk 12<br/>Write D12]
+        W4[Disk 13<br/>Write P1]
+        W5[Disk 16<br/>Write P4]
+    end
+    
+    subgraph "Layer 9: Storage API"
+        S1[xlStorage<br/>Disk 1]
+        S2[xlStorage<br/>Disk 2]
+        S3[xlStorage<br/>Disk 16]
+    end
+    
+    subgraph "Layer 10: Physical Disks"
+        D1["/disk1/<br/>part.1<br/>~875 KB"]
+        D2["/disk2/<br/>part.1<br/>~875 KB"]
+        D3["/disk16/<br/>part.1<br/>~875 KB"]
+    end
+    
+    subgraph "Metadata Write"
+        M1[Create xl.meta<br/>with FileInfo]
+        M2[Write to all<br/>16 disks]
+        M3[Check quorum<br/>12/16]
+        M4{Success?}
+    end
+    
+    subgraph "Final"
+        F1[✅ Return<br/>ObjectInfo]
+        F2[❌ Revert<br/>& Error]
+    end
+    
+    C --> H
+    H --> A
+    A --> SP
+    SP --> ES
+    ES --> EO
+    EO --> L1
+    
+    L1 --> L2
+    L2 --> RS
+    RS --> L3
+    
+    L3 --> W1
+    L3 --> W2
+    L3 --> W3
+    L3 --> W4
+    L3 --> W5
+    
+    W1 --> S1
+    W2 --> S2
+    W5 --> S3
+    
+    S1 --> D1
+    S2 --> D2
+    S3 --> D3
+    
+    W1 --> L4
+    W2 --> L4
+    W3 --> L4
+    W4 --> L4
+    W5 --> L4
+    
+    L4 --> L5
+    L5 -->|Yes| L1
+    L5 -->|No| M1
+    
+    M1 --> M2
+    M2 --> M3
+    M3 --> M4
+    
+    M4 -->|Yes| F1
+    M4 -->|No| F2
+    
+    style C fill:#e1f5ff
+    style RS fill:#fff3cd
+    style L4 fill:#fff3cd
+    style M3 fill:#fff3cd
+    style M4 fill:#fff3cd
+    style F1 fill:#d4edda
+    style F2 fill:#f8d7da
+    style D1 fill:#cfe2ff
+    style D2 fill:#cfe2ff
+    style D3 fill:#ffc9c9
+```
+
+
 ### Retrieving an Object (The GET Request)
 To retrieve data, MinIO reverses the logic used during the write process.
 
