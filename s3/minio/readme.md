@@ -140,6 +140,116 @@ graph TB
 ```
 
 
+```mermaid
+graph TB
+    subgraph "1. HTTP Server Layer"
+        HTTP[HTTP Server<br/>xhttp.NewServer]
+        Router[Mux Router<br/>mux.NewRouter]
+    end
+    
+    subgraph "2. Middleware Layer"
+        Auth[Authentication<br/>Signature V4]
+        Trace[HTTP Tracing]
+        Throttle[Request Throttling<br/>maxClients]
+        GZIP[GZIP Compression]
+    end
+    
+    subgraph "3. API Handler Layer"
+        APIHandlers[objectAPIHandlers]
+        GetObj[GetObjectHandler]
+        PutObj[PutObjectHandler]
+        DelObj[DeleteObjectHandler]
+        ListObj[ListObjectsHandler]
+    end
+    
+    subgraph "4. ObjectLayer Interface"
+        ObjInterface["<b>ObjectLayer Interface</b><br/>• GetObjectNInfo<br/>• PutObject<br/>• DeleteObject<br/>• ListObjects<br/>• GetObjectInfo<br/>• Multipart Operations"]
+    end
+    
+    subgraph "5. Erasure Server Pools"
+        ESP[erasureServerPools<br/>implements ObjectLayer]
+        Pool1[Pool 1<br/>erasureSets]
+        Pool2[Pool 2<br/>erasureSets]
+        PoolN[Pool N<br/>erasureSets]
+    end
+    
+    subgraph "6. Erasure Sets"
+        Set1[Set 1<br/>erasureObjects]
+        Set2[Set 2<br/>erasureObjects]
+        SetN[Set N<br/>erasureObjects]
+    end
+    
+    subgraph "7. Erasure Objects Layer"
+        ErasureObj[erasureObjects<br/>implements ObjectLayer]
+        ECLogic[Erasure Coding Logic<br/>Reed-Solomon]
+        Quorum[Read/Write Quorum]
+        Healing[Self-Healing]
+    end
+    
+    subgraph "8. StorageAPI Interface"
+        StorageInterface["<b>StorageAPI Interface</b><br/>• ReadVersion<br/>• WriteMetadata<br/>• DeleteVersion<br/>• ReadFile/WriteAll<br/>• Volume Operations"]
+    end
+    
+    subgraph "9. Storage Implementation"
+        XLStorage[xlStorage<br/>implements StorageAPI]
+        Remote[storageRESTClient<br/>Remote Disks]
+        DiskCheck[xlStorageDiskIDCheck<br/>Health Wrapper]
+    end
+    
+    subgraph "10. Disk Layer"
+        LocalDisk[Local Disk I/O<br/>xl.meta files]
+        RemoteDisk[Remote Disk via REST]
+        Metadata[xl.meta<br/>Object Metadata]
+    end
+    
+    HTTP --> Router
+    Router --> Auth
+    Auth --> Trace
+    Trace --> Throttle
+    Throttle --> GZIP
+    GZIP --> APIHandlers
+    APIHandlers --> GetObj
+    APIHandlers --> PutObj
+    APIHandlers --> DelObj
+    APIHandlers --> ListObj
+    
+    GetObj --> ObjInterface
+    PutObj --> ObjInterface
+    DelObj --> ObjInterface
+    ListObj --> ObjInterface
+    
+    ObjInterface --> ESP
+    ESP --> Pool1
+    ESP --> Pool2
+    ESP --> PoolN
+    
+    Pool1 --> Set1
+    Pool1 --> Set2
+    Pool1 --> SetN
+    
+    Set1 --> ErasureObj
+    ErasureObj --> ECLogic
+    ErasureObj --> Quorum
+    ErasureObj --> Healing
+    
+    ErasureObj --> StorageInterface
+    
+    StorageInterface --> XLStorage
+    StorageInterface --> Remote
+    StorageInterface --> DiskCheck
+    
+    XLStorage --> LocalDisk
+    Remote --> RemoteDisk
+    LocalDisk --> Metadata
+    RemoteDisk --> Metadata
+    
+    style ObjInterface fill:#e1f5ff,stroke:#01579b,stroke-width:3px,color:#000
+    style StorageInterface fill:#e1f5ff,stroke:#01579b,stroke-width:3px,color:#000
+    style ESP fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style ErasureObj fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style XLStorage fill:#f1f8e9,stroke:#33691e,stroke-width:2px,color:#000
+```
+
 ## Erasure coding
 
 * Erasure sets, built per server pool, are sets of nodes and drives to which MinIO applies erasure coding to protect data from loss and corruption. 
