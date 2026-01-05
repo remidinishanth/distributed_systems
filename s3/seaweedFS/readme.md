@@ -19,6 +19,11 @@ Ref: https://github.com/seaweedfs/seaweedfs/wiki/Components
 
 Ref: https://github.com/seaweedfs/seaweedfs/wiki/Volume-Files-Structure
 
+### S3 changes
+
 <img width="836" height="378" alt="image" src="https://github.com/user-attachments/assets/21b8445f-10de-443b-a1d3-7816c2ec7d02" />
+
+<img width="836" height="568" alt="image" src="https://github.com/user-attachments/assets/5a972039-601c-4fe8-b407-55e7920be026" />
+
 
 Ref: SeaweedFS S3 API in 2025: Enterprise‑grade security and control - Chris Lu, SeaweedFS KubeCon
