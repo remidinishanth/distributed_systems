@@ -191,7 +191,7 @@ RGW vs RADOS Object
 
 <img width="991" height="597" alt="image" src="https://github.com/user-attachments/assets/b29c7c58-9159-4849-a225-f79fb47e4119" />
 
-We use bucket id instead of bucket name, because users can rename bucket
+Ceph uses bucket id instead of name
 
 <img width="640" height="362" alt="image" src="https://github.com/user-attachments/assets/e34916ef-f061-46bc-adda-3206980f282f" />
 
