@@ -22,6 +22,9 @@ NFS and SMB are protocols of NAS
 
 The NAS device itself is a network node—much like computers and other TCP/IP devices, all of which maintain their own IP address—and the NAS file service uses the ethernet network to send and receive files. 
 
+<img width="1147" height="801" alt="image" src="https://github.com/user-attachments/assets/fa3f7913-13e6-4d51-b0d2-e80ad68e00b4" />
+
+
 This system employs protocols like 
 * Network File System (NFS) and
 * Server Message Block (SMB),
@@ -31,6 +34,10 @@ enabling seamless data exchange between multiple users.
 <img width="864" height="547" alt="image" src="https://github.com/user-attachments/assets/652a82bc-a808-42e6-83b0-740265f75f56" />
 
 <img width="1280" height="1848" alt="image" src="https://github.com/user-attachments/assets/d38576a0-f4ff-47af-91a9-8ce3e6d596a6" />
+
+
+<img width="1160" height="865" alt="image" src="https://github.com/user-attachments/assets/4d67bfae-e42f-4e09-ab68-9ba5f30f100a" />
+
 
 ### NFS
 <img width="1406" height="1300" alt="image" src="https://github.com/user-attachments/assets/1fe90ffd-4383-41be-8e10-388ee7a2b505" />
