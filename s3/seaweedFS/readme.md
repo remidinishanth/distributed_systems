@@ -32,7 +32,6 @@ Ref: https://gear.hermygong.com/p/seaweeds/
 
 <img width="1554" height="742" alt="image" src="https://github.com/user-attachments/assets/d51248cb-6c91-4203-bdcb-ebfb3f55006b" />
 
-
 ### Volume Server
 
 In SeaweedFS, a volume is a single file consisting of many small files. When a master server starts, it sets the volume file maximum size to 30GB (see: -volumeSizeLimitMB). At volume server initialization, it will create 8 of these volumes (see: -max).
