@@ -31,6 +31,13 @@ The NAS device itself is a network node—much like computers and other TCP/IP d
 
 <img width="1160" height="865" alt="image" src="https://github.com/user-attachments/assets/4d67bfae-e42f-4e09-ab68-9ba5f30f100a" />
 
+Components of NAS
+
+<img width="1166" height="767" alt="image" src="https://github.com/user-attachments/assets/a8cd97eb-3a85-4d78-b093-0a01b1b15d5c" />
+
+<img width="1106" height="748" alt="image" src="https://github.com/user-attachments/assets/7452ae7c-cd83-4221-b6f9-f50666b46be8" />
+
+
 This system employs protocols like 
 * Network File System (NFS) and
 * Server Message Block (SMB),
@@ -42,6 +49,8 @@ enabling seamless data exchange between multiple users.
 
 ### NFS
 <img width="1406" height="1300" alt="image" src="https://github.com/user-attachments/assets/1fe90ffd-4383-41be-8e10-388ee7a2b505" />
+
+<img width="1166" height="757" alt="image" src="https://github.com/user-attachments/assets/960eda70-8d53-4bc7-9fc2-d632a0d28aa4" />
 
 
 #### SMB
