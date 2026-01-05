@@ -10,3 +10,11 @@ In SeaweedFS, a volume is a single file consisting of many small files. When a m
 Each volume has its own TTL and replication.
 
 Ref: https://github.com/seaweedfs/seaweedfs/wiki/Components
+
+### Volume Files Structure
+
+<img width="1104" height="1226" alt="image" src="https://github.com/user-attachments/assets/194e12d8-78fe-403d-b6af-346baec95f85" />
+
+<img width="1944" height="774" alt="image" src="https://github.com/user-attachments/assets/3fcd6b47-609d-4463-9e28-2aa8cdd2e706" />
+
+Ref: https://github.com/seaweedfs/seaweedfs/wiki/Volume-Files-Structure
