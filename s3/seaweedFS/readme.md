@@ -13,6 +13,9 @@ Ref: https://gear.hermygong.com/p/seaweeds/
 
 <img width="1554" height="765" alt="image" src="https://github.com/user-attachments/assets/fba8e5cd-88d5-4b19-81eb-ef989d5dd1bd" />
 
+<img width="1024" height="590" alt="image" src="https://github.com/user-attachments/assets/cbe79b6d-8e2f-47c0-b4e4-a827891e458d" />
+
+
 ### Read
 
 <img width="1554" height="752" alt="image" src="https://github.com/user-attachments/assets/4b15a1cc-f7f4-4671-b42c-d2529415fccf" />
