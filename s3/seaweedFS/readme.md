@@ -20,6 +20,9 @@ Ref: https://gear.hermygong.com/p/seaweeds/
 
 <img width="1554" height="752" alt="image" src="https://github.com/user-attachments/assets/4b15a1cc-f7f4-4671-b42c-d2529415fccf" />
 
+<img width="1024" height="709" alt="image" src="https://github.com/user-attachments/assets/61d72d8c-f829-415d-80e9-ae28b70a7b9f" />
+
+
 ## File Storage
 
 <img width="1554" height="742" alt="image" src="https://github.com/user-attachments/assets/f530b26e-f825-4c44-ac3e-a048feb44164" />
