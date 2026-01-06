@@ -35,6 +35,15 @@ Other Blobstore operations
 
 ## File Storage
 
+<img width="1157" height="577" alt="image" src="https://github.com/user-attachments/assets/96678169-fcde-4f50-a97d-aeba4632cd9f" />
+
+Filer Architecture
+
+<img width="1157" height="555" alt="image" src="https://github.com/user-attachments/assets/cffd90ce-2a70-4bb5-887a-92734a82bf4f" />
+
+<img width="1090" height="508" alt="image" src="https://github.com/user-attachments/assets/3638b85c-4cba-4e32-b7fb-6fe2c1760313" />
+
+
 <img width="1024" height="666" alt="image" src="https://github.com/user-attachments/assets/15a14a26-c4e9-4723-a1b8-1a9a18d5ffec" />
 Ref: https://www.a-programmer.top/2021/06/19/SeaweedFS%E5%88%9D%E6%8E%A2/
 
@@ -79,6 +88,13 @@ Ref: https://github.com/seaweedfs/seaweedfs/wiki/Components
 <img width="1944" height="774" alt="image" src="https://github.com/user-attachments/assets/3fcd6b47-609d-4463-9e28-2aa8cdd2e706" />
 
 Ref: https://github.com/seaweedfs/seaweedfs/wiki/Volume-Files-Structure
+
+## Replication
+
+<img width="1111" height="603" alt="image" src="https://github.com/user-attachments/assets/4bd33da7-c396-4de4-b775-18a834225894" />
+
+<img width="1157" height="497" alt="image" src="https://github.com/user-attachments/assets/22d6410c-b393-46de-84e4-fa412c26629b" />
+
 
 ### S3 changes
 
