@@ -35,8 +35,10 @@ Ref: https://www.a-programmer.top/2021/06/19/SeaweedFS%E5%88%9D%E6%8E%A2/
 
 <img width="1180" height="644" alt="image" src="https://github.com/user-attachments/assets/a78f14d7-8e56-4816-acab-2d00dd4740a4" />
 
-
 <img width="1554" height="742" alt="image" src="https://github.com/user-attachments/assets/f530b26e-f825-4c44-ac3e-a048feb44164" />
+
+<img width="1113" height="498" alt="image" src="https://github.com/user-attachments/assets/ddb0eccf-0dbd-4c37-a8af-6cfa2d413a06" />
+
 
 ## Design Philosophy
 
