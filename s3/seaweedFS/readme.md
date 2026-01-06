@@ -13,6 +13,11 @@ Ref: https://gear.hermygong.com/p/seaweeds/
 
 <img width="1180" height="622" alt="image" src="https://github.com/user-attachments/assets/b431b55a-1d41-4a39-a116-50192cb66558" />
 
+<img width="1136" height="476" alt="image" src="https://github.com/user-attachments/assets/424ce6e2-017b-41b9-ace1-1a953bb231db" />
+
+Other Blobstore operations
+<img width="1136" height="547" alt="image" src="https://github.com/user-attachments/assets/e900b20c-8c09-42fe-8286-64735ee21edf" />
+
 
 ### Write
 
@@ -54,6 +59,10 @@ Ref: https://www.a-programmer.top/2021/06/19/SeaweedFS%E5%88%9D%E6%8E%A2/
 ### Volume Server
 
 <img width="1113" height="547" alt="image" src="https://github.com/user-attachments/assets/f38a01a2-9da2-4040-8395-616f163e674b" />
+
+Volume
+<img width="1136" height="450" alt="image" src="https://github.com/user-attachments/assets/b3c9bd8c-2b69-47e2-a382-2a4aab239613" />
+
 
 <img width="856" height="569" alt="image" src="https://github.com/user-attachments/assets/bf432e51-7953-4b85-a1fc-6c0f4cdf7498" />
 
