@@ -78,6 +78,10 @@ Log Replication
 
 <img width="711" height="680" alt="image" src="https://github.com/user-attachments/assets/024d4d9d-506a-4b92-9dc3-be0b5502bdc7" />
 
+Possible logs of followers
+
+<img width="564" height="650" alt="image" src="https://github.com/user-attachments/assets/bfc52954-7026-4d01-895f-dc3a56fc874f" />
+
 
 ## Summary
 
