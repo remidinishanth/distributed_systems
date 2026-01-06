@@ -11,10 +11,19 @@ State machine replication
 
 > Goal: Create a fault-tolerant distributed algorithm that enables a set of processes to agree on a sequence of events.
 
-
 Distributed Consensus
 * Distributed = Many nodes
 * Consensus = Agreement on something
+
+## Why do we need consensus?
+
+* Consensus, or distributed agreement, is a recurring problem in distributed systems design.
+* It is useful for things such as
+  - mutual exclusion, where all processes agree on who has exclusive access to a resource, and
+  - leader election, where a group of processes has to decide which of them is in charge.
+* Perhaps most importantly, consensus plays a pivotal role in building replicated state machines.
+
+Ref: https://pk.org/classes/417/notes/raft.html
 
 ## Use cases:
 
