@@ -25,3 +25,9 @@ TODO:
 
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/b41c42fc-4763-40d5-a14e-cf03444cc44f)
+
+
+<img width="1380" height="377" alt="image" src="https://github.com/user-attachments/assets/ec5f875a-93da-4e72-9f42-0bd8d97be782" />
+
+
+Ref: https://dancres.github.io/Pages/
