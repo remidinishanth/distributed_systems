@@ -9,6 +9,7 @@ TODO: http://www.scs.stanford.edu/20sp-cs244b/notes/
 TODO: https://cs61.seas.harvard.edu/site/2025/Datarep/
 
 TODO:
+* How to use RAFT to build distributed database https://notes.eatonphil.com/minimal-key-value-store-with-hashicorp-raft.html 
 * https://vladmihalcea.com/how-does-mvcc-multi-version-concurrency-control-work/
 * https://deepaksood619.github.io/databases/concepts/isolation-levels/
 * DB WAL https://sqlite.org/wal.html and https://github.com/rosedblabs/wal?tab=readme-ov-file
