@@ -56,10 +56,16 @@ Terms
 <img width="1161" height="616" alt="image" src="https://github.com/user-attachments/assets/06e947bd-221b-46c7-bc8c-a93ef8911acd" />
 
 Server State transitions
+
 <img width="1034" height="700" alt="image" src="https://github.com/user-attachments/assets/616004c8-3406-442d-bb4b-18b315f3990b" />
+
+Heartbeat and Timeout
+
+<img width="777" height="314" alt="image" src="https://github.com/user-attachments/assets/b44b9b83-1b5d-49d4-93f7-62d1da6ebab8" />
 
 
 <img width="1161" height="611" alt="image" src="https://github.com/user-attachments/assets/9cc78e4b-7c39-4fa0-b016-4395e7fa28ca" />
+
 
 <img width="1161" height="535" alt="image" src="https://github.com/user-attachments/assets/faffeae8-a279-4818-93ad-023504c71678" />
 
