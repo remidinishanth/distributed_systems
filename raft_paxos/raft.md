@@ -25,10 +25,6 @@ Distributed Consensus
 
 Ref: https://pk.org/classes/417/notes/raft.html
 
-## Use cases:
-
-<img width="714" height="447" alt="image" src="https://github.com/user-attachments/assets/f0796aec-05bd-4a21-aecf-d4d865532ee8" />
-
 ## Raft
 
 <img width="1145" height="551" alt="image" src="https://github.com/user-attachments/assets/a8cd3dbe-2ca0-459b-9b54-fb1df8a36cf1" />
