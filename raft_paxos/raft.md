@@ -82,6 +82,8 @@ Possible logs of followers
 
 <img width="564" height="650" alt="image" src="https://github.com/user-attachments/assets/bfc52954-7026-4d01-895f-dc3a56fc874f" />
 
+<img width="564" height="666" alt="image" src="https://github.com/user-attachments/assets/959b8015-9aa3-4bbe-8d4e-6a365d1865ce" />
+
 
 ## Summary
 
