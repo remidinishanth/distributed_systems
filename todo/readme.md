@@ -17,6 +17,7 @@ TODO:
 * The Architecture of Open Source Applications https://aosabook.org/en/
 * K8s informers https://medium.com/@jeevanragula/demystifying-kubernetes-informer-streamlining-event-driven-workflows-955285166993
 * Distributed systems https://www.andrew.cmu.edu/course/15-440-kesden/applications/lecture.html and https://pdos.csail.mit.edu/6.824/schedule.html
-* Linux OS internals https://www.cs.unc.edu/~porter/courses/comp630/s24/syllabus.html and 
+* Linux OS internals https://www.cs.unc.edu/~porter/courses/comp630/s24/syllabus.html and
+* https://bytebytego.com/courses/system-design-interview/real-time-gaming-leaderboard
 
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/b41c42fc-4763-40d5-a14e-cf03444cc44f)
