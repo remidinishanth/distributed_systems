@@ -21,4 +21,7 @@ TODO:
 * Linux OS internals https://www.cs.unc.edu/~porter/courses/comp630/s24/syllabus.html and
 * https://bytebytego.com/courses/system-design-interview/real-time-gaming-leaderboard
 
+<img width="800" height="1000" alt="image" src="https://github.com/user-attachments/assets/9fae0a2e-2cde-4906-b61c-133ffae6feb7" />
+
+
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/b41c42fc-4763-40d5-a14e-cf03444cc44f)
