@@ -59,7 +59,7 @@ Terms
 
 <img width="1161" height="616" alt="image" src="https://github.com/user-attachments/assets/06e947bd-221b-46c7-bc8c-a93ef8911acd" />
 
-State diagram
+Server State transitions
 <img width="1034" height="700" alt="image" src="https://github.com/user-attachments/assets/616004c8-3406-442d-bb4b-18b315f3990b" />
 
 
@@ -72,6 +72,11 @@ Log Replication
 <img width="1161" height="535" alt="image" src="https://github.com/user-attachments/assets/d54114ee-6a0a-4bce-9679-1ef61262b176" />
 
 <img width="1161" height="580" alt="image" src="https://github.com/user-attachments/assets/ae759b98-13d1-458d-a837-3632f600ca42" />
+
+<img width="1157" height="528" alt="image" src="https://github.com/user-attachments/assets/091eda39-0d12-4df6-a7f1-cd035bc2d1d3" />
+
+
+<img width="711" height="680" alt="image" src="https://github.com/user-attachments/assets/024d4d9d-506a-4b92-9dc3-be0b5502bdc7" />
 
 
 ## Summary
