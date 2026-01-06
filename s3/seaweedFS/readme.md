@@ -43,7 +43,6 @@ Filer Architecture
 
 <img width="1090" height="508" alt="image" src="https://github.com/user-attachments/assets/3638b85c-4cba-4e32-b7fb-6fe2c1760313" />
 
-
 <img width="1024" height="666" alt="image" src="https://github.com/user-attachments/assets/15a14a26-c4e9-4723-a1b8-1a9a18d5ffec" />
 Ref: https://www.a-programmer.top/2021/06/19/SeaweedFS%E5%88%9D%E6%8E%A2/
 
@@ -53,19 +52,12 @@ Ref: https://www.a-programmer.top/2021/06/19/SeaweedFS%E5%88%9D%E6%8E%A2/
 
 <img width="1113" height="498" alt="image" src="https://github.com/user-attachments/assets/ddb0eccf-0dbd-4c37-a8af-6cfa2d413a06" />
 
+### Filer Store Data Model
 
-## Design Philosophy
-
-<img width="1296" height="433" alt="image" src="https://github.com/user-attachments/assets/5f48b0c7-4ab5-476d-a47f-814349f29d88" />
+<img width="2230" height="1056" alt="image" src="https://github.com/user-attachments/assets/67623e7a-9a55-4448-a9ee-7138d8691486" />
 
 
-## High Availability
-
-<img width="1554" height="742" alt="image" src="https://github.com/user-attachments/assets/efef40ca-d4b9-4d23-ad2e-7103cb2d2275" />
-
-<img width="1554" height="742" alt="image" src="https://github.com/user-attachments/assets/d51248cb-6c91-4203-bdcb-ebfb3f55006b" />
-
-### Volume Server
+## Volume Server
 
 <img width="1113" height="547" alt="image" src="https://github.com/user-attachments/assets/f38a01a2-9da2-4040-8395-616f163e674b" />
 
@@ -89,6 +81,21 @@ Ref: https://github.com/seaweedfs/seaweedfs/wiki/Components
 
 Ref: https://github.com/seaweedfs/seaweedfs/wiki/Volume-Files-Structure
 
+## Architecture
+
+<img width="2020" height="1280" alt="image" src="https://github.com/user-attachments/assets/0a79d086-f742-431e-9d37-f62f5ce38bcf" />
+
+## Design Philosophy
+
+<img width="1296" height="433" alt="image" src="https://github.com/user-attachments/assets/5f48b0c7-4ab5-476d-a47f-814349f29d88" />
+
+## High Availability
+
+<img width="1554" height="742" alt="image" src="https://github.com/user-attachments/assets/efef40ca-d4b9-4d23-ad2e-7103cb2d2275" />
+
+<img width="1554" height="742" alt="image" src="https://github.com/user-attachments/assets/d51248cb-6c91-4203-bdcb-ebfb3f55006b" />
+
+
 ## Replication
 
 <img width="1111" height="603" alt="image" src="https://github.com/user-attachments/assets/4bd33da7-c396-4de4-b775-18a834225894" />
@@ -96,7 +103,7 @@ Ref: https://github.com/seaweedfs/seaweedfs/wiki/Volume-Files-Structure
 <img width="1157" height="497" alt="image" src="https://github.com/user-attachments/assets/22d6410c-b393-46de-84e4-fa412c26629b" />
 
 
-### S3 changes
+## S3 changes
 
 <img width="836" height="378" alt="image" src="https://github.com/user-attachments/assets/21b8445f-10de-443b-a1d3-7816c2ec7d02" />
 
