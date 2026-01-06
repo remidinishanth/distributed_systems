@@ -20,6 +20,11 @@ TODO:
 * Distributed systems https://www.andrew.cmu.edu/course/15-440-kesden/applications/lecture.html and https://pdos.csail.mit.edu/6.824/schedule.html
 * Linux OS internals https://www.cs.unc.edu/~porter/courses/comp630/s24/syllabus.html and
 * https://bytebytego.com/courses/system-design-interview/real-time-gaming-leaderboard
+* Understand how to use bazel for building things
+  - get a deeper understaning
+* Understand pytest framework in a deeper level
+* Learn shell commands properly, cut, awk, grep, zgrep, for loop, sed, running commands
+
 
 <img width="800" height="1000" alt="image" src="https://github.com/user-attachments/assets/9fae0a2e-2cde-4906-b61c-133ffae6feb7" />
 
