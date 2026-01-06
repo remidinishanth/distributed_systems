@@ -83,6 +83,9 @@ A log entry is committed once the leader that created the entry has replicated i
 
 <img width="1148" height="582" alt="image" src="https://github.com/user-attachments/assets/f018d967-acc5-4019-96c3-82f9bbc101b3" />
 
+Invariants
+<img width="600" height="533" alt="image" src="https://github.com/user-attachments/assets/2dcc7be5-8708-4d7d-9d24-e43ac995ef07" />
+
 
 ## Summary
 
