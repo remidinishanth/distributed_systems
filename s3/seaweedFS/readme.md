@@ -7,9 +7,12 @@ Ref: https://gear.hermygong.com/p/seaweeds/
 
 ## Blob storage
 
-<img width="1554" height="732" alt="image" src="https://github.com/user-attachments/assets/8a9df9d6-f6a9-428d-b5a2-d47fb3dc243a" />
+<img width="1158" height="557" alt="image" src="https://github.com/user-attachments/assets/a7c602b1-bc3d-4729-9e8f-d976712db515" />
 
-<img width="1554" height="835" alt="image" src="https://github.com/user-attachments/assets/5d23436b-e7cd-474d-95f7-ac6ca5d481cf" />
+<img width="1184" height="603" alt="image" src="https://github.com/user-attachments/assets/82bb0567-4294-47dc-99b4-dfe0ca190723" />
+
+<img width="1180" height="622" alt="image" src="https://github.com/user-attachments/assets/b431b55a-1d41-4a39-a116-50192cb66558" />
+
 
 ### Write
 
