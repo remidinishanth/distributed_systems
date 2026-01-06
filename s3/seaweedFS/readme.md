@@ -56,6 +56,8 @@ Ref: https://www.a-programmer.top/2021/06/19/SeaweedFS%E5%88%9D%E6%8E%A2/
 
 <img width="2230" height="1056" alt="image" src="https://github.com/user-attachments/assets/67623e7a-9a55-4448-a9ee-7138d8691486" />
 
+<img width="281" height="344" alt="image" src="https://github.com/user-attachments/assets/b6fd9c41-f1f0-4fc3-af2d-369f928d13d6" />
+
 
 ## Volume Server
 
