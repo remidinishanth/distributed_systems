@@ -214,3 +214,41 @@ sequenceDiagram
         S3API-->>Client: data (streaming passthrough)
     end
 ```
+
+### How Large file is written to S3?
+
+```mermiad
+sequenceDiagram
+    autonumber
+    participant C as Client
+    participant S3 as S3 API Server
+    participant F as Filer
+    participant M as Master
+    participant V1 as Volume Server 1
+    participant V2 as Volume Server 2
+
+    Note over V1,M: Periodically send heartbeats to Master
+    
+    C->>S3: PUT /bucket/object (4GB stream)
+    
+    Note over S3: Stream data, chunk in 8MB buffers<br/>(max 4 buffers = 32MB)
+    
+    rect rgb(240, 248, 255)
+        Note over S3,V2: Repeat for each 8MB chunk (streaming)
+        S3->>F: AssignVolume (gRPC)
+        F->>M: Assign request
+        M-->>F: Return Fid + Volume URL
+        F-->>S3: Return Fid + Volume URL
+        S3->>V1: POST chunk data (HTTP)
+        V1->>V2: Replicate
+        Note over V1,V2: Strong consistency:<br/>response after replication completes
+        V2-->>V1: Ack
+        V1-->>S3: Return chunk size + ETag
+    end
+    
+    Note over S3: All chunks uploaded,<br/>collect FileChunk metadata
+    
+    S3->>F: CreateEntry (gRPC)<br/>(path, chunks[], attributes)
+    F-->>S3: Success
+    S3-->>C: 200 OK + ETag
+```
