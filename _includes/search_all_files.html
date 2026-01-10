@@ -11,22 +11,30 @@ window.simpleSearchData = [
   {% assign all_searchable_files = site.pages | where_exp: "page", "page.path contains '.md'" | where_exp: "page", "page.path != 'topics.md'" | where_exp: "page", "page.path != 'index.md'" | where_exp: "page", "page.path != 'about.md'" | where_exp: "page", "page.name != 'JEKYLL_SETUP.md'" | where_exp: "page", "page.name != 'PR_INSTRUCTIONS.md'" %}
   {% for file in all_searchable_files %}
   {
-    "title": "{{ file.title | default: file.name | replace: '.md', '' | replace: '_', ' ' | replace: '-', ' ' | capitalize | jsonify }}",
-    "url": "{{ file.url | relative_url | jsonify }}",
-    "path": "{{ file.path | jsonify }}"
+    title: {{ file.title | default: file.name | replace: '.md', '' | replace: '_', ' ' | replace: '-', ' ' | capitalize | jsonify }},
+    url: {{ file.url | relative_url | jsonify }},
+    path: {{ file.path | jsonify }}
   }{% unless forloop.last %},{% endunless %}
   {% endfor %}
 ];
+
+console.log('Search data loaded:', window.simpleSearchData);
 
 // Simple search
 document.addEventListener('DOMContentLoaded', function() {
   const input = document.getElementById('simple-search');
   const results = document.getElementById('simple-results');
 
-  if (!input || !results) return;
+  if (!input || !results) {
+    console.error('Search elements not found');
+    return;
+  }
+
+  console.log('Search initialized');
 
   input.addEventListener('input', function() {
     const query = this.value.trim().toLowerCase();
+    console.log('Search query:', query);
 
     if (query.length < 2) {
       results.style.display = 'none';
@@ -37,6 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
       file.title.toLowerCase().includes(query) ||
       file.path.toLowerCase().includes(query)
     ).slice(0, 10);
+
+    console.log('Matches found:', matches.length);
 
     if (matches.length > 0) {
       results.innerHTML = matches.map(file =>
