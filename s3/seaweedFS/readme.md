@@ -114,6 +114,7 @@ Ref: https://github.com/seaweedfs/seaweedfs/wiki/Volume-Files-Structure
 Ref: SeaweedFS S3 API in 2025: Enterprise‑grade security and control - Chris Lu, SeaweedFS KubeCon
 
 Changes related to this `S3 data path skips filer`  https://github.com/seaweedfs/seaweedfs/pull/7481
+* Check this file `weed/s3api/s3api_object_handlers_put.go` previously it used Filer Proxy `proxyReq, err := http.NewRequest(http.MethodPut, uploadUrl, body)`, now S3 api directly talks to volume server
 
 <img width="1000" height="938" alt="image" src="https://github.com/user-attachments/assets/49020b3f-1779-453c-8d6d-cf249b5a2ae0" />
 
