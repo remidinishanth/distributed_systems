@@ -118,6 +118,33 @@ Changes related to this `S3 data path skips filer`  https://github.com/seaweedfs
 
 <img width="1000" height="938" alt="image" src="https://github.com/user-attachments/assets/49020b3f-1779-453c-8d6d-cf249b5a2ae0" />
 
+Change
+
+```mermaid
+
+flowchart TB
+    subgraph OLD["Before v4.01"]
+        direction TB
+        C1[S3 Client] --> S1[S3 API Server]
+        S1 -->|"HTTP proxy<br/>ALL data + metadata"| F1[Filer]
+        F1 -->|"Read/Write data"| V1[Volume Server]
+        
+        style F1 fill:#cc4444,color:#fff
+        style S1 fill:#4466aa,color:#fff
+    end
+
+    subgraph NEW["NEW Architecture (v4.01+)"]
+        direction TB
+        C2[S3 Client] --> S2[S3 API Server]
+        S2 -->|"gRPC<br/>metadata only"| F2[Filer]
+        S2 -->|"HTTP direct<br/>data streaming"| V2[Volume Server]
+        
+        style F2 fill:#44aa66,color:#fff
+        style S2 fill:#4466aa,color:#fff
+        style V2 fill:#44aa66,color:#fff
+    end
+```
+
 ### Write Path
 
 ```mermaid
