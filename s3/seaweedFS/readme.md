@@ -217,7 +217,7 @@ sequenceDiagram
 
 ### How Large file is written to S3?
 
-```mermiad
+```mermaid
 sequenceDiagram
     autonumber
     participant C as Client
