@@ -1,4 +1,6 @@
-Ref: https://www.codesmith.io/blog/amazon-s3-storage-diagramming-system-design
+Ref: 
+* https://www.codesmith.io/blog/amazon-s3-storage-diagramming-system-design
+* https://www.allthingsdistributed.com/2023/07/building-and-operating-a-pretty-big-storage-system.html
 
 <img width="1168" height="610" alt="image" src="https://github.com/user-attachments/assets/b8dc2118-d57d-4169-8657-ee3b391a6b11" />
 
