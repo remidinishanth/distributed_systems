@@ -1,9 +1,3 @@
----
-layout: page
-title: "TODO
-category: "indexing"
----
-
 * Ref: https://www.baeldung.com/lucene
 * https://j.blaszyk.me/tech-blog/exploring-apache-lucene-index/
 
