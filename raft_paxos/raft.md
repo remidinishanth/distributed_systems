@@ -92,6 +92,9 @@ Possible logs of followers
 
 <img width="1148" height="582" alt="image" src="https://github.com/user-attachments/assets/f018d967-acc5-4019-96c3-82f9bbc101b3" />
 
+<img width="1280" height="719" alt="image" src="https://github.com/user-attachments/assets/c52c5ffd-1b5f-4901-840c-96b301445ea7" />
+
+
 Invariants
 
 <img width="600" height="533" alt="image" src="https://github.com/user-attachments/assets/2dcc7be5-8708-4d7d-9d24-e43ac995ef07" />
