@@ -115,6 +115,8 @@ Ref: SeaweedFS S3 API in 2025: Enterprise‑grade security and control - Chris L
 
 Changes related to this `S3 data path skips filer`  https://github.com/seaweedfs/seaweedfs/pull/7481
 
+<img width="1000" height="938" alt="image" src="https://github.com/user-attachments/assets/49020b3f-1779-453c-8d6d-cf249b5a2ae0" />
+
 ### Write Path
 
 ```mermaid
@@ -184,6 +186,3 @@ sequenceDiagram
         S3API-->>Client: data (streaming passthrough)
     end
 ```
-
-
-<img width="1000" height="938" alt="image" src="https://github.com/user-attachments/assets/49020b3f-1779-453c-8d6d-cf249b5a2ae0" />
