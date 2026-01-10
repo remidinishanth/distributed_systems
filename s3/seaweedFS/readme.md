@@ -111,5 +111,79 @@ Ref: https://github.com/seaweedfs/seaweedfs/wiki/Volume-Files-Structure
 
 <img width="836" height="568" alt="image" src="https://github.com/user-attachments/assets/5a972039-601c-4fe8-b407-55e7920be026" />
 
-
 Ref: SeaweedFS S3 API in 2025: Enterprise‑grade security and control - Chris Lu, SeaweedFS KubeCon
+
+Changes related to this `S3 data path skips filer`  https://github.com/seaweedfs/seaweedfs/pull/7481
+
+### Write Path
+
+```mermaid
+sequenceDiagram
+    participant Client as S3 Client
+    participant S3API as S3 API Server
+    participant Filer as Filer (gRPC)
+    participant Volume as Volume Server
+
+    Note over Client,Volume: PUT Object - Direct Volume Access
+
+    Client->>S3API: PUT /bucket/key (data)
+    
+    rect rgb(50, 80, 50)
+        Note right of S3API: Step 1: Get Volume Assignment
+        S3API->>Filer: AssignVolume (gRPC)
+        Filer-->>S3API: {volumeId, fileId, url, JWT}
+    end
+
+    rect rgb(50, 50, 100)
+        Note right of S3API: Step 2: Upload Data DIRECTLY
+        loop For each 8MB chunk
+            S3API->>Volume: POST http://volume:8080/{fid} (chunk data + JWT)
+            Volume-->>S3API: {size, eTag, fid}
+        end
+    end
+
+    rect rgb(80, 50, 50)
+        Note right of S3API: Step 3: Save Metadata Only
+        S3API->>Filer: CreateEntry (gRPC)
+        Note over Filer: Stores: chunks[], size,<br/>ETag, SSE metadata,<br/>user metadata, etc.
+        Filer-->>S3API: OK
+    end
+
+    S3API-->>Client: 200 OK + ETag
+```
+
+### Read Path
+
+```mermaid
+sequenceDiagram
+    participant Client as S3 Client
+    participant S3API as S3 API Server
+    participant Filer as Filer (gRPC)
+    participant Volume as Volume Server
+
+    Note over Client,Volume: GET Object - Direct Volume Access
+
+    Client->>S3API: GET /bucket/key
+
+    rect rgb(80, 50, 50)
+        Note right of S3API: Step 1: Fetch Metadata Only
+        S3API->>Filer: LookupDirectoryEntry (gRPC)
+        Filer-->>S3API: Entry{chunks[], size, attrs, extended}
+    end
+
+    rect rgb(50, 80, 50)
+        Note right of S3API: Step 2: Resolve Volume URLs
+        Note over S3API: Uses FilerClient's<br/>cached vidMap<br/>(no gRPC per chunk!)
+        S3API->>S3API: lookupFileIdFn(volumeId)
+    end
+
+    rect rgb(50, 50, 100)
+        Note right of S3API: Step 3: Stream Data DIRECTLY
+        S3API->>Volume: GET http://volume:8080/{fid} + JWT
+        Volume-->>S3API: chunk data (streaming)
+        S3API-->>Client: data (streaming passthrough)
+    end
+```
+
+
+<img width="1000" height="938" alt="image" src="https://github.com/user-attachments/assets/49020b3f-1779-453c-8d6d-cf249b5a2ae0" />
