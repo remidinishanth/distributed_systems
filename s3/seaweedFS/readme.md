@@ -30,7 +30,7 @@ Other Blobstore operations
 
 <img width="1554" height="752" alt="image" src="https://github.com/user-attachments/assets/4b15a1cc-f7f4-4671-b42c-d2529415fccf" />
 
-<img width="1024" height="709" alt="image" src="https://github.com/user-attachments/assets/61d72d8c-f829-415d-80e9-ae28b70a7b9f" />
+<img width="1024" height="709" alt="image" src="https://github.com/user-attachments/assets/735bfe02-ff1a-43cd-b4c1-47a91003b3aa" />
 
 
 ## File Storage
