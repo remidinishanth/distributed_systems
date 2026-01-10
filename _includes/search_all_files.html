@@ -50,7 +50,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (matches.length > 0) {
       results.innerHTML = matches.map(file =>
-        `<div><a href="${file.url}">${file.title}</a></div>`
+        `<div class="search-result-item">
+          <a href="${file.url}">${file.title}</a>
+          <span class="search-result-path">${file.path}</span>
+        </div>`
       ).join('');
       results.style.display = 'block';
     } else {
