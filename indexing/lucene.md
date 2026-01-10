@@ -1,6 +1,8 @@
 ---
 layout: page
 title: "TODO
+category: "indexing"
+---
 
 * Ref: https://www.baeldung.com/lucene
 * https://j.blaszyk.me/tech-blog/exploring-apache-lucene-index/
@@ -28,8 +30,6 @@ During the indexing process, Elasticsearch stores documents and builds an invert
 ![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/bd2a4323-1067-4f08-b41d-3fe723dc5e4d)
 
 Ref: https://www.elastic.co/what-is/elasticsearch"
-category: "indexing"
----
 
 ### Indexing
 Simply put, Lucene uses an “inverted indexing” of data – instead of mapping pages to keywords, it maps keywords to pages just like a glossary at the end of any book.
