@@ -92,6 +92,17 @@ Possible logs of followers
 
 <img width="1148" height="582" alt="image" src="https://github.com/user-attachments/assets/f018d967-acc5-4019-96c3-82f9bbc101b3" />
 
+how does a server learn about a newly elected leader?
+* the leader sends out AppendEntries heart-beats with the new higher term number
+* only the leader sends AppendEntries
+    - only one leader per term
+    - so if you see AppendEntries with term T, you know who the leader for T is
+* the heart-beats suppress any new election
+    - leader must send heart-beats more often than the election timeout
+ 
+
+Timeline
+
 <img width="1280" height="719" alt="image" src="https://github.com/user-attachments/assets/c52c5ffd-1b5f-4901-840c-96b301445ea7" />
 
 
