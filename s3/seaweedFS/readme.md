@@ -108,7 +108,7 @@ Ref: https://github.com/seaweedfs/seaweedfs/wiki/Volume-Files-Structure
 
 * SeaweedFS uses Reed-Solomon erasure coding with a default 10+4 scheme (10 data shards + 4 parity shards = 14 total shards). 
 * This allows you to lose up to 4 volume servers and still recover your data.
-* Only volumes with this fullness ratio or higher will be erasure coded, configurable
+* Only volumes with this fullness ratio 80% or higher will be erasure coded, configurable
 
 ```
 /*
