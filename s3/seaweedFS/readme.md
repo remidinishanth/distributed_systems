@@ -179,14 +179,14 @@ sequenceDiagram
     Note over Client,Volume: PUT Object - Direct Volume Access
 
     Client->>S3API: PUT /bucket/key (data)
-    
-    rect rgb(50, 80, 50)
+
+    rect rgb(200, 240, 200)
         Note right of S3API: Step 1: Get Volume Assignment
         S3API->>Filer: AssignVolume (gRPC)
         Filer-->>S3API: {volumeId, fileId, url, JWT}
     end
 
-    rect rgb(50, 50, 100)
+    rect rgb(200, 220, 255)
         Note right of S3API: Step 2: Upload Data DIRECTLY
         loop For each 8MB chunk
             S3API->>Volume: POST http://volume:8080/{fid} (chunk data + JWT)
@@ -194,7 +194,7 @@ sequenceDiagram
         end
     end
 
-    rect rgb(80, 50, 50)
+    rect rgb(255, 220, 220)
         Note right of S3API: Step 3: Save Metadata Only
         S3API->>Filer: CreateEntry (gRPC)
         Note over Filer: Stores: chunks[], size,<br/>ETag, SSE metadata,<br/>user metadata, etc.
@@ -217,19 +217,19 @@ sequenceDiagram
 
     Client->>S3API: GET /bucket/key
 
-    rect rgb(80, 50, 50)
+    rect rgb(255, 220, 220)
         Note right of S3API: Step 1: Fetch Metadata Only
         S3API->>Filer: LookupDirectoryEntry (gRPC)
         Filer-->>S3API: Entry{chunks[], size, attrs, extended}
     end
 
-    rect rgb(50, 80, 50)
+    rect rgb(200, 240, 200)
         Note right of S3API: Step 2: Resolve Volume URLs
         Note over S3API: Uses FilerClient's<br/>cached vidMap<br/>(no gRPC per chunk!)
         S3API->>S3API: lookupFileIdFn(volumeId)
     end
 
-    rect rgb(50, 50, 100)
+    rect rgb(200, 220, 255)
         Note right of S3API: Step 3: Stream Data DIRECTLY
         S3API->>Volume: GET http://volume:8080/{fid} + JWT
         Volume-->>S3API: chunk data (streaming)
