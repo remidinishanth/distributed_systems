@@ -104,6 +104,28 @@ Ref: https://github.com/seaweedfs/seaweedfs/wiki/Volume-Files-Structure
 
 <img width="1157" height="497" alt="image" src="https://github.com/user-attachments/assets/22d6410c-b393-46de-84e4-fa412c26629b" />
 
+## Erasure Coding
+
+* SeaweedFS uses Reed-Solomon erasure coding with a default 10+4 scheme (10 data shards + 4 parity shards = 14 total shards). 
+* This allows you to lose up to 4 volume servers and still recover your data.
+* Only volumes with this fullness ratio or higher will be erasure coded, configurable
+
+```
+/*
+
+Steps to apply erasure coding to .dat .idx files
+0. ensure the volume is readonly
+1. client call VolumeEcShardsGenerate to generate the .ecx and .ec00 ~ .ec13 files
+2. client ask master for possible servers to hold the ec files
+3. client call VolumeEcShardsCopy on above target servers to copy ec files from the source server
+4. target servers report the new ec files to the master
+5.   master stores vid -> [14]*DataNode
+6. client checks master. If all 14 slices are ready, delete the original .idx, .idx files
+
+*/
+```
+
+Ref: seaweedfs/weed/server/volume_grpc_erasure_coding.go
 
 ## S3 changes
 
