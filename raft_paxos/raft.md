@@ -124,3 +124,9 @@ Invariants
 ![image](https://user-images.githubusercontent.com/19663316/215156748-3d94f01c-b752-4801-afc3-6f0cb5f5a198.png)
 
 source: https://www.hashicorp.com/resources/raft-consul-consensus-protocol-explained
+
+
+Ref: 
+* https://pdos.csail.mit.edu/6.824/notes/l-raft.txt
+* https://pdos.csail.mit.edu/6.824/notes/l-raft2.txt
+* https://timilearning.com/posts/mit-6.824/lecture-6-7-fault-tolerance-raft/
