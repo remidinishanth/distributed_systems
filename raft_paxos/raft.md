@@ -99,6 +99,14 @@ Invariants
 
 <img width="600" height="533" alt="image" src="https://github.com/user-attachments/assets/2dcc7be5-8708-4d7d-9d24-e43ac995ef07" />
 
+## Log compaction and Snapshot
+
+* Raft’s log grows during normal operation to incorporate more client requests, As the log grows longer, it occupies more space and takes more time to replay.
+* In snapshotting, the entire current system state is written to a snapshot on stable storage, then the entire log up to that point is discarded.
+* Snapshotting is used in Chubby and ZooKeeper.
+
+<img width="607" height="499" alt="image" src="https://github.com/user-attachments/assets/56c45b2e-a28f-48ae-abdd-668286293289" />
+
 
 ## Summary
 
