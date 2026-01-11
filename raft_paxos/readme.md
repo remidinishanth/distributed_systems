@@ -14,3 +14,5 @@
 ## Use cases:
 
 <img width="714" height="447" alt="image" src="https://github.com/user-attachments/assets/f0796aec-05bd-4a21-aecf-d4d865532ee8" />
+
+<img width="477" height="243" alt="image" src="https://github.com/user-attachments/assets/56b37b61-9919-4470-a532-ecb66df5c2a5" />
