@@ -1,3 +1,8 @@
+## Leader Election algorithms
+
+<img width="1231" height="1600" alt="image" src="https://github.com/user-attachments/assets/8186eca2-6f42-4981-aae2-9626d01dd0fa" />
+
+
 ## Consensus
 
 <img width="1145" height="630" alt="image" src="https://github.com/user-attachments/assets/611febd9-d091-4e17-b6fa-6f480dc5c742" />
