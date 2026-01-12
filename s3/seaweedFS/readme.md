@@ -95,7 +95,7 @@ Ref: https://github.com/seaweedfs/seaweedfs/wiki/Volume-Files-Structure
 
 <img width="1554" height="742" alt="image" src="https://github.com/user-attachments/assets/efef40ca-d4b9-4d23-ad2e-7103cb2d2275" />
 
-In Master, How Raft is Used
+In Master, How Raft is Used?
 * Leader Election: Multiple master servers form a Raft cluster to elect a leader. Only the leader can assign new volume IDs.
 * Volume ID Assignment: When a new volume needs to be created, the leader:
   - Gets the current max volume ID
