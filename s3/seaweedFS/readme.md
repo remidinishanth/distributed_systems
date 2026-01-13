@@ -83,6 +83,11 @@ Ref: https://github.com/seaweedfs/seaweedfs/wiki/Components
 
 Ref: https://github.com/seaweedfs/seaweedfs/wiki/Volume-Files-Structure
 
+## UI
+
+<img width="1841" height="1058" alt="image" src="https://github.com/user-attachments/assets/74affe67-8a37-411e-bfa2-0cbb74cb653b" />
+
+
 ## Architecture
 
 <img width="2020" height="1280" alt="image" src="https://github.com/user-attachments/assets/0a79d086-f742-431e-9d37-f62f5ce38bcf" />
