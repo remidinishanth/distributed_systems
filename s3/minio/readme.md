@@ -788,3 +788,44 @@ While we have only scratched the surface, MinIO is packed with advanced features
 
 ## TODO
 * https://blog.min.io/minio-versioning-metadata-deep-dive/
+
+
+## MinIO Storage on Nodes
+
+Inside `.minio.sys/format.json` on a node
+```
+minio1/.minio.sys$ cat format.json  | jq
+{
+  "version": "1",
+  "format": "xl",
+  "id": "f9a7a6ba-39d9-4483-bb47-fe86518bdc67",
+  "xl": {
+    "version": "3",
+    "this": "9ae64de8-1c75-46df-b09d-ad8b97f95313",
+    "sets": [
+      [
+        "4199dbce-78ba-4176-846d-7423ab6cfcd9",
+        "22b83b76-f883-49c8-abc8-a3cf84eb92f4",
+        "9ae64de8-1c75-46df-b09d-ad8b97f95313",
+        "fc1a7dde-1da7-44cc-9380-3ae3063c415c",
+        "48d7881f-6e93-42ab-9d89-f27bf0648b0d",
+        "b8cfec44-f88b-4193-9575-368d92eefb16",
+        "ef66b6f7-3c15-45fa-aca8-52286f4750f4",
+        "02b3aa13-ff62-4e46-a196-f40b6f531c23",
+        "f5dd8d65-56d7-40f2-9035-b4b37e3018a5",
+        "ae4e30fd-db65-4c0e-a9c1-44f50191ba20",
+        "d4cf829c-b96f-4687-845c-8884a43a6397",
+        "2efc58b9-253a-4ac6-ba92-a316811f896c"
+      ]
+    ],
+    "distributionAlgo": "SIPMOD+PARITY"
+  }
+}
+```
+
+Explanation: Cluster has:
+
+* 1 erasure set with 12 disks (UUIDs in the sets array)
+* Deployment ID: f9a7a6ba-39d9-4483-bb47-fe86518bdc67 (the id field)
+* Distribution Algorithm: SIPMOD+PARITY (the distributionAlgo field)
+* This disk: 9ae64de8-1c75-46df-b09d-ad8b97f95313 (position 2 in the set)
