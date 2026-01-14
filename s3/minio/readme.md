@@ -835,7 +835,7 @@ Explanation: Cluster has:
 * This disk: 9ae64de8-1c75-46df-b09d-ad8b97f95313 (position 2 in the set)
 
 
-Checking `config` and decoding it with `mc` or `go/bin/xl-meta`, we can see the following
+Checking `minio1/.minio.sys/config/config.json/xl.meta` and decoding it with `mc` or `go/bin/xl-meta`, we can see the following
 
 ```json
 {
