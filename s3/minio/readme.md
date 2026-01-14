@@ -834,46 +834,6 @@ Explanation: Cluster has:
 * Distribution Algorithm: SIPMOD+PARITY (the distributionAlgo field)
 * This disk: 9ae64de8-1c75-46df-b09d-ad8b97f95313 (position 2 in the set)
 
-
-Checking `minio1/.minio.sys/config/config.json/xl.meta` and decoding it with `mc` or `go/bin/xl-meta`, we can see the following
-
-```json
-{
-  "Versions": [
-    {
-      "Header": {
-        "EcM": 6,              // 6 data shards
-        "EcN": 6,              // 6 parity shards (EC 6+6)
-        "ModTime": "2026-01-11T22:12:02.422476076+05:30",
-        "Type": 1,             // ObjectType (regular object)
-        "VersionID": "00000000..." // null version (non-versioned)
-      },
-      "Metadata": {
-        "V2Obj": {
-          "EcAlgo": 1,         // Reed-Solomon algorithm
-          "EcBSize": 1048576,  // 1MB erasure block size
-          "EcM": 6,            // 6 data shards
-          "EcN": 6,            // 6 parity shards
-          "EcIndex": 10,       // THIS disk stores shard #10 (0-indexed: 9)
-          "EcDist": [8,9,10,11,12,1,2,3,4,5,6,7],  // Distribution order
-          
-          "Size": 9624,        // Object size: 9.4 KB
-          "PartSizes": [9624], // Single part
-          
-          "MetaUsr": {
-            "content-type": "application/json",
-            "etag": "5bac085518ac70599edcb0fa742ae1bb"
-          },
-          "MetaSys": {
-            "x-minio-internal-inline-data": "true"  // Data inlined in xl.meta
-          }
-        }
-      }
-    }
-  ]
-}
-```
-
 ### To store a file, we can use a command like 
 
 ```
@@ -975,6 +935,9 @@ Since the test file is only 65 bytes, the data is inlined directly in `xl.meta` 
   
 }
 ```
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/c1a8bf76-f524-48fd-aaa2-9a9f6aec28a7" />
+
 
 If we decode data from another disk, we can see that 
 
