@@ -995,6 +995,104 @@ Since the test file is only 65 bytes, the data is inlined directly in `xl.meta` 
 }
 ```
 
+If we decode data from another disk, we can see that 
+
+```json
+{
+  "Versions": [
+    {
+      "Header": {
+        "EcM": 8,
+        "EcN": 4,
+        "Flags": 6,
+        "ModTime": "2026-01-14T16:53:55.923264863+05:30",
+        "Signature": "b9f71a0b",
+        "Type": 1,
+        "VersionID": "00000000000000000000000000000000"
+      },
+      "Idx": 0,
+      "Metadata": {
+        "Type": 1,
+        "V2Obj": {
+          "CSumAlgo": 1,
+          "DDir": "NhHND1OVRfWzQYC/GFqfGA==",
+          "EcAlgo": 1,
+          "EcBSize": 1048576,
+          "EcDist": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "EcIndex": 7,
+          "EcM": 8,
+          "EcN": 4,
+          "ID": "AAAAAAAAAAAAAAAAAAAAAA==",
+          "MTime": 1768389835923264863,
+          "MetaSys": {
+            "x-minio-internal-inline-data": "dHJ1ZQ=="
+          },
+          "MetaUsr": {
+            "content-type": "text/plain",
+            "etag": "eeb5a84d38f5dac272eb0d3f772c8a59"
+          },
+          "PartASizes": [
+            65
+          ],
+          "PartETags": null,
+          "PartNums": [
+            1
+          ],
+          "PartSizes": [
+            65
+          ],
+          "Size": 65
+        },
+        "v": 1740736516
+      }
+    }
+  ]
+}
+--- INLINE DATA ---
+{
+  "null": {
+    "bitrot_valid": true,
+    "bytes": 41,
+    "data_base64": "b2RpbmcgRUM6",
+    "data_string": "oding EC:"
+  
+}
+```
+
+Essentially our data was `This is test data for xl.meta debugging with erasure coding EC:4` which is written as follows
+
+```
+┌────────────────────────────────────────────────────────────────────┐
+│                    Original File (~65 bytes)                       │
+│                   "...for xl.me...oding EC:..."                    │
+├────────────────────────────────────────────────────────────────────┤
+│                                                                    │
+│  Erasure Split into 8 Data Shards + 4 Parity Shards:               │
+│                                                                    │
+│  EcDist: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]                   │
+│           ├─────────────────────┤ ├──────────────┤                 │
+│           8 DATA shards          4 PARITY shards                   │
+│                                                                    │
+│  Disk EcIndex=3: Contains data shard 3 → "for xl.me"               │
+│  Disk EcIndex=7: Contains data shard 7 → "oding EC:"               │
+│                                                                    │
+│  Disks 9-12 (EcIndex 9,10,11,12): Parity shards (for recovery)     │
+└────────────────────────────────────────────────────────────────────┘
+```
+
 
 For larger files > ~128KB, the data would be in separate files. Something like
 
