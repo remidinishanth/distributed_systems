@@ -790,7 +790,9 @@ While we have only scratched the surface, MinIO is packed with advanced features
 * https://blog.min.io/minio-versioning-metadata-deep-dive/
 
 
-## MinIO Storage on Nodes
+## MinIO Backend Storage Metadata on Nodes
+
+https://blog.min.io/minio-versioning-metadata-deep-dive/
 
 Inside `.minio.sys/format.json` on a node
 
