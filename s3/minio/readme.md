@@ -983,6 +983,18 @@ Since the test file is only 65 bytes, the data is inlined directly in `xl.meta` 
 }
 ```
 
+```
+~/go/bin/xl-meta --data /tmp/test-xlmeta.bin
+{
+  "null": {
+    "bitrot_valid": true,
+    "bytes": 41,
+    "data_base64": "Zm9yIHhsLm1l",
+    "data_string": "for xl.me"
+  
+}
+```
+
 
 For larger files > ~128KB, the data would be in separate files. Something like
 
