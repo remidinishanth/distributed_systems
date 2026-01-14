@@ -873,3 +873,112 @@ Checking `minio1/.minio.sys/config/config.json/xl.meta` and decoding it with `mc
   ]
 }
 ```
+
+### To store a file, we can use a command like 
+
+```
+# Create a test bucket and upload a file
+kubectl exec minio-0 -- sh -c '
+mc alias set local http://localhost:9000 $MINIO_ROOT_USER $MINIO_ROOT_PASSWORD --insecure 2>/dev/null
+mc mb local/debug-bucket --insecure 2>/dev/null || true
+echo "This is test data for xl.meta debugging with erasure coding EC:4" > /tmp/test-file.txt
+mc cp /tmp/test-file.txt local/debug-bucket/test-file.txt --insecure
+mc stat local/debug-bucket/test-file.txt --insecure
+'
+```
+
+Expected output
+
+```
+Added `local` successfully.
+Bucket created successfully `local/debug-bucket`.
+`/tmp/test-file.txt` -> `local/debug-bucket/test-file.txt`
+┌───────┬─────────────┬──────────┬────────────┐
+│ Total │ Transferred │ Duration │ Speed      │
+│ 65 B  │ 65 B        │ 00m00s   │ 1.13 KiB/s │
+└───────┴─────────────┴──────────┴────────────┘
+Name      : test-file.txt
+Date      : 2026-01-14 11:23:55 UTC
+Size      : 65 B
+ETag      : eeb5a84d38f5dac272eb0d3f772c8a59
+Type      : file
+Metadata  :
+  Content-Type: text/plain
+```
+
+Post that if we check the disks, we can find the data created as follows:
+
+```
+debug-bucket
+└── test-file.txt
+    └── xl.meta
+```
+
+Since the test file is only 65 bytes, the data is inlined directly in `xl.meta` - no separate data files exist. The `x-minio-internal-inline-data: true` (`echo 'dHJ1ZQ==' | base64 -d`) flag tells us this.
+
+/bin/xl-meta /tmp/test-xlmeta.binm1l" | base64 -d > /tmp/test-xlmeta.bin && ~/go 
+```json
+{
+  "Versions": [
+    {
+      "Header": {
+        "EcM": 8,
+        "EcN": 4,
+        "Flags": 6,
+        "ModTime": "2026-01-14T16:53:55.923264863+05:30",
+        "Signature": "b9f71a0b",
+        "Type": 1,
+        "VersionID": "00000000000000000000000000000000"
+      },
+      "Idx": 0,
+      "Metadata": {
+        "Type": 1,
+        "V2Obj": {
+          "CSumAlgo": 1,
+          "DDir": "NhHND1OVRfWzQYC/GFqfGA==",
+          "EcAlgo": 1,
+          "EcBSize": 1048576,
+          "EcDist": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "EcIndex": 3,
+          "EcM": 8,
+          "EcN": 4,
+          "ID": "AAAAAAAAAAAAAAAAAAAAAA==",
+          "MTime": 1768389835923264863,
+          "MetaSys": {
+            "x-minio-internal-inline-data": "dHJ1ZQ=="
+          },
+          "MetaUsr": {
+            "content-type": "text/plain",
+            "etag": "eeb5a84d38f5dac272eb0d3f772c8a59"
+          },
+          "PartASizes": [
+            65
+          ],
+          "PartETags": null,
+          "PartNums": [
+            1
+          ],
+          "PartSizes": [
+            65
+          ],
+          "Size": 65
+        },
+        "v": 1740736516
+      }
+    }
+  ]
+}
+```
