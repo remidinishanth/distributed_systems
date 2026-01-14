@@ -982,3 +982,13 @@ Since the test file is only 65 bytes, the data is inlined directly in `xl.meta` 
   ]
 }
 ```
+
+
+For larger files > ~128KB, the data would be in separate files. Something like
+
+```
+/data1/testbucket/test-large-file.txt/
+├── xl.meta                          # Metadata (on all 12 disks)
+└── <DDir-UUID>/                     # Data directory 
+    └── part.1                       # Actual data shard for this disk
+```
