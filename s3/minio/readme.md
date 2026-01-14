@@ -793,8 +793,10 @@ While we have only scratched the surface, MinIO is packed with advanced features
 ## MinIO Storage on Nodes
 
 Inside `.minio.sys/format.json` on a node
-```
-minio1/.minio.sys$ cat format.json  | jq
+
+`minio1/.minio.sys$ cat format.json  | jq`
+
+```json
 {
   "version": "1",
   "format": "xl",
