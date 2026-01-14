@@ -938,20 +938,7 @@ Since the test file is only 65 bytes, the data is inlined directly in `xl.meta` 
           "DDir": "NhHND1OVRfWzQYC/GFqfGA==",
           "EcAlgo": 1,
           "EcBSize": 1048576,
-          "EcDist": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9,
-            10,
-            11,
-            12
-          ],
+          "EcDist": [1,2,3,4,5,6,7,8,9,10,11,12],
           "EcIndex": 3,
           "EcM": 8,
           "EcN": 4,
@@ -964,16 +951,10 @@ Since the test file is only 65 bytes, the data is inlined directly in `xl.meta` 
             "content-type": "text/plain",
             "etag": "eeb5a84d38f5dac272eb0d3f772c8a59"
           },
-          "PartASizes": [
-            65
-          ],
+          "PartASizes": [ 65 ],
           "PartETags": null,
-          "PartNums": [
-            1
-          ],
-          "PartSizes": [
-            65
-          ],
+          "PartNums": [  1],
+          "PartSizes": [ 65 ],
           "Size": 65
         },
         "v": 1740736516
@@ -1018,20 +999,7 @@ If we decode data from another disk, we can see that
           "DDir": "NhHND1OVRfWzQYC/GFqfGA==",
           "EcAlgo": 1,
           "EcBSize": 1048576,
-          "EcDist": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9,
-            10,
-            11,
-            12
-          ],
+          "EcDist": [1,2,3,4,5,6,7,8,9,10,11,12],
           "EcIndex": 7,
           "EcM": 8,
           "EcN": 4,
@@ -1044,16 +1012,10 @@ If we decode data from another disk, we can see that
             "content-type": "text/plain",
             "etag": "eeb5a84d38f5dac272eb0d3f772c8a59"
           },
-          "PartASizes": [
-            65
-          ],
+          "PartASizes": [ 65 ],
           "PartETags": null,
-          "PartNums": [
-            1
-          ],
-          "PartSizes": [
-            65
-          ],
+          "PartNums": [ 1 ],
+          "PartSizes": [ 65 ],
           "Size": 65
         },
         "v": 1740736516
