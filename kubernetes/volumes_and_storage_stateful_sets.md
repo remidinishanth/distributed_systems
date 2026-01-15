@@ -113,6 +113,10 @@ If you have your Pod on GCE, then you can port it to OnPrem or to AWS
 
 ![image](https://github.com/user-attachments/assets/b894b271-cb05-47e8-a0fa-74fb5198ea59)
 
+PV/PVC
+
+> PersistentVolume subsystem provides an API for users and administrators that abstracts details of how storage is provided from how it is consumed. 
+
 ![image](https://github.com/user-attachments/assets/17931b9f-81d1-41d5-be28-43b009ab4f37)
 
 <img width="1038" alt="image" src="https://github.com/user-attachments/assets/ab1c7900-7494-4401-808e-588b6893b1f5" />
