@@ -143,7 +143,7 @@ PVC doesn't have any details regarding where the storage is, etc. **Portability*
 
 <img width="1035" alt="image" src="https://github.com/user-attachments/assets/f55ae0d0-5ee9-4b24-b523-4c0781ade0c0" />
 
->> [!WARNING]
+> [!WARNING]
 > If you’re thinking of using a hostPath volume as the place to store a database’s
 data directory, think again. Because the volume’s contents are stored on a specific
 node’s filesystem, **when the database pod gets rescheduled to another node**, it will no
