@@ -6,10 +6,6 @@ category: "kubernetes"
 
 > Container in a pod has its own isolated filesystem, because the filesystem comes from the container’s image.
 
-
-<img width="1139" height="726" alt="image" src="https://github.com/user-attachments/assets/b09e88b4-9b1f-4112-a418-a43187b8f838" />
-Ref: https://github.com/minio/directpv?tab=readme-ov-file
-
 ### Storage Lingo
 
 <img width="1194" alt="image" src="https://github.com/user-attachments/assets/5f14231a-957a-4e4a-9547-d423a1546aa1" />
@@ -147,9 +143,10 @@ PVC doesn't have any details regarding where the storage is, etc. **Portability*
 
 <img width="1035" alt="image" src="https://github.com/user-attachments/assets/f55ae0d0-5ee9-4b24-b523-4c0781ade0c0" />
 
-If you’re thinking of using a hostPath volume as the place to store a database’s
+>> [!WARNING]
+> If you’re thinking of using a hostPath volume as the place to store a database’s
 data directory, think again. Because the volume’s contents are stored on a specific
-node’s filesystem, when the database pod gets rescheduled to another node, it will no
+node’s filesystem, **when the database pod gets rescheduled to another node**, it will no
 longer see the data.
 
 When an application running in a pod needs to persist data to disk and have that
@@ -308,3 +305,9 @@ Example:
 ### Ref
 * https://www.mirantis.com/blog/kubernetes-cheat-sheet/
 * https://kubernetesbootcamp.github.io/kubernetes-bootcamp/index.html
+
+
+Next
+
+<img width="1139" height="726" alt="image" src="https://github.com/user-attachments/assets/b09e88b4-9b1f-4112-a418-a43187b8f838" />
+Ref: https://github.com/minio/directpv?tab=readme-ov-file
