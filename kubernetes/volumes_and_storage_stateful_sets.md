@@ -335,7 +335,7 @@ DirectPV is designed to be lightweight and scalable to tens of thousands of driv
 
 <img width="2798" height="1088" alt="image" src="https://github.com/user-attachments/assets/6f192723-5949-45ee-8acc-354d58a4df86" />
 
-Ref: https://www.min.io/directpv
+Ref: https://blog.min.io/introducing-directpv/ and https://www.min.io/directpv
 
 DirectPV is similar to LocalPV but dynamically provisioned.
 
