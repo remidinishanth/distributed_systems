@@ -330,3 +330,9 @@ Next
 
 <img width="1139" height="726" alt="image" src="https://github.com/user-attachments/assets/b09e88b4-9b1f-4112-a418-a43187b8f838" />
 Ref: https://github.com/minio/directpv?tab=readme-ov-file
+
+DirectPV is designed to be lightweight and scalable to tens of thousands of drives. It is made up of three components - Controller, Node Driver, UI.
+
+<img width="2798" height="1088" alt="image" src="https://github.com/user-attachments/assets/6f192723-5949-45ee-8acc-354d58a4df86" />
+
+Ref: https://www.min.io/directpv
