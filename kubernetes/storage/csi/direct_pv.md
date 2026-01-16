@@ -50,20 +50,6 @@ Below is a workflow diagram
 └────────────┘
 ```
 
-
-Below is a workflow diagram
-```
-┌─────────────────────┐                                                   ┌────────────┐
-│                     │ Delete Event ┌─────────────────┐ DeleteVolume API │            │   ┌────────────────────┐
-│  Persistent Volume  │------------->│ CSI Provisioner │----------------->│            │-->│  DirectPVDrive CRD │
-│   Claim (PVC) with  │              └─────────────────┘                  │ Controller │   └────────────────────┘
-│  direct-csi-min-io  │                                                   │   Server   │   ┌────────────────────┐
-│    Storage Class    │ Update Event ┌─────────────────┐ ExpandVolume API │            │-->│ DirectPVVolume CRD │
-│                     │------------->│   CSI Resizer   │----------------->│            │   └────────────────────┘
-│                     │              └─────────────────┘                  └────────────┘
-└─────────────────────┘
-```
-
 ## Node server
 Node server runs as `DaemonSet` Pods named `node-server` in all or selected Kubernetes nodes. Each node server Pod runs on a node independently. Each pod contains below running containers:
 * `Node driver registrar` - Registers node server to kubelet to get CSI RPC calls.
