@@ -179,6 +179,8 @@ How to Use a Local Persistent Volume?
 
 Ref: https://kubernetes.io/blog/2019/04/04/kubernetes-1.14-local-persistent-volumes-ga/
 
+You must set a PersistentVolume nodeAffinity when using local volumes. The Kubernetes scheduler uses the PersistentVolume nodeAffinity to schedule these Pods to the correct node.
+
 ## Storage
 
 Awesome tutorial 
@@ -238,6 +240,11 @@ The implementation of dynamic volume provisioning is based on the StorageClass a
 
 
 ![image](https://github.com/user-attachments/assets/56138ffc-0459-49a2-8d7c-15f2a3e2fb27)
+
+### Types of PV
+
+<img width="768" height="880" alt="image" src="https://github.com/user-attachments/assets/acc18913-b3c1-4054-98dc-a3691cf51784" />
+
 
 ### CSI
 
