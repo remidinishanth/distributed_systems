@@ -333,10 +333,11 @@ Ref: https://github.com/minio/directpv?tab=readme-ov-file
 
 DirectPV is designed to be lightweight and scalable to tens of thousands of drives. It is made up of three components - Controller, Node Driver, UI.
 
-<img width="2798" height="1088" alt="image" src="https://github.com/user-attachments/assets/6f192723-5949-45ee-8acc-354d58a4df86" />
+<img width="1240" height="935" alt="image" src="https://github.com/user-attachments/assets/90844b41-063b-4a67-b9d0-61721cfa6a7f" />
+
 
 Ref: https://blog.min.io/introducing-directpv/ and https://www.min.io/directpv
 
-DirectPV is similar to LocalPV but dynamically provisioned.
+> DirectPV is similar to LocalPV but dynamically provisioned.
 
 Ref: https://blog.min.io/the-story-of-directpv/
