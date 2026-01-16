@@ -12,6 +12,16 @@ Ref: https://blog.min.io/introducing-directpv/ and https://www.min.io/directpv
 
 Ref: https://blog.min.io/the-story-of-directpv/
 
+## How does it choose drives
+
+<img width="1632" height="1788" alt="image" src="https://github.com/user-attachments/assets/09c406a6-0762-44b0-80ab-2281ecb1096e" />
+
+
+<img width="751" height="799" alt="image" src="https://github.com/user-attachments/assets/fd3809a5-7b97-42f3-842c-b3f417dc2828" />
+
+Ref: https://docs.min.io/enterprise/minio-directpv/resource-management/scheduling/
+
+
 
 ## DirectPV CSI driver architecture
 
