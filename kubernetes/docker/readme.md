@@ -386,6 +386,16 @@ Read more at https://stackoverflow.com/questions/41645665/how-containerd-compare
 
 Ref: https://stackoverflow.com/questions/46649592/dockerd-vs-docker-containerd-vs-docker-runc-vs-docker-containerd-ctr-vs-docker-c
 
+## What happens when you run a container
+
+```
+terminal <-> docker <-> dockerd <-> containerd <-> shim <-> application (container)
+```
+
+<img width="2386" height="2008" alt="image" src="https://github.com/user-attachments/assets/72b32ea1-354d-4a7c-bad4-559aeeaadacd" />
+
+Ref: https://labs.iximiuz.com/tutorials/docker-run-vs-attach-vs-exec
+
 
 ## TODO
 
