@@ -368,6 +368,8 @@ Read more at https://stackoverflow.com/questions/41645665/how-containerd-compare
 * [runc](http://runc.io/) is lightweight universal run time container, which abides by the OCI specification. runc is used by containerd for spawning and running containers according to OCI spec. It is also the repackaging of libcontainer.
 * [grpc](http://www.grpc.io/) used for communication between containerd and docker-engine.
 
+<img width="540" height="242" alt="image" src="https://github.com/user-attachments/assets/bca38a8d-f5e7-4886-9551-483fa135443c" />
+
 ### runc
 
 <img width="492" height="452" alt="image" src="https://github.com/user-attachments/assets/2c2516af-4900-474f-aab4-021a4efbebf2" />
