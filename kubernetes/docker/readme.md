@@ -1,4 +1,4 @@
----
+<img width="2142" height="1258" alt="image" src="https://github.com/user-attachments/assets/48458c8c-90c2-4404-bd86-bf3ce8f6c68f" />---
 layout: page
 title: "Readme"
 category: "docker"
@@ -396,6 +396,10 @@ terminal <-> docker <-> dockerd <-> containerd <-> shim <-> application (contain
 
 Ref: https://labs.iximiuz.com/tutorials/docker-run-vs-attach-vs-exec
 
+
+<img width="2142" height="1258" alt="image" src="https://github.com/user-attachments/assets/83b0dc0c-e274-4c9a-abb0-40dba52f65f2" />
+
+Ref: https://labs.iximiuz.com/tutorials/docker-run-vs-attach-vs-exec
 
 ## TODO
 
