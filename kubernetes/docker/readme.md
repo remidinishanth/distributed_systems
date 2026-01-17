@@ -361,3 +361,22 @@ A Brief History of Containers (by Jeff Victor & Kir Kolyshkin)
 * Docker also used LXC in its initial stages and later replaced that container manager with its own library, libcontainer.
 
 Ref: https://www.aquasec.com/blog/a-brief-history-of-containers-from-1970s-chroot-to-docker-2016/
+
+### LXC and `libcontainer`
+
+* [Linux Containers (LXC)](https://en.wikipedia.org/wiki/LXC) was used before [docker 0.9](https://www.docker.com/blog/docker-0-9-introducing-execution-drivers-and-libcontainer/) (On March 13, 2014, with the release of version 0.9, Docker dropped LXC as the default execution environment and replaced it with its own libcontainer library) as one execution driver by docker, and offered a userspace interface for the Linux kernel containment features. It is very specific to Linux
+
+* libcontainer (now [opencontainers/runc](https://github.com/opencontainers/runc)) is an abstraction, in order to support a wider range of isolation technologies as described in this article https://jancorg.github.io/blog/2015/01/03/libcontainer-overview/
+
+<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/d0d73267-6bfb-4a4c-9c14-59ccd520001b" />
+
+Ref: https://stackoverflow.com/questions/34152365/difference-between-lxc-and-libcontainer
+
+* In 2016 the container space was booming and docker decided to split the monolith into separate parts, some of which other projects can even build on — that’s how containerd happened https://blog.docker.com/2016/04/docker-containerd-integration/. That was Docker 1.11 (so pretty much ancient history).
+* Containerd is a daemon that acts as API facade for various container runtimes and OS. When using containerd, you no longer work with syscalls, instead you work with higher-level entities like snapshot and container — the rest is abstracted away.
+* If you want to understand containerd even more in depth, there’s a design documentation in their GitHub repo https://github.com/containerd/containerd/tree/master/design.
+Under the hood, containerd uses runc to do all the linux work.
+
+<img width="620" height="349" alt="image" src="https://github.com/user-attachments/assets/6cb0892d-dba2-4780-9bae-e425966bb3c2" />
+
+Read more at https://stackoverflow.com/questions/41645665/how-containerd-compares-to-runc
