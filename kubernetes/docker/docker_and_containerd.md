@@ -61,3 +61,12 @@ In Linux environments, container management tools like Docker are built on a mor
 
 * runc is a Linux command-line tool for creating and running containers according to the OCI container runtime specification.
 * containerd is a daemon that manages container life cycle from downloading and unpacking the container image to container execution and supervision.
+
+
+## Kubernetes
+
+<img width="1972" height="1532" alt="image" src="https://github.com/user-attachments/assets/1110c079-1b82-4903-b4b7-16f70b34e377" />
+
+Kubernetes Container Runtime Interface (CRI): A concise gRPC API a container runtime needs to implement to be compatible with Kubernetes.
+
+Ref: https://labs.iximiuz.com/tutorials/docker-run-vs-attach-vs-exec
