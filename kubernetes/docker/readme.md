@@ -365,6 +365,9 @@ Ref: https://www.aquasec.com/blog/a-brief-history-of-containers-from-1970s-chroo
 ### LXC and `libcontainer`
 
 * [Linux Containers (LXC)](https://en.wikipedia.org/wiki/LXC) was used before [docker 0.9](https://www.docker.com/blog/docker-0-9-introducing-execution-drivers-and-libcontainer/) (On March 13, 2014, with the release of version 0.9, Docker dropped LXC as the default execution environment and replaced it with its own libcontainer library) as one execution driver by docker, and offered a userspace interface for the Linux kernel containment features. It is very specific to Linux
+  - Docker 0.9 includes 2 major improvements: execution drivers and libcontainer.
+  - [libcontainer](https://github.com/dotcloud/docker/tree/master/pkg/libcontainer), a pure Go library which we developed to access the kernel’s container APIs directly, without any other dependencies.
+  - Thanks to libcontainer, Docker out of the box can now manipulate namespaces, control groups, capabilities, apparmor profiles, network interfaces and firewalling rules – all in a consistent and predictable way, and without depending on LXC or any other userland package. 
 
 * libcontainer (now [opencontainers/runc](https://github.com/opencontainers/runc)) is an abstraction, in order to support a wider range of isolation technologies as described in this article https://jancorg.github.io/blog/2015/01/03/libcontainer-overview/
 
