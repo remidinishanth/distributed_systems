@@ -360,6 +360,18 @@ Under the hood, containerd uses runc to do all the linux work.
 
 Read more at https://stackoverflow.com/questions/41645665/how-containerd-compares-to-runc
 
+### contained, runc, shim
+
+* [OCI](https://www.opencontainers.org/) maintains the Open Container Initiative(OCI) specification for runtime and images. The current docker versions support OCI image and runtime specs.
+* [containerd](http://containerd.io/) is a container runtime which can manage a complete container lifecycle - from image transfer/storage to container execution, supervision and networking.
+* container-shim handle headless containers, meaning once runc initializes the containers, it exits handing the containers over to the container-shim which acts as some middleman.
+* [runc](http://runc.io/) is lightweight universal run time container, which abides by the OCI specification. runc is used by containerd for spawning and running containers according to OCI spec. It is also the repackaging of libcontainer.
+* [grpc](http://www.grpc.io/) used for communication between containerd and docker-engine.
+
+### runc
+
+<img width="492" height="452" alt="image" src="https://github.com/user-attachments/assets/2c2516af-4900-474f-aab4-021a4efbebf2" />
+
 ## What happens under the hood when we create a new container on Linux?
 
 * When the command is fired from CLI by the user, it makes an API call to the docker daemon, which then calls containerD via GRPC, which further calls shim process and runC.
@@ -371,8 +383,6 @@ Read more at https://stackoverflow.com/questions/41645665/how-containerd-compare
 <img width="2437" height="1530" alt="image" src="https://github.com/user-attachments/assets/807bc203-ae39-479b-a160-80417f4cfe65" />
 
 Ref: https://stackoverflow.com/questions/46649592/dockerd-vs-docker-containerd-vs-docker-runc-vs-docker-containerd-ctr-vs-docker-c
-
-<img width="492" height="452" alt="image" src="https://github.com/user-attachments/assets/2c2516af-4900-474f-aab4-021a4efbebf2" />
 
 
 ## TODO
