@@ -1,4 +1,4 @@
-<img width="1035" height="722" alt="image" src="https://github.com/user-attachments/assets/4ba696b3-09f7-4a8c-bcf2-16961b83bc8c" />## File and Inode
+## File and Inode
 <img width="1174" height="803" alt="image" src="https://github.com/user-attachments/assets/9f8f3088-4230-45b9-9371-1a6321350ac0" />
 
 ## File metadata
