@@ -69,6 +69,9 @@ Programmer specifies two primary methods:
 All `v'` with same `k'` are reduced together. (Remember the invisible “Shuffle and Sort” step).
 
 
+<img width="1094" height="751" alt="image" src="https://github.com/user-attachments/assets/1a7fc556-bc65-4042-8ba1-af2aaf620dad" />
+
+
 ### Word-count example
 
 Counting the number of occurrences of each word in a large collection of documents.
