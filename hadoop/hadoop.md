@@ -1,8 +1,13 @@
----
-layout: page
-title: "Hadoop"
-category: "hadoop"
----
+## History
+
+<img width="1094" height="667" alt="image" src="https://github.com/user-attachments/assets/de91060a-0949-43a6-9a6f-60e118ed908b" />
+
+<img width="1094" height="667" alt="image" src="https://github.com/user-attachments/assets/eeda60b7-dd44-4748-9408-31bb2cf011c2" />
+
+<img width="686" height="382" alt="image" src="https://github.com/user-attachments/assets/44cb02d5-e09e-4464-9821-bc35d9a99ec3" />
+
+Ref: https://tropars.github.io/downloads/lectures/LSDM/LSDM-2-mapreduce-hadoop.pdf
+
 
 Todo: https://data-flair.training/blogs/hadoop-ecosystem-components/
 
