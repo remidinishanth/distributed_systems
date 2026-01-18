@@ -56,6 +56,11 @@ Everything is a file, even directory
 
 <img width="1174" height="726" alt="image" src="https://github.com/user-attachments/assets/aa978c47-3ba3-475c-a47f-dd80aed591a1" />
 
+* Directory: A type of file that acts as a container for other files.
+* Dentry (Directory Entry): A kernel data structure representing a specific component of a path.
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/bd412db3-4c26-414a-bf29-89119221d33f" />
+
+
 <img width="1174" height="726" alt="image" src="https://github.com/user-attachments/assets/dcf3f7f5-6419-4a3a-accc-04612683745f" />
 
 ## 📂 What Data is Stored in an Inode?
