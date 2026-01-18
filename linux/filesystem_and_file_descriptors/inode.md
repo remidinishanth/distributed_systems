@@ -82,7 +82,29 @@ Directory Entries
 Now find the next inode to traverse to
 <img width="1530" height="782" alt="image" src="https://github.com/user-attachments/assets/3d654859-c883-413d-bbe5-50f7159b3929" />
 
+> If directories are huge, this requires navigating singly, doubly, or even triple indirect blocks.
 
+<img width="1549" height="808" alt="image" src="https://github.com/user-attachments/assets/87048b79-50d2-4bb8-ac15-cb3f1073f642" />
+
+## How is File system organised
+
+<img width="1549" height="656" alt="image" src="https://github.com/user-attachments/assets/eb0c630b-d92a-45f3-b6d9-3f522d19e492" />
+
+We have the bit maps now, what else do we need?
+* We don’t have any information about the file system itself. Some questions we need
+answers to.
+  - How large are the blocks, how many inodes in the inode table, how many free
+blocks in total, how many blocks are allocated to data, how many blocks are
+hidden from the user (just for the os usage), what type of file system is this, what
+is the size of each inode, which is the first nonspecial inode, is the file system in a
+valid state, and much much more
+
+
+* The Super Block - Is a block in the filesystem that contains metadata about the file system itself.
+* Used by the operating system to maintain the file system
+  - Because it is so important, many copies of the super block are maintained within the file system.
+  - Just incase the super block the kernel has becomes corrupted
+  - Required overhead, as the superblock is written back to disk frequently
 
 ## 📂 What Data is Stored in an Inode?
 
