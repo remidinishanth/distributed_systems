@@ -81,3 +81,34 @@ An **inode** (index node) is a data structure in a Unix-style file system that d
 | **Timestamps** | ✅ Yes | Tracks creation (ctime), modification (mtime), and access (atime) times. |
 | **File Contents** | ⚠️ Sometimes | Generally **No** (data is in blocks), but some file systems store very small files directly in the inode (inline data). |
 | **Ordered List of Data Blocks** | ✅ Yes | Contains pointers to the disk blocks where the actual file content resides. |
+
+## Checking the details on ubuntu system
+
+`stat .` shows the `inode` number of the directory
+```
+➜  file_lab stat .
+  File: .
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 801h/2049d	Inode: 2704410     Links: 2
+Access: (0775/drwxrwxr-x)  Uid: ( 1000/  ubuntu)   Gid: ( 1000/  ubuntu)
+Access: 2026-01-18 00:30:20.990237727 -0800
+Modify: 2026-01-18 00:30:16.994211085 -0800
+Change: 2026-01-18 00:30:16.994211085 -0800
+ Birth: -
+
+➜  file_lab ls -lai
+total 8
+2704410 drwxrwxr-x  2 ubuntu ubuntu 4096 Jan 18 00:30 .
+2623640 drwxr-xr-x 42 ubuntu ubuntu 4096 Jan 18 00:30 ..
+```
+
+hard link with same inode number
+
+```
+touch original.txt
+ln original.txt alias.txt
+ls -li *.txt
+
+2630901 -rw-rw-r-- 2 ubuntu ubuntu 0 Jan 18 00:31 alias.txt
+2630901 -rw-rw-r-- 2 ubuntu ubuntu 0 Jan 18 00:31 original.txt
+```
