@@ -76,6 +76,11 @@ Ref: https://pk.org/assets/files/classes-417-notes/06c-nfs-slides.pdf
 <img width="1514" height="1038" alt="image" src="https://github.com/user-attachments/assets/de58290e-fe3b-4908-8742-02d26f8c2595" />
 
 
+## NAS, SMB, AFS, Coda
+
+<img width="958" height="528" alt="image" src="https://github.com/user-attachments/assets/1e99f7ee-4147-4427-81d8-bfe03d46e4cf" />
+
+
 ## Thick provisioning vs Thin provisioning
 
 <img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/8cdf79b4-c908-4bd1-b25f-4fd6a3518d03" />
