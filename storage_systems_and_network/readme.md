@@ -73,6 +73,10 @@ In Linux systems, when you mount a remote NFS share (e.g., via the mount command
 
 <img width="590" height="337" alt="image" src="https://github.com/user-attachments/assets/da4c4d80-7612-4caf-b16d-ff28de0ee42d" />
 
+#### NFSv3 vs NFSv4
+
+<img width="907" height="678" alt="image" src="https://github.com/user-attachments/assets/92e2ac22-3890-405a-bc97-878695362022" />
+
 
 #### SMB
 <img width="1416" height="1308" alt="image" src="https://github.com/user-attachments/assets/a49f9458-f7d9-4a79-be5e-87ad084de538" />
