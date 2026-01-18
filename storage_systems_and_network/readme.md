@@ -52,6 +52,20 @@ enabling seamless data exchange between multiple users.
 
 <img width="1166" height="757" alt="image" src="https://github.com/user-attachments/assets/960eda70-8d53-4bc7-9fc2-d632a0d28aa4" />
 
+<img width="1115" height="629" alt="image" src="https://github.com/user-attachments/assets/fd012fbe-44a0-4ae1-be4b-5b2b310c9291" />
+
+
+#### NFS protocol
+<img width="971" height="585" alt="image" src="https://github.com/user-attachments/assets/d19ba7cb-6897-4431-acf3-8658baeff820" />
+
+<img width="1163" height="609" alt="image" src="https://github.com/user-attachments/assets/ad3e31ac-2634-4a3b-ab93-9d1f1174816d" />
+
+<img width="1115" height="417" alt="image" src="https://github.com/user-attachments/assets/79df25bb-cf2d-4ef4-9a88-3b45f2f598a7" />
+
+
+<img width="971" height="585" alt="image" src="https://github.com/user-attachments/assets/a947267c-6a7f-41fe-85bd-3e138168ba73" />
+
+Ref: https://pk.org/assets/files/classes-417-notes/06c-nfs-slides.pdf
 
 #### SMB
 <img width="1416" height="1308" alt="image" src="https://github.com/user-attachments/assets/a49f9458-f7d9-4a79-be5e-87ad084de538" />
