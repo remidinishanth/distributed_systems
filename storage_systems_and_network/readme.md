@@ -65,7 +65,14 @@ enabling seamless data exchange between multiple users.
 
 <img width="971" height="585" alt="image" src="https://github.com/user-attachments/assets/a947267c-6a7f-41fe-85bd-3e138168ba73" />
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/91446fd9-70c7-4fce-9d0f-cf39cd7023f6" />
+
 Ref: https://pk.org/assets/files/classes-417-notes/06c-nfs-slides.pdf
+
+In Linux systems, when you mount a remote NFS share (e.g., via the mount command or /etc/fstab), the NFS client (implemented in the kernel) automatically translates standard file system operations—initiated by shell commands into the corresponding NFS protocol RPC (Remote Procedure Call) functions. This happens transparently through the Virtual File System (VFS) layer.
+
+<img width="590" height="337" alt="image" src="https://github.com/user-attachments/assets/da4c4d80-7612-4caf-b16d-ff28de0ee42d" />
+
 
 #### SMB
 <img width="1416" height="1308" alt="image" src="https://github.com/user-attachments/assets/a49f9458-f7d9-4a79-be5e-87ad084de538" />
