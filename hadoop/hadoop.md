@@ -25,3 +25,13 @@ tool, and Apache Pig, a parallel processing tool (and many others).
 ![image](https://user-images.githubusercontent.com/19663316/210208983-7d1917d7-6ce4-4301-b26b-5a16825a3788.png)
 
 ![image](https://user-images.githubusercontent.com/19663316/210209213-f95f370c-9db6-48af-97b3-d668678523a9.png)
+
+## Yarn
+
+<img width="1062" height="787" alt="image" src="https://github.com/user-attachments/assets/08179a6b-39f0-4e8e-bf11-a34503fe0c1a" />
+
+## HDFS
+
+<img width="1062" height="656" alt="image" src="https://github.com/user-attachments/assets/15ff82fe-1ab8-4c9a-aa77-68f6799cd968" />
+
+<img width="1062" height="716" alt="image" src="https://github.com/user-attachments/assets/198fecbd-f2cb-4b81-a7df-b72c033a7520" />
