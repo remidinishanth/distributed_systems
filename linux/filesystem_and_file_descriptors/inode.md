@@ -63,6 +63,12 @@ Everything is a file, even directory
 
 <img width="1174" height="726" alt="image" src="https://github.com/user-attachments/assets/dcf3f7f5-6419-4a3a-accc-04612683745f" />
 
+## Removing a file with journaling
+
+Similar to Write-ahead log
+<img width="1153" height="530" alt="image" src="https://github.com/user-attachments/assets/0dfaef5e-bd14-43ef-8ba2-4b290a522cb8" />
+
+
 ## File Path look up
 
 <img width="1035" height="722" alt="image" src="https://github.com/user-attachments/assets/3f766ce4-1c3e-4d58-a76b-7c4bb34573ff" />
