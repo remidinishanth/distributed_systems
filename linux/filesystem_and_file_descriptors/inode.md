@@ -13,27 +13,6 @@ Maximum file size possible
 
 <img width="1292" height="502" alt="image" src="https://github.com/user-attachments/assets/0f4b73be-d125-4afa-a5fd-77edf7c630b3" />
 
-
-## 📂 What Data is Stored in an Inode?
-
-An **inode** (index node) is a data structure in a Unix-style file system that describes a file-system object like a file or a directory. Below is a breakdown of what attributes are actually stored within the inode itself versus what is stored elsewhere.
-
-| Data Attribute | Stored? | Explanation / Notes |
-| :--- | :---: | :--- |
-| **Filename** | ❌ No | Filenames are stored in **directories**, mapping names to inode numbers. |
-| **Containing Directory** | ❌ No | A file can be in multiple directories (via hard links), so the inode does not track a specific parent. |
-| **File Size** | ✅ Yes | Stores the size of the file in bytes. |
-| **File Type** | ✅ Yes | Identifies if it is a regular file, directory, character device, etc. |
-| **# of Soft Links** | ❌ No | Soft links are distinct files; the target inode does not track how many soft links point to it. |
-| **Location of Soft Links** | ❌ No | The inode is unaware of where soft links pointing to it are located. |
-| **# of Hard Links** | ✅ Yes | Used to track reference counts. The file is only deleted when this count reaches 0. |
-| **Location of Hard Links** | ❌ No | The inode knows *how many* exist, but not *where* they are in the directory tree. |
-| **Access Rights** | ✅ Yes | Stores permissions (e.g., Read, Write, Execute for User/Group/Others). |
-| **Timestamps** | ✅ Yes | Tracks creation (ctime), modification (mtime), and access (atime) times. |
-| **File Contents** | ⚠️ Sometimes | Generally **No** (data is in blocks), but some file systems store very small files directly in the inode (inline data). |
-| **Ordered List of Data Blocks** | ✅ Yes | Contains pointers to the disk blocks where the actual file content resides. |
-
-
 ## Hard links and soft links
 
 <img width="1003" height="412" alt="image" src="https://github.com/user-attachments/assets/0c640908-98ab-4513-a78e-75f61cfa20fd" />
@@ -68,6 +47,28 @@ A **Hard Link** is a direct reference to the physical data on the disk (the inod
 | **File Size** | 💾 Original Size | 🤏 Path Length | Hard links show the size of the actual data; soft links are tiny (size = length of the path string). |
 | **Speed** | ⚡ Fastest | 🐢 Slightly Slower | Hard links access data directly; soft links require an extra step to resolve the path. |
 | **Command** | `ln target link` | `ln -s target link` | The `-s` flag is the key switch to create a soft link. |
+
+
+## 📂 What Data is Stored in an Inode?
+
+An **inode** (index node) is a data structure in a Unix-style file system that describes a file-system object like a file or a directory. Below is a breakdown of what attributes are actually stored within the inode itself versus what is stored elsewhere.
+
+| Data Attribute | Stored? | Explanation / Notes |
+| :--- | :---: | :--- |
+| **Filename** | ❌ No | Filenames are stored in **directories**, mapping names to inode numbers. |
+| **Containing Directory** | ❌ No | A file can be in multiple directories (via hard links), so the inode does not track a specific parent. |
+| **File Size** | ✅ Yes | Stores the size of the file in bytes. |
+| **File Type** | ✅ Yes | Identifies if it is a regular file, directory, character device, etc. |
+| **# of Soft Links** | ❌ No | Soft links are distinct files; the target inode does not track how many soft links point to it. |
+| **Location of Soft Links** | ❌ No | The inode is unaware of where soft links pointing to it are located. |
+| **# of Hard Links** | ✅ Yes | Used to track reference counts. The file is only deleted when this count reaches 0. |
+| **Location of Hard Links** | ❌ No | The inode knows *how many* exist, but not *where* they are in the directory tree. |
+| **Access Rights** | ✅ Yes | Stores permissions (e.g., Read, Write, Execute for User/Group/Others). |
+| **Timestamps** | ✅ Yes | Tracks creation (ctime), modification (mtime), and access (atime) times. |
+| **File Contents** | ⚠️ Sometimes | Generally **No** (data is in blocks), but some file systems store very small files directly in the inode (inline data). |
+| **Ordered List of Data Blocks** | ✅ Yes | Contains pointers to the disk blocks where the actual file content resides. |
+
+
 
 
 ## Checking the details on ubuntu system
