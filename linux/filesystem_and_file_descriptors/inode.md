@@ -106,6 +106,12 @@ valid state, and much much more
   - Just incase the super block the kernel has becomes corrupted
   - Required overhead, as the superblock is written back to disk frequently
 
+<img width="1515" height="651" alt="image" src="https://github.com/user-attachments/assets/d6b662a8-064f-4e55-b291-a1a39d3d1e0b" />
+
+<img width="1515" height="810" alt="image" src="https://github.com/user-attachments/assets/e4f484ab-0269-457f-a366-489238ff89ce" />
+
+Ref: L09: Inodes, Super Block, and Boot Block, University of Pennsylvania
+
 ## 📂 What Data is Stored in an Inode?
 
 An **inode** (index node) is a data structure in a Unix-style file system that describes a file-system object like a file or a directory. Below is a breakdown of what attributes are actually stored within the inode itself versus what is stored elsewhere.
