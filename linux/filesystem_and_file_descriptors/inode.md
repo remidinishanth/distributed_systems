@@ -31,6 +31,23 @@ Difference with example
 <img width="1098" height="374" alt="image" src="https://github.com/user-attachments/assets/567a4845-e416-4299-af56-bbe33553e44c" />
 
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/5e0c423a-7587-4544-baf3-3bf58e9c3c1a" />
+
+
+### 🔗 Hard Links vs. Soft Links
+
+A **Hard Link** is a direct reference to the physical data on the disk (the inode). A **Soft Link** (or Symbolic Link) is a special file that points to another file's path (like a shortcut).
+
+| Feature | Hard Link | Soft Link (Symlink) | Explanation |
+| :--- | :---: | :---: | :--- |
+| **Inode Number** | 🆔 Same | 🆕 Different | Hard links share the exact same inode as the original; soft links get a new unique inode. |
+| **Cross Filesystem** | ❌ No | ✅ Yes | Hard links must stay on the same partition; soft links can point anywhere (even network drives). |
+| **Link to Directory** | ❌ No | ✅ Yes | Hard linking directories is restricted (to prevent loops); soft links can point to directories easily. |
+| **Delete Original** | 🛡️ File Stays | 💔 Link Breaks | If the original is deleted, hard links still work (data remains until last link is gone). Soft links become "dangling." |
+| **File Size** | 💾 Original Size | 🤏 Path Length | Hard links show the size of the actual data; soft links are tiny (size = length of the path string). |
+| **Speed** | ⚡ Fastest | 🐢 Slightly Slower | Hard links access data directly; soft links require an extra step to resolve the path. |
+| **Command** | `ln target link` | `ln -s target link` | The `-s` flag is the key switch to create a soft link. |
+
 ## Directory and entry
 
 Everything is a file, even directory
