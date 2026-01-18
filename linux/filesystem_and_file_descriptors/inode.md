@@ -1,4 +1,4 @@
-## File and Inode
+<img width="1035" height="722" alt="image" src="https://github.com/user-attachments/assets/4ba696b3-09f7-4a8c-bcf2-16961b83bc8c" />## File and Inode
 <img width="1174" height="803" alt="image" src="https://github.com/user-attachments/assets/9f8f3088-4230-45b9-9371-1a6321350ac0" />
 
 ## File metadata
@@ -62,6 +62,27 @@ Everything is a file, even directory
 
 
 <img width="1174" height="726" alt="image" src="https://github.com/user-attachments/assets/dcf3f7f5-6419-4a3a-accc-04612683745f" />
+
+## File Path look up
+
+<img width="1035" height="722" alt="image" src="https://github.com/user-attachments/assets/3f766ce4-1c3e-4d58-a76b-7c4bb34573ff" />
+
+The filesystem root directory is inode 2.
+
+<img width="2486" height="1198" alt="image" src="https://github.com/user-attachments/assets/7b22ffec-ca93-45b4-83c1-ed549bdd3368" />
+
+
+<img width="3094" height="1556" alt="image" src="https://github.com/user-attachments/assets/c6727871-4d57-49a1-b680-34d681020682" />
+
+<img width="1530" height="775" alt="image" src="https://github.com/user-attachments/assets/1db4df17-413c-4ec7-9868-d21649f97cdf" />
+
+Directory Entries
+<img width="1530" height="782" alt="image" src="https://github.com/user-attachments/assets/5f0cb7ae-86ed-43e3-a9f5-283e639946de" />
+
+Now find the next inode to traverse to
+<img width="1530" height="782" alt="image" src="https://github.com/user-attachments/assets/3d654859-c883-413d-bbe5-50f7159b3929" />
+
+
 
 ## 📂 What Data is Stored in an Inode?
 
