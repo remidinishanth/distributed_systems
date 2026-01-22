@@ -8,6 +8,8 @@ description: "Container orchestration with Kubernetes - concepts, architecture, 
 
 Also checkout: https://docs.google.com/document/d/10w2ynbbVisw6XHhq6ohB5pVVlXh8hdCWTHahc4ieQYQ/edit
 
+TODO: https://cybozu.github.io/introduction-to-kubernetes/introduction-to-kubernetes.html
+
 and https://kubernetesbootcamp.github.io/kubernetes-bootcamp/index.html
 
 
