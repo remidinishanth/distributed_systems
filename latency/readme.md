@@ -1,3 +1,6 @@
+<img width="1550" height="877" alt="image" src="https://github.com/user-attachments/assets/4c5f8b26-e976-4557-a3e5-b62b6f8add30" />
+
+
 Source: https://gist.github.com/hellerbarde/2843375
 
 ### Latency numbers every programmer should know
