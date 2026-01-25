@@ -1,9 +1,3 @@
----
-layout: page
-title: "Databases"
-category: "databases"
----
-
 ## Database and DBMS
 
 A database is an organized collection of inter-related data that models some aspect of the real-world
@@ -12,6 +6,8 @@ A database is an organized collection of inter-related data that models some asp
 People often confuse “databases” with
 “database management systems” (e.g., MySQL, Oracle, MongoDB, Snowflake). A database management
 system (DBMS) is the software that manages a database.
+
+Ref: https://15445.courses.cs.cmu.edu/fall2024/slides/01-relationalmodel.pdf
 
 ### Data Models
 
@@ -22,7 +18,8 @@ A schema is a description of a particular collection of data based on a data mod
 * A schema is a blueprint of the database which specifies what fields will be present and what would be their types.
 * For example an employee table will have an employee_ID column represented by a string of 10 digits and an employee_Name column with a string of 45 characters.
 
-![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/efd2765d-37a3-4380-a67d-483ccebd3d6d)
+<img width="1024" height="741" alt="image" src="https://github.com/user-attachments/assets/a240fea0-9917-4bf4-ab51-f38e5bef8b49" />
+
 
 ## Types of datastore:
 Databases come in a variety of genres, such as 
