@@ -40,7 +40,7 @@ Ref: https://www.cs.swarthmore.edu/~soni/cs44/f18/Labs/lab2.html
 
 <img width="2626" height="960" alt="image" src="https://github.com/user-attachments/assets/4a0cb782-1e01-4056-983b-b58ba9438c4b" />
 
-Ref: Internal Layout of a Heap Table File of InterDB https://www.interdb.jp/pg/pgsql01/03.html
+Ref: Internal Layout of a Heap Table File of Postgres SQL https://www.interdb.jp/pg/pgsql01/03.html
 
 #### Writing of a Tuple
 
