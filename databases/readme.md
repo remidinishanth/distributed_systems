@@ -12,6 +12,11 @@ Also there is Adv Databases course
 
 ![image](https://github.com/user-attachments/assets/9ac0d78a-9437-47df-b122-87b754b9929f)
 
+### Data Models
+<img width="1024" height="741" alt="image" src="https://github.com/user-attachments/assets/a220e81e-7dca-4204-8e10-f6bd1c0bc68f" />
+
+Ref: CMU https://15445.courses.cs.cmu.edu/fall2024/slides/01-relationalmodel.pdf
+
 ### Types of Databases
 Selecting the right database is crucial for project success. Here's a summary of key points:
 
