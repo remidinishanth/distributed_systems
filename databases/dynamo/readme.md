@@ -1,8 +1,3 @@
----
-layout: page
-title: "Readme"
-category: "dynamo"
----
 
 > Goal: Create a practical implementation of a key-value store that is highly scalable, decentralized, replicated, and efficient.
 
