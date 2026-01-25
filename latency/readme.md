@@ -1,4 +1,6 @@
 <img width="1550" height="877" alt="image" src="https://github.com/user-attachments/assets/4c5f8b26-e976-4557-a3e5-b62b6f8add30" />
+<img width="1103" height="822" alt="image" src="https://github.com/user-attachments/assets/9f02fb43-396f-4bdd-a70c-8e9b7c34542b" />
+
 Ref: https://15445.courses.cs.cmu.edu/fall2024/slides/03-storage1.pdf
 
 
