@@ -160,3 +160,10 @@ Transactions running at the read committed isolation level must prevent dirty wr
 Nice read about Cockroach DB https://www.cockroachlabs.com/blog/distributed-sql-key-value-store/
 
 <img width="1074" alt="image" src="https://github.com/user-attachments/assets/e24257e3-44df-4450-92f8-5a4e24d8a07b">
+
+
+## Scaling database
+
+<img width="1147" height="645" alt="image" src="https://github.com/user-attachments/assets/d1773552-c110-44f1-becf-2b7ff5e979a0" />
+
+Ref: https://pages.awscloud.com/rs/112-TZM-766/images/Session%201%20-%20Intro%20to%20DDB%20and%20Use%20Cases_rev.pdf
