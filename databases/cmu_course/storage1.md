@@ -63,3 +63,23 @@ If the index tuple with the key that you are looking for has been found1, Postgr
 ### Record IDs
 
 <img width="1492" height="838" alt="image" src="https://github.com/user-attachments/assets/a7353355-8cc1-4b47-80cc-c506ae7fa5a3" />
+
+## Tuple Layout
+
+<img width="2382" height="990" alt="image" src="https://github.com/user-attachments/assets/51400ece-f87c-4b69-9639-c74f32372950" />
+
+<img width="1500" height="570" alt="image" src="https://github.com/user-attachments/assets/2e04e24d-ac5f-4d0f-93d6-acd99cb0a8a1" />
+
+<img width="1500" height="754" alt="image" src="https://github.com/user-attachments/assets/c2fa8aec-b84b-4691-8c55-52e41c7a52e1" />
+
+### DENORMALIZED TUPLE DATA
+
+<img width="1024" height="518" alt="image" src="https://github.com/user-attachments/assets/7a21bfb3-061d-4b27-9e5e-e66b4dc35c1e" />
+
+<img width="1500" height="801" alt="image" src="https://github.com/user-attachments/assets/99ec8946-e550-40f5-8f87-ce9215967e49" />
+
+## CONCLUSION
+* Database is organized in pages.
+* Different ways to track pages.
+* Different ways to store pages.
+* Different ways to store tuples.
