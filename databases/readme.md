@@ -40,6 +40,13 @@ A vector database stores high-dimensional vectors extracted from various unstruc
 - detecting abnormalities
 - temporarily store embeddings for large amounts of input
 
+<img width="1275" height="862" alt="image" src="https://github.com/user-attachments/assets/6ed3b3e8-3e30-4904-a61c-25ac1015e71f" />
+
+<img width="1552" height="697" alt="image" src="https://github.com/user-attachments/assets/953879f4-891d-4f18-ad54-40802b5a9c5c" />
+
+Ref: CMU https://15445.courses.cs.cmu.edu/fall2024/slides/01-relationalmodel.pdf
+
+
 ### CAP and Databases
 
 ![image](https://github.com/user-attachments/assets/10004cce-290e-4783-b611-60662a17d9df)
