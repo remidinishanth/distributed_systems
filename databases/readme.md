@@ -161,6 +161,7 @@ Nice read about Cockroach DB https://www.cockroachlabs.com/blog/distributed-sql-
 
 <img width="1074" alt="image" src="https://github.com/user-attachments/assets/e24257e3-44df-4450-92f8-5a4e24d8a07b">
 
+Ref: CMU 15-445/645: Introduction to Database Systems at Carnegie Mellon University
 
 ## Scaling database
 
