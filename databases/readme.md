@@ -1,9 +1,3 @@
----
-layout: page
-title: "Readme"
-category: "databases"
----
-
 Todo: https://www.youtube.com/watch?v=vdPALZ-GCfI&list=PLSE8ODhjZXjbj8BMuIrRcacnQh20hmY9g
 
 F2023 #00 - Course Overview & Logistics (CMU Intro to Database Systems)
