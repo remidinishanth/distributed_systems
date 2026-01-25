@@ -25,6 +25,12 @@ Simplified 2Q algorithm works with two buffers: the primary LRU buffer - Am and 
 
 <img width="1200" height="628" alt="image" src="https://github.com/user-attachments/assets/5d4e4fb4-556a-4023-928e-9fbea434eb12" />
 
+### MySQL workaround instead of maintaining two lists
+
+Midpoint insertion strategy
+
+<img width="1200" height="628" alt="image" src="https://github.com/user-attachments/assets/b78385e9-3e4c-40a9-8b3f-01620194abce" />
+
 
 ## More examples with vmtouch
 
