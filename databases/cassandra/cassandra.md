@@ -1,9 +1,3 @@
----
-layout: page
-title: "Cassandra"
-category: "cassandra"
----
-
 ### Goal
 
 >  Goal: How can we build an ultra-high performance, low-latency multi-table database that can grow incrementally to handle massive-scale data?
