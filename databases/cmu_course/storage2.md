@@ -32,3 +32,5 @@ We use WAL so that in-memory writes aren't lost before we create an immutable SS
 
 
 <img width="2048" height="1152" alt="image" src="https://github.com/user-attachments/assets/d468a72f-220c-41e2-a9ba-34d090a130e5" />
+
+<img width="1190" height="648" alt="image" src="https://github.com/user-attachments/assets/3bb84819-4d71-4b04-a581-83f2a342051f" />
