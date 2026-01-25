@@ -14,6 +14,18 @@
 
 <img width="1528" height="857" alt="image" src="https://github.com/user-attachments/assets/728a3480-4502-466b-92f5-4870040b48c6" />
 
+## Heap File
+
+<img width="1141" height="663" alt="image" src="https://github.com/user-attachments/assets/a96f4733-8626-4107-bc5f-e7f4cdb21f0e" />
+
+
+<img width="1553" height="823" alt="image" src="https://github.com/user-attachments/assets/09afa63d-fb21-4cf6-8266-2e1a5a7a1d19" />
+<img width="1473" height="336" alt="image" src="https://github.com/user-attachments/assets/32ef94dc-40bf-4fd1-a782-bab783a60b78" />
+
+### Page directory
+
+<img width="1521" height="788" alt="image" src="https://github.com/user-attachments/assets/15a98e36-3982-4844-aed8-9321ee352549" />
+
 
 ## Page Layout
 
