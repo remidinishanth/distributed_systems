@@ -36,11 +36,24 @@
 
 Ref: https://www.cs.swarthmore.edu/~soni/cs44/f18/Labs/lab2.html
 
-More concrete example
+### More concrete example
 
 <img width="2626" height="960" alt="image" src="https://github.com/user-attachments/assets/4a0cb782-1e01-4056-983b-b58ba9438c4b" />
 
 Ref: Internal Layout of a Heap Table File of InterDB https://www.interdb.jp/pg/pgsql01/03.html
+
+#### Writing of a Tuple
+
+Suppose a table composed of one page that contains just one heap tuple. The pd_lower of this page points to the first line pointer, and both the line pointer and the pd_upper point to the first heap tuple. 
+
+<img width="2578" height="542" alt="image" src="https://github.com/user-attachments/assets/863d177b-7c29-401f-87c1-1eb7b6d5254b" />
+
+When the second tuple is inserted, it is placed after the first one. The second line pointer is appended to the first one, and it points to the second tuple. The pd_lower changes to point to the second line pointer, and the pd_upper to the second heap tuple. 
+
+#### Reading Heap tuples
+
+<img width="2412" height="1608" alt="image" src="https://github.com/user-attachments/assets/5e3d5b86-e9d2-43c5-8589-04304504680c" />
+
 
 ### Record IDs
 
