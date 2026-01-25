@@ -20,3 +20,23 @@
 <img width="1435" height="799" alt="image" src="https://github.com/user-attachments/assets/5b8e1042-35cf-4598-9b01-82044cabf80d" />
 
 <img width="1362" height="670" alt="image" src="https://github.com/user-attachments/assets/98ea027f-3ecc-4e72-971f-45ac99349082" />
+
+### Approach 1
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/17b4f871-4d84-4887-83f8-0a83bddc4443" />
+
+### Slotted Pages
+
+<img width="1452" height="823" alt="image" src="https://github.com/user-attachments/assets/a8257f74-af0c-42af-82c3-4d4a28b04ad9" />
+
+<img width="2786" height="2551" alt="image" src="https://github.com/user-attachments/assets/48824a24-8de4-42bd-bace-0536803b436d" />
+
+
+<img width="1238" height="380" alt="image" src="https://github.com/user-attachments/assets/42c7c080-8109-412f-81c2-efa41b2c4c86" />
+
+Ref: https://www.cs.swarthmore.edu/~soni/cs44/f18/Labs/lab2.html
+
+
+### Record IDs
+
+<img width="1492" height="838" alt="image" src="https://github.com/user-attachments/assets/a7353355-8cc1-4b47-80cc-c506ae7fa5a3" />
