@@ -52,6 +52,11 @@ When the second tuple is inserted, it is placed after the first one. The second 
 
 #### Reading Heap tuples
 
+Two typical access methods, sequential scan and B-tree index scan, are outlined here:
+* (a) **Sequential scan** – It reads all tuples in all pages sequentially by scanning all line pointers in each page.
+* (b) **B-tree index scan** – It reads an index file that contains index tuples, each of which is composed of an index key and a TID that points to the target heap tuple.
+If the index tuple with the key that you are looking for has been found1, PostgreSQL reads the desired heap tuple using the obtained TID value.
+
 <img width="2412" height="1608" alt="image" src="https://github.com/user-attachments/assets/5e3d5b86-e9d2-43c5-8589-04304504680c" />
 
 
