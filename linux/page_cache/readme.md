@@ -2,6 +2,13 @@ Read "Understanding the Linux Kernel" page cache chapter
 
 <img width="1698" height="1362" alt="image" src="https://github.com/user-attachments/assets/9335ebb3-2a3a-46d9-8d3f-97912551fb62" />
 
+
+Just using LRU won't help here.
+
+## Problem
+
+There is another problem with the current Linux page cache: Processes that read or write a lot of data but only do so once also have their data cached. For example, imagine a backup process. A backup process will read nearly all data stored on disk (and maybe write it to an archive file), but caching the data from this read or write operations does not make a lot of sense because it is not very likely to be accessed again soon (at least not more likely than if the backup process did not run at all). However, the Linux page cache will still cache that data and move other data out of memory. Now, accessing that data again will result in slow read requests from the hardware, effectively slowing the system down, sometimes to a point that is worse than if the page cache had been disabled completely. 
+
 ## How is this implemented:
 
 The Linux Page cache maintains a radix tree for every process address space. For this radix tree it maintains two lists
