@@ -31,6 +31,11 @@ We use WAL so that in-memory writes aren't lost before we create an immutable SS
 <img width="1929" height="1285" alt="image" src="https://github.com/user-attachments/assets/2317949e-b045-495d-b4c1-97dcf5982e52" />
 
 
+LSM Tree, Optimization for reads, use bloom filter
+
+<img width="2076" height="1260" alt="image" src="https://github.com/user-attachments/assets/3ddcf072-23fc-4124-bbb4-22ae5313ba88" />
+
+
 <img width="2048" height="1152" alt="image" src="https://github.com/user-attachments/assets/d468a72f-220c-41e2-a9ba-34d090a130e5" />
 
 <img width="1190" height="648" alt="image" src="https://github.com/user-attachments/assets/3bb84819-4d71-4b04-a581-83f2a342051f" />
