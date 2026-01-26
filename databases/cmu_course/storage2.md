@@ -1,13 +1,22 @@
 <img width="1436" height="836" alt="image" src="https://github.com/user-attachments/assets/3dbfcb17-aaff-45c7-a5c9-79650fd385d2" />
 
 
-<img width="1206" height="779" alt="image" src="https://github.com/user-attachments/assets/fdfec501-bb90-4ab3-8df1-3fbde867551a" />
+Reads and the need for indexing
+
+<img width="1157" height="773" alt="image" src="https://github.com/user-attachments/assets/6b2a5cfe-0aa0-4182-8311-3483b1b96626" />
+
+
+<img width="1190" height="578" alt="image" src="https://github.com/user-attachments/assets/e45eba14-19a6-4e30-9a42-de95392a6b29" />
+
+<img width="1551" height="852" alt="image" src="https://github.com/user-attachments/assets/83395fe8-bbdc-4b6a-879c-0e4e481a79b6" />
+
+Writes
+
+<img width="1211" height="786" alt="image" src="https://github.com/user-attachments/assets/de0d4fbe-8ff4-471c-b5a1-7dfadcd89b74" />
+
 
 
 <img width="1182" height="797" alt="image" src="https://github.com/user-attachments/assets/5eb62483-61e8-4ab7-9ba7-4de10e21ac8d" />
-
-
-<img width="1182" height="401" alt="image" src="https://github.com/user-attachments/assets/cb0e7ca8-8f57-46f9-b534-5844aef26c58" />
 
 
 ## Log Structure Storage
@@ -51,13 +60,4 @@ LSM Tree, Optimization for reads, use a bloom filter
 
 <img width="1211" height="571" alt="image" src="https://github.com/user-attachments/assets/1ca445f6-a968-419d-98b3-6d6b8a9f1814" />
 
-
-## Need for indexing
-
-<img width="1157" height="773" alt="image" src="https://github.com/user-attachments/assets/6b2a5cfe-0aa0-4182-8311-3483b1b96626" />
-
-
-<img width="1190" height="578" alt="image" src="https://github.com/user-attachments/assets/e45eba14-19a6-4e30-9a42-de95392a6b29" />
-
-<img width="1551" height="852" alt="image" src="https://github.com/user-attachments/assets/83395fe8-bbdc-4b6a-879c-0e4e481a79b6" />
 
