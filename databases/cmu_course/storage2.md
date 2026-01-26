@@ -49,6 +49,9 @@ LSM Tree, Optimization for reads, use a bloom filter
 
 <img width="1190" height="648" alt="image" src="https://github.com/user-attachments/assets/3bb84819-4d71-4b04-a581-83f2a342051f" />
 
+<img width="1211" height="571" alt="image" src="https://github.com/user-attachments/assets/1ca445f6-a968-419d-98b3-6d6b8a9f1814" />
+
+
 ## Need for indexing
 
 <img width="1157" height="773" alt="image" src="https://github.com/user-attachments/assets/6b2a5cfe-0aa0-4182-8311-3483b1b96626" />
