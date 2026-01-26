@@ -22,6 +22,15 @@
 
 <img width="1351" height="868" alt="image" src="https://github.com/user-attachments/assets/28cd99c0-287c-44fb-a3c9-4caae6f1f339" />
 
+### Compaction
+
+<img width="1444" height="826" alt="image" src="https://github.com/user-attachments/assets/54f9dfae-7981-4848-8e4d-8ab13af8aff5" />
+
+<img width="1498" height="653" alt="image" src="https://github.com/user-attachments/assets/2a3c953e-f26b-4d18-a27d-d793595b0022" />
+
+<img width="1447" height="653" alt="image" src="https://github.com/user-attachments/assets/ad823b81-4206-433f-95ec-4978fff5b674" />
+
+
 ### LSM trees
 <img width="880" height="557" alt="image" src="https://github.com/user-attachments/assets/2651081d-8bd3-428c-a140-7b08ebc8deaf" />
 
@@ -31,7 +40,7 @@ We use WAL so that in-memory writes aren't lost before we create an immutable SS
 <img width="1929" height="1285" alt="image" src="https://github.com/user-attachments/assets/2317949e-b045-495d-b4c1-97dcf5982e52" />
 
 
-LSM Tree, Optimization for reads, use bloom filter
+LSM Tree, Optimization for reads, use a bloom filter
 
 <img width="2076" height="1260" alt="image" src="https://github.com/user-attachments/assets/3ddcf072-23fc-4124-bbb4-22ae5313ba88" />
 
