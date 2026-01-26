@@ -61,3 +61,28 @@ LSM Tree, Optimization for reads, use a bloom filter
 <img width="1211" height="571" alt="image" src="https://github.com/user-attachments/assets/1ca445f6-a968-419d-98b3-6d6b8a9f1814" />
 
 
+## Storage of Tuples
+
+<img width="1138" height="758" alt="image" src="https://github.com/user-attachments/assets/7a75fb53-ad3b-4b36-92f0-df706b672f1f" />
+
+<img width="1559" height="622" alt="image" src="https://github.com/user-attachments/assets/7f87999c-e529-427e-a0e9-b74606da6685" />
+
+Word alignment
+
+<img width="1559" height="772" alt="image" src="https://github.com/user-attachments/assets/f3a03737-29aa-4f5a-8043-f35c36e6e26d" />
+
+Padding
+<img width="1559" height="772" alt="image" src="https://github.com/user-attachments/assets/d0809056-fa45-4015-9269-c371a3b51c40" />
+
+Reordering
+<img width="1559" height="772" alt="image" src="https://github.com/user-attachments/assets/7fd60a1c-b874-4500-8dc8-70f68df1eac1" />
+
+
+
+<img width="1415" height="837" alt="image" src="https://github.com/user-attachments/assets/dd6e1d2e-4015-4799-8f43-8d595d58737a" />
+
+<img width="1462" height="837" alt="image" src="https://github.com/user-attachments/assets/e4698f79-6980-46b7-a5fa-c1cf32766b4d" />
+
+<img width="1138" height="685" alt="image" src="https://github.com/user-attachments/assets/def8f765-6d92-4335-8675-4f9ce76e3004" />
+
+<img width="1138" height="758" alt="image" src="https://github.com/user-attachments/assets/6da83404-63ac-4f57-8823-c97a75f719a4" />
