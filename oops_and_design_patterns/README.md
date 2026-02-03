@@ -1,5 +1,7 @@
 # oops_and_design_patterns
 
+SOLID Principles
+
 ![image](https://github.com/remidinishanth/oops_and_design_patterns/assets/19663316/e8c94ba8-71a0-456e-bebc-fc14c28d3fa4)
 
 * Single Responsibility Principle
@@ -13,6 +15,14 @@
 * Liskov-Substitution Principle
 
 <img width="720" height="648" alt="image" src="https://github.com/user-attachments/assets/31b66171-0396-4d04-9f93-a9544a774036" />
+
+* Interface segregation principle
+
+<img width="737" height="648" alt="image" src="https://github.com/user-attachments/assets/380ff72f-ec83-437d-bdf7-b19a1782c1a4" />
+
+* Dependency inversion principle
+
+<img width="649" height="648" alt="image" src="https://github.com/user-attachments/assets/9503c44e-470c-4a76-834e-89528cfcd7ee" />
 
 
 Java REF: http://people.eecs.berkeley.edu/~jrs/61b/ and https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-092-introduction-to-programming-in-java-january-iap-2010/lecture-notes/
