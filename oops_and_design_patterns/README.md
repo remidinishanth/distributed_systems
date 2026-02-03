@@ -2,6 +2,10 @@
 
 ![image](https://github.com/remidinishanth/oops_and_design_patterns/assets/19663316/e8c94ba8-71a0-456e-bebc-fc14c28d3fa4)
 
+Single Responsibility Principle
+
+<img width="695" height="627" alt="image" src="https://github.com/user-attachments/assets/099a84e3-2027-4453-9a4d-f830e7b4ff8c" />
+
 
 Java REF: http://people.eecs.berkeley.edu/~jrs/61b/ and https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-092-introduction-to-programming-in-java-january-iap-2010/lecture-notes/
 
