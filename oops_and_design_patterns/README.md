@@ -16,6 +16,9 @@ SOLID Principles
 
 <img width="720" height="648" alt="image" src="https://github.com/user-attachments/assets/31b66171-0396-4d04-9f93-a9544a774036" />
 
+<img width="812" height="482" alt="image" src="https://github.com/user-attachments/assets/4dff7596-a0c4-4b91-8596-43c303087049" />
+
+
 * Interface segregation principle
 
 <img width="737" height="648" alt="image" src="https://github.com/user-attachments/assets/380ff72f-ec83-437d-bdf7-b19a1782c1a4" />
