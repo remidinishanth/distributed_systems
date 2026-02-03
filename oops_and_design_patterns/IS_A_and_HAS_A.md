@@ -1,7 +1,7 @@
 <img width="1035" alt="image" src="https://github.com/remidinishanth/oops_and_design_patterns/assets/19663316/3424d51b-d71f-4c50-adce-89c213664f38">
 
 
-### IS-A and HAS-A
+## IS-A and HAS-A
 
 Using IS-A and HAS-A:
 Remember that when one class inherits from another, we say that the
