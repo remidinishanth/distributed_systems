@@ -31,11 +31,11 @@ The IS-A test works anywhere in the inheritance tree. If your
 inheritance tree is well-designed, the IS-A test should make
 sense when you ask any subclass if it IS-A any of its supertypes.
 
-Remember, if X extends Y, X IS-A Y must make sense.
+> Remember, if X extends Y, X IS-A Y must make sense.
 
 DO NOT use inheritance just so that you can reuse
 code from another class, if the relationship between the
-superclass and subclass violate either of the above two
+`superclass` and `subclass` violate either of the above two
 rules. For example, imagine you wrote special printing
 code in the Alarm class and now you need printing code
 in the Piano class, so you have Piano extend Alarm so that
