@@ -10,6 +10,9 @@
 
 <img width="720" height="637" alt="image" src="https://github.com/user-attachments/assets/a99d9e79-354c-4782-b611-2502a17feaa3" />
 
+* Liskov-Substitution Principle
+
+<img width="720" height="648" alt="image" src="https://github.com/user-attachments/assets/31b66171-0396-4d04-9f93-a9544a774036" />
 
 
 Java REF: http://people.eecs.berkeley.edu/~jrs/61b/ and https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-092-introduction-to-programming-in-java-january-iap-2010/lecture-notes/
