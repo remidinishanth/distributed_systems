@@ -1,3 +1,6 @@
+<img width="389" height="204" alt="image" src="https://github.com/user-attachments/assets/6cb5c37d-a0bd-4a5a-b773-1a8779880138" />
+
+
 # oops_and_design_patterns
 
 SOLID Principles
