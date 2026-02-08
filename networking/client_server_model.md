@@ -29,6 +29,9 @@ In P2P architectures, two or more hosts communicate directly with each other (no
 
 ### Example: DHCP Client Server
 
+<img width="576" height="255" alt="image" src="https://github.com/user-attachments/assets/35b58583-d88f-45e5-b496-8ee518b99880" />
+
+
 The **Dynamic Host Configuration Protocol (DHCP)** is responsible for requesting and offering IP addresses.
 
 | Component | Role | Description |
@@ -41,6 +44,9 @@ The **Dynamic Host Configuration Protocol (DHCP)** is responsible for requesting
 
 ### Example: HTTP Client and Server
 
+<img width="575" height="345" alt="image" src="https://github.com/user-attachments/assets/abf15033-b7c6-4c14-a0ae-c2fd6656ea08" />
+
+
 **Scenario:** Using an HTTP client on a PC to control home lights
 
 1. HTTP client runs on a home lighting control board
@@ -51,6 +57,9 @@ The **Dynamic Host Configuration Protocol (DHCP)** is responsible for requesting
 
 ### Example: HTTP Client and Server in the Same Host
 
+<img width="577" height="342" alt="image" src="https://github.com/user-attachments/assets/70b40d8e-446e-4737-b63c-878be2aeedee" />
+
+
 A network host can be **both a client and a server** simultaneously.
 
 **Example:**
@@ -59,6 +68,9 @@ A network host can be **both a client and a server** simultaneously.
 - Configuration page allows changing the website and login info used by the HTTP client
 
 ### Example: Local Network HTTP Server
+
+<img width="577" height="345" alt="image" src="https://github.com/user-attachments/assets/64445013-69fa-4d68-b3d6-7228d941b7e6" />
+
 
 An HTTP server on an embedded device can directly control the device:
 - Eliminates need for HTTP client application and Internet web server
@@ -70,6 +82,9 @@ An HTTP server on an embedded device can directly control the device:
 ## Internet Server vs. Local Network Server
 
 ### Internet Server
+
+<img width="577" height="302" alt="image" src="https://github.com/user-attachments/assets/920cef5c-51b9-4560-87cc-2f2256035045" />
+
 
 Accessing an HTTP server on the Internet is **effortless**.
 
@@ -84,6 +99,9 @@ Accessing an HTTP server on the Internet is **effortless**.
 - Service providers allow you to choose a website name
 
 ### Local Network Server
+
+<img width="577" height="288" alt="image" src="https://github.com/user-attachments/assets/bc19c6b8-c5f1-498f-90f5-56a211ef99be" />
+
 
 HTTP server located on a local network (running on the embedded device itself).
 
@@ -106,7 +124,14 @@ HTTP server located on a local network (running on the embedded device itself).
 2. **No website name** - Remote clients must use IP address
 3. **Dynamic IP address** - ISP may change your IP address
 
+
+<img width="577" height="313" alt="image" src="https://github.com/user-attachments/assets/d715ff05-579b-4095-8966-7ad4765bc300" />
+
+
 ### Solution 1: Port Forwarding
+
+<img width="577" height="291" alt="image" src="https://github.com/user-attachments/assets/b1935f06-5a1d-43f4-b830-2a93622d4926" />
+
 
 Port forwarding allows Internet packets destined for a particular port to be forwarded to a specific local network IP address.
 
@@ -119,6 +144,9 @@ Port forwarding allows Internet packets destined for a particular port to be for
 
 ### Solution 2: Website Name (Domain Name)
 
+<img width="577" height="341" alt="image" src="https://github.com/user-attachments/assets/2872d535-cb12-40d0-a94a-8c627fd61d5b" />
+
+
 **Advantages of a website name:**
 - Easier to remember than IP addresses
 - If IP address changes, DNS servers can be automatically updated
@@ -128,6 +156,9 @@ Port forwarding allows Internet packets destined for a particular port to be for
 - DynDNS
 
 ### Solution 3: Dynamic IP Address Handling
+
+<img width="577" height="339" alt="image" src="https://github.com/user-attachments/assets/24df549b-3add-41b1-8d9c-8d80b20b45f6" />
+
 
 **Understanding Dynamic vs Static IP:**
 
@@ -147,6 +178,9 @@ Port forwarding allows Internet packets destined for a particular port to be for
 **DNS Service Providers:**
 - DynDNS
 - ZoneEdit
+
+<img width="577" height="223" alt="image" src="https://github.com/user-attachments/assets/bb6f25b4-f3f5-45b3-a479-9ffb2ed2af59" />
+
 
 These provide domain names and ability to update DNS servers when IP changes.
 
