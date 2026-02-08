@@ -11,15 +11,27 @@ SOLID Principles
 
 <img width="695" height="627" alt="image" src="https://github.com/user-attachments/assets/099a84e3-2027-4453-9a4d-f830e7b4ff8c" />
 
+<img width="1027" height="662" alt="image" src="https://github.com/user-attachments/assets/f27d1efb-aa71-4017-8734-399bec0185aa" />
+
+<img width="1084" height="714" alt="image" src="https://github.com/user-attachments/assets/45dac83e-e4a7-444b-b53b-fa202737d7b5" />
+
+
 * Open/Closed Principle
 
 <img width="720" height="637" alt="image" src="https://github.com/user-attachments/assets/a99d9e79-354c-4782-b611-2502a17feaa3" />
+
+<img width="1084" height="714" alt="image" src="https://github.com/user-attachments/assets/00a82608-a80a-4588-a14f-36ae8205cd28" />
+
+<img width="1084" height="744" alt="image" src="https://github.com/user-attachments/assets/3f8546cd-9e99-4832-82c1-448f015a9ae4" />
+
 
 * Liskov-Substitution Principle
 
 <img width="720" height="648" alt="image" src="https://github.com/user-attachments/assets/31b66171-0396-4d04-9f93-a9544a774036" />
 
 <img width="812" height="482" alt="image" src="https://github.com/user-attachments/assets/4dff7596-a0c4-4b91-8596-43c303087049" />
+
+<img width="1170" height="712" alt="image" src="https://github.com/user-attachments/assets/bfe17f5e-7430-4e2c-82db-3447c5f5da6c" />
 
 
 * Interface segregation principle
@@ -41,6 +53,13 @@ Design Patterns REF: https://www.d.umn.edu/~gshute/softeng/new/design_patterns/d
 Object-Oriented programming lets you extend a program without having to touch previously-tested, working code.
 
 Ref: https://www.dre.vanderbilt.edu/~schmidt/cs251/C++/lectures/PDFs/
+
+## The 5 Principles
+
+<img width="1170" height="750" alt="image" src="https://github.com/user-attachments/assets/4398db22-76b5-4d55-9693-2ed76c081cb2" />
+
+<img width="1170" height="811" alt="image" src="https://github.com/user-attachments/assets/14437736-8c6a-41b2-91f7-2761aa2005a0" />
+
 
 THE LANGUAGE OF OBJECT-ORIENTED PROGRAMMING
 ===========================================
