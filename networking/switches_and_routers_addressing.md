@@ -134,6 +134,11 @@ Switches use **Media Access Controller (MAC)** addresses to forward and filter d
 
 ## What is a MAC Address?
 
+A MAC (Media Access Control) address is a unique 48-bit identifier assigned to a network interface controller (NIC) for hardware identification on a network. 
+
+<img width="560" height="315" alt="image" src="https://github.com/user-attachments/assets/cb35b333-e177-4fe5-9f1c-b3c21531d453" />
+
+
 - Fixed hardware-based address that **never changes**
 - Programmed during manufacturing
 - **Globally unique** (managed by IEEE registration authority)
