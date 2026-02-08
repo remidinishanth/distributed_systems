@@ -4,6 +4,9 @@
 
 ## Routers in Local Networks
 
+<img width="506" height="100" alt="image" src="https://github.com/user-attachments/assets/427b8f3e-2fba-489a-8db8-713e2f57e417" />
+
+
 Routers connect one network to another. They:
 - Create local networks and control access to them
 - Route TCP/IP traffic on local networks
@@ -11,6 +14,9 @@ Routers connect one network to another. They:
 - Use firewalls to restrict public Internet access to the local network
 
 ## What is an IP Address?
+
+<img width="540" height="202" alt="image" src="https://github.com/user-attachments/assets/c37ef387-9610-4afb-83be-7b2cfa8825ee" />
+
 
 IP addresses uniquely identify every host (network node) on a TCP/IP network.
 
@@ -30,6 +36,9 @@ IP addresses uniquely identify every host (network node) on a TCP/IP network.
 
 When a device connects to a network, it automatically requests an IP address from the router.
 
+<img width="559" height="158" alt="image" src="https://github.com/user-attachments/assets/79d05c45-f090-43e4-bc01-e7d424f6b6d3" />
+
+
 ### Step 1: PC Generates Request for IP Address
 - PC's IP Address is `0.0.0.0` before assignment
 - PC and router are physically connected via Ethernet cable
@@ -42,6 +51,9 @@ When a device connects to a network, it automatically requests an IP address fro
 - Router sees sender needs an IP address and creates a new one
 - Other hosts discard the packet once they realize they cannot provide an IP address
 
+<img width="550" height="133" alt="image" src="https://github.com/user-attachments/assets/038910a1-1c55-46dd-aa23-5e5e6b0c4acb" />
+
+
 ### Step 3: Router Offers an IP Address to the PC
 - Router allocates a new IP address and broadcasts a message containing it
 - Uses broadcast IP because PC doesn't know its IP yet and can't filter packets
@@ -52,7 +64,13 @@ When a device connects to a network, it automatically requests an IP address fro
 - Opens it and finds the IP address assignment message
 - Configures its network interface with the assigned IP
 
+<img width="568" height="137" alt="image" src="https://github.com/user-attachments/assets/8957f061-c8f5-4a2f-83b7-7c3c71507da7" />
+
+
 ## Switches in Local Networks
+
+<img width="525" height="196" alt="image" src="https://github.com/user-attachments/assets/b3284b69-42df-4d39-bca6-ec5af8b7ff02" />
+
 
 A switch enables connection of multiple devices to the same network.
 
@@ -62,9 +80,15 @@ A switch enables connection of multiple devices to the same network.
 
 ### Switches Inside Routers
 
+<img width="535" height="201" alt="image" src="https://github.com/user-attachments/assets/cdca5403-a395-4400-a94b-df976d9f56c7" />
+
+
 Most home/small business routers have a built-in switch.
 
 ## Switches use MAC Addresses
+
+<img width="576" height="219" alt="image" src="https://github.com/user-attachments/assets/5e4c1450-c3a7-4364-a56f-ba172eeaa4ae" />
+
 
 Switches use **Media Access Controller (MAC)** addresses to forward and filter data.
 
@@ -105,21 +129,36 @@ Switches use **Media Access Controller (MAC)** addresses to forward and filter d
 
 A switch uses a **routing table** to associate port numbers with MAC addresses.
 
+<img width="630" height="373" alt="image" src="https://github.com/user-attachments/assets/88a51488-678a-4a1b-b421-faab6f6427aa" />
+
+
 ### Step 1: PC Sends a Frame to the Switch
 - Host attempts to communicate with router to obtain an IP address
 - Creates a packet with broadcast IP address
 - Encapsulates packet into a frame with broadcast MAC address (`FF:FF:FF:FF:FF:FF`)
 
+<img width="571" height="338" alt="image" src="https://github.com/user-attachments/assets/f5bed39e-08a6-4991-b14f-9bd5e41e2ad3" />
+
+
 ### Step 2: Switch Receives Frame
 - Uses routing table to associate host's MAC address with the receiving interface
 - Frame contains source MAC address
+
+<img width="571" height="338" alt="image" src="https://github.com/user-attachments/assets/7f3f28e6-40f2-458d-8701-82ab1980dfa7" />
+
 
 ### Step 3: Switch Broadcasts Frame to All Nodes
 - MAC sees this is a broadcast frame
 - Switch forwards frame to all connected hosts
 
+<img width="571" height="338" alt="image" src="https://github.com/user-attachments/assets/ffbcd5fc-8eb7-46ae-b56e-8ce146e12b9d" />
+
+
 ### Step 4: Router Sends Reply to PC
 - Switch associates router's MAC address with the receiving interface
+
+<img width="571" height="338" alt="image" src="https://github.com/user-attachments/assets/f4f13cf8-808b-4922-8204-7974bd84f01f" />
+
 
 ### Step 5: Switch Forwards Frame to PC
 - Switch looks up destination MAC address in routing table
@@ -128,13 +167,22 @@ A switch uses a **routing table** to associate port numbers with MAC addresses.
 
 ## Example: Simplified Local Network TCP/IP Communication
 
+<img width="498" height="294" alt="image" src="https://github.com/user-attachments/assets/480d5b00-a77e-455c-bf18-51691506a0a7" />
+
+
 ### Scenario
 - Embedded network device with a web page for monitoring/control
 - PC accesses the web page via browser
 
+<img width="533" height="363" alt="image" src="https://github.com/user-attachments/assets/508a48aa-013a-4b37-85ce-0385b876bb17" />
+
+
 ### Step 1: Open Web Browser and Enter Development Board's IP Address
 - Both PC and development board have IP addresses
 - Switch's routing table has been updated with MAC addresses for each port
+
+<img width="551" height="328" alt="image" src="https://github.com/user-attachments/assets/3546e74d-29de-4e07-91de-7ee89cf0b52a" />
+
 
 ### Step 2: PC Generates and Transmits a Frame
 - Web browser creates a message requesting the web page at IP `192.168.1.102`
@@ -142,10 +190,16 @@ A switch uses a **routing table** to associate port numbers with MAC addresses.
 - Source and destination MAC addresses added to create a **frame**
 - Frame sent to PHY for transmission
 
+<img width="558" height="336" alt="image" src="https://github.com/user-attachments/assets/8d9e3dc0-7448-4e19-aeaf-300550cd5b50" />
+
+
 ### Step 3: Frame is Forwarded Through the Switch
 - Switch opens frame to find destination MAC address
 - Finds MAC in routing table, sends to appropriate port
 - Switch only cares about Layer 2 (MAC) addresses, not IP addresses
+
+<img width="540" height="320" alt="image" src="https://github.com/user-attachments/assets/897428b7-ecaf-480c-b9f0-ef810824c56d" />
+
 
 ### Step 4: Frame Arrives at Development Board
 1. Destination MAC address checked → matches device's MAC
@@ -158,6 +212,10 @@ A switch uses a **routing table** to associate port numbers with MAC addresses.
 - IP mismatch → packet discarded at Layer 3 (Network)
 - Application not running → discarded at Layer 4 (Transport)
 
+
+<img width="554" height="328" alt="image" src="https://github.com/user-attachments/assets/567ba4b6-67c8-41f2-ba73-f50d2d5819ad" />
+
+
 ### Step 5: Web Server Sends the Webpage to the PC
 1. Web server generates message containing the web page
 2. Source/destination IP addresses added → packet
@@ -168,6 +226,16 @@ A switch uses a **routing table** to associate port numbers with MAC addresses.
 7. PC opens message and receives the HTML file
 
 ---
+
+Question: What happens next?
+Answer:
+
+    The frame is received at the switch.
+    The switch finds the frame’s destination MAC address and uses its routing table to determine what port to forward the frame to.
+    The frame is sent to the PC
+    The PC opens the frame and checks the destination MAC address to determine if it needs to pay attention to it.
+    The PC opens the packet and checks the destination IP address.
+    The PC opens the message and finds the web page (which is just an HTML file) it requested.
 
 ## Learn More
 
