@@ -85,6 +85,19 @@ A switch enables connection of multiple devices to the same network.
 
 Most home/small business routers have a built-in switch.
 
+## Switches vs Routers
+
+<img width="758" height="877" alt="image" src="https://github.com/user-attachments/assets/66de59dd-5e96-4533-9d99-c4688754e460" />
+
+<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/5a6eb627-2692-4d36-bbe6-0e95e32420e9" />
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/37cb15eb-4a07-4e42-9157-14ba1301c60e" />
+
+<img width="2258" height="1254" alt="image" src="https://github.com/user-attachments/assets/1722d0f9-d076-4c1f-adca-93ff116666ea" />
+
+
+Ref: https://labs.iximiuz.com/courses/computer-networking-fundamentals/bridge-vs-switch
+
 ## Switches use MAC Addresses
 
 <img width="576" height="219" alt="image" src="https://github.com/user-attachments/assets/5e4c1450-c3a7-4364-a56f-ba172eeaa4ae" />
