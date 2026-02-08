@@ -113,6 +113,14 @@ Switches use **Media Access Controller (MAC)** addresses to forward and filter d
 
 ### Switches vs Routers
 
+Gemini
+
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/0d957af0-b13c-48d3-8251-65f507eef5dc" />
+
+<img width="1056" height="794" alt="image" src="https://github.com/user-attachments/assets/4c121b3e-ea68-487a-9b3a-c4389fd8847b" />
+
+Ref: https://www.conceptdraw.com/examples/block-diagram-of-a-computer-network-with-8-computer-switch-router-1-lan-printer
+
 <img width="758" height="877" alt="image" src="https://github.com/user-attachments/assets/66de59dd-5e96-4533-9d99-c4688754e460" />
 
 <img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/5a6eb627-2692-4d36-bbe6-0e95e32420e9" />
