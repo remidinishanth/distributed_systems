@@ -138,10 +138,6 @@ Peer-to-peer systems use DHTs, Key-Value/NoSQL stores uses DHTs, gossip, members
 
 <img width="1106" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/f4bf5b19-ab49-42bc-b284-0c60829fcc96">
 
-Socker programming
-
-![image](https://github.com/remidinishanth/distributed_systems/assets/19663316/a1ae9416-4463-4fad-b642-8d68d5a61323)
-
 Network Class assignments: https://piazza.com/class/hwxjf4snt151pt/post/15
 
 Socket Programming: https://www.cs.dartmouth.edu/~campbell/cs50/socketprogramming.html
