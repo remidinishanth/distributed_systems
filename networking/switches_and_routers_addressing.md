@@ -82,19 +82,7 @@ A switch enables connection of multiple devices to the same network.
 
 <img width="535" height="201" alt="image" src="https://github.com/user-attachments/assets/cdca5403-a395-4400-a94b-df976d9f56c7" />
 
-
 Most home/small business routers have a built-in switch.
-
-## Switches vs Routers
-
-<img width="758" height="877" alt="image" src="https://github.com/user-attachments/assets/66de59dd-5e96-4533-9d99-c4688754e460" />
-
-<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/5a6eb627-2692-4d36-bbe6-0e95e32420e9" />
-
-<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/37cb15eb-4a07-4e42-9157-14ba1301c60e" />
-
-<img width="2258" height="1254" alt="image" src="https://github.com/user-attachments/assets/1722d0f9-d076-4c1f-adca-93ff116666ea" />
-
 
 Ref: https://labs.iximiuz.com/courses/computer-networking-fundamentals/bridge-vs-switch
 
@@ -121,6 +109,19 @@ Switches use **Media Access Controller (MAC)** addresses to forward and filter d
 |--------|-------|--------------|--------------|
 | Switch | Layer 2 | MAC only | No (transparent to network) |
 | Router | Layer 3 | IP | Yes - two: LAN and WAN |
+
+
+### Switches vs Routers
+
+<img width="758" height="877" alt="image" src="https://github.com/user-attachments/assets/66de59dd-5e96-4533-9d99-c4688754e460" />
+
+<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/5a6eb627-2692-4d36-bbe6-0e95e32420e9" />
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/37cb15eb-4a07-4e42-9157-14ba1301c60e" />
+
+<img width="2258" height="1254" alt="image" src="https://github.com/user-attachments/assets/1722d0f9-d076-4c1f-adca-93ff116666ea" />
+
+
 
 ### MAC Functions
 
