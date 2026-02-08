@@ -4,7 +4,7 @@ title: "Socket Programming"
 category: "networking"
 ---
 
-Read good blog https://web.mit.edu/6.031/www/sp20/classes/24-sockets-networking/
+Read a good blog https://web.mit.edu/6.031/www/sp20/classes/24-sockets-networking/
 
 <img width="1241" alt="image" src="https://github.com/user-attachments/assets/9c02ba2d-e569-48c6-95ce-3b9e68dbf447">
 
@@ -40,6 +40,9 @@ If two applications (e.g., web browser and email client) run on the same PC, bot
 
 "Well-known" ports are reserved for common server applications. Clients know servers will be listening at these reserved port numbers.
 
+<img width="268" height="233" alt="image" src="https://github.com/user-attachments/assets/41090d36-16ef-469a-8462-dbb80ff66227" />
+
+
 | Port | Protocol | Description |
 |------|----------|-------------|
 | 20, 21 | FTP | File Transfer Protocol (data/control) |
@@ -63,6 +66,9 @@ Client-side port numbers are generated and assigned by the Transport layer. They
 When a client initiates a connection:
 - **Destination port**: Well-known port of the server (e.g., 80 for HTTP)
 - **Source port**: Ephemeral port assigned by client's OS (e.g., 52431)
+
+<img width="142" height="214" alt="image" src="https://github.com/user-attachments/assets/6781562a-6951-425d-bc75-b1374eb17620" />
+
 
 ---
 
