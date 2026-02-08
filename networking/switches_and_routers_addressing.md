@@ -121,7 +121,9 @@ Switches use **Media Access Controller (MAC)** addresses to forward and filter d
 
 <img width="2258" height="1254" alt="image" src="https://github.com/user-attachments/assets/1722d0f9-d076-4c1f-adca-93ff116666ea" />
 
+<img width="2000" height="964" alt="image" src="https://github.com/user-attachments/assets/cdeff89d-97ff-4d1f-9daf-7d8273028ab1" />
 
+Ref: https://labs.iximiuz.com/courses/computer-networking-fundamentals/bridge-vs-switch
 
 ### MAC Functions
 
