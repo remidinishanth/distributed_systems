@@ -148,6 +148,9 @@ The client need not **bind**, **listen** or **accept**. All client needs to do i
 
 ### TCP sockets, there is connect where there is 3 way handshake
 
+<img width="448" height="660" alt="image" src="https://github.com/user-attachments/assets/0af173de-4e9d-46dd-a363-d52a8a63c24c" />
+
+
 ![image](https://github.com/user-attachments/assets/529f2e1f-58d4-4a11-9892-ac12928ad900)
 
 <img width="3400" height="2926" alt="image" src="https://github.com/user-attachments/assets/e65c4c59-afba-4a11-93f3-59190614179e" />
