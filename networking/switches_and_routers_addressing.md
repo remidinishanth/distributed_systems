@@ -121,6 +121,10 @@ Gemini
 
 Ref: https://www.conceptdraw.com/examples/block-diagram-of-a-computer-network-with-8-computer-switch-router-1-lan-printer
 
+
+<img width="1024" height="329" alt="image" src="https://github.com/user-attachments/assets/4af43c30-9748-41ff-bbcc-f57dec2e69a1" />
+
+
 <img width="758" height="877" alt="image" src="https://github.com/user-attachments/assets/66de59dd-5e96-4533-9d99-c4688754e460" />
 
 <img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/5a6eb627-2692-4d36-bbe6-0e95e32420e9" />
