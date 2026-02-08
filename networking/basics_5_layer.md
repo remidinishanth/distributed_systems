@@ -70,8 +70,8 @@ IP has decided to use universal port numbers for servers; these are called **wel
 Every client process knows the well-known port number of the corresponding server process.  
 
 Communication using Port numbers
-<img width="641" alt="image" src="https://github.com/user-attachments/assets/0c20bed8-1b21-4a16-a830-befeca38e025">
 
+<img width="641" alt="image" src="https://github.com/user-attachments/assets/0c20bed8-1b21-4a16-a830-befeca38e025">
 
 <img width="641" alt="image" src="https://github.com/user-attachments/assets/7f067ec0-0b90-45e9-8433-c60744f2a120">
 
