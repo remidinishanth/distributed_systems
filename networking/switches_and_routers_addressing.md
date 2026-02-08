@@ -36,10 +36,10 @@ IP addresses uniquely identify every host (network node) on a TCP/IP network.
 
 When a device connects to a network, it automatically requests an IP address from the router.
 
+### Step 1: PC Generates Request for IP Address
+
 <img width="559" height="158" alt="image" src="https://github.com/user-attachments/assets/79d05c45-f090-43e4-bc01-e7d424f6b6d3" />
 
-
-### Step 1: PC Generates Request for IP Address
 - PC's IP Address is `0.0.0.0` before assignment
 - PC and router are physically connected via Ethernet cable
 - Each end of the cable connects to a network **PHY** (transceiver for generating/receiving signals)
@@ -51,10 +51,10 @@ When a device connects to a network, it automatically requests an IP address fro
 - Router sees sender needs an IP address and creates a new one
 - Other hosts discard the packet once they realize they cannot provide an IP address
 
+### Step 3: Router Offers an IP Address to the PC
+
 <img width="550" height="133" alt="image" src="https://github.com/user-attachments/assets/038910a1-1c55-46dd-aa23-5e5e6b0c4acb" />
 
-
-### Step 3: Router Offers an IP Address to the PC
 - Router allocates a new IP address and broadcasts a message containing it
 - Uses broadcast IP because PC doesn't know its IP yet and can't filter packets
 - Frame includes the destination MAC address of the PC (used by switch)
@@ -148,38 +148,45 @@ A MAC (Media Access Control) address is a unique 48-bit identifier assigned to a
 
 A switch uses a **routing table** to associate port numbers with MAC addresses.
 
+### Step 1: PC Sends a Frame to the Switch
+
 <img width="630" height="373" alt="image" src="https://github.com/user-attachments/assets/88a51488-678a-4a1b-b421-faab6f6427aa" />
 
-
-### Step 1: PC Sends a Frame to the Switch
 - Host attempts to communicate with router to obtain an IP address
 - Creates a packet with broadcast IP address
 - Encapsulates packet into a frame with broadcast MAC address (`FF:FF:FF:FF:FF:FF`)
 
+### Step 2: Switch Receives Frame
+
 <img width="571" height="338" alt="image" src="https://github.com/user-attachments/assets/f5bed39e-08a6-4991-b14f-9bd5e41e2ad3" />
 
 
-### Step 2: Switch Receives Frame
 - Uses routing table to associate host's MAC address with the receiving interface
 - Frame contains source MAC address
+
+
+### Step 3: Switch Broadcasts Frame to All Nodes
 
 <img width="571" height="338" alt="image" src="https://github.com/user-attachments/assets/7f3f28e6-40f2-458d-8701-82ab1980dfa7" />
 
 
-### Step 3: Switch Broadcasts Frame to All Nodes
 - MAC sees this is a broadcast frame
 - Switch forwards frame to all connected hosts
+
+
+### Step 4: Router Sends Reply to PC
 
 <img width="571" height="338" alt="image" src="https://github.com/user-attachments/assets/ffbcd5fc-8eb7-46ae-b56e-8ce146e12b9d" />
 
 
-### Step 4: Router Sends Reply to PC
 - Switch associates router's MAC address with the receiving interface
+
+
+### Step 5: Switch Forwards Frame to PC
 
 <img width="571" height="338" alt="image" src="https://github.com/user-attachments/assets/f4f13cf8-808b-4922-8204-7974bd84f01f" />
 
 
-### Step 5: Switch Forwards Frame to PC
 - Switch looks up destination MAC address in routing table
 - Forwards frame only to the appropriate port
 - No other port sees this frame
