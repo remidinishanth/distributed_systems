@@ -128,6 +128,20 @@ HTTP server located on a local network (running on the embedded device itself).
 Firewall
 <img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/5498ae25-c6cc-4308-ba29-b17627d55b4e" />
 
+```
+Internet
+    │
+    ▼
+┌─────────────────────────────┐
+│  Office Router + Firewall   │  ← Firewall is HERE (inside the router)
+└─────────────────────────────┘
+    │
+    ▼
+┌─────────────────────────────┐
+│  Office Network (Private)   │  ← This is BEHIND the firewall
+│  - HTTP Server 192.168.1.101│
+└─────────────────────────────┘
+```
 
 <img width="577" height="313" alt="image" src="https://github.com/user-attachments/assets/d715ff05-579b-4095-8966-7ad4765bc300" />
 
