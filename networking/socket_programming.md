@@ -4,7 +4,7 @@ title: "Socket Programming"
 category: "networking"
 ---
 
-Read good blog https://web.mit.edu/6.031/www/sp20/classes/24-sockets-networking/ 
+Read good blog https://web.mit.edu/6.031/www/sp20/classes/24-sockets-networking/
 
 <img width="1241" alt="image" src="https://github.com/user-attachments/assets/9c02ba2d-e569-48c6-95ce-3b9e68dbf447">
 
@@ -29,6 +29,42 @@ Address family: `AF_INET` for IPv4, `AF_INET6` for IPv6, or `AF_UNIX` for local 
 <img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/02b5b096-f32e-40ad-bb75-d671d54e1994">
 
 <img width="873" alt="image" src="https://github.com/remidinishanth/distributed_systems/assets/19663316/6c9fba23-3241-4e18-b9bd-76f0fc4259be">
+
+## TCP/IP Ports
+
+Ports are used to identify processes running in applications on a host.
+
+If two applications (e.g., web browser and email client) run on the same PC, both send/receive packets with the same IP address. The **Transport layer** uses **port numbers** to differentiate between them.
+
+### Well-Known Ports (0-1023)
+
+"Well-known" ports are reserved for common server applications. Clients know servers will be listening at these reserved port numbers.
+
+| Port | Protocol | Description |
+|------|----------|-------------|
+| 20, 21 | FTP | File Transfer Protocol (data/control) |
+| 22 | SSH | Secure Shell |
+| 23 | Telnet | Telnet remote login |
+| 25 | SMTP | Simple Mail Transfer Protocol |
+| 53 | DNS | Domain Name System |
+| 80 | HTTP | Hypertext Transfer Protocol |
+| 110 | POP3 | Post Office Protocol v3 |
+| 143 | IMAP | Internet Message Access Protocol |
+| 443 | HTTPS | HTTP Secure (TLS/SSL) |
+| 3306 | MySQL | MySQL Database |
+| 5432 | PostgreSQL | PostgreSQL Database |
+
+> Well-known port numbers are assigned by **IANA** (Internet Assigned Numbers Authority) - the same group that manages DNS Root and IP addresses.
+
+### Ephemeral or Dynamic Ports (1024-65535)
+
+Client-side port numbers are generated and assigned by the Transport layer. They can be any number from **1024 to 65535**. These are typically allocated for short-term use and are called "**Ephemeral or Dynamic Ports**".
+
+When a client initiates a connection:
+- **Destination port**: Well-known port of the server (e.g., 80 for HTTP)
+- **Source port**: Ephemeral port assigned by client's OS (e.g., 52431)
+
+---
 
 ### How Sockets fit in Network stack
 
