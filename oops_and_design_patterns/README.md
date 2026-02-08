@@ -21,7 +21,10 @@ SOLID Principles
 
 * Interface segregation principle
 
-<img width="737" height="648" alt="image" src="https://github.com/user-attachments/assets/380ff72f-ec83-437d-bdf7-b19a1782c1a4" />
+<img width="1598" height="1308" alt="image" src="https://github.com/user-attachments/assets/9563ed34-a0c5-47a7-9c37-f86aff3f731e" />
+
+<img width="788" height="441" alt="image" src="https://github.com/user-attachments/assets/ab1e9d17-f5e3-4fbc-b24d-3aa147144134" />
+
 
 * Dependency inversion principle
 
