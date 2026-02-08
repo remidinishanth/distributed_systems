@@ -200,34 +200,37 @@ A switch uses a **routing table** to associate port numbers with MAC addresses.
 - Embedded network device with a web page for monitoring/control
 - PC accesses the web page via browser
 
+### Step 1: Open Web Browser and Enter Development Board's IP Address
+
 <img width="533" height="363" alt="image" src="https://github.com/user-attachments/assets/508a48aa-013a-4b37-85ce-0385b876bb17" />
 
-
-### Step 1: Open Web Browser and Enter Development Board's IP Address
 - Both PC and development board have IP addresses
 - Switch's routing table has been updated with MAC addresses for each port
 
-<img width="551" height="328" alt="image" src="https://github.com/user-attachments/assets/3546e74d-29de-4e07-91de-7ee89cf0b52a" />
 
 
 ### Step 2: PC Generates and Transmits a Frame
+
+<img width="551" height="328" alt="image" src="https://github.com/user-attachments/assets/3546e74d-29de-4e07-91de-7ee89cf0b52a" />
+
 - Web browser creates a message requesting the web page at IP `192.168.1.102`
 - Source and destination IP addresses added to create a **packet**
 - Source and destination MAC addresses added to create a **frame**
 - Frame sent to PHY for transmission
 
-<img width="558" height="336" alt="image" src="https://github.com/user-attachments/assets/8d9e3dc0-7448-4e19-aeaf-300550cd5b50" />
-
 
 ### Step 3: Frame is Forwarded Through the Switch
+
+<img width="558" height="336" alt="image" src="https://github.com/user-attachments/assets/8d9e3dc0-7448-4e19-aeaf-300550cd5b50" />
+
 - Switch opens frame to find destination MAC address
 - Finds MAC in routing table, sends to appropriate port
 - Switch only cares about Layer 2 (MAC) addresses, not IP addresses
 
+### Step 4: Frame Arrives at Development Board
+
 <img width="540" height="320" alt="image" src="https://github.com/user-attachments/assets/897428b7-ecaf-480c-b9f0-ef810824c56d" />
 
-
-### Step 4: Frame Arrives at Development Board
 1. Destination MAC address checked → matches device's MAC
 2. Frame opened, destination IP address checked → matches device's IP
 3. Packet opened to see message → destined for web server
