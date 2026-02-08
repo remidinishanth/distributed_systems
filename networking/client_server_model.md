@@ -134,6 +134,8 @@ Firewall
 
 ### Solution 1: Port Forwarding
 
+When you receive incoming traffic on port 80 (HTTP), don't block it. Instead, forward it to the internal device at 192.168.1.101
+
 <img width="577" height="291" alt="image" src="https://github.com/user-attachments/assets/b1935f06-5a1d-43f4-b830-2a93622d4926" />
 
 
