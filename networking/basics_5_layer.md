@@ -40,6 +40,9 @@ The first duty of a transport-layer protocol is to provide **process-to-process*
 A process is an application-layer entity (running program) that uses the services
 of the transport layer.
 
+<img width="249" height="237" alt="image" src="https://github.com/user-attachments/assets/d150da6c-c807-44f3-ae97-3a9a0f9c6e3e" />
+
+
 The network layer is responsible for communication at the computer level (host-
 to-host communication). A network-layer protocol can deliver the message only to the
 destination computer. However, this is an incomplete delivery. The message still needs
