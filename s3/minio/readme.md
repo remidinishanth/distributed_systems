@@ -1365,10 +1365,166 @@ MinIO avoids consistency issues using distributed locking:
 3. **No Master**: Every node is peer; no single authority
 4. **Stale Detection**: Between-node heartbeats detect offline nodes
 
+dsync is MinIO's distributed RW mutex (`internal/dsync/`). Every operation that mutates or reads object state acquires a lock through the `nsLockMap` abstraction, which routes to either a distributed `DRWMutex` (multi-node) or a local mutex (single-node).
+
+### Architecture
+
+```
+Application (erasureObjects.PutObject, etc.)
+         ↓
+nsLockMap  (local wrapper — distributed or single-node)
+         ↓
+distLockInstance (DRWMutex)   OR   localLockInstance
+         ↓
+DRWMutex — quorum-based distributed lock
+         ↓
+NetLocker interface — REST calls to lock server on each node
+         ↓
+localLocker — lock server running on each MinIO node
+```
+
+### Which operations lock what
+
+| Operation | Lock Type | Lock Key |
+|-----------|-----------|----------|
+| `GetObjectNInfo` | **RLock** | `bucket/object` |
+| `GetObjectInfo` | **RLock** | `bucket/object` |
+| `PutObject` | **Lock** (write) | `bucket/object` |
+| `CopyObject` | **Lock** (write) | `bucket/object` |
+| `DeleteObject` | **Lock** (write) | `bucket/object` |
+| `DeleteObjects` | **Lock** (write) | `[bucket/obj1, bucket/obj2, ...]` sorted |
+| `NewMultipartUpload` | **Lock** (write) | `bucket/object` |
+| `PutObjectPart` | **Lock** (write) | `bucket/object/uploadID` |
+| `CompleteMultipartUpload` | **Lock** (write) | `bucket/object/uploadID` |
+| `AbortMultipartUpload` | **RLock** | `bucket/object` |
+| `PutObjectTags / Metadata` | **Lock** (write) | `bucket/object` |
+| `MakeBucket` | **Lock** (write) | `.minio.sys/bucket.lck` |
+| `DeleteBucket` | **Lock** (write) | `.minio.sys/bucket.lck` |
+
+### Lock key structure
+
+Keys are `pathJoin(bucket, object)`:
+
+```
+"my-bucket/photos/vacation.jpg"           ← regular object
+"my-bucket/large-file/abc123-upload-id"   ← multipart upload
+".minio.sys/new-bucket.lck"               ← bucket creation
+```
+
+For `DeleteObjects`, all paths are **sorted** before acquiring — prevents deadlock when two concurrent requests delete overlapping object sets.
+
+### Quorum protocol
+
+```
+4-node cluster, lock servers on all 4 nodes
+
+Write lock (PutObject):
+  → Contact all 4 lock servers in parallel
+  → Need majority: ⌈4/2⌉ + 1 = 3 approvals
+  → If only 2 respond → lock DENIED
+
+Read lock (GetObject):
+  → Contact all 4 lock servers
+  → Need fewer approvals (multiple readers allowed concurrently)
+
+Split-brain guard:
+  if quorum == tolerance → quorum++ (ensures strict majority for writes)
+```
+
+### Lock lifecycle
+
+```
+1. ACQUIRE
+   nsLockMap.NewNSLock(bucket, object)
+        ↓
+   DRWMutex.GetLock(ctx, timeout)
+        ↓
+   Contacts all peer nodes via REST in parallel
+        ↓
+   Waits for quorum approvals
+
+2. REFRESH (background goroutine, every 10 seconds)
+   Keeps lock alive by pinging all peers
+   If quorum lost → force unlock + notify caller
+
+3. RELEASE
+   DRWMutex.Unlock() → fires async goroutine
+   Retries with backoff if nodes unreachable
+   Stale locks auto-expire after 1 minute
+```
+
+### What is nsLockMap?
+
+`nsLockMap` is the **namespace lock manager** — the single abstraction layer that sits between MinIO's S3 operations and the actual lock implementation (distributed or local).
+
+When any operation wants to lock an object, it goes through `nsLockMap.NewNSLock()`, which decides which lock implementation to use:
+
+```
+PutObject("my-bucket", "photo.jpg")
+         ↓
+nsLockMap.NewNSLock("my-bucket", "photo.jpg")
+         ↓
+    isDistErasure?
+    ┌────YES────┐          ┌────NO────┐
+    ↓                       ↓
+distLockInstance         localLockInstance
+(DRWMutex — contacts     (in-memory map of
+ all peer nodes)          RW mutexes)
+```
+
+**In single-node mode**: maintains an in-memory `map[string]*nsLock` keyed by lock path (`bucket/object`). Uses **reference counting** — when two operations lock the same object, the same `nsLock` entry is reused and `ref` is incremented. When the last holder unlocks, `ref` hits 0 and the entry is removed (cleanup).
+
+**In distributed mode**: skips the in-memory map entirely and creates a `DRWMutex` that contacts all peer nodes over REST to acquire a quorum-based distributed lock.
+
+**Why it exists**: lets the rest of MinIO's code be completely unaware of whether it's running single-node or distributed. `erasureObjects.PutObject()` just calls `nsLockMap.NewNSLock()` and gets back a `RWLocker` — same interface regardless of mode.
+
+### nsLockMap internals
+
+```go
+// Two modes depending on cluster type:
+
+// Distributed mode (isDistErasure = true):
+type distLockInstance struct {
+    rwMutex *dsync.DRWMutex  // Distributed RW Mutex
+    opsID   string
+}
+
+// Single-node mode (isDistErasure = false):
+type localLockInstance struct {
+    ns     *nsLockMap
+    volume string
+    paths  []string
+    opsID  string
+}
+
+// Routing in NewNSLock():
+if n.isDistErasure {
+    drwmutex := dsync.NewDRWMutex(&dsync.Dsync{
+        GetLockers: lockers,   // returns remote lock server clients
+        Timeouts:   dsync.DefaultTimeouts,
+    }, pathsJoinPrefix(volume, paths...)...)
+    return &distLockInstance{drwmutex, opsID}
+}
+// else: local in-memory map
+```
+
+### Key optimizations
+
+**Early read lock release** — `GetObjectNInfo` releases the read lock as soon as metadata quorum is confirmed. For small inline objects, the lock is dropped before data is streamed to the client, minimizing lock hold time.
+
+**Async unlock** — `DRWMutex.Unlock()` fires a background goroutine that retries until all peers acknowledge, so the caller is never blocked waiting on the network.
+
+**Overload protection** — if a lock server has >1000 queued lock requests it rejects new ones immediately (fail-fast) rather than queuing indefinitely, preventing resource exhaustion.
+
+### Granularity
+
+Locks are **per-object**, not per-disk or per-erasure-set. Multiple objects in the same bucket can be locked concurrently and independently — the erasure layer underneath coordinates parallel disk I/O without needing its own locks. Two requests only contend if they target the **exact same object path**.
+
 ### Limitations
-- Supports up to 32 nodes (theoretical)
-- Lock throughput decreases as cluster grows
-- Can lose locks in certain scenarios (acceptable for MinIO's use case)
+
+* Supports up to 32 nodes (design limitation of the quorum broadcast approach)
+* Lock throughput decreases as cluster grows (more peers to contact per lock)
+* Lock loss possible if nodes fail mid-refresh (acceptable — locks auto-expire after 1 minute)
 
 ---
 
