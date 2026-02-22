@@ -1367,6 +1367,13 @@ MinIO avoids consistency issues using distributed locking:
 
 dsync is MinIO's distributed RW mutex (`internal/dsync/`). Every operation that mutates or reads object state acquires a lock through the `nsLockMap` abstraction, which routes to either a distributed `DRWMutex` (multi-node) or a local mutex (single-node).
 
+
+### Design goals
+
+<img width="969" height="373" alt="image" src="https://github.com/user-attachments/assets/3fee4497-a8e8-4993-9545-2cde915015e5" />
+
+Ref: https://blog.min.io/minio-dsync-a-distributed-locking-and-syncing-package-for-go/
+
 ### Architecture
 
 ```
