@@ -72,11 +72,11 @@ MinIO is built on several fundamental design principles:
                          │
 ┌────────────────────────▼────────────────────────────────────────┐
 │                  HTTP Server & Router                           │
-│         (Authentication, Throttling, Compression)              │
+│         (Authentication, Throttling, Compression)               │
 └────────────────────────┬────────────────────────────────────────┘
                          │
 ┌────────────────────────▼────────────────────────────────────────┐
-│              API Handlers (GET/PUT/DELETE/LIST)                │
+│              API Handlers (GET/PUT/DELETE/LIST)                 │
 └────────────────────────┬────────────────────────────────────────┘
                          │
 ┌────────────────────────▼────────────────────────────────────────┐
@@ -84,32 +84,32 @@ MinIO is built on several fundamental design principles:
 └────────────────────────┬────────────────────────────────────────┘
                          │
 ┌────────────────────────▼────────────────────────────────────────┐
-│         erasureServerPools (Multi-Pool Manager)                │
-│  - Weighted pool selection based on available space            │
-│  - Pool expansion & decommissioning                            │
+│         erasureServerPools (Multi-Pool Manager)                 │
+│  - Weighted pool selection based on available space             │
+│  - Pool expansion & decommissioning                             │
 └────────────────────────┬────────────────────────────────────────┘
                          │
         ┌────────────────┼────────────────┐
         │                │                │
-┌───────▼────┐   ┌───────▼────┐   ┌──────▼──────┐
-│  Pool 1    │   │  Pool 2    │   │  Pool N     │
-│ erasureSets│   │ erasureSets│   │ erasureSets │
-└───────┬────┘   └───────┬────┘   └──────┬──────┘
+┌───────▼────┐   ┌───────▼────┐    ┌──────▼──────┐
+│  Pool 1    │   │  Pool 2    │    │  Pool N     │
+│ erasureSets│   │ erasureSets│    │ erasureSets │
+└───────┬────┘   └───────┬────┘    └──────┬──────┘
         │                │                │
      ┌──┴──┐          ┌──┴──┐          ┌──┴──┐
      │Set1 │          │Set1 │          │Set1 │
      └──┬──┘          └──┬──┘          └──┬──┘
         │
 ┌───────▼──────────────────────────────────────────────────────┐
-│  erasureObjects (Single Set - Erasure Coding Logic)         │
-│  - Reed-Solomon EC:M+N encoding/decoding                    │
-│  - Quorum-based read/write                                  │
-│  - Object-level healing                                     │
+│  erasureObjects (Single Set - Erasure Coding Logic)          │
+│  - Reed-Solomon EC:M+N encoding/decoding                     │
+│  - Quorum-based read/write                                   │
+│  - Object-level healing                                      │
 └───────┬──────────────────────────────────────────────────────┘
         │
 ┌───────▼──────────────────────────────────────────────────────┐
-│  StorageAPI Interface (Local & Remote Disk I/O)             │
-│  - xlStorage (local), storageRESTClient (remote)            │
+│  StorageAPI Interface (Local & Remote Disk I/O)              │
+│  - xlStorage (local), storageRESTClient (remote)             │
 └───────┬──────────────────────────────────────────────────────┘
         │
    ┌────┴─────────────────────┬──────────────────┐
