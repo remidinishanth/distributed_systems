@@ -1,17 +1,50 @@
-MinIO just does one thing - Object storage for Private cloud
+# MinIO Architecture & Object Storage Deep Dive
+
+MinIO just does one thing - **Object storage for Private cloud**
 
 <img width="1105" height="588" alt="image" src="https://github.com/user-attachments/assets/b9fdf6eb-b52c-460d-89e0-fc90a2762f2f" />
 
 <img width="1326" height="744" alt="image" src="https://github.com/user-attachments/assets/226c6dad-f468-4140-998d-86641a9115eb" />
 
-
 <img width="689" height="241" alt="image" src="https://github.com/user-attachments/assets/a5f7c369-978a-4944-94d7-46ce8c87c160" />
-
 
 <img width="1142" height="499" alt="image" src="https://github.com/user-attachments/assets/ea1e33e0-cac3-47b9-b975-987243174e59" />
 
 <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/82863b5c-7278-4c28-981b-94dd71b614db" />
 
+This document provides a comprehensive overview of MinIO's architecture, how it stores objects, distributes data across servers, and retrieves objects.
+
+## Table of Contents
+
+1. [Core Principles](#core-principles)
+2. [High-Level Architecture](#high-level-architecture)
+3. [System Components](#system-components)
+4. [Object Storage Internals](#object-storage-internals)
+5. [Erasure Coding](#erasure-coding)
+6. [PUT Operation (Storing Objects)](#put-operation)
+7. [GET Operation (Retrieving Objects)](#get-operation)
+8. [Distributed Architecture](#distributed-architecture)
+9. [Server Pools](#server-pools)
+10. [Code Architecture](#code-architecture)
+11. [Healing & Self-Recovery](#healing)
+12. [Advanced Features](#advanced-features)
+13. [Deprecated Gateway](#deprecated-gateway)
+14. [Real-World Metadata Examples](#real-world-examples)
+
+---
+
+## Core Principles
+
+MinIO is built on several fundamental design principles:
+
+- **Metadata-Free Design**: No centralized metadata database. Object metadata is stored locally on each disk alongside the data (in `xl.meta` files). This eliminates the metadata bottleneck and prevents cluster-wide failures.
+- **Shared-Nothing Architecture**: Each node operates independently. Data is distributed and scattered across multiple nodes and disks, with no single point of failure.
+- **S3 Compatibility**: Full S3 API compatibility allows seamless migration from AWS S3 or other S3-compatible systems.
+- **Erasure Coding + Bitrot Protection**: Multi-level data protection using Reed-Solomon erasure coding and HighwayHash checksums. Even if you lose more than half of your hard drives, you can still recover data. (N/2)-1 node failure is allowed in distributed mode.
+- **Rebalance-Free Expansion**: Add new pools without rebalancing existing data.
+- **No Master Node**: All nodes are peers in a decentralized architecture using distributed locking (dsync).
+
+### How MinIO Compares to Legacy Storage
 * Minio adopts a metadata-free database design for high performance, avoiding the metabase becoming a performance bottleneck for the entire system, and limiting failures to a single cluster, so that no other clusters are involved.
 * Minio is also fully compatible with the S3 interface, so it can also be used as a gateway to provide S3 access to the outside world.
 * Use both Minio Erasure code and checksum to prevent hardware failures. Even if you lose more than half of your hard drive, you can still recover from it. (N/2)-1 node failure is also allowed in the distribution
@@ -22,45 +55,830 @@ MinIO just does one thing - Object storage for Private cloud
 
 <img width="1104" height="676" alt="image" src="https://github.com/user-attachments/assets/e82fa817-cbfa-4e66-aac9-1c06b528884f" />
 
+### Legacy Object Storage Architecture
 
-### Legacy object storage architecture
 <img width="1591" height="863" alt="image" src="https://github.com/user-attachments/assets/86218141-aa98-478d-9b7b-02a18b6faf71" />
 
+---
 
-## Architecture
+## High-Level Architecture
 
-All the nodes running distributed MinIO setup are recommended to be homogeneous, i.e. same operating system, same number of drives and same network interconnects.
 
-Start distributed MinIO instance on n nodes with m drives each mounted at `/export1` to `/exportm` (pictured below), by running this command on all the `n` nodes:
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                      Client (S3 API)                            │
+│              PUT/GET/DELETE/LIST Requests                       │
+└────────────────────────┬────────────────────────────────────────┘
+                         │
+┌────────────────────────▼────────────────────────────────────────┐
+│                  HTTP Server & Router                           │
+│         (Authentication, Throttling, Compression)              │
+└────────────────────────┬────────────────────────────────────────┘
+                         │
+┌────────────────────────▼────────────────────────────────────────┐
+│              API Handlers (GET/PUT/DELETE/LIST)                │
+└────────────────────────┬────────────────────────────────────────┘
+                         │
+┌────────────────────────▼────────────────────────────────────────┐
+│            ObjectLayer Interface (Abstraction)                  │
+└────────────────────────┬────────────────────────────────────────┘
+                         │
+┌────────────────────────▼────────────────────────────────────────┐
+│         erasureServerPools (Multi-Pool Manager)                │
+│  - Weighted pool selection based on available space            │
+│  - Pool expansion & decommissioning                            │
+└────────────────────────┬────────────────────────────────────────┘
+                         │
+        ┌────────────────┼────────────────┐
+        │                │                │
+┌───────▼────┐   ┌───────▼────┐   ┌──────▼──────┐
+│  Pool 1    │   │  Pool 2    │   │  Pool N     │
+│ erasureSets│   │ erasureSets│   │ erasureSets │
+└───────┬────┘   └───────┬────┘   └──────┬──────┘
+        │                │                │
+     ┌──┴──┐          ┌──┴──┐          ┌──┴──┐
+     │Set1 │          │Set1 │          │Set1 │
+     └──┬──┘          └──┬──┘          └──┬──┘
+        │
+┌───────▼──────────────────────────────────────────────────────┐
+│  erasureObjects (Single Set - Erasure Coding Logic)         │
+│  - Reed-Solomon EC:M+N encoding/decoding                    │
+│  - Quorum-based read/write                                  │
+│  - Object-level healing                                     │
+└───────┬──────────────────────────────────────────────────────┘
+        │
+┌───────▼──────────────────────────────────────────────────────┐
+│  StorageAPI Interface (Local & Remote Disk I/O)             │
+│  - xlStorage (local), storageRESTClient (remote)            │
+└───────┬──────────────────────────────────────────────────────┘
+        │
+   ┌────┴─────────────────────┬──────────────────┐
+   │                          │                  │
+┌──▼──┐ ┌──────┐ ┌──────────┐│ ┌──────────────┐
+│Disk1│ │Disk2 │ │  Disk..  ││ │  Disk16      │
+│     │ │      │ │          ││ │              │
+│     │ │      │ │          ││ │              │
+└─────┘ └──────┘ └──────────┘│ └──────────────┘
+                             └─ (Parallel I/O)
+```
+
+---
+
+## System Components
+
+### 1. HTTP Server Layer
+- Handles incoming S3 API requests
+- Middleware chain: Auth (Signature V4), Tracing, Throttling, GZIP compression
+- Routes requests to appropriate handlers
+
+### 2. API Handler Layer
+- `GetObjectHandler`: Retrieves objects
+- `PutObjectHandler`: Stores objects
+- `DeleteObjectHandler`: Deletes objects
+- `ListObjectsHandler`: Lists bucket contents
+- Multipart upload handlers
+
+### 3. ObjectLayer Interface
+Abstract interface implemented by `erasureServerPools`, `erasureSets`, and `erasureObjects`. Provides unified S3 operations.
+
+### 4. Erasure Server Pools
+- Manages multiple independent pools
+- Selects pool based on available space (weighted random)
+- Enables non-disruptive expansion
+- Each pool has its own erasure sets
+
+### 5. Erasure Sets
+- Routes objects to correct set using consistent hash (SipHash)
+- One set contains all disks in the erasure set
+- Uses deterministic placement: same object name → same set always
+
+### 6. Erasure Objects
+- Core logic for encoding/decoding
+- Manages read/write quorum
+- Handles object-level healing
+- Coordinates with StorageAPI
+
+### 7. Storage Layer
+- **xlStorage**: Local disk I/O, metadata, file operations
+- **storageRESTClient**: Remote disk via REST API
+- **xlStorageDiskIDCheck**: Health wrapper for disk monitoring
+
+---
+
+## Object Storage Internals
+
+### On-Disk Layout
+
+Each disk in a MinIO cluster stores data in the following structure:
+
+```
+disk1/
+├── .minio.sys/
+│   ├── format.json              # Cluster configuration
+│   ├── config/                  # Server configuration
+│   ├── buckets/                 # Bucket metadata
+│   └── tmp/                     # Temporary files during writes
+│
+├── bucket1/
+│   ├── object1/
+│   │   ├── xl.meta              # Metadata (MessagePack serialized)
+│   │   └── a1b2c3d4-e5f6.../   # DataDir UUID (contains data shard)
+│   │       └── part.1           # Actual shard data
+│   └── object2/
+│       └── ...
+└── bucket2/
+    └── ...
+```
+
+### xl.meta File Format
+
+The `xl.meta` file contains critical metadata in MessagePack binary format:
+
+```
+Header:
+- Magic: "XL2 "
+- Version: 1.3
+
+Versions[] (Version History):
+├── Type: ObjectType, DeleteType, or LegacyType
+├── ObjectV2 (if ObjectType):
+│   ├── VersionID: UUID (unique version identifier)
+│   ├── DataDir: UUID (data directory on disk)
+│   ├── ErasureAlgorithm: ReedSolomon
+│   ├── ErasureM: Number of data blocks (e.g., 12)
+│   ├── ErasureN: Number of parity blocks (e.g., 4)
+│   ├── ErasureBlockSize: Block size for encoding (1MB default)
+│   ├── ErasureIndex: This disk's shard index (0-15)
+│   ├── ErasureDist: Distribution array [disk_index_0, disk_index_1, ...]
+│   ├── BitrotChecksumAlgo: HighwayHash (for integrity)
+│   ├── PartNumbers: Part IDs (multipart uploads)
+│   ├── PartSizes: Size of each part
+│   ├── Size: Total object size
+│   ├── ModTime: Modification timestamp (Unix nanoseconds)
+│   ├── MetaSys: System metadata (inline data flag, etc.)
+│   └── MetaUsr: User metadata (Content-Type, custom headers)
+```
+
+### format.json - Cluster Configuration
+
+Located at `.minio.sys/format.json` on each disk:
+
+```json
+{
+  "version": "1",
+  "format": "xl",
+  "id": "deployment-uuid",
+  "xl": {
+    "version": "3",
+    "this": "disk-uuid",
+    "sets": [
+      ["disk-0", "disk-1", "disk-2", ..., "disk-15"],
+      ["disk-16", "disk-17", "disk-18", ..., "disk-31"]
+    ],
+    "distributionAlgo": "SIPMOD"
+  }
+}
+```
+
+**Key Fields**:
+- `id`: Cluster deployment ID (shared by all disks)
+- `this`: UUID of current disk
+- `sets`: Array of erasure sets, each containing disk UUIDs
+- `distributionAlgo`: Algorithm used for object placement (SipHash with parity consideration)
+
+---
+
+## Erasure Coding
+
+### Reed-Solomon Encoding
+
+MinIO uses Reed-Solomon erasure coding (via `klauspost/reedsolomon` library):
+
+**Example Configuration (16 disks)**:
+- EC:12+4 (12 data shards + 4 parity shards)
+- Block size: 1MB default
+- Can tolerate: Up to 4 disk failures per erasure set
+
+### How It Works
+
+**Encoding (Write)**:
+```
+Original File (10MB)
+        │
+        ▼
+┌──────────────────────────────────┐
+│ Split into 1MB blocks (10 blocks)│
+└──────────────────────────────────┘
+        │
+        ▼
+┌──────────────────────────────────────────────────────┐
+│ For each 1MB block:                                  │
+│ ├─ Split into 12 data shards (~85KB each)           │
+│ └─ Generate 4 parity shards (~85KB each)            │
+│                                                      │
+│ Result: 16 shards per block (12 data + 4 parity)   │
+└──────────────────────────────────────────────────────┘
+        │
+        ▼
+┌──────────────────────────────────────────────────────┐
+│ Write to 16 disks in parallel:                       │
+│ ├─ Disk 0: shard_0 (all blocks)                     │
+│ ├─ Disk 1: shard_1 (all blocks)                     │
+│ ├─ Disk 12-15: parity shards                        │
+│ └─ All disks: xl.meta (metadata)                    │
+└──────────────────────────────────────────────────────┘
+```
+
+**Decoding (Read)**:
+```
+Read Request for 10MB object
+        │
+        ▼
+┌──────────────────────────────────┐
+│ Scenario 1: All 16 disks healthy │
+│ ├─ Read 12 data shards           │
+│ ├─ Ignore 4 parity shards        │
+│ └─ Reconstruct original data     │
+└──────────────────────────────────┘
+
+┌──────────────────────────────────┐
+│ Scenario 2: 2 disks dead         │
+│ ├─ Read 14 available shards      │
+│ ├─ Use Reed-Solomon to recover   │
+│ │  missing 2 shards              │
+│ └─ Reconstruct original data     │
+└──────────────────────────────────┘
+
+┌──────────────────────────────────┐
+│ Scenario 3: 5+ disks dead        │
+│ └─ READ FAILS (quorum lost)      │
+└──────────────────────────────────┘
+```
+
+### Read/Write Quorum
+
+**Read Quorum**: M (data blocks)
+- Need M shards available to reconstruct object
+- Example: EC:12+4 → need 12 out of 16 disks
+
+**Write Quorum**:
+- If parity < 50% of drives: Write Quorum = M (data blocks)
+- If parity = 50% of drives: Write Quorum = M + 1 (avoid split-brain)
+- Example: EC:12+4 (16 disks) → Write Quorum = 12
+
+### Erasure Coding Visual
+
+<img width="1030" height="540" alt="image" src="https://github.com/user-attachments/assets/45f2609b-43c4-4988-99d7-b6a2c173d17a" />
+
+The value K here constitutes the read quorum for the deployment. The erasure set must therefore have at least K healthy drives to support read operations.
+
+For a small object with only 1 part (`part.1`), here we have 2 data blocks and 2 parity blocks:
+
+<img width="960" height="540" alt="image" src="https://github.com/user-attachments/assets/83ffabbc-95dc-4ac7-8fa7-832d27d59b87" />
+
+Ref: https://blog.min.io/erasure-coding-vs-raid/
+
+Not only does MinIO erasure coding protect against drive and node failures, MinIO also heals at the **object level**:
+- Heal one object at a time vs RAID which heals at volume level
+- A corrupt object restored in seconds vs. hours in RAID
+
+### Read Request Flow
+
+<img width="758" height="799" alt="image" src="https://github.com/user-attachments/assets/7367da38-6071-49c5-9934-7c4ae10027b6" />
+
+### Write Request Flow
+
+Two cases for write quorum:
+* **Case 1**: Parity < 50% of drives → Write Quorum = Parity
+* **Case 2**: Parity = 50% of drives → Write Quorum = Parity + 1
+
+> If parity equals 1/2 (half) the number of erasure set drives, write quorum equals parity + 1 to avoid data inconsistency due to 'split brain' scenarios.
+
+<img width="758" height="900" alt="image" src="https://github.com/user-attachments/assets/7d221209-56e3-4924-96ba-2c0d74e9248f" />
+
+### Bitrot Protection
+
+MinIO protects against **silent data corruption** (BitRot):
+
+- **HighwayHash Algorithm**: Computes 256-bit hash per block
+- **Verification**: Hash checked on every read
+- **Performance**: >10 GB/sec hashing on single Intel CPU core
+- **Storage Format**: `[hash | data | hash | data | ...]`
+- **Detection**: Hash mismatch → disk marked bad → reconstruction
+
+---
+
+## PUT Operation
+
+### Step-by-Step Flow (Storing a 10MB Object)
+
+```
+1. CLIENT REQUEST
+   │
+   ├─ PUT /bucket/photos/vacation.jpg (10MB)
+   │
+   ▼
+
+2. HTTP HANDLER
+   │
+   ├─ Parse request, extract bucket/object name
+   ├─ Verify authentication (Signature V4)
+   ├─ Create hash verifier (for bitrot)
+   │
+   ▼
+
+3. POOL SELECTION
+   │
+   ├─ If object already exists:
+   │  └─ Use same pool as existing version
+   │
+   └─ If new object:
+      ├─ Calculate available space for each pool
+      ├─ Filter: skip suspended/rebalancing pools
+      ├─ Weighted random selection (prefer pool with most space)
+      └─ Select Pool 0
+   │
+   ▼
+
+4. SET SELECTION (Consistent Hashing)
+   │
+   ├─ Hash object name using SipHash:
+   │  setIndex = sipHashMod("photos/vacation.jpg", numSets, deploymentID) % numSets
+   │
+   ├─ Result: Always same set for same object name (deterministic)
+   └─ Select Erasure Set 3
+   │
+   ▼
+
+5. CREATE METADATA
+   │
+   ├─ Generate UUIDs:
+   │  ├─ VersionID: Unique identifier for this version
+   │  └─ DataDir: Directory to store data shards
+   │
+   ├─ Calculate distribution order:
+   │  └─ hashOrder(objectName, diskCount) = [3, 1, 4, 2, 5, ...]
+   │
+   ├─ Set erasure parameters:
+   │  ├─ ErasureM = 12 (data blocks)
+   │  ├─ ErasureN = 4 (parity blocks)
+   │  └─ BlockSize = 1MB
+   │
+   ▼
+
+6. ERASURE ENCODING
+   │
+   ├─ Read data in 1MB blocks (10 blocks total)
+   │
+   ├─ For each block:
+   │  ├─ Split into 12 data shards (~85KB each)
+   │  ├─ Compute 4 parity shards using Reed-Solomon
+   │  ├─ Add HighwayHash checksum to each shard
+   │  └─ Result: 16 shards per block
+   │
+   ▼
+
+7. DISK ORDERING (Distribution)
+   │
+   ├─ Take 16 disks from Set 3
+   ├─ Shuffle according to distribution order
+   └─ Map shards: shard_i → disk_i
+   │
+   ▼
+
+8. PARALLEL WRITES
+   │
+   ├─ For each of 16 disks (in parallel):
+   │  │
+   │  ├─ Write to temporary location:
+   │  │  .minio.sys/tmp/{VersionID}/{DataDir}/part.1
+   │  │
+   │  ├─ Format: [block1_hash|block1_data|block2_hash|block2_data|...]
+   │  │
+   │  └─ Verify write success
+   │
+   ├─ Check write quorum: Need ≥12 successful writes
+   │  └─ If <12 fail: WRITE FAILS, cleanup
+   │
+   ▼
+
+9. ATOMIC RENAME
+   │
+   ├─ Once quorum reached:
+   │  └─ Rename all temp files to final location:
+   │     bucket/object/{DataDir}/part.1
+   │
+   ▼
+
+10. METADATA PERSISTENCE
+    │
+    ├─ Create xl.meta with all object metadata
+    │ ├─ Version history
+    │ ├─ Erasure config
+    │ ├─ Distribution array
+    │ └─ Part sizes
+    │
+    ├─ Write xl.meta to all 16 disks (in parallel)
+    │
+    ├─ Verify metadata quorum (≥12 successful)
+    │
+    ▼
+
+11. SUCCESS
+    │
+    └─ Return 200 OK + ETag to client
+```
+
+### PUT Request Overview
+
+<img width="1137" height="911" alt="image" src="https://github.com/user-attachments/assets/7c0955af-93ee-418d-9115-9c560a92708d" />
+
+<img width="1606" height="929" alt="image" src="https://github.com/user-attachments/assets/25a0614e-a95f-41e3-adcf-e5278acca6f0" />
+
+<img width="3192" height="1766" alt="image" src="https://github.com/user-attachments/assets/9f0b687c-5923-49c5-8eaf-8f9131dbefaf" />
+
+For example, with 5 data blocks and 3 parity blocks:
+
+<img width="1452" height="895" alt="image" src="https://github.com/user-attachments/assets/ba80d04b-8806-41ff-bd96-574dcf06a89d" />
+
+### PUT Request Sequence
+
+```mermaid
+sequenceDiagram
+    participant Client
+    participant MinIO as MinIO Server
+    participant PoolMgr as Pool Manager
+    participant SetMgr as Erasure Set Manager
+    participant EC as Erasure Coder
+    participant Disk1 as Drive 1
+    participant Disk2 as Drive 2
+    participant DiskN as Drive N
+
+    Client->>MinIO: PUT /bucket/object
+    MinIO->>PoolMgr: getPoolIdx(bucket, object, size)
+
+    alt Object Already Exists
+        PoolMgr->>PoolMgr: Query all pools in parallel
+        PoolMgr->>PoolMgr: GetObjectInfo() on each pool
+        PoolMgr->>PoolMgr: Object found in Pool 2
+        PoolMgr-->>MinIO: Use Pool 2 (existing)
+    else New Object
+        PoolMgr->>PoolMgr: getServerPoolsAvailableSpace()
+        PoolMgr->>PoolMgr: Filter: skip suspended/rebalancing
+        PoolMgr->>PoolMgr: Weighted random selection
+        PoolMgr-->>MinIO: Use Pool 1 (most space)
+    end
+
+    MinIO->>SetMgr: Hash object name
+    SetMgr->>SetMgr: sipHashMod(objectName, numSets)
+    SetMgr-->>MinIO: Erasure Set 3
+
+    MinIO->>EC: Create FileInfo metadata
+    EC->>EC: hashOrder(objectName, drives)
+    EC->>EC: Generate distribution array
+    Note over EC: Distribution: [3,1,4,2,5,...]
+
+    MinIO->>EC: Encode object (K data + M parity)
+    EC->>EC: Split into data blocks
+    EC->>EC: Calculate parity using Reed-Solomon
+    EC-->>MinIO: Data + Parity shards
+
+    MinIO->>SetMgr: Shuffle disks by distribution
+    SetMgr-->>MinIO: Ordered disk list
+
+    par Write to all drives in parallel
+        MinIO->>Disk1: Write shard 1 + xl.meta
+        MinIO->>Disk2: Write shard 2 + xl.meta
+        MinIO->>DiskN: Write shard N + xl.meta
+    end
+
+    Disk1-->>MinIO: Success
+    Disk2-->>MinIO: Success
+    DiskN-->>MinIO: Success
+
+    MinIO->>MinIO: Check write quorum (K drives)
+    MinIO-->>Client: 200 OK
+```
+
+### PUT Layer-by-Layer Graph
+
+```mermaid
+graph TB
+    subgraph "Client"
+        C[PUT /mybucket/image.jpg<br/>10 MB]
+    end
+
+    subgraph "Layer 1: HTTP Server"
+        H[HTTP Router<br/>Match route]
+    end
+
+    subgraph "Layer 2: API Handler"
+        A[PutObjectHandler<br/>Parse request<br/>Create PutObjReader]
+    end
+
+    subgraph "Layer 3: Server Pools"
+        SP[erasureServerPools<br/>Select Pool 0<br/>based on space]
+    end
+
+    subgraph "Layer 4: Erasure Sets"
+        ES[erasureSets<br/>Hash object name<br/>Select Set 3]
+    end
+
+    subgraph "Layer 5: Erasure Objects"
+        EO[erasureObjects<br/>Setup EC:12+4<br/>WriteQuorum: 12]
+    end
+
+    subgraph "Layer 6: Encoding Loop"
+        L1[Read Block 1<br/>1 MB]
+        L2[Encode to<br/>16 shards]
+        L3[Write to<br/>16 disks]
+        L4[Check<br/>quorum]
+        L5{More<br/>blocks?}
+    end
+
+    subgraph "Layer 7: Reed-Solomon"
+        RS[Split 1 MB into<br/>12 data shards<br/>Generate 4 parity]
+    end
+
+    subgraph "Layer 8: Parallel Writes"
+        W1[Disk 1<br/>Write D1]
+        W2[Disk 2<br/>Write D2]
+        W3[Disk 12<br/>Write D12]
+        W4[Disk 13<br/>Write P1]
+        W5[Disk 16<br/>Write P4]
+    end
+
+    subgraph "Metadata Write"
+        M1[Create xl.meta<br/>with FileInfo]
+        M2[Write to all<br/>16 disks]
+        M3[Check quorum<br/>12/16]
+        M4{Success?}
+    end
+
+    subgraph "Final"
+        F1[✅ Return ObjectInfo]
+        F2[❌ Revert & Error]
+    end
+
+    C --> H --> A --> SP --> ES --> EO --> L1
+    L1 --> L2 --> RS --> L3
+    L3 --> W1 & W2 & W3 & W4 & W5
+    W1 & W2 & W3 & W4 & W5 --> L4
+    L4 --> L5
+    L5 -->|Yes| L1
+    L5 -->|No| M1
+    M1 --> M2 --> M3 --> M4
+    M4 -->|Yes| F1
+    M4 -->|No| F2
+
+    style C fill:#e1f5ff
+    style RS fill:#fff3cd
+    style F1 fill:#d4edda
+    style F2 fill:#f8d7da
+```
+
+### Key Decisions
+
+**Pool Selection Algorithm** (Weighted Random):
+```go
+totalFreeSpace = sum of free space in all pools
+choose = random(0, totalFreeSpace)
+for each pool:
+    if pool.freeSpace >= choose:
+        select this pool
+        break
+    choose -= pool.freeSpace
+```
+
+**Set Selection Algorithm** (Consistent Hash):
+```go
+func sipHashMod(key string, cardinality int, id [16]byte) int {
+    k0, k1 := binary.LittleEndian.Uint64(id[0:8]),
+             binary.LittleEndian.Uint64(id[8:16])
+    sum64 := siphash.Hash(k0, k1, []byte(key))
+    return int(sum64 % uint64(cardinality))
+}
+```
+
+---
+
+## GET Operation
+
+### Step-by-Step Flow (Retrieving a 10MB Object)
+
+```
+1. CLIENT REQUEST
+   │
+   ├─ GET /bucket/photos/vacation.jpg
+   │ Optional: Range header (e.g., bytes=2097152-10485760)
+   │
+   ▼
+
+2. HTTP HANDLER
+   │
+   ├─ Parse request
+   ├─ Verify authentication
+   ├─ Check preconditions (If-Match, If-Modified-Since)
+   │
+   ▼
+
+3. SET LOOKUP (Same Hash as Write)
+   │
+   ├─ Hash object name using same SipHash
+   │  → Deterministically routes to same set as original write
+   │
+   └─ Select Erasure Set 3
+   │
+   ▼
+
+4. METADATA READING
+   │
+   ├─ Read xl.meta from ALL 16 disks (in parallel)
+   │
+   ├─ Verify quorum: Need ≥12 successful reads
+   │  └─ If <12: READ FAILS
+   │
+   ├─ Select latest version (by ModTime)
+   │
+   ├─ Extract:
+   │  ├─ Erasure config (M, N, block size)
+   │  ├─ Part sizes and ETags
+   │  ├─ Distribution order
+   │  └─ Shard indices
+   │
+   ▼
+
+5. PARALLEL SHARD READING
+   │
+   ├─ Create readers for all 16 disks
+   │
+   ├─ Read in parallel:
+   │  ├─ Each disk returns its shard blocks
+   │  ├─ Verify HighwayHash per block
+   │  │  └─ Hash mismatch → mark disk as bad
+   │  └─ Stop reading once we have ≥12 good shards
+   │
+   ▼
+
+6. RECONSTRUCTION (If Needed)
+   │
+   ├─ If all 16 disks healthy:
+   │  └─ Use 12 data shards directly
+   │
+   └─ If some disks failed/corrupted:
+      ├─ Use Reed-Solomon decoder
+      ├─ Reconstruct missing shards from available ones
+      └─ Need at least M (12) shards to reconstruct
+   │
+   ▼
+
+7. RANGE EXTRACTION (If Range Header Present)
+   │
+   ├─ If range requested (e.g., bytes 2-10MB):
+   │  ├─ Extract only requested byte range
+   │  └─ Efficient: Don't read entire object
+   │
+   ├─ Apply decompression (if S2 compression used)
+   │
+   ├─ Apply decryption (if AES-256-GCM encryption used)
+   │
+   ▼
+
+8. STREAM TO CLIENT
+   │
+   ├─ Set Content-Length header
+   ├─ Set Content-Range (if range request)
+   ├─ Stream data directly to HTTP response body
+   │
+   ▼
+
+9. SUCCESS
+    │
+    └─ Return 200 OK (or 206 Partial Content for range)
+```
+
+### Failure Scenarios
+
+| Scenario | Disks Available | Status | Action |
+|----------|-----------------|--------|--------|
+| All healthy | 16/16 | ✅ Success | Read 12 data shards |
+| 1 disk dead | 15/16 | ✅ Success | Read 12 data shards from remaining |
+| 2 disks dead | 14/16 | ✅ Success | Read 12+ shards, reconstruct if needed |
+| 4 disks dead | 12/16 | ✅ Success | Read 12 available shards (at limit) |
+| 5+ disks dead | <12/16 | ❌ FAIL | Cannot read (quorum lost) |
+
+---
+
+## Distributed Architecture
+
+All the nodes running a distributed MinIO setup are recommended to be homogeneous — same operating system, same number of drives, and same network interconnects.
 
 <img width="8000" height="4500" alt="image" src="https://github.com/user-attachments/assets/19b44e38-a8c8-4daa-89ad-3d9a6854ecdd" />
 
-* No master server, no metadata server or anything
+* No master server, no metadata server
 
 Ref: https://github.com/minio/minio/blob/master/docs/distributed/README.md
 
+MinIO adopts a decentralized shared-nothing architecture, where object data is scattered and stored on multiple hard disks on different nodes, providing unified namespace access and load balancing between servers through load balancing or DNS round-robin.
 
-We will see Pools and Erasure coding in the following sections
-<img width="961" height="440" alt="image" src="https://github.com/user-attachments/assets/d916ce30-b3c0-46d5-9ab9-f31801b8872b" />
+### Erasure Set Organization (4 Servers × 4 Disks Each = 16 Disks Total)
 
+```
+Server 1: [D1] [D2] [D3] [D4]
+Server 2: [D5] [D6] [D7] [D8]
+Server 3: [D9] [D10][D11][D12]
+Server 4: [D13][D14][D15][D16]
 
+            ↓ Round-Robin Assignment ↓
 
-### Decentralized architecture
+Erasure Set 0: [D1, D5, D9, D13, D2, D6, D10, D14, ...]
+                S1   S2   S3   S4   S1   S2   S3    S4
 
-Minio adopts a decentralized shared-nothing architecture, where object data is scattered and stored on multiple hard disks on different nodes, providing unified namespace access and load balancing between servers through load balancing or DNS rounding
+Key: Each set has disks from ALL servers
+```
 
-## MinIO Server Pools
+### Fault Tolerance
+
+**If Server 3 Dies**:
+```
+Set contains: [D1(S1), D5(S2), D9(S3), D13(S4), ...]
+
+After S3 failure:
+├─ Available: D1(S1) ✓, D5(S2) ✓, D13(S4) ✓
+├─ Dead: D9(S3) ✗
+├─ Tolerance: EC:12+4 can lose up to 4 disks
+│
+└─ Result: SAFE - Can still read and recover
+```
+
+**If Any 4 Disks Die**:
+```
+Available shards: 12 (exactly at read quorum)
+Parity tolerance: 4
+Result: Still readable but no fault tolerance left
+```
+
+**If 5+ Disks Die**:
+```
+Available shards: <12 (below read quorum)
+Result: UNRECOVERABLE - READ FAILS
+```
+
+---
+
+## Server Pools
 
 ![serverpools](https://github.com/user-attachments/assets/a25b361c-e253-4c06-983a-e95b4d0ae464)
 
-A server pool is a set of minio server nodes which pool their drives and resources, creating a unit of expansion. All nodes in a server pool share their hardware resources in an isolated namespace.  
+A server pool is a set of MinIO server nodes which pool their drives and resources, creating a unit of expansion. All nodes in a server pool share their hardware resources in an isolated namespace.
 
-The other important point here involves rebalance-free, non-disruptive expansion. With MinIO’s server pool approach - rebalancing is not required to expand. Ref: https://blog.min.io/no-rebalancing-object-storage/
+The other important point here involves rebalance-free, non-disruptive expansion. With MinIO's server pool approach - rebalancing is not required to expand. Ref: https://blog.min.io/no-rebalancing-object-storage/
 
 A MinIO cluster is built on server pools, and server pools are built on erasure sets.
 
+<img width="961" height="440" alt="image" src="https://github.com/user-attachments/assets/d916ce30-b3c0-46d5-9ab9-f31801b8872b" />
 
-## Code Structure
+### Multi-Pool Architecture
+
+MinIO can have multiple independent pools for expansion:
+
+```
+Cluster
+├── Pool 1 (16 disks, 4 nodes)
+│   ├─ Erasure Set 0
+│   └─ Erasure Set 0 (shared)
+│
+├── Pool 2 (32 disks, 4 nodes)
+│   ├─ Erasure Set 1
+│   └─ Erasure Set 2
+│
+└── Pool 3 (48 disks, 4 nodes)
+    ├─ Erasure Set 3
+    ├─ Erasure Set 4
+    └─ Erasure Set 5
+```
+
+### Pool Expansion (Rebalance-Free)
+
+1. **Add new pool**: MinIO detects new endpoints at startup
+2. **Update format files**: Cluster configuration updated
+3. **New objects**: Distributed across all pools by available space
+4. **Existing objects**: Stay in original pool (no rebalancing)
+5. **Decommission**: Background migration copies objects to other pools
+
+### Weighted Random Selection
+
+When adding new object to new pool:
+- Calculate available space: Pool1=500GB, Pool2=200GB, Pool3=300GB (total=1TB)
+- Generate random number: 0-1000GB
+- If 0-500: Pool1, if 500-700: Pool2, if 700-1000: Pool3
+- Result: Pools filled proportionally to their capacity
+
+---
+
+## Code Architecture
+
+### Layer Hierarchy
 
 ```mermaid
 graph TB
@@ -120,11 +938,11 @@ graph TB
     F --> G
     G --> H
     H --> I
-    
+
     G -.Healing.-> J
     G -.Encoding.-> K
     H -.Verification.-> L
-    
+
     style A fill:#e1f5ff,stroke:#01579b,stroke-width:3px,color:#000
     style B fill:#f3e5f5,stroke:#4a148c,stroke-width:3px,color:#000
     style C fill:#e8f5e9,stroke:#1b5e20,stroke-width:3px,color:#000
@@ -139,6 +957,7 @@ graph TB
     style L fill:#ebdef0,stroke:#6c3483,stroke-width:3px,color:#000
 ```
 
+### Detailed Layer Flow
 
 ```mermaid
 graph TB
@@ -146,14 +965,14 @@ graph TB
         HTTP[HTTP Server<br/>xhttp.NewServer]
         Router[Mux Router<br/>mux.NewRouter]
     end
-    
+
     subgraph "2. Middleware Layer"
         Auth[Authentication<br/>Signature V4]
         Trace[HTTP Tracing]
         Throttle[Request Throttling<br/>maxClients]
         GZIP[GZIP Compression]
     end
-    
+
     subgraph "3. API Handler Layer"
         APIHandlers[objectAPIHandlers]
         GetObj[GetObjectHandler]
@@ -161,47 +980,47 @@ graph TB
         DelObj[DeleteObjectHandler]
         ListObj[ListObjectsHandler]
     end
-    
+
     subgraph "4. ObjectLayer Interface"
         ObjInterface["<b>ObjectLayer Interface</b><br/>• GetObjectNInfo<br/>• PutObject<br/>• DeleteObject<br/>• ListObjects<br/>• GetObjectInfo<br/>• Multipart Operations"]
     end
-    
+
     subgraph "5. Erasure Server Pools"
         ESP[erasureServerPools<br/>implements ObjectLayer]
         Pool1[Pool 1<br/>erasureSets]
         Pool2[Pool 2<br/>erasureSets]
         PoolN[Pool N<br/>erasureSets]
     end
-    
+
     subgraph "6. Erasure Sets"
         Set1[Set 1<br/>erasureObjects]
         Set2[Set 2<br/>erasureObjects]
         SetN[Set N<br/>erasureObjects]
     end
-    
+
     subgraph "7. Erasure Objects Layer"
         ErasureObj[erasureObjects<br/>implements ObjectLayer]
         ECLogic[Erasure Coding Logic<br/>Reed-Solomon]
         Quorum[Read/Write Quorum]
         Healing[Self-Healing]
     end
-    
+
     subgraph "8. StorageAPI Interface"
         StorageInterface["<b>StorageAPI Interface</b><br/>• ReadVersion<br/>• WriteMetadata<br/>• DeleteVersion<br/>• ReadFile/WriteAll<br/>• Volume Operations"]
     end
-    
+
     subgraph "9. Storage Implementation"
         XLStorage[xlStorage<br/>implements StorageAPI]
         Remote[storageRESTClient<br/>Remote Disks]
         DiskCheck[xlStorageDiskIDCheck<br/>Health Wrapper]
     end
-    
+
     subgraph "10. Disk Layer"
         LocalDisk[Local Disk I/O<br/>xl.meta files]
         RemoteDisk[Remote Disk via REST]
         Metadata[xl.meta<br/>Object Metadata]
     end
-    
+
     HTTP --> Router
     Router --> Auth
     Auth --> Trace
@@ -212,37 +1031,37 @@ graph TB
     APIHandlers --> PutObj
     APIHandlers --> DelObj
     APIHandlers --> ListObj
-    
+
     GetObj --> ObjInterface
     PutObj --> ObjInterface
     DelObj --> ObjInterface
     ListObj --> ObjInterface
-    
+
     ObjInterface --> ESP
     ESP --> Pool1
     ESP --> Pool2
     ESP --> PoolN
-    
+
     Pool1 --> Set1
     Pool1 --> Set2
     Pool1 --> SetN
-    
+
     Set1 --> ErasureObj
     ErasureObj --> ECLogic
     ErasureObj --> Quorum
     ErasureObj --> Healing
-    
+
     ErasureObj --> StorageInterface
-    
+
     StorageInterface --> XLStorage
     StorageInterface --> Remote
     StorageInterface --> DiskCheck
-    
+
     XLStorage --> LocalDisk
     Remote --> RemoteDisk
     LocalDisk --> Metadata
     RemoteDisk --> Metadata
-    
+
     style ObjInterface fill:#e1f5ff,stroke:#01579b,stroke-width:3px,color:#000
     style StorageInterface fill:#e1f5ff,stroke:#01579b,stroke-width:3px,color:#000
     style ESP fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
@@ -250,7 +1069,7 @@ graph TB
     style XLStorage fill:#f1f8e9,stroke:#33691e,stroke-width:2px,color:#000
 ```
 
-Interfaces in MinIO
+### Interface Class Diagram
 
 ```mermaid
 classDiagram
@@ -265,7 +1084,7 @@ classDiagram
         +NewMultipartUpload() NewMultipartUploadResult
         +GetDisks() []StorageAPI
     }
-    
+
     class erasureServerPools {
         -poolMeta poolMeta
         -serverPools []*erasureSets
@@ -274,7 +1093,7 @@ classDiagram
         +GetObjectNInfo() GetObjectReader
         +getPoolIdx() int
     }
-    
+
     class erasureSets {
         -sets []*erasureObjects
         -format *formatErasureV3
@@ -284,7 +1103,7 @@ classDiagram
         +PutObject() ObjectInfo
         +getHashedSet() int
     }
-    
+
     class erasureObjects {
         -setDriveCount int
         -defaultParityCount int
@@ -295,7 +1114,7 @@ classDiagram
         +defaultWQuorum() int
         +defaultRQuorum() int
     }
-    
+
     class StorageAPI {
         <<interface>>
         +ReadVersion() FileInfo
@@ -308,7 +1127,7 @@ classDiagram
         +GetDiskID() string
         +IsOnline() bool
     }
-    
+
     class xlStorage {
         -diskPath string
         -endpoint Endpoint
@@ -319,7 +1138,7 @@ classDiagram
         +CreateFile() error
         +ReadFile() int64
     }
-    
+
     class storageRESTClient {
         -endpoint Endpoint
         -restClient *rest.Client
@@ -328,15 +1147,7 @@ classDiagram
         +ReadVersion() FileInfo
         +CreateFile() error
     }
-    
-    class xlStorageDiskIDCheck {
-        -storage StorageAPI
-        -diskID string
-        -healthCheck bool
-        +WriteMetadata() error
-        +ReadVersion() FileInfo
-    }
-    
+
     class Erasure {
         -encoder func()Encoder
         -dataBlocks int
@@ -346,22 +1157,19 @@ classDiagram
         +DecodeDataBlocks() error
         +ShardSize() int64
     }
-    
+
     ObjectLayer <|.. erasureServerPools : implements
     ObjectLayer <|.. erasureSets : implements
     ObjectLayer <|.. erasureObjects : implements
-    
+
     erasureServerPools *-- erasureSets : contains
     erasureSets *-- erasureObjects : contains
     erasureObjects --> StorageAPI : uses
     erasureObjects --> Erasure : uses
-    
+
     StorageAPI <|.. xlStorage : implements
     StorageAPI <|.. storageRESTClient : implements
-    StorageAPI <|.. xlStorageDiskIDCheck : implements
-    
-    xlStorageDiskIDCheck o-- StorageAPI : wraps
-    
+
     style ObjectLayer fill:#e1f5ff,stroke:#01579b,stroke-width:3px,color:#000
     style StorageAPI fill:#e1f5ff,stroke:#01579b,stroke-width:3px,color:#000
     style erasureServerPools fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
@@ -371,413 +1179,172 @@ classDiagram
     style Erasure fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#000
 ```
 
-## Erasure coding
+### Key Interfaces
 
-* Erasure sets, built per server pool, are sets of nodes and drives to which MinIO applies erasure coding to protect data from loss and corruption. 
-* Erasure coding breaks objects into data and parity blocks and can use these blocks to reconstruct missing or corrupted blocks if necessary. With MinIO’s highest level of protection (8 parity or EC:8), you may lose up to half of the total drives and still recover data.
-* For example, in a 16-drive setup, data can be split into 12 data shards and 4 parity shards, allowing the system to rebuild data even if up to 4 drives fail.
-
-Data shards contain a portion of a given object. Parity shards contain a mathematical representation of the object used for rebuilding Data shards.
-
-<img width="1030" height="540" alt="image" src="https://github.com/user-attachments/assets/45f2609b-43c4-4988-99d7-b6a2c173d17a" />
-
-The value K here constitutes the read quorum for the deployment. The erasure set must therefore have at least K healthy drives in the erasure set to support read operations.
-
-
-Here say we have small object which only has 1 part - `part.1`, now in this case, we have 2 data blocks and 2 parity blocks for this part.
-<img width="960" height="540" alt="image" src="https://github.com/user-attachments/assets/83ffabbc-95dc-4ac7-8fa7-832d27d59b87" />
-
-Ref: https://blog.min.io/erasure-coding-vs-raid/
-
-Not only does MinIO erasure coding protect objects against data loss in the event that multiple drives and nodes fail, MinIO also protects and heals at the object level. 
-* The ability to heal one object at a time is a dramatic advantage over systems such as RAID that heal at the volume level.
-* A corrupt object could be restored in MinIO in seconds vs. hours in RAID.
-
-
-MinIO protects against `BitRot`, or silent data corruption, which can have many different causes such as power current spikes, bugs in disk firmware and even simply aging drives. 
-* MinIO uses the `HighwayHash` algorithm to compute a hash on read and verify it on write from the application, across the network and to the storage media.
-* This process is highly efficient - it can achieve hashing speeds over 10 GB/sec on a single core on Intel CPUs - and has minimal impact on normal read/write operations across the erasure set. https://github.com/google/highwayhash
-
-### Read request
-
-<img width="758" height="799" alt="image" src="https://github.com/user-attachments/assets/7367da38-6071-49c5-9934-7c4ae10027b6" />
-
-### Write request
-
-Two cases:
-* Case 1: Parity < 50% of drives
-  - Write Quorum = Parity
-* Case 2: Parity = 50% of drives
-  - Write Quorum = Parity + 1
-
-> If parity equals 1/2 (half) the number of erasure set drives, write quorum equals parity + 1 (one) to avoid data inconsistency due to 'split brain' scenarios.
-
-<img width="758" height="900" alt="image" src="https://github.com/user-attachments/assets/7d221209-56e3-4924-96ba-2c0d74e9248f" />
-
-
-## Put and Get Operation
-
-### Storing an Object (The PUT Request)
-
-<img width="1137" height="911" alt="image" src="https://github.com/user-attachments/assets/7c0955af-93ee-418d-9115-9c560a92708d" />
-
-- Choosing an erasure set for the object is decided during `PutObject()`, object names are used to find the right erasure set using the following pseudo code.
-
+**ObjectLayer Interface**:
 ```go
-// hashes the key returning an integer.
-func sipHashMod(key string, cardinality int, id [16]byte) int {
-        if cardinality <= 0 {
-                return -1
-        }
-        sip := siphash.New(id[:])
-        sip.Write([]byte(key))
-        return int(sip.Sum64() % uint64(cardinality))
+type ObjectLayer interface {
+    // Bucket operations
+    MakeBucket(ctx, bucket, opts) error
+    GetBucketInfo(ctx, bucket, opts) (BucketInfo, error)
+    ListBuckets(ctx, opts) ([]BucketInfo, error)
+    DeleteBucket(ctx, bucket, opts) error
+    ListObjects(...) (ListObjectsInfo, error)
+    ListObjectVersions(...) (ListObjectVersionsInfo, error)
+
+    // Object operations
+    GetObjectNInfo(ctx, bucket, object, rangeSpec, headers, opts) (*GetObjectReader, error)
+    GetObjectInfo(ctx, bucket, object, opts) (ObjectInfo, error)
+    PutObject(ctx, bucket, object, data, opts) (ObjectInfo, error)
+    CopyObject(ctx, srcBucket, srcObject, dstBucket, dstObject, ...) (ObjectInfo, error)
+    DeleteObject(ctx, bucket, object, opts) (ObjectInfo, error)
+    DeleteObjects(ctx, bucket, objects, opts) ([]DeletedObject, []error)
+
+    // Multipart operations
+    NewMultipartUpload(ctx, bucket, object, opts) (*NewMultipartUploadResult, error)
+    PutObjectPart(ctx, bucket, object, uploadID, partID, data, opts) (PartInfo, error)
+    CompleteMultipartUpload(ctx, bucket, object, uploadID, parts, opts) (ObjectInfo, error)
+    AbortMultipartUpload(ctx, bucket, object, uploadID, opts) error
+
+    // Healing & Info
+    HealFormat(ctx, dryRun) (HealResultItem, error)
+    HealBucket(ctx, bucket, opts) (HealResultItem, error)
+    HealObject(ctx, bucket, object, versionID, opts) (HealResultItem, error)
+    StorageInfo(ctx, metrics bool) StorageInfo
 }
 ```
 
-Input for the key is the object name specified in `PutObject()`, returns a unique index. This index is one of the erasure sets where the object will reside. This function is a consistent hash for a given object name i.e for a given object name the index returned is always the same.
+**StorageAPI Interface**:
+```go
+type StorageAPI interface {
+    // Metadata
+    ReadVersion(ctx, origvolume, volume, path, versionID, opts) (FileInfo, error)
+    WriteMetadata(ctx, origvolume, volume, path, fi) error
+    DeleteVersion(ctx, volume, path, fi, ...) error
 
+    // File operations
+    ReadFile(ctx, volume, path, offset, buf, verifier) (n, error)
+    CreateFile(ctx, origvolume, volume, path, size, reader) error
+    ReadFileStream(ctx, volume, path, offset, length) (io.ReadCloser, error)
+    AppendFile(ctx, volume, path, buf) error
+    Delete(ctx, volume, path, opts) error
 
+    // Volume operations
+    MakeVol(ctx, volume) error
+    ListVols(ctx) ([]VolInfo, error)
+    StatVol(ctx, volume) (VolInfo, error)
+    DeleteVol(ctx, volume, forceDelete bool) error
 
-When a client sends an object to the cluster, MinIO follows a specific sequence to ensure data is stored safely and evenly distributed.
-
-* Step 1: Hashing: The object name is processed by a deterministic hash function to create a unique hash value.
-
-* Step 2: Drive Selection: A modulus function is applied to that hash value. The result determines the specific set of drives (erasure set) where the data will live.
-
-* Step 3: Erasure Coding: Simultaneously, the Erasure Code Engine processes the object data. It breaks the object into:
-  - Data blocks: The actual content.
-  - Parity blocks: Redundancy data for recovery.
-
-* Step 4: Writing: These blocks are written to the prescribed drives.
-
-Note: MinIO uses `SipHash` for this process. This algorithm ensures that objects are distributed evenly across all drives, resulting in near-uniform disk utilization.
-
-<img width="1606" height="929" alt="image" src="https://github.com/user-attachments/assets/25a0614e-a95f-41e3-adcf-e5278acca6f0" />
-
-<img width="3192" height="1766" alt="image" src="https://github.com/user-attachments/assets/9f0b687c-5923-49c5-8eaf-8f9131dbefaf" />
-
-For example, with 5 data blocks and 3 parity blocks
-
-<img width="1452" height="895" alt="image" src="https://github.com/user-attachments/assets/ba80d04b-8806-41ff-bd96-574dcf06a89d" />
-
-```mermaid
-graph TB
-    Start[Client: PUT Object] --> CheckExisting{Object Already<br/>Exists?}
-    
-    CheckExisting -->|Yes| UseExistingPool[Use Same Pool<br/>as Existing Object]
-    CheckExisting -->|No| SelectPool[Select Pool Based on<br/>Available Space]
-    
-    SelectPool --> CalcSpace[Calculate Available Space<br/>for Each Pool]
-    CalcSpace --> FilterPools[Filter Pools:<br/>- Skip Suspended<br/>- Skip Rebalancing<br/>- Check Disk Space]
-    FilterPools --> WeightedRandom[Weighted Random Selection<br/>Based on Available Space]
-    
-    WeightedRandom --> PoolSelected[Pool Selected]
-    UseExistingPool --> PoolSelected
-    
-    PoolSelected --> HashObject[Hash Object Name<br/>Using SipHash/CRC]
-    HashObject --> SelectSet[Select Erasure Set<br/>setIndex = hash mod numSets]
-    
-    SelectSet --> CreateMetadata[Create FileInfo Metadata<br/>with Distribution Order]
-    CreateMetadata --> CalcDistribution[Calculate Distribution:<br/>hashOrder based on object name]
-    
-    CalcDistribution --> ErasureEncode[Erasure Encode Object<br/>Split into Data + Parity Shards]
-    
-    ErasureEncode --> ShardCalc[For N drives in set:<br/>Data Shards = K<br/>Parity Shards = M<br/>N = K + M]
-    
-    ShardCalc --> ShuffleDisks[Shuffle Disks According<br/>to Distribution Order]
-    ShuffleDisks --> WriteShard[Write Each Shard to<br/>Corresponding Drive]
-    
-    WriteShard --> WriteMetadata[Write xl.meta with:<br/>- Erasure Info<br/>- Distribution Array<br/>- Shard Index]
-    
-    WriteMetadata --> Complete[Write Complete]
-    
-    style Start fill:#e1f5ff
-    style Complete fill:#d4edda
-    style SelectPool fill:#fff3cd
-    style HashObject fill:#fff3cd
-    style ErasureEncode fill:#f8d7da
-    style WriteShard fill:#d4edda
+    // Disk info
+    IsOnline() bool
+    GetDiskID() (string, error)
+    DiskInfo(ctx, opts) (DiskInfo, error)
+}
 ```
 
-We are searching all the server pools in parallel to see if we find the object using the deterministic erasure set.
+### Implementations
 
+| Component | Location | Role |
+|-----------|----------|------|
+| `erasureServerPools` | `cmd/erasure-server-pool.go` | Pool orchestration, weighted selection |
+| `erasureSets` | `cmd/erasure-sets.go` | Set routing, consistent hashing |
+| `erasureObjects` | `cmd/erasure-object.go` | Core put/get/delete with EC |
+| `xlStorage` | `cmd/xl-storage.go` | Local disk I/O |
+| `storageRESTClient` | `cmd/storage-rest-client.go` | Remote disk via REST |
+| `Erasure` | `cmd/erasure-coding.go` | Reed-Solomon encode/decode |
 
-```mermaid
-sequenceDiagram
-    participant Client
-    participant MinIO as MinIO Server
-    participant PoolMgr as Pool Manager
-    participant SetMgr as Erasure Set Manager
-    participant EC as Erasure Coder
-    participant Disk1 as Drive 1
-    participant Disk2 as Drive 2
-    participant DiskN as Drive N
-    
-    Client->>MinIO: PUT /bucket/object
-    MinIO->>PoolMgr: getPoolIdx(bucket, object, size)
-    
-    alt Object Already Exists
-        PoolMgr->>PoolMgr: Query all pools in parallel
-        PoolMgr->>PoolMgr: GetObjectInfo() on each pool
-        PoolMgr->>PoolMgr: Object found in Pool 2
-        PoolMgr-->>MinIO: Use Pool 2 (existing)
-    else New Object
-        PoolMgr->>PoolMgr: getServerPoolsAvailableSpace()
-        PoolMgr->>PoolMgr: Filter: skip suspended/rebalancing
-        PoolMgr->>PoolMgr: Weighted random selection
-        PoolMgr-->>MinIO: Use Pool 1 (most space)
-    end
-    
-    MinIO->>SetMgr: Hash object name
-    SetMgr->>SetMgr: sipHashMod(objectName, numSets)
-    SetMgr-->>MinIO: Erasure Set 3
-    
-    MinIO->>EC: Create FileInfo metadata
-    EC->>EC: hashOrder(objectName, drives)
-    EC->>EC: Generate distribution array
-    Note over EC: Distribution: [3,1,4,2,5,...]
-    
-    MinIO->>EC: Encode object (K data + M parity)
-    EC->>EC: Split into data blocks
-    EC->>EC: Calculate parity using Reed-Solomon
-    EC-->>MinIO: Data + Parity shards
-    
-    MinIO->>SetMgr: Shuffle disks by distribution
-    SetMgr-->>MinIO: Ordered disk list
-    
-    par Write to all drives in parallel
-        MinIO->>Disk1: Write shard 1 + xl.meta
-        MinIO->>Disk2: Write shard 2 + xl.meta
-        MinIO->>DiskN: Write shard N + xl.meta
-    end
-    
-    Disk1-->>MinIO: Success
-    Disk2-->>MinIO: Success
-    DiskN-->>MinIO: Success
-    
-    MinIO->>MinIO: Check write quorum (K drives)
-    MinIO-->>Client: 200 OK
-```
-
-
-```mermaid
-graph TB
-    subgraph "Client"
-        C[PUT /mybucket/image.jpg<br/>10 MB]
-    end
-    
-    subgraph "Layer 1: HTTP Server"
-        H[HTTP Router<br/>Match route]
-    end
-    
-    subgraph "Layer 2: API Handler"
-        A[PutObjectHandler<br/>Parse request<br/>Create PutObjReader]
-    end
-    
-    subgraph "Layer 3: Server Pools"
-        SP[erasureServerPools<br/>Select Pool 0<br/>based on space]
-    end
-    
-    subgraph "Layer 4: Erasure Sets"
-        ES[erasureSets<br/>Hash object name<br/>Select Set 3]
-    end
-    
-    subgraph "Layer 5: Erasure Objects"
-        EO[erasureObjects<br/>Setup EC:12+4<br/>WriteQuorum: 12]
-    end
-    
-    subgraph "Layer 6: Encoding Loop"
-        L1[Read Block 1<br/>1 MB]
-        L2[Encode to<br/>16 shards]
-        L3[Write to<br/>16 disks]
-        L4[Check<br/>quorum]
-        L5{More<br/>blocks?}
-    end
-    
-    subgraph "Layer 7: Reed-Solomon"
-        RS[Split 1 MB into<br/>12 data shards<br/>Generate 4 parity]
-    end
-    
-    subgraph "Layer 8: Parallel Writes"
-        W1[Disk 1<br/>Write D1]
-        W2[Disk 2<br/>Write D2]
-        W3[Disk 12<br/>Write D12]
-        W4[Disk 13<br/>Write P1]
-        W5[Disk 16<br/>Write P4]
-    end
-    
-    subgraph "Layer 9: Storage API"
-        S1[xlStorage<br/>Disk 1]
-        S2[xlStorage<br/>Disk 2]
-        S3[xlStorage<br/>Disk 16]
-    end
-    
-    subgraph "Layer 10: Physical Disks"
-        D1["/disk1/<br/>part.1<br/>~875 KB"]
-        D2["/disk2/<br/>part.1<br/>~875 KB"]
-        D3["/disk16/<br/>part.1<br/>~875 KB"]
-    end
-    
-    subgraph "Metadata Write"
-        M1[Create xl.meta<br/>with FileInfo]
-        M2[Write to all<br/>16 disks]
-        M3[Check quorum<br/>12/16]
-        M4{Success?}
-    end
-    
-    subgraph "Final"
-        F1[✅ Return<br/>ObjectInfo]
-        F2[❌ Revert<br/>& Error]
-    end
-    
-    C --> H
-    H --> A
-    A --> SP
-    SP --> ES
-    ES --> EO
-    EO --> L1
-    
-    L1 --> L2
-    L2 --> RS
-    RS --> L3
-    
-    L3 --> W1
-    L3 --> W2
-    L3 --> W3
-    L3 --> W4
-    L3 --> W5
-    
-    W1 --> S1
-    W2 --> S2
-    W5 --> S3
-    
-    S1 --> D1
-    S2 --> D2
-    S3 --> D3
-    
-    W1 --> L4
-    W2 --> L4
-    W3 --> L4
-    W4 --> L4
-    W5 --> L4
-    
-    L4 --> L5
-    L5 -->|Yes| L1
-    L5 -->|No| M1
-    
-    M1 --> M2
-    M2 --> M3
-    M3 --> M4
-    
-    M4 -->|Yes| F1
-    M4 -->|No| F2
-    
-    style C fill:#e1f5ff
-    style RS fill:#fff3cd
-    style L4 fill:#fff3cd
-    style M3 fill:#fff3cd
-    style M4 fill:#fff3cd
-    style F1 fill:#d4edda
-    style F2 fill:#f8d7da
-    style D1 fill:#cfe2ff
-    style D2 fill:#cfe2ff
-    style D3 fill:#ffc9c9
-```
-
-
-### Retrieving an Object (The GET Request)
-To retrieve data, MinIO reverses the logic used during the write process.
-
-* Step 1: Location Calculation: The client requests the file by name. MinIO runs the name through the same hash and modulus functions used during the PUT request to identify the correct drives immediately.
-
-* Step 2: Retrieval: The system reads the object shards (blocks) from those specific drives.
-
-* Step 3: Reassembly & Verification: The shards are passed back through the Erasure Code Engine. The engine reassembles the original object and verifies its integrity ("sanity check") to ensure no corruption occurred.
-
-* Step 4: Delivery: The verified object is sent back to the client.
+---
 
 ## Healing
 
-<img width="868" height="930" alt="image" src="https://github.com/user-attachments/assets/e90b355a-6810-4648-823b-5baddacf7d64" />
+MinIO performs automatic background healing to detect and repair corrupted objects:
 
-<img width="688" height="945" alt="image" src="https://github.com/user-attachments/assets/0f3218db-1d01-4b99-a652-20172683fb60" />
+### Healing Mechanisms
 
-Ref: https://minio-docs.tf.fo/operations/concepts/healing
+1. **Bitrot Detection**: HighwayHash checksum verification on every read
+2. **Bad Disk Detection**: Continuous health monitoring of all disks
+3. **Object-Level Healing**: Corrupted objects repaired in seconds (vs RAID hours)
+4. **Background Scanner**: Periodic scan of all objects to detect bitrot proactively
 
-<img width="1136" height="946" alt="image" src="https://github.com/user-attachments/assets/f3711710-afca-4123-8ba6-0c07469876b7" />
+### Healing Flow
 
-Ref: https://minio-docs.tf.fo/operations/data-recovery
+```
+Bad block detected (hash mismatch)
+        │
+        ▼
+Mark disk as bad
+        │
+        ▼
+Read remaining 15 shards (12+ available)
+        │
+        ▼
+Use Reed-Solomon to reconstruct missing shard
+        │
+        ▼
+Repair disk by writing reconstructed shard
+        │
+        ▼
+Verify repair with new hash
+        │
+        ▼
+Continue serving object (healed)
+```
 
-## Site to Site Replication
+---
 
-<img width="827" height="427" alt="image" src="https://github.com/user-attachments/assets/dbb719ec-3363-45a8-922e-ebcc9a63dd14" />
+## Gateway Mode (Deprecated)
 
-
-## Use of distributed locking
-
-<img width="2540" height="1216" alt="image" src="https://github.com/user-attachments/assets/231e0ec3-20e3-45c9-8c2e-b703ed8e4e9b" />
-
-<img width="1375" height="872" alt="image" src="https://github.com/user-attachments/assets/6e6a6e02-44b8-4e32-b552-22a134de5f40" />
-
-Ref: https://blog.min.io/minio-dsync-a-distributed-locking-and-syncing-package-for-go/
-
-### Distributed lock management
-
-Similar to distributed databases, Minio suffers from data consistency issues: while one client reads an object, another client may be modifying or deleting the object. To avoid inconsistencies. Minio specifically designed and implemented the dsync distributed lock manager to control data consistency.
-
-* A lock request from any one node is broadcast to all online nodes in the cluster
-* If consent is received from N/2+1 nodes, the acquisition is successful
-* There is no master node, each node is peered to each other, and the stale lock detection mechanism is used between nodes to determine the status of nodes and the lock status
-* Due to the simple design, it is relatively rough. It has certain defects, and supports up to 32 nodes. Scenarios where lock loss cannot be avoided. However, the available needs are basically met.
-
-Lock throughput decreases as cluster grows.
-
-Ref: https://e-whisper.com/posts/9462/
-
-## MinIO Object Storage Gateway [Deprecated]
-
-In addition to being a storage system service, Minio can also be used as a gateway, and the backend can be used with distributed file systems such as NAS systems and HDFS systems, or third-party storage systems such as S3 and OSS. With the Minio gateway, S3-compatible APIs can be added to these back-end systems for easy management and portability, because S3 APIs are already a de facto label in the object storage world.
+MinIO introduced gateway mode early on to provide S3 API compatibility to legacy systems:
 
 <img width="984" height="760" alt="image" src="https://github.com/user-attachments/assets/402f972a-ea67-4c56-966f-938ad454f3a9" />
 
 <img width="1024" height="800" alt="image" src="https://github.com/user-attachments/assets/f28dbef2-d8fa-41e2-9952-8476ef0ade6d" />
 
-* MinIO introduced the gateway feature early on to help make the S3 API ubiquitous. From legacy POSIX-based SAN/NAS systems to modern cloud storage services, the different MinIO gateway modules brought S3 API compatibility where it did not exist previously.
-* The primary objective was to provide sufficient time to port the applications over a modern cloud-native architecture.
-* In the gateway mode, MinIO ran as a stateless proxy service, performing inline translation of the object storage functions from the S3 API to their corresponding equivalent backend functions.
-* At any given time, the MinIO gateway service could be turned off and the only loss was S3 compatibility. The objects were always written to the backend in their native format, be it NFS or Azure Blob, or HDFS. 
+**Why Deprecated**:
+- Critical S3 features (versioning, replication, locking, encryption) couldn't work in gateway mode without proprietary formats
+- Would defeat the purpose of direct backend access
+- Better to run MinIO in server mode than as a stateless proxy
+- S3 API now ubiquitous (partly due to MinIO Gateway work)
 
-<img width="697" height="354" alt="image" src="https://github.com/user-attachments/assets/5b0d98dd-b760-4cf6-98ca-17349637d92f" />
+**Lessons Learned**:
+- S3 API evolved significantly since gateway inception
+- Inline translation is insufficient for modern S3 capabilities
+- Backends become mere storage media, which is essentially running MinIO anyway
 
+Reference: [Gateway Migration](https://blog.min.io/minio-gateway-migration/) and [Deprecation Details](https://blog.min.io/deprecation-of-the-minio-gateway/)
 
-* The Gateway was initially developed to allow customers to use the S3 API to work with backends, such as NFS, Azure Blob and HDFS, that would not otherwise support it.
-* The S3 API is ubiquitous (thanks in part to MinIO Gateway), but if we were to continue developing the MinIO Gateway, we would simply be perpetuating older technologies that are neither high-performance nor cloud-native. Also, addressing the ongoing technical challenges required to maintain MinIO Gateway for each backend are time and resource intensive so it makes much more sense to deprecate it entirely.
+---
 
-Reason for deprecation:
-* The S3 API has evolved considerably since we started, and what began as inline translation morphed into something much more.
-* Critical S3 capabilities like versioning, bucket replication, immutability/object locking, s3-select, encryption, and compression couldn’t be supported in the gateway mode without introducing a proprietary backend format.
-* It would defeat the purpose of the gateway mode because the backend could no longer be read directly without the help of the gateway service.
-* The backends would merely act as storage media for the gateway and you might as well run MinIO in server mode. Thus it became a compromise that MinIO no longer wanted to engage in. This meant it was time for us to let go. 
+## Advanced Features
 
-Ref: https://blog.min.io/minio-gateway-migration/ and https://blog.min.io/deprecation-of-the-minio-gateway/ 
+### Versioning
+- Keep multiple versions of an object
+- Each version has separate `xl.meta` entry
+- Access previous versions without data loss
 
-## Beyond the Basics: What Else Can MinIO Do?
+### Object Locking (WORM)
+- Write Once, Read Many protection
+- Objects immutable for set retention period
+- Compliance and audit requirements
 
-While we have only scratched the surface, MinIO is packed with advanced features:
+### Lifecycle Management
+- Automatic object deletion/transition after time period
+- Move to different storage classes
+- Cost optimization
 
-* Versioning: Keep multiple versions of an object. Accidentally overwrote a file? No problem, just revert to an earlier version!
+### Replication
+- Automatic cross-cluster replication
+- Disaster recovery and high availability
+- Real-time synchronization
 
-* Object Locking (WORM): Enforce "Write Once, Read Many" protection, making data immutable for compliance or security. Once written, it cannot be changed or deleted for a set period.
+### IAM & Access Control
+- User authentication (basic, LDAP, OAuth)
+- Bucket policies (similar to AWS S3)
+- Access key/secret pairs
 
-* Lifecycle Management: Automatically move or delete objects after a certain time, saving storage costs.
+### Encryption
 
-* Identity and Access Management (IAM): Control who can access what, just like in a big cloud environment. You can create users, groups, and define fine grained policies.
-
-* Replication: Copy data automatically across different MinIO instances for disaster recovery and high availability.
-
-
-## Encryption
+Server-side encryption (SSE-S3, SSE-KMS) and client-side encryption support with master key rotation.
 
 <img width="1245" height="626" alt="image" src="https://github.com/user-attachments/assets/0571b920-39c8-494e-972d-0d48d7b06592" />
 
@@ -785,18 +1352,58 @@ While we have only scratched the surface, MinIO is packed with advanced features
 
 <img width="1245" height="678" alt="image" src="https://github.com/user-attachments/assets/eb419eca-2356-4086-ab6c-f453c25094d4" />
 
+---
 
-## TODO
-* https://blog.min.io/minio-versioning-metadata-deep-dive/
+## Distributed Locking (dsync)
 
+MinIO avoids consistency issues using distributed locking:
 
-## MinIO Backend Storage Metadata on Nodes
+### How dsync Works
 
-https://blog.min.io/minio-versioning-metadata-deep-dive/
+1. **Lock Request**: Any node broadcasts lock request to all nodes
+2. **Quorum**: If N/2+1 nodes approve → lock acquired
+3. **No Master**: Every node is peer; no single authority
+4. **Stale Detection**: Between-node heartbeats detect offline nodes
 
-Inside `.minio.sys/format.json` on a node
+### Limitations
+- Supports up to 32 nodes (theoretical)
+- Lock throughput decreases as cluster grows
+- Can lose locks in certain scenarios (acceptable for MinIO's use case)
 
-`minio1/.minio.sys$ cat format.json  | jq`
+---
+
+## Quick Reference: Key Concepts
+
+| Concept | Definition |
+|---------|-----------|
+| **Erasure Set** | Group of disks where objects are erasure coded |
+| **Server Pool** | Collection of erasure sets, independent expansion unit |
+| **Consistent Hash** | SipHash used to deterministically place objects |
+| **Read Quorum** | Minimum shards needed to reconstruct object (M data shards) |
+| **Write Quorum** | Minimum disks that must acknowledge write (M or M+1) |
+| **BitRot** | Silent data corruption, detected via HighwayHash |
+| **xl.meta** | Metadata file containing object info, stored on all disks |
+| **DataDir** | UUID-named directory storing object's data shard |
+| **Reed-Solomon** | Erasure coding algorithm enabling data reconstruction |
+
+---
+
+## Performance Characteristics
+
+- **Throughput**: GB/sec performance (limited by network)
+- **Latency**: Milliseconds for PUT/GET operations
+- **Scalability**: Supports petabyte-scale deployments
+- **Fault Tolerance**: Up to N parity disks can fail per set
+- **Healing**: Object-level healing in seconds
+- **Bitrot Hashing**: >10 GB/sec on single CPU core
+
+---
+
+## Real-World Metadata Examples
+
+### format.json from Actual Cluster
+
+A 12-disk single erasure set cluster:
 
 ```json
 {
@@ -827,56 +1434,16 @@ Inside `.minio.sys/format.json` on a node
 }
 ```
 
-Explanation: Cluster has:
+**Explanation**:
+- 1 erasure set with 12 disks (UUIDs in the sets array)
+- Deployment ID: f9a7a6ba-39d9-4483-bb47-fe86518bdc67 (shared by all disks)
+- Distribution Algorithm: SIPMOD+PARITY
+- This disk position: 2 in the set (9ae64de8-1c75-46df-b09d-ad8b97f95313)
 
-* 1 erasure set with 12 disks (UUIDs in the sets array)
-* Deployment ID: f9a7a6ba-39d9-4483-bb47-fe86518bdc67 (the id field)
-* Distribution Algorithm: SIPMOD+PARITY (the distributionAlgo field)
-* This disk: 9ae64de8-1c75-46df-b09d-ad8b97f95313 (position 2 in the set)
+### Real xl.meta Example from Small File (65 bytes)
 
-### To store a file, we can use a command like 
+File content: `This is test data for xl.meta debugging with erasure coding EC:4`
 
-```
-# Create a test bucket and upload a file
-kubectl exec minio-0 -- sh -c '
-mc alias set local http://localhost:9000 $MINIO_ROOT_USER $MINIO_ROOT_PASSWORD --insecure 2>/dev/null
-mc mb local/debug-bucket --insecure 2>/dev/null || true
-echo "This is test data for xl.meta debugging with erasure coding EC:4" > /tmp/test-file.txt
-mc cp /tmp/test-file.txt local/debug-bucket/test-file.txt --insecure
-mc stat local/debug-bucket/test-file.txt --insecure
-'
-```
-
-Expected output
-
-```
-Added `local` successfully.
-Bucket created successfully `local/debug-bucket`.
-`/tmp/test-file.txt` -> `local/debug-bucket/test-file.txt`
-┌───────┬─────────────┬──────────┬────────────┐
-│ Total │ Transferred │ Duration │ Speed      │
-│ 65 B  │ 65 B        │ 00m00s   │ 1.13 KiB/s │
-└───────┴─────────────┴──────────┴────────────┘
-Name      : test-file.txt
-Date      : 2026-01-14 11:23:55 UTC
-Size      : 65 B
-ETag      : eeb5a84d38f5dac272eb0d3f772c8a59
-Type      : file
-Metadata  :
-  Content-Type: text/plain
-```
-
-Post that if we check the disks, we can find the data created as follows:
-
-```
-debug-bucket
-└── test-file.txt
-    └── xl.meta
-```
-
-Since the test file is only 65 bytes, the data is inlined directly in `xl.meta` - no separate data files exist. The `x-minio-internal-inline-data: true` (`echo 'dHJ1ZQ==' | base64 -d`) flag tells us this.
-
-/bin/xl-meta /tmp/test-xlmeta.binm1l" | base64 -d > /tmp/test-xlmeta.bin && ~/go 
 ```json
 {
   "Versions": [
@@ -924,64 +1491,25 @@ Since the test file is only 65 bytes, the data is inlined directly in `xl.meta` 
 }
 ```
 
-```
-~/go/bin/xl-meta --data /tmp/test-xlmeta.bin
-{
-  "null": {
-    "bitrot_valid": true,
-    "bytes": 41,
-    "data_base64": "Zm9yIHhsLm1l",
-    "data_string": "for xl.me"
-  
-}
-```
+### xl.meta from a Different Disk (EcIndex=7)
 
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/c1a8bf76-f524-48fd-aaa2-9a9f6aec28a7" />
-
-
-If we decode data from another disk, we can see that 
+Decoding `xl.meta` from another disk in the same erasure set shows the same object but a different shard:
 
 ```json
 {
   "Versions": [
     {
-      "Header": {
-        "EcM": 8,
-        "EcN": 4,
-        "Flags": 6,
-        "ModTime": "2026-01-14T16:53:55.923264863+05:30",
-        "Signature": "b9f71a0b",
-        "Type": 1,
-        "VersionID": "00000000000000000000000000000000"
-      },
-      "Idx": 0,
+      "Header": { "EcM": 8, "EcN": 4, "Type": 1, "VersionID": "00000000000000000000000000000000" },
       "Metadata": {
-        "Type": 1,
         "V2Obj": {
-          "CSumAlgo": 1,
-          "DDir": "NhHND1OVRfWzQYC/GFqfGA==",
-          "EcAlgo": 1,
-          "EcBSize": 1048576,
           "EcDist": [1,2,3,4,5,6,7,8,9,10,11,12],
           "EcIndex": 7,
           "EcM": 8,
           "EcN": 4,
-          "ID": "AAAAAAAAAAAAAAAAAAAAAA==",
-          "MTime": 1768389835923264863,
-          "MetaSys": {
-            "x-minio-internal-inline-data": "dHJ1ZQ=="
-          },
-          "MetaUsr": {
-            "content-type": "text/plain",
-            "etag": "eeb5a84d38f5dac272eb0d3f772c8a59"
-          },
-          "PartASizes": [ 65 ],
-          "PartETags": null,
-          "PartNums": [ 1 ],
-          "PartSizes": [ 65 ],
+          "MetaSys": { "x-minio-internal-inline-data": "dHJ1ZQ==" },
+          "MetaUsr": { "content-type": "text/plain", "etag": "eeb5a84d38f5dac272eb0d3f772c8a59" },
           "Size": 65
-        },
-        "v": 1740736516
+        }
       }
     }
   ]
@@ -993,37 +1521,119 @@ If we decode data from another disk, we can see that
     "bytes": 41,
     "data_base64": "b2RpbmcgRUM6",
     "data_string": "oding EC:"
-  
+  }
 }
 ```
 
-Essentially our data was `This is test data for xl.meta debugging with erasure coding EC:4` which is written as follows
+Notice `EcIndex: 7` (vs `EcIndex: 3` on the other disk) — each disk holds a different shard of the same object. The `data_string` differs (`"oding EC:"` vs `"for xl.me"`) confirming each disk stores its own slice.
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/c1a8bf76-f524-48fd-aaa2-9a9f6aec28a7" />
+
+### Data Distribution Visualization
+
+For the 65-byte file above split into EC:8+4:
 
 ```
-┌────────────────────────────────────────────────────────────────────┐
-│                    Original File (~65 bytes)                       │
-│                   "...for xl.me...oding EC:..."                    │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                    │
-│  Erasure Split into 8 Data Shards + 4 Parity Shards:               │
-│                                                                    │
-│  EcDist: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]                   │
-│           ├─────────────────────┤ ├──────────────┤                 │
-│           8 DATA shards          4 PARITY shards                   │
-│                                                                    │
-│  Disk EcIndex=3: Contains data shard 3 → "for xl.me"               │
-│  Disk EcIndex=7: Contains data shard 7 → "oding EC:"               │
-│                                                                    │
-│  Disks 9-12 (EcIndex 9,10,11,12): Parity shards (for recovery)     │
-└────────────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────┐
+│                    Original File (~65 bytes)                   │
+│                   "...for xl.me...oding EC:..."                │
+├────────────────────────────────────────────────────────────────┤
+│                                                                │
+│  Erasure Split into 8 Data Shards + 4 Parity Shards:           │
+│                                                                │
+│  EcDist: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]               │
+│           ├─────────────────────┤ ├──────────────┤             │
+│           8 DATA shards          4 PARITY shards               │
+│                                                                │
+│  Disk EcIndex=3: Contains data shard 3 → "for xl.me"           │
+│  Disk EcIndex=7: Contains data shard 7 → "oding EC:"           │
+│                                                                │
+│  Disks 9-12 (EcIndex 9,10,11,12): Parity shards (for recovery) │
+└────────────────────────────────────────────────────────────────┘
 ```
 
+### Storing a Test File
 
-For larger files > ~128KB, the data would be in separate files. Something like
+```bash
+# Create test bucket and upload file
+kubectl exec minio-0 -- sh -c '
+mc alias set local http://localhost:9000 $MINIO_ROOT_USER $MINIO_ROOT_PASSWORD --insecure 2>/dev/null
+mc mb local/debug-bucket --insecure 2>/dev/null || true
+echo "This is test data for xl.meta debugging with erasure coding EC:4" > /tmp/test-file.txt
+mc cp /tmp/test-file.txt local/debug-bucket/test-file.txt --insecure
+mc stat local/debug-bucket/test-file.txt --insecure
+'
+```
+
+**Expected Output**:
+```
+Added `local` successfully.
+Bucket created successfully `local/debug-bucket`.
+`/tmp/test-file.txt` -> `local/debug-bucket/test-file.txt`
+┌───────┬─────────────┬──────────┬────────────┐
+│ Total │ Transferred │ Duration │ Speed      │
+│ 65 B  │ 65 B        │ 00m00s   │ 1.13 KiB/s │
+└───────┴─────────────┴──────────┴────────────┘
+Name      : test-file.txt
+Date      : 2026-01-14 11:23:55 UTC
+Size      : 65 B
+ETag      : eeb5a84d38f5dac272eb0d3f772c8a59
+Type      : file
+Metadata  :
+  Content-Type: text/plain
+```
+
+### On-Disk Structure
+
+For small files (≤128KB), data is inlined in xl.meta:
+
+```
+debug-bucket/
+└── test-file.txt/
+    └── xl.meta              # Contains metadata + inline data
+```
+
+For larger files (>128KB):
 
 ```
 /data1/testbucket/test-large-file.txt/
 ├── xl.meta                          # Metadata (on all 12 disks)
-└── <DDir-UUID>/                     # Data directory 
+└── <DDir-UUID>/                     # Data directory
     └── part.1                       # Actual data shard for this disk
 ```
+
+### Healing Example
+
+<img width="868" height="930" alt="image" src="https://github.com/user-attachments/assets/e90b355a-6810-4648-823b-5baddacf7d64" />
+
+<img width="688" height="945" alt="image" src="https://github.com/user-attachments/assets/0f3218db-1d01-4b99-a652-20172683fb60" />
+
+Ref: https://minio-docs.tf.fo/operations/concepts/healing
+
+<img width="1136" height="946" alt="image" src="https://github.com/user-attachments/assets/f3711710-afca-4123-8ba6-0c07469876b7" />
+
+Ref: https://minio-docs.tf.fo/operations/data-recovery
+
+### Replication & Site-to-Site
+
+<img width="827" height="427" alt="image" src="https://github.com/user-attachments/assets/dbb719ec-3363-45a8-922e-ebcc9a63dd14" />
+
+### Distributed Locking (dsync) in Action
+
+<img width="2540" height="1216" alt="image" src="https://github.com/user-attachments/assets/231e0ec3-20e3-45c9-8c2e-b703ed8e4e9b" />
+
+<img width="1375" height="872" alt="image" src="https://github.com/user-attachments/assets/6e6a6e02-44b8-4e32-b552-22a134de5f40" />
+
+Ref: https://blog.min.io/minio-dsync-a-distributed-locking-and-syncing-package-for-go/
+
+---
+
+## References
+
+- [MinIO Official Documentation](https://min.io/docs/)
+- [MinIO Blog - Erasure Coding](https://blog.min.io/erasure-coding-vs-raid/)
+- [MinIO GitHub Repository](https://github.com/minio/minio)
+- [Distributed Locking in MinIO](https://blog.min.io/minio-dsync-a-distributed-locking-and-syncing-package-for-go/)
+- [MinIO Versioning Deep Dive](https://blog.min.io/minio-versioning-metadata-deep-dive/)
+- [No Rebalancing Object Storage](https://blog.min.io/no-rebalancing-object-storage/)
+- [Distributed README](https://github.com/minio/minio/blob/master/docs/distributed/README.md)
