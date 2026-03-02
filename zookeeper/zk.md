@@ -203,6 +203,10 @@ ownership, etc.
 
 > ZooKeeper was **not** implemented to be a large datastore.
 
+
+
+<img width="1047" height="950" alt="image" src="https://github.com/user-attachments/assets/0f7d43dd-d5e5-44fc-b169-0829ce8b32ec" />
+
 #### Discovery of hosts
 A typical use case for ephemeral nodes is when using ZooKeeper for discovery of hosts in your distributed system. Each server can then publish its IP address in an ephemeral node, and should a server loose connectivity with ZooKeeper and fail to reconnect within the session timeout, then its information is deleted.
 
@@ -211,6 +215,10 @@ A typical use case for ephemeral nodes is when using ZooKeeper for discovery of 
 * Highly reliable data registry
 * Naming service
   - Identifying nodes in a cluster by name (“DNS” for nodes)
+ 
+#### Ephemeral nodes
+<img width="1047" height="464" alt="image" src="https://github.com/user-attachments/assets/9fb5b2e6-31b1-42bb-b2e9-8789d75af194" />
+
 
 #### Leader election
 An easy way of doing leader election with ZooKeeper is to let every server publish its information in a zNode that is both sequential and ephemeral. 
@@ -224,6 +232,10 @@ If we use write for leader instead of lowest sequential zNode, then Zookeeper wi
 #### Message queue
 With the use of watchers one can implement a message queue by letting all clients interested in a certain topic register a watcher on a zNode for that topic, and messages regarding that topic can be broadcast to all the clients by writing to that zNode.
 * An important thing to note about watchers though, is that they’re always one shot, so if you want further updates to that zNode you have to re-register them. This implies that you might loose an update in between receiving one and re-registering, but you can detect this by utilizing the version number of the zNode. If, however, every version is important, then sequential zNodes is the way to go.
+
+Other usecases
+
+https://zookeeper.apache.org/doc/r3.6.1/recipes.html
 
 ### Ref:
 * https://zookeeper.apache.org/doc/r3.1.2/zookeeperOver.html
