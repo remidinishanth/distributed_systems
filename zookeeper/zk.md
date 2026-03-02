@@ -8,6 +8,28 @@ category: "zookeeper"
 
 > “Because coordinating distributed systems is a Zoo”
 
+Guarantees:
+
+<img width="1170" height="665" alt="image" src="https://github.com/user-attachments/assets/87436757-d229-4193-bca0-48486c6d146a" />
+
+> ZooKeeper's performance can scale linearly through the guarantees it provides.
+
+
+Let's consider the distributed key-value store shown below which makes use of a Raft module in each replica.
+* All the writes in Raft must go through a leader.
+* To guarantee a linearizable history, all reads must go through the leader as well.
+* One reason why reads cannot be sent to followers is that a replica may not be in the majority needed by Raft, and so may return stale value which violates linearizability.
+
+<img width="640" height="301" alt="image" src="https://github.com/user-attachments/assets/263ad819-4784-4425-98e0-a2ad4806fbc4" />
+
+In a Raft based system, adding more servers will likely degrade the performance of the system. This is because all the reads must still go through the leader, and the leader now has to store more information about the new servers.
+
+ZooKeeper, on the other hand, allows us to scale the performance of our system linearly by adding more servers. It does this by relaxing the definition of correctness and providing weaker guarantees for clients.
+
+Reads can be served from any replica but writes are still sent to a leader. While this has the downside that reads may return stale data, it greatly improves the performance of reads in the system. ZooKeeper is a system designed for read-heavy workloads, and so the trade-off that leads to better read performance is worth it.
+
+<img width="709" height="739" alt="image" src="https://github.com/user-attachments/assets/05371fda-b517-497a-91e4-9217df00b183" />
+
 ### Background
 * Developed at Yahoo! Research
 * Started as sub-project of Hadoop, now a top-level Apache project
@@ -191,3 +213,4 @@ With the use of watchers one can implement a message queue by letting all client
 
 ### Ref:
 * https://zookeeper.apache.org/doc/r3.1.2/zookeeperOver.html
+* https://timilearning.com/posts/mit-6.824/lecture-8-zookeeper/#zookeeper-can-scale-linearly
