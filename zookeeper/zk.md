@@ -15,6 +15,11 @@ Guarantees:
 > ZooKeeper's performance can scale linearly through the guarantees it provides.
 
 
+
+<img width="1122" height="823" alt="image" src="https://github.com/user-attachments/assets/7275d724-92d7-41c3-b3d5-8f6493e34a4d" />
+Clients requests are processed in FIFO order, this is per client for Reads
+
+
 Let's consider the distributed key-value store shown below which makes use of a Raft module in each replica.
 * All the writes in Raft must go through a leader.
 * To guarantee a linearizable history, all reads must go through the leader as well.
