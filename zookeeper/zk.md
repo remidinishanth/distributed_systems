@@ -30,6 +30,19 @@ Reads can be served from any replica but writes are still sent to a leader. Whil
 
 <img width="709" height="739" alt="image" src="https://github.com/user-attachments/assets/05371fda-b517-497a-91e4-9217df00b183" />
 
+## Zookeeper vs RAFT
+
+* ZooKeeper is a distributed coordination service;
+  - Zookeeper uses ZooKeeper Atomic Broadcast(ZAB).
+  - ZAB was born in 2007 along with Zookeeper. The Raft protocol had not been developed that time 
+* Raft is a consensus protocol(It is not something you "run"; it is something you implement inside a system to make it fault-tolerant).
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/724a1041-ce5d-43aa-9196-1d31ed847d04" />
+
+### ZAB
+<img width="600" height="232" alt="image" src="https://github.com/user-attachments/assets/8d89d7a9-96d8-42e2-b6aa-e8958073dede" />
+
+
 ### Background
 * Developed at Yahoo! Research
 * Started as sub-project of Hadoop, now a top-level Apache project
