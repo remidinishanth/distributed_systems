@@ -59,6 +59,9 @@ In other words:
 • leader election is done through the Controller 💡
 • brokers assume leadership as they learn about it through the log ⏳
 
+<img width="1286" height="822" alt="image" src="https://github.com/user-attachments/assets/a6116841-6db4-4bc4-a084-1546becea8ff" />
+Ref: https://www.confluent.io/learn/zookeeper-kafka/#apache-kafka-without-zookeeper-introduction-to-kraft
+
 ### Alternative
 
 An alternative, more decentralized, Raft-native design is RedPanda's. 🐼
