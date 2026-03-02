@@ -6,6 +6,16 @@ Here's a simple explanation of how it works in Apache Kafka 👇
 
 https://www.automq.com/blog/what-is-kafka-zookeeper-in-kafka
 
+You can think of Apache ZooKeeper as a “cluster manager” for Apache Kafka. While Kafka handles the heavy lifting of moving data (messages), ZooKeeper manages the metadata and coordination required to keep the distributed system stable and consistent. ZooKeeper handles important tasks such as:
+
+* Choosing a leader broker (called controller election)
+* Keeping track of topics, partitions, and replicas
+* Detecting when a broker joins or leaves the cluster
+
+<img width="1000" height="660" alt="image" src="https://github.com/user-attachments/assets/03d4f0e0-fb8c-43a6-b5cd-4038b8f440be" />
+
+Ref: https://www.confluent.io/learn/zookeeper-kafka/#apache-kafka-without-zookeeper-introduction-to-kraft
+
 ### Apache Kafka until 4.0
 📖 Kafka used ZooKeeper to solve distributed consensus up until Apache Kafka 4.0 (March 2025).
 
