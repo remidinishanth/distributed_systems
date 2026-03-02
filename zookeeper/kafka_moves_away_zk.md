@@ -2,6 +2,10 @@ Consensus is the most complex problem in Distributed Systems.
 
 Here's a simple explanation of how it works in Apache Kafka 👇
 
+<img width="2798" height="1842" alt="image" src="https://github.com/user-attachments/assets/6882a16a-3ad6-459c-87d5-452ad48f3f62" />
+
+https://www.automq.com/blog/what-is-kafka-zookeeper-in-kafka
+
 ### Apache Kafka until 4.0
 📖 Kafka used ZooKeeper to solve distributed consensus up until Apache Kafka 4.0 (March 2025).
 
@@ -15,6 +19,14 @@ Those actions were then consistently persisted in ZK (through Zab).
 This is called a centralized coordination model. There's one broker that calls the shots.
 
 ### From 4.0
+
+<img width="2126" height="994" alt="image" src="https://github.com/user-attachments/assets/7da227b5-98c4-4ac3-a1a1-58295d26b1d5" />
+
+<img width="1314" height="860" alt="image" src="https://github.com/user-attachments/assets/63c01a15-fde6-4ae8-8271-046650491954" />
+
+<img width="1200" height="675" alt="image" src="https://github.com/user-attachments/assets/7ee6688b-9e3e-4312-ae81-f4ffdf21e684" />
+
+
 
 📖 In Apache Kafka 4.0 (and after), Kafka moved on to use its own consensus algorithm to elect a controller.
 
