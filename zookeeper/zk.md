@@ -166,6 +166,11 @@ The leader executes all write requests forwarded by followers. The leader then b
 * multi(ops)
   - executes multiple ZooKeeper operations or none of them.
 
+<img width="732" height="492" alt="image" src="https://github.com/user-attachments/assets/6bd1510e-8f32-4892-9781-d165c6ed3f9e" />
+
+<img width="734" height="444" alt="image" src="https://github.com/user-attachments/assets/e6e50322-2e9e-4290-b59a-cdafc7f6e3f9" />
+
+
 ### Implementation Details
 
 <img width="945" alt="image" src="https://user-images.githubusercontent.com/19663316/210230558-2ab0d4de-6862-4529-836f-3e6f311e6bd7.png">
