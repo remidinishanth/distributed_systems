@@ -242,7 +242,7 @@ Building blocks
 
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/7f6d895d-769d-4439-a88f-a97ca3272074" />
 
-Avoiding the "Herd Effect
+Avoiding the "Herd Effect"
 
 If many clients are waiting for a lock, and one client releases it, you don't want all the waiting clients to wake up at the same time and flood the ZooKeeper server with requests.
 
