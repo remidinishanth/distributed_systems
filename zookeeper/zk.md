@@ -143,8 +143,6 @@ One more thing with `2 * n + 1` servers is that, any two majorities will have at
 
 ### Watches
 
-<img width="907" alt="image" src="https://user-images.githubusercontent.com/19663316/210224699-e17d77d2-d05a-49ea-a935-4497104f9731.png">
-
 * Watches set against data or path changes
 * Ordered with respect to other events, other watches, and asynchronous replies.
 * A client will see a watch event for a node it is watching before seeing the new data that corresponds to that node.
@@ -153,8 +151,6 @@ One more thing with `2 * n + 1` servers is that, any two majorities will have at
 
 The leader executes all write requests forwarded by followers. The leader then broadcasts the changes.
 <img width="907" alt="image" src="https://user-images.githubusercontent.com/19663316/210224725-5855af01-6414-45b4-a5b5-c8da05cea112.png">
-
-<img width="907" alt="image" src="https://user-images.githubusercontent.com/19663316/210224745-48b8321c-db65-4f2f-b1ef-11b0eff19b94.png">
 
 ### API
 #### Creation API
