@@ -229,6 +229,26 @@ If we use write for leader instead of lowest sequential zNode, then Zookeeper wi
 
 * Electing a node as leader for coordination purposes
 
+#### Same leader election can also be used for locking a resource
+
+Building blocks
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/57170f78-f099-4183-a383-b1dcdcd356c1" />
+
+* Persistent Znode: This acts as the parent directory for your lock (e.g., /lock_parent). It's always present, even if the client that created it disconnects.
+* Ephemeral Znode: This is a special znode that exists only as long as the client that created it maintains an active session with ZooKeeper. If the client crashes, the znode is automatically deleted. This is crucial for preventing deadlocks.
+* Ephemeral Sequential Znode: This is an ephemeral znode that also has a monotonically increasing sequence number automatically appended to its name by ZooKeeper. This sequence number is used to determine the order of clients waiting for the lock.
+
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/7f6d895d-769d-4439-a88f-a97ca3272074" />
+
+Avoiding the "Herd Effect
+
+If many clients are waiting for a lock, and one client releases it, you don't want all the waiting clients to wake up at the same time and flood the ZooKeeper server with requests.
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/084ab316-14a8-4bed-96f0-09e7dbf4ef5f" />
+
+
 #### Message queue
 With the use of watchers one can implement a message queue by letting all clients interested in a certain topic register a watcher on a zNode for that topic, and messages regarding that topic can be broadcast to all the clients by writing to that zNode.
 * An important thing to note about watchers though, is that they’re always one shot, so if you want further updates to that zNode you have to re-register them. This implies that you might loose an update in between receiving one and re-registering, but you can detect this by utilizing the version number of the zNode. If, however, every version is important, then sequential zNodes is the way to go.
