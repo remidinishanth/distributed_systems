@@ -228,6 +228,20 @@ To get these benefits, MapReduce restricts applications:
 
 <img width="1115" height="691" alt="image" src="https://github.com/user-attachments/assets/ff0646d7-a676-4d37-9e15-e78040f40364" />
 
+MR writes Map() output to local disk
+  * MR splits into files by hash(key) mod R
+  * each "hash bucket" contains multiple keys
+  * The map workers all hash the same way
+
+The shuffle
+  * each Reduce task processes one hash bucket
+  * MR fetches each Reduce tasks' bucket from every Map worker
+  * merge, sort by key, call Reduce() for each key
+  * each Reduce task writes a separate output file on GFS
+
+The "Coordinator" manages all the steps in a job.
+  * tracks state of each task
+  * hands out tasks to worker machines
 
 ## MapReduce Granularity
 
