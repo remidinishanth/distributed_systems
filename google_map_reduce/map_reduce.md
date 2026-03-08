@@ -126,6 +126,11 @@ Word-count code
 
 <img width="1154" alt="image" src="https://user-images.githubusercontent.com/19663316/210795017-6205fe34-f237-4151-904c-31dec4b9684f.png">
 
+## Other examples
+
+<img width="1181" height="618" alt="image" src="https://github.com/user-attachments/assets/470550e2-9b98-426a-8a06-6e2c4b4c89a1" />
+
+
 ## Map Reduce Notes
 
 <img width="1115" height="603" alt="image" src="https://github.com/user-attachments/assets/92354d4c-bb95-4731-9113-0c5e2c207c40" />
