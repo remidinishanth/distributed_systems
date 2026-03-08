@@ -87,25 +87,41 @@ Counting the number of occurrences of each word in a large collection of documen
 * The map function emits each word plus an associated count of occurrences (just ‘1’ in this simple example).
 * The reduce function sums together all counts emitted for a particular word.
 
-```python
-map(String key, String value):
-  // key: document name
-  // value: document contents
-  for each word w in value:
-    EmitIntermediate(w, "1");
+```
+  Input1 -> Map -> a,1 b,1
+  Input2 -> Map ->     b,1
+  Input3 -> Map -> a,1     c,1
+                    |   |   |
+                    |   |   -> Reduce -> c,1
+                    |   -----> Reduce -> b,2
+                    ---------> Reduce -> a,2
+```
 
-reduce(String key, Iterator values):
-  // key: a word
-  // values: a list of counts
-  int result = 0;
-  for each v in values:
-    result += ParseInt(v);
-  Emit(AsString(result));
+Abstract view of a MapReduce job -- word count                    
+  1) input is (already) split into M pieces
+  2) MR calls Map() for each input split, produces list of k,v pairs
+     "intermediate" data
+     each Map() call is a "task"
+  3) when Maps are done,
+     MR gathers all intermediate v's for each k,
+     and passes each key + values to a Reduce call
+  4) final output is set of <k,v> pairs from Reduce()s
+
+
+Word-count code
+```python
+  Map(d)
+    chop d into words
+    for each word w
+      emit(w, "1")
+
+  Reduce(k, v[])
+    emit(len(v[]))
 ```
 
 <img width="1154" alt="image" src="https://user-images.githubusercontent.com/19663316/210795017-6205fe34-f237-4151-904c-31dec4b9684f.png">
 
-### Execution Overview
+## Execution Overview
 
 <img width="890" alt="image" src="https://user-images.githubusercontent.com/19663316/210792948-4460abf7-4fc5-4db4-ade5-0f96100ab517.png">
 
@@ -125,7 +141,36 @@ Master assigns each reduce task to a free worker
 * Worker sorts & applies user’s Reduce op to produce the output
 * User may specify Partition: which intermediate keys to which Reducers
 
-### Mapreduce Granularity
+
+Input and output are stored on the GFS cluster file system
+  * MR needs huge parallel input and output throughput.
+  * GFS splits files over many servers, many disks, in 64 MB chunks
+    - Maps read in parallel
+    - Reduces write in parallel
+  * GFS replicates data on 2 or 3 servers, for fault tolerance
+  * GFS is a big win for MapReduce
+
+### Scalability
+
+MapReduce scales well:
+  * N "worker" computers (might) get you Nx throughput.
+     - Maps()s can run in parallel, since they don't interact.
+     - Same for Reduce()s.
+  * Thus more computers -> more throughput -- very nice!
+
+MapReduce hides much complexity:
+  * sending map+reduce code to servers
+  * tracking which tasks have finished
+  * "shuffling" intermediate data from Maps to Reduces
+  * balancing load over servers
+  * recovering from crashed servers
+
+To get these benefits, MapReduce restricts applications:
+  * Only one pattern (Map -> shuffle -> Reduce).
+  * No interaction or state (other than via intermediate output).
+  * Only batch: no real-time or streaming processing.
+
+## Mapreduce Granularity
 
 Fine granularity tasks: many more map tasks than machines
 * Minimizes time for fault recovery
