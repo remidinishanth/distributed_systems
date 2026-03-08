@@ -47,5 +47,10 @@ tool, and Apache Pig, a parallel processing tool (and many others).
 
 <img width="2032" height="1680" alt="image" src="https://github.com/user-attachments/assets/69f91019-bb21-4dad-8b6d-d279456e05d6" />
 
+<img width="1078" height="750" alt="image" src="https://github.com/user-attachments/assets/66255f11-73c4-475f-a230-05c1c8458c7b" />
+
+Ref: https://cse.buffalo.edu/~jing/cse601/fa12/materials/clustering_mapreduce.pdf
+
+
 <img width="2410" height="1672" alt="image" src="https://github.com/user-attachments/assets/68764cee-3fbe-4a5c-90f2-98d3ff66d35e" />
 
