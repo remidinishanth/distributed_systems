@@ -56,6 +56,9 @@ MapReduce framework/library allows programmers without any experience with paral
   - add function in reduce `(reduce #'+ '(0 1 2 3))` to `6`
 
 
+<img width="1207" height="603" alt="image" src="https://github.com/user-attachments/assets/7db3e660-42d0-470d-8198-0ca793a11e2f" />
+
+
 ### Programming Model
 
 ![image](https://user-images.githubusercontent.com/19663316/215261307-d7ccdc64-b1ec-4417-bc8e-df27b8c64308.png)
