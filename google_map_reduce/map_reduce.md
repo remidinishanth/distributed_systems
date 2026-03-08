@@ -226,6 +226,10 @@ Skew
 
 <img width="972" height="568" alt="image" src="https://github.com/user-attachments/assets/93b7729b-3ef6-42d3-8484-95bd5221e068" />
 
+Straggler
+
+<img width="1181" height="464" alt="image" src="https://github.com/user-attachments/assets/643d266a-dd33-4a5a-81db-99ba8dfbe47f" />
+
 
 ### MapReduce: Fault Tolerance via Re-Execution
 
