@@ -138,6 +138,7 @@ Word-count code
 
 <img width="1136" height="570" alt="image" src="https://github.com/user-attachments/assets/11614120-634a-49d1-aa38-2837902cc9b4" />
 
+Ref: https://web.stanford.edu/class/archive/cs/cs110/cs110.1204/static/lectures/cs110-lecture-17-mapreduce.pdf
 
 ## Other examples
 
