@@ -186,6 +186,8 @@ Reduce Phase
 
 <img width="1130" height="804" alt="image" src="https://github.com/user-attachments/assets/4f9ee188-0771-41a8-bc25-aea8d11ed4a1" />
 
+Ref: http://www.cohenwang.com/edith/bigdataclass2013/lectures/MapReduce_Kryzanowski.pdf
+
 
 One master, many workers
 * Input data split into M map tasks (typically 64 MB in size)
