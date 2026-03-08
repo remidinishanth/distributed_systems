@@ -235,6 +235,9 @@ To get these benefits, MapReduce restricts applications:
 
 <img width="1115" height="691" alt="image" src="https://github.com/user-attachments/assets/ff0646d7-a676-4d37-9e15-e78040f40364" />
 
+<img width="1161" height="772" alt="image" src="https://github.com/user-attachments/assets/77cc741d-dc5c-43c8-8e98-77d32ea53ba6" />
+Ref: https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/32721.pdf
+
 MR writes Map() output to local disk
   * MR splits into files by hash(key) mod R
   * each "hash bucket" contains multiple keys
