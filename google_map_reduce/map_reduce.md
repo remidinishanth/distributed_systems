@@ -82,7 +82,6 @@ All `v'` with same `k'` are reduced together. (Remember the invisible “Shuffle
 
 <img width="1094" height="751" alt="image" src="https://github.com/user-attachments/assets/1a7fc556-bc65-4042-8ba1-af2aaf620dad" />
 
-
 ### Word-count example
 
 Counting the number of occurrences of each word in a large collection of documents.
@@ -123,6 +122,32 @@ Word-count code
 
 <img width="1154" alt="image" src="https://user-images.githubusercontent.com/19663316/210795017-6205fe34-f237-4151-904c-31dec4b9684f.png">
 
+## Map Reduce Notes
+
+<img width="1115" height="603" alt="image" src="https://github.com/user-attachments/assets/92354d4c-bb95-4731-9113-0c5e2c207c40" />
+
+Data Storage
+
+<img width="1115" height="700" alt="image" src="https://github.com/user-attachments/assets/39d0196a-202f-4df2-9fa9-970491b017f7" />
+
+Data Model
+
+<img width="1115" height="598" alt="image" src="https://github.com/user-attachments/assets/d1614b15-1e63-4af5-aee2-6638d8322721" />
+
+Map Phase
+
+<img width="1115" height="598" alt="image" src="https://github.com/user-attachments/assets/a7637861-7343-42a8-81ff-eb319285ab5f" />
+
+Reduce Phase
+
+<img width="1115" height="714" alt="image" src="https://github.com/user-attachments/assets/1ef670ec-aa70-4f9f-b602-192302e498b5" />
+
+
+<img width="1115" height="774" alt="image" src="https://github.com/user-attachments/assets/f5e3c5cc-0430-46ac-a690-4ce553c7b540" />
+
+<img width="1115" height="688" alt="image" src="https://github.com/user-attachments/assets/636da52e-e74d-49af-8e8e-e2d03743955d" />
+
+
 ## Execution Overview
 
 <img width="890" alt="image" src="https://user-images.githubusercontent.com/19663316/210792948-4460abf7-4fc5-4db4-ade5-0f96100ab517.png">
@@ -142,7 +167,6 @@ Master assigns each reduce task to a free worker
 * Worker reads intermediate (k,v) pairs from map workers
 * Worker sorts & applies user’s Reduce op to produce the output
 * User may specify Partition: which intermediate keys to which Reducers
-
 
 Input and output are stored on the GFS cluster file system
   * MR needs huge parallel input and output throughput.
@@ -172,7 +196,15 @@ To get these benefits, MapReduce restricts applications:
   * No interaction or state (other than via intermediate output).
   * Only batch: no real-time or streaming processing.
 
-## Mapreduce Granularity
+
+<img width="1115" height="770" alt="image" src="https://github.com/user-attachments/assets/c5dff335-cec1-48db-a34c-61d56c910b05" />
+
+<img width="1115" height="746" alt="image" src="https://github.com/user-attachments/assets/87b57ae6-ec17-4f30-beab-a0caeb0e3259" />
+
+<img width="1115" height="691" alt="image" src="https://github.com/user-attachments/assets/ff0646d7-a676-4d37-9e15-e78040f40364" />
+
+
+## MapReduce Granularity
 
 Fine granularity tasks: many more map tasks than machines
 * Minimizes time for fault recovery
@@ -180,6 +212,16 @@ Fine granularity tasks: many more map tasks than machines
 * Better dynamic load balancing
 
 <img width="1112" alt="image" src="https://user-images.githubusercontent.com/19663316/210929099-95348780-b327-4b95-85b4-7f7776a687f3.png">
+
+Skew
+<img width="1115" height="770" alt="image" src="https://github.com/user-attachments/assets/ca262e42-4531-48de-a3a3-429d8ac64258" />
+
+<img width="1023" height="627" alt="image" src="https://github.com/user-attachments/assets/9a4b6eb7-3bd1-4a9b-bc80-1f7a80984aa0" />
+
+<img width="1588" height="1136" alt="image" src="https://github.com/user-attachments/assets/ffcae082-62b5-42b2-8b96-c58e2793ea1b" />
+
+<img width="972" height="568" alt="image" src="https://github.com/user-attachments/assets/93b7729b-3ef6-42d3-8484-95bd5221e068" />
+
 
 ### MapReduce: Fault Tolerance via Re-Execution
 
