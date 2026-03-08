@@ -20,7 +20,7 @@ Build a MapReduce system: a **coordinator** that hands out tasks to workers and 
                            │ RPC (Unix socket)
               ┌────────────┼────────────┐
               │            │            │
-        ┌─────┴─────┐ ┌───┴──────┐ ┌──┴───────┐
+        ┌─────┴──────┐ ┌───┴──────┐ ┌───┴──────┐
         │  Worker 1  │ │ Worker 2 │ │ Worker 3 │
         └────────────┘ └──────────┘ └──────────┘
 ```
