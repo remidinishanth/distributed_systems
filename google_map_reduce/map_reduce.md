@@ -16,6 +16,10 @@ MapReduce framework/library allows programmers without any experience with paral
 
 ### Motivation
 
+> Context: multi-hour computations on multi-terabyte data-sets
+  e.g. build search index, or sort, or analyze structure of web
+  only practical with 1000s of computers
+
 * Inverted index is storing a mapping from content, such as words or numbers, to its documents where the word is present on the web. Indexing is the process by which search engines organize information before a search to enable super-fast responses to queries.
 * To index `20+` billion web pages, assuming each is of `20KB` size, we need to process `400+` terabytes of data.
   - `20+` billion web pages `x 20KB` = `400+` terabytes
