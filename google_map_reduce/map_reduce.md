@@ -202,6 +202,18 @@ Very Robust: lost 1600 of 1800 machines once, but finished fine
 
 Outline stays the same, **Map** and **Reduce** functions change to fit the problem
 
-### Reference:
+## Not used much currently
+
+<img width="2230" height="1318" alt="image" src="https://github.com/user-attachments/assets/7500bd3c-727c-49ee-9bde-fd77407c763b" />
+
+* Batch Only: MapReduce is strictly for "batch" (looking at old data). It cannot handle real-time streaming, whereas newer tools handle both.
+* Disk-Heavy Performance: MapReduce writes data to the physical disk after every single step. This makes it incredibly slow for complex jobs. Modern engines use In-Memory processing, which is significantly faster.
+
+Every modern distributed system mentioned—Spark, Snowflake, and BigQuery—is essentially a more refined, faster evolution of the core ideas MapReduce pioneered:
+
+* Divide and Conquer: Breaking a big task into tiny pieces.
+* Locality: Bringing the computation to where the data lives, rather than moving the data.
+
+## Reference:
 * MapReduce: Simplified Data Processing on Large Clusters by Jeffrey Dean and Sanjay Ghemawat
 * The MapReduce Paradigm by Michael Kleber, Jan. 14, 2008
