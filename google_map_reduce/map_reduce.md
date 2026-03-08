@@ -126,6 +126,19 @@ Word-count code
 
 <img width="1154" alt="image" src="https://user-images.githubusercontent.com/19663316/210795017-6205fe34-f237-4151-904c-31dec4b9684f.png">
 
+### More details
+
+<img width="1078" height="800" alt="image" src="https://github.com/user-attachments/assets/7f924abf-9cd9-4cbb-a7f3-5f5c6d8322cd" />
+
+<img width="1078" height="429" alt="image" src="https://github.com/user-attachments/assets/499321e0-ae52-4e8c-b47e-1771cda2c4a9" />
+
+<img width="1078" height="424" alt="image" src="https://github.com/user-attachments/assets/f75e8d22-be5a-420e-8200-82ede6337c33" />
+
+<img width="1136" height="424" alt="image" src="https://github.com/user-attachments/assets/210d4469-a6c2-4e01-86d6-5d370d684459" />
+
+<img width="1136" height="570" alt="image" src="https://github.com/user-attachments/assets/11614120-634a-49d1-aa38-2837902cc9b4" />
+
+
 ## Other examples
 
 <img width="1181" height="618" alt="image" src="https://github.com/user-attachments/assets/470550e2-9b98-426a-8a06-6e2c4b4c89a1" />
