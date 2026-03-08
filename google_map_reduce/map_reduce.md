@@ -31,6 +31,9 @@ MapReduce framework/library allows programmers without any experience with paral
   e.g. build search index, or sort, or analyze structure of web
   only practical with 1000s of computers
 
+<img width="1161" height="440" alt="image" src="https://github.com/user-attachments/assets/19aa8af2-123e-4994-a2e9-e344cfed4d75" />
+
+
 * Inverted index is storing a mapping from content, such as words or numbers, to its documents where the word is present on the web. Indexing is the process by which search engines organize information before a search to enable super-fast responses to queries.
 * To index `20+` billion web pages, assuming each is of `20KB` size, we need to process `400+` terabytes of data.
   - `20+` billion web pages `x 20KB` = `400+` terabytes
@@ -43,12 +46,16 @@ MapReduce framework/library allows programmers without any experience with paral
   - handle failures and recovering from machine failure (all the time!)
   - status reporting, debugging, optimization and locality
 * Similar difficulty repeats for every problem Google wants to solve
+
 * As a reaction to this complexity, Google designed an abstraction that allows us to express the simple computations we were trying to perform but hides the messy details in MapReduce runtime library:
   - automatic parallelization
   - load balancing
   - data distribution: network and disk transfer optimization
   - fault tolerance: handling of machine failures and robustness
   - improvements to core library benefit all users of library!
+
+<img width="1161" height="779" alt="image" src="https://github.com/user-attachments/assets/c24fe77f-d466-4268-8b7d-62e286429787" />
+
 
 ### MapReduce Etymology
 
