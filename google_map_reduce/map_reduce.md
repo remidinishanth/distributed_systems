@@ -6,13 +6,18 @@ category: "google_map_reduce"
 
 ### MapReduce
 
-A framework for large-scale parallel processing.
+A `framework` for large-scale parallel processing.
 
 > Goal: Create a distributed computing framework to process data on a massive scale.
 
 MapReduce is a software framework for processing (large) data sets in a distributed fashion over a several machines.
 
 MapReduce framework/library allows programmers without any experience with parallel and distributed systems to easily utilize the resources of a large distributed system.
+
+* A big goal: easy for non-specialist programmers
+* programmer just defines Map and Reduce functions often simple sequential code
+* MR manages, and hides, all aspects of distribution!
+* MR is a framework / library; "application" is just Map()/Reduce()
 
 ### Motivation
 
