@@ -4,9 +4,16 @@
 
 <img width="1094" height="667" alt="image" src="https://github.com/user-attachments/assets/eeda60b7-dd44-4748-9408-31bb2cf011c2" />
 
+Apache Hadoop
+
+<img width="1205" height="711" alt="image" src="https://github.com/user-attachments/assets/273fe35b-2148-4e04-9cca-a508a09bb216" />
+
+
 Hadoop Ecosystem
 <img width="1061" height="764" alt="image" src="https://github.com/user-attachments/assets/70e06ea2-cf2e-40f8-9b8f-665e18250774" />
 
+Related Projects
+<img width="1205" height="749" alt="image" src="https://github.com/user-attachments/assets/3780f27d-3084-4463-ab73-1f526f417829" />
 
 Ref: https://tropars.github.io/downloads/lectures/LSDM/LSDM-2-mapreduce-hadoop.pdf
 
