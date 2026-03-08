@@ -184,6 +184,9 @@ Reduce Phase
 
 <img width="890" alt="image" src="https://user-images.githubusercontent.com/19663316/210792948-4460abf7-4fc5-4db4-ade5-0f96100ab517.png">
 
+<img width="1130" height="804" alt="image" src="https://github.com/user-attachments/assets/4f9ee188-0771-41a8-bc25-aea8d11ed4a1" />
+
+
 One master, many workers
 * Input data split into M map tasks (typically 64 MB in size)
 * Reduce phase partitioned into R reduce tasks (= # of output files)
