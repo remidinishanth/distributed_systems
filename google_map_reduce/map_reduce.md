@@ -59,6 +59,8 @@ MapReduce framework/library allows programmers without any experience with paral
 * The reduce function is given a binary function and a set of values as parameters. It combines all the values together using the binary function.
   - add function in reduce `(reduce #'+ '(0 1 2 3))` to `6`
 
+<img width="1161" height="587" alt="image" src="https://github.com/user-attachments/assets/367a1023-1c49-4231-986e-8f6aedb82ca9" />
+
 
 ### Programming Model
 
