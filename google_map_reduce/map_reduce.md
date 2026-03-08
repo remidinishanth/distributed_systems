@@ -12,6 +12,8 @@ A `framework` for large-scale parallel processing.
 
 MapReduce is a software framework for processing (large) data sets in a distributed fashion over a several machines.
 
+> MapReduce = high-level programming model and implementation for large-scale parallel data processing
+
 MapReduce framework/library allows programmers without any experience with parallel and distributed systems to easily utilize the resources of a large distributed system.
 
 * A big goal: easy for non-specialist programmers
