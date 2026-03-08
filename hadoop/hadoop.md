@@ -42,3 +42,10 @@ tool, and Apache Pig, a parallel processing tool (and many others).
 <img width="1062" height="656" alt="image" src="https://github.com/user-attachments/assets/15ff82fe-1ab8-4c9a-aa77-68f6799cd968" />
 
 <img width="1062" height="716" alt="image" src="https://github.com/user-attachments/assets/198fecbd-f2cb-4b81-a7df-b72c033a7520" />
+
+## Architecture Overview and Execution
+
+<img width="2032" height="1680" alt="image" src="https://github.com/user-attachments/assets/69f91019-bb21-4dad-8b6d-d279456e05d6" />
+
+<img width="2410" height="1672" alt="image" src="https://github.com/user-attachments/assets/68764cee-3fbe-4a5c-90f2-98d3ff66d35e" />
+
