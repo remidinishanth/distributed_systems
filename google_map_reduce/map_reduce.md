@@ -17,9 +17,13 @@ MapReduce is a software framework for processing (large) data sets in a distribu
 MapReduce framework/library allows programmers without any experience with parallel and distributed systems to easily utilize the resources of a large distributed system.
 
 * A big goal: easy for non-specialist programmers
-* programmer just defines Map and Reduce functions often simple sequential code
+* programmer just defines Map and Reduce functions, often simple sequential code
 * MR manages, and hides, all aspects of distribution!
 * MR is a framework / library; "application" is just Map()/Reduce()
+
+
+<img width="1207" height="506" alt="image" src="https://github.com/user-attachments/assets/94b6b14f-23db-48dc-be8a-9b5ce2ef7576" />
+
 
 ### Motivation
 
@@ -54,9 +58,6 @@ MapReduce framework/library allows programmers without any experience with paral
   - length function to each item `(map ‘length ‘(() (a) (ab) (abc)))` to `(0 1 2 3)` 
 * The reduce function is given a binary function and a set of values as parameters. It combines all the values together using the binary function.
   - add function in reduce `(reduce #'+ '(0 1 2 3))` to `6`
-
-
-<img width="1207" height="603" alt="image" src="https://github.com/user-attachments/assets/7db3e660-42d0-470d-8198-0ca793a11e2f" />
 
 
 ### Programming Model
