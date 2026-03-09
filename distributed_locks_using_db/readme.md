@@ -105,6 +105,8 @@ The storage server remembers that it has already processed a write with a higher
 * And provided that the lock service generates strictly monotonically increasing tokens, this makes the lock safe.
 * For example, if you are using ZooKeeper as lock service, you can use the zxid or the znode version number as fencing token, and you’re in good shape
 
+Rebuttal: https://antirez.com/news/101
+
 ### Attempt 3: SELECT FOR UPDATE
 
 The root problem with Attempts 1-2: they use **row presence/absence** as the locking mechanism. INSERT and DELETE aren't designed for mutual exclusion — they're just data operations that happen to fail on duplicates. What if the row always exists, and we use the database's actual locking primitive to protect it?
