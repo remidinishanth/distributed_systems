@@ -43,21 +43,20 @@ To release: `DELETE FROM lock_table WHERE name = 'my-lock' AND holder = 'client-
 If the INSERT fails with duplicate key, the lock is held by someone else.
 
 **What breaks:**
-- Client crashes → row stays forever → lock never released. **Deadlock.**
+- Client crashes → row stays forever → lock never released. **Permanent resource leak** — no other client can ever acquire, even though nobody holds the lock.
 - No way to wait — you just get an error and have to poll.
-- Two clients race on DELETE + INSERT — the check-then-act is not atomic.
+- Race on release: A deletes its row, B and C both try to INSERT simultaneously — one wins, the other gets a duplicate key error. The loser has no way to distinguish "someone else acquired" from a transient failure.
 
 ```mermaid
 sequenceDiagram
-    participant A as Client A
+    participant A as Client A (holder)
     participant DB as MySQL
     participant B as Client B
-    A->>DB: SELECT (no row found)
-    B->>DB: SELECT (no row found)
-    Note over A,B: Race window — both think lock is free
-    A->>DB: INSERT (succeeds)
-    B->>DB: INSERT (duplicate key error)
-    Note over B: Has to poll and retry
+    participant C as Client C
+    A->>DB: DELETE (releases lock)
+    B->>DB: INSERT (succeeds — acquires)
+    C->>DB: INSERT (duplicate key error)
+    Note over C: Lost the race. Retry? When?
 ```
 
 ### Attempt 2: Add TTL
@@ -110,8 +109,10 @@ Acquire:
 ```sql
 START TRANSACTION;
 SELECT * FROM mutex WHERE name = 'my-lock' FOR UPDATE;  -- blocks other acquirers
--- Check if state = 'FREE'
-UPDATE mutex SET state = 'HELD', holder = 'client-A' WHERE name = 'my-lock';
+-- Application checks: if state = 'FREE', then:
+UPDATE mutex SET state = 'HELD', holder = 'client-A'
+WHERE name = 'my-lock' AND state = 'FREE';
+-- Check rows affected: 0 = lock was HELD → ROLLBACK, 1 = acquired
 COMMIT;
 ```
 
@@ -180,7 +181,7 @@ CREATE TABLE permit_request (
     id          BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     external_id VARCHAR(255) NOT NULL UNIQUE,   -- client-provided idempotency key
     owner       VARCHAR(255),
-    state       ENUM('ACQUIRED', 'RELEASED') NOT NULL,
+    state       ENUM('ACQUIRED', 'RELEASED') NOT NULL,  -- no PENDING/WAITING: see note below
     ttl_seconds INT,
     created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -196,6 +197,8 @@ CREATE TABLE permit (
     INDEX idx_request (permit_request_id)
 );
 ```
+
+**No PENDING or WAITING state:** This is intentional. The design doesn't support queued/blocking acquisition — if there's no capacity, the acquire fails immediately (or blocks briefly at the DB lock level). If you need a waiting queue, you'd add a `PENDING` state and a notification mechanism, but that adds significant complexity. Failing fast and letting the caller retry is simpler and sufficient for most use cases.
 
 The `idx_semaphore_state` index is critical — without it, `SELECT SUM(count) FROM permit WHERE semaphore_id = ? AND state = 'ACQUIRED'` does a full table scan on every acquire.
 
@@ -355,7 +358,7 @@ Also set a short lock wait timeout to fail fast under contention:
 SET SESSION innodb_lock_wait_timeout = 5;  -- vs default 50 seconds
 ```
 
-**Isolation level note:** MySQL/InnoDB defaults to `REPEATABLE READ`. This guarantees that once a transaction reads a value (e.g., the permit count), that value remains stable for the duration of the transaction. Combined with `SELECT FOR UPDATE`'s exclusive lock, this ensures the `used + requested <= capacity` check cannot be invalidated by a concurrent commit.
+**Isolation level note:** MySQL/InnoDB defaults to `REPEATABLE READ`. A subtle but critical detail: `SELECT FOR UPDATE` does **not** use the MVCC snapshot — it reads the **latest committed version** of the row, even under `REPEATABLE READ`. This is how it can see permits inserted by a transaction that committed while we were waiting for the lock. The stability guarantee comes from the exclusive lock itself (no concurrent writer can modify the row while we hold it), not from the snapshot. This trips people up — a regular `SELECT` under `REPEATABLE READ` would see the stale snapshot, but `SELECT FOR UPDATE` always reads current data.
 
 ### Fix 3: Retries — the duplicate problem
 
@@ -427,7 +430,7 @@ The two UPDATEs are deliberately NOT wrapped in a transaction:
 
 1. **One-way state machine.** `ACQUIRED → RELEASED` only. Never back. No race over direction.
 2. **Idempotent WHERE clause.** `AND state != 'RELEASED'` — running the same release twice matches zero rows the second time.
-3. **Crash between the two UPDATEs.** Permits say RELEASED, request still says ACQUIRED. Orphan cleanup (below) retries later — permit UPDATE is a no-op, request UPDATE succeeds. Consistency restored.
+3. **Crash between the two UPDATEs.** Permits say RELEASED, request still says ACQUIRED. The **orphan cleanup mechanism** (Part 6) detects this inconsistency during its periodic sweep — it calls release again, the permit UPDATE is a no-op (already RELEASED), and the request UPDATE succeeds. Consistency restored eventually.
 
 No locking. No transaction. The one-way state machine + idempotent updates + eventual cleanup make this safe.
 
