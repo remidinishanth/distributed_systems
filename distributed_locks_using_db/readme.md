@@ -1,6 +1,7 @@
 # Distributed Counting Semaphore with MySQL
 
-Notes on building a distributed counting semaphore from scratch using MySQL. Starts with the simplest possible thing, breaks it, fixes it, and repeats until we arrive at a production-grade design.
+Notes on building a distributed counting semaphore from scratch using MySQL. 
+* Starts with the simplest possible thing, breaks it, fixes it, and repeats until we arrive at a working design.
 
 ---
 
