@@ -96,6 +96,10 @@ sequenceDiagram
 
 Ref: https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html
 
+The storage server remembers that it has already processed a write with a higher token number (34), and so it rejects the request with token 33.
+
+<img width="2564" height="1542" alt="image" src="https://github.com/user-attachments/assets/c605b482-3897-4b69-b365-256be6af65ca" />
+
 
 ### Attempt 3: SELECT FOR UPDATE
 
