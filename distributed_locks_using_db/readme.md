@@ -39,6 +39,7 @@ CREATE TABLE lock_table (
 ```
 
 To acquire: `INSERT INTO lock_table (name, holder) VALUES ('my-lock', 'client-A');`
+
 To release: `DELETE FROM lock_table WHERE name = 'my-lock' AND holder = 'client-A';`
 
 If the INSERT fails with duplicate key, the lock is held by someone else.
