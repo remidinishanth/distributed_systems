@@ -100,6 +100,10 @@ The storage server remembers that it has already processed a write with a higher
 
 <img width="2564" height="1542" alt="image" src="https://github.com/user-attachments/assets/c605b482-3897-4b69-b365-256be6af65ca" />
 
+* Note this requires the storage server to take an active role in checking tokens, and rejecting any writes on which the token has gone backwards.
+* But this is not particularly hard, once you know the trick.
+* And provided that the lock service generates strictly monotonically increasing tokens, this makes the lock safe.
+* For example, if you are using ZooKeeper as lock service, you can use the zxid or the znode version number as fencing token, and you’re in good shape
 
 ### Attempt 3: SELECT FOR UPDATE
 
