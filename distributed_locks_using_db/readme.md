@@ -92,6 +92,11 @@ sequenceDiagram
     Note over A,B: Both think they hold the lock
 ```
 
+<img width="1100" height="400" alt="image" src="https://github.com/user-attachments/assets/a53ca806-7b5c-496d-8b50-6ce08803b995" />
+
+Ref: https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html
+
+
 ### Attempt 3: SELECT FOR UPDATE
 
 The root problem with Attempts 1-2: they use **row presence/absence** as the locking mechanism. INSERT and DELETE aren't designed for mutual exclusion — they're just data operations that happen to fail on duplicates. What if the row always exists, and we use the database's actual locking primitive to protect it?
