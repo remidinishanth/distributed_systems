@@ -115,11 +115,14 @@ INSERT INTO mutex (name, state) VALUES ('my-lock', 'FREE');
 Acquire:
 ```sql
 START TRANSACTION;
+
 SELECT * FROM mutex WHERE name = 'my-lock' FOR UPDATE;  -- blocks other acquirers
+
 -- Application checks: if state = 'FREE', then:
 UPDATE mutex SET state = 'HELD', holder = 'client-A'
 WHERE name = 'my-lock' AND state = 'FREE';
 -- Check rows affected: 0 = lock was HELD → ROLLBACK, 1 = acquired
+
 COMMIT;
 ```
 
