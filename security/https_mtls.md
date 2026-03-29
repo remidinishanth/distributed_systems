@@ -1,13 +1,13 @@
 Recall:	two	kinds	of	encryption	schemes.
 
 * E is encrypt, D is decrypt
-* Symmetric key cryptography means same key is used to encrypt & decrypt
+* Symmetric key cryptography means the same key is used to encrypt & decrypt
   * ciphertext = E_k(plaintext)
   * plaintext = D_k(ciphertext)
-* Asymmetric key(public key) cryptography: encrypt & decrypt keys differ
+* Asymmetric key(public key) cryptography: encrypt & decrypt keys differ,
   * ciphertext = E_PK(plaintext)
   * plaintext = D_SK(ciphertext)
-  * PK and SK are public and secret(private) keys repectively.
+  * `PK` and `SK` are public and secret(private) keys, respectively.
 * Public key cryptography	is	orders	of	magnitude	slower	than	symmetric	
 
 ## How key exchange works today
