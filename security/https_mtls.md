@@ -102,7 +102,9 @@ TLS (Transport Layer Security) encrypts communication between two parties and le
 
 <img width="1072" height="1150" alt="image" src="https://github.com/user-attachments/assets/7ce40e94-cf5a-4f72-837a-f7672d30b7ca" />
 
-<img width="729" height="782" alt="image" src="https://github.com/user-attachments/assets/fef07d85-5f33-4da6-93bf-98c66f676f08" />
+
+<img width="1984" height="2130" alt="Gemini_Generated_Image_2trovy2trovy2tro" src="https://github.com/user-attachments/assets/7b8c90a2-4896-42ce-a0b0-75eed2320a9a" />
+
 
 
 But Google has no idea who *you* are at the transport layer. You're anonymous until you log in with a password or OAuth token.
