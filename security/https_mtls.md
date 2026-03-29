@@ -100,6 +100,11 @@ SYN, SYN ACK, ACK happens as part of TCP, Cert handshake happens as part of TLS
 
 TLS (Transport Layer Security) encrypts communication between two parties and lets the client verify the server's identity. When you visit `https://google.com`, your browser checks Google's certificate to confirm you're talking to the real Google — not an impersonator.
 
+<img width="1072" height="1150" alt="image" src="https://github.com/user-attachments/assets/7ce40e94-cf5a-4f72-837a-f7672d30b7ca" />
+
+<img width="729" height="782" alt="image" src="https://github.com/user-attachments/assets/fef07d85-5f33-4da6-93bf-98c66f676f08" />
+
+
 But Google has no idea who *you* are at the transport layer. You're anonymous until you log in with a password or OAuth token.
 
 ### What Is mTLS?
