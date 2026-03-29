@@ -171,22 +171,22 @@ The CA (Certificate Authority) is the root of trust. It signs every service's ce
     │                                          │
  1. │─── ClientHello (supported ciphers) ─────▶│
     │                                          │
- 2. │◀── ServerHello + server.crt ────────────│
-    │◀── CertificateRequest ──────────────────│  ← "show me YOUR cert"
+ 2. │◀── ServerHello + server.crt ─────────────│
+    │◀── CertificateRequest ───────────────────│  ← "show me YOUR cert"
     │                                          │
  3. │ Verify server.crt against ca.crt         │
-    │ ✓ Signed by trusted CA?                 │
-    │ ✓ Server name matches?                  │
+    │ ✓ Signed by trusted CA?                  │
+    │ ✓ Server name matches?                   │
     │                                          │
- 4. │─── client.crt ─────────────────────────▶│
-    │─── Proof signed with client.key ───────▶│  ← proves ownership
+ 4. │──── client.crt ─────────────────────────▶│
+    │──── Proof signed with client.key ───────▶│  ← proves ownership
     │                                          │
  5. │                    Verify client.crt     │
     │                    against ca.crt        │
     │                    ✓ Signed by trusted CA│
     │                    ✓ Key matches cert    │
     │                                          │
- 6. │◀═══════ Encrypted channel ═════════════▶│
+ 6. │◀═─══════ Encrypted channel ═════════════▶│
 ```
 
 The private key is **never sent over the wire**. The client uses it to sign a challenge, and the server verifies that signature using the client's public certificate.
@@ -321,23 +321,23 @@ Traditional security assumes everything inside the firewall is trusted. mTLS ass
 ```
 WITHOUT mTLS (perimeter security):
 
-  ┌──────────── Internal Network ──────────────┐
+  ┌──────────── Internal Network ───────────────┐
   │                                             │
-  │   Attacker ──── "give me data" ────▶ DB    │
-  │   (got in via exploit)               "ok"  │
+  │   Attacker ──── "give me data" ────▶ DB     │
+  │   (got in via exploit)               "ok"   │
   │                                             │
   │   Nothing verifies who's connecting.        │
   └─────────────────────────────────────────────┘
 
 WITH mTLS (zero trust):
 
-  ┌──────────── Internal Network ──────────────┐
+  ┌───────────── Internal Network ──────────────┐
   │                                             │
-  │   Attacker ──── "give me data" ────▶ DB    │
-  │                                     "show  │
-  │   has no valid cert                  me    │
-  │                                     your   │
-  │   ??? ─────────────────────────────▶ cert" │
+  │   Attacker ──── "give me data" ────▶ DB     │
+  │                                     "show   │
+  │   has no valid cert                  me     │
+  │                                     your    │
+  │   ??? ─────────────────────────────▶ cert"  │
   │                                     REJECTED│
   └─────────────────────────────────────────────┘
 ```
