@@ -10,4 +10,4 @@
 
 ## Certification
 
-<img width="724" height="441" alt="image" src="https://github.com/user-attachments/assets/5f6689e2-59c9-402a-89c3-8553635006ef" />
+<img width="715" height="533" alt="image" src="https://github.com/user-attachments/assets/b1b8642d-e957-410e-b513-20d38fbd5749" />
