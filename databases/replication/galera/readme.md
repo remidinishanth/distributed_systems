@@ -11,3 +11,7 @@
 <img width="715" height="533" alt="image" src="https://github.com/user-attachments/assets/b1b8642d-e957-410e-b513-20d38fbd5749" />
 
 <img width="722" height="394" alt="image" src="https://github.com/user-attachments/assets/23056330-3f62-492e-bfc5-b6c415234179" />
+
+## Full transaction
+
+<img width="671" height="557" alt="image" src="https://github.com/user-attachments/assets/924eab0b-fd55-4b2f-b2a1-ee616dadb9e5" />
