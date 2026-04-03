@@ -15,3 +15,10 @@
 ## Full transaction
 
 <img width="671" height="557" alt="image" src="https://github.com/user-attachments/assets/924eab0b-fd55-4b2f-b2a1-ee616dadb9e5" />
+
+## Optimistic locking
+
+<img width="649" height="519" alt="image" src="https://github.com/user-attachments/assets/e1169f2e-0509-4608-b51c-eeeafe035fd8" />
+
+Both proceed till commit, but due to a conflict, one of them would be rolled back
+<img width="647" height="424" alt="image" src="https://github.com/user-attachments/assets/c1bf7292-23d2-4dac-a699-37c7e7e6e245" />
