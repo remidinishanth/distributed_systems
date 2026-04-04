@@ -9,3 +9,7 @@
 <img width="1491" height="767" alt="image" src="https://github.com/user-attachments/assets/2b4ac613-37bd-407c-b838-5b40550a106e" />
 
 <img width="1491" height="757" alt="image" src="https://github.com/user-attachments/assets/9de071a0-82f1-4587-a10a-bf048f6fd85e" />
+
+Locks and Latches
+
+<img width="1491" height="693" alt="image" src="https://github.com/user-attachments/assets/df5f8147-f13a-4b95-b41e-f8266906193f" />
