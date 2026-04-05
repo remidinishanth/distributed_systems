@@ -159,6 +159,10 @@ This is exactly the gap that **lakehouse table formats** fill.
 
 ## What is a Data Lakehouse?
 
+<img width="1200" height="630" alt="image" src="https://github.com/user-attachments/assets/1cca6e0e-c354-45b0-8bb3-3a180f359d2c" />
+
+Ref: https://www.databricks.com/blog/what-is-data-lakehouse
+
 A **data lakehouse** combines the best of both worlds: the **scalability and cost** of a data lake with the **transactional guarantees and query performance** of a data warehouse.
 
 ```
