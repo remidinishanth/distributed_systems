@@ -19,13 +19,13 @@ A **data lake** is a centralized storage repository that holds vast amounts of r
 Instead of transforming data before loading (like a data warehouse), you dump everything as-is and figure out the structure later.
 
 ```
-Sources                     Data Lake                  Consumers
-─────────                   ─────────                  ─────────
-App DBs     ──┐
-Logs        ──┤             ┌──────────────┐           Spark jobs
-IoT sensors ──┼──────────►  │  S3 / HDFS   │  ──────►  Presto/Trino
-CSVs        ──┤             │  (raw files)  │           ML pipelines
-APIs        ──┘             └──────────────┘           Dashboards
+Sources              Data Lake              Consumers
+-------              ---------              ---------
+App DBs     --+
+Logs        --+      +----------------+     Spark jobs
+IoT sensors --+----> |  S3 / HDFS     | --> Presto/Trino
+CSVs        --+      |  (raw files)   |     ML pipelines
+APIs        --+      +----------------+     Dashboards
 ```
 
 ### What's Actually In There
@@ -59,14 +59,14 @@ Just **files on cheap storage**:
 A **data warehouse** is a system designed for **fast analytical queries** over structured, pre-modeled data. Data is cleaned, transformed, and loaded using a defined schema before it can be queried.
 
 ```
-                ETL Pipeline                         Fast Queries
-                ────────────                         ────────────
-Sources ──► Extract ──► Transform ──► Load ──► ┌──────────────┐
-                                               │  Warehouse   │ ──► BI Dashboards
-                                               │  (Redshift,  │ ──► SQL Reports
-                                               │   Snowflake, │ ──► Business Analytics
-                                               │   BigQuery)  │
-                                               └──────────────┘
+              ETL Pipeline                       Fast Queries
+              ------------                       ------------
+Sources --> Extract --> Transform --> Load --> +-----------------+
+                                              |    Warehouse    |
+                                              |   (Redshift,    | --> BI Dashboards
+                                              |    Snowflake,   | --> SQL Reports
+                                              |    BigQuery)    | --> Business Analytics
+                                              +-----------------+
 ```
 
 ### Key Characteristics
@@ -135,15 +135,15 @@ Sources ──► Extract ──► Transform ──► Load ──► ┌──
 Without governance, data lakes degrade into **data swamps**:
 
 ```
- Healthy Data Lake                    Data Swamp
- ────────────────                     ──────────
- ┌─────────────────┐                 ┌─────────────────┐
- │ Cataloged       │                 │ No catalog       │
- │ Quality-checked │                 │ Duplicate data   │
- │ Access-controlled│      ──►       │ No access control│
- │ Governed        │                 │ Corrupt files    │
- └─────────────────┘                 │ Unknown schemas  │
-                                     └─────────────────┘
+ Healthy Data Lake                  Data Swamp
+ ----------------                   ----------
+ +--------------------+     +--------------------+
+ |     Cataloged      |     |     No catalog     |
+ |  Quality-checked   |     |   Duplicate data   |
+ | Access-controlled  | --> | No access control  |
+ |      Governed      |     |   Corrupt files    |
+ +--------------------+     |  Unknown schemas   |
+                            +--------------------+
 ```
 
 Key issues:
@@ -163,19 +163,19 @@ A **data lakehouse** combines the best of both worlds: the **scalability and cos
 
 ```
      Traditional: Two Separate Systems
-     ──────────────────────────────────
-     Sources ──► Data Lake ──► ETL ──► Data Warehouse ──► Dashboards
-                   │
-                   └──► ML pipelines
+     ----------------------------------
+     Sources --> Data Lake --> ETL --> Data Warehouse --> Dashboards
+                   |
+                   +---> ML pipelines
 
 
      Lakehouse: Unified Architecture
-     ────────────────────────────────
-     Sources ──► Lakehouse (S3 + Hudi/Iceberg/Delta)
-                   │
-                   ├──► SQL queries   (warehouse-speed)
-                   ├──► ML pipelines  (raw access)
-                   └──► Dashboards    (BI tools)
+     --------------------------------
+     Sources --> Lakehouse (S3 + Hudi/Iceberg/Delta)
+                   |
+                   +---> SQL queries   (warehouse-speed)
+                   +---> ML pipelines  (raw access)
+                   +---> Dashboards    (BI tools)
 ```
 
 ### How It Works
@@ -183,23 +183,23 @@ A **data lakehouse** combines the best of both worlds: the **scalability and cos
 A lakehouse uses **open table formats** (metadata layers) on top of cheap object storage to provide database-like features:
 
 ```
- ┌─────────────────────────────────────────────┐
- │              Query Engines                  │
- │    Spark  ·  Flink  ·  Presto  ·  Trino    │
- ├─────────────────────────────────────────────┤
- │          Open Table Format Layer            │
- │     Hudi  ·  Apache Iceberg  ·  Delta Lake  │
- │                                             │
- │  ACID transactions  ·  Schema enforcement   │
- │  Time travel  ·  Upserts/Deletes            │
- │  Incremental queries  ·  Compaction         │
- ├─────────────────────────────────────────────┤
- │           File Formats                      │
- │        Parquet  ·  ORC  ·  Avro             │
- ├─────────────────────────────────────────────┤
- │           Object Storage                    │
- │        S3  ·  GCS  ·  ADLS  ·  HDFS        │
- └─────────────────────────────────────────────┘
+ +------------------------------------------------+
+ |                 Query Engines                  |
+ |      Spark  .  Flink  .  Presto  .  Trino      |
+ +------------------------------------------------+
+ |            Open Table Format Layer             |
+ |     Hudi  .  Apache Iceberg  .  Delta Lake     |
+ |                                                |
+ |    ACID transactions  .  Schema enforcement    |
+ |        Time travel  .  Upserts/Deletes         |
+ |       Incremental queries  .  Compaction       |
+ +------------------------------------------------+
+ |                  File Formats                  |
+ |            Parquet  .  ORC  .  Avro            |
+ +------------------------------------------------+
+ |                 Object Storage                 |
+ |          S3  .  GCS  .  ADLS  .  HDFS          |
+ +------------------------------------------------+
 ```
 
 ### What the Lakehouse Adds Over a Raw Lake
@@ -273,11 +273,11 @@ Understanding data warehouses and lakehouses requires understanding the two fund
  Row-Oriented Storage (NSM):
 
  Page
- ┌────────────────────────────────────────────────┐
- │ (id=1, name="Alice", age=30, addr="NYC")       │
- │ (id=2, name="Bob",   age=25, addr="SF")        │
- │ (id=3, name="Carol", age=28, addr="LA")        │
- └────────────────────────────────────────────────┘
+ +----------------------------------------------------+
+ | (id=1, name="Alice", age=30, addr="NYC")           |
+ | (id=2, name="Bob",   age=25, addr="SF")            |
+ | (id=3, name="Carol", age=28, addr="LA")            |
+ +----------------------------------------------------+
  Good for: SELECT * FROM users WHERE id = 1
  Bad for:  SELECT AVG(age) FROM users   (reads all columns)
 ```
