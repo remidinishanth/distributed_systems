@@ -149,6 +149,12 @@ OLAP
 
 <img width="1314" height="780" alt="image" src="https://github.com/user-attachments/assets/362ca459-fc87-493d-9a97-c032e90eb67e" />
 
+How to query
+
+<img width="1074" height="754" alt="image" src="https://github.com/user-attachments/assets/970790b0-6e37-448b-a38d-24ce93b4def5" />
+
+Even when you only need name, the DBMS reads the entire tuple (id, name, age, addr, ...) because all attributes are stored contiguously on the page. For wide tables with many columns, this means a lot of useless I/O.
+
 ### DECOMPOSITION STORAGE MODEL (DSM)
 
 <img width="1511" height="836" alt="image" src="https://github.com/user-attachments/assets/a1aca420-1623-4860-8b85-0ca2d0011d1c" />
