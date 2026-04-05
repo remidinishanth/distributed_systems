@@ -91,6 +91,9 @@ Sources ──► Extract ──► Transform ──► Load ──► ┌──
 
 ## Data Lake vs Data Warehouse
 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e24f1ec4-467c-49f3-aaff-66064c728a5c" />
+
+
 ### One-Line Difference
 
 - **Data Warehouse** — Store **processed, structured** data for fast business queries.
