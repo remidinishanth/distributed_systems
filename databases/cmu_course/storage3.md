@@ -166,3 +166,9 @@ Even when you only need name, the DBMS reads the entire tuple (id, name, age, ad
 <img width="1469" height="882" alt="image" src="https://github.com/user-attachments/assets/96b1753b-15fa-4ec7-9e5b-e364f1bf9ee1" />
 
 <img width="1294" height="719" alt="image" src="https://github.com/user-attachments/assets/2e26feb0-b3bb-437d-8ba8-298c27287f52" />
+
+### PAX STORAGE MODEL
+
+<img width="1497" height="865" alt="image" src="https://github.com/user-attachments/assets/8230fa7a-1f53-4c61-9c3e-f868c0af5ef6" />
+
+<img width="1523" height="890" alt="image" src="https://github.com/user-attachments/assets/8722ae5d-b291-47b2-b0c8-90c574360de1" />
