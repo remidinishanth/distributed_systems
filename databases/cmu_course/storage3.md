@@ -116,3 +116,35 @@ Removing an index:
 3. All existing transactions will still have to update the index until the drop commits
 
 > Indexes themselves are covered in much more detail in later lectures (B+Tree indexes, hash indexes, etc.)
+
+## Workloads
+
+<img width="1445" height="703" alt="image" src="https://github.com/user-attachments/assets/110b9c90-89c7-45c8-b765-21278d358284" />
+
+<img width="1596" height="884" alt="image" src="https://github.com/user-attachments/assets/493dbe52-fd54-42ee-9484-04362a8930dd" />
+
+### Wikipedia example
+
+<img width="1522" height="884" alt="image" src="https://github.com/user-attachments/assets/dd9dc8b6-5312-44c3-8906-1e8c60fb49ea" />
+
+OLTP
+<img width="1567" height="884" alt="image" src="https://github.com/user-attachments/assets/3b2f60de-054c-4483-ad0e-6aa60008bbc3" />
+
+OLAP
+<img width="1567" height="613" alt="image" src="https://github.com/user-attachments/assets/b45cd4c2-fea4-4764-883f-ecb90a3dc889" />
+
+## Storage Workloads
+
+<img width="1268" height="763" alt="image" src="https://github.com/user-attachments/assets/b01f5fcd-9d76-4340-aae1-e30f8b7fb799" />
+
+### N-ARY STORAGE MODEL (NSM)
+
+<img width="1268" height="763" alt="image" src="https://github.com/user-attachments/assets/3935325a-02fa-424b-b343-21482db6f8a9" />
+
+<img width="1543" height="861" alt="image" src="https://github.com/user-attachments/assets/b2e7ac00-5c14-4c9c-8f2f-92d615a37da3" />
+
+<img width="1581" height="861" alt="image" src="https://github.com/user-attachments/assets/faf36aaf-8fa5-4d21-add2-93bda3237f88" />
+
+<img width="1581" height="908" alt="image" src="https://github.com/user-attachments/assets/f938f2f3-bbea-40c8-8a45-17484f780205" />
+
+<img width="1314" height="780" alt="image" src="https://github.com/user-attachments/assets/362ca459-fc87-493d-9a97-c032e90eb67e" />
