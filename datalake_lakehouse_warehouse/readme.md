@@ -237,7 +237,7 @@ The three major open table formats that enable the lakehouse pattern:
   - **Copy-on-Write (CoW)** — updates rewrite entire Parquet files at write time. Reads are fast (pure columnar), writes are expensive.
   - **Merge-on-Read (MoR)** — updates go to delta log files, merged at read time. Writes are fast, reads pay merge cost until compaction.
 - **Strengths:** Incremental processing, record-level upserts, timeline-based metadata
-- **See:** [Apache Hudi notes](../apache_hudi/readme.md)
+- **See:** [Apache Hudi notes](./apache_hudi/readme.md)
 
 ### Apache Iceberg
 
@@ -245,7 +245,7 @@ An open table format specification originally created at Netflix, designed to so
 
 - **Key features:** Hidden partitioning, partition evolution (change partitioning without rewriting data), snapshot isolation, schema evolution
 - **Strengths:** Spec-driven (engine-agnostic), strong partition pruning, good multi-engine support
-- **See:** [Apache Iceberg notes](../apache_iceberg/readme.md)
+- **See:** [Apache Iceberg notes](./apache_iceberg/readme.md)
 
 ### Delta Lake
 
@@ -328,8 +328,8 @@ Understanding data warehouses and lakehouses requires understanding the two fund
 
 ## Further Reading
 
-- [Apache Hudi — notes and talk screenshots](../apache_hudi/readme.md)
-- [Apache Iceberg — specification and resources](../apache_iceberg/readme.md)
+- [Apache Hudi — notes and talk screenshots](./apache_hudi/readme.md)
+- [Apache Iceberg — specification and resources](./apache_iceberg/readme.md)
 - [S3 / Object Storage basics — data lake storage layer](../s3/s3_storage_basics.md)
 - [CMU 15-445 Storage Models — NSM, DSM, PAX, OLTP vs OLAP](../databases/cmu_course/storage3.md)
 - [Hadoop ecosystem — HDFS, Hive, MapReduce](../hadoop/hadoop.md)
