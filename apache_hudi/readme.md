@@ -7,3 +7,7 @@ Ref: https://www.youtube.com/watch?v=AYaw06_Xazo
 <img width="1361" height="792" alt="image" src="https://github.com/user-attachments/assets/4f3e5968-a91e-4ce8-a075-e8e46ce0b0cd" />
 
 <img width="1361" height="792" alt="image" src="https://github.com/user-attachments/assets/2a490ae2-9232-4ef2-9241-fd069c591905" />
+
+Apache Hudi
+
+<img width="1361" height="792" alt="image" src="https://github.com/user-attachments/assets/5fe3519e-b4df-4701-b516-27251ab4ae5e" />
