@@ -35,6 +35,9 @@ Just **files on cheap storage**:
 - **JSON, XML, CSV** (semi-structured)
 - **Images, video, logs** (unstructured)
 
+<img width="1025" height="577" alt="image" src="https://github.com/user-attachments/assets/d1000277-34cf-420c-bd02-7d93207a49b6" />
+
+
 ### Key Characteristics
 
 - **Schema-on-read** — structure is defined at query time, not when data is loaded
@@ -51,6 +54,8 @@ Just **files on cheap storage**:
 | **Scale** | Petabytes of data without provisioning servers |
 | **Flexibility** | Store now, decide schema later |
 | **Diverse workloads** | Same data feeds SQL, ML, and streaming |
+
+
 
 ---
 
