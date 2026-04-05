@@ -148,3 +148,15 @@ OLAP
 <img width="1581" height="908" alt="image" src="https://github.com/user-attachments/assets/f938f2f3-bbea-40c8-8a45-17484f780205" />
 
 <img width="1314" height="780" alt="image" src="https://github.com/user-attachments/assets/362ca459-fc87-493d-9a97-c032e90eb67e" />
+
+### DECOMPOSITION STORAGE MODEL (DSM)
+
+<img width="1511" height="836" alt="image" src="https://github.com/user-attachments/assets/a1aca420-1623-4860-8b85-0ca2d0011d1c" />
+
+<img width="1511" height="904" alt="image" src="https://github.com/user-attachments/assets/40c8f859-dfd8-4791-9b88-a4a385d45208" />
+
+<img width="1541" height="859" alt="image" src="https://github.com/user-attachments/assets/f864a782-ed9f-4322-8dd7-b14fc0d2cad5" />
+
+<img width="1469" height="882" alt="image" src="https://github.com/user-attachments/assets/96b1753b-15fa-4ec7-9e5b-e364f1bf9ee1" />
+
+<img width="1294" height="719" alt="image" src="https://github.com/user-attachments/assets/2e26feb0-b3bb-437d-8ba8-298c27287f52" />
