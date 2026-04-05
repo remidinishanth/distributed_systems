@@ -49,18 +49,18 @@ Used by: SQLite, MySQL (InnoDB), Oracle, SQL Server.
 ```
 Index-Organized Page Layout:
 
-  ┌──────────────────────────────────────────┐
+  ┌──────────────────────────────────────-────┐
   │               Header                      │
   ├────────┬────────┬────────┬────────────────┤
   │ key+   │ key+   │ key+   │                │
   │ offset │ offset │ offset │   (free)       │
   ├────────┴────────┴────────┤                │
-  │          ...              │                │
-  │                           ├────────────────┤
-  │                           │   Tuple #3     │
-  │         ◄─────────────────│   Tuple #2     │
-  │                           │   Tuple #1     │
-  └───────────────────────────┴────────────────┘
+  │          ...             │                │
+  │                          ├-───────────────┤
+  │                          │    Tuple #3    │
+  │         ◄────────────────│    Tuple #2    │
+  │                          │    Tuple #1    │
+  └──────────────────────────┴─-──────────────┘
   Tuples are sorted in key-order within the page.
   Inner nodes contain keys + child page pointers.
   Leaf nodes contain keys + full tuple data.
@@ -119,7 +119,7 @@ Removing an index:
 
 ## Workloads
 
-<img width="1445" height="703" alt="image" src="https://github.com/user-attachments/assets/110b9c90-89c7-45c8-b765-21278d358284" />
+<img width="1242" height="688" alt="image" src="https://github.com/user-attachments/assets/ea561462-ac53-4077-ad84-df69187e4d1a" />
 
 <img width="1596" height="884" alt="image" src="https://github.com/user-attachments/assets/493dbe52-fd54-42ee-9484-04362a8930dd" />
 
