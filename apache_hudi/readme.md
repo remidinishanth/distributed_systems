@@ -13,3 +13,8 @@ Apache Hudi
 <img width="1361" height="792" alt="image" src="https://github.com/user-attachments/assets/5fe3519e-b4df-4701-b516-27251ab4ae5e" />
 
 <img width="1416" height="792" alt="image" src="https://github.com/user-attachments/assets/f7df1927-d376-4870-982c-0b371cde7f13" />
+
+
+<img width="1153" height="907" alt="image" src="https://github.com/user-attachments/assets/84bc0f95-b3cf-462f-b739-21a1f2b16179" />
+
+Ref: https://blog.datumagic.ai/p/apache-hudi-from-zero-to-one-110
