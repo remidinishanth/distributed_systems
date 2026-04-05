@@ -61,7 +61,7 @@ A **data warehouse** is a system designed for **fast analytical queries** over s
 ```
               ETL Pipeline                         Fast Queries
               ────────────                         ────────────
-Sources ──▶ Extract ──▶ Transform ──▶ Load ──▶ ┌─────────────────┐
+Sources ──▶ Extract ──▶ Transform ──▶ Load ──▶  ┌─────────────────┐
                                                 │    Warehouse    │
                                                 │   (Redshift,    │ ──▶ BI Dashboards
                                                 │    Snowflake,   │ ──▶ SQL Reports
