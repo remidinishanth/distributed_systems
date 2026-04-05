@@ -174,3 +174,5 @@ Even when you only need name, the DBMS reads the entire tuple (id, name, age, ad
 <img width="1523" height="890" alt="image" src="https://github.com/user-attachments/assets/4c67a0a9-a9e1-4d77-83c9-6c84762bbad4" />
 
 <img width="1659" height="889" alt="image" src="https://github.com/user-attachments/assets/37e39996-e468-44e8-bcd5-73450ee2b4ad" />
+
+<img width="1623" height="854" alt="image" src="https://github.com/user-attachments/assets/faf55cd0-d0f9-479e-907a-ad95df1a7dd4" />
