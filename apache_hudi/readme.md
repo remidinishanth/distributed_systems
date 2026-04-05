@@ -11,3 +11,5 @@ Ref: https://www.youtube.com/watch?v=AYaw06_Xazo
 Apache Hudi
 
 <img width="1361" height="792" alt="image" src="https://github.com/user-attachments/assets/5fe3519e-b4df-4701-b516-27251ab4ae5e" />
+
+<img width="1416" height="792" alt="image" src="https://github.com/user-attachments/assets/f7df1927-d376-4870-982c-0b371cde7f13" />
