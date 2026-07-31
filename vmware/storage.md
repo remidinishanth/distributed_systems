@@ -28,6 +28,13 @@ Previously
 | **vSAN** | Direct-attached (pooled local disks) | vSAN cluster | Built-in, policy-driven **FTT** (mirror / erasure across hosts) | Yes — end-to-end checksum on by default (since vSAN 6.2) + scrubber |
 | **vSphere Virtual Volume (vVol)** | FC / Ethernet | Storage container (array-managed) | Array-defined via VASA policy | Depends on array |
 
+
+### VMFS
+
+<img width="1864" height="1718" alt="image" src="https://github.com/user-attachments/assets/b25fa172-e08d-4c9f-b5a3-7a07c0a328a9" />
+
+Ref: https://www.vmware.com/docs/vmware-vsphere-vmfs
+
 ### Transports behind each type
 
 * **VMFS** is a clustering filesystem optimized for VM files; it can sit on
