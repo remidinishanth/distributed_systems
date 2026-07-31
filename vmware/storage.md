@@ -31,6 +31,7 @@ Previously
 
 ### VMFS
 
+CFS here is Cluster File System 
 <img width="1864" height="1718" alt="image" src="https://github.com/user-attachments/assets/b25fa172-e08d-4c9f-b5a3-7a07c0a328a9" />
 
 Ref: https://www.vmware.com/docs/vmware-vsphere-vmfs
