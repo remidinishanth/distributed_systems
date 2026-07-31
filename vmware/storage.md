@@ -44,6 +44,9 @@ of a single system.
 
 Ref: https://www.vmware.com/docs/vmware-vsphere-vmfs
 
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/91dd6422-8dd9-46e7-a836-a79394396e17" />
+
+
 ### Transports behind each type
 
 * **VMFS** is a clustering filesystem optimized for VM files; it can sit on
@@ -59,6 +62,9 @@ Ref: https://www.vmware.com/docs/vmware-vsphere-vmfs
   **is not formatted** by ESXi — it's a distributed file share mounted as-is.
 * **vSAN** is software-defined storage that aggregates each host's local disks
   into one logical pool, removing the need for a physical SAN appliance.
+
+<img width="2140" height="936" alt="image" src="https://github.com/user-attachments/assets/d407d08f-00ee-4b47-993a-101c3ef6c45a" />
+  
 * **vVols** connect to NAS/SAN arrays over FC/Ethernet and are driven by VM
   storage policies (disk type, RAID level, dedup); the array auto-creates the
   right LUN. Requires **VAAI/VASA** array integration.
