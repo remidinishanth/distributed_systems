@@ -57,6 +57,15 @@ OVA = tar( descriptor.ovf + manifest.mf + disk1.vmdk + ... )
 Just a packaging convenience — one file to move around instead of a folder.
 Unpacking an `.ova` gives back the OVF file set.
 
+```mermaid
+flowchart TD
+    OVA["example.ova<br/>(single tar archive)"]
+    OVA --> OVF[".ovf<br/>XML descriptor:<br/>hardware, disks, boot, EULA"]
+    OVA --> MF[".mf<br/>manifest:<br/>SHA checksums"]
+    OVA --> VMDK[".vmdk x N<br/>virtual disk images"]
+    OVA --> CERT[".cert (optional)<br/>signature over manifest"]
+```
+
 ## OVF vs OVA
 
 | | OVF | OVA |

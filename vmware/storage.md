@@ -35,6 +35,24 @@ Previously
 | **vSphere Virtual Volume (vVol)** | FC / Ethernet | Storage container (array-managed) | Array-defined via VASA policy | Depends on array |
 
 
+```mermaid
+flowchart TD
+    VM["VMs → Virtual Disks (VMDK)"]
+    VM --> DS{Datastore type}
+    DS --> VMFS[VMFS]
+    DS --> NFS[NFS]
+    DS --> VSAN[vSAN]
+    DS --> VVOL[vVol]
+    VMFS --> T1["Transport:<br/>DAS / FC / FCoE / iSCSI"]
+    NFS --> T2["Transport:<br/>Ethernet"]
+    VSAN --> T3["Transport:<br/>Direct-attached (pooled)"]
+    VVOL --> T4["Transport:<br/>FC / Ethernet"]
+    T1 --> B1["Backing:<br/>Disk / LUN"]
+    T2 --> B2["Backing:<br/>Filer file system"]
+    T3 --> B3["Backing:<br/>vSAN cluster"]
+    T4 --> B4["Backing:<br/>Storage container (array)"]
+```
+
 ### VMFS
 
 VMFS is a high-performance cluster file system (CFS) that enables virtualization to scale beyond the boundaries
