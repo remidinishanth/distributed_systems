@@ -58,6 +58,10 @@ Ref: https://www.vmware.com/docs/vmware-vsphere-vmfs
     VMFS.
   * **FCoE** — encapsulates FC traffic in Ethernet, so SAN and LAN share one cable.
   * **iSCSI** — maps SCSI over TCP/IP to carry SAN traffic on Ethernet.
+
+ <img width="741" height="693" alt="image" src="https://github.com/user-attachments/assets/f219cde4-fb41-421f-a0e1-7751ffd4d44e" />
+
+
 * **NFS** is a file-based share over Ethernet (TCP/IP). Unlike iSCSI/FCoE it
   **is not formatted** by ESXi — it's a distributed file share mounted as-is.
 * **vSAN** is software-defined storage that aggregates each host's local disks
