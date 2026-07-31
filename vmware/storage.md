@@ -4,9 +4,14 @@ title: "Storage"
 category: "vmware"
 ---
 
-vSphere presents guest **virtual disks (VMDKs)** on top of a **datastore**. The
+vSphere presents guest **virtual disks (VMDKs)** on top of a **datastore** — a
+logical storage layer that sits on physical devices/server disk and holds the
+VMDKs plus the rest of a VM's files (config, logs, swap, snapshots). The
 datastore type decides the transport and the backing store — and what
 data-integrity and redundancy guarantees exist *below* the guest OS.
+
+> The **connection type you use is what determines the datastore type** you work
+> with.
 
 ![Datastore types: VMFS / NFS / vSAN / vVol](datastore_types.png)
 
@@ -18,6 +23,28 @@ data-integrity and redundancy guarantees exist *below* the guest OS.
 | **NFS** | Ethernet | Filer file system | Whatever the NAS provides | Not from VMware — depends on filer (NetApp/ZFS have it, others may not) |
 | **vSAN** | Direct-attached (pooled local disks) | vSAN cluster | Built-in, policy-driven **FTT** (mirror / erasure across hosts) | Yes — end-to-end checksum on by default (since vSAN 6.2) + scrubber |
 | **vSphere Virtual Volume (vVol)** | FC / Ethernet | Storage container (array-managed) | Array-defined via VASA policy | Depends on array |
+
+### Transports behind each type
+
+* **VMFS** is a clustering filesystem optimized for VM files; it can sit on
+  several connection types:
+  * **DAS (Direct-Attached Storage)** — local disks in the server (SAS / SATA /
+    SCSI). Often used for the ESXi OS install with RAID. Local disks **cannot back
+    a shared datastore** — other hosts can't reach them.
+  * **Fibre Channel (FC)** — SAN over fibre; LUNs presented to ESXi and formatted
+    VMFS.
+  * **FCoE** — encapsulates FC traffic in Ethernet, so SAN and LAN share one cable.
+  * **iSCSI** — maps SCSI over TCP/IP to carry SAN traffic on Ethernet.
+* **NFS** is a file-based share over Ethernet (TCP/IP). Unlike iSCSI/FCoE it
+  **is not formatted** by ESXi — it's a distributed file share mounted as-is.
+* **vSAN** is software-defined storage that aggregates each host's local disks
+  into one logical pool, removing the need for a physical SAN appliance.
+* **vVols** connect to NAS/SAN arrays over FC/Ethernet and are driven by VM
+  storage policies (disk type, RAID level, dedup); the array auto-creates the
+  right LUN. Requires **VAAI/VASA** array integration.
+
+FC, FCoE, and iSCSI LUNs can be mapped to **multiple** ESXi hosts → shared
+datastores; DAS cannot.
 
 ### Key distinction: VMFS vs vSAN
 
