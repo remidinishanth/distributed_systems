@@ -15,6 +15,8 @@ data-integrity and redundancy guarantees exist *below* the guest OS.
 
 ![Datastore types: VMFS / NFS / vSAN / vVol](datastore_types.png)
 
+Ref: https://virtualextract.wordpress.com/2022/06/18/vmware-vsphere-storage/
+
 Previously
 <img width="1756" height="1246" alt="image" src="https://github.com/user-attachments/assets/cbeba811-1357-4e76-96e3-bcd18f57c3a0" />
 
