@@ -10,6 +10,10 @@ VMDKs plus the rest of a VM's files (config, logs, swap, snapshots). The
 datastore type decides the transport and the backing store — and what
 data-integrity and redundancy guarantees exist *below* the guest OS.
 
+### Datastore
+<img width="1208" height="842" alt="image" src="https://github.com/user-attachments/assets/ffbacfe0-8a17-46f0-861e-91c647a91795" />
+
+
 > The **connection type you use is what determines the datastore type** you work
 > with.
 
