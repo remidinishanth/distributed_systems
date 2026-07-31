@@ -7,6 +7,28 @@ category: "vmware"
 Portable formats for packaging and distributing a virtual machine (or a set of
 VMs / a vApp) so it can be deployed on any compatible hypervisor.
 
+## In short
+
+* A **virtual appliance** = a pre-configured VM image ready to run on a
+  hypervisor. OVF/OVA is how you ship it.
+* **OVF** is an **open standard** (maintained by the **DMTF**) for packaging and
+  distributing such appliances — one or more VMs plus the metadata needed to
+  deploy and run them.
+* **OVA** is simply an **OVF package rolled into a single `.tar` archive** with
+  the `.ova` extension — easier to move as one file.
+* **Cross-platform:** importable by VMware (Workstation / ESXi / vCenter),
+  VirtualBox, and others → deploy a complex appliance in one step instead of
+  configuring from scratch.
+
+```mermaid
+flowchart LR
+    APP["Virtual appliance<br/>(pre-configured VM)"] --> PKG["OVF package<br/>.ovf + .mf + .vmdk<br/>(open standard, DMTF)"]
+    PKG -- "tar into one file" --> OVA[".ova<br/>single archive"]
+    OVA --> H1[VMware ESXi / vCenter]
+    OVA --> H2[VMware Workstation]
+    OVA --> H3[VirtualBox / others]
+```
+
 ## OVF (Open Virtualization Format)
 
 A **folder / set of files** describing one deployable appliance:
